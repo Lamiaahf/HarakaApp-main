@@ -10,6 +10,7 @@ import UIKit
 class TimelineViewController: UITableViewController{
     
     var posts:[Post]?
+    @IBOutlet weak var postButton: UIBarButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class TimelineViewController: UITableViewController{
         posts = Post.fetchPosts()
         tableView.reloadData()
     }
+    
+    
     
 }
 
@@ -44,7 +47,7 @@ extension TimelineViewController{
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 580
+        return 150
     }
     
 }
