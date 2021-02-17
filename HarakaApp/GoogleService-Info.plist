@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>295029362192-77t4sqqpinb3n75lvnd9uh94b5v99can.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.295029362192-77t4sqqpinb3n75lvnd9uh94b5v99can</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC02UvNvhDHkxwsELL8HXbB5is0z1mVzaY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>295029362192</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>KSU.HarakaApp</string>
+	<key>PROJECT_ID</key>
+	<string>haraka-73619</string>
+	<key>STORAGE_BUCKET</key>
+	<string>haraka-73619.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:295029362192:ios:648b4146429189ac0f8495</string>
+</dict>
+</plist>

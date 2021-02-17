@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
+		3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */; };
+		3F6A0DF025DD2AA600AAB91A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DED25DD2AA600AAB91A /* Post.swift */; };
+		3F6A0DF125DD2AA600AAB91A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */; };
+		3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F625C81CFB0098C299 /* AppDelegate.swift */; };
+		3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */; };
+		3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14FA25C81CFB0098C299 /* ViewController.swift */; };
+		3FBB14FE25C81CFB0098C299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB14FC25C81CFB0098C299 /* Main.storyboard */; };
+		3FBB150025C81CFD0098C299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB14FF25C81CFD0098C299 /* Assets.xcassets */; };
+		3FBB150325C81CFD0098C299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB150125C81CFD0098C299 /* LaunchScreen.storyboard */; };
+		3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB150C25C968560098C299 /* LOGINViewController.swift */; };
+		3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB152F25C9C3660098C299 /* ForgotPasswordViewController.swift */; };
+		3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB153225C9CF4B0098C299 /* SingupAsViewController.swift */; };
+		3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */; };
+		3FBB155725CE96780098C299 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB155525CE96780098C299 /* Utilities.swift */; };
+		3FBB155E25D12CC60098C299 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */; };
+		3FD4742825D3264700260C1A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4742725D3264600260C1A /* Service.swift */; };
+		3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */; };
+		9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07125D1350C002E0AAB /* HomePageViewController.swift */; };
+		9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07425D13531002E0AAB /* SearchTableViewController.swift */; };
+		9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07525D13531002E0AAB /* MyTabBar.swift */; };
+		9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07625D13531002E0AAB /* myTabBarCtrl.swift */; };
+		F9F49256EE71AF5DBDB64948 /* Pods_HarakaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineViewController.swift; path = ../../../../Downloads/TimelineViewController.swift; sourceTree = "<group>"; };
+		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../../../../Downloads/Post.swift; sourceTree = "<group>"; };
+		3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = ../../../../Downloads/PostCell.swift; sourceTree = "<group>"; };
+		3FBB14F325C81CFB0098C299 /* HarakaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarakaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FBB14F625C81CFB0098C299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3FBB14FA25C81CFB0098C299 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3FBB14FD25C81CFB0098C299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3FBB14FF25C81CFD0098C299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3FBB150225C81CFD0098C299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3FBB150425C81CFD0098C299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FBB150C25C968560098C299 /* LOGINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOGINViewController.swift; sourceTree = "<group>"; };
+		3FBB152F25C9C3660098C299 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		3FBB153225C9CF4B0098C299 /* SingupAsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingupAsViewController.swift; sourceTree = "<group>"; };
+		3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingupViewController.swift; sourceTree = "<group>"; };
+		3FBB155525CE96780098C299 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3FD4742725D3264600260C1A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSingupViewController.swift; sourceTree = "<group>"; };
+		8FDCB37063508050981CA58F /* Pods-HarakaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.debug.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9449C07125D1350C002E0AAB /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		9449C07425D13531002E0AAB /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		9449C07525D13531002E0AAB /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
+		9449C07625D13531002E0AAB /* myTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTabBarCtrl.swift; sourceTree = "<group>"; };
+		CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.release.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.release.xcconfig"; sourceTree = "<group>"; };
+		D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarakaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3FBB14F025C81CFB0098C299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F49256EE71AF5DBDB64948 /* Pods_HarakaApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09A9E9362CD87408602D99E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8FDCB37063508050981CA58F /* Pods-HarakaApp.debug.xcconfig */,
+				CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3F6A0D8925DD21B900AAB91A /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		3FBB14EA25C81CFB0098C299 = {
+			isa = PBXGroup;
+			children = (
+				3FBB14F525C81CFB0098C299 /* HarakaApp */,
+				3FBB14F425C81CFB0098C299 /* Products */,
+				09A9E9362CD87408602D99E3 /* Pods */,
+				C618D7C0BE288947E715461D /* Frameworks */,
+				3F6A0D8925DD21B900AAB91A /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		3FBB14F425C81CFB0098C299 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3FBB14F325C81CFB0098C299 /* HarakaApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3FBB14F525C81CFB0098C299 /* HarakaApp */ = {
+			isa = PBXGroup;
+			children = (
+				3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */,
+				3FBB155325CE96780098C299 /* Helpers */,
+				3FBB14F625C81CFB0098C299 /* AppDelegate.swift */,
+				3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */,
+				3FBB151925C96AF50098C299 /* View controller */,
+				3FBB14FC25C81CFB0098C299 /* Main.storyboard */,
+				3FBB14FF25C81CFD0098C299 /* Assets.xcassets */,
+				3FBB150125C81CFD0098C299 /* LaunchScreen.storyboard */,
+				3FBB150425C81CFD0098C299 /* Info.plist */,
+			);
+			path = HarakaApp;
+			sourceTree = "<group>";
+		};
+		3FBB151925C96AF50098C299 /* View controller */ = {
+			isa = PBXGroup;
+			children = (
+				3FBB150C25C968560098C299 /* LOGINViewController.swift */,
+				3FBB152F25C9C3660098C299 /* ForgotPasswordViewController.swift */,
+				3FBB153225C9CF4B0098C299 /* SingupAsViewController.swift */,
+				3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */,
+				3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */,
+				9449C07125D1350C002E0AAB /* HomePageViewController.swift */,
+				9449C07525D13531002E0AAB /* MyTabBar.swift */,
+				9449C07625D13531002E0AAB /* myTabBarCtrl.swift */,
+				9449C07425D13531002E0AAB /* SearchTableViewController.swift */,
+				3F6A0DED25DD2AA600AAB91A /* Post.swift */,
+				3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */,
+				3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */,
+				3FBB14FA25C81CFB0098C299 /* ViewController.swift */,
+			);
+			path = "View controller";
+			sourceTree = "<group>";
+		};
+		3FBB155325CE96780098C299 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3FBB155525CE96780098C299 /* Utilities.swift */,
+				3FD4742725D3264600260C1A /* Service.swift */,
+				3F4683AC25D448CC007F9D66 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C618D7C0BE288947E715461D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3FBB14F225C81CFB0098C299 /* HarakaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FBB150725C81CFD0098C299 /* Build configuration list for PBXNativeTarget "HarakaApp" */;
+			buildPhases = (
+				4DFF3C0B841506CE2C0B5545 /* [CP] Check Pods Manifest.lock */,
+				3FBB14EF25C81CFB0098C299 /* Sources */,
+				3FBB14F025C81CFB0098C299 /* Frameworks */,
+				3FBB14F125C81CFB0098C299 /* Resources */,
+				A8D765516055C253C37A0AFF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HarakaApp;
+			productName = HarakaApp;
+			productReference = 3FBB14F325C81CFB0098C299 /* HarakaApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3FBB14EB25C81CFB0098C299 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					3FBB14F225C81CFB0098C299 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 3FBB14EE25C81CFB0098C299 /* Build configuration list for PBXProject "HarakaApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3FBB14EA25C81CFB0098C299;
+			productRefGroup = 3FBB14F425C81CFB0098C299 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3FBB14F225C81CFB0098C299 /* HarakaApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3FBB14F125C81CFB0098C299 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FBB150325C81CFD0098C299 /* LaunchScreen.storyboard in Resources */,
+				3FBB155E25D12CC60098C299 /* GoogleService-Info.plist in Resources */,
+				3FBB150025C81CFD0098C299 /* Assets.xcassets in Resources */,
+				3FBB14FE25C81CFB0098C299 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DFF3C0B841506CE2C0B5545 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HarakaApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8D765516055C253C37A0AFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarakaApp/Pods-HarakaApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HarakaApp/Pods-HarakaApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HarakaApp/Pods-HarakaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3FBB14EF25C81CFB0098C299 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
+				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
+				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
+				3FD4742825D3264700260C1A /* Service.swift in Sources */,
+				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
+				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,
+				3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */,
+				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
+				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
+				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
+				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
+				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
+				3F6A0DF125DD2AA600AAB91A /* PostCell.swift in Sources */,
+				3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */,
+				9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */,
+				9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */,
+				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
+				3F6A0DF025DD2AA600AAB91A /* Post.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3FBB14FC25C81CFB0098C299 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FBB14FD25C81CFB0098C299 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3FBB150125C81CFD0098C299 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3FBB150225C81CFD0098C299 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3FBB150525C81CFD0098C299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3FBB150625C81CFD0098C299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3FBB150825C81CFD0098C299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FDCB37063508050981CA58F /* Pods-HarakaApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RNNL4K4B78;
+				INFOPLIST_FILE = HarakaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KSU.HarakaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3FBB150925C81CFD0098C299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RNNL4K4B78;
+				INFOPLIST_FILE = HarakaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = KSU.HarakaApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3FBB14EE25C81CFB0098C299 /* Build configuration list for PBXProject "HarakaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FBB150525C81CFD0098C299 /* Debug */,
+				3FBB150625C81CFD0098C299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3FBB150725C81CFD0098C299 /* Build configuration list for PBXNativeTarget "HarakaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3FBB150825C81CFD0098C299 /* Debug */,
+				3FBB150925C81CFD0098C299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3FBB14EB25C81CFB0098C299 /* Project object */;
+}
