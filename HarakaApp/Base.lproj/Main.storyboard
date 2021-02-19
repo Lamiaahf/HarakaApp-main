@@ -580,6 +580,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9N4-PN-WAQ">
+                            <rect key="frame" x="0.0" y="206" width="390" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="150" id="3Ls-sW-tgS" customClass="PostCell" customModule="HarakaApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="390" height="150"/>
@@ -687,15 +692,68 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="3A1-PS-Jn9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="PIw-Nq-NI6"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="PIw-Nq-NI6">
+                            <connections>
+                                <segue destination="T1l-DH-cit" kind="presentation" modalTransitionStyle="crossDissolve" id="T3B-O5-fsp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="postButton" destination="PIw-Nq-NI6" id="YqV-jb-cAL"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdV-fN-Nuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2027.6923076923076" y="701.65876777251185"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4qo-Lb-oYe">
+            <objects>
+                <viewController id="T1l-DH-cit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cwh-BT-cxr">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-WH-74A">
+                                <rect key="frame" x="30" y="252" width="331" height="243"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jsn-14-zvE">
+                                        <rect key="frame" x="9" y="8" width="314" height="183"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCG-fI-NXb">
+                                        <rect key="frame" x="291" y="199" width="31" height="30"/>
+                                        <state key="normal" title="Post">
+                                            <color key="titleColor" red="0.44588272229999998" green="0.55164075479999997" blue="0.58818409969999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.68867509449999997" green="0.76783112050000002" blue="0.72864813689999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="TCG-fI-NXb" firstAttribute="trailing" secondItem="Jsn-14-zvE" secondAttribute="trailing" id="D27-me-9tC"/>
+                                    <constraint firstItem="Jsn-14-zvE" firstAttribute="top" secondItem="3ww-WH-74A" secondAttribute="topMargin" id="J2G-Oo-3hM"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jsn-14-zvE" secondAttribute="bottom" constant="52" id="JpL-Hg-dWU"/>
+                                    <constraint firstItem="TCG-fI-NXb" firstAttribute="top" secondItem="Jsn-14-zvE" secondAttribute="bottom" constant="12" id="RUR-PV-B86"/>
+                                    <constraint firstAttribute="bottom" secondItem="TCG-fI-NXb" secondAttribute="bottom" constant="14" id="b4h-bj-g7d"/>
+                                    <constraint firstAttribute="trailing" secondItem="TCG-fI-NXb" secondAttribute="trailing" constant="9" id="i9x-6J-8dt"/>
+                                    <constraint firstItem="Jsn-14-zvE" firstAttribute="centerX" secondItem="3ww-WH-74A" secondAttribute="centerX" id="o6s-Rm-cvW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WsX-4k-496"/>
+                        <color key="backgroundColor" red="0.61000930778027007" green="0.76144114847715738" blue="0.71347847968220368" alpha="0.23787992294520549" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3ww-WH-74A" firstAttribute="centerY" secondItem="WsX-4k-496" secondAttribute="centerY" id="3uz-mF-aqg"/>
+                            <constraint firstItem="3ww-WH-74A" firstAttribute="centerX" secondItem="WsX-4k-496" secondAttribute="centerX" id="Em3-wz-MGP"/>
+                            <constraint firstItem="3ww-WH-74A" firstAttribute="leading" secondItem="WsX-4k-496" secondAttribute="leading" constant="29" id="IjQ-vh-a4t"/>
+                            <constraint firstItem="3ww-WH-74A" firstAttribute="top" secondItem="WsX-4k-496" secondAttribute="top" constant="213" id="eDk-RI-VCx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qq1-1l-84e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2756.9230769230767" y="701.65876777251185"/>
         </scene>
         <!--البحث-->
         <scene sceneID="cj8-hg-zyc">
@@ -992,6 +1050,9 @@
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -47,7 +47,7 @@ struct Post
 struct User
 {
     var username: String?
-    //var profileImage: UIImage?
+    var profileImage: UIImage?
     
 }
 
