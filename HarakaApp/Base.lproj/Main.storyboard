@@ -709,10 +709,9 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-WH-74A">
                                 <rect key="frame" x="30" y="252" width="331" height="243"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jsn-14-zvE">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="hii" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jsn-14-zvE">
                                         <rect key="frame" x="9" y="8" width="314" height="183"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -722,6 +721,9 @@
                                         <state key="normal" title="Post">
                                             <color key="titleColor" red="0.44588272229999998" green="0.55164075479999997" blue="0.58818409969999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="postButton:" destination="T1l-DH-cit" eventType="touchUpInside" id="LDu-PQ-8Xp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.68867509449999997" green="0.76783112050000002" blue="0.72864813689999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -746,7 +748,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="postButton" destination="TCG-fI-NXb" id="EIF-ti-fHT"/>
+                        <outlet property="postText" destination="Jsn-14-zvE" id="E58-Po-aXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qq1-1l-84e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1030,7 +1032,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="18m-Zz-Ljj"/>
+        <segue reference="pAM-Ja-N9h"/>
         <segue reference="LFd-Xh-5l6"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -26,12 +26,12 @@ class PostCell: UITableViewCell{
     
     func updateTimeline(){
         profileImageView.image = post.createdBy.profileImage
-        usernameLabel.text = post.createdBy.username
+        usernameLabel.text = post.createdBy.usernameUI
         timeAgoLabel.text = post.timeAgo
-        captionLabel.text = post.caption
+        captionLabel.text = post.captionUI
    //     postImageView.image = post.image
-        likesLabel.text = "\(post.numOfLikes!)"
-        commentsLabel.text = "\(post.numOfComments!)"
+        likesLabel.text = "\(post.numOfLikesUI!)"
+        commentsLabel.text = "\(post.numOfCommentsUI!)"
         
     }
     
