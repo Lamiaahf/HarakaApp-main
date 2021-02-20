@@ -698,10 +698,10 @@
             </objects>
             <point key="canvasLocation" x="2027.6923076923076" y="701.65876777251185"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Post Controller-->
         <scene sceneID="4qo-Lb-oYe">
             <objects>
-                <viewController id="T1l-DH-cit" sceneMemberID="viewController">
+                <viewController id="T1l-DH-cit" customClass="AddPostController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cwh-BT-cxr">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -745,6 +745,9 @@
                             <constraint firstItem="3ww-WH-74A" firstAttribute="top" secondItem="WsX-4k-496" secondAttribute="top" constant="213" id="eDk-RI-VCx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="postButton" destination="TCG-fI-NXb" id="EIF-ti-fHT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qq1-1l-84e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

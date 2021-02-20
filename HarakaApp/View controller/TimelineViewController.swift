@@ -10,7 +10,6 @@ import UIKit
 class TimelineViewController: UITableViewController{
     
     var posts:[Post]?
-//    @IBOutlet weak var postButton: UIBarButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
