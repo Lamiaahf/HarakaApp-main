@@ -6,21 +6,46 @@
 //
 
 import UIKit
+import Firebase
 
 struct Post
 {
     var createdBy: User
-    var timeAgo: String?
+    var timeAgo: Date?
     var captionUI: String?
  //   var image: UIImage?
     var numOfLikesUI: Int?
     var numOfCommentsUI: Int?
     
-    static func fetchPosts() -> [Post]
+    static func fetchPosts(cf: CollectionReference) -> [Post]
     {
         var posts = [Post]()
         
-      
+        cf.getDocuments{ (snapshot, error) in
+            if let err = error {
+                debugPrint("Error fetching documents: \(err)")
+            }
+            else{
+                guard let snap = snapshot else { return }
+                for document in snap.documents{
+                    let data = document.data()
+                    let usern = data["username"] as? String ?? "Anon"
+                    let times = data["timestamp"] as? Date ?? Date()
+                    let cap = data["caption"] as? String ?? ""
+                    let nol = data["numOfLikes"] as? Int ?? 0
+                    let noc = data["numOfComments"] as? Int ?? 0
+               //     let docID = document.documentID
+                    
+                    let postUser = User(usernameUI: usern)
+                    let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc)
+                    posts.append(newPost)
+                }
+                
+            }
+        }
+        
+        return posts
+      /*
         let mark = User(usernameUI: "Mark Zuckerberg")
         let steve = User(usernameUI: "Steve Jobs")
         let azeem = User(usernameUI: "Azeem Azeez")
@@ -39,15 +64,15 @@ struct Post
         posts.append(post5)
         posts.append(post3)
         posts.append(post6)
+        */
         
-        return posts
     }
 }
 
 struct User
 {
     var usernameUI: String?
-    var profileImage: UIImage?
+ //   var profileImage: UIImage?
     
 }
 

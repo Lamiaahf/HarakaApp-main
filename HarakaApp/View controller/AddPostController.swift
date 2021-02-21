@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class AddPostController: UIViewController{
    
@@ -20,25 +21,34 @@ class AddPostController: UIViewController{
     
     // method used to add the post to the database
     @IBAction func postButton(_ sender: Any) {
-        
-        if(postText.text!.trimmingCharacters(in: .whitespacesAndNewlines)==""){
+        let t = postText.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if(t == ""){
             return
         }
         let db = Firestore.firestore()
         let posts = db.collection("Posts")
         let time: Date = Date()
         postCounter = postCounter+1
-        guard let user = LOGINViewController().EmailL
-        else { return }
+        let user = LOGINViewController().EmailL.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if(user == ""){
+            return
+        }
         
-        var ref = posts.addDocument(data:[
+        posts.addDocument(data:[
             "caption": postText.text!,
             "username": user,
             "numOfLikes": 0,
             "numOfComments":0,
             "timestamp": time
-        ])
+        ]) { (err) in
+            if let err = err {
+                debugPrint("error adding document: \(err)")
+            }
+            else {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
         
-        TimelineViewController().fetchPosts()
+        
     }
 }
