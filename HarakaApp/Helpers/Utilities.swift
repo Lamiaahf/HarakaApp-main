@@ -43,7 +43,7 @@ class Utilities {
         return passwordTest.evaluate(with: password)
     }
     
-    
+
     
     
 }

@@ -17,10 +17,12 @@ struct Post
     var numOfLikesUI: Int?
     var numOfCommentsUI: Int?
     
-    static func fetchPosts(cf: CollectionReference) -> [Post]
+   /*
+    static func fetchPosts() -> [Post]
     {
         var posts = [Post]()
         
+        let cf = Firestore.firestore().collection("Posts")
         cf.getDocuments{ (snapshot, error) in
             if let err = error {
                 debugPrint("Error fetching documents: \(err)")
@@ -66,13 +68,13 @@ struct Post
         posts.append(post6)
         */
         
-    }
+    }*/
 }
 
 struct User
 {
     var usernameUI: String?
- //   var profileImage: UIImage?
+ //   var profileImage: UIImage? 
     
 }
 

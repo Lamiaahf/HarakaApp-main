@@ -29,7 +29,8 @@ class AddPostController: UIViewController{
         let posts = db.collection("Posts")
         let time: Date = Date()
         postCounter = postCounter+1
-        let user = LOGINViewController().EmailL.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+     //   let user = LOGINViewController().EmailL.text!.trimmingCharacters(in: //.whitespacesAndNewlines)
+        let user = "Njood"
         if(user == ""){
             return
         }
@@ -44,11 +45,9 @@ class AddPostController: UIViewController{
             if let err = err {
                 debugPrint("error adding document: \(err)")
             }
-            else {
-                self.navigationController?.popViewController(animated: true)
-            }
         }
-        
+     //   self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
         
     }
 }
