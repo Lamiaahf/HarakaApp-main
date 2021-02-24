@@ -12,10 +12,12 @@ class TimelineViewController: UITableViewController{
     
     var posts:[Post]?
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
      //   fetchPosts()
+        
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
@@ -62,10 +64,39 @@ class TimelineViewController: UITableViewController{
                     let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc)
                     timelinePosts.append(newPost)
                 }
+                
                 self.posts = timelinePosts
                 self.tableView.reloadData()
+                // initialize the likes button to reflect the current state
+       //         self.likePost.isSelected = self.likes
+
+                // set the titles for the likes button per state
             }
         }
+    }
+    
+    /*
+    @IBAction func likePost(_ sender: Any) {
+       
+        if(likePost.currentBackgroundImage == UIImage(named: "heart.fill")){
+            likePost.setBackgroundImage(UIImage(named:"heart"), for: .normal)
+            guard let likes = Int((likePost.titleLabel?.text)!) else{ return }
+            let likesCount = likes - 1
+            likePost.setTitle("\(likesCount)", for: .normal)
+        }
+        else{
+            likePost.setBackgroundImage(UIImage(named: "heart.fill"), for: .highlighted)
+            guard let likes = Int((likePost.titleLabel?.text)!) else { return }
+            let likesCount = likes + 1
+            likePost.setTitle("\(likesCount)", for: .highlighted)
+        }
+       
+    }*/
+    
+    func updatePosts(){
+       // tableView.cellForRow(at: <#T##IndexPath#>)
+    
+        tableView.reloadData()
     }
     
 }
