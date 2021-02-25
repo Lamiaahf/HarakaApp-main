@@ -963,15 +963,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejY-gg-Xqd">
-                                <rect key="frame" x="16" y="175" width="173" height="173"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.40568548440000002" green="0.57982069250000001" blue="0.64284527300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="الفعاليات ">
-                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vh-wO-ocW">
                                 <rect key="frame" x="16" y="369" width="173" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -992,7 +983,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-Gb-bT8">
-                                <rect key="frame" x="201" y="174" width="173" height="173"/>
+                                <rect key="frame" x="197" y="174" width="173" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1012,13 +1003,26 @@
                                     <segue destination="H01-fK-k6R" kind="show" id="bjU-CJ-RaU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejY-gg-Xqd">
+                                <rect key="frame" x="16" y="174" width="173" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40568548440000002" green="0.57982069250000001" blue="0.64284527300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="الفعاليات ">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PsJ-gA-Wel"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="الصفحة الرئيسية" id="U8W-8r-36Z"/>
                     <connections>
-                        <outlet property="activitiesButton" destination="ejY-gg-Xqd" id="PzT-Nu-Pg4"/>
+                        <outlet property="GameHSButton" destination="SKR-lk-eui" id="LxA-ot-1HP"/>
+                        <outlet property="GroupsHSButton" destination="0vh-wO-ocW" id="TbZ-SM-YSZ"/>
+                        <outlet property="activitiesButton" destination="ejY-gg-Xqd" id="WCG-Co-9QB"/>
+                        <outlet property="challangesHSButton" destination="8Xh-Gb-bT8" id="JKh-Fq-g3Y"/>
+                        <outlet property="postsHSButton" destination="YiU-EY-ZfV" id="3UP-lR-pJh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfs-xY-E4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1026,11 +1030,6 @@
             <point key="canvasLocation" x="2028" y="-9"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="ryc-bn-TxS">
-            <size key="intrinsicContentSize" width="-1" height="83"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="pAM-Ja-N9h"/>
         <segue reference="LFd-Xh-5l6"/>
