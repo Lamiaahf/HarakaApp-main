@@ -11,6 +11,7 @@
 		3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */; };
 		3F6A0DF025DD2AA600AAB91A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DED25DD2AA600AAB91A /* Post.swift */; };
 		3F6A0DF125DD2AA600AAB91A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */; };
+		3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */; };
 		3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F625C81CFB0098C299 /* AppDelegate.swift */; };
 		3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */; };
 		3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14FA25C81CFB0098C299 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineViewController.swift; path = ../../../../Downloads/TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../../../../Downloads/Post.swift; sourceTree = "<group>"; };
 		3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = ../../../../Downloads/PostCell.swift; sourceTree = "<group>"; };
+		3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3FBB14F325C81CFB0098C299 /* HarakaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarakaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBB14F625C81CFB0098C299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */,
 				3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */,
 				3FBB14FA25C81CFB0098C299 /* ViewController.swift */,
+				3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */,
 			);
 			path = "View controller";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			files = (
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
 				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
+				3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */,
 				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
 				3FD4742825D3264700260C1A /* Service.swift in Sources */,
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,

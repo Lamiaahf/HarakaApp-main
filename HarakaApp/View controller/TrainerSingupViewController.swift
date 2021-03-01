@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FirebaseFirestore
+import FirebaseDatabase
 
 class TrainerSingupViewController: UIViewController {
 // TS = SingupTrainer
@@ -20,6 +20,10 @@ class TrainerSingupViewController: UIViewController {
     @IBOutlet weak var DOB: UITextField!
     let DatePicker = UIDatePicker()
     @IBOutlet weak var LinkedinTS: UITextField!
+   private  var ref : DatabaseReference!
+
+    
+   
     @IBOutlet weak var ErrorM: UILabel!
     
     @IBOutlet weak var Singup: UIButton!
@@ -37,7 +41,10 @@ class TrainerSingupViewController: UIViewController {
         super.viewDidLoad()
         setUpElements()
         creatDatePicker()
+        ref = Database.database().reference()
+
     }
+    
     func setUpElements() {
     
         ErrorM.alpha = 0
@@ -108,9 +115,9 @@ class TrainerSingupViewController: UIViewController {
             
         
             return nil}
-        
     
-    
+  
+    //
     @IBAction func SingUpTapped(_ sender: Any) {
     
         // Validate the fields
@@ -132,7 +139,7 @@ class TrainerSingupViewController: UIViewController {
             let Linkdein = LinkedinTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 
             // Create the user
-            Auth.auth().createUser(withEmail: Email, password: Password) { (result, err) in
+            Auth.auth().createUser(withEmail: Email, password: Password) { [self] (result, err) in
                 
                 // Check for errors
                 if err != nil {
@@ -143,27 +150,19 @@ class TrainerSingupViewController: UIViewController {
                 else {
                     
                     // User was created successfully, now store the first name and last name
-                     let db = Firestore.firestore()
+                       let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkdein":Linkdein,"DOB":BOD,"uid": result!.user.uid ]
+                    
+                    ref.child("Trainers").setValue(db){_,_ in }
+                    self.transitionToHome()
 
-                    db.collection("Trainers").addDocument(data: ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkdein":Linkdein,"DOB":BOD,"uid": result!.user.uid ]) { (error) in
                         
                         if error != nil {
                             // Show error message
-                         //   self.showError("حدث خطأ ما !!")
-                            self.ErrorM.text = error!.localizedDescription
+                            self.showError("حدث خطأ ما !!")}
+                        
+                        }}}}
+                        
 
-                        }
-                    }
-                    self.transitionToHome()
-
-                }
-                
-            }
-            
-            
-            
-        }
-    }
     func showError(_ message : String )  {
         ErrorM.text = message
         ErrorM.alpha = 1

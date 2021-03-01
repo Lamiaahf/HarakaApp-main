@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class Service {
     
@@ -21,8 +22,9 @@ class Service {
         alert.addAction(okAction)
         
         return alert
+    
     }
     
     
-    
+  
 }
