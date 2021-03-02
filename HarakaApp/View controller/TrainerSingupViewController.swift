@@ -9,16 +9,20 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 class TrainerSingupViewController: UIViewController {
 // TS = SingupTrainer
+    @IBOutlet weak var AvatarUS: UIImageView!
+    var image :UIImage? = nil
+    @IBOutlet weak var tapToChangeProfileButton: UIButton!
+
     @IBOutlet weak var NameTS: UITextField!
     @IBOutlet weak var UsernameTS: UITextField!
     @IBOutlet weak var EmailTS: UITextField!
     @IBOutlet weak var PasswordTS: UITextField!
     @IBOutlet weak var ConfpasswordTS: UITextField!
-    @IBOutlet weak var DOB: UITextField!
-    let DatePicker = UIDatePicker()
+    @IBOutlet weak var Age: UITextField!
     @IBOutlet weak var LinkedinTS: UITextField!
    private  var ref : DatabaseReference!
 
@@ -40,7 +44,6 @@ class TrainerSingupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
-        creatDatePicker()
         ref = Database.database().reference()
 
     }
@@ -57,43 +60,41 @@ class TrainerSingupViewController: UIViewController {
         Utilities.styleTextField(EmailTS)
         Utilities.styleTextField(PasswordTS)
         Utilities.styleTextField(ConfpasswordTS)
-        Utilities.styleTextField(DOB)
+        Utilities.styleTextField(Age)
         Utilities.styleTextField(LinkedinTS)
         Utilities.styleFilledButton(Singup)
 
 
     }
-    func creatDatePicker()  {
-        DOB.textAlignment = .right
-        //toolbare
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        //bar button
-        let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
-        toolbar.setItems([doneBtn], animated: true)
+    
+    func setupAvatar (){
+        AvatarUS.layer.cornerRadius = 40
+        AvatarUS.clipsToBounds = true
+        AvatarUS.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer( target: self, action: #selector(TapToChange))
+        AvatarUS.addGestureRecognizer(tapGesture)
+    }
+    
+    // ImagePicker
+     
+    @IBAction func TapToChange(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
         
-        // assining toolbare
-        DOB.inputAccessoryView = toolbar
-        //assinge date pickre to text filde
-        DOB.inputView = DatePicker
-        // date picker mode to remove the time
-        DatePicker.datePickerMode = .date
+        
+        
     }
-    @objc func donePressed(){
-        //formatter
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        DOB.text = formatter.string(from:DatePicker.date)
-        self.view.endEditing(true)
-    }
+  
     func validatefields() -> String?{
     // all fields filled in
         if NameTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             UsernameTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             EmailTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             PasswordTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            ConfpasswordTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||       LinkedinTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || DOB.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            ConfpasswordTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||       LinkedinTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || Age.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             
             return "الرجاء التأكد من أن جميع الحقول ممتلئة ."
         }
@@ -111,6 +112,12 @@ class TrainerSingupViewController: UIViewController {
 
                     //Passwords dont match
             return "كلمة المرور غير متطابقة ."}
+        
+        let age = Int(Age.text!)
+           if (age! < 18 || age! > 60 )  {
+
+                    // the age should be  18-60
+            return "عذرا ، لكن يجب ان يكون عمرك ما بين ١٨-٦٠"}
 
             
         
@@ -119,6 +126,8 @@ class TrainerSingupViewController: UIViewController {
   
     //
     @IBAction func SingUpTapped(_ sender: Any) {
+        guard let imageSelected = self.image else {return}
+        guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
     
         // Validate the fields
         let error = validatefields()
@@ -135,7 +144,7 @@ class TrainerSingupViewController: UIViewController {
             let Username = UsernameTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let Email = EmailTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let Password = PasswordTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-           let BOD = DOB.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let age = Age.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let Linkdein = LinkedinTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
 
             // Create the user
@@ -150,9 +159,25 @@ class TrainerSingupViewController: UIViewController {
                 else {
                     
                     // User was created successfully, now store the first name and last name
-                       let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkdein":Linkdein,"DOB":BOD,"uid": result!.user.uid ]
+                    guard let user = result?.user else {return}
+
+                       let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkdein":Linkdein,"Age":age,"uid": result!.user.uid ]
+                    // save the image to firbase Storage and user
+                    let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
+                     let StorageProfilrRef  = storageRef.child("Profile").child(user.uid)
+                     let metaData = StorageMetadata()
                     
-                    ref.child("Trainers").setValue(db){_,_ in }
+                    metaData.contentType = "image/jpg"
+                    StorageProfilrRef.putData( imageData ,metadata: metaData) { (StorageMetadata, error) in
+                        if error != nil {return}
+                        // save image url as string
+                        StorageProfilrRef.downloadURL(completion: {(url , error ) in
+                        if let metaImageUrl = url?.absoluteString {
+
+                    let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Age":age ,"ProfilePic": metaImageUrl,"uid":user.uid ]
+                            ref.child("Trainers").childByAutoId().setValue(db){_,_ in }
+                        } })}
+                    
                     self.transitionToHome()
 
                         
@@ -179,47 +204,17 @@ class TrainerSingupViewController: UIViewController {
     
 }
     
-    //Handle with single Action
- /*  @IBAction func maleFemaleAction(_ sender: UIButton) {
-        uncheck()
-        sender.CBAnimation {
-            print(sender.titleLabel?.text ?? "")
-            print(sender.isSelected)
-        }
-        
-        // NOTE:- here you can recognize with tag weather it is `Male` or `Female`.
-        print(sender.tag)
-    }
-    
-    func uncheck(){
-        multiRadioButton.forEach { (button) in
-            button.isSelected = false
-        }
-    }
-    
-}
+extension TrainerSingupViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey :Any ]) {
+        if let imageSelected = info [UIImagePickerController.InfoKey.editedImage] as? UIImage {          image = imageSelected
+                      AvatarUS.image = imageSelected }
+        if let imageOrignal = info[UIImagePickerController.InfoKey.originalImage] as?
+        UIImage {
+            image = imageOrignal
 
-
-extension UIButton {
-    //MARK:- Animate check mark //CBAnimation =checkboxAnimation
-    func  CBAnimation(closure: @escaping () -> Void){
-        guard let image = self.imageView else {return}
-        self.adjustsImageWhenHighlighted = false
-        self.isHighlighted = false
-        
-        UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveLinear, animations: {
-            image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            
-        }) { (success) in
-            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear, animations: {
-                self.isSelected = !self.isSelected
-                //to-do
-                closure()
-                image.transform = .identity
-            }, completion: nil)
+            AvatarUS.image = imageOrignal
         }
-        
-    }
+        picker.dismiss(animated: true , completion: nil)
+    }}
     
-}
- */
+    

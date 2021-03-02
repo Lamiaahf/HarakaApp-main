@@ -14,6 +14,7 @@ target 'HarakaApp' do
      pod 'Firebase/Firestore'
      pod 'Firebase/Database'
      pod 'Firebase/Storage'
+     pod 'LBTAComponents'
 
 
 end

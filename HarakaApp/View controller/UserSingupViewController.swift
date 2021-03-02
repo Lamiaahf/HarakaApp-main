@@ -9,15 +9,17 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 
-class UserSingupViewController: UIViewController ,  UIImagePickerControllerDelegate , UINavigationControllerDelegate { //Start of class
+class UserSingupViewController: UIViewController  { //Start of class
 // US = User Singup
+    
  
     var ref : DatabaseReference!
     
     @IBOutlet weak var AvatarUS: UIImageView!
-    var imagePicker:UIImagePickerController!
+    var image :UIImage? = nil
 
     @IBOutlet weak var tapToChangeProfileButton: UIButton!
     
@@ -45,11 +47,16 @@ class UserSingupViewController: UIViewController ,  UIImagePickerControllerDeleg
         super.viewDidLoad()
         setUpElements()
         creatDatePicker()
-        AvatarUS.contentMode = .scaleAspectFit
-   
-      
+        setupAvatar()
     }
     
+    func setupAvatar (){
+        AvatarUS.layer.cornerRadius = 40
+        AvatarUS.clipsToBounds = true
+        AvatarUS.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer( target: self, action: #selector(TapToChange))
+        AvatarUS.addGestureRecognizer(tapGesture)
+    }
     
     // ImagePicker
      
@@ -148,8 +155,11 @@ class UserSingupViewController: UIViewController ,  UIImagePickerControllerDeleg
         
     
     
-    @IBAction func SignUpTapped(_ sender: Any)
-    {
+    @IBAction func SignUpTapped(_ sender: Any){
+        guard let imageSelected = self.image else {return}
+        guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
+        let uid = Auth.auth().currentUser?.uid
+
         // Validate the fields
         let error = validatefields()
         
@@ -183,8 +193,23 @@ class UserSingupViewController: UIViewController ,  UIImagePickerControllerDeleg
                   
                     // User was created successfully, now store the first name and last name
                     guard let user = result?.user else {return}
-                                let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"ConfPasswordUS":ConfPassword,"DOB":DOB ,"uid":user.uid ]
-                    ref.child("users").setValue(db){ _,_  in }
+                    
+                    
+                    // save the image to firbase Storage and user
+                    let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
+                     let StorageProfilrRef  = storageRef.child("Profile").child(user.uid)
+                     let metaData = StorageMetadata()
+                    
+                    metaData.contentType = "image/jpg"
+                    StorageProfilrRef.putData( imageData ,metadata: metaData) { (StorageMetadata, error) in
+                        if error != nil {return}
+                        // save image url as string
+                        StorageProfilrRef.downloadURL(completion: {(url , error ) in
+                        if let metaImageUrl = url?.absoluteString {
+
+                    let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"ConfPasswordUS":ConfPassword,"DOB":DOB ,"ProfilePic": metaImageUrl,"uid":user.uid ]
+                            ref.child("users").child(uid!).setValue(db){ _,_  in }
+                        } })}
                     self.transitionToHome()
 
                 }
@@ -212,5 +237,23 @@ class UserSingupViewController: UIViewController ,  UIImagePickerControllerDeleg
 
 }//End of class
 
+extension UserSingupViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey :Any ]) {
+        if let imageSelected = info [UIImagePickerController.InfoKey.editedImage] as? UIImage {          image = imageSelected
+                      AvatarUS.image = imageSelected }
+        if let imageOrignal = info[UIImagePickerController.InfoKey.originalImage] as?
+        UIImage {
+            image = imageOrignal
+
+            AvatarUS.image = imageOrignal
+        }
+        picker.dismiss(animated: true , completion: nil)
+    }}
+    
+    
+     
+    
+    
+    
 
  
