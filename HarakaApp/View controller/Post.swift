@@ -6,23 +6,21 @@
 //
 
 import UIKit
-import Firebase
 
 struct Post
 {
     var createdBy: User
-    var timeAgo: Date?
+    var timeAgo: String?
     var captionUI: String?
  //   var image: UIImage?
     var numOfLikesUI: Int?
     var numOfCommentsUI: Int?
-
-}
-
-struct User
-{
-    var usernameUI: String?
- //   var profileImage: UIImage? 
     
+//    var like: UIButton
+ //   var comment: UIButton
+    
+    var postID: String
+
 }
+
 

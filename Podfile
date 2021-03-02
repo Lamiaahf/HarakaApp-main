@@ -12,5 +12,6 @@ target 'HarakaApp' do
      pod 'Firebase/Auth'
      pod 'Firebase/Core'
      pod 'Firebase/Firestore'
+     pod 'Firebase/Database'
 
 end

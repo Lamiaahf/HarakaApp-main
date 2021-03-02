@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import FirebaseFirestore
+import FirebaseDatabase
 import FirebaseAuth
 
 class AddPostController: UIViewController{
    
    // Where the user types their posts
     @IBOutlet weak var postText: UITextView!
-    var postCounter: Int = 0
+    var postCounter: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,27 +25,35 @@ class AddPostController: UIViewController{
         if(t == ""){
             return
         }
-        let db = Firestore.firestore()
-        let posts = db.collection("Posts")
+        
+        var ref:  DatabaseReference!
+        ref = Database.database().reference()
+        
+        
         let time: Date = Date()
-        postCounter = postCounter+1
-     //   let user = LOGINViewController().EmailL.text!.trimmingCharacters(in: //.whitespacesAndNewlines)
-        let user = "Njood"
-        if(user == ""){
+        postCounter = postCounter+1 //this is supposed to be retrieved from user's data and concatanated with their name as the post ID
+
+        let user = Auth.auth().currentUser
+        let name = String(user?.email ?? "")
+        let charIndex = name.firstIndex(of: "@")
+        let username = String(name[..<charIndex!])
+
+        if(name == ""){
             return
         }
         
-        posts.addDocument(data:[
-            "caption": postText.text!,
-            "username": user,
-            "numOfLikes": 0,
-            "numOfComments":0,
-            "timestamp": time
-        ]) { (err) in
-            if let err = err {
-                debugPrint("error adding document: \(err)")
-            }
-        }
+        var postid = String(user!.uid)
+        postid = postid+"\(postCounter)"
+        
+        ref.child("posts").child(postid).setValue([
+                                                    "username": username,
+                                                    "caption": postText.text!,
+                                                    "numOfLikes": 0,
+                                                    "numOfComments":0,
+                                                    "timestamp": String(describing: time)]) { (error, snapshot) in if let error = error {
+            debugPrint("error adding post: \(String(describing: error))")
+        }}
+        
      //   self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
         

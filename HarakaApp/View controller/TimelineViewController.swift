@@ -8,11 +8,11 @@
 import UIKit
 import Firebase
 
-class TimelineViewController: UITableViewController{
+class TimelineViewController: UITableViewController {
     
     var posts:[Post]?
-    
-
+    var ref:  DatabaseReference!
+    var postrefs: [DataSnapshot]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,86 +22,32 @@ class TimelineViewController: UITableViewController{
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         
-    }
-    
-/*    func fetchPosts(){
+        ref = Database.database().reference().child("posts")
         
-        posts = Post.fetchPosts()
-        tableView.reloadData()
-    }*/
- 
-    override func viewWillAppear(_ animated: Bool) {
-        
-        var timelinePosts = [Post]()
-        timelinePosts.removeAll()
-        self.posts?.removeAll()
-        
-        // create a variable referencing a collection from the database
-        let postsCollectionRef = Firestore.firestore().collection("Posts")
-        
-        // get snapshot (contains documents), if not found will return error
-        postsCollectionRef.getDocuments{ (snapshot, error) in
-            if let err = error {
-                debugPrint("Error fetching documents: \(err)")
+        var refHandle = ref.observe(DataEventType.value, with: { (snapshot)  in
+            for child in snapshot.children{
+                let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+                let usern = postDict["udername"] as? String ?? ""
+                let times = postDict["timestamp"] as? String ?? ""
+                let cap = postDict["caption"] as? String ?? ""
+                let nol = postDict["numOfLikes"] as? Int ?? 0
+                let noc = postDict["numOfComments"] as? Int ?? 0
+                let id = postDict["id"] as? String ?? ""
+                
+                let postUser = User(usernameUI: usern, profileImage: UIImage(named:"figure.walk.circle"))
+                let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id)
+                self.posts?.append(newPost)
             }
-            else{
-                
-                guard let snap = snapshot else { return }
-                
-                // enter loop for each document
-                for document in snap.documents{
-                    // get data inside document
-                    let data = document.data()
-                    // read fields 
-                    let usern = data["username"] as? String ?? "Anon"
-                    let times = data["timestamp"] as? Date ?? Date()
-                    let cap = data["caption"] as? String ?? ""
-                    let nol = data["numOfLikes"] as? Int ?? 0
-                    let noc = data["numOfComments"] as? Int ?? 0
-                  //  let docID = document.documentID
-                    
-                    let postUser = User(usernameUI: usern)
-                    let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc)
-                    timelinePosts.append(newPost)
-                }
-                
-                self.posts = timelinePosts
-                self.tableView.reloadData()
-                // initialize the likes button to reflect the current state
-       //         self.likePost.isSelected = self.likes
-
-                // set the titles for the likes button per state
-            }
-        }
-    }
-    
-    /*
-    @IBAction func likePost(_ sender: Any) {
-       
-        if(likePost.currentBackgroundImage == UIImage(named: "heart.fill")){
-            likePost.setBackgroundImage(UIImage(named:"heart"), for: .normal)
-            guard let likes = Int((likePost.titleLabel?.text)!) else{ return }
-            let likesCount = likes - 1
-            likePost.setTitle("\(likesCount)", for: .normal)
-        }
-        else{
-            likePost.setBackgroundImage(UIImage(named: "heart.fill"), for: .highlighted)
-            guard let likes = Int((likePost.titleLabel?.text)!) else { return }
-            let likesCount = likes + 1
-            likePost.setTitle("\(likesCount)", for: .highlighted)
-        }
-       
-    }*/
-    
-    func updatePosts(){
-       // tableView.cellForRow(at: <#T##IndexPath#>)
-    
-        tableView.reloadData()
+            
+            self.tableView.reloadData()
+        })
+            
     }
     
 }
 
 extension TimelineViewController{
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let posts = posts{
@@ -119,6 +65,14 @@ extension TimelineViewController{
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("your row number: \(indexPath.row)")
+        
+     //
+        _ = tableView.cellForRow(at: indexPath)
+        
     }
     
 }
