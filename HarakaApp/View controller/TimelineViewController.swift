@@ -25,7 +25,7 @@ class TimelineViewController: UITableViewController {
         
    //     ref = Database.database().reference()
         var ref:  DatabaseReference!
-        ref = Database.database().reference()
+        ref = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
         ref.child("posts").getData {(error, snapshot) in if let error = error {
             
         } else if snapshot.exists() {
