@@ -375,7 +375,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1s6-sp-oh7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="898" y="-582"/>
         </scene>
         <!--Trainer Singup View Controller-->
@@ -496,9 +495,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cI-TC-zXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="-8" y="2223"/>
-
         </scene>
         <!--الإشعارات-->
         <scene sceneID="Vuc-36-SIV">
