@@ -8,69 +8,60 @@
 import UIKit
 import Firebase
 
-class TimelineViewController: UITableViewController{
+class TimelineViewController: UITableViewController {
     
     var posts:[Post]?
-    
+ //   var ref:  DatabaseReference!
+ //   var ref = Database.database().reference()
+    var postrefs: [DataSnapshot]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
      //   fetchPosts()
+        
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         
+   //     ref = Database.database().reference()
+        var ref:  DatabaseReference!
+        ref = Database.database().reference()
+        ref.child("posts").getData {(error, snapshot) in if let error = error {
+            
+        } else if snapshot.exists() {
+            
+            for child in snapshot.children{
+                let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+                let usern = postDict["username"] as? String ?? ""
+                let times = postDict["timestamp"] as? String ?? ""
+                let cap = postDict["caption"] as? String ?? ""
+                let nol = postDict["numOfLikes"] as? Int ?? 0
+                let noc = postDict["numOfComments"] as? Int ?? 0
+                let id = postDict["id"] as? String ?? ""
+                
+                let postUser = User(usernameUI: usern, profileImage: UIImage(named:"figure.walk.circle"))
+                let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id)
+                self.posts?.append(newPost)
+            }
+            self.tableView.reloadData()
+            
+        }else{
+            
+        }}
     }
     
-/*    func fetchPosts(){
-        
-        posts = Post.fetchPosts()
-        tableView.reloadData()
-    }*/
- 
-    override func viewWillAppear(_ animated: Bool) {
-        
-        var timelinePosts = [Post]()
-        timelinePosts.removeAll()
-        self.posts?.removeAll()
-        
-        // create a variable referencing a collection from the database
-        let postsCollectionRef = Firestore.firestore().collection("Posts")
-        
-        // get snapshot (contains documents), if not found will return error
-        postsCollectionRef.getDocuments{ (snapshot, error) in
-            if let err = error {
-                debugPrint("Error fetching documents: \(err)")
-            }
-            else{
-                
-                guard let snap = snapshot else { return }
-                
-                // enter loop for each document
-                for document in snap.documents{
-                    // get data inside document
-                    let data = document.data()
-                    // read fields 
-                    let usern = data["username"] as? String ?? "Anon"
-                    let times = data["timestamp"] as? Date ?? Date()
-                    let cap = data["caption"] as? String ?? ""
-                    let nol = data["numOfLikes"] as? Int ?? 0
-                    let noc = data["numOfComments"] as? Int ?? 0
-                  //  let docID = document.documentID
-                    
-                    let postUser = User(usernameUI: usern)
-                    let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc)
-                    timelinePosts.append(newPost)
-                }
-                self.posts = timelinePosts
-                self.tableView.reloadData()
-            }
-        }
+    override func viewDidAppear(_ animated: Bool) {
+
+    }
+    
+    func setObservers(){
+
     }
     
 }
 
 extension TimelineViewController{
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let posts = posts{
@@ -88,6 +79,14 @@ extension TimelineViewController{
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("your row number: \(indexPath.row)")
+        
+     //
+        _ = tableView.cellForRow(at: indexPath)
+        
     }
     
 }

@@ -253,6 +253,7 @@ macOS/tvOS/watchOS/Catalyst.
 To install, add a subset of the following to the Podfile:
 
 ```
+
 pod 'Firebase/ABTesting'
 pod 'Firebase/Auth'          # Limited watchOS support
 pod 'Firebase/Crashlytics'

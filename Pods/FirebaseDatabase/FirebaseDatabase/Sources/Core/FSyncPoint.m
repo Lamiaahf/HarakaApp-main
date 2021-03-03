@@ -158,6 +158,7 @@
     FViewCache *viewCache =
         [[FViewCache alloc] initWithEventCache:eventCacheNode
                                    serverCache:serverCache];
+
     return [[FView alloc] initWithQuery:query initialViewCache:viewCache];
 }
 
