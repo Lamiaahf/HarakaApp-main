@@ -8,12 +8,21 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import FirebaseFirestore
+import FirebaseDatabase
+import FirebaseStorage
 
-class UserSingupViewController: UIViewController {//Start of class
+
+class UserSingupViewController: UIViewController  { //Start of class
 // US = User Singup
+    
  
+    var ref : DatabaseReference!
+    
     @IBOutlet weak var AvatarUS: UIImageView!
+    var image :UIImage? = nil
+
+    @IBOutlet weak var tapToChangeProfileButton: UIButton!
+    
     @IBOutlet weak var NameUS: UITextField!
     
     @IBOutlet weak var UsernameUS: UITextField!
@@ -24,63 +33,63 @@ class UserSingupViewController: UIViewController {//Start of class
     
     @IBOutlet weak var ConfPasswordUS: UITextField!
     // BOD = DOB
-    @IBOutlet weak var BODUS: UITextField!
+    @IBOutlet weak var DOBUS: UITextField!
     let DatePicker = UIDatePicker()
 
+    
     @IBOutlet weak var Singup: UIButton!
-    
-    
     @IBOutlet weak var ErrorM: UILabel!
-    @IBOutlet  var multiRadioButton: [UIButton]!{
-        didSet{
-            multiRadioButton.forEach { (button) in
-                button.setImage(UIImage(named:"circle_radio_unselected"), for: .normal)
-                button.setImage(UIImage(named:"circle_radio_selected"), for: .selected)
-            }
-        }
-    }
+
     
     override func viewDidLoad() {
+        ref = Database.database().reference()
+
         super.viewDidLoad()
         setUpElements()
         creatDatePicker()
+        setupAvatar()
+    }
+    
+    func setupAvatar (){
+        AvatarUS.layer.cornerRadius = 40
+        AvatarUS.clipsToBounds = true
+        AvatarUS.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer( target: self, action: #selector(TapToChange))
+        AvatarUS.addGestureRecognizer(tapGesture)
+    }
+    
+    // ImagePicker
+     
+    @IBAction func TapToChange(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+        
+        
         
     }
+    
+ 
+    
+    
     func setUpElements() {
     
         ErrorM.alpha = 0
-
-    
         // Style the elements
         Utilities.styleTextField(NameUS)
         Utilities.styleTextField(UsernameUS)
         Utilities.styleTextField(EmailUS)
         Utilities.styleTextField(PasswordUS)
         Utilities.styleTextField(ConfPasswordUS)
-        Utilities.styleTextField(BODUS)
+        Utilities.styleTextField(DOBUS)
         Utilities.styleFilledButton(Singup)
     }
-    
-    
-    func setupAvatar() {
-        AvatarUS.layer.cornerRadius = 40
-        AvatarUS.clipsToBounds = true
-        AvatarUS.isUserInteractionEnabled = true
-        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
-        AvatarUS.addGestureRecognizer(tapgesture)}
-    
-    
-    @objc func presentPicker(){
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.allowsEditing = true
-        picker.delegate = self
-        self.present(picker, animated: true, completion: nil)
-    }
-    
+ 
     
     func creatDatePicker()  {
-        BODUS.textAlignment = .right
+        DOBUS.textAlignment = .right
         //toolbare
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -89,9 +98,9 @@ class UserSingupViewController: UIViewController {//Start of class
         toolbar.setItems([doneBtn], animated: true)
         
         // assining toolbare
-        BODUS.inputAccessoryView = toolbar
+        DOBUS.inputAccessoryView = toolbar
         //assinge date pickre to text filde
-        BODUS.inputView = DatePicker
+        DOBUS.inputView = DatePicker
         // date picker mode to remove the time
         DatePicker.datePickerMode = .date
     }
@@ -100,29 +109,14 @@ class UserSingupViewController: UIViewController {//Start of class
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
-        BODUS.text = formatter.string(from:DatePicker.date)
+        DOBUS.text = formatter.string(from:DatePicker.date)
         self.view.endEditing(true)
     }
     
   
     
-    //Handle with single Action
-    @IBAction  func maleFemaleAction(_ sender: UIButton){
-        uncheck()
-        sender.checkboxAnimation {
-            print(sender.titleLabel?.text ?? "")
-            print(sender.isSelected)
-        }
-        
-        // NOTE:- here you can recognize with tag weather it is `Male` or `Female`.
-        print(sender.tag)
-    }
-    
-    func uncheck(){
-        multiRadioButton.forEach { (button) in
-            button.isSelected = false
-        }
-    }
+ 
+  
     // check thev fields and validat data if everything is correct the methode will return nil otherwise its will return error massge
     func validatefields() -> String?{
     // all fields filled in
@@ -131,7 +125,7 @@ class UserSingupViewController: UIViewController {//Start of class
             EmailUS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             PasswordUS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             ConfPasswordUS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-        BODUS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+            DOBUS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             
             return "الرجاء التأكد من أن جميع الحقول ممتلئة ."
         }
@@ -144,21 +138,28 @@ class UserSingupViewController: UIViewController {//Start of class
             return " الرجاء التأكد من ان كلمة المرور تتكون من ٨ خانات تحتوي على حروف وارقام ."
         }
 
-            
+
         else if PasswordUS.text != ConfPasswordUS.text {
 
                     //Passwords dont match
             return "كلمة المرور غير متطابقة ."}
+       /* let  date = Date()
+        else if( DOBUS.text - date < 18 )"" ||(DOBUS.text - date > 60 )   {
 
-            
+                    //Passwords dont match
+            return " عذرا السن غير مناسب "
+
+            }*/
         
             return nil}
         
     
     
-    @IBAction func SignUpTapped(_ sender: Any) {
-    
-        
+    @IBAction func SignUpTapped(_ sender: Any){
+        guard let imageSelected = self.image else {return}
+        guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
+        let uid = Auth.auth().currentUser?.uid
+
         // Validate the fields
         let error = validatefields()
         
@@ -174,11 +175,12 @@ class UserSingupViewController: UIViewController {//Start of class
             let Username = UsernameUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let Email = EmailUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let Password = PasswordUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-           let ConfPassword = ConfPasswordUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let DOB = BODUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let ConfPassword = ConfPasswordUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let DOB = DOBUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+ 
+                    Auth.auth().createUser(withEmail: Email, password: Password) { [self] (result, err) in
+                        
 
-            // Create the user
-            Auth.auth().createUser(withEmail: Email, password: Password) { (result, err) in
                 
                 // Check for errors
                 if err != nil {
@@ -187,28 +189,36 @@ class UserSingupViewController: UIViewController {//Start of class
                     self.showError("حدث خطأ !")
                 }
                 else {
-                    
+               
+                  
                     // User was created successfully, now store the first name and last name
-                     let db = Firestore.firestore()
+                    guard let user = result?.user else {return}
+                    
+                    
+                    // save the image to firbase Storage and user
+                    let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
+                     let StorageProfilrRef  = storageRef.child("Profile").child(user.uid)
+                     let metaData = StorageMetadata()
+                    
+                    metaData.contentType = "image/jpg"
+                    StorageProfilrRef.putData( imageData ,metadata: metaData) { (StorageMetadata, error) in
+                        if error != nil {return}
+                        // save image url as string
+                        StorageProfilrRef.downloadURL(completion: {(url , error ) in
+                        if let metaImageUrl = url?.absoluteString {
 
-                    db.collection("users").addDocument(data: ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"ConfPasswordUS":ConfPassword,"DOB":DOB,"uid": result!.user.uid ]) { (error) in
-                        
-                        if error != nil {
-                            // Show error message
-                         //   self.showError("حدث خطأ ما !!")
-                            self.ErrorM.text = error!.localizedDescription
-
-                        }
-                    }
+                    let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"ConfPasswordUS":ConfPassword,"DOB":DOB ,"ProfilePic": metaImageUrl,"uid":user.uid ]
+                            ref.child("users").child(uid!).setValue(db){ _,_  in }
+                        } })}
                     self.transitionToHome()
 
                 }
                 
             }
             
-            
-            
         }
+                    
+        
     }
     func showError(_ message : String )  {
         ErrorM.text = message
@@ -223,46 +233,27 @@ class UserSingupViewController: UIViewController {//Start of class
         view.window?.makeKeyAndVisible()
         
     }
-  
+
+
 }//End of class
 
-extension UIButton {
-    //MARK:- Animate check mark
-    func checkboxAnimation(closure: @escaping () -> Void){
-        guard let image = self.imageView else {return}
-        self.adjustsImageWhenHighlighted = false
-        self.isHighlighted = false
-        
-        UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveLinear, animations: {
-            image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            
-        }) { (success) in
-            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear, animations: {
-                self.isSelected = !self.isSelected
-                //to-do
-                closure()
-                image.transform = .identity
-            }, completion: nil)
-        }
-        
-    }
-    
-}
-extension UserSingupViewController : UIImagePickerControllerDelegate , UINavigationControllerDelegate{
-     func imagePickerController(_ picker : UIImagePickerController, didFinishPickingMediaWithInfo info :[UIImagePickerController.InfoKey : Any]){
-        
-        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-        {   AvatarUS.image = imageSelected
-        }
-        if let imageOriginal = info [UIImagePickerController.InfoKey.originalImage] as?
+extension UserSingupViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey :Any ]) {
+        if let imageSelected = info [UIImagePickerController.InfoKey.editedImage] as? UIImage {          image = imageSelected
+                      AvatarUS.image = imageSelected }
+        if let imageOrignal = info[UIImagePickerController.InfoKey.originalImage] as?
         UIImage {
-            AvatarUS.image = imageOriginal}
-        
-    picker.dismiss (animated :true , completion : nil)
+            image = imageOrignal
+
+            AvatarUS.image = imageOrignal
+        }
+        picker.dismiss(animated: true , completion: nil)
     }}
     
     
+     
     
     
     
 
+ 
