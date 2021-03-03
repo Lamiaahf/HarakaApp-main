@@ -51,49 +51,11 @@ class TimelineViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        ref.child("posts").getData {(error, snapshot) in if let error = error {
-            
-        } else if snapshot.exists() {
-            
-            for child in snapshot.children{
-                let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-                let usern = postDict["username"] as? String ?? ""
-                let times = postDict["timestamp"] as? String ?? ""
-                let cap = postDict["caption"] as? String ?? ""
-                let nol = postDict["numOfLikes"] as? Int ?? 0
-                let noc = postDict["numOfComments"] as? Int ?? 0
-                let id = postDict["id"] as? String ?? ""
-                
-                let postUser = User(usernameUI: usern, profileImage: UIImage(named:"figure.walk.circle"))
-                let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id)
-                self.posts?.append(newPost)
-            }
-            self.tableView.reloadData()
-            
-        }else{
-            
-        }}
+
     }
     
     func setObservers(){
-        var refHandle = ref.child("posts").observe(DataEventType.value, with: { (snapshot)  in
-            for child in snapshot.children{
-            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
-                let usern = postDict["username"] as? String ?? ""
-                let times = postDict["timestamp"] as? String ?? ""
-                let cap = postDict["caption"] as? String ?? ""
-                let nol = postDict["numOfLikes"] as? Int ?? 0
-                let noc = postDict["numOfComments"] as? Int ?? 0
-                let id = postDict["id"] as? String ?? ""
-                
-                let postUser = User(usernameUI: usern, profileImage: UIImage(named:"figure.walk.circle"))
-                let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id)
-                self.posts?.append(newPost)
-            }
-            
-            self.tableView.reloadData()
-        })
-        
+
     }
     
 }
