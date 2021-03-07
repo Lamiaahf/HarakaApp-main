@@ -16,3 +16,8 @@ struct User
     var profileImage: UIImage?
     
 }
+
+struct Trainer {
+    
+    var trainerID: String?
+}
