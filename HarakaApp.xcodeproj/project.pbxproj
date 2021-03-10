@@ -34,6 +34,11 @@
 		9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07425D13531002E0AAB /* SearchTableViewController.swift */; };
 		9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07525D13531002E0AAB /* MyTabBar.swift */; };
 		9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07625D13531002E0AAB /* myTabBarCtrl.swift */; };
+		CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */; };
+		CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033325F41ABE00C4ACE4 /* Room.swift */; };
+		CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033825F41DB400C4ACE4 /* RoomViewController.swift */; };
+		CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6034125F4353E00C4ACE4 /* ChatCell.swift */; };
+		CED6034525F43C5E00C4ACE4 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6034425F43C5E00C4ACE4 /* Messages.swift */; };
 		F9F49256EE71AF5DBDB64948 /* Pods_HarakaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +74,11 @@
 		9449C07525D13531002E0AAB /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		9449C07625D13531002E0AAB /* myTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTabBarCtrl.swift; sourceTree = "<group>"; };
 		CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.release.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.release.xcconfig"; sourceTree = "<group>"; };
+		CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
+		CED6033325F41ABE00C4ACE4 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		CED6033825F41DB400C4ACE4 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		CED6034125F4353E00C4ACE4 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		CED6034425F43C5E00C4ACE4 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarakaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,9 +164,9 @@
 				3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */,
 				3F775B6725ED5426001FDD9D /* SettingsViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
-
 				236C961225E182BB0032ECC3 /* AddPostController.swift */,
 				230273AE25E93C4A00DC6C31 /* UserInfo.swift */,
+				CED6033E25F4333C00C4ACE4 /* chatRooms */,
 			);
 			path = "View controller";
 			sourceTree = "<group>";
@@ -177,6 +187,26 @@
 				D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CED6033225F41A6800C4ACE4 /* models "rooms" */ = {
+			isa = PBXGroup;
+			children = (
+				CED6033325F41ABE00C4ACE4 /* Room.swift */,
+				CED6034425F43C5E00C4ACE4 /* Messages.swift */,
+			);
+			path = "models \"rooms\"";
+			sourceTree = "<group>";
+		};
+		CED6033E25F4333C00C4ACE4 /* chatRooms */ = {
+			isa = PBXGroup;
+			children = (
+				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
+				CED6033825F41DB400C4ACE4 /* RoomViewController.swift */,
+				CED6034125F4353E00C4ACE4 /* ChatCell.swift */,
+				CED6033225F41A6800C4ACE4 /* models "rooms" */,
+			);
+			path = chatRooms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,18 +335,23 @@
 				3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
+				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
 				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
 				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
 				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
+				CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */,
+				CED6034525F43C5E00C4ACE4 /* Messages.swift in Sources */,
 				3F6A0DF125DD2AA600AAB91A /* PostCell.swift in Sources */,
 				3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */,
 				236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */,
 				9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */,
+				CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */,
 				9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */,
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
 				3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */,
 				3F6A0DF025DD2AA600AAB91A /* Post.swift in Sources */,
+				CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

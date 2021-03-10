@@ -12,7 +12,7 @@ import FirebaseDatabase
 let cUser = Auth.auth().currentUser
 let ref = Database.database().reference()
 
-struct CurrentUser{
+struct currentUser{
     
     let cuEmail = cUser?.email
     let cuID = cUser?.uid
