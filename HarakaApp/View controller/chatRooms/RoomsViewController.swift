@@ -19,7 +19,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var newRoomTextField: UITextField!
     
     var rooms = [Room]()
-    var ref: DatabaseReference!
+    //var ref: DatabaseReference!
     
     
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.RoomsTable.delegate = self
         self.RoomsTable.dataSource = self
         
-        ref = Database.database(url:"https://haraka-73691-default-rtdb.firebaseio.com/").reference();        self.ref.child("rooms").getData(completion:{(error,snapshot)in
+     /*   ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference();        self.ref.child("rooms").getData(completion:{(error,snapshot)in
             
             if let error = error {print(error.localizedDescription)}
             
@@ -50,27 +50,27 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 }}
             (snapshot.exists())
         })
+        */
         
         
-        
-       // self.observeRoom()
+       self.observeRoom()
 
         // Do any additional setup after loading the view.
     }
     
-    /*func observeRoom(){
-        let databaseRef = Database.database().reference()
+    func observeRoom(){
+        let databaseRef = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
         databaseRef.child("rooms").observe(.childAdded) {
             (snapshot) in
-            if let roomData = snapshot.value as? [String: Any]{
-                if let name = roomData ["name"] as? String{
-                    let room = Room.init(name:name)
+            if let dataArray = snapshot.value as? [String: Any]{
+                if let name = dataArray ["name"] as? String {
+                    let room = Room.init(rId: snapshot.key, rname: name)
                 self.rooms.append(room)
                 self.RoomsTable.reloadData()
                 
             }}
         }
-    }*/
+    }
     
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let room = self.rooms[indexPath.row]

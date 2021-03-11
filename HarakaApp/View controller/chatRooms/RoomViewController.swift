@@ -87,7 +87,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
             let roomRef = Database.database().reference().child("rooms").child(roomId)
             let newMessageRef = roomRef.child("messages").childByAutoId()
             //   ServerValue.timestamp()
-            let ref = Database.database().reference().child("users").child(userId).child("username")
+            let ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("users").child(userId).child("Username")
             ref.observeSingleEvent(of: .value) { (snapshot) in
                 let userName = snapshot.value as! String
                 if(text != nil){

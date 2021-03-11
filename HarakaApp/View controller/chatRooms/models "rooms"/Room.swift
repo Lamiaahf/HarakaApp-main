@@ -14,10 +14,9 @@ struct Room {
     var ownerId:String?
     
     
-    init(rId:String, rname:String , oId:String ){
+    init(rId:String, rname:String ){
         self.roomId=rId
         self.name=rname
-        self.ownerId=oId
     }
     
 

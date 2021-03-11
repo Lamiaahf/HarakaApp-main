@@ -539,7 +539,7 @@
         <!--Room View Controller-->
         <scene sceneID="IwH-Ek-6cO">
             <objects>
-                <viewController storyboardIdentifier="chatRoom" id="4ZY-a8-M9R" customClass="RoomViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoomViewController" id="4ZY-a8-M9R" customClass="RoomViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5QJ-ak-69o">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -660,6 +660,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YYH-Nj-Q5X"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" red="0.39745837449999999" green="0.57975798850000004" blue="0.64694875480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YYH-Nj-Q5X" firstAttribute="trailing" secondItem="ukr-mg-EtR" secondAttribute="trailing" id="1HA-0x-YHp"/>
                             <constraint firstItem="ukr-mg-EtR" firstAttribute="top" secondItem="YYH-Nj-Q5X" secondAttribute="top" id="6v1-ts-32Z"/>
