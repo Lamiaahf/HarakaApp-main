@@ -13,28 +13,24 @@ class ChatCell: UITableViewCell {
         case outgoing
     }
 
+
     @IBOutlet weak var senderNameLabel: UILabel!
+    
     @IBOutlet weak var textView: UITextView!
     
+    
     @IBOutlet weak var chatStack: UIStackView!
-
-
-    @IBOutlet weak var textViewBobbleView: UIView!
     
     
-    override func awakeFromNib() {
+    @IBOutlet weak var textViewBubbleView: UIView!
+    
+    
+   override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.textViewBobbleView.layer.cornerRadius = 9
+        self.textViewBubbleView.layer.cornerRadius = 9
         self.textView.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
     }
-    
-   
-  
-  
-    
-  
-    
     
     //  self.messageContainerView.layer.cornerRadius = 10
     // Initialization code
@@ -53,14 +49,13 @@ func setBubbleType(type: bubbleType){
     if(type == .outgoing){
         print("incoming !")
         self.chatStack.alignment = .trailing
-        self.textViewBobbleView.backgroundColor =
-            self.textView.textColor; #colorLiteral(red: 0.3974583745, green: 0.5797579885, blue: 0.6469487548, alpha: 1)
+        self.textViewBubbleView.backgroundColor = #colorLiteral(red: 0.3893923163, green: 0.5757610798, blue: 0.6470988393, alpha: 1)
         self.textView.textColor = UIColor.white
         
     }
     else if(type == .incoming){
         self.chatStack.alignment = .leading
-        self.textViewBobbleView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        self.textViewBubbleView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         self.textView.textColor = UIColor.black
 
     }

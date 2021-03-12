@@ -22,9 +22,12 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
     var room:Room?
     var messages = [Message]()
 
-    @IBOutlet weak var messagesTable: UITableView!
+  
     @IBOutlet weak var newMessageTextField: UITextField!
-   
+    
+    @IBOutlet weak var messagesTable: UITableView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +78,10 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+
     @IBAction func didPressSendMessage(_ sender: UIButton) {
-        
+    
+    
         if let messageText = self.newMessageTextField.text{
             self.sendMessage(text: messageText, imageLink: nil)
         }    }
@@ -84,7 +89,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
     func sendMessage(text: String?, imageLink: String?){
         if let userId = Auth.auth().currentUser?.uid, let roomId = self.room?.roomId{
             
-            let roomRef = Database.database().reference().child("rooms").child(roomId)
+            let roomRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("rooms").child(roomId)
             let newMessageRef = roomRef.child("messages").childByAutoId()
             //   ServerValue.timestamp()
             let ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("users").child(userId).child("Username")
@@ -104,7 +109,9 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
- 
+    @IBAction func didPressBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messages.count
     }

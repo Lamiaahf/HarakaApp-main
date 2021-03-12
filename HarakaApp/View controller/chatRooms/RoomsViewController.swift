@@ -15,7 +15,9 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     
 
-    @IBOutlet var RoomsTable: UITableView!
+    
+    @IBOutlet weak var RoomsTable: UITableView!
+    
     @IBOutlet weak var newRoomTextField: UITextField!
     
     var rooms = [Room]()
@@ -84,7 +86,7 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return    }
         self.newRoomTextField.resignFirstResponder()
         
-        let databaseRef = Database.database().reference()
+        let databaseRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
 
         let roomRef = databaseRef.child("rooms").childByAutoId()
         let roomData:[String: Any] = ["creatorId" : userId, "name": roomName]
