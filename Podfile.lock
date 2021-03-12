@@ -260,7 +260,6 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/Logger (~> 7.0)
     - nanopb (~> 2.30907.0)
-
   - FirebaseDatabase (7.7.0):
     - FirebaseCore (~> 7.0)
     - leveldb-library (~> 1.22)
@@ -384,7 +383,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
-
   Firebase: cd2ab85eec8170dc260186159f21072ecb679ad5
   FirebaseAnalytics: f3f8f75de34fe04141a69bb1c4bd7e24a80178e1
   FirebaseAuth: 76aa97ecd51e20ecd21321d08474d25f5d2b7b9f
@@ -406,7 +404,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
 
-
-PODFILE CHECKSUM: 5af85a17a723b1b64674a26dd25ca29332a61520
+PODFILE CHECKSUM: 05056a9d69dd30495f15faff688b82280728a493
 
 COCOAPODS: 1.10.1
