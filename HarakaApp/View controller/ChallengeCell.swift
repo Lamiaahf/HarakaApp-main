@@ -11,6 +11,7 @@ class ChallengeCell: UITableViewCell{
     
     @IBOutlet weak var challengeLabel: UILabel!
     @IBOutlet weak var deadlineLabel: UILabel!
+    @IBOutlet weak var trainerLabel: UILabel!
     
     @IBOutlet weak var progressButton: UIButton!
     var challenge: Challenge!{
