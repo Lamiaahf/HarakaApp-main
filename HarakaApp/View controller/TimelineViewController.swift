@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class TimelineViewController: UITableViewController {
     
@@ -21,13 +22,13 @@ class TimelineViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         
-        ref = Database.database().reference()
+        ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
         fetchPosts()
         tableView.reloadData()
         }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.ref.child("posts").observe(.value, with: { snapshot in
+        self.ref.observe(.value, with: { snapshot in
             
             if snapshot.value == nil { print("nothing found") }
             
@@ -53,14 +54,15 @@ class TimelineViewController: UITableViewController {
             } // End of else
             
         })
+        fetchPosts()
         tableView.reloadData()
     }
     
     func fetchPosts(){
         
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
-        print(self.ref.child("posts").description())
-        self.ref.child("posts").getData(completion: { error,snapshot in
+    //    print(self.ref.child("posts").description())
+        self.ref.getData(completion: { error,snapshot in
             
             if let error = error { print("nothing found") }
             
