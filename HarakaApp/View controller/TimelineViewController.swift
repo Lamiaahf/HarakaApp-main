@@ -12,7 +12,7 @@ import FirebaseDatabase
 class TimelineViewController: UITableViewController {
     
     var posts:[Post]?
-    var ref:  DatabaseReference!
+    
     var postrefs: [DataSnapshot]?
     
     override func viewDidLoad() {
@@ -22,13 +22,14 @@ class TimelineViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         
-        ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-        fetchPosts()
-        tableView.reloadData()
+   //     fetchPosts()
+     //   tableView.reloadData()
         }
-    
+ 
     override func viewDidAppear(_ animated: Bool) {
-        self.ref.observe(.value, with: { snapshot in
+        var ref:  DatabaseReference!
+        ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+        ref.child("posts").observe(.value, with: { snapshot in
             
             if snapshot.value == nil { print("nothing found") }
             
@@ -54,15 +55,18 @@ class TimelineViewController: UITableViewController {
             } // End of else
             
         })
-        fetchPosts()
+//        fetchPosts()
         tableView.reloadData()
     }
+    
     
     func fetchPosts(){
         
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
     //    print(self.ref.child("posts").description())
-        self.ref.getData(completion: { error,snapshot in
+        var ref:  DatabaseReference!
+        ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+        ref.child("posts").getData(completion: { error,snapshot in
             
             if let error = error { print("nothing found") }
             

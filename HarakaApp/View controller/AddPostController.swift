@@ -27,7 +27,7 @@ class AddPostController: UIViewController{
         }
         
         var ref:  DatabaseReference!
-        ref = Database.database().reference()
+        ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
         
         
         let time: Date = Date()
