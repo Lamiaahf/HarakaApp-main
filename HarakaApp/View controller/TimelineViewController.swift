@@ -21,18 +21,48 @@ class TimelineViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         
-        ref = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-        
+        ref = Database.database().reference()
         fetchPosts()
         tableView.reloadData()
         }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.ref.child("posts").observe(.value, with: { snapshot in
+            
+            if snapshot.value == nil { print("nothing found") }
+            
+            else{
+                if(snapshot.exists()){
+                        
+                    for child in snapshot.children.allObjects as! [DataSnapshot]{
+                        guard let postDict = child.value as?[String:Any] else{ return }
+                        let usern = postDict["username"] as? String ?? ""
+                        let times = postDict["timestamp"] as? String ?? ""
+                        let cap = postDict["caption"] as? String ?? ""
+                        let nol = postDict["numOfLikes"] as? Int ?? 0
+                        let noc = postDict["numOfComments"] as? Int ?? 0
+                        let id = postDict["id"] as? String ?? ""
+                        
+                        let postUser = User(usernameUI: usern, profileImage: UIImage(named:"figure.walk.circle"))
+                        let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id)
+                        self.posts?.append(newPost)
+                        
+                    } // End of loop
+                } // End of If (snapshot.exists)
+                    
+            } // End of else
+            
+        })
+        tableView.reloadData()
+    }
+    
     func fetchPosts(){
         
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
-        self.ref.child("posts").getData(completion: { (error, snapshot) in
+        print(self.ref.child("posts").description())
+        self.ref.child("posts").getData(completion: { error,snapshot in
             
-            if let error = error{ print(error.localizedDescription) }
+            if let error = error { print("nothing found") }
             
             else{
                 if(snapshot.exists()){

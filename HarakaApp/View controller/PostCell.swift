@@ -21,6 +21,8 @@ class PostCell: UITableViewCell{
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     
+    let ref = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+    
     
     var post: Post!{
         didSet{
@@ -46,30 +48,51 @@ class PostCell: UITableViewCell{
         
         
         likeButton.isSelected = self.likes
-        likeButton.setTitle("0", for: .normal)
+ //       likeButton.setTitle("0", for: .normal)
+        likesLabel.setValue("\(post.numOfLikesUI)", forKey: "likes")
         likeButton.setBackgroundImage(UIImage(named: "heart"), for: .normal)
-        likeButton.setTitle("1", for: .selected)
+//        likeButton.setTitle("1", for: .selected)
         likeButton.setBackgroundImage(UIImage(named:"heart.fill"), for: .selected)
     }
     
     @IBAction func like(_ sender: Any) {
         
+        if(!likes){
+            ref.child("PostLikes").child(self.post.postID).childByAutoId().setValue([
+                "uid":String(describing: Auth.auth().currentUser?.uid)])
+            
+            post.numOfLikesUI = post.numOfLikesUI!+1
+        }else{
+            ref.child("PostLikes").child(self.post.postID).queryEqual(toValue: String(describing: Auth.auth().currentUser?.uid), childKey: "uid")
+            
+            //Or just let the autoid be uid and instead of uid store username
+        }
+        
+        
+        
+
+        
      
         
-        if (likeButton.imageView?.image == UIImage(named: "heart.fill")) {
-               //set default
-               likeButton.setImage(UIImage(named: "heart"), for: .normal)
-           } else{
-               // set like
-               likeButton.setImage(UIImage(named: "like"), for: .normal)
-           }
-        
-        
-        // toggle the likes state
-      //  self.likes = !self.likeButton.isSelected
-           // set the likes button accordingly
-      //  self.likeButton.isSelected = self.likes
+    
     }
     
     
 }
+
+/*
+ 
+ if (likeButton.imageView?.image == UIImage(named: "heart.fill")) {
+        //set default
+        likeButton.setImage(UIImage(named: "heart"), for: .normal)
+    } else{
+        // set like
+        likeButton.setImage(UIImage(named: "like"), for: .normal)
+    }
+ 
+ 
+ // toggle the likes state
+ self.likes = !self.likeButton.isSelected
+ // set the likes button accordingly
+ self.likeButton.isSelected = self.likes
+ */

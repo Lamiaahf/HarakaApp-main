@@ -45,7 +45,7 @@ class AddPostController: UIViewController{
         var postid = String(user!.uid)
         postid = postid+"\(postCounter)"
         
-        ref.child("posts").child(postid).setValue([
+        ref.child("posts").childByAutoId().setValue([
                                                     "username": username,
                                                     "caption": postText.text!,
                                                     "numOfLikes": 0,
