@@ -26,12 +26,10 @@ class AddPostController: UIViewController{
             return
         }
         
-        var ref:  DatabaseReference!
-        ref = Database.database().reference()
+        let ref = Database.database().reference()
         
         
         let time: Date = Date()
-        postCounter = postCounter+1 //this is supposed to be retrieved from user's data and concatanated with their name as the post ID
 
         let user = Auth.auth().currentUser
         let name = String(user?.email ?? "")
@@ -42,10 +40,7 @@ class AddPostController: UIViewController{
             return
         }
         
-        var postid = String(user!.uid)
-        postid = postid+"\(postCounter)"
-        
-        ref.child("posts").child(postid).setValue([
+        ref.child("posts").childByAutoId().setValue([
                                                     "username": username,
                                                     "caption": postText.text!,
                                                     "numOfLikes": 0,

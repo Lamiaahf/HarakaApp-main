@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230273AE25E93C4A00DC6C31 /* UserInfo.swift */; };
+		232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E738A25F56B560029D39C /* ChallengeCell.swift */; };
+		232E738E25F56BAC0029D39C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E738D25F56BAC0029D39C /* Challenge.swift */; };
+		232E739125F588290029D39C /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E739025F588290029D39C /* ChallengeViewController.swift */; };
 		236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C961225E182BB0032ECC3 /* AddPostController.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
 		3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */; };
@@ -44,6 +47,9 @@
 
 /* Begin PBXFileReference section */
 		230273AE25E93C4A00DC6C31 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		232E738A25F56B560029D39C /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
+		232E738D25F56BAC0029D39C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		232E739025F588290029D39C /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		236C961225E182BB0032ECC3 /* AddPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,9 @@
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
 				236C961225E182BB0032ECC3 /* AddPostController.swift */,
 				230273AE25E93C4A00DC6C31 /* UserInfo.swift */,
+				232E738A25F56B560029D39C /* ChallengeCell.swift */,
+				232E738D25F56BAC0029D39C /* Challenge.swift */,
+				232E739025F588290029D39C /* ChallengeViewController.swift */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
 			);
 			path = "View controller";
@@ -325,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
+				232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */,
 				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
 				3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */,
 				3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */,
@@ -332,6 +342,7 @@
 				3FD4742825D3264700260C1A /* Service.swift in Sources */,
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
 				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,
+				232E738E25F56BAC0029D39C /* Challenge.swift in Sources */,
 				3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
@@ -350,6 +361,7 @@
 				9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */,
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
 				3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */,
+				232E739125F588290029D39C /* ChallengeViewController.swift in Sources */,
 				3F6A0DF025DD2AA600AAB91A /* Post.swift in Sources */,
 				CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */,
 			);
