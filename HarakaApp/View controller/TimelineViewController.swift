@@ -42,7 +42,7 @@ class TimelineViewController: UITableViewController {
                     let noc = postDict["numOfComments"] as? Int ?? 0
                     let id = String(snapshot.key)
                     
-                    let postUser = User(u: usern, p: UIImage(named:"figure.walk.circle"))
+                let postUser = User(u: usern, p: UIImage(systemName: "figure"))
                 let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:self.checkLike(postid: id))
              //       postArray.insert(newPost, at: indx)
                     self.posts?.append(newPost)
