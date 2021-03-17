@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
+		3F5EC4CD25FA3C62009C07FB /* OtherUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5EC4CC25FA3C62009C07FB /* OtherUsersViewController.swift */; };
+		3F5EC55325FA6790009C07FB /* FollowUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5EC55225FA6790009C07FB /* FollowUsersTableViewController.swift */; };
 		3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */; };
 		3F6A0DF025DD2AA600AAB91A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DED25DD2AA600AAB91A /* Post.swift */; };
 		3F6A0DF125DD2AA600AAB91A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */; };
 		3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
+		3F9EBDEE25F398980034CE1F /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9EBDED25F398980034CE1F /* AdminLoginViewController.swift */; };
+		3F9EBE2825F413D10034CE1F /* AdminMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9EBE2725F413D10034CE1F /* AdminMainViewController.swift */; };
 		3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */; };
+		3FB6BA1A25EF95D100483AA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FB6BA1925EF95D100483AA9 /* GoogleService-Info.plist */; };
 		3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F625C81CFB0098C299 /* AppDelegate.swift */; };
 		3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */; };
 		3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14FA25C81CFB0098C299 /* ViewController.swift */; };
@@ -25,7 +30,6 @@
 		3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB153225C9CF4B0098C299 /* SingupAsViewController.swift */; };
 		3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */; };
 		3FBB155725CE96780098C299 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB155525CE96780098C299 /* Utilities.swift */; };
-		3FBB155E25D12CC60098C299 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */; };
 		3FD4742825D3264700260C1A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4742725D3264600260C1A /* Service.swift */; };
 		3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */; };
 		9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07125D1350C002E0AAB /* HomePageViewController.swift */; };
@@ -37,12 +41,17 @@
 
 /* Begin PBXFileReference section */
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F5EC4CC25FA3C62009C07FB /* OtherUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersViewController.swift; sourceTree = "<group>"; };
+		3F5EC55225FA6790009C07FB /* FollowUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUsersTableViewController.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimelineViewController.swift; path = ../../../../Downloads/TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../../../../Downloads/Post.swift; sourceTree = "<group>"; };
 		3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = ../../../../Downloads/PostCell.swift; sourceTree = "<group>"; };
 		3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3F775B6725ED5426001FDD9D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3F9EBDED25F398980034CE1F /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
+		3F9EBE2725F413D10034CE1F /* AdminMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMainViewController.swift; sourceTree = "<group>"; };
 		3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		3FB6BA1925EF95D100483AA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FBB14F325C81CFB0098C299 /* HarakaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarakaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBB14F625C81CFB0098C299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +65,6 @@
 		3FBB153225C9CF4B0098C299 /* SingupAsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingupAsViewController.swift; sourceTree = "<group>"; };
 		3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingupViewController.swift; sourceTree = "<group>"; };
 		3FBB155525CE96780098C299 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FD4742725D3264600260C1A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSingupViewController.swift; sourceTree = "<group>"; };
 		8FDCB37063508050981CA58F /* Pods-HarakaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.debug.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,7 +126,7 @@
 		3FBB14F525C81CFB0098C299 /* HarakaApp */ = {
 			isa = PBXGroup;
 			children = (
-				3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */,
+				3FB6BA1925EF95D100483AA9 /* GoogleService-Info.plist */,
 				3FBB155325CE96780098C299 /* Helpers */,
 				3FBB14F625C81CFB0098C299 /* AppDelegate.swift */,
 				3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */,
@@ -141,15 +149,19 @@
 				3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */,
 				9449C07125D1350C002E0AAB /* HomePageViewController.swift */,
 				9449C07525D13531002E0AAB /* MyTabBar.swift */,
+				3F9EBDED25F398980034CE1F /* AdminLoginViewController.swift */,
+				3F9EBE2725F413D10034CE1F /* AdminMainViewController.swift */,
 				9449C07625D13531002E0AAB /* myTabBarCtrl.swift */,
 				9449C07425D13531002E0AAB /* SearchTableViewController.swift */,
 				3F6A0DED25DD2AA600AAB91A /* Post.swift */,
 				3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */,
 				3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */,
 				3FBB14FA25C81CFB0098C299 /* ViewController.swift */,
-				3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */,
 				3F775B6725ED5426001FDD9D /* SettingsViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
+				3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */,
+				3F5EC4CC25FA3C62009C07FB /* OtherUsersViewController.swift */,
+				3F5EC55225FA6790009C07FB /* FollowUsersTableViewController.swift */,
 			);
 			path = "View controller";
 			sourceTree = "<group>";
@@ -232,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FBB150325C81CFD0098C299 /* LaunchScreen.storyboard in Resources */,
-				3FBB155E25D12CC60098C299 /* GoogleService-Info.plist in Resources */,
+				3FB6BA1A25EF95D100483AA9 /* GoogleService-Info.plist in Resources */,
 				3FBB150025C81CFD0098C299 /* Assets.xcassets in Resources */,
 				3FBB14FE25C81CFB0098C299 /* Main.storyboard in Resources */,
 			);
@@ -297,8 +309,12 @@
 				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,
 				3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
+				3F5EC4CD25FA3C62009C07FB /* OtherUsersViewController.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
 				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
+				3F9EBDEE25F398980034CE1F /* AdminLoginViewController.swift in Sources */,
+				3F9EBE2825F413D10034CE1F /* AdminMainViewController.swift in Sources */,
+				3F5EC55325FA6790009C07FB /* FollowUsersTableViewController.swift in Sources */,
 				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
 				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
 				3F6A0DF125DD2AA600AAB91A /* PostCell.swift in Sources */,

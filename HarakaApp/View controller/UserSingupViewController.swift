@@ -17,6 +17,7 @@ class UserSingupViewController: UIViewController  { //Start of class
     
  
     var ref : DatabaseReference!
+
     
     @IBOutlet weak var AvatarUS: UIImageView!
     var image :UIImage? = nil
@@ -43,7 +44,6 @@ class UserSingupViewController: UIViewController  { //Start of class
     
     override func viewDidLoad() {
         ref = Database.database().reference()
-
         super.viewDidLoad()
         setUpElements()
         creatDatePicker()
@@ -66,9 +66,6 @@ class UserSingupViewController: UIViewController  { //Start of class
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true)
-        
-        
-        
     }
     
  
@@ -158,7 +155,7 @@ class UserSingupViewController: UIViewController  { //Start of class
     @IBAction func SignUpTapped(_ sender: Any){
         guard let imageSelected = self.image else {return}
         guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
-        let uid = Auth.auth().currentUser?.uid
+     //   let uid = Auth.auth().currentUser?.uid
 
         // Validate the fields
         let error = validatefields()
@@ -178,8 +175,9 @@ class UserSingupViewController: UIViewController  { //Start of class
             let ConfPassword = ConfPasswordUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let DOB = DOBUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
  
-                    Auth.auth().createUser(withEmail: Email, password: Password) { [self] (result, err) in
-                        
+                Auth.auth().createUser(withEmail: Email, password: Password) { [self] (result, err) in
+                let uid = Auth.auth().currentUser?.uid
+
 
                 
                 // Check for errors
@@ -207,19 +205,14 @@ class UserSingupViewController: UIViewController  { //Start of class
                         StorageProfilrRef.downloadURL(completion: {(url , error ) in
                         if let metaImageUrl = url?.absoluteString {
 
-                    let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"ConfPasswordUS":ConfPassword,"DOB":DOB ,"ProfilePic": metaImageUrl,"uid":user.uid ]
+                    let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"DOB":DOB ,"ProfilePic": metaImageUrl]
                             ref.child("users").child(uid!).setValue(db){ _,_  in }
                         } })}
                     self.transitionToHome()
 
-                }
+                }}}}
                 
-            }
-            
-        }
-                    
-        
-    }
+    
     func showError(_ message : String )  {
         ErrorM.text = message
         ErrorM.alpha = 1

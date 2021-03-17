@@ -24,7 +24,7 @@ class TrainerSingupViewController: UIViewController {
     @IBOutlet weak var ConfpasswordTS: UITextField!
     @IBOutlet weak var Age: UITextField!
     @IBOutlet weak var LinkedinTS: UITextField!
-   private  var ref : DatabaseReference!
+    private  var ref : DatabaseReference!
 
     
    
@@ -87,7 +87,8 @@ class TrainerSingupViewController: UIViewController {
         
         
     }
-  
+   
+
     func validatefields() -> String?{
     // all fields filled in
         if NameTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -161,7 +162,6 @@ class TrainerSingupViewController: UIViewController {
                     // User was created successfully, now store the first name and last name
                     guard let user = result?.user else {return}
 
-                       let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkdein":Linkdein,"Age":age,"uid": result!.user.uid ]
                     // save the image to firbase Storage and user
                     let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
                      let StorageProfilrRef  = storageRef.child("Profile").child(user.uid)
@@ -174,11 +174,11 @@ class TrainerSingupViewController: UIViewController {
                         StorageProfilrRef.downloadURL(completion: {(url , error ) in
                         if let metaImageUrl = url?.absoluteString {
 
-                    let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Age":age ,"ProfilePic": metaImageUrl,"uid":user.uid ]
-                            ref.child("Trainers").childByAutoId().setValue(db){_,_ in }
+                            let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Age":age ,"ProfilePic": metaImageUrl,"Linkdein": Linkdein]
+                            ref.child("Trainers").child("Unapproved").childByAutoId().setValue(db){_,_ in }
                         } })}
                     
-                    self.transitionToHome()
+               //     self.transitionToHome()
 
                         
                         if error != nil {
@@ -192,7 +192,7 @@ class TrainerSingupViewController: UIViewController {
         ErrorM.text = message
         ErrorM.alpha = 1
     }
-    
+    /*
     func transitionToHome() {
         
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? MyTabBarCtrl
@@ -200,7 +200,7 @@ class TrainerSingupViewController: UIViewController {
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
         
-    }
+    }*/
     
 }
     

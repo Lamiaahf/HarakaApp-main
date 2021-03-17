@@ -8,12 +8,16 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
-import LBTAComponents
  
 class UserProfileViewController:  UIViewController {
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
-  
+    //Serch for frinds
+    var loggedInUser:AnyObject?
+    var loggedInUserData:NSDictionary?
+    var listFollowers = [NSDictionary?]()//store all the followers
+    var listFollowing = [NSDictionary?]()
+    
     @IBOutlet weak var Userimg: UIImageView!
 
     @IBOutlet weak var Username: UILabel!
@@ -27,7 +31,9 @@ class UserProfileViewController:  UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
         getUserInfo()
+
     //    setupUserimg()
 
     }
@@ -38,30 +44,45 @@ class UserProfileViewController:  UIViewController {
         Userimg.clipsToBounds = true
         Userimg.isUserInteractionEnabled = true
     }
+    
+    /*
+    func getUserInfo() {
+        guard let uid = Auth.auth().currentUser?.uid else {print ("nil"); return}
+       
+        databaseRef.child("users").child(uid).observe(.value, with: { snapshot in
+      print(snapshot.value)
+    })
+        
+         
+    }*/
+
+    
      func getUserInfo() {
     
     //func getUserInfo() {
         if Auth.auth().currentUser != nil {
-            guard let uid = Auth.auth().currentUser?.uid else {return}
-            databaseRef.child("users").child(uid).observeSingleEvent(of: .value, with: {(snapshot)
+            guard let uid = Auth.auth().currentUser?.uid else {print ("nil"); return}
+
+            databaseRef.child("users").child(uid).observe(.value , with : {snapshot
                 in
-                guard let dict = snapshot.value as? [String : Any ] else {return}
+                guard let dict = snapshot.value as? [String:Any] else {return}
               
-                let user = CurrentUser( uid : uid , dictionary : dict)
+                let user = CurrentUser( uid : uid , dictionary : dict )
                 self.Name.text = user.name
                 self.Username.text = user.username
-               // self.Userimg.loadImage(urlString : user.userimg)
-              //  }
                 
-            }, withCancel: {(err) in
-                print (err)
-            })
-        }
-     }
+               
+                Storage.storage().reference(forURL: user.userimg).getData(maxSize: 1048576, completion: { (data, error) in
 
-    
-    
-    
+                    guard let imageData = data, error == nil else {
+                        return
+                    }
+                    self.Userimg.image = UIImage(data: imageData)
+                    self.setupUserimg()
+
+                })
+                
+            })}}
 
    
     @IBAction func showComponents(_ sender: Any) {
@@ -86,12 +107,38 @@ class UserProfileViewController:  UIViewController {
     
     
     
-   /* internal func setPic (imageView : UIImage, imageToSet: UIImage){
-        imageView.layar.cornerRadius = 10.0
-        imageView.layar.comasksToBounds = true
-        imageView.image = imageToSet }
-            
-    */
+    
+  //  Pass contextual data along with the segue
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if(segue.identifier == "findUser")
+    {
+        let showFollowingTableViewController = segue.destination as! FollowUsersTableViewController
+        
+
+        showFollowingTableViewController.loggedInUser = self.loggedInUser as? CurrentUser
+        
+          //showFollowingTableViewController.followData = self.followData
+    } /*
+    
+    else if(segue.identifier == "showFollowersTableViewController")
+    {
+        let showFollowersTableViewController = segue.destination as! ShowFollowersTableViewController
+        showFollowersTableViewController.user = self.loggedInUser as? FIRUser
+        
+    }
+    else if(segue.identifier == "showNewTweetViewController")
+    {
+     
+        let showNewTweetViewController = segue.destination as! NewTweetViewController
+        showNewTweetViewController.listFollowers = self.listFollowers
+        showNewTweetViewController.loggedInUserData = self.loggedInUserData
+    }*/
+
+    
 }
-
-
+    
+    
+ 
+}// End Class
