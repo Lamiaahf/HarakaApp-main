@@ -26,12 +26,10 @@ class AddPostController: UIViewController{
             return
         }
         
-        var ref:  DatabaseReference!
-        ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+        let ref = Database.database().reference()
         
         
         let time: Date = Date()
-        postCounter = postCounter+1 //this is supposed to be retrieved from user's data and concatanated with their name as the post ID
 
         let user = Auth.auth().currentUser
         let name = String(user?.email ?? "")
@@ -41,9 +39,6 @@ class AddPostController: UIViewController{
         if(name == ""){
             return
         }
-        
-        var postid = String(user!.uid)
-        postid = postid+"\(postCounter)"
         
         ref.child("posts").childByAutoId().setValue([
                                                     "username": username,

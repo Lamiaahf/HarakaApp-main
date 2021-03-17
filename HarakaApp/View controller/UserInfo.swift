@@ -10,10 +10,15 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-struct User
+class User
 {
-    var usernameUI: String?
-    var profileImage: UIImage?
+    public var usernameUI: String?
+    public var profileImage: UIImage?
+    
+    init(u: String?, p: UIImage?) {
+        usernameUI = u
+        profileImage = p
+    }
     
 }
 

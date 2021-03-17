@@ -21,7 +21,7 @@ class PostCell: UITableViewCell{
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     
-    let ref = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+    let ref = Database.database().reference()
     
     
     var post: Post!{
@@ -29,14 +29,7 @@ class PostCell: UITableViewCell{
             updateTimeline()
         }
     }
-    var likes : Bool {
-         get {
-            return UserDefaults.standard.bool(forKey: "likes")
-         }
-         set {
-            UserDefaults.standard.set(newValue, forKey: "likes")
-         }
-    }
+   
     
     func updateTimeline(){
         profileImageView.image = post.createdBy.profileImage
@@ -47,35 +40,41 @@ class PostCell: UITableViewCell{
         commentsLabel.text = "\(post.numOfCommentsUI!)"
         
         
-        likeButton.isSelected = self.likes
- //       likeButton.setTitle("0", for: .normal)
-        likesLabel.setValue("\(post.numOfLikesUI)", forKey: "likes")
-        likeButton.setBackgroundImage(UIImage(named: "heart"), for: .normal)
-//        likeButton.setTitle("1", for: .selected)
-        likeButton.setBackgroundImage(UIImage(named:"heart.fill"), for: .selected)
+        likesLabel.text = String(post.numOfLikesUI ?? 0)
+        if (!post.liked!){
+            likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+        }
+        else{
+            likeButton.setBackgroundImage(UIImage(systemName:"heart.fill"), for: .normal)
+        }
+        
     }
     
     @IBAction func like(_ sender: Any) {
         
-        if(!likes){
-            ref.child("PostLikes").child(self.post.postID).childByAutoId().setValue([
-                "uid":String(describing: Auth.auth().currentUser?.uid)])
-            
+        guard let id = post.postID else {return}
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        if(!post.liked!){
+            ref.child("PostLikes").child(id).childByAutoId().setValue(["uid":uid])
+            post.liked = true
             post.numOfLikesUI = post.numOfLikesUI!+1
         }else{
-            ref.child("PostLikes").child(self.post.postID).queryEqual(toValue: String(describing: Auth.auth().currentUser?.uid), childKey: "uid")
-            
-            //Or just let the autoid be uid and instead of uid store username
+            ref.child("PostLikes").child(id).queryOrdered(byChild:"uid").queryEqual(toValue:uid).ref.removeValue()
+            post.liked = false
+            post.numOfLikesUI = post.numOfLikesUI!-1
         }
-        
-        
-        
-
-        
-     
-        
+        updatePost()
+        }
     
+    
+    func updatePost(){
+        ref.child("posts").child(post.postID!).updateChildValues([
+                    "numOfLikes":post.numOfLikesUI!,
+                    "numOfComments":post.numOfCommentsUI!])
+        
     }
+        
     
     
 }
