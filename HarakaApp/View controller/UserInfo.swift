@@ -19,6 +19,10 @@ class User
         usernameUI = u
         profileImage = p
     }
+}
+
+struct currentUser{
+
     
 }
 
