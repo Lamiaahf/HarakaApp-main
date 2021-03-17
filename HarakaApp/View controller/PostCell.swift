@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PostCell: UITableViewCell{
     
@@ -13,10 +14,11 @@ class PostCell: UITableViewCell{
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var postImageView: UIImageView!
+   // @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
+    
     
     var post: Post!{
         didSet{
@@ -25,13 +27,13 @@ class PostCell: UITableViewCell{
     }
     
     func updateTimeline(){
-        profileImageView.image = post.createdBy.profileImage
-        usernameLabel.text = post.createdBy.username
-        timeAgoLabel.text = post.timeAgo
-        captionLabel.text = post.caption
-        postImageView.image = post.image
-        likesLabel.text = "\(post.numOfLikes!)"
-        commentsLabel.text = "\(post.numOfComments!)"
+//        profileImageView.image = post.createdBy.profileImage
+        usernameLabel.text = post.createdBy.usernameUI
+        timeAgoLabel.text = "\(post.timeAgo!)"
+        captionLabel.text = post.captionUI
+   //     postImageView.image = post.image
+        likesLabel.text = "\(post.numOfLikesUI!)"
+        commentsLabel.text = "\(post.numOfCommentsUI!)"
         
     }
     

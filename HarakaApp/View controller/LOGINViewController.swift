@@ -19,10 +19,13 @@ class LOGINViewController: UIViewController {
     @IBOutlet weak var login: UIButton!
     
     @IBOutlet weak var Singupform: UIButton!
+ //   weak var
+  //  let postUser = User(usernameUI: usern)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
-
+  //      let postUser = User(usernameUI: "")
 
         // Do any additional setup after loading the view.
     }
@@ -63,4 +66,5 @@ class LOGINViewController: UIViewController {
             }
         }
     }
+    
 }
