@@ -12,6 +12,7 @@
 		232E738E25F56BAC0029D39C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E738D25F56BAC0029D39C /* Challenge.swift */; };
 		232E739125F588290029D39C /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E739025F588290029D39C /* ChallengeViewController.swift */; };
 		236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C961225E182BB0032ECC3 /* AddPostController.swift */; };
+		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
 		3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */; };
 		3F6A0DF025DD2AA600AAB91A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0DED25DD2AA600AAB91A /* Post.swift */; };
@@ -51,6 +52,7 @@
 		232E738D25F56BAC0029D39C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		232E739025F588290029D39C /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		236C961225E182BB0032ECC3 /* AddPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
+		23985FBE26021BB100FB2764 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				232E738D25F56BAC0029D39C /* Challenge.swift */,
 				232E739025F588290029D39C /* ChallengeViewController.swift */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
+				23985FBE26021BB100FB2764 /* GameViewController.swift */,
 			);
 			path = "View controller";
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				232E738E25F56BAC0029D39C /* Challenge.swift in Sources */,
 				3F6A0DEF25DD2AA600AAB91A /* TimelineViewController.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
+				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
 				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
