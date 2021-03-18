@@ -34,6 +34,8 @@
 		9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07425D13531002E0AAB /* SearchTableViewController.swift */; };
 		9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07525D13531002E0AAB /* MyTabBar.swift */; };
 		9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07625D13531002E0AAB /* myTabBarCtrl.swift */; };
+		CEBE937D2602758F00A0E363 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE937C2602758F00A0E363 /* CalenderViewController.swift */; };
+		CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE9380260387A700A0E363 /* AddViewController.swift */; };
 		CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */; };
 		CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033325F41ABE00C4ACE4 /* Room.swift */; };
 		CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033825F41DB400C4ACE4 /* RoomViewController.swift */; };
@@ -74,6 +76,8 @@
 		9449C07525D13531002E0AAB /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		9449C07625D13531002E0AAB /* myTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTabBarCtrl.swift; sourceTree = "<group>"; };
 		CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.release.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.release.xcconfig"; sourceTree = "<group>"; };
+		CEBE937C2602758F00A0E363 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderViewController.swift; path = "../New Group/CalenderViewController.swift"; sourceTree = "<group>"; };
+		CEBE9380260387A700A0E363 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddViewController.swift; path = "../New Group/AddViewController.swift"; sourceTree = "<group>"; };
 		CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		CED6033325F41ABE00C4ACE4 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		CED6033825F41DB400C4ACE4 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CEBE9383260387D300A0E363 /* calender */ = {
+			isa = PBXGroup;
+			children = (
+				CEBE937C2602758F00A0E363 /* CalenderViewController.swift */,
+				CEBE9380260387A700A0E363 /* AddViewController.swift */,
+			);
+			path = calender;
+			sourceTree = "<group>";
+		};
 		CED6033225F41A6800C4ACE4 /* models "rooms" */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +214,7 @@
 		CED6033E25F4333C00C4ACE4 /* chatRooms */ = {
 			isa = PBXGroup;
 			children = (
+				CEBE9383260387D300A0E363 /* calender */,
 				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
 				CED6033825F41DB400C4ACE4 /* RoomViewController.swift */,
 				CED6034125F4353E00C4ACE4 /* ChatCell.swift */,
@@ -344,12 +358,14 @@
 				CED6034525F43C5E00C4ACE4 /* Messages.swift in Sources */,
 				3F6A0DF125DD2AA600AAB91A /* PostCell.swift in Sources */,
 				3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */,
+				CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */,
 				236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */,
 				9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */,
 				CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */,
 				9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */,
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
 				3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */,
+				CEBE937D2602758F00A0E363 /* CalenderViewController.swift in Sources */,
 				3F6A0DF025DD2AA600AAB91A /* Post.swift in Sources */,
 				CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */,
 			);
