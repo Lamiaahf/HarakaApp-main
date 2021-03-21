@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Post
+class Post
 {
      var createdBy: User
      var timeAgo: String?
@@ -21,6 +21,24 @@ struct Post
     
      var postID: String?
     var liked: Bool?
+    
+    init(createdBy: User, timeAgo: String?, captionUI: String?, numOfLikesUI: Int?, numOfCommentsUI: Int?, postID: String?, liked: Bool?){
+        self.createdBy = createdBy
+        self.timeAgo = timeAgo
+        self.captionUI = captionUI
+        self.numOfLikesUI = numOfLikesUI
+        self.numOfCommentsUI = numOfCommentsUI
+        self.postID = postID
+        self.liked = liked
+        
+    }
+    func isLiked() -> Bool {
+        return TimelineViewController().checkLike(post: self)
+    }
+    
+    func setLiked(flag: Bool){
+        self.liked = true
+    }
 
 }
 

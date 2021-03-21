@@ -42,8 +42,8 @@ class TimelineViewController: UITableViewController {
                     let noc = postDict["numOfComments"] as? Int ?? 0
                     let id = String(snapshot.key)
                     
-                let postUser = User(u: usern, p: UIImage(systemName: "figure"))
-                let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:self.checkLike(postid: id))
+                var postUser = User(u: usern, p: UIImage(systemName: "figure"))
+                var newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:false)
              //       postArray.insert(newPost, at: indx)
                     self.posts?.append(newPost)
                   //  postArray.append(newPost)
@@ -56,20 +56,26 @@ class TimelineViewController: UITableViewController {
         }
     }
     
-    func checkLike(postid: String) -> Bool {
+     func checkLike(post: Post) -> Bool {
         
         var uid = Auth.auth().currentUser?.uid
         var flag = false
-        
-        Database.database().reference().child("PostLikes").child(postid).queryOrdered(byChild:"\(uid)").queryEqual(toValue:true).ref
-            //.queryEqual(toValue: uid).
-            .getData(completion: {
-            error, snapshot in
-            if let error = error {print(error.localizedDescription)}
-            if snapshot.exists() {
-                flag = true
+        var check = ""
+        let ref = Database.database().reference()
+        ref.child("PostLikes").child(post.postID!).observe(.childAdded){
+            (snapshot) in
+            if let postDict = snapshot.value as? [String: Any]{
+                if(postDict.keys.contains(uid!)){
+                    check = "found"
+                    flag = true
+                    post.setLiked(flag: true)
+                    print(flag)
+                }
             }
-        })
+        }
+        if(check == "found"){
+            return true
+        }
         return flag
     }
     
@@ -79,7 +85,7 @@ extension TimelineViewController{
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let posts = posts{
+        if var posts = posts{
             return posts.count
         }
         return 0

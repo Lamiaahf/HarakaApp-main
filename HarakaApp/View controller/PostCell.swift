@@ -41,6 +41,10 @@ class PostCell: UITableViewCell{
         
         
         likesLabel.text = String(post.numOfLikesUI ?? 0)
+        var flag = false
+        if(post.isLiked()){
+             flag = true
+        }
         if (!post.liked!){
             likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
         }
