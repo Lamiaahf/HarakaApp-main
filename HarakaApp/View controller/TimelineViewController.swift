@@ -61,9 +61,11 @@ class TimelineViewController: UITableViewController {
         var uid = Auth.auth().currentUser?.uid
         var flag = false
         
-        Database.database().reference().child("PostLikes").child(postid).queryOrdered(byChild: "uid").queryEqual(toValue: uid).getData(completion: {
+        Database.database().reference().child("PostLikes").child(postid).queryOrdered(byChild:"\(uid)").queryEqual(toValue:true).ref
+            //.queryEqual(toValue: uid).
+            .getData(completion: {
             error, snapshot in
-            if let error = error {return}
+            if let error = error {print(error.localizedDescription)}
             if snapshot.exists() {
                 flag = true
             }
