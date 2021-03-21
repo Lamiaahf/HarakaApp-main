@@ -10,10 +10,23 @@ import Firebase
 
 class CommentCell: UITableViewCell{
     
-    @IBOutlet weak var writtenBy: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     
-    @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var profilePic: UIImage!
     
-    @IBOutlet weak var commentText: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
+    var comment: Comment!{
+        didSet{
+            //updateComments()
+        }
+    }
+    
+    func updateComments(){
+        
+        usernameLabel.text = comment.writtenBy.usernameUI
+        profilePic = comment.writtenBy.profileImage
+        commentLabel.text = comment.commentText
+        
+    }
 }

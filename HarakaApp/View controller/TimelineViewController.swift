@@ -85,7 +85,7 @@ extension TimelineViewController{
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if var posts = posts{
+        if let posts = posts{
             return posts.count
         }
         return 0

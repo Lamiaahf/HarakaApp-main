@@ -54,6 +54,10 @@ class PostCell: UITableViewCell{
         
     }
     
+    @IBAction func openComments(_ sender: Any) {
+        
+    }
+    
     @IBAction func like(_ sender: Any) {
         
         guard let id = post.postID else {return}

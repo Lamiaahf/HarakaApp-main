@@ -577,8 +577,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="commentLabel" destination="Qcq-Es-Ajf" id="Qfd-IX-n1g"/>
                                             <outlet property="commentText" destination="Qcq-Es-Ajf" id="j9R-ZR-N5d"/>
                                             <outlet property="profilePic" destination="bGD-Kz-HkH" id="QG5-Ku-8z1"/>
+                                            <outlet property="usernameLabel" destination="U7K-B7-VGK" id="LRi-yq-Og1"/>
                                             <outlet property="writtenBy" destination="U7K-B7-VGK" id="MOA-av-9Xz"/>
                                         </connections>
                                     </tableViewCell>
@@ -594,11 +596,18 @@
                                 <rect key="frame" x="316" y="615" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ارسال"/>
+                                <connections>
+                                    <action selector="postComment:" destination="Lgj-fR-4eq" eventType="touchUpInside" id="dln-Rx-rr4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S3t-Ig-oQS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="commentField" destination="DXQ-gx-5VV" id="NIJ-8p-rXL"/>
+                        <outlet property="commentsTable" destination="TVf-WC-CFg" id="HAg-TN-Noo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVS-gq-1GH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -892,6 +901,7 @@
                                             <color key="tintColor" red="0.44588272229999998" green="0.55164075479999997" blue="0.58818409969999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <state key="normal" image="text.bubble" catalog="system"/>
                                             <connections>
+                                                <action selector="openComments:" destination="3Ls-sW-tgS" eventType="touchUpInside" id="IG5-Kg-CcI"/>
                                                 <segue destination="Lgj-fR-4eq" kind="showDetail" id="6Tz-Ka-n8H"/>
                                             </connections>
                                         </button>
