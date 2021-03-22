@@ -55,7 +55,7 @@ class PostCell: UITableViewCell{
     }
     
     @IBAction func openComments(_ sender: Any) {
-        
+        CommentViewController()
     }
     
     @IBAction func like(_ sender: Any) {

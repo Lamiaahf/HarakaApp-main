@@ -11,13 +11,16 @@ import Firebase
 class CommentViewController: UIViewController, UITableViewDelegate {
     
     var comments: [Comment]?
+    var post: Post
     
 //    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var commentsTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         commentsTable.separatorStyle = .none
         commentsTable.estimatedRowHeight = commentsTable.rowHeight
         commentsTable.rowHeight = UITableView.automaticDimension
@@ -25,6 +28,10 @@ class CommentViewController: UIViewController, UITableViewDelegate {
         
         comments = []
         fetchComments()
+    }
+    
+    func setPost(post: Post){
+        self.post = post
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
