@@ -375,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1s6-sp-oh7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="-582"/>
+            <point key="canvasLocation" x="543" y="-574"/>
         </scene>
         <!--Trainer Singup View Controller-->
         <scene sceneID="QJG-gP-fny">
@@ -495,7 +495,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cI-TC-zXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-340" y="2729"/>
+            <point key="canvasLocation" x="-403" y="2120"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7wW-ab-e93">
@@ -516,7 +516,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJ8-Kl-o6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2409" y="2072"/>
+            <point key="canvasLocation" x="1448" y="3086"/>
         </scene>
         <!--الإشعارات-->
         <scene sceneID="Vuc-36-SIV">
@@ -632,7 +632,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVS-gq-1GH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341.5384615384614" y="2333.8862559241707"/>
+            <point key="canvasLocation" x="1372" y="1971"/>
         </scene>
         <!--Room View Controller-->
         <scene sceneID="uab-jE-1dt">
@@ -988,7 +988,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdV-fN-Nuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="1543"/>
+            <point key="canvasLocation" x="1834" y="994"/>
         </scene>
         <!--Challenge View Controller-->
         <scene sceneID="byM-49-thW">
@@ -1062,7 +1062,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f04-14-DAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3442" y="1565"/>
+            <point key="canvasLocation" x="2849" y="994"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kfj-Nu-9YC">
@@ -1136,7 +1136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qq1-1l-84e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997" y="2334"/>
+            <point key="canvasLocation" x="2231" y="1971"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Y0o-Se-RzB">
@@ -1203,7 +1203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYR-xg-b7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3432" y="2276"/>
+            <point key="canvasLocation" x="3125" y="1971"/>
         </scene>
         <!--محادثات-->
         <scene sceneID="zS2-Se-Gfw">
@@ -1541,20 +1541,8 @@
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-Gb-bT8">
-                                <rect key="frame" x="201" y="239" width="173" height="173"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="التحديات ">
-                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="wNY-xz-dJT" kind="show" id="9Fu-eP-Mf9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiU-EY-ZfV">
-                                <rect key="frame" x="16" y="433" width="173" height="173"/>
+                                <rect key="frame" x="16" y="614" width="358" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.77477198839999994" green="0.82204610109999998" blue="0.91348594429999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1566,7 +1554,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vh-wO-ocW" userLabel="المجموعات">
-                                <rect key="frame" x="16" y="368" width="173" height="173"/>
+                                <rect key="frame" x="16" y="432" width="173" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.75260585550000003" green="0.89437574149999999" blue="0.91175466780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1575,6 +1563,18 @@
                                 </state>
                                 <connections>
                                     <segue destination="2sC-la-WC5" kind="show" id="8xL-c5-bLA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-Gb-bT8">
+                                <rect key="frame" x="201" y="239" width="173" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="التحديات ">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wNY-xz-dJT" kind="show" id="9Fu-eP-Mf9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1588,7 +1588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfs-xY-E4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="-1"/>
+            <point key="canvasLocation" x="2027.6923076923076" y="-1.4218009478672986"/>
         </scene>
         <!--البحث-->
         <scene sceneID="Puz-3N-4Un">
@@ -1670,7 +1670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNn-b9-q7H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="3443"/>
+            <point key="canvasLocation" x="708" y="4644"/>
         </scene>
         <!--Create Challenge-->
         <scene sceneID="cVi-K5-qFW">
@@ -1695,7 +1695,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSe-Fq-HzM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="37" y="3466"/>
+            <point key="canvasLocation" x="-926" y="4666"/>
         </scene>
         <!--الصفحة الرئيسية-->
         <scene sceneID="8yh-Ng-s8u">
@@ -1748,7 +1748,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-09-PcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="3443"/>
+            <point key="canvasLocation" x="-15" y="4644"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4Uw-bc-pHU">
@@ -1764,7 +1764,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVu-Wg-D46" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2411" y="3443"/>
+            <point key="canvasLocation" x="1448" y="4644"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="woG-hv-5g4">
@@ -1780,7 +1780,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjr-gO-dJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3195" y="3443"/>
+            <point key="canvasLocation" x="2231" y="4644"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="diU-LL-0qM">
@@ -1797,7 +1797,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMi-xV-9rS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3948" y="2786"/>
+            <point key="canvasLocation" x="2985" y="3985"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="T3i-6l-PIX">
@@ -1813,7 +1813,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNI-qc-TBH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3948" y="3443"/>
+            <point key="canvasLocation" x="2985" y="4644"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1dR-ls-UBC">
@@ -1830,7 +1830,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAR-pv-lVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3194" y="2785"/>
+            <point key="canvasLocation" x="2231" y="3985"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="32b-T3-Ddh">
@@ -1847,7 +1847,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WP9-je-rPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2411" y="2785"/>
+            <point key="canvasLocation" x="1448" y="3985"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jxy-NS-HmP">
@@ -1864,7 +1864,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSm-Xu-wKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="2785"/>
+            <point key="canvasLocation" x="708" y="3985"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8nl-9a-5yu">
@@ -1881,7 +1881,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcs-DF-jgQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="2785"/>
+            <point key="canvasLocation" x="-15" y="3985"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="x2z-qY-sde">
@@ -2031,7 +2031,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="pAM-Ja-N9h"/>
+        <segue reference="tEi-oZ-rgX"/>
         <segue reference="LFd-Xh-5l6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
