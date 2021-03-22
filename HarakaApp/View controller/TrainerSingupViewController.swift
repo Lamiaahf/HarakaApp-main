@@ -159,6 +159,8 @@ class TrainerSingupViewController: UIViewController {
                 else {
                     
                     // User was created successfully, now store the first name and last name
+                   
+                    
                     guard let user = result?.user else {return}
 
                        let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkdein":Linkdein,"Age":age,"uid": result!.user.uid ]

@@ -21,20 +21,15 @@ class PostCell: UITableViewCell{
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentButton: UIButton!
     
+    let ref = Database.database().reference()
+    
     
     var post: Post!{
         didSet{
             updateTimeline()
         }
     }
-    var likes : Bool {
-         get {
-            return UserDefaults.standard.bool(forKey: "likes")
-         }
-         set {
-            UserDefaults.standard.set(newValue, forKey: "likes")
-         }
-    }
+   
     
     func updateTimeline(){
         profileImageView.image = post.createdBy.profileImage
@@ -45,31 +40,66 @@ class PostCell: UITableViewCell{
         commentsLabel.text = "\(post.numOfCommentsUI!)"
         
         
-        likeButton.isSelected = self.likes
-        likeButton.setTitle("0", for: .normal)
-        likeButton.setBackgroundImage(UIImage(named: "heart"), for: .normal)
-        likeButton.setTitle("1", for: .selected)
-        likeButton.setBackgroundImage(UIImage(named:"heart.fill"), for: .selected)
+        likesLabel.text = String(post.numOfLikesUI ?? 0)
+        var flag = false
+        if(post.isLiked()){
+             flag = true
+        }
+        if (!post.liked!){
+            likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+        }
+        else{
+            likeButton.setBackgroundImage(UIImage(systemName:"heart.fill"), for: .normal)
+        }
+        
+    }
+    
+    @IBAction func openComments(_ sender: Any) {
+        CommentViewController()
     }
     
     @IBAction func like(_ sender: Any) {
         
-     
+        guard let id = post.postID else {return}
+        guard let uid = Auth.auth().currentUser?.uid else {return}
         
-        if (likeButton.imageView?.image == UIImage(named: "heart.fill")) {
-               //set default
-               likeButton.setImage(UIImage(named: "heart"), for: .normal)
-           } else{
-               // set like
-               likeButton.setImage(UIImage(named: "like"), for: .normal)
-           }
+        if(!post.liked!){
+            ref.child("PostLikes").child(id).childByAutoId().setValue([uid:true])
+            post.liked = true
+            post.numOfLikesUI = post.numOfLikesUI!+1
+        }else{
+            ref.child("PostLikes").child(id).queryOrdered(byChild:uid).queryEqual(toValue:true).ref.removeValue()
+            post.liked = false
+            post.numOfLikesUI = post.numOfLikesUI!-1
+        }
+        updatePost()
+        }
+    
+    
+    func updatePost(){
+        ref.child("posts").child(post.postID!).updateChildValues([
+                    "numOfLikes":post.numOfLikesUI!,
+                    "numOfComments":post.numOfCommentsUI!])
         
-        
-        // toggle the likes state
-      //  self.likes = !self.likeButton.isSelected
-           // set the likes button accordingly
-      //  self.likeButton.isSelected = self.likes
     }
+        
     
     
 }
+
+/*
+ 
+ if (likeButton.imageView?.image == UIImage(named: "heart.fill")) {
+        //set default
+        likeButton.setImage(UIImage(named: "heart"), for: .normal)
+    } else{
+        // set like
+        likeButton.setImage(UIImage(named: "like"), for: .normal)
+    }
+ 
+ 
+ // toggle the likes state
+ self.likes = !self.likeButton.isSelected
+ // set the likes button accordingly
+ self.likeButton.isSelected = self.likes
+ */
