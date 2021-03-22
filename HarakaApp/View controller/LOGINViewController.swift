@@ -56,11 +56,20 @@ class LOGINViewController: UIViewController {
                 self.Error.alpha = 1
             }
             else {
+                // Get uid
+                // Query database to check if uid belongs to user OR trainer
                 
+                // if normal user continue lamia's code..
                 let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? MyTabBarCtrl
                 
                 self.view.window?.rootViewController = homeViewController
                 self.view.window?.makeKeyAndVisible()
+                
+                // if trainer:
+                // query to check if approved or unapproved
+                // if approved -> open homepage
+                // if unapproved -> open interface telling user they are not approved, or show dialog message
+                
             }
         }
     }
