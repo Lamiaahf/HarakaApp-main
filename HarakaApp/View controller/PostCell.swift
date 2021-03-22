@@ -41,6 +41,10 @@ class PostCell: UITableViewCell{
         
         
         likesLabel.text = String(post.numOfLikesUI ?? 0)
+        var flag = false
+        if(post.isLiked()){
+             flag = true
+        }
         if (!post.liked!){
             likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
         }
@@ -50,17 +54,21 @@ class PostCell: UITableViewCell{
         
     }
     
+    @IBAction func openComments(_ sender: Any) {
+        CommentViewController()
+    }
+    
     @IBAction func like(_ sender: Any) {
         
         guard let id = post.postID else {return}
         guard let uid = Auth.auth().currentUser?.uid else {return}
         
         if(!post.liked!){
-            ref.child("PostLikes").child(id).childByAutoId().setValue(["uid":uid])
+            ref.child("PostLikes").child(id).childByAutoId().setValue([uid:true])
             post.liked = true
             post.numOfLikesUI = post.numOfLikesUI!+1
         }else{
-            ref.child("PostLikes").child(id).queryOrdered(byChild:"uid").queryEqual(toValue:uid).ref.removeValue()
+            ref.child("PostLikes").child(id).queryOrdered(byChild:uid).queryEqual(toValue:true).ref.removeValue()
             post.liked = false
             post.numOfLikesUI = post.numOfLikesUI!-1
         }
