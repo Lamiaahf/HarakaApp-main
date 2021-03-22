@@ -43,7 +43,11 @@ class Utilities {
         return passwordTest.evaluate(with: password)
     }
     
-    
+    struct User
+    {
+        var username: String?
+        var profileImage: UIImage?
+    }
     
     
 }
