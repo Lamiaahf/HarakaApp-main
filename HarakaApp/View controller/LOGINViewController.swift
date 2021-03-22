@@ -19,10 +19,11 @@ class LOGINViewController: UIViewController {
     @IBOutlet weak var login: UIButton!
     
     @IBOutlet weak var Singupform: UIButton!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
-
 
         // Do any additional setup after loading the view.
     }
@@ -63,4 +64,5 @@ class LOGINViewController: UIViewController {
             }
         }
     }
+    
 }
