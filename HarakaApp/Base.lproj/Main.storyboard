@@ -1308,7 +1308,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejY-gg-Xqd">
-                                <rect key="frame" x="16" y="175" width="173" height="173"/>
+                                <rect key="frame" x="16" y="173" width="173" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40568548440000002" green="0.57982069250000001" blue="0.64284527300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -1325,18 +1325,6 @@
                                 <state key="normal" title="العب ">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-Gb-bT8">
-                                <rect key="frame" x="201" y="174" width="173" height="173"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="التحديات ">
-                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="N5i-KZ-foN" kind="show" id="i8J-Qa-xfS"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiU-EY-ZfV">
                                 <rect key="frame" x="13" y="573" width="365" height="123"/>
@@ -1362,13 +1350,29 @@
                                     <segue destination="2sC-la-WC5" kind="show" id="8xL-c5-bLA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xh-Gb-bT8">
+                                <rect key="frame" x="197" y="173" width="173" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="التحديات ">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="N5i-KZ-foN" kind="show" id="i8J-Qa-xfS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PsJ-gA-Wel"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="الصفحة الرئيسية" id="U8W-8r-36Z"/>
                     <connections>
+                        <outlet property="GameHSButton" destination="SKR-lk-eui" id="VnJ-p9-bhL"/>
+                        <outlet property="GroupsHSButton" destination="0vh-wO-ocW" id="0Gg-8C-m40"/>
                         <outlet property="activitiesButton" destination="ejY-gg-Xqd" id="PzT-Nu-Pg4"/>
+                        <outlet property="challangesHSButton" destination="8Xh-Gb-bT8" id="AKD-DG-aSL"/>
+                        <outlet property="postsHSButton" destination="YiU-EY-ZfV" id="TP6-wf-Fgd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfs-xY-E4J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
