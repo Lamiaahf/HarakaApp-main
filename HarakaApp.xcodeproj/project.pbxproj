@@ -17,6 +17,7 @@
 		236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C961225E182BB0032ECC3 /* AddPostController.swift */; };
 		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
+
 		3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */; };
@@ -34,13 +35,15 @@
 		3FBB155E25D12CC60098C299 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */; };
 		3FD4742825D3264700260C1A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4742725D3264600260C1A /* Service.swift */; };
 		3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */; };
-		940F4BA125E5664400508368 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F4BA025E5664300508368 /* MapViewController.swift */; };
 		940F4BD625E56E7C00508368 /* activityLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F4BD525E56E7C00508368 /* activityLocations.swift */; };
 		940F4C36260227B600508368 /* createChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F4C35260227B600508368 /* createChallenge.swift */; };
 		9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07125D1350C002E0AAB /* HomePageViewController.swift */; };
 		9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07425D13531002E0AAB /* SearchTableViewController.swift */; };
 		9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07525D13531002E0AAB /* MyTabBar.swift */; };
 		9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07625D13531002E0AAB /* myTabBarCtrl.swift */; };
+		9475D8ED2608CE4A00116877 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8EC2608CE4A00116877 /* MapViewController.swift */; };
+		9475D8F02608CE5100116877 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8EF2608CE5100116877 /* Place.swift */; };
+		9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8F22608CE6000116877 /* PlaceViews.swift */; };
 		94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D4604925E3E528009F31A6 /* NotificationViewController.swift */; };
 		94DDE11925DD34F80029FA09 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11825DD34F80029FA09 /* Post.swift */; };
 		94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11B25DD350B0029FA09 /* PostCell.swift */; };
@@ -91,21 +94,23 @@
 		3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSingupViewController.swift; sourceTree = "<group>"; };
 		8FDCB37063508050981CA58F /* Pods-HarakaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.debug.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		940F4B9425E55A6800508368 /* locations.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = locations.geojson; sourceTree = "<group>"; };
-		940F4BA025E5664300508368 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		940F4BD525E56E7C00508368 /* activityLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLocations.swift; sourceTree = "<group>"; };
 		940F4C35260227B600508368 /* createChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createChallenge.swift; sourceTree = "<group>"; };
 		9449C07125D1350C002E0AAB /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		9449C07425D13531002E0AAB /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		9449C07525D13531002E0AAB /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		9449C07625D13531002E0AAB /* myTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTabBarCtrl.swift; sourceTree = "<group>"; };
+		9475D8EC2608CE4A00116877 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9475D8EF2608CE5100116877 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		9475D8F22608CE6000116877 /* PlaceViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViews.swift; sourceTree = "<group>"; };
 		94D4604925E3E528009F31A6 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		94DDE11825DD34F80029FA09 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		94DDE11B25DD350B0029FA09 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		94DDE11E25DD35140029FA09 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.release.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.release.xcconfig"; sourceTree = "<group>"; };
-		CEBE937C2602758F00A0E363 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalenderViewController.swift; path = "../New Group/CalenderViewController.swift"; sourceTree = "<group>"; };
-		CEBE9380260387A700A0E363 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddViewController.swift; path = "../New Group/AddViewController.swift"; sourceTree = "<group>"; };
+		CEBE937C2602758F00A0E363 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		CEBE9380260387A700A0E363 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		CED6033325F41ABE00C4ACE4 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		CED6033825F41DB400C4ACE4 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +178,6 @@
 				3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */,
 				3FBB151925C96AF50098C299 /* View controller */,
 				3FBB14FC25C81CFB0098C299 /* Main.storyboard */,
-				940F4BA025E5664300508368 /* MapViewController.swift */,
 				940F4B9425E55A6800508368 /* locations.geojson */,
 				940F4BD525E56E7C00508368 /* activityLocations.swift */,
 				3FBB150125C81CFD0098C299 /* LaunchScreen.storyboard */,
@@ -210,6 +214,9 @@
 				232E738A25F56B560029D39C /* ChallengeCell.swift */,
 				232E738D25F56BAC0029D39C /* Challenge.swift */,
 				232E739025F588290029D39C /* ChallengeViewController.swift */,
+				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
+				9475D8EF2608CE5100116877 /* Place.swift */,
+				9475D8F22608CE6000116877 /* PlaceViews.swift */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
 				23985FBE26021BB100FB2764 /* GameViewController.swift */,
 				2357979C2607E3280017C166 /* CommentViewController.swift */,
@@ -397,6 +404,7 @@
 				94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */,
 				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,
 				940F4BD625E56E7C00508368 /* activityLocations.swift in Sources */,
+				9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */,
 				94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */,
 				232E738E25F56BAC0029D39C /* Challenge.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
@@ -405,7 +413,6 @@
 				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
 				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
-				940F4BA125E5664400508368 /* MapViewController.swift in Sources */,
 				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
 				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
 				235797A32607E4540017C166 /* CommentCell.swift in Sources */,
@@ -417,6 +424,8 @@
 				236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */,
 				9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */,
 				940F4C36260227B600508368 /* createChallenge.swift in Sources */,
+				9475D8ED2608CE4A00116877 /* MapViewController.swift in Sources */,
+				9475D8F02608CE5100116877 /* Place.swift in Sources */,
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
 				CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */,
 				9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */,
