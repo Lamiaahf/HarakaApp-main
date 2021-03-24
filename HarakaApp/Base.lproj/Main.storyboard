@@ -2339,7 +2339,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8G-Yt-4g0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="qeZ-F4-7M1"/>
             </objects>
-
+            <point key="canvasLocation" x="6745" y="815"/>
         </scene>
     </scenes>
     <designables>
