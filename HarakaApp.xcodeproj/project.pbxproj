@@ -20,6 +20,14 @@
 
 		3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
+		3FA4932C260B613C0052A1BD /* approveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49327260B613C0052A1BD /* approveCell.swift */; };
+		3FA4932D260B613C0052A1BD /* ApproveTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49328260B613C0052A1BD /* ApproveTrainer.swift */; };
+		3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49329260B613C0052A1BD /* Trainner.swift */; };
+		3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4932A260B613C0052A1BD /* ShowTrainner.swift */; };
+		3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4932B260B613C0052A1BD /* AdminLogin.swift */; };
+		3FA49333260B62910052A1BD /* FollwoUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49332260B62910052A1BD /* FollwoUsersTableViewController.swift */; };
+		3FA49336260B63090052A1BD /* ShowFriendsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49335260B63090052A1BD /* ShowFriendsTable.swift */; };
+		3FA49339260B63390052A1BD /* OtherUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49338260B63390052A1BD /* OtherUsersViewController.swift */; };
 		3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */; };
 		3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F625C81CFB0098C299 /* AppDelegate.swift */; };
 		3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */; };
@@ -75,6 +83,14 @@
 		3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3F775B6725ED5426001FDD9D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3FA49327260B613C0052A1BD /* approveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = approveCell.swift; sourceTree = "<group>"; };
+		3FA49328260B613C0052A1BD /* ApproveTrainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproveTrainer.swift; sourceTree = "<group>"; };
+		3FA49329260B613C0052A1BD /* Trainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainner.swift; sourceTree = "<group>"; };
+		3FA4932A260B613C0052A1BD /* ShowTrainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainner.swift; sourceTree = "<group>"; };
+		3FA4932B260B613C0052A1BD /* AdminLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminLogin.swift; sourceTree = "<group>"; };
+		3FA49332260B62910052A1BD /* FollwoUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollwoUsersTableViewController.swift; sourceTree = "<group>"; };
+		3FA49335260B63090052A1BD /* ShowFriendsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFriendsTable.swift; sourceTree = "<group>"; };
+		3FA49338260B63390052A1BD /* OtherUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherUsersViewController.swift; sourceTree = "<group>"; };
 		3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		3FBB14F325C81CFB0098C299 /* HarakaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarakaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBB14F625C81CFB0098C299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +166,18 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		3FA49326260B613C0052A1BD /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				3FA49327260B613C0052A1BD /* approveCell.swift */,
+				3FA49328260B613C0052A1BD /* ApproveTrainer.swift */,
+				3FA49329260B613C0052A1BD /* Trainner.swift */,
+				3FA4932A260B613C0052A1BD /* ShowTrainner.swift */,
+				3FA4932B260B613C0052A1BD /* AdminLogin.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		3FBB14EA25C81CFB0098C299 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +223,7 @@
 				3FBB153225C9CF4B0098C299 /* SingupAsViewController.swift */,
 				3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */,
 				3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */,
+				3FA49335260B63090052A1BD /* ShowFriendsTable.swift */,
 				9449C07125D1350C002E0AAB /* HomePageViewController.swift */,
 				9449C07525D13531002E0AAB /* MyTabBar.swift */,
 				9449C07625D13531002E0AAB /* myTabBarCtrl.swift */,
@@ -213,10 +242,13 @@
 				230273AE25E93C4A00DC6C31 /* UserInfo.swift */,
 				232E738A25F56B560029D39C /* ChallengeCell.swift */,
 				232E738D25F56BAC0029D39C /* Challenge.swift */,
+				3FA49338260B63390052A1BD /* OtherUsersViewController.swift */,
 				232E739025F588290029D39C /* ChallengeViewController.swift */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
+				3FA49332260B62910052A1BD /* FollwoUsersTableViewController.swift */,
+				3FA49326260B613C0052A1BD /* Admin */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
 				23985FBE26021BB100FB2764 /* GameViewController.swift */,
 				2357979C2607E3280017C166 /* CommentViewController.swift */,
@@ -393,12 +425,14 @@
 				94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */,
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
 				232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */,
+				3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */,
 				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
 				3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */,
 				3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */,
 				235797A02607E4420017C166 /* Comment.swift in Sources */,
 				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
 				3FD4742825D3264700260C1A /* Service.swift in Sources */,
+				3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */,
 				94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */,
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
 				94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */,
@@ -407,15 +441,20 @@
 				9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */,
 				94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */,
 				232E738E25F56BAC0029D39C /* Challenge.swift in Sources */,
+				3FA49333260B62910052A1BD /* FollwoUsersTableViewController.swift in Sources */,
+				3FA4932D260B613C0052A1BD /* ApproveTrainer.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
+				3FA49339260B63390052A1BD /* OtherUsersViewController.swift in Sources */,
 				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
 				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
+				3FA49336260B63090052A1BD /* ShowFriendsTable.swift in Sources */,
 				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
 				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
 				235797A32607E4540017C166 /* CommentCell.swift in Sources */,
+				3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */,
 				94DDE11925DD34F80029FA09 /* Post.swift in Sources */,
 				CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */,
 				CED6034525F43C5E00C4ACE4 /* Messages.swift in Sources */,
@@ -435,6 +474,7 @@
 				232E739125F588290029D39C /* ChallengeViewController.swift in Sources */,
 				CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */,
 				2357979D2607E3280017C166 /* CommentViewController.swift in Sources */,
+				3FA4932C260B613C0052A1BD /* approveCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
