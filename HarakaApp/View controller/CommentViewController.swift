@@ -11,7 +11,7 @@ import Firebase
 class CommentViewController: UIViewController, UITableViewDelegate {
     
     var comments: [Comment]?
-    var post: Post
+    var post: Post?
     
 //    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentField: UITextField!
