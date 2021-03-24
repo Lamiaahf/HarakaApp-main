@@ -28,7 +28,7 @@ class CommentViewController: UIViewController, UITableViewDelegate {
         
         self.post = Post(createdBy: User(u: "", p: UIImage(systemName: "figure")), timeAgo: "", captionUI: "", numOfLikesUI: 0, numOfCommentsUI: 0, postID: "", liked:false)
         self.comments = []
-        fetchComments()
+   //     fetchComments()
     }
     
     func setPost(post: Post){
@@ -62,17 +62,15 @@ class CommentViewController: UIViewController, UITableViewDelegate {
         }
         
         let ref = Database.database().reference()
-        
         let user = Auth.auth().currentUser!
         
         ref.child("Comments").childByAutoId().setValue([
-                                                        "username":user.email,
-                                                        "uid":user.uid,
-                                                        "comment":text])
+                "username":user.email,
+                "uid":user.uid,
+                "comment":text])
         
         commentField.text = ""
         // after utilities is finished, append this comment to array after retrieving User and creating comment object
-        
         fetchComments()
     }
     
@@ -87,20 +85,14 @@ class CommentViewController: UIViewController, UITableViewDelegate {
                     let comment = commentDict["comment"] as? String ?? ""
                     let id = String(snapshot.key)
                     
-                var commentUser = User(u: usern, p: UIImage(systemName: "figure"))
+                var commentUser = self.post!.createdBy
                 var newComment = Comment(writtenBy: commentUser, commentText:comment)
-             //       postArray.insert(newPost, at: indx)
                     self.comments?.append(newComment)
-                  //  postArray.append(newPost)
-                //    indx = indx+1
                     self.commentsTable.reloadData()
                 
             }}
-   //     self.posts = postArray
-        
+
         }
-        
-        
         
     }
     /*

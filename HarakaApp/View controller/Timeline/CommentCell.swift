@@ -18,7 +18,7 @@ class CommentCell: UITableViewCell{
     
     var comment: Comment!{
         didSet{
-            //updateComments()
+            updateComments()
         }
     }
     

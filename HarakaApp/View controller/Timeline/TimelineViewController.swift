@@ -27,9 +27,7 @@ class TimelineViewController: UITableViewController {
         }
     
     func fetchPosts(){
-        
-   //     var postArray:[Post] = []
-   //     var indx = 0
+
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
         let ref = Database.database().reference()
         ref.child("posts").observe(.childAdded){
@@ -43,7 +41,7 @@ class TimelineViewController: UITableViewController {
                     let id = String(snapshot.key)
                     
                 var postUser = User(u: usern, p: UIImage(systemName: "figure"))
-                var newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:false)
+                var newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:self.checkLike(postid: id))
              //       postArray.insert(newPost, at: indx)
                     self.posts?.append(newPost)
                   //  postArray.append(newPost)
@@ -56,28 +54,27 @@ class TimelineViewController: UITableViewController {
         }
     }
     
-     func checkLike(post: Post) -> Bool {
+     func checkLike(postid: String) -> Bool {
         
         var uid = Auth.auth().currentUser?.uid
         var flag = false
-        var check = ""
         let ref = Database.database().reference()
-        ref.child("PostLikes").child(post.postID!).observe(.childAdded){
+        ref.child("PostLikes").child(postid).observe(.childAdded){
             (snapshot) in
-            if let postDict = snapshot.value as? [String: Any]{
-                if(postDict.keys.contains(uid!)){
-                    check = "found"
-                    flag = true
-                    post.setLiked(flag: true)
-                    print(flag)
+            if(snapshot.exists()){
+                if let postDict = snapshot.value as? [String: Any]{
+                    if(postDict.keys.contains(uid!)){
+                //        post.setLiked(flag: true)
+                        flag = true
+                        print("inside observe: \(flag)")
+                    }
                 }
             }
+
         }
-        if(check == "found"){
-            return true
-        }
-        return flag
-    }
+        print("outside observe: \(flag)")
+        return flag}
+    
     
 }
 
