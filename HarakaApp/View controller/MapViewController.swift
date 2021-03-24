@@ -110,7 +110,7 @@ private extension MKMapView {
       longitudinalMeters: regionRadius)
     setRegion(coordinateRegion, animated: true)//tells MKMapView to display the region represented by MKCoordinateRegion
   }
-}
+}//
 
 extension MapViewController: MKMapViewDelegate {
   func mapView(
