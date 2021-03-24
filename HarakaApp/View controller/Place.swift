@@ -15,6 +15,8 @@ class Place: NSObject, MKAnnotation {
   let discipline: String?
   let coordinate: CLLocationCoordinate2D
   
+   //
+    
   init(
     title: String?,
     locationName: String?,

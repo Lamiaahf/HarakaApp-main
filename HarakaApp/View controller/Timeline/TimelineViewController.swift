@@ -39,9 +39,10 @@ class TimelineViewController: UITableViewController {
                     let nol = postDict["numOfLikes"] as? Int ?? 0
                     let noc = postDict["numOfComments"] as? Int ?? 0
                     let id = String(snapshot.key)
-                    
+                  
                 var postUser = User(u: usern, p: UIImage(systemName: "figure"))
-                var newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:self.checkLike(postid: id))
+                var newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:false)
+                self.checkLike(post: newPost)
              //       postArray.insert(newPost, at: indx)
                     self.posts?.append(newPost)
                   //  postArray.append(newPost)
@@ -54,12 +55,12 @@ class TimelineViewController: UITableViewController {
         }
     }
     
-     func checkLike(postid: String) -> Bool {
+     func checkLike(post: Post){
         
         var uid = Auth.auth().currentUser?.uid
         var flag = false
         let ref = Database.database().reference()
-        ref.child("PostLikes").child(postid).observe(.childAdded){
+        ref.child("PostLikes").child(post.postID!).observe(.childAdded){
             (snapshot) in
             if(snapshot.exists()){
                 if let postDict = snapshot.value as? [String: Any]{
@@ -67,13 +68,15 @@ class TimelineViewController: UITableViewController {
                 //        post.setLiked(flag: true)
                         flag = true
                         print("inside observe: \(flag)")
+                        post.setLiked(flag: true)
+                        self.tableView.reloadData()
+                        
                     }
                 }
             }
 
         }
-        print("outside observe: \(flag)")
-        return flag}
+        print("outside observe: \(flag)")}
     
     
 }

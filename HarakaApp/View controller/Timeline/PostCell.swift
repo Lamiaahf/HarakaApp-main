@@ -56,6 +56,7 @@ class PostCell: UITableViewCell{
     
     @IBAction func openComments(_ sender: Any) {
         var controller = CommentViewController()
+        controller.viewDidLoad()
         controller.setPost(post: self.post)
         controller.fetchComments()
     }
@@ -69,12 +70,14 @@ class PostCell: UITableViewCell{
             ref.child("PostLikes").child(id).childByAutoId().setValue([uid:true])
             post.liked = true
             post.numOfLikesUI = post.numOfLikesUI!+1
+
         }else{
             ref.child("PostLikes").child(id).queryOrdered(byChild:uid).queryEqual(toValue:true).ref.removeValue()
             post.liked = false
             post.numOfLikesUI = post.numOfLikesUI!-1
         }
         updatePost()
+        updateTimeline()
         }
     
     

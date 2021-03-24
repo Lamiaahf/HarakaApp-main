@@ -33,7 +33,7 @@ class Post
         
     }
     func isLiked() -> Bool {
-        return TimelineViewController().checkLike(post: self)
+        return liked!
     }
     
     func setLiked(flag: Bool){

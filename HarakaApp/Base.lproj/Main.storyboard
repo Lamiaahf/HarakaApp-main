@@ -591,6 +591,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lgj-fR-4eq" id="fiQ-mb-68o"/>
+                                    <outlet property="delegate" destination="Lgj-fR-4eq" id="Lnf-dS-e0w"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXQ-gx-5VV">
                                 <rect key="frame" x="41" y="613" width="259" height="34"/>

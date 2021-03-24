@@ -23,7 +23,7 @@ class ChallengeCell: UITableViewCell{
     
     func updateChallenges(){
         
-        challengeLabel.text = challenge.createdBy
+        challengeLabel.text = challenge.cName
         
     }
 }
