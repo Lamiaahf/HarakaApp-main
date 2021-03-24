@@ -126,18 +126,18 @@ class FollwoUsersTableViewController: UITableViewController, UISearchBarDelegate
 
         }
         
-        func filterContent(searchText:String)
-        {
-                self.filteredUsers = self.usersArray.filter{ user in
+    func filterContent(searchText:String)
+    {
+        self.filteredUsers = self.usersArray.filter{ user in
 
-                let username = user!["Name"] as? String
-                
-            return(username?.contains(searchText))!
-          
-            }
-            self.tableView.reloadData()
+            let username = user!["name"] as? String
             
+        return(username?.lowercased().contains(searchText.lowercased()))!
+      
         }
+        
+        tableView.reloadData()
+    }
 
     }
 
