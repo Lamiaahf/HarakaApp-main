@@ -11,7 +11,7 @@ import Firebase
 class CommentViewController: UIViewController, UITableViewDelegate {
     
     var comments: [Comment]?
-    var post: Post
+    var post: Post?
     
 //    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentField: UITextField!
@@ -26,7 +26,8 @@ class CommentViewController: UIViewController, UITableViewDelegate {
         commentsTable.rowHeight = UITableView.automaticDimension
         commentsTable.delegate = self
         
-        comments = []
+        self.post = Post(createdBy: User(u: "", p: UIImage(systemName: "figure")), timeAgo: "", captionUI: "", numOfLikesUI: 0, numOfCommentsUI: 0, postID: "", liked:false)
+        self.comments = []
         fetchComments()
     }
     

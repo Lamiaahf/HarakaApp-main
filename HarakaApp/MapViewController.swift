@@ -31,13 +31,7 @@ class MapViewController: UIViewController, MKMapViewDelegate{
         mapView.setCameraZoomRange(zoomRange, animated: true)
 
         mapView.delegate = self
-        
-        let location = activityLocations(
-          locationName: "ممشى الملك عبدالله",
-            description: "خارجي-هادئ-مناسب في جميع أوقات اليوم",
-          classification: "Walking",
-            coordinate: CLLocationCoordinate2D(latitude: 24.7426030, longitude: 46.7035402))
-        mapView.addAnnotation(location)
+
        
     }
     
