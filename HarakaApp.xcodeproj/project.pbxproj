@@ -16,8 +16,10 @@
 		235797A32607E4540017C166 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235797A22607E4540017C166 /* CommentCell.swift */; };
 		236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C961225E182BB0032ECC3 /* AddPostController.swift */; };
 		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
+		23DAC39D260B63FA000DB8AB /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23DAC39C260B63FA000DB8AB /* GameController.framework */; };
+		23DAC3A0260B6462000DB8AB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23DAC39F260B6462000DB8AB /* HealthKit.framework */; };
+		23DAC3A3260B64AC000DB8AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23DAC3A2260B64AC000DB8AB /* MapKit.framework */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
-
 		3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */; };
@@ -69,6 +71,10 @@
 		235797A22607E4540017C166 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		236C961225E182BB0032ECC3 /* AddPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
 		23985FBE26021BB100FB2764 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		23DAC39C260B63FA000DB8AB /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		23DAC39E260B6462000DB8AB /* HarakaApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HarakaApp.entitlements; sourceTree = "<group>"; };
+		23DAC39F260B6462000DB8AB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		23DAC3A2260B64AC000DB8AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23DAC3A0260B6462000DB8AB /* HealthKit.framework in Frameworks */,
+				23DAC39D260B63FA000DB8AB /* GameController.framework in Frameworks */,
+				23DAC3A3260B64AC000DB8AB /* MapKit.framework in Frameworks */,
 				F9F49256EE71AF5DBDB64948 /* Pods_HarakaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +181,7 @@
 		3FBB14F525C81CFB0098C299 /* HarakaApp */ = {
 			isa = PBXGroup;
 			children = (
+				23DAC39E260B6462000DB8AB /* HarakaApp.entitlements */,
 				3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */,
 				3FBB155325CE96780098C299 /* Helpers */,
 				3FBB14F625C81CFB0098C299 /* AppDelegate.swift */,
@@ -239,6 +249,9 @@
 		C618D7C0BE288947E715461D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23DAC3A2260B64AC000DB8AB /* MapKit.framework */,
+				23DAC39F260B6462000DB8AB /* HealthKit.framework */,
+				23DAC39C260B63FA000DB8AB /* GameController.framework */,
 				D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */,
 			);
 			name = Frameworks;
@@ -582,8 +595,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HarakaApp/HarakaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RNNL4K4B78;
+				DEVELOPMENT_TEAM = UBW627Y8LM;
 				INFOPLIST_FILE = HarakaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -602,8 +616,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HarakaApp/HarakaApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RNNL4K4B78;
+				DEVELOPMENT_TEAM = UBW627Y8LM;
 				INFOPLIST_FILE = HarakaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

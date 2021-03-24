@@ -1081,10 +1081,11 @@
                         <viewLayoutGuide key="safeArea" id="8eT-Tk-MxN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VtW-Mi-En0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpx-LN-hcb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3778.4615384615381" y="701.65876777251185"/>
+            <point key="canvasLocation" x="9485" y="1196"/>
         </scene>
         <!--Add Post Controller-->
         <scene sceneID="4qo-Lb-oYe">
@@ -1500,6 +1501,9 @@
                                 <state key="normal" title="العب ">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="pCz-aU-KME" kind="show" id="is4-GG-phk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiU-EY-ZfV">
                                 <rect key="frame" x="16" y="536" width="358" height="112"/>

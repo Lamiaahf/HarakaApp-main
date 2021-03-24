@@ -64,17 +64,17 @@ class TimelineViewController: UITableViewController {
         let ref = Database.database().reference()
         ref.child("PostLikes").child(post.postID!).observe(.childAdded){
             (snapshot) in
-            if let postDict = snapshot.value as? [String: Any]{
-                if(postDict.keys.contains(uid!)){
-                    check = "found"
-                    flag = true
-                    post.setLiked(flag: true)
-                    print(flag)
+            if snapshot.exists(){
+                if let postDict = snapshot.value as? [String: Any]{
+                    if(postDict.keys.contains(uid!)){
+                        check = "found"
+                        flag = true
+                        post.setLiked(flag: true)
+                        print(flag)
+                    }
                 }
             }
-        }
-        if(check == "found"){
-            return true
+            
         }
         return flag
     }
