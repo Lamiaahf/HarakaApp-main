@@ -163,7 +163,7 @@ class TrainerSingupViewController: UIViewController {
                     
                     guard let user = result?.user else {return}
 
-                       let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkdein":Linkdein,"Age":age,"uid": result!.user.uid ]
+                     
                     // save the image to firbase Storage and user
                     let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
                      let StorageProfilrRef  = storageRef.child("Profile").child(user.uid)
@@ -176,9 +176,15 @@ class TrainerSingupViewController: UIViewController {
                         StorageProfilrRef.downloadURL(completion: {(url , error ) in
                         if let metaImageUrl = url?.absoluteString {
 
-                    let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Age":age ,"ProfilePic": metaImageUrl,"uid":user.uid ]
-                            ref.child("Trainers").childByAutoId().setValue(db){_,_ in }
-                        } })}
+            
+                            let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkedin":Linkdein,"ProfilePic": metaImageUrl,"Age":age,"uid": result!.user.uid ]
+                            
+                            ref.child("Trainers").child("Unapproved").childByAutoId().setValue(db){_,_ in }
+                            self.showError("تم رفع طلبك بنجاح ")
+
+                        } })
+
+                    }
                     
                     self.transitionToHome()
 

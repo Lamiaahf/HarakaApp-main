@@ -8,12 +8,15 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
-import LBTAComponents
  
 class UserProfileViewController:  UIViewController {
     let storageRef = Storage.storage().reference()
-    let databaseRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-  
+    let databaseRef = Database.database().reference()
+    //Serch for frinds
+    var loggedInUser:AnyObject?
+    var loggedInUserData:NSDictionary?
+
+    
     @IBOutlet weak var Userimg: UIImageView!
 
     @IBOutlet weak var Username: UILabel!
@@ -27,41 +30,59 @@ class UserProfileViewController:  UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
         getUserInfo()
+        self.loggedInUser = Auth.auth().currentUser
+
     //    setupUserimg()
 
     }
     
     
     func setupUserimg(){
-        Userimg.layer.cornerRadius = 40
+        Userimg.layer.cornerRadius = 40/2
         Userimg.clipsToBounds = true
         Userimg.isUserInteractionEnabled = true
     }
+    
+    /*
+    func getUserInfo() {
+        guard let uid = Auth.auth().currentUser?.uid else {print ("nil"); return}
+       
+        databaseRef.child("users").child(uid).observe(.value, with: { snapshot in
+      print(snapshot.value)
+    })
+        
+         
+    }*/
+
+    
      func getUserInfo() {
+    
+    //func getUserInfo() {
         if Auth.auth().currentUser != nil {
-            guard let uid = Auth.auth().currentUser?.uid else {return}
-            
-            databaseRef.child("users").child(uid).getData(completion: { (error, snapshot)
+            guard let uid = Auth.auth().currentUser?.uid else {print ("nil"); return}
+
+            databaseRef.child("users").child(uid).observe(.value , with : {snapshot
                 in
-                    guard let dict = snapshot.value as? [String : Any ] else {return}
-                  
-                    let user = CurrentUser( uid : uid , dictionary : dict)
-                    self.Name.text = user.name
-                    self.Username.text = user.username
+                guard let dict = snapshot.value as? [String:Any] else {return}
+              
+                let user = CurrentUser( uid : uid , dictionary : dict )
+                self.Name.text = user.name
+                self.Username.text = user.username
                 
-                
-               // self.Userimg.loadImage(urlString : user.userimg)
-              //  }
-                
-            })
-        }
+               
+                Storage.storage().reference(forURL: user.userimg).getData(maxSize: 1048576, completion: { (data, error) in
 
-     }
+                    guard let imageData = data, error == nil else {
+                        return
+                    }
+                    self.Userimg.image = UIImage(data: imageData)
+                    self.setupUserimg()
 
-    
-    
-    
+                })
+                
+            })}}
 
    
     @IBAction func showComponents(_ sender: Any) {
@@ -86,35 +107,23 @@ class UserProfileViewController:  UIViewController {
     
     
     
-   /* internal func setPic (imageView : UIImage, imageToSet: UIImage){
-        imageView.layar.cornerRadius = 10.0
-        imageView.layar.comasksToBounds = true
-        imageView.image = imageToSet }
-            
-    */
+    
+  //  Pass contextual data along with the segue
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if(segue.identifier == "findUser")
+    {
+        let showFollowingTableViewController = segue.destination as! FollwoUsersTableViewController
+         
+
+        showFollowingTableViewController.loggedInUser = self.loggedInUser as? CurrentUser
+          
+    }
+
+    
 }
-
-
-
-
-
-/*
+    
+    
  
- //func getUserInfo() {
-     if Auth.auth().currentUser != nil {
-         guard let uid = Auth.auth().currentUser?.uid else {return}
-         databaseRef.child("users").child(uid).observeSingleEvent(of: .value, with: {(snapshot)
-             in
-             guard let dict = snapshot.value as? [String : Any ] else {return}
-           
-             let user = CurrentUser( uid : uid , dictionary : dict)
-             self.Name.text = user.name
-             self.Username.text = user.username
-            // self.Userimg.loadImage(urlString : user.userimg)
-           //  }
-             
-         }, withCancel: {(err) in
-             print (err)
-         })
-     }
- */
+}// End Class
