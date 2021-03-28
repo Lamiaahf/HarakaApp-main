@@ -3,13 +3,15 @@
 //  HarakaApp
 //
 //  Created by lamia on 17/02/2021.
-//
+// 
+
+
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
  
-class UserProfileViewController:  UIViewController {
+class FollwoUserProfileViewController:  UIViewController {
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
     //Serch for frinds
@@ -114,7 +116,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
     if(segue.identifier == "findUser")
     {
-        let showFollowingTableViewController = segue.destination as! FollwoUsersTableViewController
+        let showFollowingTableViewController = segue.destination as! UsersTableViewController
          
 
         showFollowingTableViewController.loggedInUser = self.loggedInUser as? CurrentUser

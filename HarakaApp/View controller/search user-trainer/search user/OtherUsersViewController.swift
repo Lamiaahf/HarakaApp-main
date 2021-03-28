@@ -3,10 +3,11 @@
 //  HarakaApp
 //
 //  Created by lamia on 11/03/2021.
-//
+//ohoud
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -29,7 +30,7 @@ class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigation
        //hi
        
        
-       override func viewDidLoad() {
+    override func viewDidLoad() {
            super.viewDidLoad()
         //style
         Utilities.styleFilledButton(followButton)
@@ -83,9 +84,12 @@ class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigation
         }
         
            
-           self.name.text = otherUser!["name"] as? String
-           self.Username.text = "@"+(otherUser!["Username"] as? String)!
-
+        if (name != nil){
+            return self.name.text = otherUser!["Name"] as? String}
+        
+        if (Username != nil){
+         return  self.Username.text = "@"+(otherUser!["Username"] as? String)!
+        }
     
            
            if(otherUser["profilePic"] != nil)
@@ -198,7 +202,7 @@ class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigation
         else
         {
             databaseRef.child("users").child(self.loggedInUserData?["uid"] as! String).child("followingCount").setValue(self.loggedInUserData!["followingCount"] as! Int - 1)
-            databaseRef.child("uses").child(self.otherUser?["uid"] as! String).child("followersCount").setValue(self.otherUser!["followersCount"] as! Int - 1)
+            databaseRef.child("users").child(self.otherUser?["uid"] as! String).child("followersCount").setValue(self.otherUser!["followersCount"] as! Int - 1)
             
           let followersRef = "followers/\(self.otherUser?["uid"] as! String)/\(self.loggedInUserData?["uid"] as! String)"
           let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (self.otherUser?["uid"] as! String)
