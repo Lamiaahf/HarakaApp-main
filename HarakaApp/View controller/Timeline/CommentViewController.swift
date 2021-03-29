@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class CommentViewController: UIViewController, UITableViewDelegate {
+class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var comments: [Comment]?
     var post: Post?
@@ -19,15 +19,11 @@ class CommentViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        commentsTable.separatorStyle = .none
-        commentsTable.estimatedRowHeight = commentsTable.rowHeight
-        commentsTable.rowHeight = UITableView.automaticDimension
-        commentsTable.delegate = self
         
-        self.post = Post(createdBy: User(u: "", p: UIImage(systemName: "figure")), timeAgo: "", captionUI: "", numOfLikesUI: 0, numOfCommentsUI: 0, postID: "", liked:false)
+        commentsTable.dataSource = self
+
         self.comments = []
-   //     fetchComments()
+        fetchComments()
     }
     
     func setPost(post: Post){
@@ -41,29 +37,33 @@ class CommentViewController: UIViewController, UITableViewDelegate {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = commentsTable.dequeueReusableCell(withIdentifier:"CommentCell", for: indexPath) as! CommentCell
         cell.comment = comments![indexPath.row]
         return cell
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
     
     
     @IBAction func postComment(_ sender: Any) {
         
-        let text = commentField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        if(text == ""){
+        let text = commentField.text!
+        if(text.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
             return
         }
         
         let ref = Database.database().reference()
         let user = Auth.auth().currentUser!
         
-        ref.child("Comments").childByAutoId().setValue([
+        
+        ref.child("Comments").child((post?.postID)!).childByAutoId().setValue([
                 "username":user.email,
                 "uid":user.uid,
                 "comment":text])
@@ -76,20 +76,21 @@ class CommentViewController: UIViewController, UITableViewDelegate {
     func fetchComments(){
         
         let ref = Database.database().reference()
-        ref.child("Comments").observe(.childAdded){
+        ref.child("Comments").child((post?.postID)!).observe(.childAdded){
         (snapshot) in
-        if let commentDict = snapshot.value as? [String: Any]{
-            if let usern = commentDict["username"] as? String {
-                    let uid = commentDict["uid"] as? String ?? ""
-                    let comment = commentDict["comment"] as? String ?? ""
-                    let id = String(snapshot.key)
-                    
-                var commentUser = self.post!.createdBy
-                var newComment = Comment(writtenBy: commentUser, commentText:comment)
-                    self.comments?.append(newComment)
-                    self.commentsTable.reloadData()
-                
-            }}
+            if snapshot.exists(){
+                if let commentDict = snapshot.value as? [String: Any]{
+                    if let usern = commentDict["username"] as? String {
+                            let uid = commentDict["uid"] as? String ?? ""
+                            let comment = commentDict["comment"] as? String ?? ""
+                            let id = String(snapshot.key)
+                            
+                        var commentUser = User(u: Auth.auth().currentUser?.email, p: UIImage())
+                        var newComment = Comment(writtenBy: commentUser, commentText:comment)
+                            self.comments?.append(newComment)
+                            self.commentsTable.reloadData()}
+                }
+            }
 
         }
         

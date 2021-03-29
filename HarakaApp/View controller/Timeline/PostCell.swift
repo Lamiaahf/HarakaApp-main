@@ -53,13 +53,9 @@ class PostCell: UITableViewCell{
         }
         
     }
+
     
-    @IBAction func openComments(_ sender: Any) {
-        var controller = CommentViewController()
-        controller.viewDidLoad()
-        controller.setPost(post: self.post)
-        controller.fetchComments()
-    }
+
     
     @IBAction func like(_ sender: Any) {
         

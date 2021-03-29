@@ -23,7 +23,6 @@ class TimelineViewController: UITableViewController {
         
         posts = []
         fetchPosts()
-   //     tableView.reloadData()
         }
     
     func fetchPosts(){
@@ -78,6 +77,14 @@ class TimelineViewController: UITableViewController {
         }
         print("outside observe: \(flag)")}
     
+    @IBAction func openComments(_ sender: Any) {
+        let popover = storyboard!.instantiateViewController(withIdentifier: Constants.Storyboard.CommentViewController) as? CommentViewController
+
+        let cellIndex = tableView.indexPathForSelectedRow
+        let cell = tableView.cellForRow(at: cellIndex!) as? PostCell
+
+        popover!.setPost(post: (cell?.post) as! Post)
+    }
     
 }
 
@@ -90,6 +97,7 @@ extension TimelineViewController{
         }
         return 0
     }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell", for: indexPath) as! PostCell
