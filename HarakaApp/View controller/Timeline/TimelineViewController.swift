@@ -27,9 +27,7 @@ class TimelineViewController: UITableViewController {
         }
     
     func fetchPosts(){
-        
-   //     var postArray:[Post] = []
-   //     var indx = 0
+
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
         let ref = Database.database().reference()
         ref.child("posts").observe(.childAdded){
@@ -41,9 +39,10 @@ class TimelineViewController: UITableViewController {
                     let nol = postDict["numOfLikes"] as? Int ?? 0
                     let noc = postDict["numOfComments"] as? Int ?? 0
                     let id = String(snapshot.key)
-                    
+                  
                 var postUser = User(u: usern, p: UIImage(systemName: "figure"))
                 var newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:false)
+                self.checkLike(post: newPost)
              //       postArray.insert(newPost, at: indx)
                     self.posts?.append(newPost)
                   //  postArray.append(newPost)
@@ -56,28 +55,29 @@ class TimelineViewController: UITableViewController {
         }
     }
     
-     func checkLike(post: Post) -> Bool {
+     func checkLike(post: Post){
         
         var uid = Auth.auth().currentUser?.uid
         var flag = false
-        var check = ""
         let ref = Database.database().reference()
         ref.child("PostLikes").child(post.postID!).observe(.childAdded){
             (snapshot) in
-            if let postDict = snapshot.value as? [String: Any]{
-                if(postDict.keys.contains(uid!)){
-                    check = "found"
-                    flag = true
-                    post.setLiked(flag: true)
-                    print(flag)
+            if(snapshot.exists()){
+                if let postDict = snapshot.value as? [String: Any]{
+                    if(postDict.keys.contains(uid!)){
+                //        post.setLiked(flag: true)
+                        flag = true
+                        print("inside observe: \(flag)")
+                        post.setLiked(flag: true)
+                        self.tableView.reloadData()
+                        
+                    }
                 }
             }
+
         }
-        if(check == "found"){
-            return true
-        }
-        return flag
-    }
+        print("outside observe: \(flag)")}
+    
     
 }
 
