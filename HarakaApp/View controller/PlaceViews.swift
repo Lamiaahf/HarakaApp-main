@@ -24,6 +24,7 @@ class PlaceMarkerViews: MKMarkerAnnotationView {
       glyphImage = place.image
     }
   }
+    //
 }
 
 class PlaceViews: MKAnnotationView {
