@@ -141,7 +141,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         
         if(self.followButton.titleLabel?.text == "Follow")
         {
-            print("follow user")
+            print("follow Trainer")
             
             let loggedInTrainersProfilePic = self.loggedInTrainerData?["profilePic"] != nil ? self.loggedInTrainerData?["profilePic"]! : nil
             let otherTrainersProfilePic = self.otherTrainers?["profilePic"] != nil ? self.otherTrainers?["profilePic"]! : nil

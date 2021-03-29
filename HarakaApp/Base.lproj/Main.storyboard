@@ -552,7 +552,7 @@
                                 <color key="tintColor" red="0.82124352329999994" green="0.82124352329999994" blue="0.82124352329999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="مدربين"/>
                                 <connections>
-                                    <segue destination="9Q8-4L-FhO" kind="presentation" id="viP-5Q-uuN"/>
+                                    <segue destination="R70-7y-ECB" kind="presentation" id="Yp7-Ac-HqR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2220,22 +2220,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQe-0l-sSr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3731" y="678"/>
-        </scene>
-        <!--Trainers Table View Controller-->
-        <scene sceneID="Niu-o1-Seu">
-            <objects>
-                <viewController id="9Q8-4L-FhO" customClass="TrainersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MIh-Hn-IYE">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="uir-2L-Shw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bFw-Zx-p7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4395" y="699"/>
+            <point key="canvasLocation" x="3440" y="677"/>
         </scene>
         <!--OtherUsers -->
         <scene sceneID="2OI-2N-WWI">
@@ -2320,22 +2305,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o8G-Yt-4g0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="qeZ-F4-7M1"/>
             </objects>
-            <point key="canvasLocation" x="3731" y="1448"/>
+            <point key="canvasLocation" x="3440" y="1433"/>
         </scene>
         <!--Other Trainers View Controller-->
-        <scene sceneID="3Ct-Ua-xc2">
+        <scene sceneID="TLh-Lv-McQ">
             <objects>
-                <viewController id="l4j-dA-3dz" customClass="OtherTrainersViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qko-hf-PhU">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sM8-cQ-mbX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="0JX-as-kJG" customClass="OtherTrainersViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1kE-nS-NpQ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="neV-gw-k8G"/>
+                        <viewLayoutGuide key="safeArea" id="d4S-KQ-Ccp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4ft-3L-KnQ"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cqz-q6-5dx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4412" y="1405"/>
+            <point key="canvasLocation" x="4082" y="1432"/>
+        </scene>
+        <!--Trainers Table View Controller-->
+        <scene sceneID="Riu-ht-IXr">
+            <objects>
+                <tableViewController storyboardIdentifier="trainersSearch" id="R70-7y-ECB" customClass="TrainersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xNH-NW-5cK">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" showsCancelButton="YES" id="f57-rd-v1P">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="R70-7y-ECB" id="TLg-2w-qOx"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" textLabel="1Un-7q-X7L" detailTextLabel="EMR-lq-HWv" style="IBUITableViewCellStyleSubtitle" id="Hl4-qf-wch">
+                                <rect key="frame" x="0.0" y="72" width="390" height="55.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hl4-qf-wch" id="9sL-lY-Ucl">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="55.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Un-7q-X7L">
+                                            <rect key="frame" x="20" y="8.9999999999999982" width="33" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EMR-lq-HWv">
+                                            <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="0JX-as-kJG" kind="show" identifier="ShowTrainer" trigger="accessoryAction" id="9YQ-q3-mSA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="R70-7y-ECB" id="puN-JQ-TN3"/>
+                            <outlet property="delegate" destination="R70-7y-ECB" id="Cea-Sj-N3B"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mfc-au-UNi"/>
+                    <connections>
+                        <outlet property="TrainersTableView" destination="xNH-NW-5cK" id="4tC-Ld-7aQ"/>
+                        <outlet property="searchBar" destination="f57-rd-v1P" id="JYi-mC-hOi"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J3Z-8V-u7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4082" y="677"/>
         </scene>
     </scenes>
     <designables>

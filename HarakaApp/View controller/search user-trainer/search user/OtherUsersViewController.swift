@@ -3,7 +3,6 @@
 //  HarakaApp
 //
 //  Created by lamia on 11/03/2021.
-//ohoud
 
 import UIKit
 import Firebase
