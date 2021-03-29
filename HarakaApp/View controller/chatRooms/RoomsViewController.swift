@@ -11,14 +11,17 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UIViewControllerTransitioningDelegate{
 
     
 
+    @IBOutlet weak var goCreateButton: UIButton!
+    
+    let transition = CircularTransition()
     
     @IBOutlet weak var RoomsTable: UITableView!
     
-    @IBOutlet weak var newRoomTextField: UITextField!
+    
     
     var rooms = [Room]()
     //var ref: DatabaseReference!
@@ -26,6 +29,9 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            goCreateButton.layer.cornerRadius = goCreateButton.frame.size.width / 2
+
         self.RoomsTable.delegate = self
         self.RoomsTable.dataSource = self
         
@@ -77,27 +83,15 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let room = self.rooms[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell")!
-        cell.textLabel?.text = room.name
+        cell.backgroundColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        cell.layer.cornerRadius = 30
+        cell.layer.borderWidth = 3
+        cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+            cell.textLabel?.text = room.name
               return cell
     }
-        
-    @IBAction func didPressCreateNewRoom(_ sender: UIButton) {
-        guard let userId = Auth.auth().currentUser?.uid, let roomName = self.newRoomTextField.text, roomName.isEmpty == false else {
-            return    }
-        self.newRoomTextField.resignFirstResponder()
-        
-        let databaseRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-
-        let roomRef = databaseRef.child("rooms").childByAutoId()
-        let roomData:[String: Any] = ["creatorId" : userId, "name": roomName]
-        
-        roomRef.setValue(roomData) { (err, ref) in
-            if(err == nil){
-                self.newRoomTextField.text = ""
-            }
-        }
-        
-    }
+  
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let room = self.rooms[indexPath.row]
@@ -106,7 +100,8 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.pushViewController(chatView, animated: true)
     }
 
-   
+  
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.rooms.count
@@ -119,4 +114,33 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
  
     
+
+// ui
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let secondVC = segue.destination as! CreateRoomViewController
+    secondVC.transitioningDelegate = self
+    secondVC.modalPresentationStyle = .custom
 }
+
+
+func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.transitionMode = .present
+    transition.startingPoint = goCreateButton.center
+    transition.circleColor = goCreateButton.backgroundColor!
+    
+    return transition
+}
+
+func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.transitionMode = .dismiss
+    transition.startingPoint = goCreateButton.center
+    transition.circleColor = goCreateButton.backgroundColor!
+    
+    return transition
+}
+
+
+
+}
+
+
