@@ -14,6 +14,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var datePicker: UIDatePicker!
 
     
+    let userDefaults = UserDefaults()
+
+    
     public var completion: ((String, String, Date) -> Void)?
     struct WheelDataPickerStyle{}
   //  var update : (()->void)?
