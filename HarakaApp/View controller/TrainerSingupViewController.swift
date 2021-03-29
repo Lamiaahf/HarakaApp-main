@@ -14,8 +14,10 @@ import FirebaseStorage
 class TrainerSingupViewController: UIViewController {
 // TS = SingupTrainer
     @IBOutlet weak var AvatarUS: UIImageView!
-    var image :UIImage? = nil
     @IBOutlet weak var tapToChangeProfileButton: UIButton!
+    var image :UIImage? = nil
+    private  var ref : DatabaseReference!
+
 
     @IBOutlet weak var NameTS: UITextField!
     @IBOutlet weak var UsernameTS: UITextField!
@@ -24,9 +26,6 @@ class TrainerSingupViewController: UIViewController {
     @IBOutlet weak var ConfpasswordTS: UITextField!
     @IBOutlet weak var Age: UITextField!
     @IBOutlet weak var LinkedinTS: UITextField!
-   private  var ref : DatabaseReference!
-
-    
    
     @IBOutlet weak var ErrorM: UILabel!
     
@@ -146,54 +145,45 @@ class TrainerSingupViewController: UIViewController {
             let Password = PasswordTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let age = Age.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let Linkdein = LinkedinTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-
-            // Create the user
-            Auth.auth().createUser(withEmail: Email, password: Password) { [self] (result, err) in
-                
-                // Check for errors
-                if err != nil {
-                    
-                    // There was an error creating the user
-                    self.showError("حدث خطأ !")
-                }
-                else {
-                    
-                    // User was created successfully, now store the first name and last name
+            
+                    // User was created successfully, now store the user info
                    
-                    
-                    guard let user = result?.user else {return}
+                  // guard let user = result?.user else {return}
 
-                     
+
                     // save the image to firbase Storage and user
                     let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
-                     let StorageProfilrRef  = storageRef.child("Profile").child(user.uid)
+                  let StorageProfilrRef  = storageRef.child("Profile")
+                    //.child(currentUser.uid)
                      let metaData = StorageMetadata()
                     
                     metaData.contentType = "image/jpg"
                     StorageProfilrRef.putData( imageData ,metadata: metaData) { (StorageMetadata, error) in
-                        if error != nil {return}
+                        if error != nil {print (error?.localizedDescription)}
                         // save image url as string
                         StorageProfilrRef.downloadURL(completion: {(url , error ) in
                         if let metaImageUrl = url?.absoluteString {
-
-            
-                            let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkedin":Linkdein,"ProfilePic": metaImageUrl,"Age":age,"uid": result!.user.uid ]
                             
-                            ref.child("Trainers").child("Unapproved").childByAutoId().setValue(db){_,_ in }
-                            self.showError("تم رفع طلبك بنجاح ")
+        let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkedin":Linkdein,"ProfilePic": metaImageUrl,"Age":age, ]
+
+                            self.ref?.child("Trainers").child("Unapproved").childByAutoId().setValue(db)
+                            let alert = UIAlertController(title: " رفع طلبك بنجاح  ", message: nil, preferredStyle: UIAlertController.Style.alert)
+                            
+                                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: self.transitionLogIn))
+                            self.present(alert, animated: true, completion: nil)
 
                         } })
 
                     }
                     
-                    self.transitionToHome()
+                   // self.transitionToHome()
 
                         
                         if error != nil {
                             // Show error message
                             self.showError("حدث خطأ ما !!")}
                         
-                        }}}}
+                        }}
                         
 
     func showError(_ message : String )  {
@@ -201,16 +191,18 @@ class TrainerSingupViewController: UIViewController {
         ErrorM.alpha = 1
     }
     
-    func transitionToHome() {
-        
-        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? MyTabBarCtrl
-        
-        view.window?.rootViewController = homeViewController
-        view.window?.makeKeyAndVisible()
+    func transitionLogIn(action:UIAlertAction) {
+                 
+         /// present the next VC
+         let vc = self.storyboard?.instantiateViewController(withIdentifier:"login") as? LOGINViewController
+         
+         self.view.window?.rootViewController = vc
+         self.view.window?.makeKeyAndVisible()
+     }
         
     }
     
-}
+
     
 extension TrainerSingupViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey :Any ]) {

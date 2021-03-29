@@ -41,10 +41,10 @@ override func viewDidLoad() {
         let likedin = dict["Linkedin"] as! String
         let email = dict["Email"] as! String
         let pass = dict["Password"] as! String
-        
-        
+        let Tpic = dict["ProfilePic"] as? String
 
-         let Trainer = Trainner(specName:name,specAge:age,specusername:Username,specLinked:likedin, specEmail:email, specPassword:pass ,autoKey:key )
+    
+    let Trainer = Trainner(specName:name,specAge:age,specusername:Username,specLinked:likedin, specEmail:email, specPassword:pass ,autoKey:key )
         
         self.arrayOfRegisteration.append(Trainer)
         self.Name.append(name)

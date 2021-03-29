@@ -16,9 +16,7 @@ class AdminLogin: UIViewController {
     
     
     @IBOutlet weak var LoginButton: UIButton!
-    
-    @IBOutlet weak var ForgotPasswordButton: UIButton!
-    
+        
     @IBOutlet weak var Error: UILabel!
 
     override func viewDidLoad() {
@@ -66,7 +64,7 @@ class AdminLogin: UIViewController {
                 
                 //transition to next screen
                 let adminViewController =
-                    self.storyboard?.instantiateViewController(withIdentifier:"AdminMain") as? ShowTrainner
+                    self.storyboard?.instantiateViewController(withIdentifier:"ApproveVC") as? ShowTrainner
                     
                 
                 self.view.window?.rootViewController = adminViewController

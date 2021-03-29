@@ -71,16 +71,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CEDF7529-6BF0-4C47-A91F-AAED28D5AB22"
+            uuid = "2D96EBB9-EFA2-4B47-AF79-068359CA0FB9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/FollwoUsersTableViewController.swift"
+            filePath = "HarakaApp/View controller/Admin/ApproveTrainer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "filterContent(searchText:)"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "accept(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6254F226-13BB-4469-A27C-9D75FFB4ACBF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarakaApp/View controller/TrainerSingupViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "SingUpTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
