@@ -17,14 +17,14 @@
 		236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C961225E182BB0032ECC3 /* AddPostController.swift */; };
 		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
-		3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */; };
+		3F6A0E6625DD54FA00AAB91A /* FollwoUserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0E6525DD54FA00AAB91A /* FollwoUserProfileViewController.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3FA4932C260B613C0052A1BD /* approveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49327260B613C0052A1BD /* approveCell.swift */; };
 		3FA4932D260B613C0052A1BD /* ApproveTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49328260B613C0052A1BD /* ApproveTrainer.swift */; };
 		3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49329260B613C0052A1BD /* Trainner.swift */; };
 		3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4932A260B613C0052A1BD /* ShowTrainner.swift */; };
 		3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4932B260B613C0052A1BD /* AdminLogin.swift */; };
-		3FA49333260B62910052A1BD /* FollwoUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49332260B62910052A1BD /* FollwoUsersTableViewController.swift */; };
+		3FA49333260B62910052A1BD /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49332260B62910052A1BD /* UsersTableViewController.swift */; };
 		3FA49336260B63090052A1BD /* ShowFriendsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49335260B63090052A1BD /* ShowFriendsTable.swift */; };
 		3FA49339260B63390052A1BD /* OtherUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49338260B63390052A1BD /* OtherUsersViewController.swift */; };
 		3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */; };
@@ -56,8 +56,11 @@
 		94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11B25DD350B0029FA09 /* PostCell.swift */; };
 		94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11E25DD35140029FA09 /* TimelineViewController.swift */; };
 		94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */; };
+		CE49441B2610DB4F008DC32B /* OtherTrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */; };
 		CEBE937D2602758F00A0E363 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE937C2602758F00A0E363 /* CalenderViewController.swift */; };
 		CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE9380260387A700A0E363 /* AddViewController.swift */; };
+		CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3478B260BFC7C004B3754 /* searchBViewController.swift */; };
+		CEC34795260C1BA9004B3754 /* TrainersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC34794260C1BA3004B3754 /* TrainersTableViewController.swift */; };
 		CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */; };
 		CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033325F41ABE00C4ACE4 /* Room.swift */; };
 		CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033825F41DB400C4ACE4 /* RoomViewController.swift */; };
@@ -80,14 +83,14 @@
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		3F6A0E6525DD54FA00AAB91A /* FollwoUserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollwoUserProfileViewController.swift; sourceTree = "<group>"; };
 		3F775B6725ED5426001FDD9D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3FA49327260B613C0052A1BD /* approveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = approveCell.swift; sourceTree = "<group>"; };
 		3FA49328260B613C0052A1BD /* ApproveTrainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproveTrainer.swift; sourceTree = "<group>"; };
 		3FA49329260B613C0052A1BD /* Trainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainner.swift; sourceTree = "<group>"; };
 		3FA4932A260B613C0052A1BD /* ShowTrainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainner.swift; sourceTree = "<group>"; };
 		3FA4932B260B613C0052A1BD /* AdminLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminLogin.swift; sourceTree = "<group>"; };
-		3FA49332260B62910052A1BD /* FollwoUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollwoUsersTableViewController.swift; sourceTree = "<group>"; };
+		3FA49332260B62910052A1BD /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		3FA49335260B63090052A1BD /* ShowFriendsTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowFriendsTable.swift; sourceTree = "<group>"; };
 		3FA49338260B63390052A1BD /* OtherUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherUsersViewController.swift; sourceTree = "<group>"; };
 		3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -124,8 +127,11 @@
 		94DDE11E25DD35140029FA09 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.release.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.release.xcconfig"; sourceTree = "<group>"; };
+		CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTrainersViewController.swift; sourceTree = "<group>"; };
 		CEBE937C2602758F00A0E363 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		CEBE9380260387A700A0E363 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		CEC3478B260BFC7C004B3754 /* searchBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBViewController.swift; sourceTree = "<group>"; };
+		CEC34794260C1BA3004B3754 /* TrainersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainersTableViewController.swift; sourceTree = "<group>"; };
 		CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewController.swift; sourceTree = "<group>"; };
 		CED6033325F41ABE00C4ACE4 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		CED6033825F41DB400C4ACE4 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
@@ -255,15 +261,14 @@
 				94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */,
 				94D4604925E3E528009F31A6 /* NotificationViewController.swift */,
 				940F4C35260227B600508368 /* createChallenge.swift */,
-				3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */,
 				3F775B6725ED5426001FDD9D /* SettingsViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
 				230273AE25E93C4A00DC6C31 /* UserInfo.swift */,
-				3FA49338260B63390052A1BD /* OtherUsersViewController.swift */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
-				3FA49332260B62910052A1BD /* FollwoUsersTableViewController.swift */,
+				3F6A0E6525DD54FA00AAB91A /* FollwoUserProfileViewController.swift */,
+				CEC34787260BF25C004B3754 /* search user-trainer */,
 				23DAC3AC260BB2DB000DB8AB /* Challenges */,
 				23DAC3A6260BB22F000DB8AB /* Timeline */,
 				3FA49326260B613C0052A1BD /* Admin */,
@@ -299,6 +304,34 @@
 			);
 			name = calender;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CEC34787260BF25C004B3754 /* search user-trainer */ = {
+			isa = PBXGroup;
+			children = (
+				CEC3478B260BFC7C004B3754 /* searchBViewController.swift */,
+				CEC34789260BF2E8004B3754 /* search trainer */,
+				CEC34788260BF28B004B3754 /* search user */,
+			);
+			path = "search user-trainer";
+			sourceTree = "<group>";
+		};
+		CEC34788260BF28B004B3754 /* search user */ = {
+			isa = PBXGroup;
+			children = (
+				3FA49332260B62910052A1BD /* UsersTableViewController.swift */,
+				3FA49338260B63390052A1BD /* OtherUsersViewController.swift */,
+			);
+			path = "search user";
+			sourceTree = "<group>";
+		};
+		CEC34789260BF2E8004B3754 /* search trainer */ = {
+			isa = PBXGroup;
+			children = (
+				CEC34794260C1BA3004B3754 /* TrainersTableViewController.swift */,
+				CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */,
+			);
+			path = "search trainer";
 			sourceTree = "<group>";
 		};
 		CED6033225F41A6800C4ACE4 /* models "rooms" */ = {
@@ -442,7 +475,7 @@
 				232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */,
 				3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */,
 				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
-				3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */,
+				3F6A0E6625DD54FA00AAB91A /* FollwoUserProfileViewController.swift in Sources */,
 				3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */,
 				235797A02607E4420017C166 /* Comment.swift in Sources */,
 				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
@@ -452,11 +485,13 @@
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
 				94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */,
 				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,
+				CE49441B2610DB4F008DC32B /* OtherTrainersViewController.swift in Sources */,
+				CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */,
 				940F4BD625E56E7C00508368 /* activityLocations.swift in Sources */,
 				9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */,
 				94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */,
 				232E738E25F56BAC0029D39C /* Challenge.swift in Sources */,
-				3FA49333260B62910052A1BD /* FollwoUsersTableViewController.swift in Sources */,
+				3FA49333260B62910052A1BD /* UsersTableViewController.swift in Sources */,
 				3FA4932D260B613C0052A1BD /* ApproveTrainer.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
@@ -486,6 +521,7 @@
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
 				3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */,
 				CEBE937D2602758F00A0E363 /* CalenderViewController.swift in Sources */,
+				CEC34795260C1BA9004B3754 /* TrainersTableViewController.swift in Sources */,
 				232E739125F588290029D39C /* ChallengeViewController.swift in Sources */,
 				CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */,
 				2357979D2607E3280017C166 /* CommentViewController.swift in Sources */,

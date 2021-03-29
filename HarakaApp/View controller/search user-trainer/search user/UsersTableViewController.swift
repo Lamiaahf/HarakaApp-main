@@ -1,19 +1,19 @@
 //
-//  FollwoUsersTableViewController.swift
+//  UsersTableViewController.swift
 //  HarakaApp
 //
 //  Created by lamia on 21/03/2021.
-//
+//ohoud
 
 import UIKit
 import FirebaseDatabase
 
-class FollwoUsersTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
-    @IBOutlet weak   var FollowUsersTableView: UITableView!
+    @IBOutlet weak var UsersTableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
 
-    @IBOutlet weak   var searchBar: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     var loggedInUser:CurrentUser?
     var usersArray = [NSDictionary?]()
     var filteredUsers = [NSDictionary?]()
@@ -34,7 +34,7 @@ class FollwoUsersTableViewController: UITableViewController, UISearchBarDelegate
           tableView.tableHeaderView = searchController.searchBar
 
 
-        databaseRef.child("users").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
+        databaseRef.child("users").queryOrdered(byChild: "Name").observe(.childAdded, with: { (snapshot) in
 
                  
             let key = snapshot.key
@@ -49,14 +49,26 @@ class FollwoUsersTableViewController: UITableViewController, UISearchBarDelegate
             {
                 self.usersArray.append(snapshot)
                 //insert the rows
-                self.FollowUsersTableView.insertRows(at: [IndexPath(row:self.usersArray.count-1,section:0)], with: UITableView.RowAnimation.automatic)
+                self.UsersTableView.insertRows(at: [IndexPath(row:self.usersArray.count-1,section:0)], with: UITableView.RowAnimation.automatic)
             }
 
            
             }) { (error) in
             print(error.localizedDescription)
         }
+        
+        //ohoud (half page)
+       /* let newView = UIView(frame: CGRect(x: 0, y: 500, width: self.view.frame.width, height: 600))
+                newView.layer.cornerRadius = 20
 
+                self.view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+
+                // self.view is now a transparent view, so now I add newView to it and can size it however, I like.
+
+                self.view.addSubview(newView)*/
+
+
+        
     }
     override func didReceiveMemoryWarning() {
          super.didReceiveMemoryWarning()
@@ -131,12 +143,14 @@ class FollwoUsersTableViewController: UITableViewController, UISearchBarDelegate
     {
         self.filteredUsers = self.usersArray.filter{ user in
 
-            let username = user!["name"] as? String
+            let username = user!["Name"] as? String
             
-        return(username?.lowercased().contains(searchText.lowercased()))!
-      
+            if( username != nil){
+            return(username?.lowercased().contains(searchText.lowercased()))!
+           
         }
-        
+            else {return false}
+        }
         tableView.reloadData()
     }
 
