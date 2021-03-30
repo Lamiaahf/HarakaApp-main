@@ -32,6 +32,7 @@ class AddPostController: UIViewController{
         let time: Date = Date()
 
         let user = Auth.auth().currentUser
+        let UID = user?.uid
         let name = String(user?.email ?? "")
         let charIndex = name.firstIndex(of: "@")
         let username = String(name[..<charIndex!])
@@ -40,7 +41,7 @@ class AddPostController: UIViewController{
             return
         }
         
-        ref.child("posts").childByAutoId().setValue([
+        ref.child("posts").childByAutoId().setValue(["uid" : UID,
                                                     "username": username,
                                                     "caption": postText.text!,
                                                     "numOfLikes": 0,
