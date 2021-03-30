@@ -21,14 +21,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         
         commentsTable.dataSource = self
-
-        self.comments = []
+        commentsTable.delegate = self
+        commentsTable.separatorStyle = .none
+        commentsTable.estimatedRowHeight = commentsTable.rowHeight
+        commentsTable.rowHeight = UITableView.automaticDimension
+        
+        comments = []
         fetchComments()
     }
-    
-    func setPost(post: Post){
-        self.post = post
-    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let comments = comments{
@@ -37,9 +38,6 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 0
     }
     
-     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = commentsTable.dequeueReusableCell(withIdentifier:"CommentCell", for: indexPath) as! CommentCell
         cell.comment = comments![indexPath.row]
@@ -48,7 +46,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45
+        return 95
     }
     
     
@@ -70,23 +68,24 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         commentField.text = ""
         // after utilities is finished, append this comment to array after retrieving User and creating comment object
-        fetchComments()
+     //   fetchComments()
     }
     
     func fetchComments(){
         
+        comments = []
         let ref = Database.database().reference()
         ref.child("Comments").child((post?.postID)!).observe(.childAdded){
         (snapshot) in
             if snapshot.exists(){
                 if let commentDict = snapshot.value as? [String: Any]{
                     if let usern = commentDict["username"] as? String {
-                            let uid = commentDict["uid"] as? String ?? ""
+                       //     let uid = commentDict["uid"] as? String ?? ""
                             let comment = commentDict["comment"] as? String ?? ""
-                            let id = String(snapshot.key)
+                //            let id = String(snapshot.key)
                             
-                        var commentUser = User(u: Auth.auth().currentUser?.email, p: UIImage())
-                        var newComment = Comment(writtenBy: commentUser, commentText:comment)
+                        let commentUser = User(u: usern, p: UIImage(named: "icons8-user-male-480"))
+                        let newComment = Comment(writtenBy: commentUser, commentText:comment)
                             self.comments?.append(newComment)
                             self.commentsTable.reloadData()}
                 }

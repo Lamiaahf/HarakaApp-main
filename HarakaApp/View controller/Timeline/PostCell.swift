@@ -14,7 +14,6 @@ class PostCell: UITableViewCell{
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
-//    @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
@@ -41,10 +40,7 @@ class PostCell: UITableViewCell{
         
         
         likesLabel.text = String(post.numOfLikesUI ?? 0)
-        var flag = false
-        if(post.isLiked()){
-             flag = true
-        }
+
         if (!post.liked!){
             likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
         }
@@ -54,7 +50,9 @@ class PostCell: UITableViewCell{
         
     }
 
-    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+       super.setSelected(selected, animated: animated)
+    }
 
     
     @IBAction func like(_ sender: Any) {

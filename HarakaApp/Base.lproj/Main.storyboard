@@ -550,32 +550,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TVf-WC-CFg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TVf-WC-CFg">
                                 <rect key="frame" x="30" y="20" width="331" height="571"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="95" id="RgR-VD-TAo" customClass="CommentCell" customModule="HarakaApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="331" height="95"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="107" id="RgR-VD-TAo" customClass="CommentCell" customModule="HarakaApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="331" height="107"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RgR-VD-TAo" id="d4u-Gg-Yxs" customClass="CommentCell" customModule="HarakaApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="331" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="331" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snoop dogg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7K-B7-VGK">
-                                                    <rect key="frame" x="52" y="17" width="147" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Snoop dogg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="U7K-B7-VGK">
+                                                    <rect key="frame" x="55" y="17.000000000000004" width="84" height="36.333333333333343"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGD-Kz-HkH">
-                                                    <rect key="frame" x="9" y="11" width="35" height="32"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="bGD-Kz-HkH">
+                                                    <rect key="frame" x="9" y="11" width="38" height="42"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dope song!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcq-Es-Ajf">
-                                                    <rect key="frame" x="9" y="51" width="322" height="37"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dope song!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qcq-Es-Ajf">
+                                                    <rect key="frame" x="9" y="61" width="322" height="21.666666666666671"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -583,28 +584,22 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentLabel" destination="Qcq-Es-Ajf" id="Qfd-IX-n1g"/>
-                                            <outlet property="commentText" destination="Qcq-Es-Ajf" id="j9R-ZR-N5d"/>
                                             <outlet property="profilePic" destination="bGD-Kz-HkH" id="QG5-Ku-8z1"/>
                                             <outlet property="usernameLabel" destination="U7K-B7-VGK" id="LRi-yq-Og1"/>
-                                            <outlet property="writtenBy" destination="U7K-B7-VGK" id="MOA-av-9Xz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Lgj-fR-4eq" id="fiQ-mb-68o"/>
-                                    <outlet property="delegate" destination="Lgj-fR-4eq" id="Lnf-dS-e0w"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXQ-gx-5VV">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXQ-gx-5VV">
                                 <rect key="frame" x="41" y="613" width="259" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BbY-gO-jXP">
                                 <rect key="frame" x="316" y="615" width="34" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="Heo-Nl-e9M"/>
-                                </constraints>
                                 <state key="normal" title="ارسال"/>
                                 <connections>
                                     <action selector="postComment:" destination="Lgj-fR-4eq" eventType="touchUpInside" id="dln-Rx-rr4"/>
@@ -634,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVS-gq-1GH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1346" y="707"/>
+            <point key="canvasLocation" x="1344.6153846153845" y="706.6350710900474"/>
         </scene>
         <!--Room View Controller-->
         <scene sceneID="uab-jE-1dt">
@@ -931,8 +926,8 @@
                                             <color key="tintColor" red="0.44588272229999998" green="0.55164075479999997" blue="0.58818409969999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <state key="normal" image="text.bubble" catalog="system"/>
                                             <connections>
-                                                <action selector="openComments:" destination="H01-fK-k6R" eventType="touchUpInside" id="fxM-dO-eUq"/>
-                                                <segue destination="Lgj-fR-4eq" kind="showDetail" id="TcS-Cg-PZl"/>
+                                                <action selector="openComments:" destination="H01-fK-k6R" eventType="touchUpInside" id="trh-zB-3a7"/>
+                                                <segue destination="Lgj-fR-4eq" kind="showDetail" identifier="commentSegue" id="wh2-Hb-ajp"/>
                                             </connections>
                                         </button>
                                     </subviews>

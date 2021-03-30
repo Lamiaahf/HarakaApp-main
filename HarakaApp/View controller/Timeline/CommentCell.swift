@@ -11,9 +11,7 @@ import Firebase
 class CommentCell: UITableViewCell{
     
     @IBOutlet weak var usernameLabel: UILabel!
-    
     @IBOutlet weak var profilePic: UIImage!
-    
     @IBOutlet weak var commentLabel: UILabel!
     
     var comment: Comment!{

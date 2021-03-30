@@ -10,9 +10,9 @@ import UIKit
 class Comment{
     
     var writtenBy: User
-    var commentText: String?
+    var commentText: String
     
-    init(writtenBy: User, commentText: String?){
+    init(writtenBy: User, commentText: String){
         self.writtenBy = writtenBy
         self.commentText = commentText
     }
