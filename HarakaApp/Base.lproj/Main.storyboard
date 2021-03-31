@@ -1331,6 +1331,7 @@
                 <navigationController id="Pf8-zs-Bpp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="qVy-zg-Vug"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZY-BC-kvA">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -1724,6 +1725,7 @@
                 <navigationController id="ee6-Tj-DMb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="mxc-E4-Gsf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aqv-3f-v7S">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
