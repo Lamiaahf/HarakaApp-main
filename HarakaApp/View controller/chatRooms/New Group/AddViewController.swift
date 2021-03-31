@@ -14,6 +14,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var datePicker: UIDatePicker!
 
     
+
+    
     public var completion: ((String, String, Date) -> Void)?
     struct WheelDataPickerStyle{}
   //  var update : (()->void)?
@@ -21,7 +23,8 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         titleField.delegate = self
         bodyField.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapSaveButton))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "حفظ", style: .done, target: self, action: #selector(didTapSaveButton))
     }
 
     @objc func didTapSaveButton() {
@@ -33,21 +36,12 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             completion?(titleText, bodyText, targetDate)
 
         }
-        /*save
-       var count = UserDefaults().value
-        (forKey : "count") as? int
-        
-        let newCount = count + 1
-        UserDefaults().set(newCount, forKey :"count")
-        UserDefaults().set(titleText, forKey :"date_\(newCount)")
-        
-        update?()
-        navigationController?.popViewController(animated:true)
-    */
+
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
+   
 
 }
