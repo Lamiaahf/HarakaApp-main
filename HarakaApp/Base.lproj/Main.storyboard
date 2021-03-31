@@ -826,7 +826,6 @@
         <!--Rooms View Controller-->
         <scene sceneID="edD-ad-fjg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6jn-LK-Rxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="2sC-la-WC5" customClass="RoomsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="T9f-8x-JYv" customClass="View">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -877,6 +876,7 @@
                         <outlet property="goCreateButton" destination="DhR-VO-usz" id="ULs-aS-xgL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jn-LK-Rxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-109.23076923076923" y="-622.03791469194312"/>
         </scene>
@@ -2391,7 +2391,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="tEi-oZ-rgX"/>
+        <segue reference="pAM-Ja-N9h"/>
         <segue reference="LFd-Xh-5l6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
