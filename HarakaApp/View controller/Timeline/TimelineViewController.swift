@@ -70,6 +70,7 @@ class TimelineViewController: UITableViewController {
             }
 
         }
+        
      }
     
     @IBAction func openComments(_ sender: UIButton) {
@@ -83,6 +84,7 @@ class TimelineViewController: UITableViewController {
                if let button:UIButton = sender as! UIButton? {
                    print(button.tag) //optional
                 destination.post = posts![button.tag]
+            
                }
             }
         }

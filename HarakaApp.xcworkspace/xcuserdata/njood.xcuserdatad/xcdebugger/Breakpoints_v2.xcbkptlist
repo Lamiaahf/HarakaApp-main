@@ -699,8 +699,8 @@
             filePath = "HarakaApp/View controller/Timeline/TimelineViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "TimelineViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -715,8 +715,8 @@
             filePath = "HarakaApp/View controller/Timeline/TimelineViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "TimelineViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -731,8 +731,8 @@
             filePath = "HarakaApp/View controller/Timeline/TimelineViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "TimelineViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -747,8 +747,8 @@
             filePath = "HarakaApp/View controller/Timeline/TimelineViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -763,8 +763,8 @@
             filePath = "HarakaApp/View controller/Timeline/TimelineViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "openComments(_:)"
             landmarkType = "7">
          </BreakpointContent>
