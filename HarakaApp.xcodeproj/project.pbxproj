@@ -16,6 +16,8 @@
 		235797A32607E4540017C166 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235797A22607E4540017C166 /* CommentCell.swift */; };
 		236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C961225E182BB0032ECC3 /* AddPostController.swift */; };
 		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
+		2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */; };
+		2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF40261736FD00FD9B1C /* DBManager.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
 		3F6A0E6625DD54FA00AAB91A /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
@@ -76,6 +78,8 @@
 		235797A22607E4540017C166 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		236C961225E182BB0032ECC3 /* AddPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
 		23985FBE26021BB100FB2764 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerChallengeViewController.swift; sourceTree = "<group>"; };
+		2399CF40261736FD00FD9B1C /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -153,6 +157,14 @@
 				CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2399CF3C261735F300FD9B1C /* Challenges - Trainer */ = {
+			isa = PBXGroup;
+			children = (
+				2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */,
+			);
+			path = "Challenges - Trainer";
 			sourceTree = "<group>";
 		};
 		23DAC3A6260BB22F000DB8AB /* Timeline */ = {
@@ -258,12 +270,12 @@
 				3F6A0E6525DD54FA00AAB91A /* UserProfileViewController.swift */,
 				3F775B6725ED5426001FDD9D /* SettingsViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
-				230273AE25E93C4A00DC6C31 /* UserInfo.swift */,
 				3FA49338260B63390052A1BD /* OtherUsersViewController.swift */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
 				3FA49332260B62910052A1BD /* FollwoUsersTableViewController.swift */,
+				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
 				23DAC3AC260BB2DB000DB8AB /* Challenges */,
 				23DAC3A6260BB22F000DB8AB /* Timeline */,
 				3FA49326260B613C0052A1BD /* Admin */,
@@ -279,6 +291,8 @@
 				3FBB155525CE96780098C299 /* Utilities.swift */,
 				3FD4742725D3264600260C1A /* Service.swift */,
 				3F4683AC25D448CC007F9D66 /* Constants.swift */,
+				230273AE25E93C4A00DC6C31 /* UserInfo.swift */,
+				2399CF40261736FD00FD9B1C /* DBManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -447,8 +461,10 @@
 				235797A02607E4420017C166 /* Comment.swift in Sources */,
 				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
 				3FD4742825D3264700260C1A /* Service.swift in Sources */,
+				2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */,
 				3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */,
 				94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */,
+				2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */,
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
 				94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */,
 				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,

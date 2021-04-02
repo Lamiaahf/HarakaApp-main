@@ -13,7 +13,7 @@ class ChallengeCell: UITableViewCell{
     @IBOutlet weak var deadlineLabel: UILabel!
     @IBOutlet weak var trainerLabel: UILabel!
     
-    @IBOutlet weak var progressButton: UIButton!
+    @IBOutlet weak var leaderboardButton: UIButton!
     
     var challenge: Challenge!{
         didSet{
@@ -24,6 +24,7 @@ class ChallengeCell: UITableViewCell{
     func updateChallenges(){
         
         challengeLabel.text = challenge.cName
+        deadlineLabel.text = challenge.createdBy?.trainerID
         
     }
 }
