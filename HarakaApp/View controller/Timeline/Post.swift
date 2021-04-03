@@ -11,10 +11,10 @@ class Post
 {
      var createdBy: User
      var timeAgo: String?
-     var captionUI: String?
+     var caption: String?
  //   var image: UIImage?
-     var numOfLikesUI: Int?
-     var numOfCommentsUI: Int?
+     var numOfLikes: Int?
+     var numOfComments: Int?
     
 //    var like: UIButton
  //   var comment: UIButton
@@ -22,16 +22,28 @@ class Post
      var postID: String?
     var liked: Bool?
     
-    init(createdBy: User, timeAgo: String?, captionUI: String?, numOfLikesUI: Int?, numOfCommentsUI: Int?, postID: String?, liked: Bool?){
+
+    
+    init(createdBy: User, timeAgo: String?, caption: String?, numOfLikes: Int?, numOfComments: Int?, postID: String?, liked: Bool?){
         self.createdBy = createdBy
         self.timeAgo = timeAgo
-        self.captionUI = captionUI
-        self.numOfLikesUI = numOfLikesUI
-        self.numOfCommentsUI = numOfCommentsUI
+        self.caption = caption
+        self.numOfLikes = numOfLikes
+        self.numOfComments = numOfComments
         self.postID = postID
         self.liked = liked
-        
     }
+    
+    init(){
+        createdBy = User()
+        timeAgo = ""
+        caption = ""
+        numOfLikes = 0
+        numOfComments = 0
+        postID = ""
+        liked = false
+    }
+    
     func isLiked() -> Bool {
         return liked!
     }

@@ -12,6 +12,7 @@ import FirebaseDatabase
 class TimelineViewController: UITableViewController {
     
     var posts:[Post]?
+    let ref: DatabaseReference = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,35 +29,60 @@ class TimelineViewController: UITableViewController {
     func fetchPosts(){
 
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
-        let ref = Database.database().reference()
+
         ref.child("posts").observe(.childAdded){
         (snapshot) in
-        if let postDict = snapshot.value as? [String: Any]{
-            if let usern = postDict["username"] as? String {
-                    let times = postDict["timestamp"] as? String ?? ""
-                    let cap = postDict["caption"] as? String ?? ""
-                    let nol = postDict["numOfLikes"] as? Int ?? 0
-                    let noc = postDict["numOfComments"] as? Int ?? 0
-                    let id = String(snapshot.key)
-                  
-                let postUser = User(u: usern, p: UIImage(systemName: "figure"))
-                let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:false)
-                self.checkLike(post: newPost)
-             //       postArray.insert(newPost, at: indx)
-                    self.posts?.append(newPost)
-                  //  postArray.append(newPost)
-                //    indx = indx+1
-                    self.tableView.reloadData()
-                
-            }}
-   //     self.posts = postArray
-        
+            if snapshot.exists(){
+                if let postDict = snapshot.value as? [String: Any]{
+                    if let uid = postDict["uid"] as? String{
+                            let cap = postDict["caption"] as? String ?? ""
+                            let times = postDict["timestamp"] as? String ?? ""
+                            let nol = postDict["numOfLikes"] as? Int ?? 0
+                            let noc = postDict["numOfComments"] as? Int ?? 0
+                            let id = String(snapshot.key)
+                        
+                        //Get user from uid and store it inside the post object
+                        let postUser = User()
+                        let newPost = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked:false)
+                        
+                        //Check for liked posts
+                        self.checkLike(post: newPost)
+                        self.getUser(id: uid, post: newPost)
+                        self.posts?.append(newPost)
+                        self.tableView.reloadData()
+                        
+                    }}
+            }
+    
         }
+    }
+    
+    func getUser(id: String, post: Post){
+        
+        ref.child("users/\(id)").observeSingleEvent(of: .value, with: {
+            snapshot in
+            if snapshot.exists(){
+                if let userDict = snapshot.value as? [String: Any] {
+                    let username = userDict["Username"] as? String
+                    let name = userDict["Name"] as? String
+                    let email = userDict["Email"] as? String
+                    let followingCount = userDict["followingCount"] as? Int
+                    let profilepic = userDict["ProfilePic"] as? String
+                    let dob = userDict["DOB"] as? String
+                    
+                    post.createdBy = User(username: username, profileimageurl: profilepic, name: name, email: email, followingCount: followingCount, DOB: dob, id: id)
+                    self.tableView.reloadData()
+                    
+                }
+            }
+        })
     }
     
      func checkLike(post: Post){
         
+        //Get uid to check posts current user has liked
         let uid = Auth.auth().currentUser?.uid
+        
         let ref = Database.database().reference()
         ref.child("PostLikes").child(post.postID!).observe(.childAdded){
             (snapshot) in
@@ -68,10 +94,9 @@ class TimelineViewController: UITableViewController {
                         }
                 }
             }
-
         }
-        
      }
+    
     
     @IBAction func openComments(_ sender: UIButton) {
         self.performSegue(withIdentifier: "commentSegue", sender: sender)
@@ -82,25 +107,13 @@ class TimelineViewController: UITableViewController {
             if let destination = segue.destination as? CommentViewController {
 
                if let button:UIButton = sender as! UIButton? {
-                   print(button.tag) //optional
-                destination.post = posts![button.tag]
+   //             destination.post = posts![button.tag]
+                destination.setPost(p: posts![button.tag])
             
                }
             }
         }
     }
-
-        /*
-        let popover = storyboard!.instantiateViewController(withIdentifier: Constants.Storyboard.CommentViewController) as? CommentViewController
-
-        let cellIndex = tableView.indexPathForSelectedRow
-        let selectedPost = posts![cellIndex!.row]
-
-        popover!.setPost(post: selectedPost)
- */
-    
-    
-
     
 }
 

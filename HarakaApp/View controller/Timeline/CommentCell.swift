@@ -22,7 +22,7 @@ class CommentCell: UITableViewCell{
     
     func updateComments(){
         
-        usernameLabel.text = comment.writtenBy.usernameUI
+        usernameLabel.text = comment.writtenBy.username
         profilePic = comment.writtenBy.profileImage
         commentLabel.text = comment.commentText
         

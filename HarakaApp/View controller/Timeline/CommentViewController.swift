@@ -11,7 +11,7 @@ import Firebase
 class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var comments: [Comment]?
-    var post: Post?
+    var post: Post = Post()
     
 //    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentField: UITextField!
@@ -28,6 +28,10 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         comments = []
         fetchComments()
+    }
+    
+    func setPost(p: Post){
+        self.post = p
     }
 
     
@@ -58,33 +62,28 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         let ref = Database.database().reference()
-        let user = Auth.auth().currentUser!
+        let user = Auth.auth().currentUser?.uid
         
-        
-        ref.child("Comments").child((post?.postID)!).childByAutoId().setValue([
-                "username":user.email,
-                "uid":user.uid,
+        ref.child("Comments").child(post.postID!).childByAutoId().setValue([
+                "uid":user!,
                 "comment":text])
         
         commentField.text = ""
-        // after utilities is finished, append this comment to array after retrieving User and creating comment object
-     //   fetchComments()
+        fetchComments()
     }
     
     func fetchComments(){
         
         comments = []
         let ref = Database.database().reference()
-        ref.child("Comments").child((post?.postID)!).observe(.childAdded){
+        ref.child("Comments").child(post.postID!).observe(.childAdded){
         (snapshot) in
             if snapshot.exists(){
                 if let commentDict = snapshot.value as? [String: Any]{
-                    if let usern = commentDict["username"] as? String {
-                       //     let uid = commentDict["uid"] as? String ?? ""
-                            let comment = commentDict["comment"] as? String ?? ""
-                //            let id = String(snapshot.key)
-                            
-                        let commentUser = User(u: usern, p: UIImage(named: "icons8-user-male-480"))
+                    if let uid = commentDict["uid"] as? String {
+                        let comment = commentDict["comment"] as? String ?? ""
+            
+                        let commentUser = DBManager().getUser(id: uid)
                         let newComment = Comment(writtenBy: commentUser, commentText:comment)
                             self.comments?.append(newComment)
                             self.commentsTable.reloadData()}

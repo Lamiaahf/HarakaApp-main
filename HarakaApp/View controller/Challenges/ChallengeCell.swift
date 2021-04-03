@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ChallengeCell: UITableViewCell{
     
@@ -24,7 +25,20 @@ class ChallengeCell: UITableViewCell{
     func updateChallenges(){
         
         challengeLabel.text = challenge.cName
-        deadlineLabel.text = challenge.createdBy?.trainerID
+        deadlineLabel.text = "\(challenge.enddate)"
+        trainerLabel.text = challenge.createdBy?.name
+        
+        let uid = Auth.auth().currentUser?.uid
+        
+        if(DBManager().getType(id: uid!) == 0){
+            leaderboardButton.setBackgroundImage(UIImage(systemName: "circle"), for: .normal)
+            print(leaderboardButton.tintColor.accessibilityName)
+        }
+        else{
+            leaderboardButton.setBackgroundImage(UIImage(systemName: "ellipsis"), for: .normal)
+            print(leaderboardButton.tintColor.accessibilityName)
+        }
+
         
     }
 }

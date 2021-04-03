@@ -1052,7 +1052,7 @@
                                 <connections>
                                     <outlet property="challengeLabel" destination="EMx-D6-Nc9" id="w12-RP-KHE"/>
                                     <outlet property="deadlineLabel" destination="WYf-TC-b3U" id="Rwx-XU-6WO"/>
-                                    <outlet property="progressButton" destination="vTI-BH-JP2" id="h0K-3x-CSL"/>
+                                    <outlet property="leaderboardButton" destination="vTI-BH-JP2" id="W54-DY-MfZ"/>
                                     <outlet property="trainerLabel" destination="Qs5-dE-AIf" id="0Cs-bI-rim"/>
                                 </connections>
                             </tableViewCell>
@@ -1534,7 +1534,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="144" id="as7-4a-1Gu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="144" id="as7-4a-1Gu" customClass="ChallengeCell" customModule="HarakaApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="390" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="as7-4a-1Gu" id="IKH-pB-GuH">
@@ -1582,7 +1582,7 @@
                                 <connections>
                                     <outlet property="challengeLabel" destination="yTL-Vl-2pd" id="xmQ-yb-PGg"/>
                                     <outlet property="deadlineLabel" destination="nxi-xf-NXg" id="mA3-g0-t3D"/>
-                                    <outlet property="progressButton" destination="fFU-1H-Lcb" id="LFg-iz-weI"/>
+                                    <outlet property="leaderboardButton" destination="fFU-1H-Lcb" id="ytZ-uV-dfL"/>
                                     <outlet property="trainerLabel" destination="DiK-gX-aql" id="mvJ-fm-bhV"/>
                                 </connections>
                             </tableViewCell>

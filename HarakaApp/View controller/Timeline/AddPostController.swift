@@ -13,7 +13,6 @@ class AddPostController: UIViewController{
    
    // Where the user types their posts
     @IBOutlet weak var postText: UITextView!
-    var postCounter: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,35 +20,33 @@ class AddPostController: UIViewController{
     
     // method used to add the post to the database
     @IBAction func postButton(_ sender: Any) {
-        let t = postText.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        if(t == ""){
-            return
-        }
         
         let ref = Database.database().reference()
         
-        
-        let time: Date = Date()
-
-        let user = Auth.auth().currentUser
-        let name = String(user?.email ?? "")
-        let charIndex = name.firstIndex(of: "@")
-        let username = String(name[..<charIndex!])
-
-        if(name == ""){
+        let text = postText.text!
+        if(text.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
             return
         }
         
+        
+        
+        
+        let time: Date = Date()
+        let timestamp = time.description
+        let user = Auth.auth().currentUser?.uid
+
+        
         ref.child("posts").childByAutoId().setValue([
-                                                    "username": username,
+                                                    "uid": user!,
                                                     "caption": postText.text!,
                                                     "numOfLikes": 0,
                                                     "numOfComments":0,
-                                                    "timestamp": String(describing: time)]) { (error, snapshot) in if let error = error {
-            debugPrint("error adding post: \(String(describing: error))")
-        }}
+                                                    "timestamp": timestamp])
+        { (error, snapshot) in
+            if let error = error {
+            debugPrint("error adding post: \(String(describing: error))")}
+        }
         
-     //   self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
         
     }
