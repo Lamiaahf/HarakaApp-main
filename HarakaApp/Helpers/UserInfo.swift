@@ -8,9 +8,10 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 
 
-struct User
+@objc class User: NSObject
 {
     var username: String?
     var profileImageURL: String?
@@ -21,6 +22,8 @@ struct User
     var DOB: String?
     var userID: String?
     
+    let ref: DatabaseReference = Database.database().reference()
+    
     init(username: String?, profileimageurl: String?, name: String?, email: String?, followingCount: Int?, DOB: String?, id: String) {
         self.username = username
         self.profileImageURL = profileimageurl
@@ -30,9 +33,14 @@ struct User
         self.followingCount = followingCount
         self.DOB = DOB
         self.userID = id
-        
     }
-    init(){
+    
+    init(id: String){
+        super.init()
+        self.getInfo(id: id)
+    }
+    
+    override init(){
         username = ""
         profileImageURL = ""
         profileImage = UIImage()
@@ -42,6 +50,39 @@ struct User
         DOB = ""
         userID = ""
     }
+    
+     func getInfo(id: String){
+  
+        self.ref.child("users/\(id)").observeSingleEvent(of: .value, with: {
+            snapshot in
+            if snapshot.exists(){
+                guard let userDict = snapshot.value as? [String: Any] else {return}
+                self.username = userDict["Username"] as? String
+                self.name = userDict["Name"] as? String
+                self.email = userDict["Email"] as? String
+                self.followingCount = userDict["followingCount"] as? Int
+                self.profileImageURL = userDict["ProfilePic"] as? String
+                self.DOB = userDict["DOB"] as? String
+                    
+                self.loadPic(link: self.profileImageURL!)
+            }
+        })
+        
+
+    }
+    
+    func loadPic(link: String){
+        
+        Storage.storage().reference(forURL: link).getData(maxSize: 1048576, completion: { (data, error) in
+
+            guard let imageData = data, error == nil else {
+                return
+            }
+            self.profileImage = UIImage(data: imageData)
+
+        })
+    }
+    
     
 }
 

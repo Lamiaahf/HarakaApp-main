@@ -7,15 +7,14 @@
 
 import UIKit
 
-class Comment{
+@objc class Comment: NSObject{
     
-    var writtenBy: User
+    @objc dynamic var writtenBy: User
     var commentText: String
     
     init(writtenBy: User, commentText: String){
         self.writtenBy = writtenBy
         self.commentText = commentText
     }
-    
     
 }

@@ -29,18 +29,25 @@ class PostCell: UITableViewCell{
         }
     }
    
+    override func didMoveToWindow() {
+        if(post == nil){
+            return
+        }
+        updateTimeline()
+    }
     
     func updateTimeline(){
-        profileImageView.image = post.createdBy.profileImage
-        usernameLabel.text = post.createdBy.username
         timeAgoLabel.text = post.timeAgo
         captionLabel.text = post.caption
         likesLabel.text = "\(post.numOfLikes!)"
         commentsLabel.text = "\(post.numOfComments!)"
-        
-        
         likesLabel.text = String(post.numOfLikes ?? 0)
-
+        
+        profileImageView.image = post.createdBy.profileImage
+        profileImageView.layer.cornerRadius = 40/2
+        profileImageView.clipsToBounds = true
+        usernameLabel.text = post.createdBy.username
+        
         if (!post.liked!){
             likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
         }

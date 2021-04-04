@@ -22,7 +22,6 @@ class Post
      var postID: String?
     var liked: Bool?
     
-
     
     init(createdBy: User, timeAgo: String?, caption: String?, numOfLikes: Int?, numOfComments: Int?, postID: String?, liked: Bool?){
         self.createdBy = createdBy

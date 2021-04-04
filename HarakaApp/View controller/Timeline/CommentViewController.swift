@@ -12,6 +12,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var comments: [Comment]?
     var post: Post = Post()
+    let ref: DatabaseReference = Database.database().reference()
     
 //    @IBOutlet weak var commentButton: UIButton!
     @IBOutlet weak var commentField: UITextField!
@@ -68,14 +69,19 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                 "uid":user!,
                 "comment":text])
         
+        post.numOfComments = post.numOfComments!+1
+        ref.child("posts").child(post.postID!).updateChildValues([
+            "numOfComments":post.numOfComments
+        ])
+
         commentField.text = ""
-        fetchComments()
+      //  fetchComments()
     }
     
     func fetchComments(){
         
         comments = []
-        let ref = Database.database().reference()
+        
         ref.child("Comments").child(post.postID!).observe(.childAdded){
         (snapshot) in
             if snapshot.exists(){
@@ -83,25 +89,16 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                     if let uid = commentDict["uid"] as? String {
                         let comment = commentDict["comment"] as? String ?? ""
             
-                        let commentUser = DBManager().getUser(id: uid)
+                        let commentUser = User(id:uid)
                         let newComment = Comment(writtenBy: commentUser, commentText:comment)
-                            self.comments?.append(newComment)
-                            self.commentsTable.reloadData()}
+                        
+                        self.comments?.append(newComment)
+                        self.commentsTable.reloadData()}
                 }
             }
 
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 

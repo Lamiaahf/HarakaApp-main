@@ -25,6 +25,9 @@ class TimelineViewController: UITableViewController {
         posts = []
         fetchPosts()
         }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     func fetchPosts(){
 
@@ -42,12 +45,11 @@ class TimelineViewController: UITableViewController {
                             let id = String(snapshot.key)
                         
                         //Get user from uid and store it inside the post object
-                        let postUser = User()
+                        let postUser = User(id:uid)
                         let newPost = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked:false)
                         
                         //Check for liked posts
                         self.checkLike(post: newPost)
-                        self.getUser(id: uid, post: newPost)
                         self.posts?.append(newPost)
                         self.tableView.reloadData()
                         
@@ -57,26 +59,6 @@ class TimelineViewController: UITableViewController {
         }
     }
     
-    func getUser(id: String, post: Post){
-        
-        ref.child("users/\(id)").observeSingleEvent(of: .value, with: {
-            snapshot in
-            if snapshot.exists(){
-                if let userDict = snapshot.value as? [String: Any] {
-                    let username = userDict["Username"] as? String
-                    let name = userDict["Name"] as? String
-                    let email = userDict["Email"] as? String
-                    let followingCount = userDict["followingCount"] as? Int
-                    let profilepic = userDict["ProfilePic"] as? String
-                    let dob = userDict["DOB"] as? String
-                    
-                    post.createdBy = User(username: username, profileimageurl: profilepic, name: name, email: email, followingCount: followingCount, DOB: dob, id: id)
-                    self.tableView.reloadData()
-                    
-                }
-            }
-        })
-    }
     
      func checkLike(post: Post){
         
@@ -133,7 +115,7 @@ extension TimelineViewController{
         cell.post = posts![indexPath.row]
         
         cell.commentButton.tag = indexPath.row
-        cell.commentButton.addTarget(self, action: #selector(TimelineViewController.openComments(_:)), for: UIControl.Event.touchUpInside)
+        cell.commentButton.addTarget(self, action: #selector(TimelineViewController.openComments(_:)) , for: UIControl.Event.touchUpInside)
         return cell
         
     }
