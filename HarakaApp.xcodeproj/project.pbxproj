@@ -19,6 +19,7 @@
 		3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3D6A261216A900246872 /* UsersTableViewController.swift */; };
 		3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3DA1261221B600246872 /* UserProfileViewController.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
+
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885D9F261A56DB003BF3F3 /* FollowersTableViewController.swift */; };
 		3F885DA3261A58CF003BF3F3 /* FollowingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885DA2261A58CF003BF3F3 /* FollowingTableViewController.swift */; };
@@ -62,7 +63,12 @@
 		94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11B25DD350B0029FA09 /* PostCell.swift */; };
 		94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11E25DD35140029FA09 /* TimelineViewController.swift */; };
 		94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */; };
+
 		CE49441B2610DB4F008DC32B /* OtherTrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */; };
+
+		CE49454D26123346008DC32B /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49454C26123346008DC32B /* CircularTransition.swift */; };
+		CE494551261233FC008DC32B /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE494550261233FC008DC32B /* CreateRoomViewController.swift */; };
+
 		CEBE937D2602758F00A0E363 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE937C2602758F00A0E363 /* CalenderViewController.swift */; };
 		CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE9380260387A700A0E363 /* AddViewController.swift */; };
 		CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3478B260BFC7C004B3754 /* searchBViewController.swift */; };
@@ -139,7 +145,12 @@
 		94DDE11E25DD35140029FA09 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.release.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.release.xcconfig"; sourceTree = "<group>"; };
+
 		CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTrainersViewController.swift; sourceTree = "<group>"; };
+
+		CE49454C26123346008DC32B /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
+		CE494550261233FC008DC32B /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+
 		CEBE937C2602758F00A0E363 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		CEBE9380260387A700A0E363 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CEC3478B260BFC7C004B3754 /* searchBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBViewController.swift; sourceTree = "<group>"; };
@@ -384,6 +395,8 @@
 				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
 				CED6033825F41DB400C4ACE4 /* RoomViewController.swift */,
 				CED6034125F4353E00C4ACE4 /* ChatCell.swift */,
+				CE49454C26123346008DC32B /* CircularTransition.swift */,
+				CE494550261233FC008DC32B /* CreateRoomViewController.swift */,
 				CED6033225F41A6800C4ACE4 /* models "rooms" */,
 			);
 			path = chatRooms;
@@ -513,6 +526,7 @@
 				3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */,
 				235797A02607E4420017C166 /* Comment.swift in Sources */,
 				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
+				CE494551261233FC008DC32B /* CreateRoomViewController.swift in Sources */,
 				3FD4742825D3264700260C1A /* Service.swift in Sources */,
 				3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */,
 				94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */,
@@ -540,6 +554,7 @@
 				3FA49336260B63090052A1BD /* ShowFriendsTable.swift in Sources */,
 				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
 				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
+				CE49454D26123346008DC32B /* CircularTransition.swift in Sources */,
 				235797A32607E4540017C166 /* CommentCell.swift in Sources */,
 				3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */,
 				94DDE11925DD34F80029FA09 /* Post.swift in Sources */,

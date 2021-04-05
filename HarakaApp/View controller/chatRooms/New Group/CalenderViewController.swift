@@ -10,55 +10,41 @@ import UIKit
 
 class CalenderViewController: UIViewController {
    
-    
 
     @IBOutlet weak var table: UITableView!
     
     var models = [MyReminder]()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
-        
-       /* //save
-            if !UserDefaults().bool(forKey:"setup"){
-            UserDefaults().set(true , forKey:"setup")
-            UserDefaults().set(0, forKey:"count")
+     
+        let defaults = UserDefaults.standard
+        if let saveddate = defaults.object(forKey: "models") as? Data{
+            let jsonDecoder = JSONDecoder()
+            do{
+                models=try jsonDecoder.decode([MyReminder].self , from : saveddate)
+            } catch {
+                print ("failed")
             }
-        
-            updateDate()*/
     }
 
-    
-    
-  /*  func updateDate(){
-        models.removeAll()
-    let count = UserDefaults().value(forKey:"count") as? int
-   //     else { return }
-        for x in 0..<count {
-            if let date = UserDefaults().value(forKey :"date_\(x+1)") as? String {
-                models.append(date)
-            }
-        
     }
-        tableView.reloadData()
-    }*/
-
-    @IBAction func didTapAdd() {
+        @IBAction func didTapAdd() {
         // show add vc
         guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
             return
         }
 
-        vc.title = "New Reminder"
+        vc.title = "المفكرة"
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.completion = { title, body, date in
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
                 let new = MyReminder(title: title, date: date, identifier: "id_\(title)")
                 self.models.append(new)
+                self.save()
                 self.table.reloadData()
 
                 let content = UNMutableNotificationContent()
@@ -117,15 +103,26 @@ extension CalenderViewController: UITableViewDataSource {
         formatter.dateFormat = "MMM, dd, YYYY"
         cell.detailTextLabel?.text = formatter.string(from: date)
 
-        cell.textLabel?.font = UIFont(name: "Arial", size: 25)
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size: 22)
+        cell.textLabel?.font = UIFont(name: "Arial", size: 20)
+        cell.detailTextLabel?.font = UIFont(name: "Arial", size: 18)
         return cell
+    }
+    
+    func save() {
+        let jsonEncoder = JSONEncoder()
+        if let saveddata = try? jsonEncoder.encode(models){
+            let defualts = UserDefaults.standard
+            defualts.set(saveddata , forKey:"models")
+            
+        }else {
+            print("failed")
+        }
     }
 
 }
 
 
-struct MyReminder {
+struct MyReminder: Codable {
     let title: String
     let date: Date
     let identifier: String
