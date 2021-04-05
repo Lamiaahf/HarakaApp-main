@@ -75,3 +75,33 @@ class LOGINViewController: UIViewController {
     }
     
 }
+/*
+Auth.auth()?.signIn(withEmail:Email , password: pass, completion: {
+    (user, error) in
+        // If there's no errors
+        if error == nil {
+            // Get the type from the database. It's path is users/<userId>/type.
+            // Notice "observeSingleEvent", so we don't register for getting an update every time it changes.
+            Database.database().reference().child("users/\(user!.uid)/type").observeSingleEvent(of: .value, with: {
+                (snapshot) in
+
+                switch snapshot.value as! String {
+                // If our user is admin...
+                case "Trainer":
+                    // ...redirect to the admin page
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "adminVC")
+                    self.present(vc!, animated: true, completion: nil)
+                // If out user is a regular user...
+                case "user":
+                    // ...redirect to the user page
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "userVC")
+                    self.present(vc!, animated: true, completion: nil)
+                // If the type wasn't found...
+                default:
+                    // ...print an error
+                    print("Error: Couldn't find type for user \(user!.uid)")
+                }
+           })
+       }
+   })
+*/

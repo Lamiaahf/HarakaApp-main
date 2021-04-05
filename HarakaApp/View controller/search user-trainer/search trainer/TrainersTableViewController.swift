@@ -34,7 +34,7 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
           tableView.tableHeaderView = searchTController.searchBar
 
 
-        databaseRef.child("Approved").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
+        databaseRef.child("Trainers").child("Approved").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
 
                  
             let key = snapshot.key
@@ -94,7 +94,7 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
            }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
              let trainer : NSDictionary?
              

@@ -41,7 +41,7 @@ class AddPostController: UIViewController{
             return
         }
         
-        ref.child("posts").childByAutoId().setValue(["uid" : UID,
+        ref.child("posts").childByAutoId().setValue(["uid" : UID!,
                                                     "username": username,
                                                     "caption": postText.text!,
                                                     "numOfLikes": 0,
