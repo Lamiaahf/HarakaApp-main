@@ -1,0 +1,125 @@
+//
+//  GameRoomsViewController.swift
+//  HarakaApp
+//
+//  Created by Njood Alhajery on 05/04/2021.
+//
+
+import UIKit
+import FirebaseDatabase
+
+class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate{
+    
+    
+    @IBOutlet weak var createGame: UIButton!
+    @IBOutlet weak var gamesTable: UITableView!
+    
+    var games: [Game]?
+    let transition = CircularTransition()
+    let ref: DatabaseReference! = Database.database().reference()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+            createGame.layer.cornerRadius = createGame.frame.size.width / 2
+
+        self.gamesTable.delegate = self
+        self.gamesTable.dataSource = self
+        
+        games = []
+        fetchGames()
+
+    }
+    
+    func fetchGames(){
+        
+        ref.child("Games").observe(.childAdded, with: { snapshot in
+            if let gameDict = snapshot.value as? [String:Any] {
+                guard let uid = gameDict["CreatorID"] as? String else {return}
+                let name = gameDict["Name"] as! String
+                
+                self.ref.child("GameParticipants").observe(.childAdded, with: {
+                    snapshot in
+                    if let participantsDict = snapshot.value as? [String: Any]{
+                        
+                        var resultsList = [Float]()
+                        var usersList = [User]()
+                        for element in participantsDict{
+                            let user = User(u: element.key as! String, p: UIImage())
+                            usersList.append(user)
+                            let result = element.value as! Float
+                            resultsList.append(result)
+                        }
+                        
+                        let game = Game(gName: name, prtcpnts: usersList, rslts: resultsList, uid: uid)
+                        self.games!.append(game)
+                        self.gamesTable.reloadData()
+                     
+                    }
+                })
+                
+
+
+            }
+            
+            
+        })
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let games = games{
+            return self.games!.count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let game = self.games![indexPath.row]
+        let cell = gamesTable.dequeueReusableCell(withIdentifier: "GameCell")! as! GameCell
+        cell.game = game
+        cell.backgroundColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        cell.layer.cornerRadius = 30
+        cell.layer.borderWidth = 3
+        cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let game = self.games![indexPath.row]
+        let gameView = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+      //  gameView.game = game
+        self.navigationController?.pushViewController(gameView, animated: true)
+        
+    }
+    /*
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! CreateGameViewController
+        destinationVC.transitioningDelegate = self
+        destinationVC.modalPresentationStyle = .custom
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = createGame.center
+        transition.circleColor = createGame.backgroundColor!
+        return transition
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = createGame.center
+        transition.circleColor = createGame.backgroundColor!
+        
+        return transition
+    }
+    
+    
+    
+    
+}

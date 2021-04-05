@@ -23,7 +23,6 @@ class TimelineViewController: UITableViewController {
         
         posts = []
         fetchPosts()
-   //     tableView.reloadData()
         }
     
     func fetchPosts(){
