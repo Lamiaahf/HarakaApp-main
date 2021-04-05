@@ -3,15 +3,13 @@
 //  HarakaApp
 //
 //  Created by lamia on 17/02/2021.
-// 
-
-
+//
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
  
-class FollwoUserProfileViewController:  UIViewController {
+class UserProfileViewController:  UIViewController {
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
     //Serch for frinds
@@ -28,11 +26,16 @@ class FollwoUserProfileViewController:  UIViewController {
     @IBOutlet weak var Trainers: UIView!
     @IBOutlet weak var Users: UIView!
 
+    @IBOutlet weak var post: UIButton!
     
-
+    @IBOutlet weak var friends: UIButton!
+    @IBOutlet weak var trainer: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        Utilities.styleFilledButton(post)
+        Utilities.styleFilledButton(friends)
+        Utilities.styleFilledButton(trainer)
         getUserInfo()
         self.loggedInUser = Auth.auth().currentUser
 
@@ -87,44 +90,33 @@ class FollwoUserProfileViewController:  UIViewController {
             })}}
 
    
-    @IBAction func showComponents(_ sender: Any) {
-        if ((sender as AnyObject).selectedSegmentIndex == 0){ UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 1
+    @IBAction func showPosts(_ sender: Any) {
+    
+       UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 1
             self.Users.alpha = 0
-            self.Trainers.alpha = 0
-        })}
-          if  ((sender as AnyObject).selectedSegmentIndex == 1 ) {
+                    self.Trainers.alpha = 0 }
+       )}
+    
+    @IBAction func ShowFriends(_ sender: Any) {
+  
+    
             do { UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 0
                             self.Users.alpha = 1
                             self.Trainers.alpha = 0
-    })}}
+    })
+            }}
     
-    
-    
-         else if ((sender as AnyObject).selectedSegmentIndex == 1 ) {
+    /*
             do {UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 0
                        self.Users.alpha = 0
                        self.Trainers.alpha = 1
 })}
     }}
     
-    
+    */
     
     
   //  Pass contextual data along with the segue
-
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-    if(segue.identifier == "findUser")
-    {
-        let showFollowingTableViewController = segue.destination as! UsersTableViewController
-         
-
-        showFollowingTableViewController.loggedInUser = self.loggedInUser as? CurrentUser
-          
-    }
-
-    
-}
     
     
  

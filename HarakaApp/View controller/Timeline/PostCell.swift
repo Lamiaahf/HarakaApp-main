@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-
 class PostCell: UITableViewCell{
     
     
@@ -32,7 +31,7 @@ class PostCell: UITableViewCell{
    
     
     func updateTimeline(){
-        profileImageView.image = post.createdBy.profileImage
+        //profileImageView.image = post.createdBy.profileImage
         usernameLabel.text = post.createdBy.usernameUI
         timeAgoLabel.text = post.timeAgo
         captionLabel.text = post.captionUI
