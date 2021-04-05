@@ -23,8 +23,8 @@ class UserProfileViewController:  UIViewController {
     @IBOutlet weak var Name: UILabel!
     
     @IBOutlet weak var Posts: UIView!
-    @IBOutlet weak var Trainers: UIView!
-    @IBOutlet weak var Users: UIView!
+    @IBOutlet weak var Followers: UIView!
+    @IBOutlet weak var Following: UIView!
 
     @IBOutlet weak var post: UIButton!
     
@@ -93,27 +93,28 @@ class UserProfileViewController:  UIViewController {
     @IBAction func showPosts(_ sender: Any) {
     
        UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 1
-            self.Users.alpha = 0
-                    self.Trainers.alpha = 0 }
+            self.Following.alpha = 0
+                    self.Followers.alpha = 0 }
        )}
     
-    @IBAction func ShowFriends(_ sender: Any) {
+    @IBAction func ShowFollowing(_ sender: Any) {
   
     
             do { UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 0
-                            self.Users.alpha = 1
-                            self.Trainers.alpha = 0
+                            self.Following.alpha = 1
+                            self.Followers.alpha = 0
     })
             }}
+    @IBAction func showFollowers(_ sender: Any) {
+
     
-    /*
             do {UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 0
-                       self.Users.alpha = 0
-                       self.Trainers.alpha = 1
+                       self.Following.alpha = 0
+                       self.Followers.alpha = 1
 })}
-    }}
+    }
     
-    */
+    
     
     
   //  Pass contextual data along with the segue

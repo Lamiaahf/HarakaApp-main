@@ -84,35 +84,28 @@ class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigation
         
            
         if (name != nil){
-            return self.name.text = otherUser!["Name"] as? String}
-        
-        else if (username != nil){
-         return  self.username.text = otherUser!["Username"] as? String
-        }
-    
-           
-           else if(otherUser["ProfilePic"] != nil)
-           {
+             self.name.text = otherUser!["Name"] as? String
+             self.username.text = otherUser!["Username"] as? String
                let databaseProfilePic = otherUser!["ProfilePic"] as! String
                let data = try? Data(contentsOf:URL(string:databaseProfilePic)!)
                
                self.setProfilePicture(self.Profilepic,imageToSet:UIImage(data:data!)!)
            }
        
-           if(otherUser["followersCount"] != nil)
+        /*   if(otherUser["followersCount"] != nil)
            {
                print("Followers Count")
                
                let followersCount = ("\(otherUser["followersCount"]!)")
                
-               self.numberFollowers.setTitle(followersCount, for: .normal)
+             //self.numberFollowers.setTitle(followersCount, for: .normal)
            }
        
            if(otherUser?["followingCount"] != nil)
            {
                let followingCount = ("\(otherUser["followersCount"]!)")
                self.numberFollowing.setTitle(followingCount, for: .normal)
-           }
+           }*/
        }
 
        override func didReceiveMemoryWarning() {
