@@ -33,10 +33,10 @@ class CommentCell: UITableViewCell{
     func observeChanges(){
         let CommentUserKeyPath = \Comment.writtenBy
         
-        comment.observe(\CommentUserKeyPath, options: .new) { comment, change in
-            self.usernameLabel.text = comment.writtenBy.username
-            self.profilePic.image = comment.writtenBy.profileImage
-        }
+   //     comment.observe(\CommentUserKeyPath, options: .new) { comment, change in
+ //           self.usernameLabel.text = comment.writtenBy.username
+ //           self.profilePic.image = comment.writtenBy.profileImage
+//          }
         
     }
     
