@@ -51,6 +51,31 @@ import FirebaseStorage
         userID = ""
     }
     
+    init?(snapshot: DataSnapshot) {
+        guard let userDict = snapshot.value as? [String : Any],
+            let username = userDict["Username"] as? String,
+            let name = userDict["Name"] as? String ?? "",
+            let email = userDict["Email"] as? Date ?? Date(),
+            let fcount = userDict["followingCount"] as? Int ?? 0,
+            let ppURL = userDict["ProfilePic"] as? Int ?? 0,
+            let dob = userDict["DOB"] as? String
+            else { return nil }
+
+        self.userID = snapshot.key
+        self.username = username
+        self.name = name
+        self.email = email
+        self.followingCount = fcount
+        self.profileImageURL = ppURL
+        self.DOB = dob
+        
+        DBManager.getPic(for: self){
+            image in
+            self.profileImage = image
+        }
+        // = Date(timeIntervalSince1970: times)
+    }
+    
      func getInfo(id: String){
   
         self.ref.child("users/\(id)").observeSingleEvent(of: .value, with: {

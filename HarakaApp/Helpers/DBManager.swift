@@ -6,10 +6,51 @@
 //
 
 import Firebase
+import FirebaseStorage
 
 class DBManager {
     
     let ref = Database.database().reference()
+    let storage = Storage.storage()
+    
+    
+    static func getFollowing(for user: User, completion: @escaping ([User]) -> Void) {
+        let userref = ref.child("following").child(user.uid)
+
+        userref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion([])
+            }
+
+            let users = snapshot.reversed().compactMap(User.init)
+            completion(users)
+        })
+    }
+    static func getPic(for user: User, completion: @escaping (UIImage) -> Void) {
+
+        storage.reference(forURL: user.profileImageURL).getData(maxSize:1048576, completion:{
+            data,error in
+            guard let imageData = data, error == nil else{
+                return completion(UIImage())
+            }
+            let pic = UIImage(data: imageData)
+            completion(pic)
+            
+        })
+    }
+    
+    static func getPosts(for user: User, completion: @escaping ([Post]) -> Void) {
+        let postref = ref.child("posts").child(user.uid)
+
+        postref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion([])
+            }
+
+            let posts = snapshot.reversed().compactMap(Post.init)
+            completion(posts)
+        })
+    }
     
     func getType(id: String) -> Int {
         

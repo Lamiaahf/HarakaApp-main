@@ -23,12 +23,35 @@ class TimelineViewController: UITableViewController {
         tableView.delegate = self
         
         posts = []
-        fetchPosts()
+        getPosts()
+      //  fetchPosts()
         }
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
     }
     
+    func getPosts(){
+        
+        let current = User(Auth.auth().currentUser?.uid)
+        
+        DBManager.getPosts(for: current) { (posts) in
+            for p in posts{ self.posts?.append(p)}
+        }
+        
+        DBManager.getFollowing(for: current){
+            (users) in
+            for u in users{
+                DBManager.getPosts(for: u){
+                    for p in posts{
+                        self.posts?.append(p)
+                    }
+                }
+            }
+        }
+        
+        self.tableView.reloadData()
+    }
+
     func fetchPosts(){
 
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
