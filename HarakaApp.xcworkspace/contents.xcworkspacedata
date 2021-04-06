@@ -5,6 +5,6 @@
       location = "group:HarakaApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:/Users/njood/Documents/GitHub/HarakaApp-main/Pods.xcodeproj">
+      location = "group:Pods.xcodeproj">
    </FileRef>
 </Workspace>

@@ -592,7 +592,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXQ-gx-5VV">
                                 <rect key="frame" x="41" y="613" width="259" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1025,7 +1024,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdV-fN-Nuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="623" y="-9"/>
-
         </scene>
         <!--Challenge View Controller-->
         <scene sceneID="byM-49-thW">
@@ -3092,7 +3090,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="Vff-fS-EVw">
-                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -3148,7 +3146,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="PMu-hk-dE0">
-                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -3255,7 +3253,6 @@
     <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>
         <image name="568635131536669843-129" width="42.666667938232422" height="42.666667938232422"/>
-
         <image name="Bike" width="53.333332061767578" height="53.333332061767578"/>
         <image name="Flag" width="40" height="40"/>
         <image name="bell.badge" catalog="system" width="128" height="124"/>
