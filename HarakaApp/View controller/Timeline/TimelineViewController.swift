@@ -23,7 +23,17 @@ class TimelineViewController: UITableViewController {
         tableView.delegate = self
         
         posts = []
-        getPosts()
+        let current = User(id: (Auth.auth().currentUser?.uid)!)
+        
+        DBManager.getPosts(for: current) { (posts) in
+            for p in posts{
+                self.checkLike(post: p)
+                self.posts?.append(p)
+                self.tableView.reloadData()
+
+            }
+        }
+     //   getPosts()
       //  fetchPosts()
         }
     override func viewDidAppear(_ animated: Bool) {
@@ -32,25 +42,30 @@ class TimelineViewController: UITableViewController {
     
     func getPosts(){
         
-        let current = User(Auth.auth().currentUser?.uid)
+        let current = User(id: (Auth.auth().currentUser?.uid)!)
         
         DBManager.getPosts(for: current) { (posts) in
-            for p in posts{ self.posts?.append(p)}
+            for p in posts{
+                self.posts?.append(p)
+                self.tableView.reloadData()
+
+            }
         }
         
         DBManager.getFollowing(for: current){
             (users) in
             for u in users{
-                DBManager.getPosts(for: u){
+                DBManager.getPosts(for: u){ (posts) in
                     for p in posts{
                         self.posts?.append(p)
+                        self.tableView.reloadData()
+
                     }
                 }
             }
         }
         
-        self.tableView.reloadData()
-    }
+            }
 
     func fetchPosts(){
 
@@ -69,7 +84,7 @@ class TimelineViewController: UITableViewController {
                         
                         //Get user from uid and store it inside the post object
                         let postUser = User(id:uid)
-                        let newPost = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked:false)
+                        let newPost = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked:false, uid: uid)
                         
                         //Check for liked posts
                         self.checkLike(post: newPost)

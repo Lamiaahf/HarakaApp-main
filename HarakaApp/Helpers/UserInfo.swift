@@ -37,6 +37,7 @@ import FirebaseStorage
     
     init(id: String){
         super.init()
+        self.userID = id
         self.getInfo(id: id)
     }
     
@@ -52,13 +53,14 @@ import FirebaseStorage
     }
     
     init?(snapshot: DataSnapshot) {
+        super.init()
         guard let userDict = snapshot.value as? [String : Any],
             let username = userDict["Username"] as? String,
-            let name = userDict["Name"] as? String ?? "",
-            let email = userDict["Email"] as? Date ?? Date(),
-            let fcount = userDict["followingCount"] as? Int ?? 0,
-            let ppURL = userDict["ProfilePic"] as? Int ?? 0,
-            let dob = userDict["DOB"] as? String
+            let name = userDict["Name"] as? String,
+            let email = userDict["Email"] as? String,
+            let fcount = userDict["followingCount"] as? Int,
+            let ppURL = userDict["ProfilePic"] as? String,
+            let dob = userDict["DOB"] as? Date
             else { return nil }
 
         self.userID = snapshot.key
@@ -67,7 +69,7 @@ import FirebaseStorage
         self.email = email
         self.followingCount = fcount
         self.profileImageURL = ppURL
-        self.DOB = dob
+        self.DOB = "\(dob)"
         
         DBManager.getPic(for: self){
             image in

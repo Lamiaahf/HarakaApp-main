@@ -38,11 +38,17 @@ class TrainerChallengeViewController: UITableViewController{
                         let end = challengeDict["Deadline"] as? Date ?? Date()
                         let cid = snapshot.key
                         
-                        let challengeTrainer = DBManager().getTrainer(id: tid)
-                        let challenge = Challenge(createdBy: challengeTrainer, enddate: end, cName: chall, cDesc: cDesc, chalID: cid)
+                        var trainer = Trainer()
+                        var challenge = Challenge(createdBy: trainer, enddate: end, cName: chall, cDesc: cDesc, chalID: cid)
                         
-                        self.challenges?.append(challenge)
-                        self.tableView.reloadData()
+                        DBManager.getTrainer(for: tid) {
+                            trnr in
+                            challenge.createdBy = trnr
+                            self.challenges?.append(challenge)
+                            self.tableView.reloadData()
+                            // DBManager.loadPic(for:trainer)
+                        }
+                        
                     }
                 }
             }

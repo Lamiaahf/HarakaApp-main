@@ -30,13 +30,17 @@ class ChallengeCell: UITableViewCell{
         
         let uid = Auth.auth().currentUser?.uid
         
-        if(DBManager().getType(id: uid!) == 0){
-            leaderboardButton.setBackgroundImage(UIImage(systemName: "circle"), for: .normal)
-            print(leaderboardButton.tintColor.accessibilityName)
-        }
-        else{
-            leaderboardButton.setBackgroundImage(UIImage(systemName: "ellipsis"), for: .normal)
-            print(leaderboardButton.tintColor.accessibilityName)
+        DBManager.getType(for: uid!){
+            type in
+            if type == 0{
+                self.leaderboardButton.setBackgroundImage(UIImage(systemName: "circle"), for: .normal)
+                print(self.leaderboardButton.tintColor.accessibilityName)
+            }
+            else if type == 1{
+                self.leaderboardButton.setBackgroundImage(UIImage(systemName: "ellipsis"), for: .normal)
+                print(self.leaderboardButton.tintColor.accessibilityName)
+            }
+            else{ return }
         }
 
         

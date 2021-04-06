@@ -34,14 +34,14 @@ class UserPostCell: UITableViewCell {
         
         func updateTimeline(){
             //profileImageView.image = post.createdBy.profileImage
-            usernameLabel.text = post.createdBy.usernameUI
+            usernameLabel.text = post.createdBy.username
             timeAgoLabel.text = post.timeAgo
-            captionLabel.text = post.captionUI
-            likesLabel.text = "\(post.numOfLikesUI!)"
-            commentsLabel.text = "\(post.numOfCommentsUI!)"
+            captionLabel.text = post.caption
+            likesLabel.text = "\(post.numOfLikes!)"
+            commentsLabel.text = "\(post.numOfComments!)"
             
             
-            likesLabel.text = String(post.numOfLikesUI ?? 0)
+            likesLabel.text = String(post.numOfLikes ?? 0)
             var flag = false
             if(post.isLiked()){
                  flag = true
@@ -58,7 +58,7 @@ class UserPostCell: UITableViewCell {
         @IBAction func openComments(_ sender: Any) {
             let controller = CommentViewController()
             controller.viewDidLoad()
-            controller.setPost(post: self.post)
+            controller.setPost(p: self.post)
             controller.fetchComments()
         }
         
@@ -70,12 +70,12 @@ class UserPostCell: UITableViewCell {
             if(!post.liked!){
                 ref.child("PostLikes").child(id).childByAutoId().setValue([uid:true])
                 post.liked = true
-                post.numOfLikesUI = post.numOfLikesUI!+1
+                post.numOfLikes = post.numOfLikes!+1
 
             }else{
                 ref.child("PostLikes").child(id).queryOrdered(byChild:uid).queryEqual(toValue:true).ref.removeValue()
                 post.liked = false
-                post.numOfLikesUI = post.numOfLikesUI!-1
+                post.numOfLikes = post.numOfLikes!-1
             }
             updatePost()
             updateTimeline()
@@ -84,8 +84,8 @@ class UserPostCell: UITableViewCell {
         
         func updatePost(){
             ref.child("posts").child(post.postID!).updateChildValues([
-                        "numOfLikes":post.numOfLikesUI!,
-                        "numOfComments":post.numOfCommentsUI!])
+                        "numOfLikes":post.numOfLikes!,
+                        "numOfComments":post.numOfComments!])
             
         }
             
