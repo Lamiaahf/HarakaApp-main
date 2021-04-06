@@ -29,6 +29,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         comments = []
         fetchComments()
+
     }
     
     func setPost(p: Post){

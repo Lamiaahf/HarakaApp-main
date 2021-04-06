@@ -9,22 +9,25 @@ import Foundation
 // Trainar = approveSpecliat
 class Trainner {
 var TName: String?
-var TAge: String?
+var TDOB: String?
 var Tusername: String?
 var TLinkedin: String?
 var TEmail: String?
 var TPassword: String?
 var autoKey: String?
+var Tpic :String?
 
 
-init(specName:String,specAge:String,specusername:String, specLinked:String, specEmail:String, specPassword:String, autoKey:String) {
 
-    self.TName = specName
-    self.Tusername = specusername
-    self.TAge = specAge
-    self.TLinkedin = specLinked
-    self.TEmail = specEmail
-    self.TPassword = specPassword
+    init(TrainName:String,TrainDOB:String,Trainusername:String, TrainLinked:String,TrainEmail:String, TrainPassword:String, Trainpic : String , autoKey:String) {
+
+    self.TName = TrainName
+    self.Tusername = Trainusername
+    self.TDOB = TrainDOB
+    self.TLinkedin = TrainLinked
+    self.TEmail = TrainEmail
+    self.TPassword = TrainPassword
+    self.Tpic = Trainpic
     self.autoKey = autoKey
     
     

@@ -3,16 +3,16 @@
 //  HarakaApp
 //
 //  Created by lamia on 11/03/2021.
-//
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
 
         @IBOutlet weak var Profilepic: UIImageView!
         @IBOutlet weak var name: UILabel!
-        @IBOutlet weak var Username: UILabel!
+        @IBOutlet weak var username: UILabel!
         @IBOutlet weak var followButton: UIButton!
        
        @IBOutlet weak var numberFollowing: UIButton!
@@ -29,7 +29,7 @@ class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigation
        //hi
        
        
-       override func viewDidLoad() {
+    override func viewDidLoad() {
            super.viewDidLoad()
         //style
         Utilities.styleFilledButton(followButton)
@@ -83,14 +83,17 @@ class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigation
         }
         
            
-           self.name.text = otherUser!["name"] as? String
-           self.Username.text = "@"+(otherUser!["Username"] as? String)!
-
+        if (name != nil){
+            return self.name.text = otherUser!["Name"] as? String}
+        
+        else if (username != nil){
+         return  self.username.text = otherUser!["Username"] as? String
+        }
     
            
-           if(otherUser["profilePic"] != nil)
+           else if(otherUser["ProfilePic"] != nil)
            {
-               let databaseProfilePic = otherUser!["profilePic"] as! String
+               let databaseProfilePic = otherUser!["ProfilePic"] as! String
                let data = try? Data(contentsOf:URL(string:databaseProfilePic)!)
                
                self.setProfilePicture(self.Profilepic,imageToSet:UIImage(data:data!)!)
@@ -136,20 +139,20 @@ class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigation
         let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (self.otherUser?["uid"] as! String)
         
         
-        if(self.followButton.titleLabel?.text == "Follow")
+        if(self.followButton.titleLabel?.text == "متابعة")
         {
             print("follow user")
             
-            let loggedInUserProfilePic = self.loggedInUserData?["profilePic"] != nil ? self.loggedInUserData?["profilePic"]! : nil
-            let otherUserProfilePic = self.otherUser?["profilePic"] != nil ? self.otherUser?["profilePic"]! : nil
+            let loggedInUserProfilePic = self.loggedInUserData?["ProfilePic"] != nil ? self.loggedInUserData?["ProfilePic"]! : nil
+            let otherUserProfilePic = self.otherUser?["ProfilePic"] != nil ? self.otherUser?["ProfilePic"]! : nil
             
             let followersData = ["name":self.loggedInUserData?["Name"] as! String,
                         "Username":self.loggedInUserData?["Username"] as! String,
-                "profilePic": loggedInUserProfilePic]
+                "ProfilePic": loggedInUserProfilePic]
             
             let followingData = ["Name":self.otherUser?["Name"] as! String,
                                  "Username":self.otherUser?["Username"] as! String,
-                                 "profilePic":otherUserProfilePic]
+                                 "ProfilePic":otherUserProfilePic]
             
             //"profile_pic":self.otherUser?["profile_pic"] != nil ? self.loggedInUserData?["profile_pic"] as! String : ""
             let childUpdates = [followersRef:followersData,
@@ -197,9 +200,9 @@ class OtherUsers: UIViewController ,UIImagePickerControllerDelegate,UINavigation
         }
         else
         {
-            databaseRef.child("users").child(self.loggedInUserData?["uid"] as! String).child("followingCount").setValue(self.loggedInUserData!["followingCount"] as! Int - 1)
-            databaseRef.child("uses").child(self.otherUser?["uid"] as! String).child("followersCount").setValue(self.otherUser!["followersCount"] as! Int - 1)
-            
+           /* databaseRef.child("users").child(self.loggedInUserData?["uid"] as! String).child("followingCount").setValue(self.loggedInUserData!["followingCount"] as! Int - 1)
+            databaseRef.child("users").child(self.otherUser?["uid"] as! String).child("followersCount").setValue(self.otherUser!["followersCount"] as! Int - 1)
+            */
           let followersRef = "followers/\(self.otherUser?["uid"] as! String)/\(self.loggedInUserData?["uid"] as! String)"
           let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (self.otherUser?["uid"] as! String)
             

@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-
 class PostCell: UITableViewCell{
     
     
@@ -37,6 +36,7 @@ class PostCell: UITableViewCell{
     }
     
     func updateTimeline(){
+
         timeAgoLabel.text = post.timeAgo
         captionLabel.text = post.caption
         likesLabel.text = "\(post.numOfLikes!)"

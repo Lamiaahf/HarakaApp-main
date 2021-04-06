@@ -10,37 +10,80 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class ApproveTrainer: UIViewController {
-    
+
     
       // @IBOutlet weak var bodyTextView: UITextView!
        
-       @IBOutlet weak var approveTextView: UITextView!
-       
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Username: UILabel!
+    @IBOutlet weak var DOB: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var link: UILabel!
+    
+    @IBOutlet weak var reject: UIButton!
+    @IBOutlet weak var Accept: UIButton!
+    
        var approveSubject: Trainner?
        var ref: DatabaseReference!
-       
+       var databaseHandle: DatabaseHandle?
+       var name: String?
+       var age: String?
+       var username: String?
+       var Linkedin: String?
+       var Email: String?
+       var Pass: String?
+       var Tpic : String?
+
+   // var autoKey: String?
+
        override func viewDidLoad() {
            super.viewDidLoad()
-           
+      
+        Utilities.styleFilledButton(Accept)
+        Utilities.styleFilledButton(reject)
+
+
            ref = Database.database().reference()
-           
-           approveTextView.text = "Specialist Infromation: \n\n\nName:" + approveSubject!.TName! + "\n\n\nUsername:" + approveSubject!.Tusername! + "\n\n\nAge:" + approveSubject!.TAge! + "\n\n\nLinked In Account:" + approveSubject!.TLinkedin! + "\n\n\nEmail:" + approveSubject!.TEmail!
-           
-           approveTextView.isEditable = false
-       }
+        let path = ref?.child("Trainers").child("Unapproved")
+        
+        databaseHandle = path?.observe(.childAdded, with: { [self] (snapshot) in
+            
+            let dict = snapshot.value as! NSDictionary
+           // let key = snapshot.key
+            self.name = dict["Name"] as? String
+            self.age = dict["Age"] as? String
+            self.username = dict["Username"] as? String
+            self.Linkedin = dict["Linkedin"] as? String
+            self.Email = dict["Email"] as? String
+            self.Pass = dict["Password"] as? String
+            self.Tpic = dict["ProfilePic"] as? String
+            
+            self.Name.text = name
+            self.Username.text = username
+            self.DOB.text = age
+            self.email.text = Email
+            self.link.text = Linkedin
+
+            
+            
+                                        })
+   
+        }
        
       
        
        @IBAction func accept(_ sender: Any) {
            
            //creat specialist
-           Auth.auth().createUser(withEmail: approveSubject!.TEmail! , password: approveSubject!.TPassword!) { (result, err) in
+            /*Auth.auth().createUser(withEmail: approveSubject!.TEmail! , password: approveSubject!.TPassword!)*/
+        Auth.auth().createUser(withEmail: self.Email! , password: self.Pass! ){ (result, err) in
        
-               if err != nil {
-                   print("Error creating Specialist")
-               } else{
+              if err != nil {
+                print(err?.localizedDescription as Any)
+            } else
+               {
                // add specialist to database
-     self.ref?.child("Trainers").child("Approved").child(result!.user.uid).setValue(["name":self.approveSubject?.TName, "age":self.approveSubject?.TAge,"Username":self.approveSubject?.Tusername,"linkedin":self.approveSubject?.TLinkedin])
+                self.ref.child("Trainers").child("Approved").child(result!.user.uid).setValue(["name":self.name, "age":self.age,"Username":self.username,"linkedin":self.Linkedin ,"Email" : self.Email])
                
 
            //send approval to specialist
@@ -55,7 +98,7 @@ class ApproveTrainer: UIViewController {
            
                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: self.doSomething))
            self.present(alert, animated: true, completion: nil)
-           }
+          }
                
            }//result
            
