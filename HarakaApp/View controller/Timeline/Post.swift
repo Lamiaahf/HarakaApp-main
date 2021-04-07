@@ -60,7 +60,7 @@ class Post
 
         self.postID = snapshot.key
         self.UID = uid
-        self.createdBy = User(id:uid)
+        self.createdBy = User()
         self.caption = cap
         self.timeAgo = times
         self.numOfLikes = nol

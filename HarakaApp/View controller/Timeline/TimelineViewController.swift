@@ -29,9 +29,13 @@ class TimelineViewController: UITableViewController {
             for p in posts{
                 self.checkLike(post: p)
                 self.posts?.append(p)
-                self.tableView.reloadData()
-
+                DBManager.getUser(for: p.UID!){
+                    user in
+                    p.createdBy = user
+                    self.tableView.reloadData()
+                }
             }
+            
         }
      //   getPosts()
       //  fetchPosts()

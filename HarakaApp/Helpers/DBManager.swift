@@ -61,6 +61,7 @@ class DBManager {
             }
 
             let posts = snapshot.reversed().compactMap(Post.init)
+            
             completion(posts)
         })
     }
@@ -93,7 +94,12 @@ class DBManager {
                     let uid = id
                     
                     user = User(username: username, profileimageurl: profilepic, name: name, email: email, followingCount: followingCount, DOB: dob, id: id)
-                    completion(user)
+                    getPic(for: user){
+                        pic in
+                        user.profileImage = pic
+                        completion(user)
+                    }
+                    
                 }
                 else {completion(user)}
             }
