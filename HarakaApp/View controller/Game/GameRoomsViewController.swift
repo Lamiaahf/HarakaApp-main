@@ -21,10 +21,11 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            createGame.layer.cornerRadius = createGame.frame.size.width / 2
-
-        self.gamesTable.delegate = self
-        self.gamesTable.dataSource = self
+        createGame.layer.cornerRadius = createGame.frame.size.width / 2
+        gamesTable.estimatedRowHeight = gamesTable.rowHeight
+        gamesTable.rowHeight = UITableView.automaticDimension
+        gamesTable.delegate = self
+        gamesTable.dataSource = self
         
         games = []
         fetchGames()
@@ -33,39 +34,22 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func fetchGames(){
         
-        ref.child("Games").observe(.childAdded, with: { snapshot in
+        ref.child("GameRooms").observe(.childAdded, with: { snapshot in
             if let gameDict = snapshot.value as? [String:Any] {
                 guard let uid = gameDict["CreatorID"] as? String else {return}
-                let name = gameDict["Name"] as! String
-                
-                self.ref.child("GameParticipants").observe(.childAdded, with: {
-                    snapshot in
-                    if let participantsDict = snapshot.value as? [String: Any]{
-                        
-                        var resultsList = [Float]()
-                        var usersList = [User]()
-                        for element in participantsDict{
-                            let user = User(u: element.key as! String, p: UIImage())
-                            usersList.append(user)
-                            let result = element.value as! Float
-                            resultsList.append(result)
-                        }
-                        
-                        let game = Game(gName: name, prtcpnts: usersList, rslts: resultsList, uid: uid)
-                        self.games!.append(game)
-                        self.gamesTable.reloadData()
-                     
-                    }
-                })
-                
+                let name = gameDict["GameName"] as! String
+                let count = gameDict["PlayerCount"] as! Int
+                let gameKey = snapshot.key
+            
+                var g = Game(gName: name, uid: uid, gid: gameKey)
 
-
+                self.games?.append(g)
+                self.gamesTable.reloadData()
             }
-            
-            
         })
         
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let games = games{
@@ -92,6 +76,10 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
       //  gameView.game = game
         self.navigationController?.pushViewController(gameView, animated: true)
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     /*
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

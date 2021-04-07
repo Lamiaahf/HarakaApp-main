@@ -21,6 +21,8 @@ class GameCell: UITableViewCell{
     
     func updateGame(){
         
+        GameLabel.text = game.name
+        CreatorLabel.text = game.creatorID // Change to username
         
     }
     

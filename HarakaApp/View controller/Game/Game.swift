@@ -10,17 +10,13 @@ import Foundation
 class Game{
     
     var name: String?
-    var participants: [User]?
-   // var results: [String:Float]?
-    var results: [Float]?
     var creatorID: String?
-    //var gID: String?
+    var gID: String?
     
-    init(gName: String, prtcpnts: [User], rslts: [Float], uid: String){
+    init(gName: String, uid: String, gid: String){
         name = gName
-        participants = prtcpnts
-        results = rslts
         creatorID = uid
+        gID = gid
     }
     
 }
