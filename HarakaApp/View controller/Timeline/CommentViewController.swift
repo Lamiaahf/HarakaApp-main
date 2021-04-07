@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class CommentViewController: UIViewController, UITableViewDelegate {
+class CommentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var comments: [Comment]?
     var post: Post?
@@ -20,10 +20,11 @@ class CommentViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
       
+        commentsTable.delegate = self
+        commentsTable.dataSource = self
         commentsTable.separatorStyle = .none
         commentsTable.estimatedRowHeight = commentsTable.rowHeight
         commentsTable.rowHeight = UITableView.automaticDimension
-        commentsTable.delegate = self
         
         self.post = Post(createdBy: User(u: "", p: UIImage(systemName: "figure")), timeAgo: "", captionUI: "", numOfLikesUI: 0, numOfCommentsUI: 0, postID: "", liked:false, uid: " ")
         self.comments = []

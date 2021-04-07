@@ -26,6 +26,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         gamesTable.rowHeight = UITableView.automaticDimension
         gamesTable.delegate = self
         gamesTable.dataSource = self
+        gamesTable.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         games = []
         fetchGames()
