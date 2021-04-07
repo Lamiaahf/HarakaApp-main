@@ -93,6 +93,7 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
             let newMessageRef = roomRef.child("messages").childByAutoId()
             //   ServerValue.timestamp()
             let ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("users").child(userId).child("Username")
+            
             ref.observeSingleEvent(of: .value) { (snapshot) in
                 let userName = snapshot.value as! String
                 if(text != nil){
@@ -106,7 +107,21 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.newMessageTextField.text = ""
                 self.newMessageTextField.resignFirstResponder()
             }
-        }
+            let refT = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("Trainers").child("Approved").child(userId).child("Username")
+            
+            refT.observeSingleEvent(of: .value) { (snapshot) in
+                let userName = snapshot.value as! String
+                if(text != nil){
+                    let messageData:[String: Any] = ["senderId": userId, "senderName" : userName, "text": text!, "date":ServerValue.timestamp()]
+                    newMessageRef.updateChildValues(messageData)
+                } else if(imageLink != nil){
+                    let messageData:[String: Any] = ["senderId": userId, "senderName" : userName, "imageLink": imageLink!, "date":ServerValue.timestamp()]
+                    newMessageRef.updateChildValues(messageData)
+                }
+                
+                self.newMessageTextField.text = ""
+                self.newMessageTextField.resignFirstResponder()
+            }        }
     }
     
     @IBAction func didPressBackButton(_ sender: UIButton) {

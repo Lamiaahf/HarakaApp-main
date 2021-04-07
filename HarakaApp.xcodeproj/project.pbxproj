@@ -272,12 +272,12 @@
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
 				3F6A0E6525DD54FA00AAB91A /* FollwoUserProfileViewController.swift */,
+				23985FBE26021BB100FB2764 /* GameViewController.swift */,
 				CEC34787260BF25C004B3754 /* search user-trainer */,
 				23DAC3AC260BB2DB000DB8AB /* Challenges */,
 				23DAC3A6260BB22F000DB8AB /* Timeline */,
 				3FA49326260B613C0052A1BD /* Admin */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
-				23985FBE26021BB100FB2764 /* GameViewController.swift */,
 			);
 			path = "View controller";
 			sourceTree = "<group>";
@@ -298,6 +298,15 @@
 				D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CEAA4A57261E1A080016490B /* RoomsT */ = {
+			isa = PBXGroup;
+			children = (
+				CE494550261233FC008DC32B /* CreateRoomViewController.swift */,
+				CE49454C26123346008DC32B /* CircularTransition.swift */,
+			);
+			path = RoomsT;
 			sourceTree = "<group>";
 		};
 		CEBE9383260387D300A0E363 /* calender */ = {
@@ -350,12 +359,11 @@
 		CED6033E25F4333C00C4ACE4 /* chatRooms */ = {
 			isa = PBXGroup;
 			children = (
-				CEBE9383260387D300A0E363 /* calender */,
-				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
+				CEAA4A57261E1A080016490B /* RoomsT */,
 				CED6033825F41DB400C4ACE4 /* RoomViewController.swift */,
+				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
 				CED6034125F4353E00C4ACE4 /* ChatCell.swift */,
-				CE49454C26123346008DC32B /* CircularTransition.swift */,
-				CE494550261233FC008DC32B /* CreateRoomViewController.swift */,
+				CEBE9383260387D300A0E363 /* calender */,
 				CED6033225F41A6800C4ACE4 /* models "rooms" */,
 			);
 			path = chatRooms;
