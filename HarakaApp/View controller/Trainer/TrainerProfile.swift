@@ -22,20 +22,20 @@ class TrainerProfile: UIViewController {
 
     @IBOutlet weak var Username: UILabel!
     @IBOutlet weak var Name: UILabel!
-    
-    @IBOutlet weak var Activities: UIView!
-    @IBOutlet weak var Challenges: UIView!
-    @IBOutlet weak var Followers: UIView!
-
-    @IBOutlet weak var activitie: UIButton!
-    @IBOutlet weak var challenge: UIButton!
-    @IBOutlet weak var follower: UIButton!
+    // V = UIView
+    @IBOutlet weak var ActivitiesV: UIView!
+    @IBOutlet weak var ChallengesV: UIView!
+    @IBOutlet weak var FollowersV: UIView!
+   // B = UIButton
+    @IBOutlet weak var activitieB: UIButton!
+    @IBOutlet weak var challengeB: UIButton!
+    @IBOutlet weak var followerB: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilities.styleFilledButton(activitie)
-        Utilities.styleFilledButton(challenge)
-        Utilities.styleFilledButton(follower)
+        Utilities.styleFilledButton(activitieB)
+        Utilities.styleFilledButton(challengeB)
+        Utilities.styleFilledButton(followerB)
         getUserInfo()
         self.loggedInUser = Auth.auth().currentUser
 
@@ -92,25 +92,25 @@ class TrainerProfile: UIViewController {
    
     @IBAction func showActivities(_ sender: Any) {
     
-       UIView.animate(withDuration: 0.5, animations:{self.Activities.alpha = 1
-            self.Challenges.alpha = 0
-                    self.Followers.alpha = 0 }
+       UIView.animate(withDuration: 0.5, animations:{self.ActivitiesV.alpha = 1
+            self.ChallengesV.alpha = 0
+                    self.FollowersV.alpha = 0 }
        )}
     
     @IBAction func ShowChallenges(_ sender: Any) {
   
     
-            do { UIView.animate(withDuration: 0.5, animations:{self.Activities.alpha = 0
-                            self.Challenges.alpha = 1
-                            self.Followers.alpha = 0
+            do { UIView.animate(withDuration: 0.5, animations:{self.ActivitiesV.alpha = 0
+                            self.ChallengesV.alpha = 1
+                            self.FollowersV.alpha = 0
     })
             }}
     
     @IBAction func ShowFollowers(_ sender: Any) {
 
-            do {UIView.animate(withDuration: 0.5, animations:{self.Activities.alpha = 0
-                       self.Challenges.alpha = 0
-                       self.Followers.alpha = 1
+            do {UIView.animate(withDuration: 0.5, animations:{self.ActivitiesV.alpha = 0
+                       self.ChallengesV.alpha = 0
+                       self.FollowersV.alpha = 1
             })}}
     
     

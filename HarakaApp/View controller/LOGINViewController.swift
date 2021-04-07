@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class LOGINViewController: UIViewController {
 // L= Login
@@ -17,15 +18,15 @@ class LOGINViewController: UIViewController {
     
     @IBOutlet weak var Error: UILabel!
     @IBOutlet weak var login: UIButton!
-    
     @IBOutlet weak var Singupform: UIButton!
+    var databaseRef = Database.database().reference()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
 
-        // Do any additional setup after loading the view.
+
+
     }
     func setUpElements() {
     
@@ -47,61 +48,100 @@ class LOGINViewController: UIViewController {
         let Email = EmailL.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let Pass = PasswordL.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        // Signing in the user
         Auth.auth().signIn(withEmail: Email, password: Pass) { (result, error) in
+           if error != nil {
+               // Couldn't sign in
+               self.Error.text = error!.localizedDescription
+               self.Error.alpha = 1
+           }
             
-            if error != nil {
-                // Couldn't sign in
-                self.Error.text = error!.localizedDescription
-                self.Error.alpha = 1
-            }
-            else {
-                // Get uid
-                // Query database to check if uid belongs to user OR trainer
-                
-                // if normal user continue lamia's code..
-                let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? MyTabBarCtrl
-                
-                self.view.window?.rootViewController = homeViewController
-                self.view.window?.makeKeyAndVisible()
-                
-                // if trainer:
-                // query to check if approved or unapproved
-                // if approved -> open homepage
-                // if unapproved -> open interface telling user they are not approved, or show dialog message
-                
-            }
-        }
-    }
-    
-}
-/*
-Auth.auth()?.signIn(withEmail:Email , password: pass, completion: {
-    (user, error) in
-        // If there's no errors
-        if error == nil {
-            // Get the type from the database. It's path is users/<userId>/type.
-            // Notice "observeSingleEvent", so we don't register for getting an update every time it changes.
-            Database.database().reference().child("users/\(user!.uid)/type").observeSingleEvent(of: .value, with: {
-                (snapshot) in
+           else {
+            
+            let uid = Auth.auth().currentUser?.uid
+            self.databaseRef.child("Trainers").child("Approved").observeSingleEvent(of: .value, with: { (snapshot) in
 
-                switch snapshot.value as! String {
-                // If our user is admin...
-                case "Trainer":
-                    // ...redirect to the admin page
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "adminVC")
-                    self.present(vc!, animated: true, completion: nil)
-                // If out user is a regular user...
-                case "user":
-                    // ...redirect to the user page
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "userVC")
-                    self.present(vc!, animated: true, completion: nil)
-                // If the type wasn't found...
-                default:
-                    // ...print an error
-                    print("Error: Couldn't find type for user \(user!.uid)")
-                }
-           })
-       }
-   })
+                    if snapshot.hasChild(uid!){
+
+                        let ThomeViewController =
+                            self.storyboard?.instantiateViewController(withIdentifier:"THomeVC") as? MyTabBarCtrl
+                            
+                        
+                        self.view.window?.rootViewController = ThomeViewController
+                        self.view.window?.makeKeyAndVisible()
+                        
+                    }else {
+                        let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? MyTabBarCtrl
+                        
+                        self.view.window?.rootViewController = homeViewController
+                        self.view.window?.makeKeyAndVisible()
+
+                        }
+
+
+                })
+            
+            
+           }
+            
+            
+        } }}
+
+     
+           
+
+               // Get uid
+               // Query database to check if uid belongs to user OR trainer
+               
+               // if normal user continue lamia's code..
+           
+               
+               
+           
+        
+        // Signing in the user
+         
+    
+/*
+ let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? MyTabBarCtrl
+ 
+ self.view.window?.rootViewController = homeViewController
+ self.view.window?.makeKeyAndVisible()
+ 
+ // if trainer:
+ // query to check if approved or unapproved
+ // if approved -> open homepage
+ // if unapproved -> open interface telling user they are not approved, or show dialog message
+ 
+}
+else if  (Email == "Daad@ahf.com") {
+
+ 
+ let ThomeViewController =
+     self.storyboard?.instantiateViewController(withIdentifier:"THomeVC") as? MyTabBarCtrl
+     
+ 
+ self.view.window?.rootViewController = ThomeViewController
+ self.view.window?.makeKeyAndVisible()
+ 
+
+ 
+ 
+ //////
+ 
+ 
+ self.databaseRef.child("Trainers").child("Approved").observeSingleEvent(of: .value, with: { (snapshot) in
+
+      if snapshot.exists(){
+         let ThomeViewController =
+             self.storyboard?.instantiateViewController(withIdentifier:"THomeVC") as? MyTabBarCtrl
+             
+         
+         self.view.window?.rootViewController = ThomeViewController
+         self.view.window?.makeKeyAndVisible()                    }
+
+
+ )}
 */
+
+        
+

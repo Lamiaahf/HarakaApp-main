@@ -22,20 +22,19 @@ class UserProfileViewController:  UIViewController {
     @IBOutlet weak var Username: UILabel!
     @IBOutlet weak var Name: UILabel!
     
-    @IBOutlet weak var Posts: UIView!
-    @IBOutlet weak var Followers: UIView!
-    @IBOutlet weak var Following: UIView!
+    @IBOutlet weak var PostsV: UIView!
+    @IBOutlet weak var FollowersV: UIView!
+    @IBOutlet weak var FollowingV: UIView!
 
     @IBOutlet weak var post: UIButton!
-    
-    @IBOutlet weak var friends: UIButton!
-    @IBOutlet weak var trainer: UIButton!
+    @IBOutlet weak var Following: UIButton!
+    @IBOutlet weak var Followers: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Utilities.styleFilledButton(post)
-        Utilities.styleFilledButton(friends)
-        Utilities.styleFilledButton(trainer)
+        Utilities.styleFilledButton(Following)
+        Utilities.styleFilledButton(Followers)
         getUserInfo()
         self.loggedInUser = Auth.auth().currentUser
 
@@ -92,25 +91,25 @@ class UserProfileViewController:  UIViewController {
    
     @IBAction func showPosts(_ sender: Any) {
     
-       UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 1
-            self.Following.alpha = 0
-                    self.Followers.alpha = 0 }
+       UIView.animate(withDuration: 0.5, animations:{self.PostsV.alpha = 1
+                 self.FollowingV.alpha = 0
+                    self.FollowersV.alpha = 0 }
        )}
     
     @IBAction func ShowFollowing(_ sender: Any) {
   
     
-            do { UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 0
-                            self.Following.alpha = 1
-                            self.Followers.alpha = 0
+            do { UIView.animate(withDuration: 0.5, animations:{self.PostsV.alpha = 0
+                            self.FollowingV.alpha = 1
+                            self.FollowersV.alpha = 0
     })
             }}
     @IBAction func showFollowers(_ sender: Any) {
 
     
-            do {UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 0
-                       self.Following.alpha = 0
-                       self.Followers.alpha = 1
+            do {UIView.animate(withDuration: 0.5, animations:{self.PostsV.alpha = 0
+                       self.FollowingV.alpha = 0
+                       self.FollowersV.alpha = 1
 })}
     }
     

@@ -15,11 +15,11 @@ var TLinkedin: String?
 var TEmail: String?
 var TPassword: String?
 var autoKey: String?
-var Tpic :String?
+var TProfilePic :String?
 
 
 
-    init(TrainName:String,TrainDOB:String,Trainusername:String, TrainLinked:String,TrainEmail:String, TrainPassword:String, Trainpic : String , autoKey:String) {
+    init(TrainName:String,TrainDOB:String,Trainusername:String, TrainLinked:String,TrainEmail:String,TrainPassword :String , Trainpic : String , autoKey:String) {
 
     self.TName = TrainName
     self.Tusername = Trainusername
@@ -27,7 +27,7 @@ var Tpic :String?
     self.TLinkedin = TrainLinked
     self.TEmail = TrainEmail
     self.TPassword = TrainPassword
-    self.Tpic = Trainpic
+    self.TProfilePic = Trainpic
     self.autoKey = autoKey
     
     

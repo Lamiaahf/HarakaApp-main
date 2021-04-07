@@ -123,7 +123,7 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
             if segue.identifier == "ShowUser" {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let user = usersArray[indexPath.row]
-                    let controller = segue.destination as? OtherUsers
+                    let controller = segue.destination as? OtherUsersViewController
                     controller?.otherUser = user
             
                 }

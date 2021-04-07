@@ -44,7 +44,7 @@ override func viewDidLoad() {
         let Tpic = dict["ProfilePic"] as! String
 
     
-        let Trainer = Trainner( TrainName:name,TrainDOB:age,Trainusername:Username,TrainLinked:likedin, TrainEmail:email, TrainPassword:pass , Trainpic : Tpic,autoKey:key )
+        let Trainer = Trainner( TrainName:name,TrainDOB:age,Trainusername:Username,TrainLinked:likedin, TrainEmail:email, TrainPassword: pass, Trainpic : Tpic,autoKey:key )
         
         self.arrayOfRegisteration.append(Trainer)
         self.Name.append(name)

@@ -205,7 +205,7 @@ class UserSingupViewController: UIViewController  { //Start of class
                         StorageProfilrRef.downloadURL(completion: {(url , error ) in
                         if let metaImageUrl = url?.absoluteString {
 
-                            let db = ["Name":Name, "Username":"@"+Username, "Email":Email,"Password":Password,"DOB":DOB ,"ProfilePic": metaImageUrl]
+                            let db = ["Name":Name, "Username":"@"+Username, "Email":Email,"DOB":DOB ,"ProfilePic": metaImageUrl]
                             ref.child("users").child(uid!).setValue(db){ _,_  in }
                         } })}
                     self.transitionToHome()

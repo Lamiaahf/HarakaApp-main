@@ -1,18 +1,20 @@
 //
-//  UserPostsViewController.swift
+//  OtherUserPostViewController.swift
 //  HarakaApp
 //
-//  Created by lamia on 01/04/2021.
+//  Created by lamia on 06/04/2021.
 //
-
+//other User PostsTable 
+ 
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-class UserPostsViewController: UITableViewController {
+class OtherUserPostViewController: UITableViewController {
+    
+    var otherUser:NSDictionary!
     var posts:[Post]?
     var databaseRef = Database.database().reference()
     var Userid : String?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
@@ -47,7 +49,13 @@ class UserPostsViewController: UITableViewController {
                 let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:false, uid: UID)
                 self.checkLike(post: newPost)
              //       postArray.insert(newPost, at: indx)
-                if self.Userid == newPost.UID{
+                
+                
+                let uid = self.otherUser?["uid"] as! String
+                self.otherUser = snapshot.value as? NSDictionary
+                //add the uid to the profile
+              //  self.otherUser?.setValue(uid, forKey: "uid")
+                if uid == newPost.UID{
                     self.posts?.append(newPost)
                   //  postArray.append(newPost)
                 //    indx = indx+1
@@ -85,7 +93,7 @@ class UserPostsViewController: UITableViewController {
        print("outside observe: \(flag)")}
 
 }
-extension UserPostsViewController{
+extension OtherUserPostViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let posts = posts{

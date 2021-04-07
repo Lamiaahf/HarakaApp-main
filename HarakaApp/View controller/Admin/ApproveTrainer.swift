@@ -83,7 +83,7 @@ class ApproveTrainer: UIViewController {
             } else
                {
                // add specialist to database
-                self.ref.child("Trainers").child("Approved").child(result!.user.uid).setValue(["name":self.name, "age":self.age,"Username":self.username,"linkedin":self.Linkedin ,"Email" : self.Email])
+                self.ref.child("Trainers").child("Approved").child(result!.user.uid).setValue(["Name":self.name, "DOB":self.age,"Username":self.username,"linkedin":self.Linkedin ,"Email" : self.Email,"ProfilePic": self.Tpic])
                
 
            //send approval to specialist
