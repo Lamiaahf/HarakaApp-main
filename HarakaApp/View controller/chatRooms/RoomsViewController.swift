@@ -11,16 +11,29 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource , UIViewControllerTransitioningDelegate{
+class RoomsViewController: UIViewController,  UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
+  
+    
+    var colors:[UIColor] = [
+        #colorLiteral(red: 0.9766376615, green: 0.5785049796, blue: 0.1343751848, alpha: 1),
+        #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
+        #colorLiteral(red: 0.3974583745, green: 0.5797579885, blue: 0.6469487548, alpha: 1),
+        #colorLiteral(red: 0.9766376615, green: 0.5785049796, blue: 0.1343751848, alpha: 1),
+        #colorLiteral(red: 0.6096846461, green: 0.7915071845, blue: 0.8629189134, alpha: 1),
+        #colorLiteral(red: 0.7747570276, green: 0.8219625354, blue: 0.9175457954, alpha: 1),
+        #colorLiteral(red: 0.7485505939, green: 0.8943883777, blue: 0.9117907286, alpha: 1)
+           ]
 
     
-
+ //   @IBOutlet weak var textLabell: UILabel!
+    
     @IBOutlet weak var goCreateButton: UIButton!
     
     let transition = CircularTransition()
     
-    @IBOutlet weak var RoomsTable: UITableView!
+ //   @IBOutlet weak var RoomsTable: UITableView!
     
+    @IBOutlet weak var RoomsTable: UICollectionView!
     
     
     var rooms = [Room]()
@@ -80,39 +93,81 @@ class RoomsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
-      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     /* func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let room = self.rooms[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell")!
-        cell.backgroundColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        cell.backgroundColor =  #colorLiteral(red: 0.9253895879, green: 0.9255481362, blue: 0.9253795743, alpha: 0.5479452055)
+        
         cell.layer.cornerRadius = 30
         cell.layer.borderWidth = 3
         cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
             cell.textLabel?.text = room.name
               return cell
-    }
+    }*/
   
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let room = self.rooms[indexPath.row]
         let chatView = self.storyboard?.instantiateViewController(withIdentifier: "RoomViewController") as! RoomViewController
         chatView.room = room
         self.navigationController?.pushViewController(chatView, animated: true)
-    }
+    }*/
 
   
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  /*  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.rooms.count
-    }
+    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
- 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let room = self.rooms[indexPath.row]
+        let chatView = self.storyboard?.instantiateViewController(withIdentifier: "RoomViewController") as! RoomViewController
+        chatView.room = room
+        self.navigationController?.pushViewController(chatView, animated: true)
+    }
+
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.rooms.count    }
+    
+  
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let room = self.rooms[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath )
+        cell.backgroundColor =  colors.randomElement()
+        
+       cell.layer.cornerRadius = 5
+       // cell.layer.borderWidth = 3
+        // cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+      //  let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        let groupName = UILabel(frame: CGRect(x: 0 , y: 0 , width: cell.bounds.size.width , height: 40  ))
+        groupName.textColor=UIColor.white
+        groupName.text = room.name
+        groupName.textAlignment = .center
+        groupName.font = UIFont.boldSystemFont(ofSize:15)
+        cell.layer.cornerRadius = 20
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowRadius = 20
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowOpacity = 0.5
+        cell.contentView.addSubview(groupName)
+              return cell
+    }
+    
+   /* func collectionView(_ collectionView: UICollectionView , layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)}*/
+        
+        
+    
+    
     
 
 // ui
