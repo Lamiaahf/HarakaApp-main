@@ -28,6 +28,10 @@
 		3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885D9F261A56DB003BF3F3 /* FollowersTableViewController.swift */; };
 		3F885DA3261A58CF003BF3F3 /* FollowingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885DA2261A58CF003BF3F3 /* FollowingTableViewController.swift */; };
 		3F92ADF4261E16BE00EC3085 /* OtherUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92ADF3261E16BE00EC3085 /* OtherUsersViewController.swift */; };
+		3F92AE11261F2CB400EC3085 /* CreateActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92AE10261F2CB400EC3085 /* CreateActivity.swift */; };
+		3F92AEB2261F532300EC3085 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92AEB1261F532300EC3085 /* Activity.swift */; };
+		3F92AECF261F5C8F00EC3085 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92AECE261F5C8F00EC3085 /* ActivityCell.swift */; };
+		3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F92AED1261F623600EC3085 /* ActivitysListTable.swift */; };
 		3FA4932C260B613C0052A1BD /* approveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49327260B613C0052A1BD /* approveCell.swift */; };
 		3FA4932D260B613C0052A1BD /* ApproveTrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49328260B613C0052A1BD /* ApproveTrainer.swift */; };
 		3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49329260B613C0052A1BD /* Trainner.swift */; };
@@ -104,6 +108,10 @@
 		3F885D9F261A56DB003BF3F3 /* FollowersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersTableViewController.swift; sourceTree = "<group>"; };
 		3F885DA2261A58CF003BF3F3 /* FollowingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewController.swift; sourceTree = "<group>"; };
 		3F92ADF3261E16BE00EC3085 /* OtherUsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUsersViewController.swift; sourceTree = "<group>"; };
+		3F92AE10261F2CB400EC3085 /* CreateActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivity.swift; sourceTree = "<group>"; };
+		3F92AEB1261F532300EC3085 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		3F92AECE261F5C8F00EC3085 /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		3F92AED1261F623600EC3085 /* ActivitysListTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitysListTable.swift; sourceTree = "<group>"; };
 		3FA49327260B613C0052A1BD /* approveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = approveCell.swift; sourceTree = "<group>"; };
 		3FA49328260B613C0052A1BD /* ApproveTrainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproveTrainer.swift; sourceTree = "<group>"; };
 		3FA49329260B613C0052A1BD /* Trainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainner.swift; sourceTree = "<group>"; };
@@ -216,6 +224,17 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		3F92AE95261F51B800EC3085 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				3F92AE10261F2CB400EC3085 /* CreateActivity.swift */,
+				3F92AED1261F623600EC3085 /* ActivitysListTable.swift */,
+				3F92AEB1261F532300EC3085 /* Activity.swift */,
+				3F92AECE261F5C8F00EC3085 /* ActivityCell.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
 		3FA49326260B613C0052A1BD /* Admin */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +305,7 @@
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
 				3FF3369E2616E10E00A905EF /* Userprofile */,
 				CEC34787260BF25C004B3754 /* search user-trainer */,
+				3F92AE95261F51B800EC3085 /* Activity */,
 				23DAC3AC260BB2DB000DB8AB /* Challenges */,
 				23DAC3A6260BB22F000DB8AB /* Timeline */,
 				3FA49326260B613C0052A1BD /* Admin */,
@@ -529,6 +549,7 @@
 				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
 				3FD4742825D3264700260C1A /* Service.swift in Sources */,
 				3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */,
+				3F92AE11261F2CB400EC3085 /* CreateActivity.swift in Sources */,
 				94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */,
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
 				94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */,
@@ -548,12 +569,15 @@
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
+				3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */,
 				3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */,
+				3F92AEB2261F532300EC3085 /* Activity.swift in Sources */,
 				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
 				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
 				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
 				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
+				3F92AECF261F5C8F00EC3085 /* ActivityCell.swift in Sources */,
 				235797A32607E4540017C166 /* CommentCell.swift in Sources */,
 				3F2D1012261DF28B0029D96C /* TchallengesTable.swift in Sources */,
 				3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */,

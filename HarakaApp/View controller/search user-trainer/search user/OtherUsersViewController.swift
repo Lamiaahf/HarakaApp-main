@@ -28,7 +28,7 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
         //   @IBOutlet weak var numberFollowing: UIButton!
         // @IBOutlet weak var numberFollowers: UIButton!
            
-           let loggedInUser = Auth.auth().currentUser
+           let loggedInUser = Auth.auth().currentUser 
            var loggedInUserData:NSDictionary?
            var otherUser:NSDictionary!
            var userProfileData:NSDictionary?
@@ -40,77 +40,86 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
            
            
         override func viewDidLoad() {
-               super.viewDidLoad()
-            //style
-            Utilities.styleFilledButton(followButton)
-               databaseRef.child("users").child(self.loggedInUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                
-                self.loggedInUserData = snapshot.value as? NSDictionary
-                self.loggedInUserData?.setValue(self.loggedInUser!.uid, forKey: "uid")
-                }) { (error) in
-                    print(error.localizedDescription)
-            }
-            
-            
-            
-            //add an observer for the user who's profile is being viewed
-            //When the followers count is changed, it is updated here!
-            //need to add the uid to the user's data
-            databaseRef.child("users").child(self.otherUser["uid"] as! String).observe(.value, with: { (snapshot) in
-                
-                let uid = self.otherUser?["uid"] as! String
-                self.otherUser = snapshot.value as? NSDictionary
-                //add the uid to the profile
-                self.otherUser?.setValue(uid, forKey: "uid")
-            
-            
-            }) { (error) in
-                    print(error.localizedDescription)
-            }
-            
-            //check if the current user is being followed
-            //if yes, Enable the UNfollow button
-            //if no, Enable the Follow button
-            
-        databaseRef.child("following").child(self.loggedInUser!.uid).child(self.otherUser?["uid"] as! String).observe(.value, with: { (snapshot) in
-        
-                if(snapshot.exists())
-                {
-                    self.followButton.setTitle("الغاء المتابعة", for: .normal)
-                    print("You are following the user")
+            super.viewDidLoad()
+         //style
+         Utilities.styleFilledButton(followButton)
+         
+            databaseRef.child("Trainers").child("Approved").child(self.loggedInUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+             
+             self.loggedInUserData = snapshot.value as? NSDictionary
+             self.loggedInUserData?.setValue(self.loggedInUser!.uid, forKey: "uid")
+             }) { (error) in
+                 print(error.localizedDescription)
+         }
+         
+         
+         
+         //add an observer for the user who's profile is being viewed
+         //When the followers count is changed, it is updated here!
+         //need to add the uid to the user's data
+         databaseRef.child("users").child(self.otherUser?["uid"] as! String).observe(.value, with: { (snapshot) in
+             
+             let uid = self.otherUser?["uid"] as! String
+             self.otherUser = snapshot.value as? NSDictionary
+             //add the uid to the profile
+             self.otherUser?.setValue(uid, forKey: "uid")
+         
+         
+         }) { (error) in
+                 print(error.localizedDescription)
+         }
+         
+         //check if the current user is being followed
+         //if yes, Enable the UNfollow button
+         //if no, Enable the Follow button
+         
+     databaseRef.child("following").child(self.loggedInUser!.uid).child(self.otherUser?["uid"] as! String).observe(.value, with: { (snapshot) in
+     
+             if(snapshot.exists())
+             {
+                 self.followButton.setTitle("الغاء المتابعة", for: .normal)
+                 print("You are following the trainer")
 
-                }
-                else
-                {
-                    self.followButton.setTitle("متابعة", for: .normal)
-                    print("You are not following the user")
-                }
+             }
+             else
+             {
+                 self.followButton.setTitle("متابعة", for: .normal)
+                 print("You are not following the trainer")
+             }
 
+         
+         }) { (error) in
+         
+             print(error.localizedDescription)
+         }
+         
             
-            }) { (error) in
-            
-                print(error.localizedDescription)
+         if (name != nil){
+              self.name.text = otherUser!["Name"] as? String
+             self.username.text = otherUser!["Username"] as? String}
+         if (otherUser!["ProfilePic"] != nil){
+
+                let databaseProfilePic = otherUser!["ProfilePic"] as! String
+                let data = try? Data(contentsOf:URL(string:databaseProfilePic)!)
+                
+                self.setProfilePicture(self.Profilepic,imageToSet:UIImage(data:data!)!)
             }
-            
-               
-            if (name != nil){
-                 self.name.text = otherUser!["Name"] as? String
-                 self.username.text = otherUser!["Username"] as? String
+
+           /* if(otherTrainers["followersCount"] != nil)
+            {
+                print("Followers Count")
+                
+                let followersCount = ("\(otherTrainers["followersCount"]!)")
+                
+                self.numberFollowers.setTitle(followersCount, for: .normal)
             }
         
-               
-            if(otherUser["ProfilePic"] != nil)
-               {
-                   let databaseProfilePic = otherUser!["ProfilePic"] as! String
-                   let data = try? Data(contentsOf:URL(string:databaseProfilePic)!)
-                   
-                   self.setProfilePicture(self.Profilepic,imageToSet:UIImage(data:data!)!)
-               }
-           
-           
-           
-          
-           }
+            if(otherTrainers?["followingCount"] != nil)
+            {
+                let followingCount = ("\(otherTrainers["followersCount"]!)")
+                self.numberFollowing.setTitle(followingCount, for: .normal)
+            }*/
+        }
 
            override func didReceiveMemoryWarning() {
                super.didReceiveMemoryWarning()
