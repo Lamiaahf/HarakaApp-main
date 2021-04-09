@@ -10,8 +10,12 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class TimelineViewController: UITableViewController {
+
     
     var posts:[Post]?
+    var followingsIDs: [String]?
+    var followings: [User]?
+    var followingsDict: [String:User]?
     let ref: DatabaseReference = Database.database().reference()
     
     override func viewDidLoad() {
@@ -20,47 +24,74 @@ class TimelineViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
         tableView.delegate = self
+  //      self.refreshControl = UIRefreshControl()
+  //      self.refreshControl!.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+   //     tableView.addSubview(self.refreshControl!)
         
         posts = []
-        let current = User(id: (Auth.auth().currentUser?.uid)!)
+        followings = []
+        followingsIDs = []
+        followingsDict = [:]
         
-        DBManager.getPosts(for: current) { (posts) in
+        var current = User()
+        DBManager.getUser(for: Auth.auth().currentUser!.uid){
+            user in
+            current = user
+
+            print(FollowersTableViewController().listFollowers)
+            self.followingsIDs?.append(current.userID!)
+            self.followings?.append(current)
+            
+            DBManager.getFollowing(for: current){
+                users in
+                for u in users{
+                    self.followingsIDs!.append(u.userID!)
+                    self.followings!.append(u)
+                    // DBManager.getPic(for: u){ pic in}
+                }
+                self.fetchPosts()
+                self.tableView.reloadData()
+            }
+        }
+      
+      /*  DBManager.getPosts(for: current) { (posts) in
             for p in posts{
                 self.checkLike(post: p)
                 self.posts?.append(p)
                 DBManager.getUser(for: p.UID!){
                     user in
                     p.createdBy = user
-                    self.tableView.reloadData()
                 }
+            //    self.tableView.reloadData()
             }
-            
-        }
+        }*/
+        
+    //    self.tableView.reloadData()
      //   getPosts()
       //  fetchPosts()
         }
-    override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
     
-    func getPosts(){
+    
+    func getPosts(user: User){
+
         
-        let current = User(id: (Auth.auth().currentUser?.uid)!)
-        
-        DBManager.getPosts(for: current) { (posts) in
+        DBManager.getPosts(for: user) { (posts) in
             for p in posts{
+                self.checkLike(post: p)
                 self.posts?.append(p)
                 self.tableView.reloadData()
 
             }
         }
         
-        DBManager.getFollowing(for: current){
+        DBManager.getFollowing(for: user){
             (users) in
             for u in users{
                 DBManager.getPosts(for: u){ (posts) in
                     for p in posts{
+                        self.checkLike(post: p)
                         self.posts?.append(p)
                         self.tableView.reloadData()
 
@@ -71,31 +102,43 @@ class TimelineViewController: UITableViewController {
         
             }
 
+
     func fetchPosts(){
 
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
 
+        followingsDict = Dictionary.init(keys: followingsIDs!, values: followings!)
         ref.child("posts").observe(.childAdded){
         (snapshot) in
             if snapshot.exists(){
                 if let postDict = snapshot.value as? [String: Any]{
                     if let uid = postDict["uid"] as? String{
+                        
+                        if self.followingsIDs!.contains(uid){
+                            
                             let cap = postDict["caption"] as? String ?? ""
                             let times = postDict["timestamp"] as? String ?? ""
                             let nol = postDict["numOfLikes"] as? Int ?? 0
                             let noc = postDict["numOfComments"] as? Int ?? 0
                             let id = String(snapshot.key)
+                            
+                            let postUser = self.followingsDict![uid]
                         
-                        //Get user from uid and store it inside the post object
-                        let postUser = User(id:uid)
-                        let newPost = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked:false, uid: uid)
+                            DBManager.getPic(for: postUser!){
+                                pic in
+                                postUser?.profileImage = pic
+                                self.tableView.reloadData()
+                            }
+                            var post = Post(createdBy: postUser!, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
+                            self.checkLike(post: post)
+                            self.posts?.append(post)
+               //             self.tableView.reloadData()
+   
                         
-                        //Check for liked posts
-                        self.checkLike(post: newPost)
-                        self.posts?.append(newPost)
-                        self.tableView.reloadData()
+                        }
                         
                     }}
+                
             }
     
 
@@ -159,6 +202,9 @@ extension TimelineViewController{
         
         cell.commentButton.tag = indexPath.row
         cell.commentButton.addTarget(self, action: #selector(TimelineViewController.openComments(_:)) , for: UIControl.Event.touchUpInside)
+        
+        cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
+        
         return cell
         
     }
@@ -166,6 +212,8 @@ extension TimelineViewController{
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
+    
     /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedPost = posts![indexPath.row]
@@ -177,5 +225,17 @@ extension TimelineViewController{
         
     }*/
     
+}
+
+extension Dictionary {
+    public init(keys: [Key], values: [Value]) {
+        precondition(keys.count == values.count)
+
+        self.init()
+
+        for (index, key) in keys.enumerated() {
+            self[key] = values[index]
+        }
+    }
 }
 

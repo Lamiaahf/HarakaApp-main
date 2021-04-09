@@ -29,6 +29,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         comments = []
         fetchComments()
+        commentsTable.reloadData()
 
     }
     
@@ -82,25 +83,33 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     func fetchComments(){
         
         comments = []
-        var flag = false
+
         ref.child("Comments").child(post.postID!).observe(.childAdded){
         (snapshot) in
             if snapshot.exists(){
                 if let commentDict = snapshot.value as? [String: Any]{
                     if let uid = commentDict["uid"] as? String {
                         let comment = commentDict["comment"] as? String ?? ""
+                        
                         let commentUser = User(id:uid)
                         let newComment = Comment(writtenBy: commentUser, commentText:comment)
-                        flag = true
-                        
-                        self.comments?.append(newComment)
-                        self.commentsTable.reloadData()}
+                        DBManager.getUser(for: uid){
+                            user in
+                            newComment.writtenBy = user
+                            self.commentsTable.reloadData()
+                            DBManager.getPic(for: user){
+                                pic in
+                                newComment.writtenBy.profileImage = pic
+                                self.commentsTable.reloadData()
+                            }
+                        }
+                       
+                        self.comments?.append(newComment)}
                 }
             }
 
         }
         
-        print(flag)
     }
 }
 

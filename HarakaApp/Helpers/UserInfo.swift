@@ -78,6 +78,30 @@ import FirebaseStorage
         // = Date(timeIntervalSince1970: times)
     }
     
+    init?(snapshot: DataSnapshot, flag: Bool) {
+        //This is called when creating a user object for the Following/Followers list, since we dont need all the information
+        super.init()
+        guard let userDict = snapshot.value as? [String : Any],
+            let username = userDict["Username"] as? String,
+            let name = userDict["Name"] as? String,
+            let ppURL = userDict["ProfilePic"] as? String
+            else { return nil }
+
+        self.userID = snapshot.key
+        self.username = username
+        self.name = name
+        self.email = ""
+        self.followingCount = 0
+        self.profileImageURL = ppURL
+        self.DOB = ""
+        
+        /*
+        DBManager.getPic(for: self){
+            image in
+            self.profileImage = image
+        }*/
+    }
+    
      func getInfo(id: String){
   
         self.ref.child("users/\(id)").observeSingleEvent(of: .value, with: {

@@ -15,17 +15,22 @@ class DBManager {
     
     
     static func getFollowing(for user: User, completion: @escaping ([User]) -> Void) {
-        let userref = Database.database().reference().child("following").child(user.userID!)
+        let userref = Database.database().reference().child("following/\(user.userID!)")
 
         userref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
 
-            let users = snapshot.reversed().compactMap(User.init)
+            let users = snapshot.reversed().compactMap(){
+                snapsh in
+                User.init(snapshot: snapsh, flag: true)
+            }
+            
             completion(users)
         })
     }
+    
     static func getPic(for user: User, completion: @escaping (UIImage) -> Void) {
 
         Storage.storage().reference(forURL: user.profileImageURL!).getData(maxSize:1048576, completion:{
@@ -94,12 +99,12 @@ class DBManager {
                     let uid = id
                     
                     user = User(username: username, profileimageurl: profilepic, name: name, email: email, followingCount: followingCount, DOB: dob, id: id)
-                    getPic(for: user){
+                    
+                   /* getPic(for: user){
                         pic in
                         user.profileImage = pic
-                        completion(user)
-                    }
-                    
+                    }*/
+                    completion(user)
                 }
                 else {completion(user)}
             }
