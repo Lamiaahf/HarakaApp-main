@@ -17,6 +17,12 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     var games: [Game]?
     let transition = CircularTransition()
     let ref: DatabaseReference! = Database.database().reference()
+    var colors: [UIColor] = [
+        #colorLiteral(red: 0.9417592287, green: 0.7611551881, blue: 0.6725053191, alpha: 1),
+        #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1),
+        #colorLiteral(red: 0.8051247001, green: 0.8318073153, blue: 0.994340837, alpha: 1),
+        #colorLiteral(red: 0.9041472673, green: 0.7244386077, blue: 0.792001009, alpha: 1)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +33,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         gamesTable.delegate = self
         gamesTable.dataSource = self
         gamesTable.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         
         games = []
         fetchGames()
@@ -63,10 +70,10 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         let game = self.games![indexPath.row]
         let cell = gamesTable.dequeueReusableCell(withIdentifier: "GameCell")! as! GameCell
         cell.game = game
-        cell.backgroundColor =  #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        cell.backgroundColor =  colors.randomElement()
         cell.layer.cornerRadius = 30
         cell.layer.borderWidth = 3
-        cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.layer.borderColor=#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         return cell
     }
