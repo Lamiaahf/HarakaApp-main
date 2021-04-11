@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class AddViewController: UIViewController, UITextFieldDelegate {
 
@@ -15,8 +18,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
 
     
 
+    var objRoom  : Room!
     
-    public var completion: ((String, String, Date) -> Void)?
+    public var completion: ((String, String, String) -> Void)?
     struct WheelDataPickerStyle{}
   //  var update : (()->void)?
     override func viewDidLoad() {
@@ -28,20 +32,44 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     }
 
     @objc func didTapSaveButton() {
-        if let titleText = titleField.text, !titleText.isEmpty,
+        if let titleText = self.titleField.text, !titleText.isEmpty,
             let bodyText = bodyField.text, !bodyText.isEmpty {
 
             let targetDate = datePicker.date
+           // added
+           
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMM, dd, YYYY"
+            let d = formatter.string(from: date)
+            
+            completion?(titleText, bodyText, d )
 
-            completion?(titleText, bodyText, targetDate)
+        
+           // guard let roomID = objRoom.roomId else {return}
 
+            let dataRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+            let CalenRef = dataRef.child("Calender")
+            let calenderData:[String:Any] = [ "EventTitle":titleText , "EventDate": d ,/* "RoomID" : roomID*/ ]
+        
+        CalenRef.setValue(calenderData) { (err, ref) in
+            if(err == nil){
+                self.titleField.text = ""
+              
+            }
+            
         }
-
+        }
     }
+        
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    
     }
+    
+    
+
    
 
 }

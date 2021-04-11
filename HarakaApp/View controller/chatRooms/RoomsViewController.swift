@@ -27,6 +27,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
     
  //   @IBOutlet weak var textLabell: UILabel!
     
+ //   @IBOutlet weak var EImage: UIImageView!
     @IBOutlet weak var goCreateButton: UIButton!
     
     let transition = CircularTransition()
@@ -84,8 +85,8 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         databaseRef.child("rooms").observe(.childAdded) {
             (snapshot) in
             if let dataArray = snapshot.value as? [String: Any]{
-                if let name = dataArray ["name"] as? String {
-                    let room = Room.init(rId: snapshot.key, rname: name)
+                if let name = dataArray ["name"] as? String /*, let EventImage = dataArray["EventImages"]*/{
+                    let room = Room.init(rId: snapshot.key, rname: name /*, EImage: EventImage as! UIImageView*/)
                 self.rooms.append(room)
                 self.RoomsTable.reloadData()
                 
@@ -153,6 +154,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         groupName.text = room.name
         groupName.textAlignment = .center
         groupName.font = UIFont.boldSystemFont(ofSize:15)
+   //     EImage = room.EventImage
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowRadius = 20

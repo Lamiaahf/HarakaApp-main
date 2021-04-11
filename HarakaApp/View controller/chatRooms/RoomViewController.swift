@@ -45,7 +45,8 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         messagesRef.observe(.childAdded) { (snapshot) in
             if let data = snapshot.value as? [String: Any] {
-                if let senderId = data["senderId"] as? String, let senderName = data["senderName"] as? String{
+                if let senderId = data["senderId"] as? String,
+                   let senderName = data["senderName"] as? String{
                     var message:Message?
                     
                     if let text = data["text"] as? String {
@@ -87,7 +88,8 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         }    }
     
     func sendMessage(text: String?, imageLink: String?){
-        if let userId = Auth.auth().currentUser?.uid, let roomId = self.room?.roomId{
+        if let userId = Auth.auth().currentUser?.uid,
+           let roomId = self.room?.roomId{
             
             let roomRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("rooms").child(roomId)
             let newMessageRef = roomRef.child("messages").childByAutoId()
