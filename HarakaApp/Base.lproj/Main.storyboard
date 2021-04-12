@@ -745,7 +745,8 @@
                     <navigationItem key="navigationItem" id="l0D-Jz-hNi">
                         <barButtonItem key="rightBarButtonItem" image="calendar.badge.plus" catalog="system" id="PeM-Kk-2EO">
                             <connections>
-                                <segue destination="5O5-pP-F7C" kind="presentation" id="ZaJ-Ju-rFW"/>
+                                <action selector="didpressAdd:" destination="LPl-cL-V26" id="09y-VQ-ROL"/>
+                                <segue destination="Kr0-0F-ZnU" kind="show" identifier="CalSegue" id="gJH-zc-xPe"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1779,10 +1780,10 @@
             </objects>
             <point key="canvasLocation" x="-1718" y="-9"/>
         </scene>
-        <!--Calender View Controller-->
+        <!--CalenderViewController-->
         <scene sceneID="Yau-OK-oVC">
             <objects>
-                <viewController id="Kr0-0F-ZnU" customClass="CalenderViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalenderViewController" title="CalenderViewController" id="Kr0-0F-ZnU" customClass="CalenderViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dxf-t3-Vh3">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1869,6 +1870,15 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="crv-qN-C3a">
                                 <rect key="frame" x="10" y="188" width="390" height="612"/>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYi-pB-XHz">
+                                <rect key="frame" x="342" y="36" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="حفظ"/>
+                                <connections>
+                                    <action selector="didTapSaveButton:" destination="LPJ-r6-A7N" eventType="touchUpInside" id="q0Q-gB-BXP"/>
+                                    <segue destination="Kr0-0F-ZnU" kind="show" id="75a-nz-X5T"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DbF-Z7-HC2"/>
                         <color key="backgroundColor" red="0.88341968910000002" green="0.88341968910000002" blue="0.88341968910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1893,7 +1903,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfs-br-quB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-109" y="707"/>
+            <point key="canvasLocation" x="-109.23076923076923" y="706.6350710900474"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zdb-Xv-PQr">
@@ -1905,13 +1915,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Kr0-0F-ZnU" kind="relationship" relationship="rootViewController" id="VaV-9A-eyP"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGU-z8-X55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-900" y="707"/>
+            <point key="canvasLocation" x="-808" y="707"/>
         </scene>
         <!--SettingsView Controller-->
         <scene sceneID="WBQ-I1-haY">
@@ -2286,6 +2293,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="75a-nz-X5T"/>
         <segue reference="tEi-oZ-rgX"/>
         <segue reference="LFd-Xh-5l6"/>
     </inferredMetricsTieBreakers>

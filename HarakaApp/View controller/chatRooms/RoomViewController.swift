@@ -79,7 +79,21 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-
+/*
+    @IBAction func didpressAdd(_ sender: UIButton) {
+        let calenderView = self.storyboard?.instantiateViewController(withIdentifier: "CalenderViewController") as! CalenderViewController
+        calenderView.objRoom = room
+        self.navigationController?.pushViewController(calenderView, animated: true)    }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        let vc = segue.destination as! CalenderViewController
+            vc.objRoom = room
+        
+        
+    }
+    
     @IBAction func didPressSendMessage(_ sender: UIButton) {
     
     

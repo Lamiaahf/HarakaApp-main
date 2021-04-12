@@ -17,11 +17,11 @@ import UIKit
     var name:String?
     var ownerId:String?
     
-        var EventImage:String?
+        var EventImage:UIImageView?
     
     
         init(rId:String, rname:String,
-        EImage:String){
+        EImage:UIImageView){
         self.roomId=rId
         self.name=rname
         self.EventImage=EImage
@@ -31,10 +31,10 @@ import UIKit
     init(array: [String: Any]){
         if let roomName = array["name"] as? String,
            let ownerIdx = array["creatorId"] as? String{
-           let EventImages = array ["EventImage"] as? String
+           let EventImages = array ["EventImage"] as? UIImageView
             self.name = roomName
             self.ownerId = ownerIdx
-            //self.EventImage = EventImages
+            self.EventImage = EventImages
         }
     }
 

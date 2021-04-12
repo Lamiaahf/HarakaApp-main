@@ -86,23 +86,46 @@ class CreateRoomViewController: UIViewController {
           let roomName = self.newRoomTextField.text,
           roomName.isEmpty == false else {
         return    }
-  let EventImage = self.EImage.image
-       
+   
+    
+    EVImage = EImage.image
+    guard let imageSelected = self.EVImage else {return}
+    guard let imagedata=imageSelected.jpegData(compressionQuality: 0.4) else {return}
+    
+  //let EventImage = self.EImage.image
     self.newRoomTextField.resignFirstResponder()
+    
+    let Sref = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
+    let StorageRoomRef = Sref.child("roomsStorage").child(roomName)
+    let metaData = StorageMetadata()
+    metaData.contentType = "image/jpg"
+    
+    
+    StorageRoomRef.putData(imagedata , metadata: metaData){
+        (StorageMetadata , error) in
+        if error != nil {
+            print (error?.localizedDescription)}
+        StorageRoomRef.downloadURL(completion: { (url , error ) in
+                                    if let metaImageUrl = url?.absoluteString {
     
     let databaseRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
 
     let roomRef = databaseRef.child("rooms").childByAutoId()
-    let roomData:[String: Any] = ["creatorId" : userId, "name": roomName , "EventImage" : EventImage ]
     
+    let roomData:[String: Any] = ["creatorId" : userId, "name": roomName , "EventImage" : metaImageUrl ]
     
+                            
     roomRef.setValue(roomData) { (err, ref) in
         if(err == nil){
             self.newRoomTextField.text = ""
-          
+            let calRef = Database.database().reference().child("Calendar").child(ref.key!)
         }
+        
+        
     }
     
-}
+        }})
 
     }
+}
+}

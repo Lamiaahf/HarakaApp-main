@@ -28,10 +28,12 @@ class AddViewController: UIViewController, UITextFieldDelegate {
         titleField.delegate = self
         bodyField.delegate = self
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "حفظ", style: .done, target: self, action: #selector(didTapSaveButton))
+       navigationItem.rightBarButtonItem = UIBarButtonItem(title: "حفظ", style: .done, target: self, action: #selector(didTapSaveButton))
     }
 
-    @objc func didTapSaveButton() {
+    @IBAction func didTapSaveButton(_ sender: UIButton) {
+    
+   // @objc func didTapSaveButton() {
         if let titleText = self.titleField.text, !titleText.isEmpty,
             let bodyText = bodyField.text, !bodyText.isEmpty {
 
@@ -49,7 +51,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
            //guard let roomID = objRoom.roomId else {return}
 
             let dataRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-            let CalenRef = dataRef.child("Calender")
+            let CalenRef = dataRef.child("Calender").child(objRoom.roomId!)
             let calenderData:[String:Any] = [ "EventTitle":titleText , "EventDate": d  ]
         
         CalenRef.setValue(calenderData) { (err, ref) in

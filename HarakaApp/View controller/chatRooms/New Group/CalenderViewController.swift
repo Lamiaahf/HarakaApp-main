@@ -41,7 +41,7 @@ class CalenderViewController: UIViewController {
         guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
             return
         }
-
+            vc.objRoom = self.objRoom
         vc.title = "المفكرة"
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.completion = { title, body, date in
@@ -109,8 +109,8 @@ extension CalenderViewController: UITableViewDataSource {
     
     func observerCalender(){
         let dataRef = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-        dataRef.child("Calender").observe(.childAdded) {
-                (snapshot) in
+        dataRef.child("Calender").child(objRoom.roomId!).observe(.value , with: {
+            (snapshot) in
                 if let Edate = snapshot.value as? [String: Any]{
                     if let EventDate = Edate ["EventDate"] as? String {
                     let EventTitle = Edate ["EventTitle"] as? String
@@ -120,9 +120,10 @@ extension CalenderViewController: UITableViewDataSource {
                         self.models.append(calender)
                         self.table.reloadData()
                     
-                }}
+                }
             }
-        }
+        })
+    }
     
     
     

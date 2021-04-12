@@ -83,20 +83,33 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         
         return DEIMAGE
     }()
+    
+    
     func observeRoom(){
         let databaseRef = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
         databaseRef.child("rooms").observe(.childAdded) {
             (snapshot) in
             if let dataArray = snapshot.value as? [String: Any]{
                 if let name = dataArray ["name"] as? String {
-                    let EventImage = dataArray["EventImage"] as? String
-                    let room = Room.init(rId: snapshot.key, rname: name , EImage: EventImage ?? "" )
-                self.rooms.append(room)
+                
+                        let EventImage = dataArray["EventImage"] as? UIImageView
+                    let room = Room.init(rId: snapshot.key, rname: name , EImage: EventImage ?? self.DefImage   )
+                    
+                    /*
+                    Storage.storage().reference(forURL: room.EventImage).getData(maxSize: 1048576, completion: { (data, error) in
+
+                        guard let imageData = data, error == nil else {
+                            return
+                        }
+                        room.EventImage.image = UIImage(data: imageData)
+                        self.setupEventImage()*/
+                        self.rooms.append(room)
                 self.RoomsTable.reloadData()
                 
             }}
         }
     }
+    
     
      /* func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let room = self.rooms[indexPath.row]
