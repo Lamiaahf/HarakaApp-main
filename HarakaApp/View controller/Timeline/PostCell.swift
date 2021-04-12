@@ -13,7 +13,6 @@ class PostCell: UITableViewCell{
     @IBOutlet weak var timeAgoLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
-//    @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
@@ -29,21 +28,26 @@ class PostCell: UITableViewCell{
         }
     }
    
+    override func didMoveToWindow() {
+        if(post == nil){
+            return
+        }
+        updateTimeline()
+    }
     
     func updateTimeline(){
-        //profileImageView.image = post.createdBy.profileImage
-        usernameLabel.text = post.createdBy.usernameUI
+
         timeAgoLabel.text = post.timeAgo
-        captionLabel.text = post.captionUI
-        likesLabel.text = "\(post.numOfLikesUI!)"
-        commentsLabel.text = "\(post.numOfCommentsUI!)"
+        captionLabel.text = post.caption
+        likesLabel.text = "\(post.numOfLikes!)"
+        commentsLabel.text = "\(post.numOfComments!)"
+        likesLabel.text = String(post.numOfLikes ?? 0)
         
+        profileImageView.image = post.createdBy.profileImage
+        profileImageView.layer.cornerRadius = 40/2
+        profileImageView.clipsToBounds = true
+        usernameLabel.text = post.createdBy.username
         
-        likesLabel.text = String(post.numOfLikesUI ?? 0)
-        var flag = false
-        if(post.isLiked()){
-             flag = true
-        }
         if (!post.liked!){
             likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
         }
@@ -52,13 +56,11 @@ class PostCell: UITableViewCell{
         }
         
     }
-    
-    @IBAction func openComments(_ sender: Any) {
-        var controller = CommentViewController()
-        controller.viewDidLoad()
-        controller.setPost(post: self.post)
-        controller.fetchComments()
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+       super.setSelected(selected, animated: animated)
     }
+
     
     @IBAction func like(_ sender: Any) {
         
@@ -68,12 +70,12 @@ class PostCell: UITableViewCell{
         if(!post.liked!){
             ref.child("PostLikes").child(id).childByAutoId().setValue([uid:true])
             post.liked = true
-            post.numOfLikesUI = post.numOfLikesUI!+1
+            post.numOfLikes = post.numOfLikes!+1
 
         }else{
             ref.child("PostLikes").child(id).queryOrdered(byChild:uid).queryEqual(toValue:true).ref.removeValue()
             post.liked = false
-            post.numOfLikesUI = post.numOfLikesUI!-1
+            post.numOfLikes = post.numOfLikes!-1
         }
         updatePost()
         updateTimeline()
@@ -82,8 +84,8 @@ class PostCell: UITableViewCell{
     
     func updatePost(){
         ref.child("posts").child(post.postID!).updateChildValues([
-                    "numOfLikes":post.numOfLikesUI!,
-                    "numOfComments":post.numOfCommentsUI!])
+                    "numOfLikes":post.numOfLikes!,
+                    "numOfComments":post.numOfComments!])
         
     }
         

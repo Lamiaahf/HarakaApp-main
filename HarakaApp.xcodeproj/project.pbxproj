@@ -26,6 +26,8 @@
 		23A717192621E2D100C43FD4 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717162621E2D100C43FD4 /* WorkoutViewController.swift */; };
 		23A7171A2621E2D100C43FD4 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717172621E2D100C43FD4 /* WorkoutModel.swift */; };
 		23A7171E2621EA4500C43FD4 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7171D2621EA4500C43FD4 /* PlayerCell.swift */; };
+		2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */; };
+		2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF40261736FD00FD9B1C /* DBManager.swift */; };
 		3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3D6A261216A900246872 /* UsersTableViewController.swift */; };
 		3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3DA1261221B600246872 /* UserProfileViewController.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
@@ -107,6 +109,8 @@
 		23A717162621E2D100C43FD4 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		23A717172621E2D100C43FD4 /* WorkoutModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		23A7171D2621EA4500C43FD4 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerChallengeViewController.swift; sourceTree = "<group>"; };
+		2399CF40261736FD00FD9B1C /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		3F1C3D6A261216A900246872 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		3F1C3DA1261221B600246872 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -220,6 +224,12 @@
 				3FBB14FF25C81CFD0098C299 /* Assets.xcassets */,
 			);
 			path = Assets;
+		2399CF3C261735F300FD9B1C /* Challenges - Trainer */ = {
+			isa = PBXGroup;
+			children = (
+				2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */,
+			);
+			path = "Challenges - Trainer";
 			sourceTree = "<group>";
 		};
 		23DAC3A6260BB22F000DB8AB /* Timeline */ = {
@@ -322,7 +332,7 @@
 				94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */,
 				94D4604925E3E528009F31A6 /* NotificationViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
-				230273AE25E93C4A00DC6C31 /* UserInfo.swift */,
+				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
@@ -345,6 +355,8 @@
 				3FD4742725D3264600260C1A /* Service.swift */,
 				23A717122621E2B100C43FD4 /* Extension.swift */,
 				3F4683AC25D448CC007F9D66 /* Constants.swift */,
+				230273AE25E93C4A00DC6C31 /* UserInfo.swift */,
+				2399CF40261736FD00FD9B1C /* DBManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -403,8 +415,8 @@
 		CEC34788260BF28B004B3754 /* search user */ = {
 			isa = PBXGroup;
 			children = (
-				3F1C3D6A261216A900246872 /* UsersTableViewController.swift */,
 				3FA49338260B63390052A1BD /* OtherUsersViewController.swift */,
+				3F1C3D6A261216A900246872 /* UsersTableViewController.swift */,
 			);
 			path = "search user";
 			sourceTree = "<group>";
@@ -570,8 +582,10 @@
 				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
 				CE494551261233FC008DC32B /* CreateRoomViewController.swift in Sources */,
 				3FD4742825D3264700260C1A /* Service.swift in Sources */,
+				2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */,
 				3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */,
 				94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */,
+				2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */,
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
 				94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */,
 				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,
