@@ -3607,11 +3607,6 @@
         <image name="bell.badge" catalog="system" width="128" height="124"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="circle" catalog="system" width="128" height="121"/>
-<<<<<<< HEAD
-        <image name="ellipsis" catalog="system" width="128" height="37"/>
-=======
-        <image name="crown.fill" catalog="system" width="128" height="92"/>
->>>>>>> nn-GameRooms
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
