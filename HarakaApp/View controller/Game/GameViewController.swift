@@ -29,7 +29,8 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         playersBoard.estimatedRowHeight = playersBoard.rowHeight
         playersBoard.rowHeight = UITableView.automaticDimension
         
-        joinButton.alpha = 0
+        //joinButton.alpha = 0
+        self.joinButton.setTitle("انتهت اللعبة", for: .disabled)
         
         playerCount = 0
         participants = []
@@ -47,24 +48,27 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         ref.child("GameParticipants").child((currentGame?.gID)!).queryOrdered(byChild: "Result").observe(.childAdded){
             snapshot in
             
+            if(snapshot.childrenCount == (self.currentGame?.playerCount)!){
+               // self.joinButton.alpha = 0
+                // label.alpha = 1
+                self.joinButton.isEnabled = false
+            }
+            else{
+                self.joinButton.alpha = 1
+                // label.alpha = 0
+            }
+            
             guard let dict = snapshot.value as? [String: Any] else {return}
             let pid = snapshot.key
             let score = dict["Result"] as? Double
-          
-            let player = Player(username: "empty", uid: pid, score: score!)
             
-            self.participants?.append(player)
-            self.playersBoard.reloadData()
-            self.joinButton.alpha = 1
-            //Replace above code with below later
-            /*
             DBManager.getUser(for:pid){
                 user in
                 let username = user.username
-                let player = Player()
+                let player = Player(username: username!, uid: pid, score: score!)
                 self.participants?.append(player)
                 self.playersBoard.reloadData()
-            }*/
+            }
             
         }
         

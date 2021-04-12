@@ -2457,10 +2457,10 @@
                                 <sections/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-MT-0Qh">
-                                <rect key="frame" x="152" y="702" width="86" height="30"/>
+                                <rect key="frame" x="144" y="702" width="103" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.87815390267818005" green="0.88971246233576917" blue="0.91755234771573602" alpha="0.70636237157534243" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="العب">
                                     <color key="titleColor" red="0.54433444920360252" green="0.63752893325943782" blue="0.73847953680203049" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
