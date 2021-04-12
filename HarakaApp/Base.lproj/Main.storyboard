@@ -3612,6 +3612,8 @@
 =======
         <image name="crown.fill" catalog="system" width="128" height="92"/>
 >>>>>>> nn-GameRooms
+        <image name="crown.fill" catalog="system" width="128" height="92"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
