@@ -35,7 +35,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         gamesTable.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         
-        games = []
+         games = []
         fetchGames()
 
     }
@@ -49,7 +49,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                 let count = gameDict["PlayerCount"] as! Int
                 let gameKey = snapshot.key
             
-                var g = Game(gName: name, uid: uid, gid: gameKey)
+                var g = Game(gName: name, uid: uid, gid: gameKey, count: count)
 
                 self.games?.append(g)
                 self.gamesTable.reloadData()
@@ -57,6 +57,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         })
         
     }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,9 +82,8 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let game = self.games![indexPath.row]
         let gameView = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-      //  gameView.game = game
+        gameView.initializeGame(g: game)
         self.navigationController?.pushViewController(gameView, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -95,9 +95,12 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! CreateGameViewController
-        destinationVC.transitioningDelegate = self
-        destinationVC.modalPresentationStyle = .custom
+        if(segue.identifier == "createGameSegue"){
+            let destinationVC = segue.destination as! CreateGameViewController
+            destinationVC.transitioningDelegate = self
+            destinationVC.modalPresentationStyle = .custom
+        }
+        
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

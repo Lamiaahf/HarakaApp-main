@@ -61,10 +61,7 @@ class CreateGameViewController: UIViewController{
     
     func addParticipant(key: String, id: String){
     
-                Database.database().reference().child("GameParticipants").child(key).childByAutoId().setValue([
-                    "UID":id,
-                    "Result":0.0
-                ])
+                Database.database().reference().child("GameParticipants").child(key).child(id).setValue(["Result":0.0])
             
         }
     

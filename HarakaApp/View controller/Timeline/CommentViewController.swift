@@ -19,9 +19,9 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        commentsTable.delegate = self
+
         commentsTable.dataSource = self
+        commentsTable.delegate = self
         commentsTable.separatorStyle = .none
         commentsTable.estimatedRowHeight = commentsTable.rowHeight
         commentsTable.rowHeight = UITableView.automaticDimension
