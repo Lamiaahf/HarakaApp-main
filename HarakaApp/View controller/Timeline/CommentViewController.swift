@@ -20,7 +20,6 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         commentsTable.dataSource = self
         commentsTable.delegate = self
         commentsTable.separatorStyle = .none
