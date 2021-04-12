@@ -24,18 +24,16 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         #colorLiteral(red: 0.7485505939, green: 0.8943883777, blue: 0.9117907286, alpha: 1)
            ]
 
-    
- //   @IBOutlet weak var textLabell: UILabel!
-    
- //   @IBOutlet weak var EImage: UIImageView!
+   
     @IBOutlet weak var goCreateButton: UIButton!
     
     let transition = CircularTransition()
     
- //   @IBOutlet weak var RoomsTable: UITableView!
     
     @IBOutlet weak var RoomsTable: UICollectionView!
+   // @IBOutlet weak var RoomsTable: UICollectionView!
     
+//    @IBOutlet weak var EImage: UIImageView!
     
     var rooms = [Room]()
     //var ref: DatabaseReference!
@@ -79,14 +77,20 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
 
         // Do any additional setup after loading the view.
     }
-    
+    let DefImage : UIImageView = {
+    let DEIMAGE = UIImageView()
+    DEIMAGE.image = UIImage(systemName: "person.3")
+        
+        return DEIMAGE
+    }()
     func observeRoom(){
         let databaseRef = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
         databaseRef.child("rooms").observe(.childAdded) {
             (snapshot) in
             if let dataArray = snapshot.value as? [String: Any]{
-                if let name = dataArray ["name"] as? String /*, let EventImage = dataArray["EventImages"]*/{
-                    let room = Room.init(rId: snapshot.key, rname: name /*, EImage: EventImage as! UIImageView*/)
+                if let name = dataArray ["name"] as? String {
+                    let EventImage = dataArray["EventImage"] as? String
+                    let room = Room.init(rId: snapshot.key, rname: name , EImage: EventImage ?? "" )
                 self.rooms.append(room)
                 self.RoomsTable.reloadData()
                 
@@ -139,13 +143,15 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         return self.rooms.count    }
     
   
+   // var EImage = UIImageView()
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let room = self.rooms[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath )
         cell.backgroundColor =  colors.randomElement()
-        
        cell.layer.cornerRadius = 5
+      
+      var EImage = room.EventImage
        // cell.layer.borderWidth = 3
         // cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
       //  let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
@@ -154,7 +160,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         groupName.text = room.name
         groupName.textAlignment = .center
         groupName.font = UIFont.boldSystemFont(ofSize:15)
-   //     EImage = room.EventImage
+      
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowRadius = 20

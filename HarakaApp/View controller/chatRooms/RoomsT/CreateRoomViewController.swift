@@ -16,7 +16,7 @@ class CreateRoomViewController: UIViewController {
     @IBOutlet weak var newRoomTextField: UITextField!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var EImage: UIImageView!
-    
+    var EVImage :UIImage? = nil
     let dropDown = DropDown()
     
         override func viewDidLoad() {
@@ -86,15 +86,14 @@ class CreateRoomViewController: UIViewController {
           let roomName = self.newRoomTextField.text,
           roomName.isEmpty == false else {
         return    }
-  //  let EventImage = self.EImage.image
+  let EventImage = self.EImage.image
        
     self.newRoomTextField.resignFirstResponder()
     
     let databaseRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
 
     let roomRef = databaseRef.child("rooms").childByAutoId()
-    let roomData:[String: Any] = ["creatorId" : userId, "name": roomName]
-        //, "EventImage" : EventImage
+    let roomData:[String: Any] = ["creatorId" : userId, "name": roomName , "EventImage" : EventImage ]
     
     
     roomRef.setValue(roomData) { (err, ref) in

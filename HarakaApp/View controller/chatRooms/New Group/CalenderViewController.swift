@@ -108,12 +108,15 @@ extension CalenderViewController: UITableViewDataSource {
     }
     
     func observerCalender(){
-        let dataRef = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("Calender")
-        dataRef.observe(.childAdded) {
+        let dataRef = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+        dataRef.child("Calender").observe(.childAdded) {
                 (snapshot) in
                 if let Edate = snapshot.value as? [String: Any]{
-                    if let EventDate = Edate ["EventDate"] as? String , let EventTitle = Edate ["EventTitle"]as? String {
-                        let calender = MyReminder(title: EventTitle, date: EventDate, identifier: "")
+                    if let EventDate = Edate ["EventDate"] as? String {
+                    let EventTitle = Edate ["EventTitle"] as? String
+                    //let ID = String(snapshot.key)
+                        
+                        let calender = MyReminder(title: EventTitle!, date: EventDate, identifier: "")
                         self.models.append(calender)
                         self.table.reloadData()
                     

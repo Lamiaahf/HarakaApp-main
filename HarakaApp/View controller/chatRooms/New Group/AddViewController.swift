@@ -46,11 +46,11 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             completion?(titleText, bodyText, d )
 
         
-           // guard let roomID = objRoom.roomId else {return}
+           //guard let roomID = objRoom.roomId else {return}
 
             let dataRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
             let CalenRef = dataRef.child("Calender")
-            let calenderData:[String:Any] = [ "EventTitle":titleText , "EventDate": d ,/* "RoomID" : roomID*/ ]
+            let calenderData:[String:Any] = [ "EventTitle":titleText , "EventDate": d  ]
         
         CalenRef.setValue(calenderData) { (err, ref) in
             if(err == nil){

@@ -882,13 +882,6 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YII-0N-sSJ">
                                             <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQq-Qu-Wyw">
-                                                    <rect key="frame" x="23" y="57" width="83" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
-                                            </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="130" height="130"/>
                                     </collectionViewCell>
@@ -900,7 +893,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tzw-gv-Z3w"/>
                     <connections>
-                        <outlet property="RoomsTable" destination="Sot-39-Xtf" id="8sa-xn-uYy"/>
+                        <outlet property="RoomsTable" destination="Sot-39-Xtf" id="VqK-6T-n9O"/>
                         <outlet property="goCreateButton" destination="DhR-VO-usz" id="ULs-aS-xgL"/>
                     </connections>
                 </viewController>
