@@ -152,19 +152,22 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
     
     func finishGame(){
         
-        let time = startTime!.timeIntervalSinceNow
-        let score = abs(time.nextUp)
-        
-        print(score)
-        // Update player result on database
-        let id = (Auth.auth().currentUser?.uid)!
-        let gid = currentGame?.gID
-        Database.database().reference().child("GameParticipants").child(gid!).child(id).updateChildValues(["Result":score])
+        if(currentNode != nil){
+            let time = startTime!.timeIntervalSinceNow
+            let score = abs(time.nextUp)
             
-        // move back to previous controller
-        let gameView = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-        gameView.initializeGame(g: currentGame!)
-        self.navigationController?.pushViewController(gameView, animated: true)
+            print(score)
+            // Update player result on database
+            let id = (Auth.auth().currentUser?.uid)!
+            let gid = currentGame?.gID
+            Database.database().reference().child("GameParticipants").child(gid!).child(id).updateChildValues(["Result":score])
+                
+            // move back to previous controller
+            let gameView = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+            gameView.initializeGame(g: currentGame!)
+            self.navigationController?.pushViewController(gameView, animated: true)
+        }
+
         
         
     }

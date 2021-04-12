@@ -44,9 +44,11 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func fetchPlayers(){
         // change atValue to beforeValue
-        
+
         ref.child("GameParticipants").child((currentGame?.gID)!).queryOrdered(byChild: "Result").observe(.childAdded){
             snapshot in
+            
+            print(snapshot.childrenCount)
             
             if(snapshot.childrenCount == (self.currentGame?.playerCount)!){
                // self.joinButton.alpha = 0
@@ -62,7 +64,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             let pid = snapshot.key
             let score = dict["Result"] as? Double
             
-            DBManager.getUser(for:pid){
+            DBManager.getUser(for: pid){
                 user in
                 let username = user.username
                 let player = Player(username: username!, uid: pid, score: score!)
