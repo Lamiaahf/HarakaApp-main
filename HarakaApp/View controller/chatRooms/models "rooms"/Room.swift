@@ -16,25 +16,30 @@ import UIKit
     var roomId:String?
     var name:String?
     var ownerId:String?
-    
-        var EventImage:UIImageView?
-    
+    var EventImage:UIImageView?
+  //  var ownerName: String?
     
         init(rId:String, rname:String,
-        EImage:UIImageView){
+             EImage:UIImageView)
+             //,creatorN:String)
+        {
         self.roomId=rId
         self.name=rname
         self.EventImage=EImage
+       // self.ownerName=creatorN
     }
     
 
     init(array: [String: Any]){
         if let roomName = array["name"] as? String,
-           let ownerIdx = array["creatorId"] as? String{
+           let ownerIdx = array["creatorId"] as? String,
            let EventImages = array ["EventImage"] as? UIImageView
+        {
+         //  let creatorName = array["CreatorName"] as? String{
             self.name = roomName
             self.ownerId = ownerIdx
             self.EventImage = EventImages
+           // self.ownerName = creatorName
         }
     }
 

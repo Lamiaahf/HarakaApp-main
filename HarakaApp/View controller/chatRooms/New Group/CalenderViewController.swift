@@ -88,17 +88,11 @@ class CalenderViewController: UIViewController {
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.completion = {  
             DispatchQueue.main.async {
-           //     self.navigationController?.popToRootViewController(animated: true)
-           //     let new = MyReminder(title: title, date: date , identifier: "id_\(title)")
-           //     self.models.append(new)
                 self.table.reloadData()
 
             
             }
         }
-      
-       
-     //   navigationController?.pushViewController(vc, animated: true)
 }
     
     }
@@ -127,10 +121,11 @@ extension CalenderViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = self.models[indexPath.row].title
+       // let body = models[indexPath.row].body
         let date = models[indexPath.row].date
         cell.detailTextLabel?.text=date
-        cell.textLabel?.font = UIFont(name: "Arial", size: 20)
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size: 18)
+        cell.textLabel?.font = UIFont(name: "Arial", size: 18)
+        cell.detailTextLabel?.font = UIFont(name: "Arial", size: 16)
         return cell
     }
     
@@ -142,9 +137,10 @@ extension CalenderViewController: UITableViewDataSource {
                 if let Edate = snapshot.value as? [String: Any]{
                     if let EventDate = Edate ["EventDate"] as? String {
                     let EventTitle = Edate ["EventTitle"] as? String
+                     //   let ENotesBody = Edate["EventNotes"] as? String
                     //let ID = String(snapshot.key)
                         var id = self.objRoom!.roomId
-                        let calender = MyReminder(title: EventTitle!, date: EventDate, identifier: id! )
+                        let calender = MyReminder(title: EventTitle!, date: EventDate, /*body:ENotesBody!*/ identifier: id! )
                         self.models.append(calender)
                         self.table.reloadData()
                     
@@ -174,6 +170,7 @@ extension CalenderViewController: UITableViewDataSource {
 struct MyReminder {
     let title: String
     let date: String
+  //  let body: String
     let identifier: String
     
 }

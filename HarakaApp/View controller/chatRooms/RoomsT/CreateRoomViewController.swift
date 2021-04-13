@@ -109,10 +109,13 @@ class CreateRoomViewController: UIViewController {
                                     if let metaImageUrl = url?.absoluteString {
     
     let databaseRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-
+//let creatorName =
+    
     let roomRef = databaseRef.child("rooms").childByAutoId()
     
     let roomData:[String: Any] = ["creatorId" : userId, "name": roomName , "EventImage" : metaImageUrl ]
+        
+        //, "CreatorName": creatorName]
     
                             
     roomRef.setValue(roomData) { (err, ref) in

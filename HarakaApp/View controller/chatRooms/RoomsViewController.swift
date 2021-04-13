@@ -91,9 +91,11 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
             (snapshot) in
             if let dataArray = snapshot.value as? [String: Any]{
                 if let name = dataArray ["name"] as? String {
-                
-                        let EventImage = dataArray["EventImage"] as? UIImageView
-                    let room = Room.init(rId: snapshot.key, rname: name , EImage: EventImage ?? self.DefImage   )
+                    let EventImage = dataArray["EventImage"] as? UIImageView
+                  //  guard let creatorName = dataArray["CreatorName"] as? String else {return}
+                    let room = Room.init(rId: snapshot.key, rname: name, EImage: EventImage ?? self.DefImage )
+                        
+                        //, creatorN: creatorName )
                     
                     /*
                     Storage.storage().reference(forURL: room.EventImage).getData(maxSize: 1048576, completion: { (data, error) in
@@ -163,7 +165,6 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath )
         cell.backgroundColor =  colors.randomElement()
        cell.layer.cornerRadius = 5
-      
       var EImage = room.EventImage
        // cell.layer.borderWidth = 3
         // cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -173,7 +174,12 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         groupName.text = room.name
         groupName.textAlignment = .center
         groupName.font = UIFont.boldSystemFont(ofSize:15)
-      
+        
+      /*  let creatorN = UILabel(frame: CGRect(x: 0 , y: 0 , width: cell.bounds.size.width , height: -40  ))
+        creatorN.text = room.ownerName
+        creatorN.textAlignment = .center
+        creatorN.font = UIFont.italicSystemFont(ofSize:10)*/
+        
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowRadius = 20
