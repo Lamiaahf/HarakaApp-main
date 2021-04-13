@@ -127,5 +127,6 @@ class CreateRoomViewController: UIViewController {
         }})
 
     }
+    self.dismiss(animated: true, completion: nil)
 }
 }

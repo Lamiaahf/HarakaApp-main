@@ -24,7 +24,7 @@ class CalenderViewController: UIViewController {
         table.dataSource = self
         observerCalender()
         
-        
+        table.allowsMultipleSelection = true
         /*   let defaults = UserDefaults.standard
         if let saveddate = defaults.object(forKey: "models") as? Data{
             let jsonDecoder = JSONDecoder()
@@ -36,12 +36,14 @@ class CalenderViewController: UIViewController {
     }*/
 
     }
-        @IBAction func didTapAdd() {
+    
+    /*    @IBAction func didTapAdd() {
         // show add vc
-        guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
+      guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
             return
         }
-            vc.objRoom = self.objRoom
+            
+        vc.objRoom = self.objRoom
         vc.title = "المفكرة"
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.completion = { title, body, date in
@@ -74,9 +76,34 @@ class CalenderViewController: UIViewController {
         }
         }*/
         navigationController?.pushViewController(vc, animated: true)
-}
+}*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+       
+        let vc = segue.destination as! AddViewController
+        
+        vc.objRoom = self.objRoom
+        vc.title = "المفكرة"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.completion = {  
+            DispatchQueue.main.async {
+           //     self.navigationController?.popToRootViewController(animated: true)
+           //     let new = MyReminder(title: title, date: date , identifier: "id_\(title)")
+           //     self.models.append(new)
+                self.table.reloadData()
 
+            
+            }
+        }
+      
+       
+     //   navigationController?.pushViewController(vc, animated: true)
 }
+    
+    }
+
+
 
 extension CalenderViewController: UITableViewDelegate {
 
@@ -109,20 +136,21 @@ extension CalenderViewController: UITableViewDataSource {
     
     func observerCalender(){
         let dataRef = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-        dataRef.child("Calender").child(objRoom.roomId!).observe(.value , with: {
+        dataRef.child("Calender").child(objRoom.roomId!).observe(.childAdded){
+            //.child(objRoom.roomId!).observe(.value , with: {
             (snapshot) in
                 if let Edate = snapshot.value as? [String: Any]{
                     if let EventDate = Edate ["EventDate"] as? String {
                     let EventTitle = Edate ["EventTitle"] as? String
                     //let ID = String(snapshot.key)
-                        
-                        let calender = MyReminder(title: EventTitle!, date: EventDate, identifier: "")
+                        var id = self.objRoom!.roomId
+                        let calender = MyReminder(title: EventTitle!, date: EventDate, identifier: id! )
                         self.models.append(calender)
                         self.table.reloadData()
                     
                 }
             }
-        })
+        }//)
     }
     
     
@@ -147,5 +175,6 @@ struct MyReminder {
     let title: String
     let date: String
     let identifier: String
+    
 }
 

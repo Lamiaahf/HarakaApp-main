@@ -545,6 +545,71 @@
             </objects>
             <point key="canvasLocation" x="4600" y="-1"/>
         </scene>
+        <!--Add View Controller-->
+        <scene sceneID="YVV-8H-ZSU">
+            <objects>
+                <viewController storyboardIdentifier="add" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="gic-Mq-oDC" customClass="AddViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HGL-0o-3hY">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6qx-2i-7PW">
+                                <rect key="frame" x="46.666666666666657" y="251" width="297" height="288"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQp-6G-yh2">
+                                        <rect key="frame" x="228" y="8" width="61" height="42"/>
+                                        <state key="normal" title="حفظ">
+                                            <color key="titleColor" name="Color"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTabSaveButton:" destination="gic-Mq-oDC" eventType="touchUpInside" id="Qdw-U0-WDN"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ادخل العنوان.." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9BH-qJ-ZWh">
+                                        <rect key="frame" x="33" y="73" width="233" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الملاحظات.." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWB-J4-zji">
+                                        <rect key="frame" x="33" y="115" width="233" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="aX2-xk-aBN">
+                                        <rect key="frame" x="64" y="157" width="169" height="123"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" red="0.39745837449999999" green="0.57975798850000004" blue="0.64694875480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="288" id="Fhe-SU-fip"/>
+                                    <constraint firstAttribute="width" constant="297" id="KKq-Ym-h3m"/>
+                                    <constraint firstAttribute="trailing" secondItem="LQp-6G-yh2" secondAttribute="trailing" constant="8" id="M2A-FG-j5w"/>
+                                    <constraint firstItem="LQp-6G-yh2" firstAttribute="top" secondItem="6qx-2i-7PW" secondAttribute="top" constant="8" id="j9C-x3-2wq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a9K-4y-XcY"/>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6qx-2i-7PW" firstAttribute="centerY" secondItem="HGL-0o-3hY" secondAttribute="centerY" id="0dT-dn-n0o"/>
+                            <constraint firstItem="6qx-2i-7PW" firstAttribute="centerX" secondItem="HGL-0o-3hY" secondAttribute="centerX" id="Db1-Fv-Cqh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bbg-Tg-hHt"/>
+                    <connections>
+                        <outlet property="bodyField" destination="sWB-J4-zji" id="W35-Yo-Z6w"/>
+                        <outlet property="datePicker" destination="aX2-xk-aBN" id="EdR-rx-J4t"/>
+                        <outlet property="popUpView" destination="6qx-2i-7PW" id="efg-tr-ilt"/>
+                        <outlet property="titleField" destination="9BH-qJ-ZWh" id="CXl-Q1-dlb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7d-Ph-kT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-272.30769230769232" y="1457.345971563981"/>
+        </scene>
         <!--Comment View Controller-->
         <scene sceneID="1S0-qa-UN4">
             <objects>
@@ -1785,11 +1850,11 @@
             <objects>
                 <viewController storyboardIdentifier="CalenderViewController" title="CalenderViewController" id="Kr0-0F-ZnU" customClass="CalenderViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dxf-t3-Vh3">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jPJ-Zp-NPA">
-                                <rect key="frame" x="0.0" y="56" width="390" height="700"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="LGG-zl-qhB" detailTextLabel="XEs-V0-baa" rowHeight="64" style="IBUITableViewCellStyleSubtitle" id="Evq-Jy-327">
@@ -1832,6 +1897,9 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="koY-cm-DrY">
                             <connections>
                                 <action selector="didTapAdd" destination="Kr0-0F-ZnU" id="0cG-N7-mlf"/>
+                                <segue destination="gic-Mq-oDC" kind="popoverPresentation" popoverAnchorBarButtonItem="koY-cm-DrY" id="PhD-tg-2kz">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1843,10 +1911,10 @@
             </objects>
             <point key="canvasLocation" x="-1718" y="701"/>
         </scene>
-        <!--Add View Controller-->
+        <!--View Controller-->
         <scene sceneID="tlL-Ax-i6L">
             <objects>
-                <viewController storyboardIdentifier="add" id="LPJ-r6-A7N" customClass="AddViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LPJ-r6-A7N" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HNi-ib-sk9">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1870,15 +1938,6 @@
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="crv-qN-C3a">
                                 <rect key="frame" x="10" y="188" width="390" height="612"/>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYi-pB-XHz">
-                                <rect key="frame" x="342" y="36" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="حفظ"/>
-                                <connections>
-                                    <action selector="didTapSaveButton:" destination="LPJ-r6-A7N" eventType="touchUpInside" id="q0Q-gB-BXP"/>
-                                    <segue destination="Kr0-0F-ZnU" kind="show" id="75a-nz-X5T"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DbF-Z7-HC2"/>
                         <color key="backgroundColor" red="0.88341968910000002" green="0.88341968910000002" blue="0.88341968910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1911,14 +1970,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5O5-pP-F7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bc0-PR-mxd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGU-z8-X55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-808" y="707"/>
+            <point key="canvasLocation" x="-945" y="728"/>
         </scene>
         <!--SettingsView Controller-->
         <scene sceneID="WBQ-I1-haY">
@@ -2293,9 +2352,8 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="75a-nz-X5T"/>
         <segue reference="tEi-oZ-rgX"/>
-        <segue reference="LFd-Xh-5l6"/>
+        <segue reference="cze-Ao-4GW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>
