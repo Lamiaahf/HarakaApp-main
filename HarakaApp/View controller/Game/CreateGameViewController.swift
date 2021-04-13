@@ -60,7 +60,9 @@ class CreateGameViewController: UIViewController{
     }
     
     func addParticipant(key: String, id: String){
-    
+        
+                print("Printing key: ")
+                print(key)
                 Database.database().reference().child("GameParticipants").child(key).child(id).setValue(["Result":0.0])
             
         }
