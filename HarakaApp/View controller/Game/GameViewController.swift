@@ -49,6 +49,7 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             snapshot in
             
             print(snapshot.childrenCount)
+            self.playerCount = self.playerCount!+1
             
             if(snapshot.childrenCount == (self.currentGame?.playerCount)!){
                // self.joinButton.alpha = 0

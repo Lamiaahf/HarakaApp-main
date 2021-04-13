@@ -109,9 +109,6 @@ class DBManager {
                 else {completion(user)}
             }
         })
-        
-        
-        
     }
     
     static func getTrainer(for id: String, completion: @escaping (Trainer) -> Void) {
