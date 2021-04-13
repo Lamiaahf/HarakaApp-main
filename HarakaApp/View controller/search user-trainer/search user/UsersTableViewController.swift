@@ -1,22 +1,22 @@
 //
-//  TrainersTableViewController.swift
+//  UsersTableViewController.swift
 //  HarakaApp
 //
-//  Created by ohoud on 12/08/1442 AH.
-//lamia
+//  Created by lamia on 21/03/2021.
+//ohoud
 
 import UIKit
 import FirebaseDatabase
 
-class TrainersTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
-    @IBOutlet weak var TrainersTableView: UITableView!
-    let searchTController = UISearchController(searchResultsController: nil)
+    @IBOutlet weak var UsersTable: UITableView!
+    let searchController = UISearchController(searchResultsController: nil)
 
     @IBOutlet weak var searchBar: UISearchBar!
-    var loggedInTrainers:CurrentUser?
-    var trainersArray = [NSDictionary?]()
-    var filteredTrainers = [NSDictionary?]()
+    var loggedInUser:CurrentUser?
+    var usersArray = [NSDictionary?]()
+    var filteredUsers = [NSDictionary?]()
     var testArray = [NSDictionary?]()
     var databaseRef = Database.database().reference()
     
@@ -28,28 +28,28 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         searchTController.searchResultsUpdater = self
-          searchTController.obscuresBackgroundDuringPresentation = false
+          searchController.searchResultsUpdater = self
+          searchController.obscuresBackgroundDuringPresentation = false
           definesPresentationContext = true
-          tableView.tableHeaderView = searchTController.searchBar
+          tableView.tableHeaderView = searchController.searchBar
 
 
-        databaseRef.child("Trainers").child("Approved").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
+        databaseRef.child("users").queryOrdered(byChild: "Name").observe(.childAdded, with: { (snapshot) in
 
                  
             let key = snapshot.key
             let snapshot = snapshot.value as? NSDictionary
             snapshot?.setValue(key, forKey: "uid")
 // SHOULD NOT SHOW THE LOGGEDIN USER
-            if(key == self.loggedInTrainers?.uid)
+            if(key == self.loggedInUser?.uid)
             {
-                print("Same as logged in trainer, so don't show!")
+                print("Same as logged in user, so don't show!")
             }
             else
             {
-                self.trainersArray.append(snapshot)
+                self.usersArray.append(snapshot)
                 //insert the rows
-                self.TrainersTableView.insertRows(at: [IndexPath(row:self.trainersArray.count-1,section:0)], with: UITableView.RowAnimation.automatic)
+                self.UsersTable.insertRows(at: [IndexPath(row:self.usersArray.count-1,section:0)], with: UITableView.RowAnimation.automatic)
             }
 
            
@@ -87,28 +87,28 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
             
         // #warning Incomplete implementation, return the number of rows
                
-               if searchTController.isActive && searchTController.searchBar.text != " "{
-                return filteredTrainers.count
+               if searchController.isActive && searchController.searchBar.text != " "{
+                return filteredUsers.count
                }
-               return self.trainersArray.count
+               return self.usersArray.count
            }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-             let trainer : NSDictionary?
+             let user : NSDictionary?
              
-             if searchTController.isActive && searchTController.searchBar.text != ""{
+             if searchController.isActive && searchController.searchBar.text != ""{
 
-                 trainer = filteredTrainers[indexPath.row]
+                 user = filteredUsers[indexPath.row]
              }
              else
              {
-                 trainer = self.trainersArray[indexPath.row]
+                 user = self.usersArray[indexPath.row]
              }
              
-             cell.textLabel?.text = trainer?["name"] as? String
-             cell.detailTextLabel?.text = trainer?["Username"] as? String
+             cell.textLabel?.text = user?["Name"] as? String
+             cell.detailTextLabel?.text = user?["Username"] as? String
              
 
              return cell
@@ -120,11 +120,11 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "ShowTrainer" {
+            if segue.identifier == "ShowUser" {
                 if let indexPath = tableView.indexPathForSelectedRow {
-                    let Trainer = trainersArray[indexPath.row]
-                    let controller = segue.destination as? OtherTrainersViewController
-                    controller?.otherTrainers = Trainer
+                    let user = usersArray[indexPath.row]
+                    let controller = segue.destination as? OtherUsers
+                    controller?.otherUser = user
             
                 }
             }
@@ -135,15 +135,15 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
         
         func updateSearchResults(for searchController: UISearchController) {
             
-            filterContent(searchText: self.searchTController.searchBar.text!)
+            filterContent(searchText: self.searchController.searchBar.text!)
 
         }
         
     func filterContent(searchText:String)
     {
-        self.filteredTrainers = self.trainersArray.filter{ user in
- 
-            let username = user!["name"] as? String
+        self.filteredUsers = self.usersArray.filter{ user in
+
+            let username = user!["Name"] as? String
             
             if( username != nil){
             return(username?.lowercased().contains(searchText.lowercased()))!
@@ -151,7 +151,6 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
         }
             else {return false}
         }
-        
         tableView.reloadData()
     }
 
@@ -159,3 +158,7 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
 
     
     
+
+
+
+

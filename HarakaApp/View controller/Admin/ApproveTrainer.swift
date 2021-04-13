@@ -14,11 +14,11 @@ class ApproveTrainer: UIViewController {
     
       // @IBOutlet weak var bodyTextView: UITextView!
        
-    @IBOutlet weak var Name: UITextField!
-    @IBOutlet weak var Username: UITextField!
-    @IBOutlet weak var DOB: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var link: UITextField!
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Username: UILabel!
+    @IBOutlet weak var DOB: UILabel!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var link: UILabel!
     
     @IBOutlet weak var reject: UIButton!
     @IBOutlet weak var Accept: UIButton!
@@ -38,11 +38,7 @@ class ApproveTrainer: UIViewController {
 
        override func viewDidLoad() {
            super.viewDidLoad()
-        Utilities.styleTextField(Name)
-        Utilities.styleTextField(Username)
-        Utilities.styleTextField(DOB)
-        Utilities.styleTextField(email)
-        Utilities.styleTextField(link)
+      
         Utilities.styleFilledButton(Accept)
         Utilities.styleFilledButton(reject)
 

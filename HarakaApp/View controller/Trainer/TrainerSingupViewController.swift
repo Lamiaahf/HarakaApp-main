@@ -25,8 +25,9 @@ class TrainerSingupViewController: UIViewController {
     @IBOutlet weak var PasswordTS: UITextField!
     @IBOutlet weak var ConfpasswordTS: UITextField!
     @IBOutlet weak var Age: UITextField!
+    let DatePicker = UIDatePicker()
     @IBOutlet weak var LinkedinTS: UITextField!
-   
+
     @IBOutlet weak var ErrorM: UILabel!
     
     @IBOutlet weak var Singup: UIButton!
@@ -86,7 +87,30 @@ class TrainerSingupViewController: UIViewController {
         
         
     }
-  
+    func creatDatePicker()  {
+        Age.textAlignment = .right
+        //toolbare
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        //bar button
+        let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        // assining toolbare
+        Age.inputAccessoryView = toolbar
+        //assinge date pickre to text filde
+        Age.inputView = DatePicker
+        // date picker mode to remove the time
+        DatePicker.datePickerMode = .date
+    }
+    @objc func donePressed(){
+        //formatter
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        Age.text = formatter.string(from:DatePicker.date)
+        self.view.endEditing(true)
+    }
     func validatefields() -> String?{
     // all fields filled in
         if NameTS.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
