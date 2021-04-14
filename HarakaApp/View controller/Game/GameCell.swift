@@ -13,6 +13,7 @@ class GameCell: UITableViewCell{
     @IBOutlet weak var GameLabel: UILabel!
     @IBOutlet weak var CreatorLabel: UILabel!
     
+    
     var game: Game!{
         didSet{
             updateGame()
