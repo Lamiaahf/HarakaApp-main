@@ -7,267 +7,129 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F985BA21-5E3B-471F-BB58-87746E9B9279"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/ConversationsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "ConversationsViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "F985BA21-5E3B-471F-BB58-87746E9B9279 - a44fe16f3c9b3296"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.ConversationsViewController.__deallocating_deinit"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/ConversationsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "F985BA21-5E3B-471F-BB58-87746E9B9279 - 17d1ad59c75e69e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.ConversationsViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.ConversationsViewController"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/ConversationsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "F985BA21-5E3B-471F-BB58-87746E9B9279 - 645a699eae274fa5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.ConversationsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.ConversationsViewController"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/ConversationsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "271">
-               </Location>
-               <Location
-                  uuid = "F985BA21-5E3B-471F-BB58-87746E9B9279 - 3be276606a326cd2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.ConversationsViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.ConversationsViewController&gt;"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/ConversationsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "F985BA21-5E3B-471F-BB58-87746E9B9279 - b6c8cec89ad1c776"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.ConversationsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.ConversationsViewController&gt;"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/ConversationsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "203">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "24920239-D427-4CC1-8D08-250F61B4D731"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/NewConversationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13"
-            landmarkName = "NewConversationViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "24920239-D427-4CC1-8D08-250F61B4D731 - 81e460d64325e6c4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.NewConversationViewController.__deallocating_deinit"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/NewConversationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  uuid = "24920239-D427-4CC1-8D08-250F61B4D731 - 8c816681752f4a19"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.NewConversationViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.NewConversationViewController"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/NewConversationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "24920239-D427-4CC1-8D08-250F61B4D731 - da28f4c018fd4cc3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.NewConversationViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.NewConversationViewController"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/NewConversationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "364">
-               </Location>
-               <Location
-                  uuid = "24920239-D427-4CC1-8D08-250F61B4D731 - 8943c08170139186"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.NewConversationViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.NewConversationViewController&gt;"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/NewConversationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  uuid = "24920239-D427-4CC1-8D08-250F61B4D731 - 10fd8ab4d6f22daa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.NewConversationViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.NewConversationViewController&gt;"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/HarakaApp-main/HarakaApp/View%20controller/NewConversationViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "305">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CAC26E1C-F2CE-49D4-B479-F281EA0132C6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/NewConversationViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A139EF25-E4CC-4AB8-A445-77B96D103609"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/ConversationsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "23731AEB-0AA8-4F6A-8F7B-1668839BC7C9"
+            uuid = "782546D6-686C-4D71-BDAA-15877C211869"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/NewConversationViewController.swift"
+            filePath = "../SwiftChatApp/Messenger/Controllers/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "searchUsers(query:)"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "listenForMessages(id:shouldScrollToBottom:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B3D26211-1595-4FBA-94B5-BE1F4252EC11"
+            uuid = "79F10D63-93EB-49F3-91BA-3B09123F0877"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/NewConversationViewController.swift"
+            filePath = "../SwiftChatApp/Messenger/Controllers/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "searchUsers(query:)"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "30591A57-78B6-4ACE-9439-2BCF3ED8A5C1"
+            uuid = "E13384E0-818D-453A-B950-D40EF180B415"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/chatRooms/RoomViewController.swift"
+            filePath = "../SwiftChatApp/Messenger/Controllers/ChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "RoomViewController"
-            landmarkType = "3">
+            startingLineNumber = "349"
+            endingLineNumber = "349"
+            landmarkName = "inputBar(_:didPressSendButtonWith:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C380ACA8-70AF-46DF-BBDD-07F8C3AA1AF0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../SwiftChatApp/Messenger/Controllers/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
+            landmarkName = "inputBar(_:didPressSendButtonWith:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A636D281-A7CC-43F5-98AB-D62D44BB18F5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../SwiftChatApp/Messenger/Controllers/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
+            landmarkName = "createMessageId()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "064EB393-3A2D-47FB-9C44-FD6679B41EC9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/InputBarAccessoryView/Sources/InputBarAccessoryView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "934"
+            endingLineNumber = "934"
+            landmarkName = "didSelectSendButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9AEA2642-651E-4426-970B-B024F260C939"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../SwiftChatApp/Messenger/Controllers/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "selfSender"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB731271-0A82-45D0-83A9-F3CB321D929D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../SwiftChatApp/Messenger/Controllers/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
+            landmarkName = "inputBar(_:didPressSendButtonWith:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
