@@ -58,7 +58,7 @@ class DBManager {
     }
     
     static func getPosts(for user: User, completion: @escaping ([Post]) -> Void) {
-        let postref = Database.database().reference().child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: user.userID!)
+        let postref = Database.database().reference().child("posts").queryOrdered(byChild: "timestamp").queryEqual(toValue: user.userID!, childKey: "uid")
 
         postref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {

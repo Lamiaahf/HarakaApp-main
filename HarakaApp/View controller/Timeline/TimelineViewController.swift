@@ -53,8 +53,11 @@ class TimelineViewController: UITableViewController {
                 }
                 self.fetchPosts()
                 self.tableView.reloadData()
+                self.tableView.scrollsToTop = true
             }
         }
+        
+        
       
       /*  DBManager.getPosts(for: current) { (posts) in
             for p in posts{
