@@ -1751,8 +1751,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dv1-T2-V4v">
                                 <rect key="frame" x="16" y="193" width="338" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">هذه التجربة مليئة بحس المغامرة والطاقة لأنها تأخذك في جو تحدي ممتع لتختبر دقتك في الرماية بالأسهم، ستتعلم على طريقة الوقوف الصحيحة وأساسيات الامساك بالقوس والأسهم لتكون قادر على تصويب رمية في منتصف الهدف.
-</string>
+                                <string key="text">هذه التجربة مليئة بحس المغامرة والطاقة لأنها تأخذك في جو تحدي ممتع لتختبر دقتك في الرماية بالأسهم، ستتعلم على طريقة الوقوف الصحيحة وأساسيات الامساك بالقوس والأسهم لتكون قادر على تصويب رمية في منتصف الهدف.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
