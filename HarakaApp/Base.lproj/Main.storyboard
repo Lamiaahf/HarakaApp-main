@@ -867,7 +867,7 @@
             </objects>
             <point key="canvasLocation" x="958.46153846153845" y="-9.24170616113744"/>
         </scene>
-        <!--Rooms View Controller-->
+        <!--المجموعات-->
         <scene sceneID="edD-ad-fjg">
             <objects>
                 <viewController id="2sC-la-WC5" customClass="RoomsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -908,7 +908,7 @@
                         <viewLayoutGuide key="safeArea" id="tm6-eq-zoD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Tzw-gv-Z3w"/>
+                    <navigationItem key="navigationItem" title="المجموعات" id="Tzw-gv-Z3w"/>
                     <connections>
                         <outlet property="RoomsTable" destination="Sot-39-Xtf" id="VqK-6T-n9O"/>
                     </connections>
@@ -4325,7 +4325,7 @@
             </objects>
             <point key="canvasLocation" x="2" y="4686"/>
         </scene>
-        <!--Rooms View Controller-->
+        <!--المجموعات-->
         <scene sceneID="W4D-x2-u2B">
             <objects>
                 <viewController id="tlT-GG-yqh" customClass="TRoomsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -4378,7 +4378,7 @@
                         <viewLayoutGuide key="safeArea" id="5lO-hM-KEn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DnU-Hj-bsV"/>
+                    <navigationItem key="navigationItem" title="المجموعات" id="DnU-Hj-bsV"/>
                     <connections>
                         <outlet property="RoomsTable" destination="Lpn-ds-afV" id="awB-va-5rn"/>
                         <outlet property="goCreateButton" destination="F4A-nz-VBB" id="kgx-c0-Ogi"/>
