@@ -25,7 +25,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
            ]
 
    
-    @IBOutlet weak var goCreateButton: UIButton!
+    
     
     let transition = CircularTransition()
     
@@ -42,7 +42,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            goCreateButton.layer.cornerRadius = goCreateButton.frame.size.width / 2
+          
 
         self.RoomsTable.delegate = self
         self.RoomsTable.dataSource = self
