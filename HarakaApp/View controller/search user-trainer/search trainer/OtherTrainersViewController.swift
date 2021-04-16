@@ -17,9 +17,8 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         @IBOutlet weak var name: UILabel!
         @IBOutlet weak var Username: UILabel!
         @IBOutlet weak var followButton: UIButton!
-       
-       @IBOutlet weak var numberFollowing: UIButton!
-       @IBOutlet weak var numberFollowers: UIButton!
+    
+      
        
        let loggedInTrainer = Auth.auth().currentUser
        var loggedInTrainerData:NSDictionary?
@@ -36,7 +35,8 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
            super.viewDidLoad()
         //style
         Utilities.styleFilledButton(followButton)
-           databaseRef.child("Approved").child(self.loggedInTrainer!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        
+           databaseRef.child("Trainers").child("Approved").child(self.loggedInTrainer!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
             self.loggedInTrainerData = snapshot.value as? NSDictionary
             self.loggedInTrainerData?.setValue(self.loggedInTrainer!.uid, forKey: "uid")
@@ -49,7 +49,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         //add an observer for the user who's profile is being viewed
         //When the followers count is changed, it is updated here!
         //need to add the uid to the user's data
-        databaseRef.child("Approved").child(self.otherTrainers?["uid"] as! String).observe(.value, with: { (snapshot) in
+        databaseRef.child("Trainers").child("Approved").child(self.otherTrainers?["uid"] as! String).observe(.value, with: { (snapshot) in
             
             let uid = self.otherTrainers?["uid"] as! String
             self.otherTrainers = snapshot.value as? NSDictionary
@@ -86,20 +86,18 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         }
         
            
-           self.name.text = otherTrainers!["name"] as? String
-           self.Username.text = "@"+(otherTrainers!["Username"] as? String)!
+        if (name != nil){
+             self.name.text = otherTrainers!["Name"] as? String
+            self.Username.text = otherTrainers!["Username"] as? String}
+        if (otherTrainers!["ProfilePic"] != nil){
 
-    
-           
-           if(otherTrainers["profilePic"] != nil)
-           {
-               let databaseProfilePic = otherTrainers!["profilePic"] as! String
+               let databaseProfilePic = otherTrainers!["ProfilePic"] as! String
                let data = try? Data(contentsOf:URL(string:databaseProfilePic)!)
                
                self.setProfilePicture(self.Profilepic,imageToSet:UIImage(data:data!)!)
            }
-       
-           if(otherTrainers["followersCount"] != nil)
+
+          /* if(otherTrainers["followersCount"] != nil)
            {
                print("Followers Count")
                
@@ -112,7 +110,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
            {
                let followingCount = ("\(otherTrainers["followersCount"]!)")
                self.numberFollowing.setTitle(followingCount, for: .normal)
-           }
+           }*/
        }
 
        override func didReceiveMemoryWarning() {
@@ -139,7 +137,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         let followingRef = "following/" + (self.loggedInTrainerData?["uid"] as! String) + "/" + (self.otherTrainers?["uid"] as! String)
         
         
-        if(self.followButton.titleLabel?.text == "Follow")
+        if(self.followButton.titleLabel?.text == "متابعة")
         {
             print("follow Trainer")
             
@@ -200,8 +198,9 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         }
         else
         {
-            databaseRef.child("Approved").child(self.loggedInTrainerData?["uid"] as! String).child("followingCount").setValue(self.loggedInTrainerData!["followingCount"] as! Int - 1)
-            databaseRef.child("Approved").child(self.otherTrainers?["uid"] as! String).child("followersCount").setValue(self.otherTrainers!["followersCount"] as! Int - 1)
+            databaseRef.child("Trainers").child("Approved").child(self.loggedInTrainerData?["uid"] as! String).child("followingCount").setValue(self.loggedInTrainerData!["followingCount"] as! Int - 1)
+            
+            databaseRef.child("Trainers").child("Approved").child(self.otherTrainers?["uid"] as! String).child("followersCount").setValue(self.otherTrainers!["followersCount"] as! Int - 1)
             
           let followersRef = "followers/\(self.otherTrainers?["uid"] as! String)/\(self.loggedInTrainerData?["uid"] as! String)"
           let followingRef = "following/" + (self.loggedInTrainerData?["uid"] as! String) + "/" + (self.otherTrainers?["uid"] as! String)
@@ -214,5 +213,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         }
         
     }
+
+
 
 }

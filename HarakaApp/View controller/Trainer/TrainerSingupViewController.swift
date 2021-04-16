@@ -45,6 +45,8 @@ class TrainerSingupViewController: UIViewController {
         super.viewDidLoad()
         setUpElements()
         ref = Database.database().reference()
+        creatDatePicker()
+
 
     }
     
@@ -83,10 +85,9 @@ class TrainerSingupViewController: UIViewController {
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true)
-        
-        
-        
     }
+    
+    // creatDatePicker inside TextFilde
     func creatDatePicker()  {
         Age.textAlignment = .right
         //toolbare
@@ -103,6 +104,7 @@ class TrainerSingupViewController: UIViewController {
         // date picker mode to remove the time
         DatePicker.datePickerMode = .date
     }
+    
     @objc func donePressed(){
         //formatter
         let formatter = DateFormatter()
@@ -136,11 +138,6 @@ class TrainerSingupViewController: UIViewController {
                     //Passwords dont match
             return "كلمة المرور غير متطابقة ."}
         
-        let age = Int(Age.text!)
-           if (age! < 18 || age! > 60 )  {
-
-                    // the age should be  18-60
-            return "عذرا ، لكن يجب ان يكون عمرك ما بين ١٨-٦٠"}
 
             
         
@@ -188,7 +185,7 @@ class TrainerSingupViewController: UIViewController {
                         StorageProfilrRef.downloadURL(completion: {(url , error ) in
                         if let metaImageUrl = url?.absoluteString {
                             
-        let db = ["Name":Name, "Username":Username, "Email":Email,"Password":Password,"Linkedin":Linkdein,"ProfilePic": metaImageUrl,"Age":age, ]
+                            let db = ["Name":Name, "Username":"@"+Username, "Email":Email,"Linkedin":Linkdein,"ProfilePic": metaImageUrl,"Age":age,"Password":Password ]
 
                             self.ref?.child("Trainers").child("Unapproved").childByAutoId().setValue(db)
                             let alert = UIAlertController(title: " رفع طلبك بنجاح  ", message: nil, preferredStyle: UIAlertController.Style.alert)

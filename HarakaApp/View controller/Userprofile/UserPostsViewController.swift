@@ -12,6 +12,7 @@ class UserPostsViewController: UITableViewController {
     var posts:[Post]?
     var databaseRef = Database.database().reference()
     var Userid : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
