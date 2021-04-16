@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230273AE25E93C4A00DC6C31 /* UserInfo.swift */; };
 		23104218261B34A7006B2EE4 /* GameRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23104217261B34A7006B2EE4 /* GameRoomsViewController.swift */; };
-		2310421B261B3750006B2EE4 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421A261B3750006B2EE4 /* CreateGameViewController.swift */; };
 		2310421E261B39E4006B2EE4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421D261B39E4006B2EE4 /* Game.swift */; };
 		23104221261B56E8006B2EE4 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23104220261B56E8006B2EE4 /* GameCell.swift */; };
 		232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E738A25F56B560029D39C /* ChallengeCell.swift */; };
@@ -22,15 +21,12 @@
 		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
 		2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */; };
 		2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF40261736FD00FD9B1C /* DBManager.swift */; };
-
 		23A717102621DD8500C43FD4 /* model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A7170F2621DD8500C43FD4 /* model.scnassets */; };
 		23A717132621E2B100C43FD4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717122621E2B100C43FD4 /* Extension.swift */; };
 		23A717182621E2D100C43FD4 /* WorkoutNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717152621E2D000C43FD4 /* WorkoutNode.swift */; };
 		23A717192621E2D100C43FD4 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717162621E2D100C43FD4 /* WorkoutViewController.swift */; };
 		23A7171A2621E2D100C43FD4 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717172621E2D100C43FD4 /* WorkoutModel.swift */; };
 		23A7171E2621EA4500C43FD4 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7171D2621EA4500C43FD4 /* PlayerCell.swift */; };
-		2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */; };
-		2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF40261736FD00FD9B1C /* DBManager.swift */; };
 		3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3D6A261216A900246872 /* UsersTableViewController.swift */; };
 		3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3DA1261221B600246872 /* UserProfileViewController.swift */; };
 		3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */; };
@@ -125,8 +121,6 @@
 		23A717162621E2D100C43FD4 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		23A717172621E2D100C43FD4 /* WorkoutModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		23A7171D2621EA4500C43FD4 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
-		2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerChallengeViewController.swift; sourceTree = "<group>"; };
-		2399CF40261736FD00FD9B1C /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		3F1C3D6A261216A900246872 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		3F1C3DA1261221B600246872 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPosts.swift; sourceTree = "<group>"; };
@@ -151,7 +145,6 @@
 		3FA49329260B613C0052A1BD /* Trainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainner.swift; sourceTree = "<group>"; };
 		3FA4932A260B613C0052A1BD /* ShowTrainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainner.swift; sourceTree = "<group>"; };
 		3FA4932B260B613C0052A1BD /* AdminLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminLogin.swift; sourceTree = "<group>"; };
-
 		3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		3FBB14F325C81CFB0098C299 /* HarakaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarakaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBB14F625C81CFB0098C299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -229,14 +222,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-
-		2399CF3C261735F300FD9B1C /* Challenges - Trainer */ = {
-			isa = PBXGroup;
-			children = (
-				2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */,
-			);
-			path = "Challenges - Trainer";
-   };
 		23104215261B323B006B2EE4 /* Game */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,15 +238,6 @@
 			path = Game;
 			sourceTree = "<group>";
 		};
-		23A7170D2621DD1100C43FD4 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				23A7170F2621DD8500C43FD4 /* model.scnassets */,
-				3FBB14FF25C81CFD0098C299 /* Assets.xcassets */,
-			);
-			path = Assets;
-            sourceTree = "<group>";
-        };
 		2399CF3C261735F300FD9B1C /* Challenges - Trainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,7 +246,15 @@
 			path = "Challenges - Trainer";
 			sourceTree = "<group>";
 		};
-        
+		23A7170D2621DD1100C43FD4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				23A7170F2621DD8500C43FD4 /* model.scnassets */,
+				3FBB14FF25C81CFD0098C299 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		23DAC3A6260BB22F000DB8AB /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,10 +365,10 @@
 				94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */,
 				94D4604925E3E528009F31A6 /* NotificationViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
-				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
+				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
 				23104215261B323B006B2EE4 /* Game */,
 				3FF3369E2616E10E00A905EF /* Userprofile */,
 				CEC34787260BF25C004B3754 /* search user-trainer */,
@@ -394,10 +378,8 @@
 				3FA49326260B613C0052A1BD /* Admin */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
 				3FF335BE2614DD1400A905EF /* Trainer */,
-
 				940F4B9425E55A6800508368 /* locations.geojson */,
 				940F4BD525E56E7C00508368 /* activityLocations.swift */,
-
 			);
 			path = "View controller";
 			sourceTree = "<group>";
@@ -485,7 +467,6 @@
 				3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */,
 				3F2D0E64261C94CA0029D96C /* OtherUserPostViewController.swift */,
 				3F92ADF3261E16BE00EC3085 /* OtherUsersViewController.swift */,
-
 			);
 			path = "search user";
 			sourceTree = "<group>";
@@ -680,7 +661,6 @@
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
 				3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */,
-
 				3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */,
 				3F92AEB2261F532300EC3085 /* Activity.swift in Sources */,
 				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
