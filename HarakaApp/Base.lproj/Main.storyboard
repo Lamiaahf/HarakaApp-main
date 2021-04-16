@@ -725,9 +725,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVS-gq-1GH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="665" y="1423"/>
-
         </scene>
         <!--Room View Controller-->
         <scene sceneID="uab-jE-1dt">
@@ -1015,7 +1013,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jn-LK-Rxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1749.2307692307693" y="-9.24170616113744"/>
-]
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="exH-xU-6dF">
@@ -1156,7 +1153,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdV-fN-Nuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2638.4615384615386" y="44.7867298578199"/>
-
         </scene>
         <!--Challenge View Controller-->
         <scene sceneID="byM-49-thW">
@@ -1318,7 +1314,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qq1-1l-84e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2523.0769230769229" y="706.6350710900474"/>
-
         </scene>
         <!--View Controller-->
         <scene sceneID="Y0o-Se-RzB">
@@ -2677,7 +2672,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5O5-pP-F7C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bc0-PR-mxd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2688,9 +2683,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGU-z8-X55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958.46153846153845" y="706.6350710900474"/>
-
-            <point key="canvasLocation" x="-900" y="752.84360189573454"/>
-
         </scene>
         <!--SettingsView Controller-->
         <scene sceneID="WBQ-I1-haY">
@@ -3790,7 +3782,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="Vff-fS-EVw">
-                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -3846,7 +3838,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="PMu-hk-dE0">
-                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -4209,25 +4201,20 @@
     <inferredMetricsTieBreakers>
         <segue reference="Rba-Vm-eU6"/>
         <segue reference="0Gh-8D-NQl"/>
+        <segue reference="gJH-zc-xPe"/>
         <segue reference="pAM-Ja-N9h"/>
-
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>
         <image name="1.circle" catalog="system" width="128" height="121"/>
         <image name="568635131536669843-129" width="42.666667938232422" height="42.666667938232422"/>
-        <image name="Bike" width="53.333332061767578" height="53.333332061767578"/>
-        <image name="Flag" width="40" height="40"/>
-
         <image name="bell.badge" catalog="system" width="128" height="124"/>
-        <image name="circle" catalog="system" width="128" height="121"/>
-        <image name="coach" width="512" height="512"/>
-
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="coach" width="512" height="512"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="icons8-barbell-100" width="100" height="100"/>
@@ -4240,10 +4227,8 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
-
-        <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="plus.square.on.square" catalog="system" width="128" height="113"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
         <image name="withBackground" width="5000" height="5000"/>
         <image name="withBackground-1" width="2500" height="2500"/>
