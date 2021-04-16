@@ -78,6 +78,13 @@ import FirebaseStorage
         // = Date(timeIntervalSince1970: times)
     }
     
+    init(dictionary: [String: AnyObject]) {
+        self.userID = dictionary["id"] as? String
+        self.name = dictionary["name"] as? String
+        self.email = dictionary["email"] as? String
+        self.profileImageURL = dictionary["profileImageUrl"] as? String
+    }
+    
     init?(snapshot: DataSnapshot, flag: Bool) {
         //This is called when creating a user object for the Following/Followers list, since we dont need all the information
         super.init()

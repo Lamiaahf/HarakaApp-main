@@ -20,6 +20,7 @@ class LOGINViewController: UIViewController {
     @IBOutlet weak var login: UIButton!
     @IBOutlet weak var Singupform: UIButton!
     var databaseRef = Database.database().reference()
+    var messagesController: MessagesController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

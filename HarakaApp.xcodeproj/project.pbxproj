@@ -98,6 +98,15 @@
 		CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033825F41DB400C4ACE4 /* RoomViewController.swift */; };
 		CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6034125F4353E00C4ACE4 /* ChatCell.swift */; };
 		CED6034525F43C5E00C4ACE4 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6034425F43C5E00C4ACE4 /* Messages.swift */; };
+		CEDC5A1A262A133100F43AA8 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A19262A133100F43AA8 /* MessagesController.swift */; };
+		CEDC5A1D262A134200F43AA8 /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A1C262A134200F43AA8 /* NewMessageController.swift */; };
+		CEDC5A1F262A134B00F43AA8 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A1E262A134B00F43AA8 /* ChatLogController.swift */; };
+		CEDC5A23262A137900F43AA8 /* PMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A22262A137900F43AA8 /* PMessage.swift */; };
+		CEDC5A26262A13CF00F43AA8 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A25262A13CF00F43AA8 /* UserCell.swift */; };
+		CEDC5A28262A13CF00F43AA8 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A27262A13CF00F43AA8 /* ChatMessageCell.swift */; };
+		CEDC5A2B262A140800F43AA8 /* ChatInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A2A262A140800F43AA8 /* ChatInputContainerView.swift */; };
+		CEDC5A2E262A140C00F43AA8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A2D262A140C00F43AA8 /* Extensions.swift */; };
+		CEDC5A31262A147500F43AA8 /* PUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC5A30262A147500F43AA8 /* PUser.swift */; };
 		F9F49256EE71AF5DBDB64948 /* Pods_HarakaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +211,15 @@
 		CED6033825F41DB400C4ACE4 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		CED6034125F4353E00C4ACE4 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		CED6034425F43C5E00C4ACE4 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		CEDC5A19262A133100F43AA8 /* MessagesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
+		CEDC5A1C262A134200F43AA8 /* NewMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		CEDC5A1E262A134B00F43AA8 /* ChatLogController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		CEDC5A22262A137900F43AA8 /* PMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMessage.swift; sourceTree = "<group>"; };
+		CEDC5A25262A13CF00F43AA8 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserCell.swift; path = "New Group/UserCell.swift"; sourceTree = SOURCE_ROOT; };
+		CEDC5A27262A13CF00F43AA8 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatMessageCell.swift; path = "New Group/ChatMessageCell.swift"; sourceTree = SOURCE_ROOT; };
+		CEDC5A2A262A140800F43AA8 /* ChatInputContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
+		CEDC5A2D262A140C00F43AA8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CEDC5A30262A147500F43AA8 /* PUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PUser.swift; sourceTree = "<group>"; };
 		D31ADC4FBCA540673158B70D /* Pods_HarakaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HarakaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -378,9 +396,10 @@
 				CEC34787260BF25C004B3754 /* search user-trainer */,
 				3F92AE95261F51B800EC3085 /* Activity */,
 				23DAC3AC260BB2DB000DB8AB /* Challenges */,
-				23DAC3A6260BB22F000DB8AB /* Timeline */,
 				3FA49326260B613C0052A1BD /* Admin */,
+				23DAC3A6260BB22F000DB8AB /* Timeline */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
+				CEDC5A17262A11A000F43AA8 /* Private chat */,
 				3FF335BE2614DD1400A905EF /* Trainer */,
 				940F4B9425E55A6800508368 /* locations.geojson */,
 				940F4BD525E56E7C00508368 /* activityLocations.swift */,
@@ -517,6 +536,31 @@
 			path = chatRooms;
 			sourceTree = "<group>";
 		};
+		CEDC5A17262A11A000F43AA8 /* Private chat */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC5A19262A133100F43AA8 /* MessagesController.swift */,
+				CEDC5A1E262A134B00F43AA8 /* ChatLogController.swift */,
+				CEDC5A1C262A134200F43AA8 /* NewMessageController.swift */,
+				CEDC5A22262A137900F43AA8 /* PMessage.swift */,
+				CEDC5A21262A137800F43AA8 /* PChat view */,
+			);
+			name = "Private chat";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		CEDC5A21262A137800F43AA8 /* PChat view */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC5A27262A13CF00F43AA8 /* ChatMessageCell.swift */,
+				CEDC5A2A262A140800F43AA8 /* ChatInputContainerView.swift */,
+				CEDC5A2D262A140C00F43AA8 /* Extensions.swift */,
+				CEDC5A30262A147500F43AA8 /* PUser.swift */,
+				CEDC5A25262A13CF00F43AA8 /* UserCell.swift */,
+			);
+			path = "PChat view";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -633,6 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDC5A1F262A134B00F43AA8 /* ChatLogController.swift in Sources */,
 				3F92ADF4261E16BE00EC3085 /* OtherUsersViewController.swift in Sources */,
 				94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */,
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
@@ -671,29 +716,36 @@
 				3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */,
 				3FF017A8262717A400948FDB /* LaunchScreen.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
+				CEDC5A28262A13CF00F43AA8 /* ChatMessageCell.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
 				CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
 				3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */,
+				CEDC5A2E262A140C00F43AA8 /* Extensions.swift in Sources */,
 				3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */,
 				3F92AEB2261F532300EC3085 /* Activity.swift in Sources */,
 				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
+				CEDC5A23262A137900F43AA8 /* PMessage.swift in Sources */,
+				CEDC5A1A262A133100F43AA8 /* MessagesController.swift in Sources */,
 				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
 				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
 				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
 				3F92AECF261F5C8F00EC3085 /* ActivityCell.swift in Sources */,
 				CE49454D26123346008DC32B /* CircularTransition.swift in Sources */,
+				CEDC5A1D262A134200F43AA8 /* NewMessageController.swift in Sources */,
 				235797A32607E4540017C166 /* CommentCell.swift in Sources */,
 				3F2D1012261DF28B0029D96C /* TchallengesTable.swift in Sources */,
 				3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */,
 				23A7171A2621E2D100C43FD4 /* WorkoutModel.swift in Sources */,
+				CEDC5A2B262A140800F43AA8 /* ChatInputContainerView.swift in Sources */,
 				94DDE11925DD34F80029FA09 /* Post.swift in Sources */,
 				CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */,
 				CED6034525F43C5E00C4ACE4 /* Messages.swift in Sources */,
 				3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */,
 				23A717192621E2D100C43FD4 /* WorkoutViewController.swift in Sources */,
+				CEDC5A31262A147500F43AA8 /* PUser.swift in Sources */,
 				23104221261B56E8006B2EE4 /* GameCell.swift in Sources */,
 				CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */,
 				3F2D100F261DF2510029D96C /* TactivitiTable.swift in Sources */,
@@ -709,6 +761,7 @@
 				CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */,
 				9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */,
 				3FF335C12614DD6A00A905EF /* TrainerSettings.swift in Sources */,
+				CEDC5A26262A13CF00F43AA8 /* UserCell.swift in Sources */,
 				23A7171E2621EA4500C43FD4 /* PlayerCell.swift in Sources */,
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
 				3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */,
