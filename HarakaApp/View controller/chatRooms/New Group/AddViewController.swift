@@ -6,48 +6,77 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class AddViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var titleField: UITextField!
     @IBOutlet var bodyField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
-
+    @IBOutlet weak var popUpView: UIView!
+    var objRoom  : Room!
     
-    public var completion: ((String, String, Date) -> Void)?
+    public var completion: (() -> Void)?
     struct WheelDataPickerStyle{}
   //  var update : (()->void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         titleField.delegate = self
         bodyField.delegate = self
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(didTapSaveButton))
+        
+        popUpView.layer.cornerRadius = 10
+        popUpView.layer.masksToBounds = true
+        
+        /*navigationItem.rightBarButtonItem = UIBarButtonItem(title: "حفظ", style: .done, target: self, action: #selector(didTapSaveButton))*/
     }
 
-    @objc func didTapSaveButton() {
-        if let titleText = titleField.text, !titleText.isEmpty,
+   
+ 
+    
+    @IBAction func didTabSaveButton(_ sender: UIButton) {
+    
+    // @objc func didTapSaveButton() {
+        if let titleText = self.titleField.text, !titleText.isEmpty,
             let bodyText = bodyField.text, !bodyText.isEmpty {
 
             let targetDate = datePicker.date
-
-            completion?(titleText, bodyText, targetDate)
-
+           // added
+           
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MMM, dd, YYYY"
+            let d = formatter.string(from: date)
+           // completion?(titleText, bodyText, d )
+            let dataRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+            let CalenRef = dataRef.child("Calender").child(objRoom.roomId!).childByAutoId()
+            let calenderData:[String:Any] = [ "EventTitle":titleText , "EventDate": d  ]
+        
+        CalenRef.setValue(calenderData) { (err, ref) in
+            if(err == nil){
+                self.titleField.text = ""
+              
+            }
+            
         }
-        /*save
-       var count = UserDefaults().value
-        (forKey : "count") as? int
-        
-        let newCount = count + 1
-        UserDefaults().set(newCount, forKey :"count")
-        UserDefaults().set(titleText, forKey :"date_\(newCount)")
-        
-        update?()
-        navigationController?.popViewController(animated:true)
-    */
+            completion?()
+        }
+     /*  guard let vc = storyboard?.instantiateViewController(identifier: "CalenderViewController") as? CalenderViewController else {
+            return}
+                navigationController?.pushViewController(vc, animated: true)*/
+        self.dismiss(animated: true, completion: nil)
+    
     }
+        
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    
     }
+    
+    
+
+    
 
 }

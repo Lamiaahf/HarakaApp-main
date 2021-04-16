@@ -20,6 +20,7 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Please allow access to upload photos</string>
 	<key>UIApplicationSceneManifest</key>
@@ -48,6 +49,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>arkit</string>
 	</array>
 	<key>UIStatusBarHidden</key>
 	<false/>

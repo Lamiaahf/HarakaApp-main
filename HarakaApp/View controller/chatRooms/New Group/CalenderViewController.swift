@@ -6,77 +6,68 @@
 //
 import UserNotifications
 import UIKit
-
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
 class CalenderViewController: UIViewController {
    
+    var objRoom : Room!
     
-
     @IBOutlet weak var table: UITableView!
     
     var models = [MyReminder]()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
+        observerCalender()
         
-       /* //save
-            if !UserDefaults().bool(forKey:"setup"){
-            UserDefaults().set(true , forKey:"setup")
-            UserDefaults().set(0, forKey:"count")
+        table.allowsMultipleSelection = true
+        /*   let defaults = UserDefaults.standard
+        if let saveddate = defaults.object(forKey: "models") as? Data{
+            let jsonDecoder = JSONDecoder()
+            do{
+                models=try jsonDecoder.decode([MyReminder].self , from : saveddate)
+            } catch {
+                print ("failed")
             }
-        
-            updateDate()*/
-    }
-
-    
-    
-  /*  func updateDate(){
-        models.removeAll()
-    let count = UserDefaults().value(forKey:"count") as? int
-   //     else { return }
-        for x in 0..<count {
-            if let date = UserDefaults().value(forKey :"date_\(x+1)") as? String {
-                models.append(date)
-            }
-        
-    }
-        tableView.reloadData()
     }*/
 
-    @IBAction func didTapAdd() {
+    }
+    
+    /*    @IBAction func didTapAdd() {
         // show add vc
-        guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
+      guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
             return
         }
-
-        vc.title = "New Reminder"
+            
+        vc.objRoom = self.objRoom
+        vc.title = "المفكرة"
         vc.navigationItem.largeTitleDisplayMode = .never
         vc.completion = { title, body, date in
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
-                let new = MyReminder(title: title, date: date, identifier: "id_\(title)")
+                let new = MyReminder(title: title, date: date , identifier: "id_\(title)")
                 self.models.append(new)
+                //self.save()
                 self.table.reloadData()
 
-                let content = UNMutableNotificationContent()
+               /* let content = UNMutableNotificationContent()
                 content.title = title
                 content.sound = .default
                 content.body = body
 
-                let targetDate = date
-                let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
-                                                                                                          from: targetDate),
-                                                            repeats: false)
+                let targetDate = date as String
+                let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate), repeats: false)
 
-                let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
+               let request = UNNotificationRequest(identifier: "some_long_id", content: content, trigger: trigger)
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-                    if error != nil {
-                        print("something went wrong")
+                if error != nil {
+                    print("something went wrong")
                     }
-                })
+               })*/
             }
         }
        /* vc.update = {
@@ -85,9 +76,28 @@ class CalenderViewController: UIViewController {
         }
         }*/
         navigationController?.pushViewController(vc, animated: true)
-}
+}*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+       
+        let vc = segue.destination as! AddViewController
+        
+        vc.objRoom = self.objRoom
+        vc.title = "المفكرة"
+        vc.navigationItem.largeTitleDisplayMode = .never
+        vc.completion = {  
+            DispatchQueue.main.async {
+                self.table.reloadData()
 
+            
+            }
+        }
 }
+    
+    }
+
+
 
 extension CalenderViewController: UITableViewDelegate {
 
@@ -111,23 +121,57 @@ extension CalenderViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = self.models[indexPath.row].title
+       // let body = models[indexPath.row].body
         let date = models[indexPath.row].date
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM, dd, YYYY"
-        cell.detailTextLabel?.text = formatter.string(from: date)
-
-        cell.textLabel?.font = UIFont(name: "Arial", size: 25)
-        cell.detailTextLabel?.font = UIFont(name: "Arial", size: 22)
+        cell.detailTextLabel?.text=date
+        cell.textLabel?.font = UIFont(name: "Arial", size: 18)
+        cell.detailTextLabel?.font = UIFont(name: "Arial", size: 16)
         return cell
     }
+    
+    func observerCalender(){
+        let dataRef = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference()
+        dataRef.child("Calender").child(objRoom.roomId!).observe(.childAdded){
+            //.child(objRoom.roomId!).observe(.value , with: {
+            (snapshot) in
+                if let Edate = snapshot.value as? [String: Any]{
+                    if let EventDate = Edate ["EventDate"] as? String {
+                    let EventTitle = Edate ["EventTitle"] as? String
+                     //   let ENotesBody = Edate["EventNotes"] as? String
+                    //let ID = String(snapshot.key)
+                        var id = self.objRoom!.roomId
+                        let calender = MyReminder(title: EventTitle!, date: EventDate, /*body:ENotesBody!*/ identifier: id! )
+                        self.models.append(calender)
+                        self.table.reloadData()
+                    
+                }
+            }
+        }//)
+    }
+    
+    
+    
+
+ /*   func save() {
+        let jsonEncoder = JSONEncoder()
+        if let saveddata = try? jsonEncoder.encode(models){
+            let defualts = UserDefaults.standard
+            defualts.set(saveddata , forKey:"models")
+            
+        }else {
+            print("failed")
+        }
+    }
+
+}*/
 
 }
 
-
 struct MyReminder {
     let title: String
-    let date: Date
+    let date: String
+  //  let body: String
     let identifier: String
+    
 }
 

@@ -45,7 +45,8 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         messagesRef.observe(.childAdded) { (snapshot) in
             if let data = snapshot.value as? [String: Any] {
-                if let senderId = data["senderId"] as? String, let senderName = data["senderName"] as? String{
+                if let senderId = data["senderId"] as? String,
+                   let senderName = data["senderName"] as? String{
                     var message:Message?
                     
                     if let text = data["text"] as? String {
@@ -78,7 +79,21 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-
+/*
+    @IBAction func didpressAdd(_ sender: UIButton) {
+        let calenderView = self.storyboard?.instantiateViewController(withIdentifier: "CalenderViewController") as! CalenderViewController
+        calenderView.objRoom = room
+        self.navigationController?.pushViewController(calenderView, animated: true)    }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        let vc = segue.destination as! CalenderViewController
+            vc.objRoom = room
+        
+        
+    }
+    
     @IBAction func didPressSendMessage(_ sender: UIButton) {
     
     
@@ -87,12 +102,16 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
         }    }
     
     func sendMessage(text: String?, imageLink: String?){
-        if let userId = Auth.auth().currentUser?.uid, let roomId = self.room?.roomId{
+        if let userId = Auth.auth().currentUser?.uid,
+           let roomId = self.room?.roomId{
             
             let roomRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("rooms").child(roomId)
             let newMessageRef = roomRef.child("messages").childByAutoId()
             //   ServerValue.timestamp()
-            let ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference().child("users").child(userId).child("Username")
+            var ref = Database.database().reference().child("users")
+                .child(userId).child("Username")
+           /* ref = Database.database().reference().child("Trainers").child("Approved").child(userId).child("Username")*/
+
             ref.observeSingleEvent(of: .value) { (snapshot) in
                 let userName = snapshot.value as! String
                 if(text != nil){
@@ -106,8 +125,9 @@ class RoomViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.newMessageTextField.text = ""
                 self.newMessageTextField.resignFirstResponder()
             }
-        }
-    }
+            
+            }        }
+    
     
     @IBAction func didPressBackButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)

@@ -15,6 +15,6 @@ target 'HarakaApp' do
      pod 'Firebase/Database'
      pod 'Firebase/Storage'
      pod 'LBTAComponents'
-
+pod 'DropDown'
 
 end

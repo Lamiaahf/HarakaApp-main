@@ -11,9 +11,7 @@ import Firebase
 class CommentCell: UITableViewCell{
     
     @IBOutlet weak var usernameLabel: UILabel!
-    
-    @IBOutlet weak var profilePic: UIImage!
-    
+    @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var commentLabel: UILabel!
     
     var comment: Comment!{
@@ -24,9 +22,14 @@ class CommentCell: UITableViewCell{
     
     func updateComments(){
         
-        usernameLabel.text = comment.writtenBy.usernameUI
-        profilePic = comment.writtenBy.profileImage
+        usernameLabel.text = comment.writtenBy.username
+        profilePic.image = comment.writtenBy.profileImage
         commentLabel.text = comment.commentText
-        
+
     }
+    
+    
+    
+    
+    
 }
