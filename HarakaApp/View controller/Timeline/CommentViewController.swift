@@ -80,10 +80,9 @@ class CommentViewController: UIViewController, UITableViewDelegate {
         (snapshot) in
         if let commentDict = snapshot.value as? [String: Any]{
             if let usern = commentDict["username"] as? String {
-                    let uid = commentDict["uid"] as? String ?? ""
-                    let comment = commentDict["comment"] as? String ?? ""
-                    let id = String(snapshot.key)
-                    
+               let uid = commentDict["uid"] as? String ?? ""
+               let comment = commentDict["comment"] as? String ?? ""
+               let id = String(snapshot.key)
                 var commentUser = self.post!.createdBy
                 var newComment = Comment(writtenBy: commentUser, commentText:comment)
                     self.comments?.append(newComment)

@@ -49,7 +49,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBAction func Edit(_ sender: Any) {
                updateUsersProfile()
-           
+    
     }
     
     @IBAction func Logout(_ sender: Any) {
@@ -67,7 +67,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate {
                        
                          
                 guard let newNeme  = self.NameSett.text else {return}
-                              //  let newValuesForProfile =
+                        //  let newValuesForProfile =
                                   //  [NameSett : newNeme]
                                 
                                 //update the firebase database for that user

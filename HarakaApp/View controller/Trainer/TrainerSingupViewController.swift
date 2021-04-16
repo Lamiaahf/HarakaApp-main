@@ -85,10 +85,9 @@ class TrainerSingupViewController: UIViewController {
         picker.delegate = self
         picker.allowsEditing = true
         present(picker, animated: true)
-        
-        
-        
     }
+    
+    // creatDatePicker inside TextFilde
     func creatDatePicker()  {
         Age.textAlignment = .right
         //toolbare
@@ -105,6 +104,7 @@ class TrainerSingupViewController: UIViewController {
         // date picker mode to remove the time
         DatePicker.datePickerMode = .date
     }
+    
     @objc func donePressed(){
         //formatter
         let formatter = DateFormatter()

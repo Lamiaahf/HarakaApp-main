@@ -63,9 +63,9 @@ class UserProfileViewController:  UIViewController {
     
      func getUserInfo() {
     
-    //func getUserInfo() {
-        if Auth.auth().currentUser != nil {
-            guard let uid = Auth.auth().currentUser?.uid else {print ("nil"); return}
+        guard let uid = Auth.auth().currentUser?.uid else {print ("nil"); return}
+        if uid != nil {
+         
 
             databaseRef.child("users").child(uid).observe(.value , with : {snapshot
                 in
@@ -82,7 +82,7 @@ class UserProfileViewController:  UIViewController {
                         return
                     }
                     self.Userimg.image = UIImage(data: imageData)
-                    self.setupUserimg()
+                  //  self.setupUserimg()
 
                 })
                 
@@ -121,3 +121,7 @@ class UserProfileViewController:  UIViewController {
     
  
 }// End Class
+ 
+
+
+

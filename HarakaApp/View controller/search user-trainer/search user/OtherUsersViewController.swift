@@ -94,16 +94,6 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
          }
          
             
-         if (name != nil){
-              self.name.text = otherUser!["Name"] as? String
-             self.username.text = otherUser!["Username"] as? String}
-         if (otherUser!["ProfilePic"] != nil){
-
-                let databaseProfilePic = otherUser!["ProfilePic"] as! String
-                let data = try? Data(contentsOf:URL(string:databaseProfilePic)!)
-                
-                self.setProfilePicture(self.Profilepic,imageToSet:UIImage(data:data!)!)
-            }
 
            /* if(otherTrainers["followersCount"] != nil)
             {

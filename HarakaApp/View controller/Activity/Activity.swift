@@ -12,21 +12,27 @@ class Activity {
          var createdByID: String?
          var Aname: String?
          var Adisc: String?
-         var ADateTime: Date?
+         var ADateTime: String?
          var Atype : String?
          var Apartic : String?
          var ALoca : String?
+         var AImage : String?
+       //  var K : String?
+
 
       
         
-    init(createdBy: String?,createdByi :String?, name: String?, disc: String?, DateTime: Date?, type: String?, partic: String?, Loca : String?, uid : String?){
+    init(createdBy: String?,createdByi :String?, name: String?, disc: String?, DateTime: String?, type: String?, partic: String?, Loca : String?, uid : String?
+         , image : String ){
             createdByName = createdBy
-            createdByID = createdBy
+            createdByID = createdByi
             Aname = name
             Adisc = disc
             ADateTime = DateTime
             Atype = type
             Apartic = partic
             ALoca = Loca
+            AImage = image
+         //   K = Ke
         }
 }

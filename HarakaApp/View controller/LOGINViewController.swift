@@ -51,8 +51,9 @@ class LOGINViewController: UIViewController {
         Auth.auth().signIn(withEmail: Email, password: Pass) { (result, error) in
            if error != nil {
                // Couldn't sign in
-               self.Error.text = error!.localizedDescription
-               self.Error.alpha = 1
+              // self.Error.text = error!.localizedDescription
+            self.ErrorM(error!.localizedDescription)
+              // self.Error.alpha = 1
            }
             
            else {
@@ -84,7 +85,35 @@ class LOGINViewController: UIViewController {
            }
             
             
-        } }}
+        } }
+    
+    func ErrorM (_ M: String){
+        
+        
+        switch M {
+        
+        case "The password is invalid or the user does not have a password.":
+            Error.text = "كلمة المرور او البريد الالكتروني غير صحيح"
+            self.Error.alpha = 1
+
+        case "The email address is badly formatted." :
+            Error.text =  "صيغة البريد الالكتروني غير صحيحه"
+            self.Error.alpha = 1
+            
+        case "There is no user record corresponding to this identifier. The user may have been deleted." :
+            Error.text =  "عذرا ليس لديك حساب "
+            self.Error.alpha = 1
+
+        default:
+            Error.text =  "حدث خطا !"
+            self.Error.alpha = 1        }
+        
+        
+    }
+    
+    
+    
+}
 
      
            

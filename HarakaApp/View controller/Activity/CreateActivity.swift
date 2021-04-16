@@ -8,10 +8,11 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
 
-    class CreateActivity: UIViewController {
+class CreateActivity: UIViewController {
     
-    var Activitys = ["كرة التنس ", "كرة السلة ","كرة قدم ","كرة طائرة","رماية","كراتيه","يوقا","هايكنج","بولينق","قولف","ركوب الخيل ","مشي","جري","دراجات"]
+    var Activitys = ["كرة التنس", "كرةالسلة","كرة قدم ","كرة طائرة","رماية","كراتيه","يوقا","هايكنج","بولينق","قولف","ركوب الخيل","مشي","جري","دراجات"]
     
     @IBOutlet weak var typeimage: UIImageView!
     
@@ -21,7 +22,9 @@ import FirebaseAuth
     @IBOutlet weak var ADescription: UITextField!
     @IBOutlet weak var Alocation: UITextField!
         
-    @IBOutlet weak var DateTime: UIDatePicker!
+    @IBOutlet weak var DateTime: UITextField!
+        let dateTP = UIDatePicker()
+        
     @IBOutlet weak var ActivityTypePicker : UIPickerView!
     
     
@@ -29,11 +32,15 @@ import FirebaseAuth
     
     @IBOutlet weak var createB: UIButton!
         var ref = Database.database().reference()
+        var uid = Auth.auth().currentUser?.uid
+      //var ActivityID : String?
+        var CByName = " "
+        var image :UIImage? = nil
 
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
-
+        /// to save the user ID and Name in the activity
         // Activate the  ActivityTypePicker
         ActivityTypePicker.delegate = self
         ActivityTypePicker.dataSource = self
@@ -42,6 +49,9 @@ import FirebaseAuth
         Utilities.styleTextField(Name)
         Utilities.styleTextField(Alocation)
         Utilities.styleTextField(ADescription)
+        Utilities.styleTextField(DateTime)
+        creatDatePicker()
+
 
         }
     
@@ -50,46 +60,121 @@ import FirebaseAuth
         participantLable.text = String( sender.value)
     }
     
+        func creatDatePicker()  {
+            DateTime.textAlignment = .right
+            //toolbare
+            let toolbar = UIToolbar()
+            toolbar.sizeToFit()
+            //bar button
+            let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
+            toolbar.setItems([doneBtn], animated: true)
+            
+            // assining toolbare
+            DateTime.inputAccessoryView = toolbar
+            //assinge date pickre to text filde
+            DateTime.inputView = dateTP
+            // date picker mode to remove the time
+            dateTP.datePickerMode = .dateAndTime
+        }
+        @objc func donePressed(){
+            //formatter
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .medium
+            DateTime.text = formatter.string(from: dateTP.date )
+            self.view.endEditing(true)
+        }
+        
     @IBAction func CreateBTap(_ sender: Any) {
-        validatefields()
+        image = typeimage.image
+    guard let imageSelected = self.image else {return}
+    guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
+
+
+ 
+      //  validatefields()
+
         let type = typeL.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let Aname = Name.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let disc = ADescription.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-     //   let DT = DateTime.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+       let DT = DateTime.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let part = participantLable.text!.trimmingCharacters(in:.whitespacesAndNewlines)
         let Locat = Alocation.text!.trimmingCharacters(in:.whitespacesAndNewlines)
 
         
+    
+      
+        ref.child("users").child(self.uid!).observe(.value , with : { snapshot in
+    
+        guard let dict = snapshot.value as? [String:Any] else {return}
+              
+            let user = CurrentUser( uid : self.uid! , dictionary : dict )
+                self.CByName = user.name            //   self.Username.text = user.username
+           
+                }) { (error) in
+              print(error.localizedDescription)
+        }
+     
+        // save the image to firbase Storage and user
+
+        let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
+        let StorageActivityRef  = storageRef.child("ActivityImage").child(Aname)
+                         //.child(currentUser.uid)
+         let metaData = StorageMetadata()
+                         
+          metaData.contentType = "image/jpg"
+          StorageActivityRef.putData( imageData ,metadata: metaData) { (StorageMetadata, error) in
+            if error != nil { print (error?.localizedDescription as Any)}
+                             // save image url as string
+            StorageActivityRef.downloadURL(completion: {(url , error ) in
+        if let metaImageUrl = url?.absoluteString {
+            
+            let AData = ["ActivityName": Aname , "createdByID" : self.uid,"createdByName" : self.CByName , "Description" : disc,"DateTime" : DT , "ActivityType": type, "NumOfParticipant":part,"location" :Locat , "Image": metaImageUrl ] as [String : Any]
+            
+        self.ref.child("Activity").childByAutoId().setValue(AData)
+            // to return the Activity is Key frome the snapshot
+            self.ref.child("Activity").observeSingleEvent(of :.value, with: { (snapshot) in
+               
+            //   let ActivityID = String(snapshot.key)
+              // self.AddcreatedByid(ActivityID)
+
+            })
+            }
+            } ) }
+      
+
+        }
+      
+    func AddcreatedByid(_ zg:String) {
+       
+        self.ref.child("JoinedActivity").child(zg).child(self.uid!).setValue("")
+            }
+    
+    func transitionLogIn(action:UIAlertAction) {
+                    
+            /// present the next VC
+            let vc = self.storyboard?.instantiateViewController(withIdentifier:"CreaActi") as? ActivitysListTable
+            
+            self.view.window?.rootViewController = vc
+            self.view.window?.makeKeyAndVisible()
+        }
         
-        let user = Auth.auth().currentUser
-        let UID = user?.uid
-        let Uname =  "لمياء"
-        let AData = ["createdByID" : UID!,"createdByName" : Uname , "Description" : disc,"DateTime" : DateTime , "ActivityType": type, "NumOfParticipant":part,"location" :Locat ] as [String : Any]
-        
-        self.ref.child("Activity").childByAutoId().setValue(AData) { (error, snapshot) in if let error = error {
-            debugPrint("error adding post: \(String(describing: error))")
-        }}
-        
-     //   self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
-        
-    }
         func validatefields() {
         // all fields filled in
             if Name.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
                 typeL.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
                 ADescription.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            //    DateTime.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+                DateTime.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
                 participantLable.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  ||
                 Alocation.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-                let m = "الرجاء التأكد من أن جميع الحقول ممتلئة ."
-                let t = "عذرا "
-                Service.createAlertController(title: t ,message: m)
-            }
-            
-        }
-    }
-
+              
+            }}
+    }// END OF CLASS
+        
+        
+        
+        
+    
 extension CreateActivity : UIPickerViewDelegate , UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
       return  1
@@ -107,4 +192,5 @@ extension CreateActivity : UIPickerViewDelegate , UIPickerViewDataSource{
         typeimage.image = UIImage (named: Activitys[row])
     }
 }
+    
 

@@ -154,7 +154,7 @@ class UserSingupViewController: UIViewController  { //Start of class
     
     @IBAction func SignUpTapped(_ sender: Any){
         guard let imageSelected = self.image else {return}
-        guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
+             guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
      //   let uid = Auth.auth().currentUser?.uid
 
         // Validate the fields
@@ -188,7 +188,6 @@ class UserSingupViewController: UIViewController  { //Start of class
                 }
                 else {
                
-                  
                     // User was created successfully, now store the first name and last name
                     guard let user = result?.user else {return}
                     
