@@ -87,6 +87,8 @@
 		CE49454D26123346008DC32B /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49454C26123346008DC32B /* CircularTransition.swift */; };
 		CE494551261233FC008DC32B /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE494550261233FC008DC32B /* CreateRoomViewController.swift */; };
 		CE58002926261C6E002C3F1C /* RoomsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58002826261C6E002C3F1C /* RoomsCellTableViewCell.swift */; };
+		CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71EE2F2629371F00121E1C /* TRoomsViewController.swift */; };
+		CE71EE322629372900121E1C /* TRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71EE312629372900121E1C /* TRoomViewController.swift */; };
 		CEBE937D2602758F00A0E363 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE937C2602758F00A0E363 /* CalenderViewController.swift */; };
 		CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE9380260387A700A0E363 /* AddViewController.swift */; };
 		CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3478B260BFC7C004B3754 /* searchBViewController.swift */; };
@@ -189,6 +191,8 @@
 		CE49454C26123346008DC32B /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		CE494550261233FC008DC32B /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		CE58002826261C6E002C3F1C /* RoomsCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsCellTableViewCell.swift; sourceTree = "<group>"; };
+		CE71EE2F2629371F00121E1C /* TRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRoomsViewController.swift; sourceTree = "<group>"; };
+		CE71EE312629372900121E1C /* TRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRoomViewController.swift; sourceTree = "<group>"; };
 		CEBE937C2602758F00A0E363 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		CEBE9380260387A700A0E363 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CEC3478B260BFC7C004B3754 /* searchBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBViewController.swift; sourceTree = "<group>"; };
@@ -365,10 +369,10 @@
 				94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */,
 				94D4604925E3E528009F31A6 /* NotificationViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
-				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
+				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
 				23104215261B323B006B2EE4 /* Game */,
 				3FF3369E2616E10E00A905EF /* Userprofile */,
 				CEC34787260BF25C004B3754 /* search user-trainer */,
@@ -376,7 +380,6 @@
 				23DAC3AC260BB2DB000DB8AB /* Challenges */,
 				23DAC3A6260BB22F000DB8AB /* Timeline */,
 				3FA49326260B613C0052A1BD /* Admin */,
-				CE71EE2B2629340300121E1C /* Private chat */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
 				3FF335BE2614DD1400A905EF /* Trainer */,
 				940F4B9425E55A6800508368 /* locations.geojson */,
@@ -432,12 +435,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE71EE2B2629340300121E1C /* Private chat */ = {
+		CE71EE2E2629370000121E1C /* RoomsU */ = {
 			isa = PBXGroup;
 			children = (
+				CED6033825F41DB400C4ACE4 /* RoomViewController.swift */,
+				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
 			);
-			name = "Private chat";
-			path = ../..;
+			path = RoomsU;
 			sourceTree = "<group>";
 		};
 		CEAA4A57261E1A080016490B /* RoomsT */ = {
@@ -445,6 +449,8 @@
 			children = (
 				CE494550261233FC008DC32B /* CreateRoomViewController.swift */,
 				CE49454C26123346008DC32B /* CircularTransition.swift */,
+				CE71EE2F2629371F00121E1C /* TRoomsViewController.swift */,
+				CE71EE312629372900121E1C /* TRoomViewController.swift */,
 			);
 			path = RoomsT;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				CED6033325F41ABE00C4ACE4 /* Room.swift */,
+				CED6034125F4353E00C4ACE4 /* ChatCell.swift */,
 				CED6034425F43C5E00C4ACE4 /* Messages.swift */,
 				CE58002826261C6E002C3F1C /* RoomsCellTableViewCell.swift */,
 			);
@@ -503,9 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAA4A57261E1A080016490B /* RoomsT */,
-				CED6033825F41DB400C4ACE4 /* RoomViewController.swift */,
-				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
-				CED6034125F4353E00C4ACE4 /* ChatCell.swift */,
+				CE71EE2E2629370000121E1C /* RoomsU */,
 				CEBE9383260387D300A0E363 /* calender */,
 				CED6033225F41A6800C4ACE4 /* models "rooms" */,
 			);
@@ -668,6 +673,7 @@
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
+				CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
 				3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */,
 				3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */,
@@ -693,6 +699,7 @@
 				3F2D100F261DF2510029D96C /* TactivitiTable.swift in Sources */,
 				3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */,
 				236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */,
+				CE71EE322629372900121E1C /* TRoomViewController.swift in Sources */,
 				3FF3367E26164B3700A905EF /* UserPostsViewController.swift in Sources */,
 				9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */,
 				940F4C36260227B600508368 /* createChallenge.swift in Sources */,

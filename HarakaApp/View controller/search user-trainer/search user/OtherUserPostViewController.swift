@@ -45,8 +45,8 @@ class OtherUserPostViewController: UITableViewController {
                    
                     let id = String(snapshot.key)
                   
-                let postUser = User(u: usern, p: UIImage(systemName: "figure"))
-                let newPost = Post(createdBy: postUser, timeAgo: times, captionUI: cap, numOfLikesUI: nol, numOfCommentsUI: noc, postID: id, liked:false, uid: UID)
+                let postUser = User()
+                let newPost = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked:false, uid: UID)
                 self.checkLike(post: newPost)
              //       postArray.insert(newPost, at: indx)
                 

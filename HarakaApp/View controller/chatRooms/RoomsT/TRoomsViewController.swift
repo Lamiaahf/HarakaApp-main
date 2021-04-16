@@ -1,7 +1,8 @@
 //
-//  RoomsViewController.swift
+//  TRoomsViewController.swift
 //  HarakaApp
 //
+
 //  Created by ohoud on 22/07/1442 AH.
 //
 
@@ -11,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-class RoomsViewController: UIViewController,  UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
+class TRoomsViewController: UIViewController,  UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
   
     
     var colors:[UIColor] = [
@@ -47,30 +48,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         self.RoomsTable.delegate = self
         self.RoomsTable.dataSource = self
         
-     /*   ref = Database.database(url:"https://haraka-73619-default-rtdb.firebaseio.com/").reference();        self.ref.child("rooms").getData(completion:{(error,snapshot)in
-            
-            if let error = error {print(error.localizedDescription)}
-            
-            else if (snapshot.exists()){ for child in snapshot.children.allObjects as! [DataSnapshot]{ guard let roomDict = child.value as?[String:Any] else {return}
-                
-                let name = roomDict["name"] as? String ?? ""
-                
-                let roomId = roomDict["roomId"] as? String ?? ""
-                
-                
-                let ownerId = roomDict["createrId"] as? String ?? ""
-                
-                
-                let r = Room(rId: roomId, rname: name, oId: ownerId)
-                
-                
-                self.rooms.append(r)
-                
-                self.RoomsTable.reloadData()
-}}
-            (snapshot.exists())
-        })
-        */
+
         
         
        self.observeRoom()
@@ -111,35 +89,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
             }}
         }
     }
-    
-    
-     /* func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let room = self.rooms[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell")!
-        cell.backgroundColor =  #colorLiteral(red: 0.9253895879, green: 0.9255481362, blue: 0.9253795743, alpha: 0.5479452055)
-        
-        cell.layer.cornerRadius = 30
-        cell.layer.borderWidth = 3
-        cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
-            cell.textLabel?.text = room.name
-              return cell
-    }*/
-  
-    
-   /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let room = self.rooms[indexPath.row]
-        let chatView = self.storyboard?.instantiateViewController(withIdentifier: "RoomViewController") as! RoomViewController
-        chatView.room = room
-        self.navigationController?.pushViewController(chatView, animated: true)
-    }*/
 
-  
-    
-    
-  /*  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.rooms.count
-    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -148,7 +98,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let room = self.rooms[indexPath.row]
-        let chatView = self.storyboard?.instantiateViewController(withIdentifier: "RoomViewController") as! RoomViewController
+        let chatView = self.storyboard?.instantiateViewController(withIdentifier: "TRoomViewController") as! TRoomViewController
         chatView.room = room
         self.navigationController?.pushViewController(chatView, animated: true)
     }
