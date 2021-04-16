@@ -614,9 +614,8 @@
                                     <constraint firstItem="LQp-6G-yh2" firstAttribute="top" secondItem="6qx-2i-7PW" secondAttribute="top" constant="8" id="j9C-x3-2wq"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تسجيل موعد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-hI-LqA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل موعد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-hI-LqA">
                                 <rect key="frame" x="151" y="272" width="88" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -626,7 +625,11 @@
                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6qx-2i-7PW" firstAttribute="centerY" secondItem="HGL-0o-3hY" secondAttribute="centerY" id="0dT-dn-n0o"/>
+                            <constraint firstItem="tXl-hI-LqA" firstAttribute="top" secondItem="a9K-4y-XcY" secondAttribute="top" constant="272" id="CNp-9e-hdh"/>
                             <constraint firstItem="6qx-2i-7PW" firstAttribute="centerX" secondItem="HGL-0o-3hY" secondAttribute="centerX" id="Db1-Fv-Cqh"/>
+                            <constraint firstItem="a9K-4y-XcY" firstAttribute="trailing" secondItem="tXl-hI-LqA" secondAttribute="trailing" constant="151" id="VUA-Vh-pl1"/>
+                            <constraint firstItem="a9K-4y-XcY" firstAttribute="bottom" secondItem="tXl-hI-LqA" secondAttribute="bottom" constant="463" id="lWz-N5-rS1"/>
+                            <constraint firstItem="tXl-hI-LqA" firstAttribute="leading" secondItem="a9K-4y-XcY" secondAttribute="leading" constant="151" id="prh-Qk-dCt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bbg-Tg-hHt"/>
@@ -743,7 +746,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="qn9-CP-RVE"/>
                                         </constraints>
-                                        <state key="normal" title="ادسل">
+                                        <state key="normal" title="ارسل">
                                             <color key="titleColor" red="0.39745837449999999" green="0.57975798850000004" blue="0.64694875480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -864,93 +867,6 @@
             </objects>
             <point key="canvasLocation" x="958.46153846153845" y="-9.24170616113744"/>
         </scene>
-        <!--Create Room View Controller-->
-        <scene sceneID="b3Q-wm-OHh">
-            <objects>
-                <viewController id="fjw-hd-0W4" customClass="CreateRoomViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Yp-HF-L4v">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLv-r8-PUu">
-                                <rect key="frame" x="30" y="299" width="330" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم المجموعة" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="lQx-q6-jMc">
-                                        <rect key="frame" x="-10" y="0.0" width="340" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiD-7H-jEv">
-                                <rect key="frame" x="300" y="100" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" red="0.97663766149999998" green="0.57850497960000002" blue="0.13437518479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissSecondVC:" destination="fjw-hd-0W4" eventType="touchUpInside" id="YEZ-3w-Br1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yT-HV-Ddf">
-                                <rect key="frame" x="100" y="445" width="190" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.89787995819999999" green="0.89772564170000002" blue="0.91833287480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="انشاء">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCreateNewRoom:" destination="2sC-la-WC5" eventType="touchUpInside" id="S49-1I-3Jn"/>
-                                    <action selector="didPressCreateNewRoom:" destination="fjw-hd-0W4" eventType="touchUpInside" id="Vyg-bX-2f6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHR-mc-ep3">
-                                <rect key="frame" x="30" y="361" width="330" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.89787995819999999" green="0.89772564170000002" blue="0.91833287480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="نوع الفعالية">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCreateNewRoom:" destination="2sC-la-WC5" eventType="touchUpInside" id="BpN-oa-5Uv"/>
-                                    <action selector="didPressCreateNewRoom:" destination="fjw-hd-0W4" eventType="touchUpInside" id="rtM-Wa-YZD"/>
-                                    <action selector="topChooseMenuItem:" destination="fjw-hd-0W4" eventType="touchUpInside" id="2s1-G0-nhw"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOm-00-qBN">
-                                <rect key="frame" x="80" y="123" width="230" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwB-n1-Hv8">
-                                        <rect key="frame" x="20" y="20" width="190" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="BJC-xp-HrR"/>
-                        <color key="backgroundColor" red="0.39745837449999999" green="0.57975798850000004" blue="0.64694875480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="THx-5f-fwX"/>
-                    <connections>
-                        <outlet property="EImage" destination="YwB-n1-Hv8" id="hA8-Gc-YAm"/>
-                        <outlet property="dismissButton" destination="EiD-7H-jEv" id="9Cv-IK-sFn"/>
-                        <outlet property="newRoomTextField" destination="lQx-q6-jMc" id="yGH-Fh-shN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SmW-7M-31l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-725" y="701"/>
-        </scene>
         <!--Rooms View Controller-->
         <scene sceneID="edD-ad-fjg">
             <objects>
@@ -959,18 +875,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhR-VO-usz">
-                                <rect key="frame" x="300" y="100" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.39745837449999999" green="0.57975798850000004" blue="0.64694875480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fjw-hd-0W4" kind="showDetail" id="LKY-02-RYv"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sot-39-Xtf" userLabel="Rooms Table">
                                 <rect key="frame" x="57" y="158" width="277" height="574"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1007,7 +911,6 @@
                     <navigationItem key="navigationItem" id="Tzw-gv-Z3w"/>
                     <connections>
                         <outlet property="RoomsTable" destination="Sot-39-Xtf" id="VqK-6T-n9O"/>
-                        <outlet property="goCreateButton" destination="DhR-VO-usz" id="ULs-aS-xgL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6jn-LK-Rxn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2163,7 +2066,6 @@
                 <navigationController id="h4Y-fT-wOB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="5SV-BG-dgZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="68h-Jy-nHZ">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2925,7 +2827,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ixx-7i-zRn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7309.2307692307686" y="48.341232227488149"/>
+            <point key="canvasLocation" x="9315" y="701"/>
         </scene>
         <!--User Posts View Controller-->
         <scene sceneID="kay-9E-r5a">
@@ -3019,7 +2921,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yM-0k-gUg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7996.1538461538457" y="632.70142180094786"/>
+            <point key="canvasLocation" x="7959" y="525"/>
         </scene>
         <!--AdminViewController-->
         <scene sceneID="eom-pH-IVh">
@@ -3863,7 +3765,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubq-ku-6Cm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7245.3846153846152" y="633.41232227488149"/>
+            <point key="canvasLocation" x="6599" y="996"/>
         </scene>
         <!--Game Rooms View Controller-->
         <scene sceneID="ebU-2h-bJ5">
@@ -3958,10 +3860,10 @@
             </objects>
             <point key="canvasLocation" x="7307.6923076923076" y="750.71090047393363"/>
         </scene>
-        <!--Create Game View Controller-->
+        <!--CreateGameViewController-->
         <scene sceneID="dBh-hK-CaZ">
             <objects>
-                <viewController id="PHl-VV-pUp" customClass="CreateGameViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateGameViewController" title="CreateGameViewController" id="PHl-VV-pUp" customClass="CreateGameViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="57J-ap-XF4">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4041,7 +3943,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKT-CP-G6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8161.538461538461" y="750.71090047393363"/>
+            <point key="canvasLocation" x="8675" y="701"/>
         </scene>
         <!--WorkoutViewController-->
         <scene sceneID="TTk-H9-4Xa">
@@ -4122,7 +4024,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqb-2m-apa" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8162" y="48"/>
+            <point key="canvasLocation" x="9069" y="12"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="C7e-UP-h2x">
@@ -4215,7 +4117,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="9v0-65-q5x"/>
                                         </constraints>
-                                        <state key="normal" title="ادسل">
+                                        <state key="normal" title="ارسل">
                                             <color key="titleColor" red="0.39745837449999999" green="0.57975798850000004" blue="0.64694875480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>

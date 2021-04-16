@@ -197,30 +197,6 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
     
     
 
-// ui
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    let secondVC = segue.destination as! CreateRoomViewController
-    secondVC.transitioningDelegate = self
-    secondVC.modalPresentationStyle = .custom
-}
-
-
-func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    transition.transitionMode = .present
-    transition.startingPoint = goCreateButton.center
-    transition.circleColor = goCreateButton.backgroundColor!
-    
-    return transition
-}
-
-func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    transition.transitionMode = .dismiss
-    transition.startingPoint = goCreateButton.center
-    transition.circleColor = goCreateButton.backgroundColor!
-    
-    return transition
-}
-
 
 
 }
