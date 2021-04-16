@@ -165,7 +165,8 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
             // move back to previous controller
             let gameView = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
             gameView.initializeGame(g: currentGame!)
-            self.navigationController?.pushViewController(gameView, animated: true)
+            self.navigationController?.popViewController(animated: true)
+        //    self.navigationController?.pushViewController(gameView, animated: true)
         }
 
         
