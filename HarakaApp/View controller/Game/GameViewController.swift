@@ -12,13 +12,12 @@ import FirebaseAuth
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var playersBoard: UITableView!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var joinButton: UIButton!
     
     var currentGame: Game?
     var playerCount: Int?
     var participants: [Player]?
     
+    @IBOutlet weak var joinButton: UIButton!
     let ref: DatabaseReference! = Database.database().reference()
     
     override func viewDidLoad() {
@@ -31,53 +30,16 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         playersBoard.rowHeight = UITableView.automaticDimension
         
         //joinButton.alpha = 0
-        messageLabel.alpha = 0
         self.joinButton.setTitle("انتهت اللعبة", for: .disabled)
         
         playerCount = 0
         participants = []
-        checkCount()
-   //     fetchPlayers()  << Turn this into updateResults if above works
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         fetchPlayers()
     }
     
     func initializeGame(g: Game){
         currentGame = g
         
-    }
-    
-    func checkCount(){
-        
-        ref.child("GameParticipants").child((currentGame?.gID)!).getData(completion: {
-            (error, snapshot) in
-            if let error = error {return}
-            
-            if snapshot.children.allObjects.count == self.currentGame?.playerCount {
-                self.joinButton.isEnabled = false
-            }
-            else{
-                self.joinButton.alpha = 1
-                for child in snapshot.children.allObjects as! [DataSnapshot]{
-                    
-                    guard let gameDict = child.value as? [String:Any] else { return }
-                    
-                    let pid = child.key
-                    let score = gameDict["Result"] as? Double
-                    
-                    DBManager.getUser(for: pid){
-                        user in
-                        let username = user.username
-                        let player = Player(username: username!, uid: pid, score: score!)
-                        self.participants?.append(player)
-                        self.playersBoard.reloadData()
-                    }
-                    
-                }
-            }
-        })
     }
     
     func fetchPlayers(){
@@ -126,10 +88,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             for p in participants!{
                 if p.uid == uid {
                     exists = true
-                    joinButton.alpha = 0
-                    messageLabel.text = "!انتهى دورك"
-                    messageLabel.alpha = 1
-                    
                     break
                 }
             }
@@ -144,7 +102,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
             let ARView = self.storyboard?.instantiateViewController(withIdentifier: "WorkoutViewController") as! WorkoutViewController
             ARView.initializeGame(g: self.currentGame!)
             self.navigationController?.pushViewController(ARView, animated: true)
-        //    self.navigationController?.show(ARView, sender: self)
            
         }
     }
