@@ -71,7 +71,8 @@ class OtherUserPosts: UITableViewCell {
         if(!post.liked!){
             ref.child("PostLikes").child(id).childByAutoId().setValue([uid:true])
             post.liked = true
-            post.numOfLikes = post.numOfLikesUI!+1
+
+            post.numOfLikes = post.numOfLikes!+1
 
         }else{
             ref.child("PostLikes").child(id).queryOrdered(byChild:uid).queryEqual(toValue:true).ref.removeValue()
