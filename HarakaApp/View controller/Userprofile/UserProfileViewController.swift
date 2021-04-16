@@ -22,20 +22,19 @@ class UserProfileViewController:  UIViewController {
     @IBOutlet weak var Username: UILabel!
     @IBOutlet weak var Name: UILabel!
     
-    @IBOutlet weak var Posts: UIView!
-    @IBOutlet weak var Trainers: UIView!
-    @IBOutlet weak var Users: UIView!
+    @IBOutlet weak var PostsV: UIView!
+    @IBOutlet weak var FollowersV: UIView!
+    @IBOutlet weak var FollowingV: UIView!
 
     @IBOutlet weak var post: UIButton!
-    
-    @IBOutlet weak var friends: UIButton!
-    @IBOutlet weak var trainer: UIButton!
+    @IBOutlet weak var Following: UIButton!
+    @IBOutlet weak var Followers: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Utilities.styleFilledButton(post)
-        Utilities.styleFilledButton(friends)
-        Utilities.styleFilledButton(trainer)
+        Utilities.styleFilledButton(Following)
+        Utilities.styleFilledButton(Followers)
         getUserInfo()
         self.loggedInUser = Auth.auth().currentUser
 
@@ -64,9 +63,9 @@ class UserProfileViewController:  UIViewController {
     
      func getUserInfo() {
     
-    //func getUserInfo() {
-        if Auth.auth().currentUser != nil {
-            guard let uid = Auth.auth().currentUser?.uid else {print ("nil"); return}
+        guard let uid = Auth.auth().currentUser?.uid else {print ("nil"); return}
+        if uid != nil {
+         
 
             databaseRef.child("users").child(uid).observe(.value , with : {snapshot
                 in
@@ -83,7 +82,7 @@ class UserProfileViewController:  UIViewController {
                         return
                     }
                     self.Userimg.image = UIImage(data: imageData)
-                    self.setupUserimg()
+                  //  self.setupUserimg()
 
                 })
                 
@@ -92,28 +91,29 @@ class UserProfileViewController:  UIViewController {
    
     @IBAction func showPosts(_ sender: Any) {
     
-       UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 1
-            self.Users.alpha = 0
-                    self.Trainers.alpha = 0 }
+       UIView.animate(withDuration: 0.5, animations:{self.PostsV.alpha = 1
+                 self.FollowingV.alpha = 0
+                    self.FollowersV.alpha = 0 }
        )}
     
-    @IBAction func ShowFriends(_ sender: Any) {
+    @IBAction func ShowFollowing(_ sender: Any) {
   
     
-            do { UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 0
-                            self.Users.alpha = 1
-                            self.Trainers.alpha = 0
+            do { UIView.animate(withDuration: 0.5, animations:{self.PostsV.alpha = 0
+                            self.FollowingV.alpha = 1
+                            self.FollowersV.alpha = 0
     })
             }}
+    @IBAction func showFollowers(_ sender: Any) {
+
     
-    /*
-            do {UIView.animate(withDuration: 0.5, animations:{self.Posts.alpha = 0
-                       self.Users.alpha = 0
-                       self.Trainers.alpha = 1
+            do {UIView.animate(withDuration: 0.5, animations:{self.PostsV.alpha = 0
+                       self.FollowingV.alpha = 0
+                       self.FollowersV.alpha = 1
 })}
-    }}
+    }
     
-    */
+    
     
     
   //  Pass contextual data along with the segue
@@ -121,3 +121,7 @@ class UserProfileViewController:  UIViewController {
     
  
 }// End Class
+ 
+
+
+

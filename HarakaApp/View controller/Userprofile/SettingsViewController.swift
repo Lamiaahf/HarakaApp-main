@@ -10,7 +10,7 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 
-class SettingsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SettingsViewController: UIViewController, UINavigationControllerDelegate {
     
     var databaseRef: DatabaseReference!
     var storageRef: StorageReference!
@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
         setUpElements()
         loadProfileData()
-        saveChanges()
+      //  saveChanges()
 
 
         // Do any additional setup after loading the view.
@@ -49,7 +49,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
 
     @IBAction func Edit(_ sender: Any) {
                updateUsersProfile()
-           
+    
     }
     
     @IBAction func Logout(_ sender: Any) {
@@ -58,21 +58,6 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
         present(LOGINViewController, animated: true, completion: nil)
     }
     
-    @IBAction func getPhotoFromLibrary(_ sender: Any) {
-            //create instance of Image picker controller
-            let picker = UIImagePickerController()
-            //set delegate
-            picker.delegate = self
-            //set details
-                //is the picture going to be editable(zoom)?
-            picker.allowsEditing = false
-                //what is the source type
-            picker.sourceType = .photoLibrary
-                //set the media type
-            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            //show photoLibrary
-            present(picker, animated: true, completion: nil)
-        }
 
         func updateUsersProfile(){
           //check to see if the user is logged in
@@ -82,7 +67,7 @@ class SettingsViewController: UIViewController, UIImagePickerControllerDelegate,
                        
                          
                 guard let newNeme  = self.NameSett.text else {return}
-                              //  let newValuesForProfile =
+                        //  let newValuesForProfile =
                                   //  [NameSett : newNeme]
                                 
                                 //update the firebase database for that user

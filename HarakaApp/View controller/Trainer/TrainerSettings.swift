@@ -11,13 +11,12 @@ import FirebaseStorage
 import FirebaseDatabase
 import FirebaseAuth
 
-class TrainerSettings: UIViewController , UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class TrainerSettings: UIViewController, UINavigationControllerDelegate{
     
     var databaseRef: DatabaseReference!
     var storageRef: StorageReference!
     
     @IBOutlet weak var Timge: UIImageView!
-    @IBOutlet weak var Taap: UIButton!
     
     @IBOutlet weak var NameSett: UITextField!
     @IBOutlet weak var Age: UITextField!
@@ -58,21 +57,6 @@ class TrainerSettings: UIViewController , UIImagePickerControllerDelegate, UINav
         present(LOGINViewController, animated: true, completion: nil)
     }
     
-    @IBAction func getPhotoFromLibrary(_ sender: Any) {
-            //create instance of Image picker controller
-            let picker = UIImagePickerController()
-            //set delegate
-            picker.delegate = self
-            //set details
-                //is the picture going to be editable(zoom)?
-            picker.allowsEditing = false
-                //what is the source type
-            picker.sourceType = .photoLibrary
-                //set the media type
-            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-            //show photoLibrary
-            present(picker, animated: true, completion: nil)
-        }
 
         func updateUsersProfile(){
           //check to see if the user is logged in
@@ -102,7 +86,7 @@ class TrainerSettings: UIViewController , UIImagePickerControllerDelegate, UINav
         func loadProfileData(){
                 //if the user is logged in get the profile data
             if let userID = Auth.auth().currentUser?.uid {
-                    databaseRef.child("users").child(userID).observe(.value, with: { (snapshot) in
+                databaseRef.child("Trainers").child("Approved").child(userID).observe(.value, with: { (snapshot) in
                         
                         //create a dictionary of users profile data
                         let values = snapshot.value as? NSDictionary

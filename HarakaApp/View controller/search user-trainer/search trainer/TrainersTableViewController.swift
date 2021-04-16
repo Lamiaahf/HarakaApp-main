@@ -29,9 +29,9 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
          searchTController.searchResultsUpdater = self
-          searchTController.obscuresBackgroundDuringPresentation = false
-          definesPresentationContext = true
-          tableView.tableHeaderView = searchTController.searchBar
+         searchTController.obscuresBackgroundDuringPresentation = false
+         definesPresentationContext = true
+         tableView.tableHeaderView = searchTController.searchBar
 
 
         databaseRef.child("Trainers").child("Approved").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in

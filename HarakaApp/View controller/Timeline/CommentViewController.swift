@@ -85,6 +85,7 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         ref.child("Comments").child(post.postID!).observe(.childAdded){
         (snapshot) in
+
             if snapshot.exists(){
                 if let commentDict = snapshot.value as? [String: Any]{
                     if let uid = commentDict["uid"] as? String {

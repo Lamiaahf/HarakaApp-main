@@ -154,7 +154,7 @@ class UserSingupViewController: UIViewController  { //Start of class
     
     @IBAction func SignUpTapped(_ sender: Any){
         guard let imageSelected = self.image else {return}
-        guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
+             guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
      //   let uid = Auth.auth().currentUser?.uid
 
         // Validate the fields
@@ -188,7 +188,6 @@ class UserSingupViewController: UIViewController  { //Start of class
                 }
                 else {
                
-                  
                     // User was created successfully, now store the first name and last name
                     guard let user = result?.user else {return}
                     
@@ -205,7 +204,7 @@ class UserSingupViewController: UIViewController  { //Start of class
                         StorageProfilrRef.downloadURL(completion: {(url , error ) in
                         if let metaImageUrl = url?.absoluteString {
 
-                            let db = ["Name":Name, "Username":"@"+Username, "Email":Email,"Password":Password,"DOB":DOB ,"ProfilePic": metaImageUrl]
+                            let db = ["Name":Name, "Username":"@"+Username, "Email":Email,"DOB":DOB ,"ProfilePic": metaImageUrl]
                             ref.child("users").child(uid!).setValue(db){ _,_  in }
                         } })}
                     self.transitionToHome()
