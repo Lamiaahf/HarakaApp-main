@@ -58,10 +58,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wDX-lm-0z8">
-                                <rect key="frame" x="47" y="209" width="296.66666666666669" height="340"/>
+                                <rect key="frame" x="47" y="209" width="310" height="340"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-ap-p8X">
-                                        <rect key="frame" x="0.0" y="0.0" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
                                         <color key="tintColor" red="0.85233160620000004" green="0.85233160620000004" blue="0.85233160620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0Dr-zM-aq0"/>
@@ -71,7 +71,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الرقم السري" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTU-mf-V8y">
-                                        <rect key="frame" x="0.0" y="60" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="310" height="40"/>
                                         <color key="tintColor" red="0.85233160620000004" green="0.85233160620000004" blue="0.85233160620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ic6-A8-LrX"/>
@@ -81,7 +81,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoS-m0-9Ec">
-                                        <rect key="frame" x="0.0" y="120" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="120" width="310" height="40"/>
                                         <state key="normal" title="هل نسيت كلمة المرور ؟">
                                             <color key="titleColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -90,7 +90,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smP-oM-JGe">
-                                        <rect key="frame" x="0.0" y="180" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="180" width="310" height="40"/>
                                         <color key="backgroundColor" red="0.40191826219999999" green="0.57196450229999996" blue="0.63496923449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="iE7-wl-aFv"/>
@@ -103,13 +103,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myk-6q-cPc">
-                                        <rect key="frame" x="0.0" y="240" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="240" width="310" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tF-W6-Prs">
-                                        <rect key="frame" x="0.0" y="300" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="300" width="310" height="40"/>
                                         <state key="normal" title="ليس لديك حساب؟ سجل الان ">
                                             <color key="titleColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -867,7 +867,98 @@
             </objects>
             <point key="canvasLocation" x="958.46153846153845" y="-9.24170616113744"/>
         </scene>
+
         <!--المجموعات-->
+
+        <!--Create Room View Controller-->
+        <scene sceneID="b3Q-wm-OHh">
+            <objects>
+                <viewController id="fjw-hd-0W4" customClass="CreateRoomViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Yp-HF-L4v">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLv-r8-PUu">
+                                <rect key="frame" x="30" y="299" width="330" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم المجموعة" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="lQx-q6-jMc">
+                                        <rect key="frame" x="-10" y="0.0" width="340" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiD-7H-jEv">
+                                <rect key="frame" x="300" y="100" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.97663766149999998" green="0.57850497960000002" blue="0.13437518479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissSecondVC:" destination="fjw-hd-0W4" eventType="touchUpInside" id="YEZ-3w-Br1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yT-HV-Ddf">
+                                <rect key="frame" x="100" y="445" width="190" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89787995819999999" green="0.89772564170000002" blue="0.91833287480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="انشاء">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCreateNewRoom:" destination="2sC-la-WC5" eventType="touchUpInside" id="S49-1I-3Jn"/>
+                                    <action selector="didPressCreateNewRoom:" destination="fjw-hd-0W4" eventType="touchUpInside" id="Vyg-bX-2f6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHR-mc-ep3">
+                                <rect key="frame" x="30" y="361" width="330" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.89787995819999999" green="0.89772564170000002" blue="0.91833287480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="نوع الفعالية">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressCreateNewRoom:" destination="2sC-la-WC5" eventType="touchUpInside" id="BpN-oa-5Uv"/>
+                                    <action selector="didPressCreateNewRoom:" destination="fjw-hd-0W4" eventType="touchUpInside" id="rtM-Wa-YZD"/>
+                                    <action selector="topChooseMenuItem:" destination="fjw-hd-0W4" eventType="touchUpInside" id="2s1-G0-nhw"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOm-00-qBN">
+                                <rect key="frame" x="80" y="123" width="230" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwB-n1-Hv8">
+                                        <rect key="frame" x="20" y="20" width="190" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BJC-xp-HrR"/>
+                        <color key="backgroundColor" red="0.39745837449999999" green="0.57975798850000004" blue="0.64694875480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="THx-5f-fwX"/>
+                    <connections>
+                        <outlet property="EImage" destination="YwB-n1-Hv8" id="hA8-Gc-YAm"/>
+                        <outlet property="dismissButton" destination="EiD-7H-jEv" id="9Cv-IK-sFn"/>
+                        <outlet property="newRoomTextField" destination="lQx-q6-jMc" id="yGH-Fh-shN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SmW-7M-31l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="751"/>
+        </scene>
+        <!--Rooms View Controller-->
+
         <scene sceneID="edD-ad-fjg">
             <objects>
                 <viewController id="2sC-la-WC5" customClass="RoomsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1477,7 +1568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="52v-KU-ETx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="-1513"/>
+            <point key="canvasLocation" x="808" y="-1501"/>
         </scene>
         <!--انشاء فعالية-->
         <scene sceneID="zQ7-VX-m3J">
@@ -2517,6 +2608,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u7D-OR-8fM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140" y="700.94786729857822"/>
+        </scene>
+
+        <!--Navigation Controller-->
+        <scene sceneID="zdb-Xv-PQr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5O5-pP-F7C" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bc0-PR-mxd">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Kr0-0F-ZnU" kind="relationship" relationship="rootViewController" id="VaV-9A-eyP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CGU-z8-X55" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958.46153846153845" y="706.6350710900474"/>
         </scene>
         <!--SettingsView Controller-->
         <scene sceneID="WBQ-I1-haY">
@@ -4481,6 +4591,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Rba-Vm-eU6"/>
         <segue reference="0Gh-8D-NQl"/>
+        <segue reference="VaV-9A-eyP"/>
         <segue reference="pAM-Ja-N9h"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>

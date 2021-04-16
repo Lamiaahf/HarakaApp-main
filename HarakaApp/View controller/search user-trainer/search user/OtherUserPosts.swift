@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 class OtherUserPosts: UITableViewCell {
     
     @IBOutlet weak var timeAgoLabel: UILabel!
@@ -70,6 +71,7 @@ class OtherUserPosts: UITableViewCell {
         if(!post.liked!){
             ref.child("PostLikes").child(id).childByAutoId().setValue([uid:true])
             post.liked = true
+
             post.numOfLikes = post.numOfLikes!+1
 
         }else{
