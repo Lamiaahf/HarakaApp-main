@@ -12,31 +12,25 @@ class Post
 {
      var createdBy: User
      var timeAgo: String?
-
-    var timestamp: Date?
      var caption: String?
- //   var image: UIImage?
      var numOfLikes: Int?
      var numOfComments: Int?
-
-    
-//    var like: UIButton
- //   var comment: UIButton
      var UID :String?
      var postID: String?
      var liked: Bool?
     
+    
     init(createdBy: User, timeAgo: String?, caption: String?, numOfLikes: Int?, numOfComments: Int?, postID: String?, liked: Bool?, uid : String?){
         
         self.createdBy = createdBy
-        self.timeAgo = timeAgo
+        self.timeAgo = String(timeAgo![..<(timeAgo?.lastIndex(of: ":"))!])
         self.caption = caption
         self.numOfLikes = numOfLikes
         self.numOfComments = numOfComments
         self.postID = postID
         self.liked = liked
-
         self.UID = uid
+        
     }
     
     init(){

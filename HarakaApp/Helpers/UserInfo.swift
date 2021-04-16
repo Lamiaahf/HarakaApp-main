@@ -95,11 +95,11 @@ import FirebaseStorage
         self.profileImageURL = ppURL
         self.DOB = ""
         
-        /*
+        
         DBManager.getPic(for: self){
             image in
             self.profileImage = image
-        }*/
+        }
     }
     
      func getInfo(id: String){

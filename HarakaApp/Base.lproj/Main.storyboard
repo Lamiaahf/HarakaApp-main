@@ -701,9 +701,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVS-gq-1GH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="665" y="1423"/>
-
         </scene>
         <!--Room View Controller-->
         <scene sceneID="uab-jE-1dt">
@@ -1102,7 +1100,7 @@
                                         <constraint firstAttribute="bottom" secondItem="qmd-W4-zfF" secondAttribute="bottom" constant="40" id="zSg-tf-LAg"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <connections>
                                     <outlet property="captionLabel" destination="qmd-W4-zfF" id="lhK-QR-RFI"/>
                                     <outlet property="commentButton" destination="Gc0-wR-LUj" id="Lhp-60-Em7"/>
@@ -1130,9 +1128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdV-fN-Nuf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-
             <point key="canvasLocation" x="623" y="-9"/>
-
         </scene>
         <!--Challenge View Controller-->
         <scene sceneID="byM-49-thW">
@@ -1293,7 +1289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qq1-1l-84e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="940"/>
+            <point key="canvasLocation" x="665" y="753"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Y0o-Se-RzB">
@@ -2509,6 +2505,13 @@
                                     <action selector="joinGame:" destination="qPX-QS-Cr6" eventType="touchUpInside" id="Eec-pb-UMw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxN-KX-KIo">
+                                <rect key="frame" x="170" y="751" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bwg-0E-ORB"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -2516,6 +2519,7 @@
                     <navigationItem key="navigationItem" id="bUf-9v-dsQ"/>
                     <connections>
                         <outlet property="joinButton" destination="wLU-MT-0Qh" id="3xh-lo-EHG"/>
+                        <outlet property="messageLabel" destination="RxN-KX-KIo" id="vIo-ll-OhL"/>
                         <outlet property="playersBoard" destination="78H-AA-3Si" id="1Lu-82-cI9"/>
                     </connections>
                 </viewController>
@@ -3562,19 +3566,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdy-0C-vLv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="741"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efL-Uj-4Xg">
-                                        <rect key="frame" x="97" y="293" width="203" height="157.33333333333337"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efL-Uj-4Xg">
+                                        <rect key="frame" x="61" y="265" width="274" height="211"/>
                                         <color key="backgroundColor" red="0.67190520519999997" green="0.72656349760000005" blue="0.78701252499999996" alpha="0.38013698629999998" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انقر لتبدأ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aB6-rK-6Ox">
-                                        <rect key="frame" x="156" y="356" width="85.666666666666686" height="31.333333333333314"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="انقر لتبدأ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aB6-rK-6Ox">
+                                        <rect key="frame" x="132" y="333" width="133" height="75"/>
                                         <color key="tintColor" red="0.1797559031" green="0.29840682829999998" blue="0.69065276019999999" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <color key="textColor" red="0.1797559031" green="0.29840682829999998" blue="0.69065276019999999" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qA-wF-2jA">
-                                        <rect key="frame" x="21" y="673" width="54" height="47"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qA-wF-2jA">
+                                        <rect key="frame" x="171" y="584" width="54" height="47"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="47" id="hHM-Fg-uVq"/>
                                         </constraints>
@@ -3627,7 +3631,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqb-2m-apa" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8162" y="48"/>
+            <point key="canvasLocation" x="8161.538461538461" y="47.630331753554501"/>
         </scene>
     </scenes>
     <designables>
@@ -3637,22 +3641,17 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="tEi-oZ-rgX"/>
-
         <segue reference="LFd-Xh-5l6"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>
         <image name="1.circle" catalog="system" width="128" height="121"/>
         <image name="568635131536669843-129" width="42.666667938232422" height="42.666667938232422"/>
-        <image name="Bike" width="53.333332061767578" height="53.333332061767578"/>
-        <image name="Flag" width="40" height="40"/>
-
         <image name="bell.badge" catalog="system" width="128" height="124"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="icons8-barbell-100" width="100" height="100"/>
@@ -3663,9 +3662,7 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="message" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="plus.square.on.square" catalog="system" width="128" height="113"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
         <image name="withBackground" width="5000" height="5000"/>
         <image name="withBackground-1" width="2500" height="2500"/>
