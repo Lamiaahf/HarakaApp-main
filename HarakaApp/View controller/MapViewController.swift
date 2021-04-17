@@ -14,7 +14,7 @@ class MapViewController: UIViewController , TabItem{
   @IBOutlet private var mapView: MKMapView!
     private var places: [Place] = []
    // tab bar
-    var tabImage2: UIImage? {
+    var tabImage: UIImage? {
       return UIImage(named: " 568635131536669843-129")
     }
       

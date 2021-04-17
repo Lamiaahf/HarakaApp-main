@@ -13,8 +13,8 @@ import AMTabView
 class searchBViewController: UIViewController , TabItem {
     
     //tab bar
-    var tabImage3: UIImage? {
-      return UIImage(named: "magnifyingglass")
+    var tabImage: UIImage? {
+      return UIImage(systemName: "magnifyingglass")
     }
     
 

@@ -219,7 +219,7 @@ class UserSingupViewController: UIViewController  { //Start of class
     
     func transitionToHome() {
         
-        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? MyTabBarCtrl
+        let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? TabBarViewController
         
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()

@@ -11,8 +11,8 @@ import AMTabView
 class HomePageViewController: UIViewController , TabItem{
     
     // tab bar and UI ohoud
-    var tabImage1: UIImage? {
-      return UIImage(named: "homekit")
+    var tabImage: UIImage? {
+      return UIImage(systemName: "homekit")
     }
     
     @IBOutlet var activitiesButton: UIButton!

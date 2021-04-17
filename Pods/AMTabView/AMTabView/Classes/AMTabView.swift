@@ -279,7 +279,7 @@ public class AMTabView: UIView {
   }
 
   private func animateTintColorChangingAndMoveY() {
-    UIView.animate(withDuration: AMTabView.settings.changeTinitColorAnimation) {
+    UIView.animate(withDuration: AMTabView.settings.changeTinitColorAnimation) { [self] in
       self.imagesLayers
         .enumerated()
         .filter({ $0.offset != Int(self.selectedTabIndex) })
@@ -287,8 +287,9 @@ public class AMTabView: UIView {
           $0.element.backgroundColor = AMTabView.settings.unSelectedTabTintColor.cgColor
           $0.element.frame.origin.y = (self.bounds.height / 2) - (self.iconSize / 2)
         })
-
+      
       let selectedTabButton = self.imagesLayers[Int(self.selectedTabIndex)]
+        
       selectedTabButton.backgroundColor = AMTabView.settings.selectedTabTintColor.cgColor
       selectedTabButton.frame.origin.y = -(selectedTabButton.frame.height / 8)
     }
@@ -318,7 +319,7 @@ public class TabSettings {
 
   // MARK: - Colors
 
-  public var ballColor = #colorLiteral(red: 0.7529411765, green: 0.4470588235, blue: 0.5960784314, alpha: 1)
+  public var ballColor = #colorLiteral(red: 0.4019182622, green: 0.5719645023, blue: 0.6349692345, alpha: 1)
   public var tabColor = #colorLiteral(red: 0.9960784314, green: 0.9960784314, blue: 0.9960784314, alpha: 1)
   public var selectedTabTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
   public var unSelectedTabTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)

@@ -1221,7 +1221,7 @@
         <!--Map View Controller-->
         <scene sceneID="erJ-F9-vZF">
             <objects>
-                <viewController id="TXI-Li-kbp" customClass="MapViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="TXI-Li-kbp" customClass="MapViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XN3-1M-XGa">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1375,7 +1375,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="z1J-SI-CNI">
             <objects>
-                <viewController id="qGl-sU-ash" customClass="TabBarViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UHomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qGl-sU-ash" customClass="TabBarViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L1D-z9-jCI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1827,7 +1827,7 @@
         <!--الصفحة الرئيسية-->
         <scene sceneID="LKE-zq-foh">
             <objects>
-                <viewController id="KNd-jX-g4s" customClass="HomePageViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewController" id="KNd-jX-g4s" customClass="HomePageViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5dl-nK-aNg">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2691,7 +2691,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="hkx-2K-7Y9">
             <objects>
-                <viewController id="XVO-3o-Oui" customClass="UserProfileViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="XVO-3o-Oui" customClass="UserProfileViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xsJ-xK-emu">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3278,7 +3278,7 @@
         <!--searchBViewController-->
         <scene sceneID="h6j-Ld-1XG">
             <objects>
-                <viewController id="z3d-6E-Adm" userLabel="searchBViewController" customClass="searchBViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchBViewController" id="z3d-6E-Adm" userLabel="searchBViewController" customClass="searchBViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g0M-Jt-ucI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

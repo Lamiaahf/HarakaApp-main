@@ -35,11 +35,8 @@ class TabBarViewController: AMTabsViewController {
       UPVC
     ]
   }
-
-  override func tabDidSelectAt(index: Int) {
-    super.tabDidSelectAt(index: index)
     
-  }
+
 }
 
 

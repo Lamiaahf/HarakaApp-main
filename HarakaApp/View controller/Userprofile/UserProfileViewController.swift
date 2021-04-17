@@ -14,8 +14,8 @@ import AMTabView
 class UserProfileViewController:  UIViewController , TabItem {
      
     //tab bar
-    var tabImage4: UIImage? {
-      return UIImage(named: "person")
+    var tabImage: UIImage? {
+      return UIImage(systemName: "person")
     }
     
     let storageRef = Storage.storage().reference()
