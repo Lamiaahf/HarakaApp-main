@@ -12,13 +12,14 @@ import FirebaseAuth
 class GameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var playersBoard: UITableView!
+    @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var messageLabel: UILabel!
+    
+    let ref: DatabaseReference! = Database.database().reference()
     
     var currentGame: Game?
     var playerCount: Int?
     var participants: [Player]?
-    
-    @IBOutlet weak var joinButton: UIButton!
-    let ref: DatabaseReference! = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +31,13 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         playersBoard.rowHeight = UITableView.automaticDimension
         
         //joinButton.alpha = 0
-        self.joinButton.setTitle("انتهت اللعبة", for: .disabled)
+        joinButton.isEnabled = false
+        messageLabel.alpha = 0
         
         playerCount = 0
         participants = []
-        fetchPlayers()
+        checkPlayers()
+   //     fetchPlayers()
     }
     
     func initializeGame(g: Game){
@@ -42,24 +45,31 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
-    func fetchPlayers(){
-        // change atValue to beforeValue
-
-        ref.child("GameParticipants").child((currentGame?.gID)!).queryOrdered(byChild: "Result").observe(.childAdded){
+    func checkPlayers(){
+        
+        ref.child("GameParticipants").child((currentGame?.gID)!).queryOrdered(byChild: "Result").queryEnding(beforeValue: 0).observe(.value){
+            
             snapshot in
-            
-            print(snapshot.childrenCount)
-            self.playerCount = self.playerCount!+1
-            
-            if(snapshot.childrenCount == (self.currentGame?.playerCount)!){
-               // self.joinButton.alpha = 0
-                // label.alpha = 1
-                self.joinButton.isEnabled = false
+            if snapshot.children.allObjects.count == self.currentGame?.playerCount {
+                self.messageLabel.text = "!انتهت اللعبة"
+                self.joinButton.alpha = 0
+                self.messageLabel.alpha = 1
+                // Remove from database to prevent fetching next time?
             }
             else{
-                self.joinButton.alpha = 1
-                // label.alpha = 0
+                self.joinButton.isEnabled = true
             }
+            
+            self.fetchBoard()
+        }
+        
+    }
+    
+    func fetchBoard(){
+        // change atValue to beforeValue 0
+
+        ref.child("GameParticipants").child((currentGame?.gID)!).queryOrdered(byChild: "Result").queryEnding(beforeValue: 0).observe(.childAdded){
+            snapshot in
             
             guard let dict = snapshot.value as? [String: Any] else {return}
             let pid = snapshot.key
@@ -80,30 +90,30 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func joinGame(_ sender: Any) {
         
         var exists = false
-        if(currentGame?.playerCount == participants?.count){
-            // popup message
-        }
-        else{
-            let uid = Auth.auth().currentUser!.uid
-            for p in participants!{
-                if p.uid == uid {
-                    exists = true
-                    break
-                }
+
+        let uid = Auth.auth().currentUser!.uid
+        for p in participants!{
+            if p.uid == uid {
+                messageLabel.text = "!انتهى دورك"
+                joinButton.alpha = 0
+                messageLabel.alpha = 1
+                exists = true
+                break
             }
-            // DBManager add method call ... or dont? we dont need username right now
+        }
+
             if(!exists){
-                let player = Player(username: "Empty", uid:uid , score: 0)
                 
                 ref.child("GameParticipants/\(currentGame?.gID)").child(uid).setValue([
                                                                         "Result":0.0])
                 
+                let ARView = self.storyboard?.instantiateViewController(withIdentifier: "WorkoutViewController") as! WorkoutViewController
+                ARView.initializeGame(g: self.currentGame!)
+                self.navigationController?.pushViewController(ARView, animated: true)
             }
-            let ARView = self.storyboard?.instantiateViewController(withIdentifier: "WorkoutViewController") as! WorkoutViewController
-            ARView.initializeGame(g: self.currentGame!)
-            self.navigationController?.pushViewController(ARView, animated: true)
-           
-        }
+
+           var test = "does exits == true reach here or does it BREAK"
+        
     }
     
 
@@ -127,4 +137,14 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
+}
+
+extension Array{
+    
+    func add(e: Player){
+        
+        //
+        
+    }
+    
 }

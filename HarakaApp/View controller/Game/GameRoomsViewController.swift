@@ -48,8 +48,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                 let name = gameDict["GameName"] as! String
                 let count = gameDict["PlayerCount"] as! Int
                 let gameKey = snapshot.key
-            
-                var g = Game(gName: name, uid: uid, gid: gameKey, count: count)
+                let g = Game(gName: name, uid: uid, gid: gameKey, count: count)
 
                 self.games?.append(g)
                 self.gamesTable.reloadData()
