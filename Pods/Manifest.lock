@@ -212,6 +212,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - AMTabView (0.1.2)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -349,6 +350,7 @@ PODS:
   - SwiftIcons (3.0)
 
 DEPENDENCIES:
+  - AMTabView
   - DropDown
   - Firebase/Analytics
   - Firebase/Auth
@@ -362,6 +364,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
+    - AMTabView
     - BoringSSL-GRPC
     - DropDown
     - Firebase
@@ -387,6 +390,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  AMTabView: b8a74f5ea27ec367d8f6fa614ebc77be9af38064
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   Firebase: fffddd0bab8677d07376538365faa93ff3889b39
@@ -410,6 +414,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
 
-PODFILE CHECKSUM: 0d46cb9bdaf498cfa8a82a5dca58c1230d1b8ae2
+PODFILE CHECKSUM: bbbe4ce08448c82ae39ec41d407ad539f9fe9bcb
 
 COCOAPODS: 1.10.1

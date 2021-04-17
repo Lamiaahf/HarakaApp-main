@@ -74,7 +74,7 @@
 		9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07125D1350C002E0AAB /* HomePageViewController.swift */; };
 		9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07425D13531002E0AAB /* SearchTableViewController.swift */; };
 		9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07525D13531002E0AAB /* MyTabBar.swift */; };
-		9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07625D13531002E0AAB /* myTabBarCtrl.swift */; };
+		9449C07925D13531002E0AAB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07625D13531002E0AAB /* TabBarViewController.swift */; };
 		9475D8ED2608CE4A00116877 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8EC2608CE4A00116877 /* MapViewController.swift */; };
 		9475D8F02608CE5100116877 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8EF2608CE5100116877 /* Place.swift */; };
 		9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8F22608CE6000116877 /* PlaceViews.swift */; };
@@ -177,7 +177,7 @@
 		9449C07125D1350C002E0AAB /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		9449C07425D13531002E0AAB /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		9449C07525D13531002E0AAB /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
-		9449C07625D13531002E0AAB /* myTabBarCtrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTabBarCtrl.swift; sourceTree = "<group>"; };
+		9449C07625D13531002E0AAB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9475D8EC2608CE4A00116877 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9475D8EF2608CE5100116877 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		9475D8F22608CE6000116877 /* PlaceViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViews.swift; sourceTree = "<group>"; };
@@ -363,7 +363,7 @@
 				3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */,
 				9449C07125D1350C002E0AAB /* HomePageViewController.swift */,
 				9449C07525D13531002E0AAB /* MyTabBar.swift */,
-				9449C07625D13531002E0AAB /* myTabBarCtrl.swift */,
+				9449C07625D13531002E0AAB /* TabBarViewController.swift */,
 				9449C07425D13531002E0AAB /* SearchTableViewController.swift */,
 				3FBB14FA25C81CFB0098C299 /* ViewController.swift */,
 				94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */,
@@ -670,7 +670,7 @@
 				3FF0142D2621EDBA00948FDB /* ActivityDescription.swift in Sources */,
 				3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */,
 				3FF017A8262717A400948FDB /* LaunchScreen.swift in Sources */,
-				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
+				9449C07925D13531002E0AAB /* TabBarViewController.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
 				CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */,

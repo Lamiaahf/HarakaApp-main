@@ -7,10 +7,16 @@
 
 import UIKit
 import MapKit
+import AMTabView
 
-class MapViewController: UIViewController {
+
+class MapViewController: UIViewController , TabItem{
   @IBOutlet private var mapView: MKMapView!
     private var places: [Place] = []
+   // tab bar
+    var tabImage2: UIImage? {
+      return UIImage(named: " 568635131536669843-129")
+    }
       
       override func viewDidLoad() {
         super.viewDidLoad()

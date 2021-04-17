@@ -4,12 +4,20 @@
 //
 //  Created by lamia on 17/02/2021.
 //
+
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
- 
-class UserProfileViewController:  UIViewController {
+import AMTabView
+
+class UserProfileViewController:  UIViewController , TabItem {
+     
+    //tab bar
+    var tabImage4: UIImage? {
+      return UIImage(named: "person")
+    }
+    
     let storageRef = Storage.storage().reference()
     let databaseRef = Database.database().reference()
     //Serch for frinds

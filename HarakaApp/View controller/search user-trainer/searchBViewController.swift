@@ -8,8 +8,14 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import AMTabView
 
-class searchBViewController: UIViewController {
+class searchBViewController: UIViewController , TabItem {
+    
+    //tab bar
+    var tabImage3: UIImage? {
+      return UIImage(named: "magnifyingglass")
+    }
     
 
     @IBOutlet var usersSearch: UIButton!
