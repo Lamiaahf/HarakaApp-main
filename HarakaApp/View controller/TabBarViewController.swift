@@ -17,7 +17,7 @@ class TabBarViewController: AMTabsViewController {
 
     setTabsControllers()
 
-    selectedTabIndex = 1
+    selectedTabIndex = 0
   }
 
   private func setTabsControllers() {

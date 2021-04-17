@@ -15,7 +15,7 @@ class MapViewController: UIViewController , TabItem{
     private var places: [Place] = []
    // tab bar
     var tabImage: UIImage? {
-      return UIImage(named: " 568635131536669843-129")
+      return UIImage(named: "568635131536669843-129")
     }
       
       override func viewDidLoad() {
