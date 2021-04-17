@@ -202,7 +202,6 @@ extension TimelineViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell", for: indexPath) as! PostCell
         cell.post = posts![indexPath.row]
-        
         cell.commentButton.tag = indexPath.row
         cell.commentButton.addTarget(self, action: #selector(TimelineViewController.openComments(_:)) , for: UIControl.Event.touchUpInside)
         

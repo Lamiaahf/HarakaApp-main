@@ -97,23 +97,29 @@ class CreateActivity: UIViewController {
         let type = typeL.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let Aname = Name.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let disc = ADescription.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-       let DT = DateTime.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let DT = DateTime.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let part = participantLable.text!.trimmingCharacters(in:.whitespacesAndNewlines)
         let Locat = Alocation.text!.trimmingCharacters(in:.whitespacesAndNewlines)
 
         
-    
-      
-        ref.child("users").child(self.uid!).observe(.value , with : { snapshot in
+        self.ref.child("Trainers").child("Approved").observeSingleEvent(of: .value, with: { (snapshot) in
+        if snapshot.hasChild(self.uid!){
+
+            guard let dict = snapshot.value as? [String:Any] else {return}
+            self.CByName = dict["Name"] as? String ?? ""
+            
+        }
+            
+        })
+        self.ref.child("users").child(self.uid!).observe(.value , with : { snapshot in
     
         guard let dict = snapshot.value as? [String:Any] else {return}
               
             let user = CurrentUser( uid : self.uid! , dictionary : dict )
                 self.CByName = user.name            //   self.Username.text = user.username
            
-                }) { (error) in
-              print(error.localizedDescription)
-        }
+        })
+        
      
         // save the image to firbase Storage and user
 
@@ -131,14 +137,11 @@ class CreateActivity: UIViewController {
             
             let AData = ["ActivityName": Aname , "createdByID" : self.uid,"createdByName" : self.CByName , "Description" : disc,"DateTime" : DT , "ActivityType": type, "NumOfParticipant":part,"location" :Locat , "Image": metaImageUrl ] as [String : Any]
             
-        self.ref.child("Activity").childByAutoId().setValue(AData)
-            // to return the Activity is Key frome the snapshot
-            self.ref.child("Activity").observeSingleEvent(of :.value, with: { (snapshot) in
-               
-            //   let ActivityID = String(snapshot.key)
-              // self.AddcreatedByid(ActivityID)
+         let ID = self.ref.child("Activity").childByAutoId().key
+            
+            self.ref.child("Activity").child(ID!).setValue(AData)
+            self.ref.child("Activity").child(ID!).updateChildValues(["ActivityID" : ID as Any])
 
-            })
             }
             } ) }
       

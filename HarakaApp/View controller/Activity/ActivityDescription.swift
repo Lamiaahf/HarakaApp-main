@@ -23,8 +23,8 @@ class ActivityDescription: UIViewController {
     @IBOutlet weak var JoinB: UIButton!
     
     var databaseRef = Database.database().reference()
-     var ActivityID  = " "
-    var CountInt : Int?
+     var ActivityID  = ""
+     var count  = ""
 
    // var UserData :NSDictionary?
 
@@ -39,13 +39,10 @@ class ActivityDescription: UIViewController {
       //  AddcreatedByid()
         fetchActivity()
         
-        self.databaseRef.child("Activity").child(Act.Aname!).observe(.childAdded, with: {(snapshot) in
-            
-            self.ActivityID = snapshot.key
-             print (self.ActivityID)
+      print(ActivityID)
+      print(count)
 
-        })
-        databaseRef.child("JoinedActivity").child(ActivityID).child(id!).observe(.value, with: {(snapshot) in
+        databaseRef.child("JoinedActivity").child(id!).child(ActivityID).observe(.value, with: {(snapshot) in
         
                 if(snapshot.exists())
                 {
@@ -71,11 +68,11 @@ class ActivityDescription: UIViewController {
         let dis = Act.Adisc
         let DT = Act.ADateTime
         let AType = Act.Atype
-        let count = Act.Apartic
-      //  let createdByid = Act.createdByID
+        count = Act.Apartic!
+      // let createdByid = Act.createdByID
         let createdByN = Act.createdByName
         let Image  = Act.AImage!
-        
+        ActivityID = Act.ActivityID!
 
         Storage.storage().reference(forURL: Image).getData(maxSize: 1048576, completion: { (data, error) in
 
@@ -92,9 +89,9 @@ class ActivityDescription: UIViewController {
             self.ADataTime.text = DT
             self.CName.text = createdByN
             self.ALoca.text = Loc
-            self.Count.text = count
+            self.Count.text = self.count
             self.Activiimg.image = UIImage(data: imageData)
-            self.CountInt = Int(count!)
+         //   self.CountInt = Int(count!)
             
 
         })
@@ -112,12 +109,13 @@ class ActivityDescription: UIViewController {
         if (self.JoinB.titleLabel?.text == " تم الانضمام  "){ return}
     
          // to chcke the number of users are join the Activity
-        let JoinedNum = self.databaseRef.child("JoinedActivity").child( self.ActivityID).observe(DataEventType.value, with: { (snapshot) in
+        /* let JoinedNum = self.databaseRef.child("JoinedActivity").child( self.uid).observe(DataEventType.value, with: { (snapshot) in
        print(snapshot.childrenCount)
-      })
-     
-
-        if (JoinedNum == self.CountInt! ){
+      })*/
+ //  let   JoinedN = String(JoinedNum)
+        var JoinedN = 0
+        let countInt = Int(self.count)
+        if (JoinedN == countInt ){
             
        
             
@@ -133,7 +131,8 @@ class ActivityDescription: UIViewController {
               print("انضم للفعالية")
               
              // add the new user id to JoinedActivitys
-            databaseRef.child("JoinedActivity").child(ActivityID).child(id!).setValue("")
+            databaseRef.child("JoinedActivity").child(id!).child(ActivityID).setValue("")
+            JoinedN = JoinedN+1
     //let joinRef = "JoinedActivity/" + (ActivityID as! String) + "/" + (self.id! as! String )
               print("تم الانضمام بنجاح ")
               

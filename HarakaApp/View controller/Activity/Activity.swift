@@ -17,13 +17,13 @@ class Activity {
          var Apartic : String?
          var ALoca : String?
          var AImage : String?
-       //  var K : String?
+         var ActivityID : String?
 
 
       
         
     init(createdBy: String?,createdByi :String?, name: String?, disc: String?, DateTime: String?, type: String?, partic: String?, Loca : String?, uid : String?
-         , image : String ){
+         , image : String , id : String ){
             createdByName = createdBy
             createdByID = createdByi
             Aname = name
@@ -33,6 +33,6 @@ class Activity {
             Apartic = partic
             ALoca = Loca
             AImage = image
-         //   K = Ke
+            ActivityID = id
         }
 }

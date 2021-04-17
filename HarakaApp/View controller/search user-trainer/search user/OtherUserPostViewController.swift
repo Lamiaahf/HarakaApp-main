@@ -24,13 +24,13 @@ class OtherUserPostViewController: UITableViewController {
         posts = []
         let loggedInUser = Auth.auth().currentUser
         Userid = loggedInUser!.uid
-        fetchUserPosts()
+     //   fetchUserPosts()
 
         // Do any additional setup after loading the view.
     }
     
 
-    func fetchUserPosts(){
+    /*func fetchUserPosts(){
 
         // retrieve posts from database, may return error or snapshot (snapshot contains data)        let ref = Database.database().reference()
         databaseRef.child("posts").observe(.childAdded){
@@ -65,7 +65,7 @@ class OtherUserPostViewController: UITableViewController {
    //     self.posts = postArray
         
         }
-    }
+    }*/
         
     
     

@@ -89,7 +89,8 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         if (name != nil){
              self.name.text = otherTrainers!["Name"] as? String
             self.Username.text = otherTrainers!["Username"] as? String}
-        if (otherTrainers!["ProfilePic"] != nil){
+        if (otherTrainers!["ProfilePic"] == nil){ return}
+        else{
 
                let databaseProfilePic = otherTrainers!["ProfilePic"] as! String
                let data = try? Data(contentsOf:URL(string:databaseProfilePic)!)

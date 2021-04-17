@@ -94,7 +94,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         return 120
     }*/
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "createGameSegue"){
             let destinationVC = segue.destination as! CreateGameViewController
             destinationVC.transitioningDelegate = self

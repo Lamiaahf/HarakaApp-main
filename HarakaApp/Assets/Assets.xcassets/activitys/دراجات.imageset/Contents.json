@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "دراجات.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "withBackground.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
