@@ -53,9 +53,12 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func Logout(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
         let storyboard = UIStoryboard(name : "Main",bundle: nil)
-        let LOGINViewController = storyboard.instantiateViewController(identifier: "login")
-        present(LOGINViewController, animated: true, completion: nil)
+        let LOGINViewController = storyboard.instantiateViewController(identifier: "login") as! LOGINViewController
+        self.present(LOGINViewController , animated:false , completion : nil)
+        
+        
     }
     
 

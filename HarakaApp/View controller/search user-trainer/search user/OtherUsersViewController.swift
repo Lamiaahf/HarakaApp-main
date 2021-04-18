@@ -57,6 +57,8 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
          //add an observer for the user who's profile is being viewed
          //When the followers count is changed, it is updated here!
          //need to add the uid to the user's data
+            func getusersprof() {
+                
          databaseRef.child("users").child(self.otherUser?["uid"] as! String).observe(.value, with: { (snapshot) in
              
              let uid = self.otherUser?["uid"] as! String
@@ -67,12 +69,12 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
          
          }) { (error) in
                  print(error.localizedDescription)
-         }
-         
+         }}
+            
          //check if the current user is being followed
          //if yes, Enable the UNfollow button
          //if no, Enable the Follow button
-         
+            func getfollowing(){
      databaseRef.child("following").child(self.loggedInUser!.uid).child(self.otherUser?["uid"] as! String).observe(.value, with: { (snapshot) in
      
              if(snapshot.exists())
@@ -93,7 +95,7 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
              print(error.localizedDescription)
          }
          
-            
+            }
 
            /* if(otherTrainers["followersCount"] != nil)
             {

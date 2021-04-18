@@ -86,7 +86,19 @@ class CreateRoomViewController: UIViewController {
           let roomName = self.newRoomTextField.text,
           roomName.isEmpty == false else {
         return    }
-   
+    
+    var creatorN = ""
+    //get room creator Name
+    
+    Database.database().reference().child("Trainers").child("Approved").child(userId).observe(.value , with : { snapshot in
+
+    guard let dict = snapshot.value as? [String:Any] else {return}
+          
+        let trainerN = CurrentUser( uid : userId , dictionary : dict )
+            creatorN = trainerN.name
+            }) { (error) in
+          print(error.localizedDescription)
+    }
     
     EVImage = EImage.image
     guard let imageSelected = self.EVImage else {return}
@@ -109,11 +121,10 @@ class CreateRoomViewController: UIViewController {
                                     if let metaImageUrl = url?.absoluteString {
     
     let databaseRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-//let creatorName =
     
     let roomRef = databaseRef.child("rooms").childByAutoId()
     
-    let roomData:[String: Any] = ["creatorId" : userId, "name": roomName , "EventImage" : metaImageUrl ]
+                                        let roomData:[String: Any] = ["creatorId" : userId, "name": roomName , "EventImage" : metaImageUrl , "creatorName" : creatorN]
         
         //, "CreatorName": creatorName]
     

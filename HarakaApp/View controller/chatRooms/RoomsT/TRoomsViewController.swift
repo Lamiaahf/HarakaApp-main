@@ -69,25 +69,18 @@ class TRoomsViewController: UIViewController,  UIViewControllerTransitioningDele
             (snapshot) in
             if let dataArray = snapshot.value as? [String: Any]{
                 if let name = dataArray ["name"] as? String {
-                    let EventImage = dataArray["EventImage"] as? UIImageView
-                  //  guard let creatorName = dataArray["CreatorName"] as? String else {return}
-                    let room = Room.init(rId: snapshot.key, rname: name, EImage: EventImage ?? self.DefImage )
-                        
-                        //, creatorN: creatorName )
+                    let EventImage = dataArray["EventImage"] as? String
+                  let creatorName = dataArray["creatorName"] as? String
+                    let room = Room.init(rId: snapshot.key, rname: name, EImage: EventImage! , creatorN : creatorName!)
                     
-                    /*
-                    Storage.storage().reference(forURL: room.EventImage).getData(maxSize: 1048576, completion: { (data, error) in
 
-                        guard let imageData = data, error == nil else {
-                            return
-                        }
-                        room.EventImage.image = UIImage(data: imageData)
-                        self.setupEventImage()*/
+                         
                         self.rooms.append(room)
                 self.RoomsTable.reloadData()
-                
-            }}
+   
+            }
         }
+    }
     }
 
     
@@ -112,7 +105,8 @@ class TRoomsViewController: UIViewController,  UIViewControllerTransitioningDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let room = self.rooms[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath )
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath ) as! RoomCell
+        cell.OBJRoom = room
         cell.backgroundColor =  colors.randomElement()
        cell.layer.cornerRadius = 5
       var EImage = room.EventImage

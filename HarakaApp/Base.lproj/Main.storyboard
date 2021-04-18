@@ -867,98 +867,7 @@
             </objects>
             <point key="canvasLocation" x="958.46153846153845" y="-9.24170616113744"/>
         </scene>
-
         <!--المجموعات-->
-
-        <!--Create Room View Controller-->
-        <scene sceneID="b3Q-wm-OHh">
-            <objects>
-                <viewController id="fjw-hd-0W4" customClass="CreateRoomViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Yp-HF-L4v">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLv-r8-PUu">
-                                <rect key="frame" x="30" y="299" width="330" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم المجموعة" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="lQx-q6-jMc">
-                                        <rect key="frame" x="-10" y="0.0" width="340" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiD-7H-jEv">
-                                <rect key="frame" x="300" y="100" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                <state key="normal" title="X">
-                                    <color key="titleColor" red="0.97663766149999998" green="0.57850497960000002" blue="0.13437518479999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="dismissSecondVC:" destination="fjw-hd-0W4" eventType="touchUpInside" id="YEZ-3w-Br1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yT-HV-Ddf">
-                                <rect key="frame" x="100" y="445" width="190" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.89787995819999999" green="0.89772564170000002" blue="0.91833287480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="انشاء">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCreateNewRoom:" destination="2sC-la-WC5" eventType="touchUpInside" id="S49-1I-3Jn"/>
-                                    <action selector="didPressCreateNewRoom:" destination="fjw-hd-0W4" eventType="touchUpInside" id="Vyg-bX-2f6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WHR-mc-ep3">
-                                <rect key="frame" x="30" y="361" width="330" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.89787995819999999" green="0.89772564170000002" blue="0.91833287480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="نوع الفعالية">
-                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCreateNewRoom:" destination="2sC-la-WC5" eventType="touchUpInside" id="BpN-oa-5Uv"/>
-                                    <action selector="didPressCreateNewRoom:" destination="fjw-hd-0W4" eventType="touchUpInside" id="rtM-Wa-YZD"/>
-                                    <action selector="topChooseMenuItem:" destination="fjw-hd-0W4" eventType="touchUpInside" id="2s1-G0-nhw"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sOm-00-qBN">
-                                <rect key="frame" x="80" y="123" width="230" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YwB-n1-Hv8">
-                                        <rect key="frame" x="20" y="20" width="190" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="BJC-xp-HrR"/>
-                        <color key="backgroundColor" red="0.39745837449999999" green="0.57975798850000004" blue="0.64694875480000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="THx-5f-fwX"/>
-                    <connections>
-                        <outlet property="EImage" destination="YwB-n1-Hv8" id="hA8-Gc-YAm"/>
-                        <outlet property="dismissButton" destination="EiD-7H-jEv" id="9Cv-IK-sFn"/>
-                        <outlet property="newRoomTextField" destination="lQx-q6-jMc" id="yGH-Fh-shN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SmW-7M-31l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1749" y="751"/>
-        </scene>
-        <!--Rooms View Controller-->
-
         <scene sceneID="edD-ad-fjg">
             <objects>
                 <viewController id="2sC-la-WC5" customClass="RoomsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -977,7 +886,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomCell" id="tgf-Lx-6Sb" userLabel="RoomsCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomCell" id="tgf-Lx-6Sb" userLabel="RoomsCell" customClass="RoomCell" customModule="HarakaApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YII-0N-sSJ">
@@ -987,11 +896,30 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j1L-bY-qp9">
                                                     <rect key="frame" x="30" y="30" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المنشئ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhi-LT-eRv">
+                                                    <rect key="frame" x="82" y="106" width="29" height="12"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" name="Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GC-D0-4sq">
+                                                    <rect key="frame" x="38" y="105" width="27" height="12"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" name="Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <size key="customSize" width="130" height="130"/>
+                                        <connections>
+                                            <outlet property="EImage" destination="j1L-bY-qp9" id="Wy2-Y2-DeS"/>
+                                            <outlet property="creatorName" destination="1GC-D0-4sq" id="0BP-ZO-yaE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -2157,6 +2085,7 @@
                 <navigationController id="h4Y-fT-wOB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="5SV-BG-dgZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="68h-Jy-nHZ">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -2609,7 +2538,6 @@
             </objects>
             <point key="canvasLocation" x="140" y="700.94786729857822"/>
         </scene>
-
         <!--Navigation Controller-->
         <scene sceneID="zdb-Xv-PQr">
             <objects>
@@ -3726,7 +3654,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="Vff-fS-EVw">
-                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -3782,7 +3710,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="PMu-hk-dE0">
-                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -4466,7 +4394,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomCell" id="eEd-lE-MLO" userLabel="RoomsCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomCell" id="eEd-lE-MLO" customClass="RoomCell" customModule="HarakaApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="X76-5Y-TQp">
@@ -4476,11 +4404,30 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5eQ-Bu-K98">
                                                     <rect key="frame" x="30" y="30" width="70" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="المنشئ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Jg-fB-vzu">
+                                                    <rect key="frame" x="80" y="104" width="29" height="12"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" name="Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWO-fu-1eb">
+                                                    <rect key="frame" x="37" y="106" width="27" height="12"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" name="Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <size key="customSize" width="130" height="130"/>
+                                        <connections>
+                                            <outlet property="EImage" destination="5eQ-Bu-K98" id="U1r-c9-B7s"/>
+                                            <outlet property="creatorName" destination="TWO-fu-1eb" id="enR-LL-obI"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -4496,7 +4443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yTy-CR-lzN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="3943"/>
+            <point key="canvasLocation" x="1.5384615384615383" y="3942.654028436019"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUj-f0-gX4">

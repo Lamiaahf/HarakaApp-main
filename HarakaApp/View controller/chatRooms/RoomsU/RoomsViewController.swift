@@ -91,20 +91,20 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
             (snapshot) in
             if let dataArray = snapshot.value as? [String: Any]{
                 if let name = dataArray ["name"] as? String {
-                    let EventImage = dataArray["EventImage"] as? UIImageView
-                  //  guard let creatorName = dataArray["CreatorName"] as? String else {return}
-                    let room = Room.init(rId: snapshot.key, rname: name, EImage: EventImage ?? self.DefImage )
+                    let EventImage = dataArray["EventImage"] as? String
+              let creatorName = dataArray["creatorName"] as? String
+                    let room = Room.init(rId: snapshot.key, rname: name, EImage: EventImage! , creatorN : creatorName!)
                         
                         //, creatorN: creatorName )
                     
-                    /*
-                    Storage.storage().reference(forURL: room.EventImage).getData(maxSize: 1048576, completion: { (data, error) in
+                    
+                   /* Storage.storage().reference(forURL: room.EventImage!).getData(maxSize: 1048576, completion: { (data, error) in
 
                         guard let imageData = data, error == nil else {
                             return
                         }
-                        room.EventImage.image = UIImage(data: imageData)
-                        self.setupEventImage()*/
+                        self.OBJRoom.EventImage.Image = UIImage(data: imageData)*/
+                       
                         self.rooms.append(room)
                 self.RoomsTable.reloadData()
                 
@@ -161,8 +161,10 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
    // var EImage = UIImageView()
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let room = self.rooms[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath )
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath ) as! RoomCell
+        cell.OBJRoom = room
         cell.backgroundColor =  colors.randomElement()
        cell.layer.cornerRadius = 5
       var EImage = room.EventImage
@@ -188,6 +190,7 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         cell.contentView.addSubview(groupName)
               return cell
     }
+ 
     
    /* func collectionView(_ collectionView: UICollectionView , layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)}*/
