@@ -750,7 +750,7 @@
                                         <rect key="frame" x="65" y="0.0" width="325" height="60"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اكتب رسالة.." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="op5-xO-M7I">
-                                                <rect key="frame" x="10" y="0.0" width="305" height="60"/>
+                                                <rect key="frame" x="1" y="0.0" width="314" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -759,8 +759,8 @@
                                         <color key="backgroundColor" red="0.9015544041450777" green="0.9015544041450777" blue="0.9015544041450777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="op5-xO-M7I" secondAttribute="trailing" constant="10" id="MuF-nv-yYy"/>
-                                            <constraint firstItem="op5-xO-M7I" firstAttribute="leading" secondItem="PHo-ra-xEX" secondAttribute="leading" constant="10" id="TNn-oI-vnP"/>
                                             <constraint firstItem="op5-xO-M7I" firstAttribute="top" secondItem="PHo-ra-xEX" secondAttribute="top" id="h9y-qX-5DX"/>
+                                            <constraint firstItem="op5-xO-M7I" firstAttribute="leading" secondItem="PHo-ra-xEX" secondAttribute="leading" constant="1" id="qwE-so-XZr"/>
                                             <constraint firstAttribute="bottom" secondItem="op5-xO-M7I" secondAttribute="bottom" id="zPG-L5-Vs3"/>
                                         </constraints>
                                     </view>
@@ -4082,7 +4082,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48Y-Rq-7Ax">
-                                <rect key="frame" x="47" y="251" width="297" height="254"/>
+                                <rect key="frame" x="46.666666666666657" y="251" width="297" height="254"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzT-9h-XiB">
                                         <rect key="frame" x="228" y="8" width="61" height="42"/>
