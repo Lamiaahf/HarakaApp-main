@@ -36,6 +36,7 @@ class TrainerProfile: UIViewController {
         Utilities.styleFilledButton(activitieB)
         Utilities.styleFilledButton(challengeB)
         Utilities.styleFilledButton(followerB)
+        Utilities.CircularImageView(Userimg)
         getUserInfo()
         self.loggedInUser = Auth.auth().currentUser
 

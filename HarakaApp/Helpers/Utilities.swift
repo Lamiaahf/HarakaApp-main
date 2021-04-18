@@ -36,6 +36,10 @@ class Utilities {
     }
     
     
+    static func CircularImageView(_ image:UIImageView) {
+        image.layer.cornerRadius = image.frame.size.width/2
+        image.clipsToBounds = true
+    }
     
     static func isPasswordValid(_ password : String) -> Bool {
         

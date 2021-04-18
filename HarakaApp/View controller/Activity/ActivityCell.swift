@@ -25,12 +25,12 @@ class ActivityCell: UITableViewCell {
 var  activi: Activity!{
     
     didSet{
-        updateTimeline()
+        updateActivityTable()
     }
 }
 
 
-func updateTimeline(){
+func updateActivityTable(){
     Storage.storage().reference(forURL: activi.AImage!).getData(maxSize: 1048576, completion: { [self] (data, error) in
 
         guard let imageData = data, error == nil else {

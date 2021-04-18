@@ -13,9 +13,11 @@ class ActivitysListTable: UITableViewController {
     var ActivitysList:[Activity]?
 
 
+    @IBOutlet weak var UserActivitysB: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Utilities.styleFilledButton(UserActivitysB)
 
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = tableView.rowHeight
@@ -32,7 +34,7 @@ class ActivitysListTable: UITableViewController {
         ref.child("Activity").observe(.childAdded){
         (snapshot) in
          let id = String(snapshot.key)
-        if let ADict = snapshot.value as? [String: Any]{
+          if let ADict = snapshot.value as? [String: Any]{
           let Name = ADict["ActivityName"] as? String ?? ""
           let Loc = ADict["location"] as? String ?? ""
           let dis = ADict["Description"] as? String ?? ""
@@ -42,11 +44,13 @@ class ActivitysListTable: UITableViewController {
           let createdByid = ADict["createdByID"] as? String ?? ""
           let createdByN = ADict["createdByName"] as? String ?? ""
           let Aimage = ADict["Image"] as? String ?? ""
-         // let AKey = String(snapshot.key)
+          let ID = ADict ["ActivityID"] as? String ?? ""
+          let T = ADict ["Type"] as? String ?? ""
+
             /// add createdByid
          //   ref.child("Activity").child(AKey).set(createdByid)
                   
-            let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage)
+            let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, t: T)
              //       postArray.insert(newPost, at: indx)
                     self.ActivitysList?.append(NewActivity)
                   //  postArray.append(newPost)
