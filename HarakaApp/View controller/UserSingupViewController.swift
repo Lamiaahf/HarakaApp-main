@@ -63,7 +63,6 @@ class UserSingupViewController: UIViewController  { //Start of class
     }
     
     func setupAvatar (){
-        AvatarUS.layer.cornerRadius = 40
         AvatarUS.clipsToBounds = true
         AvatarUS.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer( target: self, action: #selector(TapToChange))
@@ -82,6 +81,8 @@ class UserSingupViewController: UIViewController  { //Start of class
         Utilities.styleTextField(ConfPasswordUS)
         Utilities.styleTextField(DOBUS)
         Utilities.styleFilledButton(Singup)
+        Utilities.CircularImageView(AvatarUS)
+
     }
  
     

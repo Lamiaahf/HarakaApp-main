@@ -42,8 +42,9 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
         override func viewDidLoad() {
             super.viewDidLoad()
          //style
-         Utilities.styleFilledButton(followButton)
-         
+           Utilities.styleFilledButton(followButton)
+            Utilities.CircularImageView(Profilepic)
+
             databaseRef.child("Trainers").child("Approved").child(self.loggedInUser!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
              
              self.loggedInUserData = snapshot.value as? NSDictionary
@@ -119,7 +120,6 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
 
            internal func setProfilePicture(_ imageView:UIImageView,imageToSet:UIImage)
            {
-               imageView.layer.cornerRadius = 10.0
                imageView.layer.borderColor = UIColor.white.cgColor
                imageView.layer.masksToBounds = true
                imageView.image = imageToSet

@@ -24,7 +24,6 @@ class TimelineViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.transform = CGAffineTransform(scaleX: 1, y: -1)
         tableView.delegate = self
   //      self.refreshControl = UIRefreshControl()
   //      self.refreshControl!.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
@@ -135,7 +134,7 @@ class TimelineViewController: UITableViewController {
                             var post = Post(createdBy: postUser!, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
                             self.checkLike(post: post)
                             self.posts?.append(post)
-               //             self.tableView.reloadData()
+                            self.tableView.reloadData()
    
                         
                         }
@@ -201,12 +200,12 @@ extension TimelineViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell", for: indexPath) as! PostCell
-        cell.post = posts![indexPath.row]
+        var maxIndex = posts!.count-1
+        var newIndex = maxIndex - indexPath.row
+        cell.post = posts![newIndex]
         
-        cell.commentButton.tag = indexPath.row
+        cell.commentButton.tag = newIndex
         cell.commentButton.addTarget(self, action: #selector(TimelineViewController.openComments(_:)) , for: UIControl.Event.touchUpInside)
-        
-        cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
         
         return cell
         
