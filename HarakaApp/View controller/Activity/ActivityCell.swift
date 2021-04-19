@@ -26,23 +26,29 @@ var  activi: Activity!{
     
     didSet{
         updateActivityTable()
+        getImage()
     }
 }
 
 
 func updateActivityTable(){
-    Storage.storage().reference(forURL: activi.AImage!).getData(maxSize: 1048576, completion: { [self] (data, error) in
-
-        guard let imageData = data, error == nil else {
-            return
-        }
-        self.AName.text = self.activi.Aname
-        ALocation.text = self.activi.ALoca
-        ADate.text = self.activi.ADateTime
-        ACreatedByName.text = activi.createdByName
-        Actimage.image = UIImage(data: imageData)
-
-    })
+    self.AName.text = self.activi.Aname
+    ALocation.text = self.activi.ALoca
+    ADate.text = self.activi.ADateTime
+    ACreatedByName.text = activi.createdByName
 }
+    
+    func getImage(){
+        
+        Storage.storage().reference(forURL: activi.AImage!).getData(maxSize: 1048576, completion: { [self] (data, error) in
+
+            guard let imageData = data, error == nil else {
+                return
+            }
+            Actimage.image = UIImage(data: imageData)
+
+        })
+        
+    }
   
 }
