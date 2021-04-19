@@ -30,7 +30,11 @@ class RoomCell: UICollectionViewCell {
                 return
             }
             if (EImage != nil) {
-                self.EImage.image = UIImage(data: imageData)}
+                self.EImage.image = UIImage(data: imageData)
+                //background transparent
+                self.EImage.backgroundColor = UIColor.clear
+                self.EImage.isOpaque = false
+                self.EImage.contentMode = .scaleAspectFit            }
             else {return}
             creatorName.text = OBJRoom.ownerName
             
