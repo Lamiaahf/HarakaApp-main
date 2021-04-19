@@ -8,74 +8,42 @@
 import UIKit
 import Firebase
 
-class TrainerChallengeViewController: UITableViewController{
+class TrainerChallengeViewController: UIViewController{
     
-    var challenges: [Challenge]?
+    var challenge: Challenge?
     var ref: DatabaseReference = Database.database().reference()
+    
+    @IBOutlet weak var emptyImage: UIImageView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var challengeCard: ChallengeCard!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.clearsSelectionOnViewWillAppear = false
         
-        tableView.separatorStyle = .none
-        tableView.estimatedRowHeight = tableView.rowHeight
-        tableView.rowHeight = UITableView.automaticDimension
-        
-        fetchChallenges()
-        tableView.reloadData()
+        fetchChallenge()
     }
     
-    func fetchChallenges(){
+    func fetchChallenge(){
         
-        ref.child("Challenges").observe(.childAdded){
-            (snapshot) in
-            if snapshot.exists(){
-                if let challengeDict = snapshot.value as? [String: Any]{
-                    if let chall = challengeDict["ChallengeName"] as? String {
-                        let cDesc = challengeDict["ChallengeDescription"] as? String ?? ""
-                        let tid = challengeDict["TrainerID"] as? String ?? ""
-                        let end = challengeDict["Deadline"] as? Date ?? Date()
-                        let cid = snapshot.key
-                        
-                        var trainer = Trainer()
-                        var challenge = Challenge(createdBy: trainer, enddate: end, cName: chall, cDesc: cDesc, chalID: cid)
-                        
-                        DBManager.getTrainer(for: tid) {
-                            trnr in
-                            challenge.createdBy = trnr
-                            self.challenges?.append(challenge)
-                            self.tableView.reloadData()
-                            // DBManager.loadPic(for:trainer)
-                        }
-                        
-                    }
-                }
+        let currentDate = Date()
+        
+        DBManager.getChallenge(){
+            challenge in
+            if currentDate.compare(challenge.enddate!) == .orderedAscending{
+                // if current date < challenge end date -> show challenge
+                self.challenge = challenge
+                self.challengeCard.challenge = self.challenge
+                
+                //PROGRESS BAR: 1 - (Days remaining/7)
+            }
+            else{
+                self.emptyLabel.alpha = 1
+               self.emptyImage.alpha = 1
             }
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return challenges?.count ?? 0
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChallengeCell", for: indexPath) as! ChallengeCell
-        cell.challenge = challenges![indexPath.row]
-
-
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
     
 }

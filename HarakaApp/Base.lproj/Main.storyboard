@@ -1226,7 +1226,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f04-14-DAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4014" y="701"/>
+            <point key="canvasLocation" x="3795" y="709"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="erJ-F9-vZF">
@@ -1910,7 +1910,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wNY-xz-dJT" kind="show" id="9Fu-eP-Mf9"/>
+                                    <segue destination="Tat-rl-0Ld" kind="show" id="Kc9-Om-FMO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2059,6 +2059,26 @@
             </objects>
             <point key="canvasLocation" x="1027.6923076923076" y="5465.4028436018953"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6gN-nN-1kM">
+            <objects>
+                <viewController id="PHz-sp-kJJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CGM-pq-5Ed">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RUu-wM-CzN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oDJ-5p-fy6">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Cgs-GA-UPw">
+                            <color key="tintColor" red="0.40588343139999999" green="0.57931673530000005" blue="0.64314764739999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCe-vq-Tla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1802" y="5465"/>
+        </scene>
         <!--الصفحة الرئيسية-->
         <scene sceneID="8yh-Ng-s8u">
             <objects>
@@ -2103,7 +2123,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xeu-Jv-dQV" kind="show" id="43A-dU-QFy"/>
+                                    <segue destination="PHz-sp-kJJ" kind="show" id="o74-h7-Psq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -3727,6 +3747,131 @@
             </objects>
             <point key="canvasLocation" x="5898" y="1307"/>
         </scene>
+        <!--Challenge View Controller-->
+        <scene sceneID="Bl6-92-w5C">
+            <objects>
+                <viewController id="Tat-rl-0Ld" customClass="ChallengeViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HC1-tf-x3P">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pm7-in-V3g" customClass="ChallengeCard" customModule="HarakaApp" customModuleProvider="target">
+                                <rect key="frame" x="54" y="162" width="281" height="551"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مشي ١٠،٠٠٠ خطوة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CX-SM-LY0">
+                                        <rect key="frame" x="118" y="58.666666666666515" width="145" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="النهاية:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ems-05-Tax">
+                                        <rect key="frame" x="216" y="437" width="47" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="٠١/٠٤/٢٠٢١" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7b-MR-dGZ">
+                                        <rect key="frame" x="187" y="479" width="83" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم المدرب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-TS-lYM">
+                                        <rect key="frame" x="182" y="92.666666666666515" width="81" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تفاصيل التحدي" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD1-ew-L5n">
+                                        <rect key="frame" x="17" y="134" width="246" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="joL-xf-WiY">
+                                        <rect key="frame" x="11" y="491" width="154" height="4"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="progressTintColor" systemColor="systemOrangeColor"/>
+                                    </progressView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLY-lU-v7L">
+                                        <rect key="frame" x="108" y="366" width="65" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.44286649271670037" green="0.6380971842972486" blue="0.71250396573604058" alpha="0.2166630993150685" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <state key="normal" title="ابدأ">
+                                            <color key="titleColor" red="0.14976602789999999" green="0.21920508150000001" blue="0.24314129349999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startChallenge:" destination="pm7-in-V3g" eventType="touchUpInside" id="AUG-UB-mYI"/>
+                                            <action selector="startChallenge:" destination="n5g-2X-NMA" eventType="touchUpInside" id="wuf-mI-UzE"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="التحدي الأسبوعي" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nN-cu-7dh">
+                                        <rect key="frame" x="46" y="8" width="224" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="as" translatesAutoresizingMaskIntoConstraints="NO" id="zkt-bC-oOW">
+                                        <rect key="frame" x="114" y="37" width="159" height="2"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.3738230481894147" green="0.53861702882920559" blue="0.60142369923857864" alpha="0.4060627140410959" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYi-kB-rcM">
+                                        <rect key="frame" x="11" y="13" width="41" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="icons8-leaderboard-50"/>
+                                        <connections>
+                                            <action selector="viewScoreboard:" destination="pm7-in-V3g" eventType="touchUpInside" id="0nt-Qh-f7M"/>
+                                            <action selector="viewScoreboard:" destination="n5g-2X-NMA" eventType="touchUpInside" id="xfF-qD-Nht"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.62156354773296507" green="0.8955700108111998" blue="1" alpha="0.14755458047945205" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.6215635477" green="0.89557001079999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <outlet property="cDescriptionLabel" destination="zD1-ew-L5n" id="aa9-Zw-qTD"/>
+                                    <outlet property="cTimeline" destination="joL-xf-WiY" id="Xh2-vU-Pnm"/>
+                                    <outlet property="challengeLabel" destination="0CX-SM-LY0" id="i0c-9Y-gmW"/>
+                                    <outlet property="deadlineLabel" destination="X7b-MR-dGZ" id="HoD-Cb-vgi"/>
+                                    <outlet property="trainerLabel" destination="ON8-TS-lYM" id="guc-Ym-A1E"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="لم يتم العثور على تحدي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzi-fF-RRJ">
+                                <rect key="frame" x="119" y="350" width="158" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exclamationmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DWY-gE-eTR">
+                                <rect key="frame" x="147" y="311" width="109" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.39727268411918015" green="0.58124732199218043" blue="0.64897287436548223" alpha="0.28392551369863012" colorSpace="custom" customColorSpace="displayP3"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1FF-Gl-mMU"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="lyM-3D-2yG"/>
+                    <connections>
+                        <outlet property="challengeCard" destination="pm7-in-V3g" id="Vgk-dg-13U"/>
+                        <outlet property="notFoundImage" destination="DWY-gE-eTR" id="c5H-k1-cZz"/>
+                        <outlet property="notFoundLabel" destination="lzi-fF-RRJ" id="V40-IQ-C5c"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="onJ-fk-gJH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="n5g-2X-NMA" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4440" y="713.74407582938386"/>
+        </scene>
         <!--Users Table View Controller-->
         <scene sceneID="NE4-GB-z4s">
             <objects>
@@ -4169,6 +4314,7 @@
     <resources>
         <image name="1.circle" catalog="system" width="128" height="121"/>
         <image name="568635131536669843-129" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="as" width="128" height="128"/>
         <image name="bell.badge" catalog="system" width="128" height="124"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
@@ -4176,9 +4322,11 @@
         <image name="coach" width="512" height="512"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="exclamationmark.circle" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="icons8-barbell-100" width="100" height="100"/>
+        <image name="icons8-leaderboard-50" width="50" height="50"/>
         <image name="icons8-male-user-96 (1)" width="96" height="96"/>
         <image name="icons8-settings-500" width="500" height="500"/>
         <image name="icons8-settings-512" width="512" height="512"/>

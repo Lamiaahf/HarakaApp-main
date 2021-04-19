@@ -28,6 +28,7 @@
 		23A7171A2621E2D100C43FD4 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717172621E2D100C43FD4 /* WorkoutModel.swift */; };
 		23A7171E2621EA4500C43FD4 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7171D2621EA4500C43FD4 /* PlayerCell.swift */; };
 		23B0C736262A695B00E91238 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421A261B3750006B2EE4 /* CreateGameViewController.swift */; };
+		23B0C755262E186200E91238 /* ChallengeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0C754262E186100E91238 /* ChallengeCard.swift */; };
 		3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3D6A261216A900246872 /* UsersTableViewController.swift */; };
 		3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3DA1261221B600246872 /* UserProfileViewController.swift */; };
 		3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */; };
@@ -122,6 +123,7 @@
 		23A717162621E2D100C43FD4 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		23A717172621E2D100C43FD4 /* WorkoutModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		23A7171D2621EA4500C43FD4 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		23B0C754262E186100E91238 /* ChallengeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCard.swift; sourceTree = "<group>"; };
 		3F1C3D6A261216A900246872 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		3F1C3DA1261221B600246872 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPosts.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				940F4C35260227B600508368 /* createChallenge.swift */,
 				232E738D25F56BAC0029D39C /* Challenge.swift */,
 				232E739025F588290029D39C /* ChallengeViewController.swift */,
+				23B0C754262E186100E91238 /* ChallengeCard.swift */,
 			);
 			path = Challenges;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				23104218261B34A7006B2EE4 /* GameRoomsViewController.swift in Sources */,
 				232E738E25F56BAC0029D39C /* Challenge.swift in Sources */,
 				3FA4932D260B613C0052A1BD /* ApproveTrainer.swift in Sources */,
+				23B0C755262E186200E91238 /* ChallengeCard.swift in Sources */,
 				3FF0142D2621EDBA00948FDB /* ActivityDescription.swift in Sources */,
 				3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */,
 				3FF017A8262717A400948FDB /* LaunchScreen.swift in Sources */,

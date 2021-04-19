@@ -10,21 +10,16 @@ import Firebase
 
 class Post
 {
-     var createdBy: User
-     var timeAgo: String?
-
-    var timestamp: Date?
-     var caption: String?
- //   var image: UIImage?
-     var numOfLikes: Int?
-     var numOfComments: Int?
-
     
-//    var like: UIButton
- //   var comment: UIButton
-     var UID :String?
-     var postID: String?
-     var liked: Bool?
+    var createdBy: User
+    var timeAgo: String?
+    var timestamp: Date?
+    var caption: String?
+    var numOfLikes: Int?
+    var numOfComments: Int?
+    var UID :String?
+    var postID: String?
+    var liked: Bool?
     
     init(createdBy: User, timeAgo: String?, caption: String?, numOfLikes: Int?, numOfComments: Int?, postID: String?, liked: Bool?, uid : String?){
         
@@ -61,6 +56,11 @@ class Post
         self.postID = snapshot.key
         self.UID = uid
         self.createdBy = User()
+        
+        DBManager.getUser(for: uid){
+            user in
+            self.createdBy = user
+        }
         self.caption = cap
         self.timeAgo = times
         self.numOfLikes = nol

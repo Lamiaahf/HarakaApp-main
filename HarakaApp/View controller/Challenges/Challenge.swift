@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Firebase
 
-struct Challenge{
+@objc class Challenge: NSObject{
     
     
     var createdBy: Trainer?
@@ -16,6 +17,30 @@ struct Challenge{
     var cDesc: String?
     var chalID: String?
     
+    override init(){
+        super.init()
+    }
+    init?(snapshot: DataSnapshot) {
+        guard let cDict = snapshot.value as? [String:Any],
+        let createdBy = cDict["CreatorID"] as? String,
+        let end = cDict["Deadline"] as? Date,
+        let name = cDict["Name"] as? String,
+        let desc = cDict["Description"] as? String else { return nil }
+
+        self.chalID = snapshot.key
+        self.cDesc = desc
+        self.cName = name
+        self.enddate = end
+        self.createdBy = Trainer()
+        
+        DBManager.getTrainer(for: createdBy){
+            trainer in
+            self.createdBy = trainer
+        }
+        
+    }
+
+
 }
 
 
