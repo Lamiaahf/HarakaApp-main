@@ -21,6 +21,7 @@ import Firebase
         super.init()
     }
     init?(snapshot: DataSnapshot) {
+        super.init()
         guard let cDict = snapshot.value as? [String:Any],
         let createdBy = cDict["CreatorID"] as? String,
         let end = cDict["Deadline"] as? Date,

@@ -109,9 +109,10 @@ class TimelineViewController: UITableViewController {
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
 
         followingsDict = Dictionary.init(keys: followingsIDs!, values: followings!)
-        ref.child("posts").observe(.childAdded){
+        ref.child("posts").observe(.value){
         (snapshot) in
-            if snapshot.exists(){
+            var temp = [Post]()
+            for child in snapshot.children{
                 if let postDict = snapshot.value as? [String: Any]{
                     if let uid = postDict["uid"] as? String{
                         
@@ -132,17 +133,17 @@ class TimelineViewController: UITableViewController {
                             }
                             var post = Post(createdBy: postUser!, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
                             self.checkLike(post: post)
-                            self.posts?.append(post)
-                            self.posts?.reverse()
-               //             self.tableView.reloadData()
+                            temp.append(post)
+                           
    
                         
                         }
                         
                     }}
-                
+                self.posts = temp
+                self.tableView.reloadData()
             }
-    
+
 
         }
     }
@@ -200,9 +201,12 @@ extension TimelineViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell", for: indexPath) as! PostCell
-        cell.post = posts![indexPath.row]
+        let maxIndex = posts?.count
+        let newIndex = maxIndex! - indexPath.row
         
-        cell.commentButton.tag = indexPath.row
+        cell.post = posts![newIndex]
+        
+        cell.commentButton.tag = newIndex
         cell.commentButton.addTarget(self, action: #selector(TimelineViewController.openComments(_:)) , for: UIControl.Event.touchUpInside)
         
         return cell
