@@ -23,10 +23,13 @@ class TabBarViewController: AMTabsViewController {
   private func setTabsControllers() {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let HPVC = storyboard.instantiateViewController(withIdentifier: "HomePageViewController")
+    let nav1 = UINavigationController (rootViewController: HPVC)
     let MVC = storyboard.instantiateViewController(withIdentifier: "MapViewController")
+    let nav2 = UINavigationController (rootViewController: MVC)
     let SBVC = storyboard.instantiateViewController(withIdentifier: "searchBViewController")
+    let nav3 = UINavigationController (rootViewController: SBVC)
     let UPVC = storyboard.instantiateViewController(withIdentifier: "UserProfileViewController")
- /*   let CVC = storyboard.instantiateViewController(withIdentifier: "")*/
+    let nav4 = UINavigationController (rootViewController: UPVC) /*   let CVC = storyboard.instantiateViewController(withIdentifier: "")*/
 
     viewControllers = [
       HPVC,
