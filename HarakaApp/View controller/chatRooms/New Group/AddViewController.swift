@@ -38,19 +38,18 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didTabSaveButton(_ sender: UIButton) {
     
     // @objc func didTapSaveButton() {
-        if let titleText = self.titleField.text, !titleText.isEmpty
+        if let titleText = self.titleField.text, !titleText.isEmpty {
         /*,
             let bodyText = bodyField.text, !bodyText.isEmpty */
-        {
+        
 
             let targetDate = datePicker.date
            // added
-           
-            let date = Date()
+            //let date = Date()
             let formatter = DateFormatter()
             formatter.dateFormat = "MMM, dd, YYYY"
-            let d = formatter.string(from: date)
-           // completion?(titleText, bodyText, d )
+            let d = formatter.string(from: targetDate)
+            // completion?(titleText, bodyText, d )
             let dataRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
             let CalenRef = dataRef.child("Calender").child(objRoom.roomId!).childByAutoId()
             let calenderData:[String:Any] = [ "EventTitle":titleText , "EventDate": d  /*"EventBody":bodyText*/ ]

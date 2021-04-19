@@ -37,7 +37,7 @@ class CreateRoomViewController: UIViewController {
             // Dispose of any resources that can be recreated.
         }
         
-    let Emenu = ["كرة قدم", "كرة سلة", "مشي", "كرة تنس", "كرة طائرة", "دراجات ","جري", "ركوب الخيل", "قولف", "هايكنج", "بولنق","يوقا", "كراتيه", "رماية"]
+    let Emenu = ["كرة قدم", "كرة سلة", "مشي", "كرة تنس", "كرة طائرة", "دراجات","جري", "ركوب الخيل", "قولف", "هايكنج", "بولنق","يوقا", "كراتيه", "رماية"]
     
     @IBAction func topChooseMenuItem(_ sender: UIButton) {
         dropDown.dataSource = Emenu

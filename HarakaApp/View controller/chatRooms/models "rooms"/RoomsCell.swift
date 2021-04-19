@@ -29,9 +29,12 @@ class RoomCell: UICollectionViewCell {
             guard let imageData = data, error == nil else {
                 return
             }
-            self.EImage.image = UIImage(data: imageData)
+            if (EImage != nil) {
+                self.EImage.image = UIImage(data: imageData)}
+            else {return}
             creatorName.text = OBJRoom.ownerName
             
+        
         })
         }
 }

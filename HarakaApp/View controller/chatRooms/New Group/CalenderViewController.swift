@@ -121,8 +121,7 @@ extension CalenderViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text
-        self.models[indexPath.row].title
+        cell.textLabel?.text = self.models[indexPath.row].title
        // let Ebody = models[indexPath.row].body
         let date = models[indexPath.row].date
         cell.detailTextLabel?.text=date
@@ -142,7 +141,7 @@ extension CalenderViewController: UITableViewDataSource {
                     let EventTitle = Edate ["EventTitle"] as? String
                       //  let EventBody = ["EventBody"] as? String
                     //let ID = String(snapshot.key)
-                        var id = self.objRoom!.roomId
+                        let id = self.objRoom!.roomId
                         let calender = MyReminder(title: EventTitle!, date: EventDate, /*body:EventBody!*/  identifier:id!)
                         self.models.append(calender)
                         self.table.reloadData()

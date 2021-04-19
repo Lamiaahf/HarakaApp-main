@@ -108,21 +108,15 @@ class TRoomsViewController: UIViewController,  UIViewControllerTransitioningDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath ) as! RoomCell
         cell.OBJRoom = room
         cell.backgroundColor =  colors.randomElement()
-       cell.layer.cornerRadius = 5
+        cell.layer.cornerRadius = 5
+        
       var EImage = room.EventImage
-       // cell.layer.borderWidth = 3
-        // cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-      //  let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        
         let groupName = UILabel(frame: CGRect(x: 0 , y: 0 , width: cell.bounds.size.width , height: 40  ))
         groupName.textColor=UIColor.white
         groupName.text = room.name
         groupName.textAlignment = .center
         groupName.font = UIFont.boldSystemFont(ofSize:15)
-        
-      /*  let creatorN = UILabel(frame: CGRect(x: 0 , y: 0 , width: cell.bounds.size.width , height: -40  ))
-        creatorN.text = room.ownerName
-        creatorN.textAlignment = .center
-        creatorN.font = UIFont.italicSystemFont(ofSize:10)*/
         
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.gray.cgColor

@@ -94,16 +94,6 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
                     let EventImage = dataArray["EventImage"] as? String
               let creatorName = dataArray["creatorName"] as? String
                     let room = Room.init(rId: snapshot.key, rname: name, EImage: EventImage! , creatorN : creatorName!)
-                        
-                        //, creatorN: creatorName )
-                    
-                    
-                   /* Storage.storage().reference(forURL: room.EventImage!).getData(maxSize: 1048576, completion: { (data, error) in
-
-                        guard let imageData = data, error == nil else {
-                            return
-                        }
-                        self.OBJRoom.EventImage.Image = UIImage(data: imageData)*/
                        
                         self.rooms.append(room)
                 self.RoomsTable.reloadData()
@@ -166,21 +156,14 @@ class RoomsViewController: UIViewController,  UIViewControllerTransitioningDeleg
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath ) as! RoomCell
         cell.OBJRoom = room
         cell.backgroundColor =  colors.randomElement()
-       cell.layer.cornerRadius = 5
-      var EImage = room.EventImage
-       // cell.layer.borderWidth = 3
-        // cell.layer.borderColor=#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-      //  let padding = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        cell.layer.cornerRadius = 5
+        var EImage = room.EventImage
+        
         let groupName = UILabel(frame: CGRect(x: 0 , y: 0 , width: cell.bounds.size.width , height: 40  ))
         groupName.textColor=UIColor.white
         groupName.text = room.name
         groupName.textAlignment = .center
         groupName.font = UIFont.boldSystemFont(ofSize:15)
-        
-      /*  let creatorN = UILabel(frame: CGRect(x: 0 , y: 0 , width: cell.bounds.size.width , height: -40  ))
-        creatorN.text = room.ownerName
-        creatorN.textAlignment = .center
-        creatorN.font = UIFont.italicSystemFont(ofSize:10)*/
         
         cell.layer.cornerRadius = 20
         cell.layer.shadowColor = UIColor.gray.cgColor
