@@ -31,7 +31,7 @@ class UserActivitysTableView: UITableViewController {
                 fetchActivity()
             }
 
-            func fetchActivity () {
+        func fetchActivity () {
                 //get all the JoinedActivitys id
                 databaseRef.child("JoinedActivity").child(uid!).observeSingleEvent(of :.value, with : { [self] (snapshot) in
                     
@@ -39,46 +39,44 @@ class UserActivitysTableView: UITableViewController {
 
                         self.ActivitysID!.append((item as AnyObject).key)
                             }
-                    print (ActivitysID!)
+                  //  print (ActivitysID!)
+                    getJoinedActivities()
                         })
-                for ID in self.ActivitysID! {
-                    print(ID)
-                    // to git the JoinedActivity Data and show them in the table
-                    databaseRef.child("Activity").child(ID).observeSingleEvent(of :.childAdded, with : { (snapshot) in
+            }
+    
+    func getJoinedActivities(){
+        
+        for ID in self.ActivitysID! {
+            // to git the JoinedActivity Data and show them in the table
+            databaseRef.child("Activity").child(ID).observe(.value, with : { (snapshot) in
 
-                         if (snapshot.exists()){
-                            if let ADict = snapshot.value as? [String: Any]{
-                            let id = String(snapshot.key)
-                            let Name = ADict["ActivityName"] as? String ?? ""
-                            let Loc = ADict["location"] as? String ?? ""
-                            let dis = ADict["Description"] as? String ?? ""
-                            let DT = ADict["DateTime"] as? String
-                            let AType = ADict["ActivityType"] as? String ?? ""
-                            let count = ADict["NumOfParticipant"] as? String ?? ""
-                            let createdByid = ADict["createdByID"] as? String ?? ""
-                            let createdByN = ADict["createdByName"] as? String ?? ""
-                            let Aimage = ADict["Image"] as? String ?? ""
-                            let ID = ADict ["ActivityID"] as? String ?? ""
-                            let T = ADict ["Type"] as? String ?? ""
+                 if (snapshot.exists()){
+                    if let ADict = snapshot.value as? [String: Any]{
+                    let id = String(snapshot.key)
+                    let Name = ADict["ActivityName"] as? String ?? ""
+                    let Loc = ADict["location"] as? String ?? ""
+                    let dis = ADict["Description"] as? String ?? ""
+                    let DT = ADict["DateTime"] as? String
+                    let AType = ADict["ActivityType"] as? String ?? ""
+                    let count = ADict["NumOfParticipant"] as? String ?? ""
+                    let createdByid = ADict["createdByID"] as? String ?? ""
+                    let createdByN = ADict["createdByName"] as? String ?? ""
+                    let Aimage = ADict["Image"] as? String ?? ""
+                    let ID = ADict ["ActivityID"] as? String ?? ""
+                    let T = ADict ["Type"] as? String ?? ""
 
-                                let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, t: T)
-                                self.UserActivitys?.append(NewActivity)
-                                self.tableView.reloadData()
+                        let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, t: T)
+                        self.UserActivitys?.append(NewActivity)
+                        self.tableView.reloadData()
 
-                            }}
+                    }}
 
-                    
-                    
-                        })
-                        
-                    }
-                    
-                print(self.UserActivitys!)
-
-                
-                
+            
+            
+                })
                 
             }
+    }
     
     
 
