@@ -2157,10 +2157,6 @@
                                     <segue destination="Osg-kA-dEC" kind="embed" id="Q3a-5p-vEn"/>
                                 </connections>
                             </containerView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-user-male-480" translatesAutoresizingMaskIntoConstraints="NO" id="rnv-Ja-vxE">
-                                <rect key="frame" x="137" y="131" width="117" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lie-wN-bcC">
                                 <rect key="frame" x="334" y="104" width="40" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2169,15 +2165,8 @@
                                     <segue destination="S8k-ew-D07" kind="show" id="gY5-S0-J4H"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w98-C4-873">
-                                <rect key="frame" x="97" y="273" width="199" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a49-bs-mhv">
-                                <rect key="frame" x="50" y="302" width="83" height="30"/>
+                                <rect key="frame" x="50" y="302" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.73705857990000001" green="0.87482732529999996" blue="0.88803792000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="الفعاليات ">
@@ -2188,7 +2177,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-tI-jRt">
-                                <rect key="frame" x="141" y="302" width="99" height="30"/>
+                                <rect key="frame" x="141" y="302" width="110" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="التحديات">
@@ -2199,7 +2188,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z6M-MX-hAQ">
-                                <rect key="frame" x="254" y="302" width="86" height="30"/>
+                                <rect key="frame" x="248" y="302" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40191826219999999" green="0.57196450229999996" blue="0.63496923449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="المتابعين">
@@ -2209,8 +2198,20 @@
                                     <action selector="ShowFollowers:" destination="NAV-Em-f0d" eventType="touchUpInside" id="c11-MN-eeQ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBB-71-YMY">
+                                <rect key="frame" x="148" y="128" width="97" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w98-C4-873">
+                                <rect key="frame" x="97" y="255" width="199" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yU-LX-bWU">
-                                <rect key="frame" x="97" y="252" width="199" height="21"/>
+                                <rect key="frame" x="97" y="234" width="199" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -2226,7 +2227,7 @@
                         <outlet property="ChallengesV" destination="A7q-Cn-hIw" id="V6S-Wa-V95"/>
                         <outlet property="FollowersV" destination="HZn-gL-hR5" id="3Ev-iC-SQY"/>
                         <outlet property="Name" destination="w98-C4-873" id="NWg-G3-psW"/>
-                        <outlet property="Userimg" destination="rnv-Ja-vxE" id="bfo-XY-MYP"/>
+                        <outlet property="Userimg" destination="gBB-71-YMY" id="oeL-E0-jUG"/>
                         <outlet property="Username" destination="4yU-LX-bWU" id="yUV-vl-Z3j"/>
                         <outlet property="activitieB" destination="a49-bs-mhv" id="Wo5-41-U0w"/>
                         <outlet property="challengeB" destination="kQx-tI-jRt" id="eGM-v0-0ez"/>
@@ -2654,9 +2655,10 @@
                                     <action selector="showPosts:" destination="XVO-3o-Oui" eventType="touchUpInside" id="H8O-An-z8T"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4EE-sz-6mn">
-                                <rect key="frame" x="145" y="100" width="112" height="104"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r53-5J-ALw">
+                                <rect key="frame" x="156" y="116" width="97" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BfE-P2-2Dw"/>
@@ -2670,7 +2672,7 @@
                         <outlet property="FollowingV" destination="ren-Ei-Z0h" id="7ZX-12-Ykx"/>
                         <outlet property="Name" destination="Aw9-f2-IIP" id="Ckw-ei-cnt"/>
                         <outlet property="PostsV" destination="zz3-wv-VLC" id="bwW-NC-NGn"/>
-                        <outlet property="Userimg" destination="4EE-sz-6mn" id="Nwv-a9-cZc"/>
+                        <outlet property="Userimg" destination="r53-5J-ALw" id="BcC-5W-rFd"/>
                         <outlet property="Username" destination="cGe-Xl-bpd" id="nWS-dU-Vkk"/>
                         <outlet property="post" destination="CVq-AU-cAe" id="0d1-Wb-tlX"/>
                     </connections>
@@ -2685,7 +2687,7 @@
             <objects>
                 <tableViewController id="Osg-kA-dEC" customClass="FollowersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r1v-XO-UAI">
-                        <rect key="frame" x="0.0" y="0.0" width="358" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="177"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -3218,10 +3220,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="358" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-user-male-480" translatesAutoresizingMaskIntoConstraints="NO" id="ENN-5S-5d0">
-                                <rect key="frame" x="108" y="20" width="144" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJd-CG-sPw">
                                 <rect key="frame" x="24" y="142" width="310" height="20.333333333333314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3285,6 +3283,11 @@
                                     <segue destination="Xkf-8x-Ylm" kind="embed" id="AL4-mK-5BW"/>
                                 </connections>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI3-WP-ByK">
+                                <rect key="frame" x="133" y="37" width="97" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rhP-3c-I5k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3295,10 +3298,9 @@
                         <outlet property="FollowersV" destination="Hkg-zi-Qvf" id="KcW-O3-1tq"/>
                         <outlet property="FollowingB" destination="fpQ-5d-vJs" id="tgC-af-5si"/>
                         <outlet property="FollowingV" destination="uos-KH-UXa" id="WIt-h5-TBr"/>
-                        <outlet property="PostsV" destination="Hkg-zi-Qvf" id="ezL-5f-dUZ"/>
-                        <outlet property="Profilepic" destination="ENN-5S-5d0" id="FMI-Iu-T3H"/>
                         <outlet property="followButton" destination="Bhj-bh-eQg" id="ep4-UP-ZIm"/>
                         <outlet property="name" destination="sQY-GZ-Fa4" id="ta4-0R-sio"/>
+                        <outlet property="postB" destination="h5w-IU-U6o" id="142-rh-ewI"/>
                         <outlet property="username" destination="EJd-CG-sPw" id="BKS-Gg-Ckw"/>
                     </connections>
                 </viewController>
@@ -3408,10 +3410,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="358" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-user-male-480" translatesAutoresizingMaskIntoConstraints="NO" id="gcE-8G-dbQ">
-                                <rect key="frame" x="105" y="20" width="144" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGm-IE-9xI">
                                 <rect key="frame" x="23" y="129" width="310" height="20.333333333333314"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3427,7 +3425,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaE-JL-jky">
-                                <rect key="frame" x="120" y="185" width="114" height="30"/>
+                                <rect key="frame" x="120" y="180" width="114" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40191826219999999" green="0.57196450229999996" blue="0.63496923449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="متابعة">
@@ -3438,7 +3436,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlK-0b-0GN">
-                                <rect key="frame" x="52" y="218" width="83" height="30"/>
+                                <rect key="frame" x="52" y="213" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.73705857990000001" green="0.87482732529999996" blue="0.88803792000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="الفعاليات ">
@@ -3446,7 +3444,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpG-b7-vac">
-                                <rect key="frame" x="133" y="218" width="89" height="30"/>
+                                <rect key="frame" x="133" y="213" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="التحديات">
@@ -3454,7 +3452,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceE-0Q-9Ji">
-                                <rect key="frame" x="222" y="218" width="86" height="30"/>
+                                <rect key="frame" x="222" y="213" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40191826219999999" green="0.57196450229999996" blue="0.63496923449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="المتابعين">
@@ -3468,6 +3466,11 @@
                                     <segue destination="Osg-kA-dEC" kind="embed" id="uc4-sw-vzv"/>
                                 </connections>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rKT-iy-733">
+                                <rect key="frame" x="137" y="20" width="97" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X6Q-Oo-LAS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3475,7 +3478,6 @@
                     <navigationItem key="navigationItem" id="Iyi-z1-qmh"/>
                     <connections>
                         <outlet property="Followers" destination="8L6-66-mFj" id="pFC-rx-097"/>
-                        <outlet property="Profilepic" destination="gcE-8G-dbQ" id="qIh-a3-1AX"/>
                         <outlet property="Username" destination="IGm-IE-9xI" id="nCE-Yb-Jvn"/>
                         <outlet property="followButton" destination="yaE-JL-jky" id="qox-PM-VSQ"/>
                         <outlet property="name" destination="qyg-db-S90" id="gUU-2M-9Xt"/>
@@ -4546,7 +4548,7 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="AL4-mK-5BW"/>
-        <segue reference="Q3a-5p-vEn"/>
+        <segue reference="gUs-S1-3dg"/>
         <segue reference="gJH-zc-xPe"/>
         <segue reference="SsM-Vu-eb0"/>
         <segue reference="1fU-el-i1a"/>
