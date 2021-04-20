@@ -65,17 +65,17 @@ class TrainerSingupViewController: UIViewController {
         Utilities.styleTextField(Age)
         Utilities.styleTextField(LinkedinTS)
         Utilities.styleFilledButton(Singup)
+        Utilities.CircularImageView(AvatarUS)
 
 
     }
     
-    func setupAvatar (){
-        AvatarUS.layer.cornerRadius = 40
-        AvatarUS.clipsToBounds = true
+   /* func setupAvatar (){
+       // AvatarUS.clipsToBounds = true
         AvatarUS.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer( target: self, action: #selector(TapToChange))
+        let tapGesture = UITapGestureRecognizer ( target: self, action: #selector(TapToChange))
         AvatarUS.addGestureRecognizer(tapGesture)
-    }
+    }*/
     
     // ImagePicker
      

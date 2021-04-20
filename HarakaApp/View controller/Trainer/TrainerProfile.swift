@@ -40,16 +40,11 @@ class TrainerProfile: UIViewController {
         getUserInfo()
         self.loggedInUser = Auth.auth().currentUser
 
-    //    setupUserimg()
 
     }
     
     
-    func setupUserimg(){
-        Userimg.layer.cornerRadius = 40/2
-        Userimg.clipsToBounds = true
-        Userimg.isUserInteractionEnabled = true
-    }
+   
     
     /*
     func getUserInfo() {
@@ -84,7 +79,6 @@ class TrainerProfile: UIViewController {
                         return
                     }
                     self.Userimg.image = UIImage(data: imageData)
-                    self.setupUserimg()
 
                 })
                 

@@ -18,7 +18,8 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         @IBOutlet weak var Username: UILabel!
         @IBOutlet weak var followButton: UIButton!
     
-      
+    @IBOutlet weak var Followers: UIView!
+
        
        let loggedInTrainer = Auth.auth().currentUser
        var loggedInTrainerData:NSDictionary?
@@ -222,6 +223,11 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         
         }}
 
-
+    @IBAction func ShowFollowers(_ sender: Any) {
+    
+       UIView.animate(withDuration: 0.5, animations:{
+            self.Followers.alpha = 1
+            }
+       )}
 
 }

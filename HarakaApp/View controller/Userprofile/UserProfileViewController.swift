@@ -37,6 +37,10 @@ class UserProfileViewController:  UIViewController {
         Utilities.styleFilledButton(Followers)
         Utilities.CircularImageView(Userimg)
         getUserInfo()
+        Following.showsTouchWhenHighlighted = true
+        Followers.showsTouchWhenHighlighted = true
+        post.showsTouchWhenHighlighted = true
+
         self.loggedInUser = Auth.auth().currentUser
 
     //    setupUserimg()
