@@ -18,7 +18,8 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         @IBOutlet weak var Username: UILabel!
         @IBOutlet weak var followButton: UIButton!
     
-      
+    @IBOutlet weak var Followers: UIView!
+
        
        let loggedInTrainer = Auth.auth().currentUser
        var loggedInTrainerData:NSDictionary?
@@ -35,8 +36,9 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
            super.viewDidLoad()
         //style
         Utilities.styleFilledButton(followButton)
-        
-           databaseRef.child("Trainers").child("Approved").child(self.loggedInTrainer!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        Utilities.CircularImageView(Profilepic)
+
+        databaseRef.child("users").child(self.loggedInTrainer!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
             self.loggedInTrainerData = snapshot.value as? NSDictionary
             self.loggedInTrainerData?.setValue(self.loggedInTrainer!.uid, forKey: "uid")
@@ -89,13 +91,20 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         if (name != nil){
              self.name.text = otherTrainers!["Name"] as? String
             self.Username.text = otherTrainers!["Username"] as? String}
+        
         if (otherTrainers!["ProfilePic"] != nil){
+         let image =  otherTrainers!["ProfilePic"] as? String
+            Storage.storage().reference(forURL: image!).getData(maxSize: 1048576, completion: { [self] (data, error) in
 
-               let databaseProfilePic = otherTrainers!["ProfilePic"] as! String
-               let data = try? Data(contentsOf:URL(string:databaseProfilePic)!)
-               
-               self.setProfilePicture(self.Profilepic,imageToSet:UIImage(data:data!)!)
-           }
+                guard let imageData = data, error == nil else {
+                    return
+                }
+
+                Profilepic.image = UIImage(data: imageData)
+                              //  self.setupUserimg()
+                                                                                        
+                            
+           })
 
           /* if(otherTrainers["followersCount"] != nil)
            {
@@ -111,7 +120,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
                let followingCount = ("\(otherTrainers["followersCount"]!)")
                self.numberFollowing.setTitle(followingCount, for: .normal)
            }*/
-       }
+        } }
 
        override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
@@ -121,7 +130,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
 
        internal func setProfilePicture(_ imageView:UIImageView,imageToSet:UIImage)
        {
-           imageView.layer.cornerRadius = 10.0
+           //imageView.layer.cornerRadius = 10.0
            imageView.layer.borderColor = UIColor.white.cgColor
            imageView.layer.masksToBounds = true
            imageView.image = imageToSet
@@ -144,11 +153,11 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
             let loggedInTrainersProfilePic = self.loggedInTrainerData?["profilePic"] != nil ? self.loggedInTrainerData?["profilePic"]! : nil
             let otherTrainersProfilePic = self.otherTrainers?["profilePic"] != nil ? self.otherTrainers?["profilePic"]! : nil
             
-            let followersData = ["name":self.loggedInTrainerData?["name"] as! String,
+            let followersData = ["Name":self.loggedInTrainerData?["Name"] as! String,
                         "Username":self.loggedInTrainerData?["Username"] as! String,
                 "profilePic": loggedInTrainersProfilePic]
             
-            let followingData = ["Name":self.otherTrainers?["name"] as! String,
+            let followingData = ["Name":self.otherTrainers?["Name"] as! String,
                                  "Username":self.otherTrainers?["Username"] as! String,
                                  "profilePic":otherTrainersProfilePic]
             
@@ -166,7 +175,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
             
             //update following count under the logged in user
             //update followers count in the user that is being followed
-            let followersCount:Int?
+          /*  let followersCount:Int?
             let followingCount:Int?
             if(self.otherTrainers?["followersCount"] == nil)
             {
@@ -210,10 +219,15 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
             databaseRef.updateChildValues(childUpdates)
             
             
-        }
+        }*/
         
-    }
+        }}
 
-
+    @IBAction func ShowFollowers(_ sender: Any) {
+    
+       UIView.animate(withDuration: 0.5, animations:{
+            self.Followers.alpha = 1
+            }
+       )}
 
 }

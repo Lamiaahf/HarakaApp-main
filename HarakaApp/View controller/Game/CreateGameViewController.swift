@@ -19,6 +19,7 @@ class CreateGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideKeyboardWhenTappedAround()
        dismissButton.layer.cornerRadius = dismissButton.frame.size.width / 2
     }
     

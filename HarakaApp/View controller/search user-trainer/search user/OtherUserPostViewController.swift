@@ -36,12 +36,11 @@ class OtherUserPostViewController: UITableViewController {
         databaseRef.child("posts").observe(.childAdded){
         (snapshot) in
         if let postDict = snapshot.value as? [String: Any]{
-            if let usern = postDict["username"] as? String {
+            if let  UID = postDict["uid"] as? String {
                     let times = postDict["timestamp"] as? String ?? ""
                     let cap = postDict["caption"] as? String ?? ""
                     let nol = postDict["numOfLikes"] as? Int ?? 0
                     let noc = postDict["numOfComments"] as? Int ?? 0
-                    let UID = postDict["uid"] as? String ?? ""
                    
                     let id = String(snapshot.key)
                   

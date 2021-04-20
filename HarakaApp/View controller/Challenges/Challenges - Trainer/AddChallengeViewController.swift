@@ -32,6 +32,8 @@ class AddChallengeViewController: UIViewController {
         Utilities.styleTextField(cName)
         Utilities.styleFilledButton(createButton)
         Utilities.styleTextView(textBox: cDesc)
+        
+        hideKeyboardWhenTappedAround()
 
         
     }

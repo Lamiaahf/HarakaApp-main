@@ -39,7 +39,6 @@ class TimelineViewController: UITableViewController {
             user in
             current = user
 
-            print(FollowersTableViewController().listFollowers)
             self.followingsIDs?.append(current.userID!)
             self.followings?.append(current)
             
@@ -51,7 +50,7 @@ class TimelineViewController: UITableViewController {
                     // DBManager.getPic(for: u){ pic in}
                 }
                 self.fetchPosts()
-                self.tableView.reloadData()
+          //      self.tableView.reloadData()
             }
         }
         
@@ -112,8 +111,8 @@ class TimelineViewController: UITableViewController {
         ref.child("posts").observe(.value){
         (snapshot) in
             var temp = [Post]()
-            for child in snapshot.children{
-                if let postDict = snapshot.value as? [String: Any]{
+            for child in snapshot.children.allObjects as! [DataSnapshot]{
+                if let postDict = child.value as? [String: Any]{
                     if let uid = postDict["uid"] as? String{
                         
                         if self.followingsIDs!.contains(uid){
@@ -122,7 +121,7 @@ class TimelineViewController: UITableViewController {
                             let times = postDict["timestamp"] as? String ?? ""
                             let nol = postDict["numOfLikes"] as? Int ?? 0
                             let noc = postDict["numOfComments"] as? Int ?? 0
-                            let id = String(snapshot.key)
+                            let id = String(child.key)
                             
                             let postUser = self.followingsDict![uid]
                         
@@ -134,16 +133,14 @@ class TimelineViewController: UITableViewController {
                             var post = Post(createdBy: postUser!, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
                             self.checkLike(post: post)
                             temp.append(post)
-                           
    
                         
                         }
                         
                     }}
-                self.posts = temp
-                self.tableView.reloadData()
             }
-
+            self.posts = temp
+            self.tableView.reloadData()
 
         }
     }
@@ -201,14 +198,14 @@ extension TimelineViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell", for: indexPath) as! PostCell
-        let maxIndex = posts?.count
-        let newIndex = maxIndex! - indexPath.row
+        let maxIndex = posts!.count - 1
+        let newIndex = maxIndex - indexPath.row
         
         cell.post = posts![newIndex]
         
         cell.commentButton.tag = newIndex
         cell.commentButton.addTarget(self, action: #selector(TimelineViewController.openComments(_:)) , for: UIControl.Event.touchUpInside)
-        
+
         return cell
         
     }

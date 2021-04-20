@@ -36,6 +36,12 @@ class ChallengeViewController: UIViewController {
         
         DBManager.getChallenge(){
             challenge in
+            if(challenge.cName == nil){
+                self.challengeCard.alpha = 0
+                self.notFoundLabel.alpha = 1
+                self.notFoundImage.alpha = 1
+                return
+            }
             if currentDate.compare(challenge.enddate!) == .orderedAscending{
                 // if current date < challenge end date -> show challenge
                 self.challenge = challenge

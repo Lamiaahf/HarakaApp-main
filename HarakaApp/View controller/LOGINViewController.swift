@@ -11,21 +11,23 @@ import FirebaseDatabase
 
 class LOGINViewController: UIViewController {
 // L= Login
+   
+ 
     @IBOutlet weak var EmailL: UITextField!
     @IBOutlet weak var PasswordL: UITextField!
-   
-    @IBOutlet weak var ForgotPass: UIButton!
     
+   
     @IBOutlet weak var Error: UILabel!
-    @IBOutlet weak var login: UIButton!
-    @IBOutlet weak var Singupform: UIButton!
+    
+    @IBOutlet weak var LoginButton: UIButton!
+    
     var databaseRef = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
 
-
+        hideKeyboardWhenTappedAround()
 
     }
     func setUpElements() {
@@ -35,13 +37,12 @@ class LOGINViewController: UIViewController {
         // Style the elements
         Utilities.styleTextField(EmailL)
         Utilities.styleTextField(PasswordL)
-        Utilities.styleFilledButton(login)
+        Utilities.styleFilledButton(LoginButton)
     }
 
     
 
     @IBAction func loginTapped(_ sender: Any) {
-        
         // TODO: Validate Text Fields
         
         // Create cleaned versions of the text field

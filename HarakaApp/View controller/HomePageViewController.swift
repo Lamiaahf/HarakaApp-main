@@ -29,8 +29,8 @@ class HomePageViewController: UIViewController {
         activitiesButton.applyDesign()
         GroupsHSButton.applyDesign()
         challangesHSButton.applyDesign()
-      //  GameHSButton.applyDesign()
-     //   postsHSButton.applyDesign()
+       // GameHSButton.applyDesign()
+      // postsHSButton.applyDesign()
         
         // Do any additional setup after loading the view.
     }

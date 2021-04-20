@@ -10,10 +10,12 @@ import ARKit
 import Firebase
 import FirebaseAuth
 
-class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOverlayViewDelegate {
+class WorkoutViewController: UIViewController, ARSCNViewDelegate {
     
 
     // UI Variables
+    
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var tapToStartView: UIView!
@@ -27,6 +29,10 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
     var result: [ARHitTestResult]?
     var startTime: Date?
     var currentGame: Game?
+    // Customized tracking variables
+    var trackingStatus: String = ""
+    var statusMessage: String = ""
+    var appState: AppState = .DetectSurface
     
     
     override func viewDidLoad() {
@@ -44,17 +50,19 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
     
         setOverlay()
         
-        // Set workout
-        self.index = 0
-        self.workout = WorkoutModel().getWorkoutData()[self.index!]
-        self.title = workout?.name
-        result = []
-        
         // Add tap gesture
         addTapGestureToSceneView()
         
         // Tap to start inner view
         tapToStartInnerView.setOverlay()
+        
+        self.initScene()
+        
+        // Set workout
+        self.index = 0
+        self.workout = WorkoutModel().getWorkoutData()[self.index!]
+    
+        result = []
     }
 
     
@@ -75,6 +83,23 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         sceneView.session.pause()
     }
     
+    func startApp() {
+      DispatchQueue.main.async {
+        self.appState = .DetectSurface
+      }
+    }
+    func resetApp() {
+      DispatchQueue.main.async {
+        self.appState = .DetectSurface
+      }
+    }
+    
+    func initScene() {
+      let scene = SCNScene()
+      sceneView.scene = scene
+      sceneView.delegate = self
+    }
+    
     
     func initializeGame(g: Game){
         currentGame = g
@@ -82,9 +107,11 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
 
     func setOverlay() {
         
+
         // connect guidanceoverlay with current session
         guidanceOverlay.session = sceneView.session
         guidanceOverlay.delegate = self
+   ///     guidanceOverlay.s
         sceneView.addSubview(guidanceOverlay)
         
         // set constraints
@@ -127,7 +154,8 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
                 let oldNode = sceneView.scene.rootNode.childNodes.first
                 sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
             }
-                
+            self.title = workout.name
+            self.nextButton.alpha = 1
         }
     }
     
@@ -165,12 +193,38 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
             // move back to previous controller
             let gameView = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
             gameView.initializeGame(g: currentGame!)
+            self.navigationController?.popViewController(animated: true)
             self.navigationController?.pushViewController(gameView, animated: true)
+            
         }
 
         
         
     }
+    
+    func updateStatus() {
+      // 1
+      switch appState {
+      case .DetectSurface:
+        statusMessage = "Scan available flat surfaces..."
+      case .PointAtSurface:
+        statusMessage = "Point at designated surface first!"
+      case .TapToStart:
+        statusMessage = "Tap to start."
+      case .Started:
+        statusMessage = "Tap objects for more info."
+      }
+      // 2
+      self.statusLabel.text = trackingStatus != "" ?
+          "\(trackingStatus)" : "\(statusMessage)"
+    }
+    func renderer(_ renderer: SCNSceneRenderer,
+      updateAtTime time: TimeInterval) {
+      DispatchQueue.main.async {
+        self.updateStatus()
+      }
+    }
+    
     /*
     func raycastQuery(from point: CGPoint,
              allowing target: ARRaycastQuery.Target,
@@ -234,6 +288,63 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
 //ARSessionObserver
 extension WorkoutViewController {
     
+    func initARSession() {
+      // 1
+      guard ARWorldTrackingConfiguration.isSupported else {
+        print("*** ARConfig: AR World Tracking Not Supported")
+        return
+      }
+      // 2
+      let config = ARWorldTrackingConfiguration()
+      // 3
+      config.worldAlignment = .gravity
+      config.providesAudioData = false
+      config.planeDetection = .horizontal
+      config.isLightEstimationEnabled = true
+      config.environmentTexturing = .automatic
+      // 4
+      sceneView.session.run(config)
+    }
+    func resetARSession() {
+      // 1
+      let config = sceneView.session.configuration as!
+        ARWorldTrackingConfiguration
+      // 2
+      config.planeDetection = .horizontal
+      // 3
+      sceneView.session.run(config,
+        options: [.resetTracking, .removeExistingAnchors])
+    }
+    func session(_ session: ARSession,
+      cameraDidChangeTrackingState camera: ARCamera) {
+      switch camera.trackingState {
+      case .notAvailable: self.trackingStatus =
+        "Tracking:  Not available!"
+      case .normal: self.trackingStatus = ""
+      case .limited(let reason):
+        switch reason {
+        case .excessiveMotion: self.trackingStatus =
+          "Tracking: Limited due to excessive motion!"
+        case .insufficientFeatures: self.trackingStatus =
+          "Tracking: Limited due to insufficient features!"
+        case .relocalizing: self.trackingStatus =
+          "Tracking: Relocalizing..."
+        case .initializing: self.trackingStatus =
+          "Tracking: Initializing..."
+        @unknown default: self.trackingStatus =
+          "Tracking: Unknown..."
+        }
+      }
+    }
+      
+    func sessionWasInterrupted(_ session: ARSession) {
+      self.trackingStatus = "AR Session Was Interrupted!"
+    }
+      
+    func sessionInterruptionEnded(_ session: ARSession) {
+      self.trackingStatus = "AR Session Interruption Ended"
+    }
+    
     func session(_ session: ARSession, didFailWithError error: Error) {
         if let arError = error as? ARError {
             switch arError.errorCode {
@@ -244,6 +355,7 @@ extension WorkoutViewController {
                 restartSessionWithoutDelete()
             }
         }
+        self.trackingStatus = "AR Session Failure: \(error)"
     }
     
     
@@ -255,4 +367,29 @@ extension WorkoutViewController {
             .removeExistingAnchors])
     }
     
+}
+
+extension WorkoutViewController: ARCoachingOverlayViewDelegate{
+  
+  //1. Called When The ARCoachingOverlayView Is Active And Displayed
+  func coachingOverlayViewWillActivate(_ coachingOverlayView: ARCoachingOverlayView) {
+    currentNode = nil
+    self.title = ""
+    self.nextButton.alpha = 0
+  }
+  
+  //2. Called When The ARCoachingOverlayView Is No Active And No Longer Displayer
+  func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) { }
+  
+  //3. Called When Tracking Conditions Are Poor Or The Seesion Needs Restarting
+  func coachingOverlayViewDidRequestSessionReset(_ coachingOverlayView: ARCoachingOverlayView) { }
+
+}
+
+enum AppState: Int16 {
+
+    case DetectSurface
+    case PointAtSurface
+    case TapToStart
+    case Started
 }

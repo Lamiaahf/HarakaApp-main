@@ -47,13 +47,30 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func checkPlayers(){
         
-        ref.child("GameParticipants").child((currentGame?.gID)!).queryOrdered(byChild: "Result").queryEnding(beforeValue: 0).observe(.value){
+        ref.child("GameParticipants").child((currentGame?.gID)!).queryOrdered(byChild: "Result").observe(.childAdded){
             
             snapshot in
-            if snapshot.children.allObjects.count == self.currentGame?.playerCount {
-                self.messageLabel.text = "!انتهت اللعبة"
-                self.joinButton.alpha = 0
-                self.messageLabel.alpha = 1
+            if snapshot.childrenCount == (self.currentGame?.playerCount)! {
+                if(Auth.auth().currentUser?.uid == self.currentGame?.creatorID){
+                    
+                    self.ref.child("GameParticipants").child((self.currentGame?.gID)!).child((Auth.auth().currentUser?.uid)!).queryOrdered(byChild: "Result").queryEqual(toValue: 0).observe(.value, with: {
+                        snapshot in
+                        if snapshot.exists(){
+                            self.joinButton.isEnabled = true
+                        }else{
+                            self.messageLabel.text = "!انتهت اللعبة"
+                            self.joinButton.alpha = 0
+                            self.messageLabel.alpha = 1
+                        }
+                        
+                    })
+                    
+                }
+                else{
+                    self.messageLabel.text = "!انتهت اللعبة"
+                    self.joinButton.alpha = 0
+                    self.messageLabel.alpha = 1
+                }
                 // Remove from database to prevent fetching next time?
             }
             else{
@@ -110,6 +127,8 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let ARView = self.storyboard?.instantiateViewController(withIdentifier: "WorkoutViewController") as! WorkoutViewController
                 ARView.initializeGame(g: self.currentGame!)
                 self.navigationController?.pushViewController(ARView, animated: true)
+               // self.navigationController?.show(ARView, sender: self)
+                //self.show(ARView, sender: self)
             }
 
            var test = "does exits == true reach here or does it BREAK"

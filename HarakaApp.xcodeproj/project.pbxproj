@@ -20,7 +20,6 @@
 		23598F47262F23780090C29C /* EmptyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23598F46262F23780090C29C /* EmptyCard.swift */; };
 		236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C961225E182BB0032ECC3 /* AddPostController.swift */; };
 		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
-		2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */; };
 		2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF40261736FD00FD9B1C /* DBManager.swift */; };
 		23A717102621DD8500C43FD4 /* model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A7170F2621DD8500C43FD4 /* model.scnassets */; };
 		23A717132621E2B100C43FD4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717122621E2B100C43FD4 /* Extension.swift */; };
@@ -31,13 +30,15 @@
 		23B0C736262A695B00E91238 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421A261B3750006B2EE4 /* CreateGameViewController.swift */; };
 		23B0C755262E186200E91238 /* ChallengeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0C754262E186100E91238 /* ChallengeCard.swift */; };
 		23F4CD2A262F343F0097DA4B /* AddChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */; };
+		23F4CD55262F86D00097DA4B /* TrainerChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */; };
 		3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3D6A261216A900246872 /* UsersTableViewController.swift */; };
 		3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3DA1261221B600246872 /* UserProfileViewController.swift */; };
+		3F2A3796262BA6E0009EDE21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A3795262BA6E0009EDE21 /* ViewController.swift */; };
+		3F2A3799262BA7C7009EDE21 /* UserActivitysTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A3798262BA7C7009EDE21 /* UserActivitysTableView.swift */; };
 		3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */; };
 		3F2D0E65261C94CA0029D96C /* OtherUserPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D0E64261C94CA0029D96C /* OtherUserPostViewController.swift */; };
 		3F2D100F261DF2510029D96C /* TactivitiTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D100E261DF2500029D96C /* TactivitiTable.swift */; };
 		3F2D1012261DF28B0029D96C /* TchallengesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D1011261DF28B0029D96C /* TchallengesTable.swift */; };
-		3F2D1015261DF2BF0029D96C /* TfollowersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D1014261DF2BF0029D96C /* TfollowersTable.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885D9F261A56DB003BF3F3 /* FollowersTableViewController.swift */; };
@@ -55,7 +56,6 @@
 		3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */; };
 		3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F625C81CFB0098C299 /* AppDelegate.swift */; };
 		3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */; };
-		3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14FA25C81CFB0098C299 /* ViewController.swift */; };
 		3FBB14FE25C81CFB0098C299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB14FC25C81CFB0098C299 /* Main.storyboard */; };
 		3FBB150025C81CFD0098C299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB14FF25C81CFD0098C299 /* Assets.xcassets */; };
 		3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB150C25C968560098C299 /* LOGINViewController.swift */; };
@@ -68,7 +68,6 @@
 		3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */; };
 		3FEF2CE126283C0700D9EC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEF2CE026283C0600D9EC33 /* LaunchScreen.storyboard */; };
 		3FF0142D2621EDBA00948FDB /* ActivityDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF0142C2621EDBA00948FDB /* ActivityDescription.swift */; };
-		3FF017A8262717A400948FDB /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF017A7262717A400948FDB /* LaunchScreen.swift */; };
 		3FF335A22614D82400A905EF /* TrainerProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF335A12614D82400A905EF /* TrainerProfile.swift */; };
 		3FF335C12614DD6A00A905EF /* TrainerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF335C02614DD6A00A905EF /* TrainerSettings.swift */; };
 		3FF3367E26164B3700A905EF /* UserPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3367D26164B3700A905EF /* UserPostsViewController.swift */; };
@@ -90,6 +89,8 @@
 		CE49454D26123346008DC32B /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49454C26123346008DC32B /* CircularTransition.swift */; };
 		CE494551261233FC008DC32B /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE494550261233FC008DC32B /* CreateRoomViewController.swift */; };
 		CE58002926261C6E002C3F1C /* RoomsCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE58002826261C6E002C3F1C /* RoomsCellTableViewCell.swift */; };
+		CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71EE2F2629371F00121E1C /* TRoomsViewController.swift */; };
+		CE71EE322629372900121E1C /* TRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE71EE312629372900121E1C /* TRoomViewController.swift */; };
 		CEBE937D2602758F00A0E363 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE937C2602758F00A0E363 /* CalenderViewController.swift */; };
 		CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE9380260387A700A0E363 /* AddViewController.swift */; };
 		CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3478B260BFC7C004B3754 /* searchBViewController.swift */; };
@@ -129,11 +130,12 @@
 		23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallengeViewController.swift; sourceTree = "<group>"; };
 		3F1C3D6A261216A900246872 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		3F1C3DA1261221B600246872 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		3F2A3795262BA6E0009EDE21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F2A3798262BA7C7009EDE21 /* UserActivitysTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivitysTableView.swift; sourceTree = "<group>"; };
 		3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPosts.swift; sourceTree = "<group>"; };
 		3F2D0E64261C94CA0029D96C /* OtherUserPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPostViewController.swift; sourceTree = "<group>"; };
 		3F2D100E261DF2500029D96C /* TactivitiTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactivitiTable.swift; sourceTree = "<group>"; };
 		3F2D1011261DF28B0029D96C /* TchallengesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TchallengesTable.swift; sourceTree = "<group>"; };
-		3F2D1014261DF2BF0029D96C /* TfollowersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfollowersTable.swift; sourceTree = "<group>"; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -155,7 +157,6 @@
 		3FBB14F325C81CFB0098C299 /* HarakaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarakaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBB14F625C81CFB0098C299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3FBB14FA25C81CFB0098C299 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3FBB14FD25C81CFB0098C299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FBB14FF25C81CFD0098C299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FBB150425C81CFD0098C299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,7 +170,6 @@
 		3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSingupViewController.swift; sourceTree = "<group>"; };
 		3FEF2CE026283C0600D9EC33 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FF0142C2621EDBA00948FDB /* ActivityDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDescription.swift; sourceTree = "<group>"; };
-		3FF017A7262717A400948FDB /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		3FF335A12614D82400A905EF /* TrainerProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerProfile.swift; sourceTree = "<group>"; };
 		3FF335C02614DD6A00A905EF /* TrainerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSettings.swift; sourceTree = "<group>"; };
 		3FF3367D26164B3700A905EF /* UserPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +194,8 @@
 		CE49454C26123346008DC32B /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
 		CE494550261233FC008DC32B /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		CE58002826261C6E002C3F1C /* RoomsCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsCellTableViewCell.swift; sourceTree = "<group>"; };
+		CE71EE2F2629371F00121E1C /* TRoomsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRoomsViewController.swift; sourceTree = "<group>"; };
+		CE71EE312629372900121E1C /* TRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRoomViewController.swift; sourceTree = "<group>"; };
 		CEBE937C2602758F00A0E363 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		CEBE9380260387A700A0E363 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CEC3478B260BFC7C004B3754 /* searchBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBViewController.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				3F92AE10261F2CB400EC3085 /* CreateActivity.swift */,
 				3F92AED1261F623600EC3085 /* ActivitysListTable.swift */,
+				3F2A3798262BA7C7009EDE21 /* UserActivitysTableView.swift */,
 				3FF0142C2621EDBA00948FDB /* ActivityDescription.swift */,
 				3F92AEB1261F532300EC3085 /* Activity.swift */,
 				3F92AECE261F5C8F00EC3085 /* ActivityCell.swift */,
@@ -351,8 +354,8 @@
 				3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */,
 				3FBB151925C96AF50098C299 /* View controller */,
 				3FBB14FC25C81CFB0098C299 /* Main.storyboard */,
+				3F2A3795262BA6E0009EDE21 /* ViewController.swift */,
 				3FEF2CE026283C0600D9EC33 /* LaunchScreen.storyboard */,
-				3FF017A7262717A400948FDB /* LaunchScreen.swift */,
 				3FBB150425C81CFD0098C299 /* Info.plist */,
 			);
 			path = HarakaApp;
@@ -369,13 +372,14 @@
 				9449C07525D13531002E0AAB /* MyTabBar.swift */,
 				9449C07625D13531002E0AAB /* myTabBarCtrl.swift */,
 				9449C07425D13531002E0AAB /* SearchTableViewController.swift */,
-				3FBB14FA25C81CFB0098C299 /* ViewController.swift */,
 				94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */,
 				94D4604925E3E528009F31A6 /* NotificationViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
+				940F4BD525E56E7C00508368 /* activityLocations.swift */,
+				940F4B9425E55A6800508368 /* locations.geojson */,
 				23104215261B323B006B2EE4 /* Game */,
 				3FF3369E2616E10E00A905EF /* Userprofile */,
 				CEC34787260BF25C004B3754 /* search user-trainer */,
@@ -385,8 +389,6 @@
 				3FA49326260B613C0052A1BD /* Admin */,
 				CED6033E25F4333C00C4ACE4 /* chatRooms */,
 				3FF335BE2614DD1400A905EF /* Trainer */,
-				940F4B9425E55A6800508368 /* locations.geojson */,
-				940F4BD525E56E7C00508368 /* activityLocations.swift */,
 			);
 			path = "View controller";
 			sourceTree = "<group>";
@@ -412,7 +414,6 @@
 				3FF335C02614DD6A00A905EF /* TrainerSettings.swift */,
 				3F2D100E261DF2500029D96C /* TactivitiTable.swift */,
 				3F2D1011261DF28B0029D96C /* TchallengesTable.swift */,
-				3F2D1014261DF2BF0029D96C /* TfollowersTable.swift */,
 			);
 			path = Trainer;
 			sourceTree = "<group>";
@@ -438,11 +439,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE71EE2E2629370000121E1C /* RoomsU */ = {
+			isa = PBXGroup;
+			children = (
+				CED6033825F41DB400C4ACE4 /* RoomViewController.swift */,
+				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
+			);
+			path = RoomsU;
+			sourceTree = "<group>";
+		};
 		CEAA4A57261E1A080016490B /* RoomsT */ = {
 			isa = PBXGroup;
 			children = (
 				CE494550261233FC008DC32B /* CreateRoomViewController.swift */,
 				CE49454C26123346008DC32B /* CircularTransition.swift */,
+				CE71EE2F2629371F00121E1C /* TRoomsViewController.swift */,
+				CE71EE312629372900121E1C /* TRoomViewController.swift */,
 			);
 			path = RoomsT;
 			sourceTree = "<group>";
@@ -491,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				CED6033325F41ABE00C4ACE4 /* Room.swift */,
+				CED6034125F4353E00C4ACE4 /* ChatCell.swift */,
 				CED6034425F43C5E00C4ACE4 /* Messages.swift */,
 				CE58002826261C6E002C3F1C /* RoomsCellTableViewCell.swift */,
 			);
@@ -501,9 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAA4A57261E1A080016490B /* RoomsT */,
-				CED6033825F41DB400C4ACE4 /* RoomViewController.swift */,
-				CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */,
-				CED6034125F4353E00C4ACE4 /* ChatCell.swift */,
+				CE71EE2E2629370000121E1C /* RoomsU */,
 				CEBE9383260387D300A0E363 /* calender */,
 				CED6033225F41A6800C4ACE4 /* models "rooms" */,
 			);
@@ -631,6 +642,7 @@
 				23B0C736262A695B00E91238 /* CreateGameViewController.swift in Sources */,
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
 				232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */,
+				3F2A3799262BA7C7009EDE21 /* UserActivitysTableView.swift in Sources */,
 				3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */,
 				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
 				3F885DA3261A58CF003BF3F3 /* FollowingTableViewController.swift in Sources */,
@@ -646,7 +658,6 @@
 				3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */,
 				3F92AE11261F2CB400EC3085 /* CreateActivity.swift in Sources */,
 				94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */,
-				2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */,
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
 				94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */,
 				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,
@@ -654,7 +665,6 @@
 				CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */,
 				940F4BD625E56E7C00508368 /* activityLocations.swift in Sources */,
 				9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */,
-				3F2D1015261DF2BF0029D96C /* TfollowersTable.swift in Sources */,
 				3FF3369C2616547200A905EF /* UserPostCell.swift in Sources */,
 				94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */,
 				3FF335A22614D82400A905EF /* TrainerProfile.swift in Sources */,
@@ -664,22 +674,23 @@
 				23B0C755262E186200E91238 /* ChallengeCard.swift in Sources */,
 				3FF0142D2621EDBA00948FDB /* ActivityDescription.swift in Sources */,
 				3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */,
-				3FF017A8262717A400948FDB /* LaunchScreen.swift in Sources */,
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
+				CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
 				3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */,
 				3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */,
 				3F92AEB2261F532300EC3085 /* Activity.swift in Sources */,
+				3F2A3796262BA6E0009EDE21 /* ViewController.swift in Sources */,
 				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
 				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
 				3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */,
-				3FBB14FB25C81CFB0098C299 /* ViewController.swift in Sources */,
 				3F92AECF261F5C8F00EC3085 /* ActivityCell.swift in Sources */,
 				CE49454D26123346008DC32B /* CircularTransition.swift in Sources */,
 				235797A32607E4540017C166 /* CommentCell.swift in Sources */,
+				23F4CD55262F86D00097DA4B /* TrainerChallengeViewController.swift in Sources */,
 				3F2D1012261DF28B0029D96C /* TchallengesTable.swift in Sources */,
 				3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */,
 				23A7171A2621E2D100C43FD4 /* WorkoutModel.swift in Sources */,
@@ -693,6 +704,7 @@
 				3F2D100F261DF2510029D96C /* TactivitiTable.swift in Sources */,
 				3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */,
 				236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */,
+				CE71EE322629372900121E1C /* TRoomViewController.swift in Sources */,
 				3FF3367E26164B3700A905EF /* UserPostsViewController.swift in Sources */,
 				23F4CD2A262F343F0097DA4B /* AddChallengeViewController.swift in Sources */,
 				9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */,

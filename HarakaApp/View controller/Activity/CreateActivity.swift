@@ -33,7 +33,7 @@ class CreateActivity: UIViewController {
     @IBOutlet weak var createB: UIButton!
         var ref = Database.database().reference()
         var uid = Auth.auth().currentUser?.uid
-      //var ActivityID : String?
+        var type = " "
         var CByName = " "
         var image :UIImage? = nil
 
@@ -92,28 +92,41 @@ class CreateActivity: UIViewController {
 
 
  
-      //  validatefields()
-
+       validatefields()
+ 
         let type = typeL.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let Aname = Name.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let disc = ADescription.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-       let DT = DateTime.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let DT = DateTime.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let part = participantLable.text!.trimmingCharacters(in:.whitespacesAndNewlines)
         let Locat = Alocation.text!.trimmingCharacters(in:.whitespacesAndNewlines)
 
         
-    
-      
-        ref.child("users").child(self.uid!).observe(.value , with : { snapshot in
+        self.ref.child("Trainers").child("Approved").child(self.uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+        if snapshot.exists(){
+
+            guard let dict = snapshot.value as? [String:Any] else {return}
+            self.CByName = dict["Name"] as? String ?? ""
+            self.type = "1"
+        }
+        else{return}
+            
+        })
+        self.ref.child("users").child(self.uid!).observe(.value , with : { snapshot in
+            if snapshot.exists(){
+
     
         guard let dict = snapshot.value as? [String:Any] else {return}
               
             let user = CurrentUser( uid : self.uid! , dictionary : dict )
-                self.CByName = user.name            //   self.Username.text = user.username
-           
-                }) { (error) in
-              print(error.localizedDescription)
-        }
+                self.CByName = user.name
+                self.type = "0"
+
+            }
+            else{return}
+
+        })
+        
      
         // save the image to firbase Storage and user
 
@@ -129,16 +142,13 @@ class CreateActivity: UIViewController {
             StorageActivityRef.downloadURL(completion: {(url , error ) in
         if let metaImageUrl = url?.absoluteString {
             
-            let AData = ["ActivityName": Aname , "createdByID" : self.uid,"createdByName" : self.CByName , "Description" : disc,"DateTime" : DT , "ActivityType": type, "NumOfParticipant":part,"location" :Locat , "Image": metaImageUrl ] as [String : Any]
+            let AData = ["ActivityName": Aname , "createdByID" : self.uid,"createdByName" : self.CByName , "Description" : disc,"DateTime" : DT , "ActivityType": type, "NumOfParticipant":part,"location" :Locat , "Image": metaImageUrl, "Type" : self.type ] as [String : Any]
             
-        self.ref.child("Activity").childByAutoId().setValue(AData)
-            // to return the Activity is Key frome the snapshot
-            self.ref.child("Activity").observeSingleEvent(of :.value, with: { (snapshot) in
-               
-            //   let ActivityID = String(snapshot.key)
-              // self.AddcreatedByid(ActivityID)
+         let ID = self.ref.child("Activity").childByAutoId().key
+            
+            self.ref.child("Activity").child(ID!).setValue(AData)
+            self.ref.child("Activity").child(ID!).updateChildValues(["ActivityID" : ID as Any])
 
-            })
             }
             } ) }
       

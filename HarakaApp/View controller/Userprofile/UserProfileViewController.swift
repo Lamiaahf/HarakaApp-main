@@ -35,7 +35,12 @@ class UserProfileViewController:  UIViewController {
         Utilities.styleFilledButton(post)
         Utilities.styleFilledButton(Following)
         Utilities.styleFilledButton(Followers)
+        Utilities.CircularImageView(Userimg)
         getUserInfo()
+        Following.showsTouchWhenHighlighted = true
+        Followers.showsTouchWhenHighlighted = true
+        post.showsTouchWhenHighlighted = true
+
         self.loggedInUser = Auth.auth().currentUser
 
     //    setupUserimg()
@@ -43,11 +48,11 @@ class UserProfileViewController:  UIViewController {
     }
     
     
-    func setupUserimg(){
+  /*  func setupUserimg(){
         Userimg.layer.cornerRadius = 40/2
         Userimg.clipsToBounds = true
         Userimg.isUserInteractionEnabled = true
-    }
+    }*/
     
     /*
     func getUserInfo() {
