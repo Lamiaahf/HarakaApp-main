@@ -16,8 +16,7 @@ class TrainerSettings: UIViewController, UINavigationControllerDelegate{
     var databaseRef: DatabaseReference!
     var storageRef: StorageReference!
     
-    @IBOutlet weak var Timge: UIImageView!
-    
+    @IBOutlet weak var Timage: UIImageView!
     @IBOutlet weak var NameSett: UITextField!
     @IBOutlet weak var Age: UITextField!
     @IBOutlet weak var Email: UITextField!
@@ -31,7 +30,7 @@ class TrainerSettings: UIViewController, UINavigationControllerDelegate{
         super.viewDidLoad()
         setUpElements()
         loadProfileData()
-        saveChanges()
+       // saveChanges()
 
 
         // Do any additional setup after loading the view.
@@ -44,6 +43,7 @@ class TrainerSettings: UIViewController, UINavigationControllerDelegate{
         Utilities.styleTextField(Email)
         Utilities.styleFilledButton(SaveB)
         Utilities.styleFilledButton(LogoutB)
+        Utilities.CircularImageView(Timage)
     }
 
 
@@ -97,8 +97,17 @@ class TrainerSettings: UIViewController, UINavigationControllerDelegate{
                         self.NameSett.text = values?["Name"] as? String
                         self.Age.text = values?["DOB"] as? String
                         self.Email.text = values?["Email"] as? String
+                        let image = values?["ProfilePic"] as? String
+                    Storage.storage().reference(forURL: image!).getData(maxSize: 1048576, completion: { [self] (data, error) in
 
-                        
+                      guard let imageData = data, error == nil else {
+                            return
+                        }
+                        self.Timage.image = UIImage(data: imageData)
+                    
+        
+                })
+
                         
             
                     })
@@ -112,7 +121,7 @@ class TrainerSettings: UIViewController, UINavigationControllerDelegate{
         
         let storedImage = storageRef.child("profile").child(imageName)
         
-        if let uploadData = self.Timge.image!.pngData()
+        if let uploadData = self.Timage.image!.pngData()
         {
             storedImage.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                 if error != nil{

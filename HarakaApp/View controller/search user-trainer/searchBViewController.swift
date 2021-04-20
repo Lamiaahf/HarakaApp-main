@@ -9,14 +9,15 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class searchBViewController: UIViewController {
+class searchBViewController: UIViewController , UINavigationControllerDelegate {
     
 
-    @IBOutlet var usersSearch: UIButton!
-   @IBOutlet var trainersSearch: UIButton!
+   // @IBOutlet var usersSearch: UIButton!
+  // @IBOutlet var trainersSearch: UIButton!
+    @IBOutlet var users: UIView!
+    @IBOutlet var Trainers: UIView!
+
     
-    @IBOutlet weak var TrainersTable: UIView!
-    @IBOutlet weak var usersTable: UIView!
     
     let databaseRef = Database.database().reference()
     //Serch for frinds
@@ -24,11 +25,39 @@ class searchBViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Utilities.styleFilledButton(usersSearch)
-       Utilities.styleFilledButton(trainersSearch)
+       // Utilities.styleFilledButton(usersSearch)
+    // Utilities.styleFilledButton(trainersSearch)
         self.loggedInUser = Auth.auth().currentUser
 
     }
+    
+    
+    @IBAction func showComponents(_ sender : UISegmentedControl) {
+        
+        if(sender.selectedSegmentIndex == 0)
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.users.alpha = 1
+                self.Trainers.alpha = 0
+           })
+        }
+        else
+        {
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                self.Trainers.alpha = 1
+                self.users.alpha = 0
+                
+            })
+        }
+            }
+    
+    
+    
+    
+    
+    /*
     @IBAction func ShowUsers(_ sender: Any) {
     
        UIView.animate(withDuration: 0.5, animations:{
@@ -40,7 +69,7 @@ class searchBViewController: UIViewController {
        UIView.animate(withDuration: 0.5, animations:{
             self.usersTable.alpha = 0
                     self.TrainersTable.alpha = 1 }
-       )}
+       )} */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

@@ -66,7 +66,7 @@ class FollowersTableViewController: UITableViewController {
         cell.textLabel?.text = self.listFollowers[indexPath.row]?["Name"] as? String
         
         cell.detailTextLabel?.text = (self.listFollowers[indexPath.row]?["Username"] as? String)!
-        
+                  
         return cell
     }
 

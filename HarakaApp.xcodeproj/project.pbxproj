@@ -35,7 +35,6 @@
 		3F2D0E65261C94CA0029D96C /* OtherUserPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D0E64261C94CA0029D96C /* OtherUserPostViewController.swift */; };
 		3F2D100F261DF2510029D96C /* TactivitiTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D100E261DF2500029D96C /* TactivitiTable.swift */; };
 		3F2D1012261DF28B0029D96C /* TchallengesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D1011261DF28B0029D96C /* TchallengesTable.swift */; };
-		3F2D1015261DF2BF0029D96C /* TfollowersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D1014261DF2BF0029D96C /* TfollowersTable.swift */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885D9F261A56DB003BF3F3 /* FollowersTableViewController.swift */; };
@@ -131,7 +130,6 @@
 		3F2D0E64261C94CA0029D96C /* OtherUserPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPostViewController.swift; sourceTree = "<group>"; };
 		3F2D100E261DF2500029D96C /* TactivitiTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactivitiTable.swift; sourceTree = "<group>"; };
 		3F2D1011261DF28B0029D96C /* TchallengesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TchallengesTable.swift; sourceTree = "<group>"; };
-		3F2D1014261DF2BF0029D96C /* TfollowersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TfollowersTable.swift; sourceTree = "<group>"; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -409,7 +407,6 @@
 				3FF335C02614DD6A00A905EF /* TrainerSettings.swift */,
 				3F2D100E261DF2500029D96C /* TactivitiTable.swift */,
 				3F2D1011261DF28B0029D96C /* TchallengesTable.swift */,
-				3F2D1014261DF2BF0029D96C /* TfollowersTable.swift */,
 			);
 			path = Trainer;
 			sourceTree = "<group>";
@@ -661,7 +658,6 @@
 				CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */,
 				940F4BD625E56E7C00508368 /* activityLocations.swift in Sources */,
 				9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */,
-				3F2D1015261DF2BF0029D96C /* TfollowersTable.swift in Sources */,
 				3FF3369C2616547200A905EF /* UserPostCell.swift in Sources */,
 				94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */,
 				3FF335A22614D82400A905EF /* TrainerProfile.swift in Sources */,
