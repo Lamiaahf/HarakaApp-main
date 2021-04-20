@@ -53,8 +53,9 @@ class TrainerSettings: UIViewController, UINavigationControllerDelegate{
     
     @IBAction func Logout(_ sender: Any) {
         let storyboard = UIStoryboard(name : "Main",bundle: nil)
-        let LOGINViewController = storyboard.instantiateViewController(identifier: "login")
-        present(LOGINViewController, animated: true, completion: nil)
+        let LOGINViewController = storyboard.instantiateViewController(identifier: "login") as! LOGINViewController
+        LOGINViewController.modalPresentationStyle = .fullScreen
+        self.present(LOGINViewController , animated:true , completion : nil)
     }
     
 

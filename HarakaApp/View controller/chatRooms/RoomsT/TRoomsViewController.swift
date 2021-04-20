@@ -15,7 +15,7 @@ import FirebaseDatabase
 class TRoomsViewController: UIViewController,  UIViewControllerTransitioningDelegate, UICollectionViewDelegate, UICollectionViewDataSource{
   
     
-    var colors:[UIColor] = [
+    var colors:[CGColor] = [
         #colorLiteral(red: 0.9766376615, green: 0.5785049796, blue: 0.1343751848, alpha: 1),
         #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1),
         #colorLiteral(red: 0.3974583745, green: 0.5797579885, blue: 0.6469487548, alpha: 1),
@@ -107,13 +107,14 @@ class TRoomsViewController: UIViewController,  UIViewControllerTransitioningDele
         let room = self.rooms[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RoomCell", for:indexPath as IndexPath ) as! RoomCell
         cell.OBJRoom = room
-        cell.backgroundColor =  colors.randomElement()
+        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.layer.cornerRadius = 5
-        
-      var EImage = room.EventImage
+        cell.layer.borderWidth = 4
+        cell.layer.borderColor = colors.randomElement()
+     // var EImage = room.EventImage
         
         let groupName = UILabel(frame: CGRect(x: 0 , y: 0 , width: cell.bounds.size.width , height: 40  ))
-        groupName.textColor=UIColor.white
+        groupName.textColor=UIColor.black
         groupName.text = room.name
         groupName.textAlignment = .center
         groupName.font = UIFont.boldSystemFont(ofSize:15)
