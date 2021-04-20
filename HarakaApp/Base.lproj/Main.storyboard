@@ -58,10 +58,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wDX-lm-0z8">
-                                <rect key="frame" x="47" y="209" width="296.66666666666669" height="340"/>
+                                <rect key="frame" x="47" y="209" width="310" height="340"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-ap-p8X">
-                                        <rect key="frame" x="0.0" y="0.0" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
                                         <color key="tintColor" red="0.85233160620000004" green="0.85233160620000004" blue="0.85233160620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0Dr-zM-aq0"/>
@@ -71,7 +71,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الرقم السري" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTU-mf-V8y">
-                                        <rect key="frame" x="0.0" y="60" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="310" height="40"/>
                                         <color key="tintColor" red="0.85233160620000004" green="0.85233160620000004" blue="0.85233160620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ic6-A8-LrX"/>
@@ -81,7 +81,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoS-m0-9Ec">
-                                        <rect key="frame" x="0.0" y="120" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="120" width="310" height="40"/>
                                         <state key="normal" title="هل نسيت كلمة المرور ؟">
                                             <color key="titleColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -90,7 +90,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smP-oM-JGe">
-                                        <rect key="frame" x="0.0" y="180" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="180" width="310" height="40"/>
                                         <color key="backgroundColor" red="0.40191826219999999" green="0.57196450229999996" blue="0.63496923449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="iE7-wl-aFv"/>
@@ -103,13 +103,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myk-6q-cPc">
-                                        <rect key="frame" x="0.0" y="240" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="240" width="310" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tF-W6-Prs">
-                                        <rect key="frame" x="0.0" y="300" width="296.66666666666669" height="40"/>
+                                        <rect key="frame" x="0.0" y="300" width="310" height="40"/>
                                         <state key="normal" title="ليس لديك حساب؟ سجل الان ">
                                             <color key="titleColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -1829,7 +1829,7 @@
         <!--Map View Controller-->
         <scene sceneID="CBX-ZM-Cq9">
             <objects>
-                <viewController id="t0Z-y3-kdx" customClass="MapViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewControllerr" id="t0Z-y3-kdx" customClass="MapViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J3C-1J-sdO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1958,7 +1958,7 @@
         <!--الصفحة الرئيسية-->
         <scene sceneID="8yh-Ng-s8u">
             <objects>
-                <viewController id="0Vw-Ts-yyu" customClass="HomePageViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewControllerr" id="0Vw-Ts-yyu" customClass="HomePageViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JhQ-TL-q7g">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2020,38 +2020,6 @@
             </objects>
             <point key="canvasLocation" x="922" y="4666"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="4Uw-bc-pHU">
-            <objects>
-                <viewController id="efq-i5-huD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BNP-x4-1So">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="4YM-SX-nua"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="5Te-JX-gBI"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cVu-Wg-D46" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4014" y="4666"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="woG-hv-5g4">
-            <objects>
-                <viewController id="cYb-eI-z92" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9h4-aU-btu">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="qyk-10-s9l"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="THv-tT-b7b"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tjr-gO-dJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4905" y="4666"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="diU-LL-0qM">
             <objects>
@@ -2067,12 +2035,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMi-xV-9rS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5823" y="3924"/>
+            <point key="canvasLocation" x="6750.7692307692305" y="3923.4597156398104"/>
         </scene>
         <!--Trainer Profile-->
         <scene sceneID="3ah-5R-bht">
             <objects>
-                <viewController id="NAV-Em-f0d" customClass="TrainerProfile" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainerProfile" id="NAV-Em-f0d" customClass="TrainerProfile" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZU-S6-U3e">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2287,7 +2255,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7g-hb-wft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7489" y="4127"/>
+            <point key="canvasLocation" x="8416.9230769230762" y="4126.7772511848343"/>
         </scene>
         <!--Trainer Settings-->
         <scene sceneID="7uH-6v-19l">
@@ -2360,40 +2328,6 @@
             <point key="canvasLocation" x="5822" y="5410"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="1dR-ls-UBC">
-            <objects>
-                <navigationController id="9F2-e9-s3G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="WcB-Rv-UpO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yxq-Za-bUM">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="cYb-eI-z92" kind="relationship" relationship="rootViewController" id="uf8-sa-8vN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rAR-pv-lVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4905" y="3924"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="32b-T3-Ddh">
-            <objects>
-                <navigationController storyboardIdentifier="SearchN2" id="Fmh-29-Ew4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="bell.badge" catalog="system" id="yJl-ev-LYN"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rue-q2-5fw">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="efq-i5-huD" kind="relationship" relationship="rootViewController" id="AIj-5b-IZ4"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WP9-je-rPb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4014" y="3923"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="jxy-NS-HmP">
             <objects>
                 <navigationController storyboardIdentifier="MapN2" id="9bV-PR-v18" sceneMemberID="viewController">
@@ -2408,7 +2342,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSm-Xu-wKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3025" y="3923"/>
+            <point key="canvasLocation" x="3953.8461538461538" y="3922.7488151658767"/>
         </scene>
         <!--Tab BarT View Controller-->
         <scene sceneID="0tt-fQ-qcj">
@@ -2420,10 +2354,11 @@
                         <viewLayoutGuide key="safeArea" id="9bx-8D-ypH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1Uo-Mu-cjB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPH-ET-T8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="3923"/>
+            <point key="canvasLocation" x="2770.7692307692305" y="3922.7488151658767"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8nl-9a-5yu">
@@ -2671,22 +2606,15 @@
                                     <action selector="showFollowers:" destination="XVO-3o-Oui" eventType="touchUpInside" id="pcE-PS-1PM"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-wv-VLC">
-                                <rect key="frame" x="33" y="319" width="323" height="424"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="5At-Je-fYF" kind="embed" id="Y12-xa-e5M"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ren-Ei-Z0h">
-                                <rect key="frame" x="33" y="319" width="323" height="424"/>
+                                <rect key="frame" x="33" y="358" width="323" height="380"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Xkf-8x-Ylm" kind="embed" id="Rba-Vm-eU6"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W5e-Kv-uiJ">
-                                <rect key="frame" x="33" y="319" width="323" height="424"/>
+                                <rect key="frame" x="34" y="358" width="323" height="380"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Osg-kA-dEC" kind="embed" id="0Gh-8D-NQl"/>
@@ -2703,6 +2631,13 @@
                                     <action selector="showPosts:" destination="XVO-3o-Oui" eventType="touchUpInside" id="H8O-An-z8T"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-wv-VLC">
+                                <rect key="frame" x="34" y="358" width="323" height="380"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="5At-Je-fYF" kind="embed" id="Y12-xa-e5M"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BfE-P2-2Dw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2730,7 +2665,7 @@
             <objects>
                 <tableViewController id="Osg-kA-dEC" customClass="FollowersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r1v-XO-UAI">
-                        <rect key="frame" x="0.0" y="0.0" width="323" height="424"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="380"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -2860,7 +2795,7 @@
             <objects>
                 <tableViewController id="5At-Je-fYF" customClass="UserPostsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kBk-3Q-Lwd">
-                        <rect key="frame" x="0.0" y="0.0" width="323" height="424"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="380"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -3750,7 +3685,7 @@
             <objects>
                 <tableViewController id="Xkf-8x-Ylm" customClass="FollowingTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kda-Sa-rtw">
-                        <rect key="frame" x="0.0" y="0.0" width="323" height="424"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="380"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -4498,6 +4433,24 @@
             </objects>
             <point key="canvasLocation" x="-789" y="4686"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gcq-3e-LNK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oYf-bk-Il7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VRg-B2-a0n">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ywJ-q1-WH9" kind="relationship" relationship="rootViewController" id="rqQ-a9-BNk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEi-V2-k20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841.5384615384614" y="3922.7488151658767"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Rba-Vm-eU6"/>
@@ -4509,7 +4462,6 @@
     <resources>
         <image name="1.circle" catalog="system" width="128" height="121"/>
         <image name="568635131536669843-129" width="42.666667938232422" height="42.666667938232422"/>
-        <image name="bell.badge" catalog="system" width="128" height="124"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
         <image name="circle" catalog="system" width="128" height="121"/>

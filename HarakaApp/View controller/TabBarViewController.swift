@@ -63,17 +63,14 @@ class TabBarTViewController: AMTabsViewController {
  
     let MVC = storyboard.instantiateViewController(withIdentifier: "MapN2")
   
-    let SBVC = storyboard.instantiateViewController(withIdentifier: "SearchN2")
-  
-    let UPVC = storyboard.instantiateViewController(withIdentifier: "TrainerN")
+    let TPVC = storyboard.instantiateViewController(withIdentifier: "TrainerN")
     
-    /*   let CVC = storyboard.instantiateViewController(withIdentifier: "")*/
+   
 
     viewControllers = [
       HPVC,
       MVC,
-      SBVC,
-      UPVC
+      TPVC
     ]
   }
 }
