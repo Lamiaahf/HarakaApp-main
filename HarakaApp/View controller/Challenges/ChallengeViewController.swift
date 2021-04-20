@@ -39,11 +39,17 @@ class ChallengeViewController: UIViewController {
             if currentDate.compare(challenge.enddate!) == .orderedAscending{
                 // if current date < challenge end date -> show challenge
                 self.challenge = challenge
-                self.challengeCard.userChallenge = self.challenge
+                self.challenge?.type = 0
+                self.challengeCard.challenge = self.challenge
+                
+                self.notFoundLabel.alpha = 0
+                self.notFoundImage.alpha = 0
+                self.challengeCard.alpha = 1
                 
                 //PROGRESS BAR: 1 - (Days remaining/7)
             }
             else{
+                self.challengeCard.alpha = 0
                 self.notFoundLabel.alpha = 1
                 self.notFoundImage.alpha = 1
             }

@@ -11,17 +11,12 @@ class ChallengeCard: UIView {
 
     
     //Variables
-    var userChallenge: Challenge!{
+    var challenge: Challenge!{
         didSet{
-            updateUserChallenge()
+            updateChallenge()
         }
     }
     
-    var trainerChallenge: Challenge!{
-        didSet{
-            updateTrainerChallenge()
-        }
-    }
     @IBOutlet weak var challengeLabel: UILabel!
     @IBOutlet weak var deadlineLabel: UILabel!
     @IBOutlet weak var trainerLabel: UILabel!
@@ -35,20 +30,24 @@ class ChallengeCard: UIView {
         // make join button alpha = 0
         
     }
-    func updateUserChallenge(){
+    func updateChallenge(){
         
-        challengeLabel.text = userChallenge.cName
-        deadlineLabel.text = DateFormatter().string(from: userChallenge.enddate!)
-        trainerLabel.text = userChallenge.createdBy?.username
-        cDescriptionLabel.text = userChallenge.description
+        challengeLabel.text = challenge.cName
+        deadlineLabel.text = DateFormatter().string(from: challenge.enddate!)
+        trainerLabel.text = challenge.createdBy?.username
+        cDescriptionLabel.text = challenge.description
 
         var current = Date()
-        var chDate = userChallenge.enddate
-        var interval = current.distance(to: userChallenge.enddate!)
+        var chDate = challenge.enddate
+        var interval = current.distance(to: challenge.enddate!)
         print(interval)
         print("Time")
         // Continue later
         
+        
+        if(challenge.type == 1){
+            updateTrainerChallenge()
+        }
         
     }
     

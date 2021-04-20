@@ -17,6 +17,7 @@
 		2357979D2607E3280017C166 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2357979C2607E3280017C166 /* CommentViewController.swift */; };
 		235797A02607E4420017C166 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2357979F2607E4420017C166 /* Comment.swift */; };
 		235797A32607E4540017C166 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235797A22607E4540017C166 /* CommentCell.swift */; };
+		23598F47262F23780090C29C /* EmptyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23598F46262F23780090C29C /* EmptyCard.swift */; };
 		236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C961225E182BB0032ECC3 /* AddPostController.swift */; };
 		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
 		2399CF3E2617363900FD9B1C /* TrainerChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */; };
@@ -29,6 +30,7 @@
 		23A7171E2621EA4500C43FD4 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A7171D2621EA4500C43FD4 /* PlayerCell.swift */; };
 		23B0C736262A695B00E91238 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421A261B3750006B2EE4 /* CreateGameViewController.swift */; };
 		23B0C755262E186200E91238 /* ChallengeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0C754262E186100E91238 /* ChallengeCard.swift */; };
+		23F4CD2A262F343F0097DA4B /* AddChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */; };
 		3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3D6A261216A900246872 /* UsersTableViewController.swift */; };
 		3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3DA1261221B600246872 /* UserProfileViewController.swift */; };
 		3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */; };
@@ -72,7 +74,6 @@
 		3FF3367E26164B3700A905EF /* UserPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3367D26164B3700A905EF /* UserPostsViewController.swift */; };
 		3FF3369C2616547200A905EF /* UserPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3369B2616547200A905EF /* UserPostCell.swift */; };
 		940F4BD625E56E7C00508368 /* activityLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F4BD525E56E7C00508368 /* activityLocations.swift */; };
-		940F4C36260227B600508368 /* createChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F4C35260227B600508368 /* createChallenge.swift */; };
 		9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07125D1350C002E0AAB /* HomePageViewController.swift */; };
 		9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07425D13531002E0AAB /* SearchTableViewController.swift */; };
 		9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07525D13531002E0AAB /* MyTabBar.swift */; };
@@ -113,6 +114,7 @@
 		2357979C2607E3280017C166 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		2357979F2607E4420017C166 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		235797A22607E4540017C166 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		23598F46262F23780090C29C /* EmptyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCard.swift; sourceTree = "<group>"; };
 		236C961225E182BB0032ECC3 /* AddPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostController.swift; sourceTree = "<group>"; };
 		23985FBE26021BB100FB2764 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerChallengeViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		23A717172621E2D100C43FD4 /* WorkoutModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		23A7171D2621EA4500C43FD4 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		23B0C754262E186100E91238 /* ChallengeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCard.swift; sourceTree = "<group>"; };
+		23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallengeViewController.swift; sourceTree = "<group>"; };
 		3F1C3D6A261216A900246872 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		3F1C3DA1261221B600246872 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPosts.swift; sourceTree = "<group>"; };
@@ -174,7 +177,6 @@
 		8FDCB37063508050981CA58F /* Pods-HarakaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.debug.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		940F4B9425E55A6800508368 /* locations.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = locations.geojson; sourceTree = "<group>"; };
 		940F4BD525E56E7C00508368 /* activityLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLocations.swift; sourceTree = "<group>"; };
-		940F4C35260227B600508368 /* createChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createChallenge.swift; sourceTree = "<group>"; };
 		9449C07125D1350C002E0AAB /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		9449C07425D13531002E0AAB /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		9449C07525D13531002E0AAB /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
@@ -245,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */,
+				23598F46262F23780090C29C /* EmptyCard.swift */,
+				23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */,
 			);
 			path = "Challenges - Trainer";
 			sourceTree = "<group>";
@@ -275,8 +279,8 @@
 		23DAC3AC260BB2DB000DB8AB /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
+				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
 				232E738A25F56B560029D39C /* ChallengeCell.swift */,
-				940F4C35260227B600508368 /* createChallenge.swift */,
 				232E738D25F56BAC0029D39C /* Challenge.swift */,
 				232E739025F588290029D39C /* ChallengeViewController.swift */,
 				23B0C754262E186100E91238 /* ChallengeCard.swift */,
@@ -369,7 +373,6 @@
 				94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */,
 				94D4604925E3E528009F31A6 /* NotificationViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
-				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
@@ -691,13 +694,14 @@
 				3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */,
 				236C961325E182BB0032ECC3 /* AddPostController.swift in Sources */,
 				3FF3367E26164B3700A905EF /* UserPostsViewController.swift in Sources */,
+				23F4CD2A262F343F0097DA4B /* AddChallengeViewController.swift in Sources */,
 				9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */,
-				940F4C36260227B600508368 /* createChallenge.swift in Sources */,
 				9475D8ED2608CE4A00116877 /* MapViewController.swift in Sources */,
 				9475D8F02608CE5100116877 /* Place.swift in Sources */,
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
 				CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */,
 				9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */,
+				23598F47262F23780090C29C /* EmptyCard.swift in Sources */,
 				3FF335C12614DD6A00A905EF /* TrainerSettings.swift in Sources */,
 				23A7171E2621EA4500C43FD4 /* PlayerCell.swift in Sources */,
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,

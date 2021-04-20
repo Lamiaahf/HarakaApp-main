@@ -16,6 +16,14 @@ import Firebase
     var cName: String?
     var cDesc: String?
     var chalID: String?
+    var challengeType: String?
+    
+    // For user's info
+    var isStarted: Bool?
+    var userStartTime: Date?
+    
+    // To differentiate between user and trainer {0: User, 1: Trainer}
+    var type: Int? //redesign this idea
     
     override init(){
         super.init()
@@ -27,18 +35,24 @@ import Firebase
         let end = cDict["Deadline"] as? Date,
         let name = cDict["Name"] as? String,
         let desc = cDict["Description"] as? String else { return nil }
+        let type = cDict["Type"] as? String
 
         self.chalID = snapshot.key
         self.cDesc = desc
         self.cName = name
         self.enddate = end
         self.createdBy = Trainer()
+        self.challengeType = type
         
         DBManager.getTrainer(for: createdBy){
             trainer in
             self.createdBy = trainer
         }
         
+    }
+    
+    func isUserStarted(){
+        // DBManager(for: self) { boolean in self.isStarted = boolean}
     }
 
 

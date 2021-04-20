@@ -13,14 +13,16 @@ class TrainerChallengeViewController: UIViewController{
     var challenge: Challenge?
     var ref: DatabaseReference = Database.database().reference()
     
-    @IBOutlet weak var emptyImage: UIImageView!
-    @IBOutlet weak var emptyLabel: UILabel!
+
     @IBOutlet weak var challengeCard: ChallengeCard!
+    @IBOutlet weak var emptyCard: EmptyCard!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.challengeCard.alpha = 0
+        self.emptyCard.alpha = 0
         
         fetchChallenge()
     }
@@ -31,16 +33,24 @@ class TrainerChallengeViewController: UIViewController{
         
         DBManager.getChallenge(){
             challenge in
+            if(challenge.cName == nil){
+                self.challengeCard.alpha = 0
+                self.emptyCard.alpha = 1
+                return
+            }
             if currentDate.compare(challenge.enddate!) == .orderedAscending{
                 // if current date < challenge end date -> show challenge
                 self.challenge = challenge
-                self.challengeCard.trainerChallenge = self.challenge
+                self.challenge!.type = 1
+                self.challengeCard.challenge = self.challenge
                 
+                self.challengeCard.alpha = 1
+                self.emptyCard.alpha = 0
                 //PROGRESS BAR: 1 - (Days remaining/7)
             }
             else{
-                self.emptyLabel.alpha = 1
-               self.emptyImage.alpha = 1
+                self.challengeCard.alpha = 0
+                self.emptyCard.alpha = 1
             }
         }
     }
