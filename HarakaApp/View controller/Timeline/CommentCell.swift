@@ -25,6 +25,7 @@ class CommentCell: UITableViewCell{
         usernameLabel.text = comment.writtenBy.username
         profilePic.image = comment.writtenBy.profileImage
         commentLabel.text = comment.commentText
+        Utilities.CircularImageView(profilePic)
 
     }
     

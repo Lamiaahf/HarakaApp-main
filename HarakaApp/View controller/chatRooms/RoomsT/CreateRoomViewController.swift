@@ -16,6 +16,7 @@ class CreateRoomViewController: UIViewController {
     @IBOutlet weak var newRoomTextField: UITextField!
     @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var EImage: UIImageView!
+    @IBOutlet weak var create: UIButton!
     var EVImage :UIImage? = nil
     let dropDown = DropDown()
     
@@ -23,6 +24,15 @@ class CreateRoomViewController: UIViewController {
             super.viewDidLoad()
 
            dismissButton.layer.cornerRadius = dismissButton.frame.size.width / 2
+            
+          
+                  create.layer.cornerRadius = 10
+                    create.layer.shadowColor = UIColor.gray.cgColor
+                    create.layer.shadowRadius = 12
+                    create.layer.shadowOffset = CGSize(width: 0, height: 0)
+                    create.layer.shadowOpacity = 0.5
+
+
         }
 
         @IBAction func dismissSecondVC(_ sender: AnyObject) {
@@ -81,7 +91,10 @@ class CreateRoomViewController: UIViewController {
     }
 
     
-@IBAction func didPressCreateNewRoom(_ sender: UIButton) {
+@IBAction func didPressCreateNewRoom(_ sender: UIButton)
+{
+   
+
     guard let userId = Auth.auth().currentUser?.uid,
           let roomName = self.newRoomTextField.text,
           roomName.isEmpty == false else {

@@ -44,8 +44,9 @@ class PostCell: UITableViewCell{
         likesLabel.text = String(post.numOfLikes ?? 0)
         
         profileImageView.image = post.createdBy.profileImage
-        profileImageView.layer.cornerRadius = 40/2
+        //profileImageView.layer.cornerRadius = 40/2
         profileImageView.clipsToBounds = true
+        Utilities.CircularImageView(profileImageView)
         usernameLabel.text = post.createdBy.username
         
         if (!post.liked!){

@@ -21,13 +21,19 @@ class LOGINViewController: UIViewController {
     
     @IBOutlet weak var LoginButton: UIButton!
     
+    @IBOutlet weak var logoLogin: UIImageView!
+   
     var databaseRef = Database.database().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
 
-
+              /*  logoLogin.layer.cornerRadius = 20
+                logoLogin.layer.shadowColor = UIColor.gray.cgColor
+                logoLogin.layer.shadowRadius = 20
+                logoLogin.layer.shadowOffset = CGSize(width: 0, height: 0)
+                logoLogin.layer.shadowOpacity = 0.5*/
 
     }
     func setUpElements() {

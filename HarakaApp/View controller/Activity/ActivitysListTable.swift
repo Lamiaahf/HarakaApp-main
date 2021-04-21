@@ -88,7 +88,7 @@ extension ActivitysListTable {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"ACell", for: indexPath) as! ActivityCell
         cell.activi = ActivitysList![indexPath.row]
-        cell.layer.borderWidth = 1
+        cell.layer.borderWidth = 0.5
         cell.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         return cell
         
