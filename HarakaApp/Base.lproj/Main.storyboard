@@ -48,7 +48,7 @@
                                 <rect key="frame" x="115" y="601" width="191" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40568548440000002" green="0.57982069250000001" blue="0.64284527300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="نسجيل ">
+                                <state key="normal" title="تسجيل الدخول  ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -4697,7 +4697,7 @@
         <segue reference="R5N-Ev-rZR"/>
         <segue reference="gJH-zc-xPe"/>
         <segue reference="SsM-Vu-eb0"/>
-        <segue reference="tEi-oZ-rgX"/>
+        <segue reference="1fU-el-i1a"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>
