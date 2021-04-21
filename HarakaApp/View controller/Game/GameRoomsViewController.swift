@@ -94,10 +94,11 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-  /*  let destinationVC = segue.destination as! CreateGameViewController
-    destinationVC.transitioningDelegate = self
-    destinationVC.modalPresentationStyle = .custom
-    */
+        if(segue.identifier == "createGameSegue"){
+            //let destinationVC = segue.destination as! CreateGameViewController
+            //destinationVC.transitioningDelegate = self
+          //  destinationVC.modalPresentationStyle = .custom
+        }
         
     }
     
