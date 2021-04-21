@@ -14,8 +14,8 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
     
 
     // UI Variables
-    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var descriptionView: UIView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var swipeView: UIView!
     @IBOutlet weak var sceneView: ARSCNView!
  //   @IBOutlet weak var nextButton: UIButton!
@@ -56,8 +56,8 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         result = []
         raycast = []
         
-        self.swipeView.alpha = 0
         self.descriptionView.alpha = 0
+        self.swipeView.alpha = 0
         
         // Add tap gesture
         addTapGestureToSceneView()
@@ -134,18 +134,20 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
                 sceneView.scene.rootNode.addChildNode(self.currentNode!)
             }
             else{
+                print("Printing current node name"+(self.currentNode?.name)!)
+                print("Printing workout node name"+workoutNode.name!)
                 self.sceneView.scene.rootNode.addChildNode(self.currentNode!)
          //       let oldNode = sceneView.scene.rootNode.childNodes.first
           //      sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
             }
-            self.title = workout.name
-            self.descriptionLabel.text = newWorkout.modelDescription
+            //self.title = w.modelName
+            //self.descriptionLabel.text = w.modelDescription
         }
     }
     func addWorkoutNode(raycast: ARRaycastResult) {
         
-        if let workout = workout, let newWorkout = Workout(rawValue: workout.name) {
-            let workoutNode = WorkoutNode(rayCast: raycast, workout: newWorkout.modelName)
+        if let workout = workout, let w = Workout(rawValue: workout.name) {
+            let workoutNode = WorkoutNode(rayCast: raycast, workout: w.modelName)
             self.currentNode = workoutNode
             if(sceneView.scene.rootNode.childNodes.isEmpty){
                 sceneView.scene.rootNode.addChildNode(currentNode!)
@@ -157,8 +159,8 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
              //   sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
               //  self.sceneView.scene.rootNode.addChildNode(currentNode!)
             }
-            self.title = workout.name
-            self.descriptionLabel.text = newWorkout.modelDescription
+            self.title = w.modelName
+            self.descriptionLabel.text = w.modelDescription
         }
     }
     
@@ -211,6 +213,7 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
             disappearTapToStartView()
             let tapPoint = recognizer.location(in: sceneView)
 
+            
             let estimatedPlane: ARRaycastQuery.Target = .estimatedPlane
             let alignment: ARRaycastQuery.TargetAlignment = .any
 
@@ -231,14 +234,16 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
                 self.addWorkoutNode(raycast: rayCast)
             }
 
-      //      self.result = sceneView.hitTest(tapPoint, types: .existingPlaneUsingExtent)
-      //      if result!.count == 0 {return}
+ /*
+            self.result = sceneView.hitTest(tapPoint, types: .existingPlaneUsingExtent)
+            if result!.count == 0 {return}
     
-      //      guard let hitResult = result?.first else { return }
-      //      addWorkoutNode(hitResult: hitResult)
+            guard let hitResult = result?.first else { return }
+            addWorkoutNode(hitResult: hitResult)
+            
+ */
             
             self.swipeView.alpha = 1
-            self.descriptionView.alpha = 1
             // Initialize start time
             startTime = Date()
         }

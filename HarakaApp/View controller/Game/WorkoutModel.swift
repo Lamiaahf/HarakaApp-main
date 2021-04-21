@@ -26,7 +26,7 @@ struct WorkoutModel {
        
         guard let desc = Workout(rawValue: self.name)?.modelDescription
         else { return ""}
-        return desc
+        return ""
     }
     
 }
