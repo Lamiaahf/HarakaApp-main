@@ -10,16 +10,24 @@
 import UIKit
 import Firebase
 import FirebaseStorage
-
-class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
+// master
+class OtherTrainersViewController: UIViewController ,UINavigationControllerDelegate, UITextFieldDelegate {
 
         @IBOutlet weak var Profilepic: UIImageView!
         @IBOutlet weak var name: UILabel!
         @IBOutlet weak var Username: UILabel!
         @IBOutlet weak var followButton: UIButton!
     
-    @IBOutlet weak var Followers: UIView!
+     @IBOutlet weak var Followers: UIView!
+    
+     @IBOutlet weak var Challenges: UIView!
 
+     @IBOutlet weak var Activity: UIView! //containerView
+      var uid : String!
+      var container: OtherTActivitysTableV?
+
+
+    
        
        let loggedInTrainer = Auth.auth().currentUser
        var loggedInTrainerData:NSDictionary?
@@ -27,7 +35,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
        var TrainerProfileData:NSDictionary?
        var databaseRef = Database.database().reference()
        var storageRef = Storage.storage().reference()
-       
+     //  var uid = " "
        var imagePicker = UIImagePickerController()
        //hi
        
@@ -53,10 +61,11 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
         //need to add the uid to the user's data
         databaseRef.child("Trainers").child("Approved").child(self.otherTrainers?["uid"] as! String).observe(.value, with: { (snapshot) in
             
-            let uid = self.otherTrainers?["uid"] as! String
+            self.uid = self.otherTrainers?["uid"] as! String
+            print(self.uid)
             self.otherTrainers = snapshot.value as? NSDictionary
             //add the uid to the profile
-            self.otherTrainers?.setValue(uid, forKey: "uid")
+            self.otherTrainers?.setValue(self.uid, forKey: "uid")
         
         
         }) { (error) in
@@ -101,7 +110,6 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
                 }
 
                 Profilepic.image = UIImage(data: imageData)
-                              //  self.setupUserimg()
                                                                                         
                             
            })
@@ -170,9 +178,9 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
             
             print("data updated")
             
-                        
+        }
             
-            
+        else{
             //update following count under the logged in user
             //update followers count in the user that is being followed
           /*  let followersCount:Int?
@@ -210,7 +218,7 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
             databaseRef.child("Trainers").child("Approved").child(self.loggedInTrainerData?["uid"] as! String).child("followingCount").setValue(self.loggedInTrainerData!["followingCount"] as! Int - 1)
             
             databaseRef.child("Trainers").child("Approved").child(self.otherTrainers?["uid"] as! String).child("followersCount").setValue(self.otherTrainers!["followersCount"] as! Int - 1)
-            
+            */
           let followersRef = "followers/\(self.otherTrainers?["uid"] as! String)/\(self.loggedInTrainerData?["uid"] as! String)"
           let followingRef = "following/" + (self.loggedInTrainerData?["uid"] as! String) + "/" + (self.otherTrainers?["uid"] as! String)
             
@@ -219,15 +227,54 @@ class OtherTrainersViewController: UIViewController ,UIImagePickerControllerDele
             databaseRef.updateChildValues(childUpdates)
             
             
-        }*/
+        }
         
-        }}
+        }
 
     @IBAction func ShowFollowers(_ sender: Any) {
     
        UIView.animate(withDuration: 0.5, animations:{
             self.Followers.alpha = 1
+            self.Activity.alpha = 0
+            self.Challenges.alpha = 0
+
             }
        )}
+    
+    @IBAction func ShowActivity(_ sender: Any) {
+    
+       UIView.animate(withDuration: 0.5, animations:{
+                        self.Followers.alpha = 0
+                        self.Activity.alpha = 1
+                        self.Challenges.alpha = 0
+
+       }
+       )
+        let act = self.uid
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TActivity") as? OtherTActivitysTableV
+             vc?.otherTrainerID = act
+
+      self.navigationController?.pushViewController(vc!, animated: true)
+        
+    }
+    @IBAction func ShowChallenges(_ sender: Any) {
+    
+       UIView.animate(withDuration: 0.5, animations:{
+                        self.Followers.alpha = 0
+                        self.Activity.alpha = 0
+                        self.Challenges.alpha = 1            }
+       )}
+    /* func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(self.uid)
+
+        if (segue.identifier == "TActivity") {
+            let secondViewController = segue.destination  as! OtherTActivitysTableV
+            
+            let Tuid = uid
+            secondViewController.otherTrainerID = Tuid
+            print(self.uid)
+
+        }
+    }*/
 
 }

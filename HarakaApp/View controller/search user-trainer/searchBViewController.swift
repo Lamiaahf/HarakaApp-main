@@ -32,62 +32,32 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
     }
     
     
-    @IBAction func showComponents(_ sender : UISegmentedControl) {
-        
-        if(sender.selectedSegmentIndex == 0)
-        {
-            UIView.animate(withDuration: 0.5, animations: {
-                
-                self.users.alpha = 1
-                self.Trainers.alpha = 0
-           })
-        }
-        else
-        {
-            UIView.animate(withDuration: 0.5, animations: {
-                
-                self.Trainers.alpha = 1
-                self.users.alpha = 0
-                
-            })
-        }
-            }
+
     
     
     
     
     
-    /*
+
     @IBAction func ShowUsers(_ sender: Any) {
     
        UIView.animate(withDuration: 0.5, animations:{
-            self.usersTable.alpha = 1
-                    self.TrainersTable.alpha = 0 }
+        self.Trainers.alpha = 0
+        self.users.alpha = 1
+
+       }
        )}
+    
+    
     @IBAction func ShowTrainers(_ sender: Any) {
     
        UIView.animate(withDuration: 0.5, animations:{
-            self.usersTable.alpha = 0
-                    self.TrainersTable.alpha = 1 }
-       )} */
+            self.users.alpha = 0
+            self.Trainers.alpha = 1 }
+       )}
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if(segue.identifier == "findUser")
-        {
-            let showFollowingTableViewController = segue.destination as! UsersTableViewController
-             
-
-            showFollowingTableViewController.loggedInUser = self.loggedInUser as? CurrentUser
-              
-        }
-       else  if(segue.identifier == "findTrainer")
-        {
-            let showTrainersTableViewController = segue.destination as! TrainersTableViewController
-                           
-        }
-
+    
         
     }
 
-}
+

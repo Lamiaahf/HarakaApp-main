@@ -49,6 +49,7 @@
 		3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49329260B613C0052A1BD /* Trainner.swift */; };
 		3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4932A260B613C0052A1BD /* ShowTrainner.swift */; };
 		3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4932B260B613C0052A1BD /* AdminLogin.swift */; };
+		3FB489962630920300A8702B /* OtherTActivitysTableV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB489952630920300A8702B /* OtherTActivitysTableV.swift */; };
 		3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */; };
 		3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F625C81CFB0098C299 /* AppDelegate.swift */; };
 		3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */; };
@@ -147,6 +148,7 @@
 		3FA49329260B613C0052A1BD /* Trainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainner.swift; sourceTree = "<group>"; };
 		3FA4932A260B613C0052A1BD /* ShowTrainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainner.swift; sourceTree = "<group>"; };
 		3FA4932B260B613C0052A1BD /* AdminLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminLogin.swift; sourceTree = "<group>"; };
+		3FB489952630920300A8702B /* OtherTActivitysTableV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTActivitysTableV.swift; sourceTree = "<group>"; };
 		3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		3FBB14F325C81CFB0098C299 /* HarakaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarakaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBB14F625C81CFB0098C299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 			children = (
 				CEC34794260C1BA3004B3754 /* TrainersTableViewController.swift */,
 				CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */,
+				3FB489952630920300A8702B /* OtherTActivitysTableV.swift */,
 			);
 			path = "search trainer";
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 				232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */,
 				3F2A3799262BA7C7009EDE21 /* UserActivitysTableView.swift in Sources */,
 				3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */,
+				3FB489962630920300A8702B /* OtherTActivitysTableV.swift in Sources */,
 				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
 				3F885DA3261A58CF003BF3F3 /* FollowingTableViewController.swift in Sources */,
 				3F2D0E65261C94CA0029D96C /* OtherUserPostViewController.swift in Sources */,

@@ -11,7 +11,7 @@ import Firebase
 class UserActivitysTableView: UITableViewController {
 
 
-        var user:CurrentUser?
+        var user : CurrentUser?
         var databaseRef = Database.database().reference()
         var UserActivitys:[Activity]?
         var ActivitysID:[String]?

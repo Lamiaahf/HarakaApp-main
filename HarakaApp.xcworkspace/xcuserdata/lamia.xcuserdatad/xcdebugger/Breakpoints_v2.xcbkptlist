@@ -282,8 +282,8 @@
             filePath = "HarakaApp/View controller/search user-trainer/search trainer/OtherTrainersViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -622,14 +622,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6D4EBB6D-C45D-4EDF-B6D1-5D2682E1AFDC"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HarakaApp/View controller/search user-trainer/search trainer/OtherTrainersViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "didTapFollow(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -856,22 +856,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F2340F07-1585-43FA-94AB-4C2A026B570D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/search user-trainer/searchBViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "showComponents(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1E07EC8C-514B-49FB-99EF-1C7B3E551A53"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -881,39 +865,532 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "showComponents(_:)"
-            landmarkType = "7">
+            landmarkName = "searchBViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E22D7958-1106-4195-BC75-9FB5914354AD"
+            uuid = "6E693F48-3A3B-4B76-A326-2D94C404ECEA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HarakaApp/View controller/search user-trainer/searchBViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "showComponents(_:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "searchBViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "6E693F48-3A3B-4B76-A326-2D94C404ECEA - a7f218fb0f2123db"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.searchBViewController.Trainers.getter : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/searchBViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "6E693F48-3A3B-4B76-A326-2D94C404ECEA - fde810be93d34bcf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.searchBViewController.Trainers.setter : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/searchBViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "6E693F48-3A3B-4B76-A326-2D94C404ECEA - d48a54d09068a36c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.searchBViewController.Trainers.modify : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/searchBViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "6E693F48-3A3B-4B76-A326-2D94C404ECEA - 84bd2f12f5ee4690"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.searchBViewController.Trainers.modify : Swift.Optional&lt;__C.UIView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/searchBViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "6E693F48-3A3B-4B76-A326-2D94C404ECEA - f3968951c0bb1fef"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.searchBViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.searchBViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/searchBViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "345">
+               </Location>
+               <Location
+                  uuid = "6E693F48-3A3B-4B76-A326-2D94C404ECEA - 3b41db9a0cd4c8e4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.searchBViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.searchBViewController&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/searchBViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87E7755B-BE17-490D-8D15-EDE0DBD38285"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarakaApp/View controller/search user-trainer/searchBViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "ShowUsers(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1DAB33E5-AED1-4BC9-882C-F88226314D96"
+            uuid = "42FB00F4-57BD-4DF1-BA22-312F6309EF13"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HarakaApp/View controller/search user-trainer/search user/UsersTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "UsersTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "42FB00F4-57BD-4DF1-BA22-312F6309EF13 - f8236091031c1991"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.__deallocating_deinit"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "42FB00F4-57BD-4DF1-BA22-312F6309EF13 - 5f7ed68bdd98d8f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.__allocating_init(style: __C.UITableViewStyle) -&gt; HarakaApp.UsersTableViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "42FB00F4-57BD-4DF1-BA22-312F6309EF13 - 1f980800aea5bd37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(style: __C.UITableViewStyle) -&gt; HarakaApp.UsersTableViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "42FB00F4-57BD-4DF1-BA22-312F6309EF13 - 52cc861ca8513141"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.UsersTableViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "42FB00F4-57BD-4DF1-BA22-312F6309EF13 - 4d6c9813f3a36efd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.UsersTableViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "397">
+               </Location>
+               <Location
+                  uuid = "42FB00F4-57BD-4DF1-BA22-312F6309EF13 - c97b9daeb790a876"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.UsersTableViewController&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "42FB00F4-57BD-4DF1-BA22-312F6309EF13 - 273f7c74128e1130"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.UsersTableViewController&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "338">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "410D2E1D-21C5-495C-8115-BEB116550A5B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarakaApp/View controller/search user-trainer/searchBViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "ShowTrainers(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD1F58D5-FEB9-4874-9F08-BF4D10CFA3D1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarakaApp/View controller/search user-trainer/search user/UsersTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "UsersTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "CD1F58D5-FEB9-4874-9F08-BF4D10CFA3D1 - b2903202b804559c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.loggedInUser.getter : Swift.Optional&lt;HarakaApp.CurrentUser&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "233">
+               </Location>
+               <Location
+                  uuid = "CD1F58D5-FEB9-4874-9F08-BF4D10CFA3D1 - a7c9a15a61ae7980"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.loggedInUser.setter : Swift.Optional&lt;HarakaApp.CurrentUser&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "341">
+               </Location>
+               <Location
+                  uuid = "CD1F58D5-FEB9-4874-9F08-BF4D10CFA3D1 - 4cd9a6c26144e94e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.loggedInUser.modify : Swift.Optional&lt;HarakaApp.CurrentUser&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "CD1F58D5-FEB9-4874-9F08-BF4D10CFA3D1 - 80ee768cea9c9979"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.loggedInUser.modify : Swift.Optional&lt;HarakaApp.CurrentUser&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "CD1F58D5-FEB9-4874-9F08-BF4D10CFA3D1 - 1f980800aea5beb3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(style: __C.UITableViewStyle) -&gt; HarakaApp.UsersTableViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "645">
+               </Location>
+               <Location
+                  uuid = "CD1F58D5-FEB9-4874-9F08-BF4D10CFA3D1 - 4d6c9813f3a36d79"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.UsersTableViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "CD1F58D5-FEB9-4874-9F08-BF4D10CFA3D1 - 273f7c74128e12b4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.UsersTableViewController&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "625">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9FCB0844-CC3B-47B5-A926-9BD1E4C7D436"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarakaApp/View controller/search user-trainer/search user/UsersTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "UsersTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9FCB0844-CC3B-47B5-A926-9BD1E4C7D436 - 1aaec11679d21bbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.UsersTable.getter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "9FCB0844-CC3B-47B5-A926-9BD1E4C7D436 - 55ada95cf39067ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.UsersTable.setter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "9FCB0844-CC3B-47B5-A926-9BD1E4C7D436 - c423c1be0125b8ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.UsersTable.modify : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "9FCB0844-CC3B-47B5-A926-9BD1E4C7D436 - fcb915e0681eb095"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.UsersTable.modify : Swift.Optional&lt;__C.UITableView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "9FCB0844-CC3B-47B5-A926-9BD1E4C7D436 - 1f980800aea5bd37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(style: __C.UITableViewStyle) -&gt; HarakaApp.UsersTableViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "9FCB0844-CC3B-47B5-A926-9BD1E4C7D436 - 4d6c9813f3a36efd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HarakaApp.UsersTableViewController"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "397">
+               </Location>
+               <Location
+                  uuid = "9FCB0844-CC3B-47B5-A926-9BD1E4C7D436 - 273f7c74128e1130"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HarakaApp.UsersTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HarakaApp.UsersTableViewController&gt;"
+                  moduleName = "HarakaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/search%20user-trainer/search%20user/UsersTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "338">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52423FA0-5094-4FEB-BCC2-CFAA07233AC7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarakaApp/View controller/search user-trainer/search trainer/OtherTrainersViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "ShowChallenges(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

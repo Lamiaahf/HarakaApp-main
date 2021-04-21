@@ -10,12 +10,12 @@ import FirebaseDatabase
 
 class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
-    @IBOutlet weak var UsersTable: UITableView!
-    let searchController = UISearchController(searchResultsController: nil)
+    @IBOutlet weak var UsersTableView: UITableView!
+    let searchTController = UISearchController(searchResultsController: nil)
 
     @IBOutlet weak var searchBar: UISearchBar!
     var loggedInUser:CurrentUser?
-    var usersArray = [NSDictionary?]()
+    var UsersArray = [NSDictionary?]()
     var filteredUsers = [NSDictionary?]()
     var testArray = [NSDictionary?]()
     var databaseRef = Database.database().reference()
@@ -28,26 +28,28 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-          searchController.searchResultsUpdater = self
-          searchController.obscuresBackgroundDuringPresentation = false
-          definesPresentationContext = true
-          tableView.tableHeaderView = searchController.searchBar
+         searchTController.searchResultsUpdater = self
+         searchTController.obscuresBackgroundDuringPresentation = false
+         definesPresentationContext = true
+         tableView.tableHeaderView = searchTController.searchBar
 
 
-        databaseRef.child("users").queryOrdered(byChild: "Name").observe(.value, with: { (snapshot) in
+        databaseRef.child("users").queryOrdered(byChild: "name").observe(.childAdded, with: { (snapshot) in
+
+                 
             let key = snapshot.key
             let snapshot = snapshot.value as? NSDictionary
             snapshot?.setValue(key, forKey: "uid")
-          // SHOULD NOT SHOW THE LOGGEDIN USER
+// SHOULD NOT SHOW THE LOGGEDIN USER
             if(key == self.loggedInUser?.uid)
             {
-                print("Same as logged in user, so don't show!")
+                print("Same as logged in trainer, so don't show!")
             }
             else
             {
-                self.usersArray.append(snapshot)
+                self.UsersArray.append(snapshot)
                 //insert the rows
-                self.UsersTable.insertRows(at: [IndexPath(row:self.usersArray.count-1,section:0)], with: UITableView.RowAnimation.automatic)
+                self.UsersTableView.insertRows(at: [IndexPath(row:self.UsersArray.count-1,section:0)], with: UITableView.RowAnimation.automatic)
             }
 
            
@@ -85,10 +87,10 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
             
         // #warning Incomplete implementation, return the number of rows
                
-               if searchController.isActive && searchController.searchBar.text != " "{
+               if searchTController.isActive && searchTController.searchBar.text != " "{
                 return filteredUsers.count
                }
-               return self.usersArray.count
+               return self.UsersArray.count
            }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,13 +98,13 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
 
              let user : NSDictionary?
              
-             if searchController.isActive && searchController.searchBar.text != ""{
+             if searchTController.isActive && searchTController.searchBar.text != ""{
 
                  user = filteredUsers[indexPath.row]
              }
              else
              {
-                 user = self.usersArray[indexPath.row]
+                user = self.UsersArray[indexPath.row]
              }
              
              cell.textLabel?.text = user?["Name"] as? String
@@ -117,31 +119,39 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
         searchBar.resignFirstResponder()
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "ShowUser" {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let u = self.UsersArray[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ShowUser") as? OtherUsersViewController
+         vc?.otherUser = u
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "ShowTrainer" {
                 if let indexPath = tableView.indexPathForSelectedRow {
-                    let user = usersArray[indexPath.row]
-                    let controller = segue.destination as? OtherUsersViewController
-                    controller?.otherUser = user
+                    let Trainer = trainersArray[indexPath.row]
+                    let controller = segue.destination as? OtherTrainersViewController
+                    controller?.otherTrainers = Trainer
             
                 }
             }
-        }
+        } */
         
 
        
         
         func updateSearchResults(for searchController: UISearchController) {
             
-            filterContent(searchText: self.searchController.searchBar.text!)
+            filterContent(searchText: self.searchTController.searchBar.text!)
 
         }
         
     func filterContent(searchText:String)
     {
-        self.filteredUsers = self.usersArray.filter{ user in
-
-            let username = user!["Name"] as? String
+        self.filteredUsers = self.UsersArray.filter{ user in
+ 
+            let username = user!["name"] as? String
             
             if( username != nil){
             return(username?.lowercased().contains(searchText.lowercased()))!
@@ -149,12 +159,15 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
         }
             else {return false}
         }
+        
         tableView.reloadData()
     }
 
     }
 
     
+    
+
     
 
 
