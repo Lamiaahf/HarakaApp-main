@@ -56,7 +56,7 @@ class CreateGameViewController: UIViewController{
             
         }
         
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     func addParticipant(key: String, id: String){
