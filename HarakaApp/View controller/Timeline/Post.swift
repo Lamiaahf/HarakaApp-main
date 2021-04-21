@@ -24,7 +24,7 @@ class Post
     init(createdBy: User, timeAgo: String?, caption: String?, numOfLikes: Int?, numOfComments: Int?, postID: String?, liked: Bool?, uid : String?){
         
         self.createdBy = createdBy
-        self.timeAgo = String(timeAgo![...timeAgo!.firstIndex(of: "+")!])
+        self.timeAgo = String(timeAgo![..<timeAgo!.firstIndex(of: "+")!])
         self.caption = caption
         self.numOfLikes = numOfLikes
         self.numOfComments = numOfComments

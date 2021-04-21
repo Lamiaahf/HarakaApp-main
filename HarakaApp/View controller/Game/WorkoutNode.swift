@@ -31,6 +31,24 @@ class WorkoutNode: SCNNode {
         }
     }
     
+    init(rayCast: ARRaycastResult?, workout: String){
+        super.init()
+        if let rayCast = rayCast {
+            guard let workoutScene = SCNScene(named: "\(Model.path)\(workout)\(Model.extension)") else  {return}
+            self.position = SCNVector3Make(
+                rayCast.worldTransform.columns.3.x,
+                rayCast.worldTransform.columns.3.y ,
+                rayCast.worldTransform.columns.3.z
+            )
+            
+            self.scale = SCNVector3(0.005, 0.005, 0.005)
+            
+            workoutScene.rootNode.childNodes.forEach { (node) in
+                self.addChildNodes([node])
+            }
+        }
+    }
+    
     
 }
 extension SCNNode {
