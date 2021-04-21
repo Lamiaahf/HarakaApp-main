@@ -84,4 +84,35 @@ enum Workout: String, CaseIterable {
         }
     }
     
+    var modelDescription: String{
+        switch self {
+        case .airSquat:
+            return "كررها ١٠ مرات"
+        case .bicycleCrunch:
+            return "كررها ٥ مرات"
+        case .burpee:
+            return "كررها ٥ مرات"
+        case .circleCrunch:
+            return "كررها ١٠ مرات"
+        case .jumpingJacks:
+            return "كررها ١٥ مرة"
+        case .pushUp:
+            return "كررها ٥ مرات"
+        case .crossJumps:
+            return "كررها ١٠ مرات"
+        case .crossJumpsRotation:
+            return "كررها ١٠ مرات"
+        case .situps:
+            return "كررها ٥ مرات"
+        case .pikeWalk:
+            return "كررها ٥ مرات"
+        case .pistol:
+            return "اثبت ١٠ ثواني"
+        case .plank:
+            return "اثبت ٣٠ ثانية"
+        case .quickSteps:
+            return "كررها ٥ مرات"
+        }
+    }
+    
 }
