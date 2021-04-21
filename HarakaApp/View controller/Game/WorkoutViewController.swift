@@ -14,6 +14,7 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
     
 
     // UI Variables
+    @IBOutlet weak var swipeView: UIView!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var tapToStartView: UIView!
@@ -47,8 +48,9 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         // Set workout
         self.index = 0
         self.workout = WorkoutModel().getWorkoutData()[self.index!]
-        self.title = workout?.name
         result = []
+        
+        self.swipeView.alpha = 0
         
         // Add tap gesture
         addTapGestureToSceneView()
@@ -127,6 +129,7 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
                 let oldNode = sceneView.scene.rootNode.childNodes.first
                 sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
             }
+            self.title = workout.name
                 
         }
     }
@@ -148,6 +151,7 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         self.workout = WorkoutModel().getWorkoutData()[self.index!]
         guard let hitResult = self.result!.first else { return }
         addWorkoutNode(hitResult: hitResult)
+        self.swipeView.alpha = 0
     }
     
     func finishGame(){
@@ -194,6 +198,7 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
             guard let hitResult = result?.first else { return }
             addWorkoutNode(hitResult: hitResult)
             
+            self.swipeView.alpha = 1
             // Initialize start time
             startTime = Date()
         }
