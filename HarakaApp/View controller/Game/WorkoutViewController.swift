@@ -154,10 +154,7 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
             }
             else{
                 let oldNode = sceneView.scene.rootNode.childNodes.first
-                sceneView.scene.rootNode.addChildNode(currentNode!)
-                
-                
-             //   sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
+                sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
               //  self.sceneView.scene.rootNode.addChildNode(currentNode!)
             }
             self.title = workout.name
@@ -231,7 +228,9 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
                     guard let rayCast: ARRaycastResult = raycastResult.first
                     else { return }
                 
-
+                self.swipeView.alpha = 1
+                self.descriptionLabel.text = ""
+                self.descriptionView.alpha = 1
                 self.addWorkoutNode(raycast: rayCast)
             }
 
@@ -243,8 +242,6 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
             addWorkoutNode(hitResult: hitResult)
             
  */
-            
-            self.swipeView.alpha = 1
             // Initialize start time
             startTime = Date()
         }
