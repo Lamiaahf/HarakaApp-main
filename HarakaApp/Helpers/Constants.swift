@@ -39,19 +39,19 @@ struct Animation {
 
 enum Workout: String, CaseIterable {
     
-    case airSquat = "Air Squat"
-    case bicycleCrunch = "Bicycle Crunch"
-    case burpee = "Burpee"
-    case circleCrunch = "Circle Crunch"
-    case jumpingJacks = "Jumping Jacks"
-    case pushUp = "Push Up"
-    case crossJumps = "Cross Jumps"
-    case crossJumpsRotation = "Cross Jumps Rotation"
-    case situps = "Situps"
-    case pikeWalk = "Pike Walk"
-    case pistol = "Pistol"
-    case plank = "Plank"
-    case quickSteps = "Quick Steps"
+    case airSquat = "سكوات"
+    case bicycleCrunch = "بايسكل كرنتش"
+    case burpee = "برپي"
+    case circleCrunch = "سيركل كرنتش"
+    case jumpingJacks = "جمبنق جاكس"
+    case pushUp = "بوش اب"
+    case crossJumps = "كروس جمبس"
+    case crossJumpsRotation = "كروس جمبس روتيشن"
+    case situps = "سيت اب"
+    case pikeWalk = "بايك ووك"
+    case pistol = "بستل"
+    case plank = "بلانك"
+    case quickSteps = "كويك ستبس"
     
     var modelName: String {
         switch self {

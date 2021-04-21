@@ -140,8 +140,8 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
          //       let oldNode = sceneView.scene.rootNode.childNodes.first
           //      sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
             }
-            //self.title = w.modelName
-            //self.descriptionLabel.text = w.modelDescription
+            self.title = workout.name
+            self.descriptionLabel.text = newWorkout.modelDescription
         }
     }
     func addWorkoutNode(raycast: ARRaycastResult) {
@@ -154,12 +154,13 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
             }
             else{
                 let oldNode = sceneView.scene.rootNode.childNodes.first
+                sceneView.scene.rootNode.addChildNode(currentNode!)
                 
                 
              //   sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
               //  self.sceneView.scene.rootNode.addChildNode(currentNode!)
             }
-            self.title = w.modelName
+            self.title = workout.name
             self.descriptionLabel.text = w.modelDescription
         }
     }
