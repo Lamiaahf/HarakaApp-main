@@ -18,7 +18,8 @@ class Utilities {
         
         bottomLine.frame = CGRect(x: 0, y: textfield.frame.height - 2, width: textfield.frame.width, height: 2)
         
-        bottomLine.backgroundColor = UIColor.init(red: 48/255, green  : 99/255, blue: 173/255, alpha: 1).cgColor
+        bottomLine.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        
         
         // Remove border on text field
         textfield.borderStyle = .none
