@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 import AMTabView
 
 class HomePageViewController: UIViewController , TabItem{
@@ -25,19 +27,34 @@ class HomePageViewController: UIViewController , TabItem{
     
     @IBOutlet var postsHSButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        activitiesButton.applyDesign()
-        GroupsHSButton.applyDesign()
-        challangesHSButton.applyDesign()
-        GameHSButton.applyDesign()
-      postsHSButton.applyDesign()
-        
-        // Do any additional setup after loading the view.
-    }
-  
+    var databaseRef = Database.database().reference()
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            let uid = Auth.auth().currentUser?.uid
+            self.databaseRef.child("Trainers").child("Approved").observeSingleEvent(of: .value, with: { (snapshot) in
+
+                    if snapshot.hasChild(uid!){
+
+                        self.activitiesButton.applyDesign()
+                        self.GroupsHSButton.applyDesign()
+                        self.challangesHSButton.applyDesign()
+                    }else {
+                        self.activitiesButton.applyDesign()
+                        self.GroupsHSButton.applyDesign()
+                        self.challangesHSButton.applyDesign()
+                        self.GameHSButton.applyDesign()
+                        self.postsHSButton.applyDesign()
+
+                        }
+
+
+                })
+        }
+      
 }
+
 extension UIButton {
     func applyDesign() {
         self.layer.cornerRadius = 20

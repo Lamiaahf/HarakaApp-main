@@ -58,10 +58,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wDX-lm-0z8">
-                                <rect key="frame" x="47" y="209" width="310" height="340"/>
+                                <rect key="frame" x="47" y="209" width="296.66666666666669" height="340"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" البريد الالكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-ap-p8X">
-                                        <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="296.66666666666669" height="40"/>
                                         <color key="tintColor" red="0.85233160620000004" green="0.85233160620000004" blue="0.85233160620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0Dr-zM-aq0"/>
@@ -71,7 +71,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الرقم السري" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTU-mf-V8y">
-                                        <rect key="frame" x="0.0" y="60" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="60" width="296.66666666666669" height="40"/>
                                         <color key="tintColor" red="0.85233160620000004" green="0.85233160620000004" blue="0.85233160620000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Ic6-A8-LrX"/>
@@ -81,7 +81,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AoS-m0-9Ec">
-                                        <rect key="frame" x="0.0" y="120" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="120" width="296.66666666666669" height="40"/>
                                         <state key="normal" title="هل نسيت كلمة المرور ؟">
                                             <color key="titleColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -90,7 +90,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smP-oM-JGe">
-                                        <rect key="frame" x="0.0" y="180" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="180" width="296.66666666666669" height="40"/>
                                         <color key="backgroundColor" red="0.40191826219999999" green="0.57196450229999996" blue="0.63496923449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="iE7-wl-aFv"/>
@@ -103,13 +103,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myk-6q-cPc">
-                                        <rect key="frame" x="0.0" y="240" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="240" width="296.66666666666669" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tF-W6-Prs">
-                                        <rect key="frame" x="0.0" y="300" width="310" height="40"/>
+                                        <rect key="frame" x="0.0" y="300" width="296.66666666666669" height="40"/>
                                         <state key="normal" title="ليس لديك حساب؟ سجل الان ">
                                             <color key="titleColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -1972,15 +1972,6 @@
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PvF-K0-0gO">
-                                <rect key="frame" x="16" y="239" width="358" height="117"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="التحديات ">
-                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5et-yq-uLG">
                                 <rect key="frame" x="16" y="547" width="358" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2013,7 +2004,7 @@
                     <connections>
                         <outlet property="GroupsHSButton" destination="5et-yq-uLG" id="SgW-te-W3i"/>
                         <outlet property="activitiesButton" destination="wXL-nq-mEp" id="YFK-wI-pvo"/>
-                        <outlet property="challangesHSButton" destination="PvF-K0-0gO" id="ufp-XC-GYL"/>
+                        <outlet property="challangesHSButton" destination="pjr-Zw-UYl" id="Raz-3d-FHd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-09-PcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

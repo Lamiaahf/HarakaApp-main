@@ -9,7 +9,8 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
-class TrainerProfile: UIViewController {
+import AMTabView
+class TrainerProfile: UIViewController ,TabItem{
 
     
    //tab bar

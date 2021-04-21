@@ -64,7 +64,7 @@ class LOGINViewController: UIViewController {
                     if snapshot.hasChild(uid!){
 
                         let ThomeViewController =
-                            self.storyboard?.instantiateViewController(withIdentifier:"THomeVC") as? TabBarViewController
+                            self.storyboard?.instantiateViewController(withIdentifier:"THomeVC") as? TabBarTViewController
                             
                         
                         self.view.window?.rootViewController = ThomeViewController
