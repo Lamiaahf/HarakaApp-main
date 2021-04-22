@@ -585,11 +585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N7d-Ph-kT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="140" y="1422.5118483412321"/>
-=======
             <point key="canvasLocation" x="-474" y="-609"/>
->>>>>>> main
         </scene>
         <!--Comment View Controller-->
         <scene sceneID="1S0-qa-UN4">
@@ -675,11 +671,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVS-gq-1GH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="958" y="1423"/>
-=======
             <point key="canvasLocation" x="1262" y="126"/>
->>>>>>> main
         </scene>
         <!--Room View Controller-->
         <scene sceneID="uab-jE-1dt">
@@ -4548,6 +4540,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3U-Kv-HQF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1394" y="5410"/>
+            </scene>
         <!--انشاء فعالية-->
         <scene sceneID="Nl6-Rm-EQy">
             <objects>
