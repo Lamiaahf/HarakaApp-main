@@ -28,6 +28,25 @@ class Utilities {
         
     }
     
+    static func styleTextView(textBox: UITextView){
+        
+      //  view.addSubview(textBox)
+        //textBox.translatesAutoresizingMaskIntoConstraints = false
+        
+        textBox.autocorrectionType = .no
+        textBox.backgroundColor = .systemGray6
+        textBox.textColor = .secondaryLabel
+        textBox.font = UIFont.preferredFont(forTextStyle: .body)
+        textBox.layer.cornerRadius = 20
+        textBox.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        
+        textBox.layer.shadowColor = UIColor.gray.cgColor;
+        textBox.layer.shadowOffset = CGSize(width: 0.75, height: 0.75)
+        textBox.layer.shadowOpacity = 0.4
+        textBox.layer.shadowRadius = 20
+        textBox.layer.masksToBounds = false
+        
+    }
   
     static func styleFilledButton(_ button:UIButton) {
         

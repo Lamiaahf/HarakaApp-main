@@ -14,8 +14,11 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
     
 
     // UI Variables
+    @IBOutlet weak var descriptionView: UIView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var swipeView: UIView!
     @IBOutlet weak var sceneView: ARSCNView!
-    @IBOutlet weak var nextButton: UIButton!
+ //   @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var tapToStartView: UIView!
     @IBOutlet weak var tapToStartInnerView: UIView!
     // Variables
@@ -25,6 +28,7 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
     var workout: WorkoutModel?
     var index: Int?
     var result: [ARHitTestResult]?
+    var raycast: [ARRaycastResult]?
     var startTime: Date?
     var currentGame: Game?
     
@@ -36,19 +40,24 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         sceneView.delegate = self
         sceneView.automaticallyUpdatesLighting = true
         sceneView.autoenablesDefaultLighting = true
-        sceneView.debugOptions.insert(.showCreases)
+        let scene = SCNScene()
+        self.sceneView.scene = scene
         
         if ARWorldTrackingConfiguration.supportsFrameSemantics(.personSegmentationWithDepth) {
-            configuration.frameSemantics.insert(.personSegmentation)
-        }
+            configuration.frameSemantics.insert(.personSegmentation)}
     
+        
         setOverlay()
+        
         
         // Set workout
         self.index = 0
         self.workout = WorkoutModel().getWorkoutData()[self.index!]
-        self.title = workout?.name
         result = []
+        raycast = []
+        
+        self.descriptionView.alpha = 0
+        self.swipeView.alpha = 0
         
         // Add tap gesture
         addTapGestureToSceneView()
@@ -114,20 +123,42 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe(withGestureRecognizer:)))
         sceneView.addGestureRecognizer(swipeGestureRecognizer)
+        
     }
     
     func addWorkoutNode(hitResult: ARHitTestResult) {
-        if let workout = workout, let workoutName = Workout(rawValue: workout.name) {
-            let workoutNode = WorkoutNode(hitResult: hitResult, workout: workoutName.modelName)
-            currentNode = workoutNode
+        if let workout = workout, let newWorkout = Workout(rawValue: workout.name) {
+            let workoutNode = WorkoutNode(hitResult: hitResult, workout: newWorkout.modelName)
+            self.currentNode = workoutNode
+            if(sceneView.scene.rootNode.childNodes.isEmpty){
+                sceneView.scene.rootNode.addChildNode(self.currentNode!)
+            }
+            else{
+                print("Printing current node name"+(self.currentNode?.name)!)
+                print("Printing workout node name"+workoutNode.name!)
+                self.sceneView.scene.rootNode.addChildNode(self.currentNode!)
+         //       let oldNode = sceneView.scene.rootNode.childNodes.first
+          //      sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
+            }
+            self.title = workout.name
+            self.descriptionLabel.text = newWorkout.modelDescription
+        }
+    }
+    func addWorkoutNode(raycast: ARRaycastResult) {
+        
+        if let workout = workout, let w = Workout(rawValue: workout.name) {
+            let workoutNode = WorkoutNode(rayCast: raycast, workout: w.modelName)
+            self.currentNode = workoutNode
             if(sceneView.scene.rootNode.childNodes.isEmpty){
                 sceneView.scene.rootNode.addChildNode(currentNode!)
             }
             else{
                 let oldNode = sceneView.scene.rootNode.childNodes.first
                 sceneView.scene.rootNode.replaceChildNode(oldNode!, with: currentNode!)
+              //  self.sceneView.scene.rootNode.addChildNode(currentNode!)
             }
-                
+            self.title = workout.name
+            self.descriptionLabel.text = w.modelDescription
         }
     }
     
@@ -136,9 +167,9 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
     }
     
     
-    @IBAction func nextWorkout(_ sender: Any) {
+    func nextWorkout() {
         if(index == 8){
-            nextButton.setTitle("انهاء", for: .normal)
+        //    nextButton.setTitle("انهاء", for: .normal)
             self.index = self.index!+1
             return
         }
@@ -146,8 +177,10 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         
         self.index = self.index!+1
         self.workout = WorkoutModel().getWorkoutData()[self.index!]
-        guard let hitResult = self.result!.first else { return }
-        addWorkoutNode(hitResult: hitResult)
+        // hitresult -> raycast
+        guard let rayCast = self.raycast!.first else { return }
+        addWorkoutNode(raycast: rayCast)
+        self.swipeView.alpha = 0
     }
     
     func finishGame(){
@@ -171,35 +204,52 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         
         
     }
-    /*
-    func raycastQuery(from point: CGPoint,
-             allowing target: ARRaycastQuery.Target,
-             alignment: ARRaycastQuery.TargetAlignment) -> ARRaycastQuery?{
-
-    }*/
+    
     
     @objc func didTap(withGestureRecognizer recognizer: UIGestureRecognizer) {
         if currentNode == nil {
             disappearTapToStartView()
             let tapPoint = recognizer.location(in: sceneView)
+
             
-            var ray = sceneView.raycastQuery(from: tapPoint, allowing: .estimatedPlane, alignment: .vertical)
-            print("Raycast:\(ray)")
-            self.result = sceneView.hitTest(tapPoint, types: .existingPlaneUsingExtent)
-            if result!.count == 0 {
-                return
-                   
+            let estimatedPlane: ARRaycastQuery.Target = .estimatedPlane
+            let alignment: ARRaycastQuery.TargetAlignment = .any
+
+            let query: ARRaycastQuery? = sceneView.raycastQuery(from: tapPoint,
+                allowing: estimatedPlane,
+                alignment: alignment)
+            
+
+            if let nonOptQuery: ARRaycastQuery = query {
+
+                let raycastResult: [ARRaycastResult] = sceneView.session.raycast(nonOptQuery)
+                self.raycast = raycastResult
+                
+                    guard let rayCast: ARRaycastResult = raycastResult.first
+                    else { return }
+                
+                self.swipeView.alpha = 1
+                self.descriptionLabel.text = ""
+                self.descriptionView.alpha = 1
+                self.addWorkoutNode(raycast: rayCast)
             }
+
+ /*
+            self.result = sceneView.hitTest(tapPoint, types: .existingPlaneUsingExtent)
+            if result!.count == 0 {return}
     
             guard let hitResult = result?.first else { return }
             addWorkoutNode(hitResult: hitResult)
             
+ */
             // Initialize start time
             startTime = Date()
         }
     }
+    
     @objc func didZoom(withGestureRecognizer recognizer: UIPinchGestureRecognizer){
         if recognizer.numberOfTouches == 2{
+            if(currentNode == nil){ return}
             
             if((currentNode?.scale.x)! <= 0.0006617919 && recognizer.scale<1){
                 return
@@ -222,9 +272,10 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         }
     }
     @objc func didSwipe(withGestureRecognizer recognizer: UISwipeGestureRecognizer){
+        if(currentNode == nil){ return}
         
         if recognizer.direction == .right{
-            nextWorkout(self)
+            nextWorkout()
         }
         
     }

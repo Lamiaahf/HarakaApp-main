@@ -27,7 +27,7 @@ class LOGINViewController: UIViewController {
         super.viewDidLoad()
         setUpElements()
 
-
+        hideKeyboardWhenTappedAround()
 
     }
     func setUpElements() {

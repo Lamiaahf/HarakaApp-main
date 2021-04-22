@@ -18,13 +18,9 @@ class HomePageViewController: UIViewController , TabItem{
     }
     
     @IBOutlet var activitiesButton: UIButton!
-   
     @IBOutlet var GroupsHSButton: UIButton!
-    
     @IBOutlet var challangesHSButton: UIButton!
-   
     @IBOutlet var GameHSButton: UIButton!
-    
     @IBOutlet var postsHSButton: UIButton!
     
     var databaseRef = Database.database().reference()
@@ -62,5 +58,6 @@ extension UIButton {
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
         self.layer.shadowOpacity = 0.5   }
 }
+
 
 

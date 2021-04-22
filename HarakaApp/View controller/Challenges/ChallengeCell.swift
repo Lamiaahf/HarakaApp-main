@@ -26,23 +26,16 @@ class ChallengeCell: UITableViewCell{
         
         challengeLabel.text = challenge.cName
         deadlineLabel.text = "\(challenge.enddate)"
-        trainerLabel.text = challenge.createdBy?.name
         
         let uid = Auth.auth().currentUser?.uid
         
-        DBManager.getType(for: uid!){
-            type in
-            if type == 0{
-                self.leaderboardButton.setBackgroundImage(UIImage(systemName: "circle"), for: .normal)
-                print(self.leaderboardButton.tintColor.accessibilityName)
-            }
-            else if type == 1{
-                self.leaderboardButton.setBackgroundImage(UIImage(systemName: "ellipsis"), for: .normal)
-                print(self.leaderboardButton.tintColor.accessibilityName)
-            }
-            else{ return }
+        DBManager.getTrainer(for: (challenge.createdBy?.trainerID)!){
+            trainer in
+            self.challenge.createdBy = trainer
         }
 
+        trainerLabel.text = challenge.createdBy?.name
+        
         
     }
 }

@@ -138,28 +138,66 @@ import FirebaseStorage
 }
 
 
-struct Trainer {
+@objc class Trainer: NSObject {
     
     var trainerID: String?
     var username: String?
-//    var profileImageURL: String?
-//    var profileImage: UIImage?
+    var profileImageURL: String?
+    var profileImage: UIImage?
     var name: String?
     var email: String?
+    var dob: Date?
 //    var followingCount: Int?
-    var age: Int?
+//    var age: Int?
     
-    init(username: String?,name: String?, email: String?, age: Int?) {
+    init(id: String?, ppURL: String?, username: String?,name: String?, email: String?, dob: Date?) {
         self.username = username
         self.name = name
         self.email = email
-        self.age = age
+        self.dob = dob
+        self.trainerID = id
+        self.profileImageURL = ppURL
     }
     
-    init(){
+    override init(){
         username = ""
         name = ""
         email = ""
-        age = 0
+        dob = Date()
+    }
+    
+    init(tid: String){
+        super.init()
+        trainerID = tid
+    }
+    
+    init?(snapshot: DataSnapshot) {
+        super.init()
+        
+        guard let trainerDict = snapshot.value as? [String: Any],
+            let username = trainerDict["Username"] as? String,
+            let name = trainerDict["Name"] as? String,
+            let email = trainerDict["Email"] as? String,
+            let pp = trainerDict["ProfilePic"] as? String,
+            let dob = trainerDict["DOB"] as? String
+        else{
+            return
+        }
+           
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        self.trainerID = snapshot.key
+        self.username = username
+        self.name = name
+        self.email = email
+        self.profileImageURL = pp
+        self.dob = df.date(from: dob)
+        
+        DBManager.getPic(for: self){
+            image in
+            self.profileImage = image
+        }
+        // = Date(timeIntervalSince1970: times)
     }
 }
