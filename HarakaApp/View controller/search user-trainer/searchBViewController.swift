@@ -26,24 +26,23 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
        // Utilities.styleFilledButton(usersSearch)
-    // Utilities.styleFilledButton(trainersSearch)
+       // Utilities.styleFilledButton(trainersSearch)
         self.loggedInUser = Auth.auth().currentUser
 
     }
     
     
-    @IBAction func showComponents(_ sender : UISegmentedControl) {
+    @IBAction func showusers(_ sender : Any) {
         
-        if(sender.selectedSegmentIndex == 0)
-        {
+        
             UIView.animate(withDuration: 0.5, animations: {
                 
                 self.users.alpha = 1
                 self.Trainers.alpha = 0
            })
         }
-        else
-        {
+@IBAction func showTrainers(_ sender : Any) {
+
             UIView.animate(withDuration: 0.5, animations: {
                 
                 self.Trainers.alpha = 1
@@ -71,7 +70,7 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
                     self.TrainersTable.alpha = 1 }
        )} */
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  /*  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if(segue.identifier == "findUser")
         {
@@ -88,6 +87,6 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
         }
 
         
-    }
+    }*/
 
-}
+
