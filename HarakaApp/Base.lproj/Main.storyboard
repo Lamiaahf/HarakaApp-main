@@ -2033,7 +2033,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pez-xL-LQ4">
-                                <rect key="frame" x="16" y="85" width="358" height="94"/>
+                                <rect key="frame" x="16" y="85" width="358" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="win" translatesAutoresizingMaskIntoConstraints="NO" id="aBB-Cx-m1u">
@@ -4539,7 +4539,7 @@
         <segue reference="AL4-mK-5BW"/>
         <segue reference="gUs-S1-3dg"/>
         <segue reference="gJH-zc-xPe"/>
-        <segue reference="n49-y8-cSu"/>
+        <segue reference="SsM-Vu-eb0"/>
         <segue reference="tEi-oZ-rgX"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="Color"/>
