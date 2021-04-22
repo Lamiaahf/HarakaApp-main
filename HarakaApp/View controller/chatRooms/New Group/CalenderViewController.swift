@@ -16,6 +16,7 @@ class CalenderViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
     
+   // @IBOutlet weak var Ebody: UILabel!
     var models = [MyReminder]()
 
     override func viewDidLoad() {
@@ -121,9 +122,10 @@ extension CalenderViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = self.models[indexPath.row].title
-       // let body = models[indexPath.row].body
+       // let Ebody = models[indexPath.row].body
         let date = models[indexPath.row].date
         cell.detailTextLabel?.text=date
+      //  cell.UILabel?.text = Ebody
         cell.textLabel?.font = UIFont(name: "Arial", size: 18)
         cell.detailTextLabel?.font = UIFont(name: "Arial", size: 16)
         return cell
@@ -137,10 +139,10 @@ extension CalenderViewController: UITableViewDataSource {
                 if let Edate = snapshot.value as? [String: Any]{
                     if let EventDate = Edate ["EventDate"] as? String {
                     let EventTitle = Edate ["EventTitle"] as? String
-                     //   let ENotesBody = Edate["EventNotes"] as? String
+                      //  let EventBody = ["EventBody"] as? String
                     //let ID = String(snapshot.key)
-                        var id = self.objRoom!.roomId
-                        let calender = MyReminder(title: EventTitle!, date: EventDate, /*body:ENotesBody!*/ identifier: id! )
+                        let id = self.objRoom!.roomId
+                        let calender = MyReminder(title: EventTitle!, date: EventDate, /*body:EventBody!*/  identifier:id!)
                         self.models.append(calender)
                         self.table.reloadData()
                     
@@ -170,7 +172,7 @@ extension CalenderViewController: UITableViewDataSource {
 struct MyReminder {
     let title: String
     let date: String
-  //  let body: String
+//  let body: String
     let identifier: String
     
 }
