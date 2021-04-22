@@ -92,6 +92,7 @@
 		CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBE9380260387A700A0E363 /* AddViewController.swift */; };
 		CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC3478B260BFC7C004B3754 /* searchBViewController.swift */; };
 		CEC34795260C1BA9004B3754 /* TrainersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC34794260C1BA3004B3754 /* TrainersTableViewController.swift */; };
+		CED3B3F826320445005817D8 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421A261B3750006B2EE4 /* CreateGameViewController.swift */; };
 		CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6030A25F3D5BB00C4ACE4 /* RoomsViewController.swift */; };
 		CED6033425F41ABE00C4ACE4 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033325F41ABE00C4ACE4 /* Room.swift */; };
 		CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED6033825F41DB400C4ACE4 /* RoomViewController.swift */; };
@@ -669,6 +670,7 @@
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
+				CED3B3F826320445005817D8 /* CreateGameViewController.swift in Sources */,
 				CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
 				3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */,
