@@ -25,14 +25,20 @@ import Firebase
     // To differentiate between user and trainer {0: User, 1: Trainer}
     var type: Int? //redesign this idea
     
+    // To format date
+    let dateFormatter = DateFormatter()
+    
     override init(){
         super.init()
     }
     init?(snapshot: DataSnapshot) {
         super.init()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
         guard let cDict = snapshot.value as? [String:Any],
         let createdBy = cDict["CreatorID"] as? String,
-        let end = cDict["Deadline"] as? Date,
+        let end = cDict["Deadline"] as? String,
         let name = cDict["Name"] as? String,
         let desc = cDict["Description"] as? String else { return nil }
         let type = cDict["Type"] as? String
@@ -40,14 +46,10 @@ import Firebase
         self.chalID = snapshot.key
         self.cDesc = desc
         self.cName = name
-        self.enddate = end
-        self.createdBy = Trainer()
+        self.enddate = dateFormatter.date(from: end)
+        self.createdBy = Trainer(tid: createdBy)
         self.challengeType = type
         
-        DBManager.getTrainer(for: createdBy){
-            trainer in
-            self.createdBy = trainer
-        }
         
     }
     

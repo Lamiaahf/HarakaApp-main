@@ -255,7 +255,7 @@
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" id="xhC-NZ-VlX" userLabel="UserSingupViewController" customClass="UserSingupViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnv-gq-jrN">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRQ-wD-X0a">
@@ -1273,7 +1273,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s8j-Gg-0lP"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="Taj-P8-SFH"/>
                 </viewController>
@@ -3718,6 +3718,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مشي ١٠،٠٠٠ خطوة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CX-SM-LY0">
                                         <rect key="frame" x="118" y="58.666666666666515" width="145" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.73047679659999998" green="0.83843141789999998" blue="0.88628274200000001" alpha="0.31897474315068491" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -3739,6 +3740,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم المدرب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-TS-lYM">
                                         <rect key="frame" x="182" y="92.666666666666515" width="81" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.73047679659999998" green="0.83843141789999998" blue="0.88628274200000001" alpha="0.31897474320000002" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -3746,6 +3748,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تفاصيل التحدي" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD1-ew-L5n">
                                         <rect key="frame" x="17" y="134" width="246" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.73047679659999998" green="0.83843141789999998" blue="0.88628274200000001" alpha="0.31897474320000002" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -3798,6 +3801,7 @@
                                     <outlet property="cTimeline" destination="joL-xf-WiY" id="Xh2-vU-Pnm"/>
                                     <outlet property="challengeLabel" destination="0CX-SM-LY0" id="i0c-9Y-gmW"/>
                                     <outlet property="deadlineLabel" destination="X7b-MR-dGZ" id="HoD-Cb-vgi"/>
+                                    <outlet property="startButton" destination="oLY-lU-v7L" id="tAq-d3-Ty1"/>
                                     <outlet property="trainerLabel" destination="ON8-TS-lYM" id="guc-Ym-A1E"/>
                                 </connections>
                             </view>
@@ -3838,7 +3842,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="Vff-fS-EVw">
-                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -3894,7 +3898,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="PMu-hk-dE0">
-                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>

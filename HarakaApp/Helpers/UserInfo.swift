@@ -166,6 +166,11 @@ import FirebaseStorage
         dob = Date()
     }
     
+    init(tid: String){
+        super.init()
+        trainerID = tid
+    }
+    
     init?(snapshot: DataSnapshot) {
         super.init()
         
@@ -174,17 +179,20 @@ import FirebaseStorage
             let name = trainerDict["Name"] as? String,
             let email = trainerDict["Email"] as? String,
             let pp = trainerDict["ProfilePic"] as? String,
-            let dob = trainerDict["DOB"] as? Date
+            let dob = trainerDict["DOB"] as? String
         else{
             return
         }
            
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
         self.trainerID = snapshot.key
         self.username = username
         self.name = name
         self.email = email
         self.profileImageURL = pp
-        self.dob = dob
+        self.dob = df.date(from: dob)
         
         DBManager.getPic(for: self){
             image in

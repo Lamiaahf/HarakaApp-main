@@ -41,19 +41,23 @@ class AddChallengeViewController: UIViewController {
     
     @IBAction func createChallenge(_ sender: Any) {
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
         guard let imageSelected = typeImage.image else {return}
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
         
         
         let creatorID = tid
         let deadline = Date().advanced(by:  518400)
+        let dateString = formatter.string(from: deadline)
         let name = cName.text
         let desc = cDesc.text
         
      
         ref.childByAutoId().setValue([
                                         "CreatorID":creatorID,
-                                        "Deadline":deadline,
+                                        "Deadline":dateString,
                                         "Name":name,
                                         "Description":desc,
                                         "Type":self.type])

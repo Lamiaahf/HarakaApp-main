@@ -17,6 +17,10 @@ class ChallengeCard: UIView {
         }
     }
     
+    let secsInAWeek = 604800.0
+    let dateFormatter = DateFormatter()
+
+    @IBOutlet weak  var startButton: UIButton!
     @IBOutlet weak var challengeLabel: UILabel!
     @IBOutlet weak var deadlineLabel: UILabel!
     @IBOutlet weak var trainerLabel: UILabel!
@@ -32,21 +36,30 @@ class ChallengeCard: UIView {
     }
     func updateChallenge(){
         
+        dateFormatter.dateFormat = "dd/MM HH:mm"
+        
         challengeLabel.text = challenge.cName
-        deadlineLabel.text = DateFormatter().string(from: challenge.enddate!)
-        trainerLabel.text = challenge.createdBy?.username
+        deadlineLabel.text = dateFormatter.string(from: challenge.enddate!)
         cDescriptionLabel.text = challenge.description
 
+        DBManager.getTrainer(for: (challenge.createdBy?.trainerID)!){
+            trainer in
+            self.challenge.createdBy = trainer
+            self.trainerLabel.text = self.challenge.createdBy?.name
+        }
+
+        
+        
         var current = Date()
         var chDate = challenge.enddate
         var interval = current.distance(to: challenge.enddate!)
-        print(interval)
-        print("Time")
+        var percent = 1-(interval/secsInAWeek)
+        cTimeline.progress = Float(percent)
         // Continue later
         
         
         if(challenge.type == 1){
-            updateTrainerChallenge()
+            self.startButton.alpha = 0
         }
         
     }
