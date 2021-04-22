@@ -51,14 +51,20 @@ class OtherUserPostViewController: UITableViewController {
                 
                 
                 let uid = self.otherUser?["uid"] as! String
+                
                 self.otherUser = snapshot.value as? NSDictionary
                 //add the uid to the profile
               //  self.otherUser?.setValue(uid, forKey: "uid")
+               
                 if uid == newPost.UID{
                     self.posts?.append(newPost)
                   //  postArray.append(newPost)
                 //    indx = indx+1
-                    self.tableView.reloadData()}
+                    self.tableView.reloadData()
+                    
+                }
+              
+              
                 
             }}
    //     self.posts = postArray

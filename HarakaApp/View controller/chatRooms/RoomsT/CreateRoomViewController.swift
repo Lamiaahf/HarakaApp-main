@@ -37,7 +37,7 @@ class CreateRoomViewController: UIViewController {
             // Dispose of any resources that can be recreated.
         }
         
-    let Emenu = ["كرة قدم", "كرة سلة", "مشي", "كرة تنس", "كرة طائرة", "دراجات ","جري", "ركوب الخيل", "قولف", "هايكنج", "بولنق","يوقا", "كراتيه", "رماية"]
+    let Emenu = ["كرة قدم", "كرة سلة", "مشي", "كرة تنس", "كرة طائرة", "دراجات","جري", "ركوب الخيل", "قولف", "هايكنج", "بولنق","يوقا", "كراتيه", "رماية"]
     
     @IBAction func topChooseMenuItem(_ sender: UIButton) {
         dropDown.dataSource = Emenu
@@ -49,7 +49,7 @@ class CreateRoomViewController: UIViewController {
               sender.setTitle(item, for: .normal)
                 
                 if (self?.dropDown.selectedItem == "كرة قدم"){
-                    self?.EImage.image = #imageLiteral(resourceName: "Soccer")}
+                    self?.EImage.image = #imageLiteral(resourceName: "كرة قدم ")}
                 if (self?.dropDown.selectedItem == "كرة سلة"){
                     self?.EImage.image = #imageLiteral(resourceName: "basketball")}
                 if (self?.dropDown.selectedItem == "كرة تنس"){
@@ -59,17 +59,17 @@ class CreateRoomViewController: UIViewController {
                 if (self?.dropDown.selectedItem == "مشي"){
                     self?.EImage.image = #imageLiteral(resourceName: "Walk")}
                 if (self?.dropDown.selectedItem == "جري"){
-                    self?.EImage.image = #imageLiteral(resourceName: "running")}
+                    self?.EImage.image = #imageLiteral(resourceName: "مشي")}
                 if (self?.dropDown.selectedItem == "دراجات"){
-                    self?.EImage.image = #imageLiteral(resourceName: "Bike")}
+                    self?.EImage.image = #imageLiteral(resourceName: "دراجات")}
                 if (self?.dropDown.selectedItem == "يوقا"){
-                    self?.EImage.image = #imageLiteral(resourceName: "yoga")}
+                    self?.EImage.image = #imageLiteral(resourceName: "يوقا")}
                 if (self?.dropDown.selectedItem == "كاراتيه"){
                     self?.EImage.image = #imageLiteral(resourceName: "taekwondo")}
                 if (self?.dropDown.selectedItem == "ركوب الخيل"){
-                    self?.EImage.image = #imageLiteral(resourceName: "Horse")}
+                    self?.EImage.image = #imageLiteral(resourceName: "ركوب الخيل")}
                 if (self?.dropDown.selectedItem == "هايكنج"){
-                    self?.EImage.image = #imageLiteral(resourceName: "Hike")}
+                    self?.EImage.image = #imageLiteral(resourceName: "هايكنج")}
                 if (self?.dropDown.selectedItem == "رماية"){
                     self?.EImage.image = #imageLiteral(resourceName: "shooting")}
                 if (self?.dropDown.selectedItem == "بولنق"){
@@ -86,7 +86,19 @@ class CreateRoomViewController: UIViewController {
           let roomName = self.newRoomTextField.text,
           roomName.isEmpty == false else {
         return    }
-   
+    
+    var creatorN = ""
+    //get room creator Name
+    
+    Database.database().reference().child("Trainers").child("Approved").child(userId).observe(.value , with : { snapshot in
+
+    guard let dict = snapshot.value as? [String:Any] else {return}
+          
+        let trainerN = CurrentUser( uid : userId , dictionary : dict )
+            creatorN = trainerN.name
+            }) { (error) in
+          print(error.localizedDescription)
+    }
     
     EVImage = EImage.image
     guard let imageSelected = self.EVImage else {return}
@@ -98,7 +110,7 @@ class CreateRoomViewController: UIViewController {
     let Sref = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
     let StorageRoomRef = Sref.child("roomsStorage").child(roomName)
     let metaData = StorageMetadata()
-    metaData.contentType = "image/jpg"
+    metaData.contentType = "image/png"
     
     
     StorageRoomRef.putData(imagedata , metadata: metaData){
@@ -109,11 +121,10 @@ class CreateRoomViewController: UIViewController {
                                     if let metaImageUrl = url?.absoluteString {
     
     let databaseRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
-//let creatorName =
     
     let roomRef = databaseRef.child("rooms").childByAutoId()
     
-    let roomData:[String: Any] = ["creatorId" : userId, "name": roomName , "EventImage" : metaImageUrl ]
+                                        let roomData:[String: Any] = ["creatorId" : userId, "name": roomName , "EventImage" : metaImageUrl , "creatorName" : creatorN]
         
         //, "CreatorName": creatorName]
     

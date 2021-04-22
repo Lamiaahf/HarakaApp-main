@@ -8,12 +8,14 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import AMTabView
 
-
-class HomePageViewController: UIViewController {
-
+class HomePageViewController: UIViewController , TabItem{
     
-    //ohoud
+    // tab bar and UI ohoud
+    var tabImage: UIImage? {
+      return UIImage(systemName: "homekit")
+    }
     
     @IBOutlet var activitiesButton: UIButton!
     @IBOutlet var GroupsHSButton: UIButton!
@@ -23,31 +25,31 @@ class HomePageViewController: UIViewController {
     
     var databaseRef = Database.database().reference()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let uid = Auth.auth().currentUser?.uid
-        self.databaseRef.child("Trainers").child("Approved").observeSingleEvent(of: .value, with: { (snapshot) in
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            let uid = Auth.auth().currentUser?.uid
+            self.databaseRef.child("Trainers").child("Approved").observeSingleEvent(of: .value, with: { (snapshot) in
 
-                if snapshot.hasChild(uid!){
+                    if snapshot.hasChild(uid!){
 
-                    self.activitiesButton.applyDesign()
-                    self.GroupsHSButton.applyDesign()
-                    self.challangesHSButton.applyDesign()
-                }else {
-                    self.activitiesButton.applyDesign()
-                    self.GroupsHSButton.applyDesign()
-                    self.challangesHSButton.applyDesign()
-                    self.GameHSButton.applyDesign()
-                    self.postsHSButton.applyDesign()
+                        self.activitiesButton.applyDesign()
+                        self.GroupsHSButton.applyDesign()
+                        self.challangesHSButton.applyDesign()
+                    }else {
+                        self.activitiesButton.applyDesign()
+                        self.GroupsHSButton.applyDesign()
+                        self.challangesHSButton.applyDesign()
+                        self.GameHSButton.applyDesign()
+                        self.postsHSButton.applyDesign()
 
-                    }
+                        }
 
 
-            })
-    }
-  
+                })
+        }
 }
+
 extension UIButton {
     func applyDesign() {
         self.layer.cornerRadius = 20
