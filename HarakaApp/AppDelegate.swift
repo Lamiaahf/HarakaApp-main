@@ -7,15 +7,25 @@
 
 import UIKit
 import Firebase
+import AMTabView
 @main
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var window: UIWindow?
     
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
+       
+        // Customize the colors
+        AMTabView.settings.ballColor = #colorLiteral(red: 0.3892177939, green: 0.5796941519, blue: 0.6510491967, alpha: 1)
+        AMTabView.settings.tabColor = #colorLiteral(red: 0.9960784314, green: 0.9960784314, blue: 0.9960784314, alpha: 1)
+        AMTabView.settings.selectedTabTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        AMTabView.settings.unSelectedTabTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+
+        // Chnage the animation duration
+        AMTabView.settings.animationDuration = 1
+
         FirebaseApp.configure()
         
         return true

@@ -486,25 +486,21 @@
             </objects>
             <point key="canvasLocation" x="-3494" y="4686"/>
         </scene>
-        <!--My Tab Bar Ctrl-->
-        <scene sceneID="7wW-ab-e93">
+        <!--البحث-->
+        <scene sceneID="bQv-2L-OcO">
             <objects>
-                <tabBarController storyboardIdentifier="THomeVC" id="ab8-uU-YaW" customClass="MyTabBarCtrl" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hbe-fm-2yI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="ee6-Tj-DMb" kind="relationship" relationship="viewControllers" id="9av-zB-PGN"/>
-                        <segue destination="9bV-PR-v18" kind="relationship" relationship="viewControllers" id="GUe-nH-2A5"/>
-                        <segue destination="9F2-e9-s3G" kind="relationship" relationship="viewControllers" id="aSl-Zb-9Q7"/>
-                        <segue destination="h4Y-fT-wOB" kind="relationship" relationship="viewControllers" id="PZJ-Rg-5WT"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CJ8-Kl-o6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="adX-nE-f2S" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bIo-ti-Tak">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="D1g-pw-DPL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="البحث" id="uF8-bW-JY1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAI-sC-eIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3026" y="3195"/>
+            <point key="canvasLocation" x="6456.9230769230771" y="-1.4218009478672986"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="YVV-8H-ZSU">
@@ -821,7 +817,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sot-39-Xtf" userLabel="Rooms Table">
-                                <rect key="frame" x="57" y="126" width="277" height="606"/>
+                                <rect key="frame" x="57" y="126" width="277" height="574"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p3d-Qr-ty9">
@@ -1139,8 +1135,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RnQ-eG-4CR" customClass="ma">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RnQ-eG-4CR">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="810"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vs7-Vc-ZqU"/>
@@ -1285,39 +1281,50 @@
             </objects>
             <point key="canvasLocation" x="2082" y="1591"/>
         </scene>
-        <!--My Tab Bar Ctrl-->
-        <scene sceneID="PCS-bO-uI9">
+        <!--Navigation Controller-->
+        <scene sceneID="zEL-V1-UqF">
             <objects>
-                <tabBarController storyboardIdentifier="UHomeVC" id="ber-6T-Kbv" customClass="MyTabBarCtrl" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="QfG-0a-ucb"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ryc-bn-TxS" customClass="MyTabBar" customModule="HarakaApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                <navigationController id="fKw-dJ-jP8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QaD-qF-rFP">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                    </navigationBar>
                     <connections>
-                        <segue destination="p28-g6-XI7" kind="relationship" relationship="viewControllers" id="Bho-kF-lRM"/>
-                        <segue destination="9jl-PM-hTD" kind="relationship" relationship="viewControllers" id="JkU-s9-gnq"/>
-                        <segue destination="XUh-mD-P9c" kind="relationship" relationship="viewControllers" id="WaS-t5-y3o"/>
-                        <segue destination="RcH-Ry-dg1" kind="relationship" relationship="viewControllers" id="VNS-5v-lyf"/>
-                        <segue destination="Pf8-zs-Bpp" kind="relationship" relationship="viewControllers" id="fwh-pK-Yn7"/>
+                        <segue destination="qGl-sU-ash" kind="relationship" relationship="rootViewController" id="Yis-XB-3wo"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EfW-33-Uhx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="772-0Z-1uN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3631" y="-1522"/>
+            <point key="canvasLocation" x="2680" y="-1437"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="z1J-SI-CNI">
+            <objects>
+                <viewController storyboardIdentifier="UHomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qGl-sU-ash" customClass="TabBarViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L1D-z9-jCI">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vQd-H2-Q2r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Thh-3t-KpA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yLs-DM-ys5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3488" y="-1437"/>
         </scene>
         <!-- -->
         <scene sceneID="3fb-UO-BzJ">
             <objects>
-                <navigationController id="XUh-mD-P9c" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchN" id="XUh-mD-P9c" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title=" " image="magnifyingglass" catalog="system" id="1f7-aX-ueM"/>
+                    <navigationItem key="navigationItem" id="M5a-7P-SPR"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JgY-fg-SER">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="z3d-6E-Adm" kind="relationship" relationship="rootViewController" id="6Cc-rn-CaV"/>
+                        <segue destination="z3d-6E-Adm" kind="relationship" relationship="rootViewController" id="fgG-2V-KtR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pS1-5F-fqa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1341,14 +1348,15 @@
         <!--Navigation Controller-->
         <scene sceneID="L2L-xl-Si6">
             <objects>
-                <navigationController id="9jl-PM-hTD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MapN" id="9jl-PM-hTD" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="568635131536669843-129" id="v4B-Hq-R3P"/>
+                    <navigationItem key="navigationItem" id="tuz-Ks-Uyx"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vbl-wj-PKQ">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="TXI-Li-kbp" kind="relationship" relationship="rootViewController" id="Z7W-bp-nwW"/>
+                        <segue destination="TXI-Li-kbp" kind="relationship" relationship="rootViewController" id="VjG-xK-YAz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrM-xi-1PF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1358,14 +1366,14 @@
         <!--Navigation Controller-->
         <scene sceneID="cfD-fk-jQ8">
             <objects>
-                <navigationController id="Pf8-zs-Bpp" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UserN" id="Pf8-zs-Bpp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="qVy-zg-Vug"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QZY-BC-kvA">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="XVO-3o-Oui" kind="relationship" relationship="rootViewController" id="jhE-yT-Vbg"/>
+                        <segue destination="XVO-3o-Oui" kind="relationship" relationship="rootViewController" id="HMQ-F5-r4f"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCM-K3-NNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1745,14 +1753,15 @@
         <!--Navigation Controller-->
         <scene sceneID="d4S-aR-cQh">
             <objects>
-                <navigationController id="p28-g6-XI7" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeN" id="p28-g6-XI7" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="dzu-PK-pJm"/>
+                    <navigationItem key="navigationItem" id="TGU-fK-AJ5"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFl-JD-c9W">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="KNd-jX-g4s" kind="relationship" relationship="rootViewController" id="JOX-Ok-VUv"/>
+                        <segue destination="KNd-jX-g4s" kind="relationship" relationship="rootViewController" id="zAx-1C-zhp"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v7S-wc-8NU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1762,7 +1771,7 @@
         <!--الصفحة الرئيسية-->
         <scene sceneID="LKE-zq-foh">
             <objects>
-                <viewController id="KNd-jX-g4s" customClass="HomePageViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewController" id="KNd-jX-g4s" customClass="HomePageViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5dl-nK-aNg">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1876,7 +1885,7 @@
         <!--Map View Controller-->
         <scene sceneID="CBX-ZM-Cq9">
             <objects>
-                <viewController id="t0Z-y3-kdx" customClass="MapViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewControllerr" id="t0Z-y3-kdx" customClass="MapViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J3C-1J-sdO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2005,11 +2014,20 @@
         <!--الصفحة الرئيسية-->
         <scene sceneID="8yh-Ng-s8u">
             <objects>
-                <viewController id="0Vw-Ts-yyu" customClass="HomePageViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomePageViewControllerr" id="0Vw-Ts-yyu" customClass="HomePageViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JhQ-TL-q7g">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXL-nq-mEp">
+                                <rect key="frame" x="16" y="389" width="358" height="117"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40568548440000002" green="0.57982069250000001" blue="0.64284527300000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="الفعاليات ">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5et-yq-uLG">
                                 <rect key="frame" x="16" y="524" width="358" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2058,33 +2076,17 @@
                     <connections>
                         <outlet property="GroupsHSButton" destination="5et-yq-uLG" id="SgW-te-W3i"/>
                         <outlet property="activitiesButton" destination="wXL-nq-mEp" id="YFK-wI-pvo"/>
-                        <outlet property="challangesHSButton" destination="pjr-Zw-UYl" id="sf8-El-peE"/>
+                        <outlet property="challangesHSButton" destination="pjr-Zw-UYl" id="Raz-3d-FHd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-09-PcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921.53846153846155" y="4665.63981042654"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="woG-hv-5g4">
-            <objects>
-                <viewController id="cYb-eI-z92" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9h4-aU-btu">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="qyk-10-s9l"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="THv-tT-b7b"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tjr-gO-dJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4905" y="4666"/>
+            <point key="canvasLocation" x="922" y="4666"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="diU-LL-0qM">
             <objects>
-                <navigationController id="h4Y-fT-wOB" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TrainerN" id="h4Y-fT-wOB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="person" catalog="system" id="5SV-BG-dgZ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="68h-Jy-nHZ">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -2096,12 +2098,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMi-xV-9rS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5823" y="3924"/>
+            <point key="canvasLocation" x="6750.7692307692305" y="3923.4597156398104"/>
         </scene>
         <!--Trainer Profile-->
         <scene sceneID="3ah-5R-bht">
             <objects>
-                <viewController id="NAV-Em-f0d" customClass="TrainerProfile" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainerProfile" id="NAV-Em-f0d" customClass="TrainerProfile" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hZU-S6-U3e">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2243,7 +2245,44 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnR-p7-bRZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6792" y="4961"/>
+            <point key="canvasLocation" x="7488" y="5117"/>
+        </scene>
+        <!--Tfollowers Table-->
+        <scene sceneID="ZMe-g6-5Ev">
+            <objects>
+                <tableViewController id="U8I-Xq-eo1" customClass="TfollowersTable" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="b4I-Va-8GF">
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="55" id="Y1H-iQ-kGf">
+                                <rect key="frame" x="0.0" y="28" width="358" height="55"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y1H-iQ-kGf" id="mqY-X4-I0i">
+                                    <rect key="frame" x="0.0" y="0.0" width="358" height="55"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="متابعين" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIR-nl-ZHf">
+                                            <rect key="frame" x="191" y="23" width="52" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="U8I-Xq-eo1" id="vaX-Fg-Xak"/>
+                            <outlet property="delegate" destination="U8I-Xq-eo1" id="Pa7-hK-P4b"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7g-hb-wft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8416.9230769230762" y="4126.7772511848343"/>
         </scene>
         <!--Trainer Settings-->
         <scene sceneID="7uH-6v-19l">
@@ -2318,26 +2357,9 @@
             <point key="canvasLocation" x="5822" y="5410"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="1dR-ls-UBC">
-            <objects>
-                <navigationController id="9F2-e9-s3G" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="WcB-Rv-UpO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yxq-Za-bUM">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="cYb-eI-z92" kind="relationship" relationship="rootViewController" id="uf8-sa-8vN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rAR-pv-lVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4905" y="3924"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="jxy-NS-HmP">
             <objects>
-                <navigationController id="9bV-PR-v18" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MapN2" id="9bV-PR-v18" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="568635131536669843-129" id="OLk-Di-q91"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7hj-aN-xT7">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -2349,12 +2371,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSm-Xu-wKY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3955" y="3923"/>
+            <point key="canvasLocation" x="3953.8461538461538" y="3922.7488151658767"/>
+        </scene>
+        <!--Tab BarT View Controller-->
+        <scene sceneID="0tt-fQ-qcj">
+            <objects>
+                <viewController storyboardIdentifier="THomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ywJ-q1-WH9" customClass="TabBarTViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mwI-NC-TEC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9bx-8D-ypH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Uo-Mu-cjB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aPH-ET-T8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2770.7692307692305" y="3922.7488151658767"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8nl-9a-5yu">
             <objects>
-                <navigationController id="ee6-Tj-DMb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="homeN2" id="ee6-Tj-DMb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" id="mxc-E4-Gsf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aqv-3f-v7S">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -2544,7 +2582,7 @@
         <!--User Profile View Controller-->
         <scene sceneID="hkx-2K-7Y9">
             <objects>
-                <viewController id="XVO-3o-Oui" customClass="UserProfileViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileViewController" id="XVO-3o-Oui" customClass="UserProfileViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xsJ-xK-emu">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2593,22 +2631,15 @@
                                     <action selector="showFollowers:" destination="XVO-3o-Oui" eventType="touchUpInside" id="pcE-PS-1PM"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-wv-VLC">
-                                <rect key="frame" x="33" y="319" width="323" height="424"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="5At-Je-fYF" kind="embed" id="Y12-xa-e5M"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ren-Ei-Z0h">
-                                <rect key="frame" x="33" y="319" width="323" height="424"/>
+                                <rect key="frame" x="33" y="358" width="323" height="380"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Xkf-8x-Ylm" kind="embed" id="Rba-Vm-eU6"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W5e-Kv-uiJ">
-                                <rect key="frame" x="33" y="319" width="323" height="424"/>
+                                <rect key="frame" x="34" y="358" width="323" height="380"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Osg-kA-dEC" kind="embed" id="0Gh-8D-NQl"/>
@@ -2625,11 +2656,13 @@
                                     <action selector="showPosts:" destination="XVO-3o-Oui" eventType="touchUpInside" id="H8O-An-z8T"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r53-5J-ALw">
-                                <rect key="frame" x="156" y="116" width="97" height="98"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-wv-VLC">
+                                <rect key="frame" x="34" y="358" width="323" height="380"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="5At-Je-fYF" kind="embed" id="Y12-xa-e5M"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BfE-P2-2Dw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -2657,7 +2690,7 @@
             <objects>
                 <tableViewController id="Osg-kA-dEC" customClass="FollowersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r1v-XO-UAI">
-                        <rect key="frame" x="0.0" y="0.0" width="358" height="177"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="380"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -2788,7 +2821,7 @@
             <objects>
                 <tableViewController id="5At-Je-fYF" customClass="UserPostsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kBk-3Q-Lwd">
-                        <rect key="frame" x="0.0" y="0.0" width="323" height="424"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="380"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -3137,7 +3170,7 @@
         <!--searchBViewController-->
         <scene sceneID="h6j-Ld-1XG">
             <objects>
-                <viewController id="z3d-6E-Adm" userLabel="searchBViewController" customClass="searchBViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchBViewController" id="z3d-6E-Adm" userLabel="searchBViewController" customClass="searchBViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g0M-Jt-ucI">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3574,7 +3607,7 @@
             <objects>
                 <tableViewController id="Xkf-8x-Ylm" customClass="FollowingTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kda-Sa-rtw">
-                        <rect key="frame" x="0.0" y="0.0" width="359" height="177"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="380"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -4632,12 +4665,25 @@
             </objects>
             <point key="canvasLocation" x="-1394" y="5410"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gcq-3e-LNK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oYf-bk-Il7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VRg-B2-a0n">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ywJ-q1-WH9" kind="relationship" relationship="rootViewController" id="rqQ-a9-BNk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UEi-V2-k20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841.5384615384614" y="3922.7488151658767"/>
+        </scene>
     </scenes>
-    <designables>
-        <designable name="ryc-bn-TxS">
-            <size key="intrinsicContentSize" width="-1" height="83"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
