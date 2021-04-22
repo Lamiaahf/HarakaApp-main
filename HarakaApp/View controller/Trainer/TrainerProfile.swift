@@ -36,19 +36,15 @@ class TrainerProfile: UIViewController {
         Utilities.styleFilledButton(activitieB)
         Utilities.styleFilledButton(challengeB)
         Utilities.styleFilledButton(followerB)
+        Utilities.CircularImageView(Userimg)
         getUserInfo()
         self.loggedInUser = Auth.auth().currentUser
 
-    //    setupUserimg()
 
     }
     
     
-    func setupUserimg(){
-        Userimg.layer.cornerRadius = 40/2
-        Userimg.clipsToBounds = true
-        Userimg.isUserInteractionEnabled = true
-    }
+   
     
     /*
     func getUserInfo() {
@@ -83,7 +79,6 @@ class TrainerProfile: UIViewController {
                         return
                     }
                     self.Userimg.image = UIImage(data: imageData)
-                    self.setupUserimg()
 
                 })
                 

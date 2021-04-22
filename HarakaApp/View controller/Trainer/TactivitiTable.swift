@@ -5,85 +5,106 @@
 //  Created by lamia on 07/04/2021.
 //
 
+
+
+
+/// This Class will retune tha activities created by the trainer
+
 import UIKit
+import Firebase
 
 class TactivitiesTable: UITableViewController {
+
+    var ActivitysList:[Activity]?
+
+    var uid =  Auth.auth().currentUser!.uid
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.delegate = self
+        
+        ActivitysList = []
+        fetchActivity()
     }
+    func fetchActivity(){
 
-    // MARK: - Table view data source
+        // retrieve posts from database, may return error or snapshot (snapshot contains data)
+        let ref = Database.database().reference()
+        ref.child("Activity").observe(.childAdded){
+        (snapshot) in
+         let id = String(snapshot.key)
+          if let ADict = snapshot.value as? [String: Any]{
+          let Name = ADict["ActivityName"] as? String ?? ""
+          let Loc = ADict["location"] as? String ?? ""
+          let dis = ADict["Description"] as? String ?? ""
+          let DT = ADict["DateTime"] as? String
+          let AType = ADict["ActivityType"] as? String ?? ""
+          let count = ADict["NumOfParticipant"] as? String ?? ""
+          let createdByid = ADict["createdByID"] as? String ?? ""
+          let createdByN = ADict["createdByName"] as? String ?? ""
+          let Aimage = ADict["Image"] as? String ?? ""
+          let ID = ADict ["ActivityID"] as? String ?? ""
+          let T = ADict ["Type"] as? String ?? ""
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
+           
+            let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, t: T)
+            
+            if (createdByid == self.uid ){
+                    self.ActivitysList?.append(NewActivity)
+            }
+                    self.tableView.reloadData()
+                
+            }}
+        
+        }
+    
+    
     /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+            if segue.identifier == "ShowActivity" {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let Activity = ActivitysList![indexPath.row]
+                    let controller = segue.destination as? ActivityDescription
+                    controller?.Act = Activity
+            
+                }
+            }
+        }*/
 
 }
+extension TactivitiesTable {
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let ActivitysList = ActivitysList {
+            return ActivitysList.count
+        }
+        return 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier:"ACell", for: indexPath) as! ActivityCell
+        cell.activi = ActivitysList![indexPath.row]
+        return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let act = self.ActivitysList![indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ShowActivity") as? ActivityDescription
+         vc?.Act = act
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+    
+}
+

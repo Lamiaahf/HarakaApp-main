@@ -34,13 +34,11 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
           tableView.tableHeaderView = searchController.searchBar
 
 
-        databaseRef.child("users").queryOrdered(byChild: "Name").observe(.childAdded, with: { (snapshot) in
-
-                 
+        databaseRef.child("users").queryOrdered(byChild: "Name").observe(.value, with: { (snapshot) in
             let key = snapshot.key
             let snapshot = snapshot.value as? NSDictionary
             snapshot?.setValue(key, forKey: "uid")
-// SHOULD NOT SHOW THE LOGGEDIN USER
+          // SHOULD NOT SHOW THE LOGGEDIN USER
             if(key == self.loggedInUser?.uid)
             {
                 print("Same as logged in user, so don't show!")
@@ -119,7 +117,16 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
         searchBar.resignFirstResponder()
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = self.usersArray[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ShowUsers") as? OtherUsersViewController
+         vc?.otherUser = user
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "ShowUser" {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let user = usersArray[indexPath.row]
@@ -128,7 +135,7 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
             
                 }
             }
-        }
+        } */
         
 
        

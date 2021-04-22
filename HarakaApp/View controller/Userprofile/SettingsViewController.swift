@@ -44,6 +44,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate {
         Utilities.styleTextField(Email)
         Utilities.styleFilledButton(Save)
         Utilities.styleFilledButton(Logout)
+        Utilities.CircularImageView(Userimge)
     }
 
 
@@ -92,7 +93,7 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate {
                 //if the user is logged in get the profile data
             if let userID = Auth.auth().currentUser?.uid {
                     databaseRef.child("users").child(userID).observe(.value, with: { (snapshot) in
-                        
+
                         //create a dictionary of users profile data
                         let values = snapshot.value as? NSDictionary
                         
@@ -102,12 +103,17 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate {
                         self.NameSett.text = values?["Name"] as? String
                         self.Age.text = values?["DOB"] as? String
                         self.Email.text = values?["Email"] as? String
+                        let image = values?["ProfilePic"] as? String 
+                        Storage.storage().reference(forURL: image!).getData(maxSize: 1048576, completion: { [self] (data, error) in
 
-                        
+                          guard let imageData = data, error == nil else {
+                                return
+                            }
+                            self.Userimge.image = UIImage(data: imageData)
                         
             
                     })
-                    
+                    })
                 }//end of if
             }//end of loadProfileData
     
