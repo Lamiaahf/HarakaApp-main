@@ -95,9 +95,9 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "createGameSegue"){
-            //let destinationVC = segue.destination as! CreateGameViewController
-            //destinationVC.transitioningDelegate = self
-          //  destinationVC.modalPresentationStyle = .custom
+            let destinationVC = segue.destination as! CreateGameViewController
+            destinationVC.transitioningDelegate = self
+            destinationVC.modalPresentationStyle = .custom
         }
         
     }
@@ -105,14 +105,14 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = createGame.center
-        transition.circleColor = createGame.backgroundColor!
+        //transition.circleColor = createGame.backgroundColor!
         return transition
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
         transition.startingPoint = createGame.center
-        transition.circleColor = createGame.backgroundColor!
+    //transition.circleColor = createGame.backgroundColor!
         
         return transition
     }
