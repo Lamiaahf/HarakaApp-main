@@ -68,7 +68,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.game = game
         cell.layer.cornerRadius = 20
         cell.layer.borderWidth = 1
-        cell.layer.borderColor=#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+       // cell.layer.borderColor=#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         let padding = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         DispatchQueue.main.async
             {

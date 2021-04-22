@@ -855,7 +855,9 @@
                         <viewLayoutGuide key="safeArea" id="tm6-eq-zoD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="المجموعات" id="Tzw-gv-Z3w"/>
+                    <navigationItem key="navigationItem" title="المجموعات" id="Tzw-gv-Z3w">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="gn9-dT-GxZ"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="RoomsTable" destination="Sot-39-Xtf" id="VqK-6T-n9O"/>
                     </connections>
@@ -993,6 +995,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="3A1-PS-Jn9">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="XTi-RV-EyY"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="PIw-Nq-NI6">
                             <color key="tintColor" name="Color"/>
                             <connections>
@@ -1073,7 +1076,9 @@
                             <outlet property="delegate" destination="wNY-xz-dJT" id="x1Z-mA-DaJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6Kg-oY-f0s"/>
+                    <navigationItem key="navigationItem" id="6Kg-oY-f0s">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="s98-Fa-aYO"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f04-14-DAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2293,7 +2298,9 @@
                         <viewLayoutGuide key="safeArea" id="Mh5-cV-WZh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1I3-Fb-GrC"/>
+                    <navigationItem key="navigationItem" id="1I3-Fb-GrC">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="78w-2Y-yLh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="Age" destination="BuW-6Q-paM" id="FBN-uu-Lqb"/>
                         <outlet property="Email" destination="aRR-ti-Ok1" id="Apg-a3-Lja"/>
@@ -2425,6 +2432,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="المـذكرة" id="r5k-NU-YVI">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="GGl-fN-zhG"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="koY-cm-DrY">
                             <color key="tintColor" name="Color"/>
                             <connections>
@@ -2518,7 +2526,9 @@
                         <viewLayoutGuide key="safeArea" id="2fd-vH-Uzb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QC0-mM-fwA"/>
+                    <navigationItem key="navigationItem" id="QC0-mM-fwA">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="r3O-MT-CHV"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="Age" destination="pmt-hJ-9G3" id="5Uq-3b-bbP"/>
                         <outlet property="Email" destination="tAy-2I-DJP" id="hKU-UN-Q0P"/>
@@ -2893,7 +2903,7 @@
                                 <rect key="frame" x="75" y="413" width="254" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.40191826219999999" green="0.57196450229999996" blue="0.63496923449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="تسجيل">
+                                <state key="normal" title="تسجيل الدخول">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -2908,9 +2918,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Admin Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb3-gk-sZq">
-                                <rect key="frame" x="94" y="76" width="216" height="91"/>
+                                <rect key="frame" x="87" y="74" width="216" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3720,7 +3730,9 @@
                             <constraint firstItem="1Uv-R8-9b7" firstAttribute="leading" secondItem="eN7-DA-dTS" secondAttribute="leading" id="ruN-br-T8f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CvE-Lu-Mr9"/>
+                    <navigationItem key="navigationItem" id="CvE-Lu-Mr9">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="DSs-3J-OF2"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="createGame" destination="hA1-Lf-jev" id="CuY-9D-ndN"/>
                         <outlet property="gamesTable" destination="1Uv-R8-9b7" id="za1-zg-YMK"/>
@@ -4256,7 +4268,9 @@
                         <viewLayoutGuide key="safeArea" id="5lO-hM-KEn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="المجموعات" id="DnU-Hj-bsV"/>
+                    <navigationItem key="navigationItem" title="المجموعات" id="DnU-Hj-bsV">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="Ni2-ef-veS"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="RoomsTable" destination="Lpn-ds-afV" id="awB-va-5rn"/>
                         <outlet property="goCreateButton" destination="F4A-nz-VBB" id="kgx-c0-Ogi"/>
@@ -4333,6 +4347,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="المـذكرة" id="KwW-XO-oQb">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="asq-Uo-E7y"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="P4Y-5Z-ulz">
                             <connections>
                                 <action selector="didTapAdd" destination="3SW-h7-EqF" id="2Lj-Qa-Z4N"/>
