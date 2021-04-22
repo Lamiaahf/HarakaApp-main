@@ -77,6 +77,7 @@
 		9475D8ED2608CE4A00116877 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8EC2608CE4A00116877 /* MapViewController.swift */; };
 		9475D8F02608CE5100116877 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8EF2608CE5100116877 /* Place.swift */; };
 		9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8F22608CE6000116877 /* PlaceViews.swift */; };
+		94CBF5DF2631FFA200741E76 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421A261B3750006B2EE4 /* CreateGameViewController.swift */; };
 		94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D4604925E3E528009F31A6 /* NotificationViewController.swift */; };
 		94DDE11925DD34F80029FA09 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11825DD34F80029FA09 /* Post.swift */; };
 		94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11B25DD350B0029FA09 /* PostCell.swift */; };
@@ -669,6 +670,7 @@
 				9449C07925D13531002E0AAB /* myTabBarCtrl.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
+				94CBF5DF2631FFA200741E76 /* CreateGameViewController.swift in Sources */,
 				CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
 				3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */,
