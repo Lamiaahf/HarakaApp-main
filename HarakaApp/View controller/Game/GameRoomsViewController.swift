@@ -68,7 +68,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.game = game
         cell.layer.cornerRadius = 20
         cell.layer.borderWidth = 1
-        cell.layer.borderColor=#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+       // cell.layer.borderColor=#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         let padding = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
         DispatchQueue.main.async
             {
@@ -97,7 +97,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         if(segue.identifier == "createGameSegue"){
             let destinationVC = segue.destination as! CreateGameViewController
             destinationVC.transitioningDelegate = self
-           destinationVC.modalPresentationStyle = .custom
+            destinationVC.modalPresentationStyle = .custom
         }
         
     }
@@ -105,14 +105,14 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = createGame.center
-        transition.circleColor = createGame.backgroundColor!
+        //transition.circleColor = createGame.backgroundColor!
         return transition
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
         transition.startingPoint = createGame.center
-        transition.circleColor = createGame.backgroundColor!
+    //transition.circleColor = createGame.backgroundColor!
         
         return transition
     }
