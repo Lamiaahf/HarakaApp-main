@@ -31,7 +31,7 @@ class TRoomViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isToolbarHidden = true
+      
         // self.roomNameLabel.text = self.room?.name
          self.navigationItem.title = self.room?.name
          self.messagesTable.delegate = self
