@@ -16,5 +16,6 @@ target 'HarakaApp' do
      pod 'Firebase/Storage'
      pod 'LBTAComponents'
 pod 'DropDown'
+pod 'AMTabView'
 
 end

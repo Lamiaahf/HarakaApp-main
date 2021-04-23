@@ -4,7 +4,7 @@
 //
 //  Created by Noura AlSheikh on 03/02/2021.
 //
-
+/*
 import Foundation
 import UIKit
 @IBDesignable
@@ -64,4 +64,4 @@ class MyTabBar: UITabBar {
             }
             return nil
         }
-}
+}*/

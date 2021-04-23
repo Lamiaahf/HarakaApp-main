@@ -20,6 +20,7 @@ class OtherUsersViewController: UIViewController ,UINavigationControllerDelegate
     @IBOutlet weak var FollowingB: UIButton!
     @IBOutlet weak var FollowersB: UIButton!
 
+
     @IBOutlet weak var PostsV: UIView!
     @IBOutlet weak var FollowersV: UIView!
     @IBOutlet weak var FollowingV: UIView!
@@ -60,6 +61,7 @@ override func viewDidLoad() {
     func getusersprof() {
         
  databaseRef.child("users").child(self.otherUser?["uid"] as! String).observe(.value, with: { (snapshot) in
+
      
      let uid = self.otherUser?["uid"] as! String
      self.otherUser = snapshot.value as? NSDictionary
@@ -95,8 +97,9 @@ databaseRef.child("following").child(self.loggedInUser!.uid).child(self.otherUse
      print(error.localizedDescription)
  }
  
+    
     }
-
+    
    /* if(otherTrainers["followersCount"] != nil)
     {
         print("Followers Count")
