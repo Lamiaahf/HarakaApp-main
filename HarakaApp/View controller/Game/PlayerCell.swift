@@ -28,8 +28,5 @@ class PlayerCell: UITableViewCell{
     func updateBoard(){
         playerLabel.text = player.username
         scoreLabel.text = String(format: "%.2f", player.score ?? -1)
-        firstPlace.alpha = 1
-        rankImage.alpha = 1
-        
     }
 }
