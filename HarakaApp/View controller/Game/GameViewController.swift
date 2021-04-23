@@ -104,8 +104,10 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                     user in
                     let username = user.username
                     let player = Player(username: username!, uid: pid, score: score!)
-                    //self.participants?.append(player)
-                    //self.sortArray(array: participants, element: player)
+                    self.participants?.append(player)
+                    self.participants!.sort {
+                        $0.score! < $1.score!
+                    }
                     self.playersBoard.reloadData()
                 }
             }
@@ -114,18 +116,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
          //   self.playersBoard.reloadData()
             
         
-    }
-    
-    func sortArray(array: [Player], element: Player){
-        
-        var max = element
-        var temp = element
-        for p in array{
-            if p.score! >= max.score!{
-                temp = p
-                
-            }
-        }
     }
     
     @IBAction func joinGame(_ sender: Any) {
@@ -148,13 +138,13 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 2:
             self.joinButton.isEnabled = false
             self.joinButton.alpha = 0
-            self.messageLabel.text = "عذراً: اكتمل عدد اللاعبين"
+            self.messageLabel.text = "اكتمل عدد اللاعبين"
             self.messageLabel.alpha = 1
     
         case 3:
             self.joinButton.isEnabled = false
             self.joinButton.alpha = 0
-            self.messageLabel.text = "عذراً: لا يمكنك اللعب مرة اخرى"
+            self.messageLabel.text = "انتهى دورك!"
             self.messageLabel.alpha = 1
         
         default:
@@ -208,14 +198,11 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let newMax = participants!.count - 1
-        let newIndex = newMax - indexPath.row
-        
-        
-        let player = participants![newIndex]
+        var item = indexPath.item
+        var row = indexPath.row
+        let player = participants![indexPath.item]
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell") as! PlayerCell
-        checkRank(rank: newIndex, cell: cell)
+        checkRank(rank: indexPath.row, cell: cell)
         cell.player = player
         return cell
     }

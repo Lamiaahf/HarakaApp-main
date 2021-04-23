@@ -29,7 +29,11 @@ class TrainerChallengeViewController: UIViewController{
     
     func fetchChallenge(){
         
-        let currentDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM HH:mm"
+     //   formatter.timeZone = TimeZone(abbreviation: "GMT")
+        formatter.locale = Locale.current
+        let currentDate = formatter.string(from: Date())
         
         DBManager.getChallenge(){
             challenge in

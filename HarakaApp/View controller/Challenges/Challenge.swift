@@ -10,31 +10,21 @@ import Firebase
 
 @objc class Challenge: NSObject{
     
-    
     var createdBy: Trainer?
-    var enddate: Date?
+    var enddate: String?
     var cName: String?
     var cDesc: String?
     var chalID: String?
     var challengeType: String?
-    
-    // For user's info
-    var isStarted: Bool?
-    var userStartTime: Date?
-    
+     
     // To differentiate between user and trainer {0: User, 1: Trainer}
     var type: Int? //redesign this idea
-    
-    // To format date
-    let dateFormatter = DateFormatter()
     
     override init(){
         super.init()
     }
     init?(snapshot: DataSnapshot) {
         super.init()
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
         guard let cDict = snapshot.value as? [String:Any],
         let createdBy = cDict["CreatorID"] as? String,
@@ -46,15 +36,18 @@ import Firebase
         self.chalID = snapshot.key
         self.cDesc = desc
         self.cName = name
-        self.enddate = dateFormatter.date(from: end)
+        self.enddate = end
         self.createdBy = Trainer(tid: createdBy)
         self.challengeType = type
         
         
     }
     
-    func isUserStarted(){
+    func isUserStarted() -> Bool {
         // DBManager(for: self) { boolean in self.isStarted = boolean}
+        
+        
+        return false
     }
 
 

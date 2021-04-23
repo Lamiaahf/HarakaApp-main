@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-
+import FirebaseAuth
 
 class AddChallengeViewController: UIViewController {
 
@@ -42,7 +42,9 @@ class AddChallengeViewController: UIViewController {
     @IBAction func createChallenge(_ sender: Any) {
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatter.dateFormat = "dd/MM HH:mm"
+     //   formatter.timeZone = TimeZone(abbreviation: "GMT")
+        formatter.locale = Locale.current
         
         guard let imageSelected = typeImage.image else {return}
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
@@ -62,6 +64,7 @@ class AddChallengeViewController: UIViewController {
                                         "Description":desc,
                                         "Type":self.type])
         
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

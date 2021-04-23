@@ -1140,6 +1140,54 @@
             <point key="canvasLocation" x="2083" y="126"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="oQz-iA-eOM">
+            <objects>
+                <viewController id="mHa-Ff-wme" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CBW-fD-Kvl">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3u-In-ZKR">
+                                <rect key="frame" x="75" y="267" width="240" height="136"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="تم اشتراكك بالتحدي بنجاح " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fy-om-6cp">
+                                        <rect key="frame" x="8" y="0.0" width="224" height="65"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" red="0.20577493529999999" green="0.31517791039999998" blue="0.38088911800000003" alpha="0.91292487160000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.75263606423940566" green="0.80095014346095261" blue="0.83307571367157363" alpha="0.7266695205479452" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="9fy-om-6cp" firstAttribute="top" secondItem="d3u-In-ZKR" secondAttribute="top" id="CgT-sM-KSV"/>
+                                    <constraint firstItem="9fy-om-6cp" firstAttribute="leading" secondItem="d3u-In-ZKR" secondAttribute="leading" id="IJd-tR-DSE"/>
+                                    <constraint firstAttribute="bottom" secondItem="9fy-om-6cp" secondAttribute="bottom" id="Uq2-Th-Oz7"/>
+                                    <constraint firstAttribute="trailing" secondItem="9fy-om-6cp" secondAttribute="trailing" id="evG-ax-V41"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="سارع بالإنتهاء فقد بدأ احتساب الوقت!" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41T-Gu-yzQ">
+                                <rect key="frame" x="82" y="339" width="221" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.29968317437300535" green="0.36502587558434202" blue="0.42855726522842641" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="st9-32-LYf"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d3u-In-ZKR" firstAttribute="centerX" secondItem="CBW-fD-Kvl" secondAttribute="centerX" id="0YI-iG-c5g"/>
+                            <constraint firstItem="d3u-In-ZKR" firstAttribute="leading" secondItem="st9-32-LYf" secondAttribute="leading" constant="75" id="8gr-a0-Dlg"/>
+                            <constraint firstItem="d3u-In-ZKR" firstAttribute="top" secondItem="st9-32-LYf" secondAttribute="top" constant="267" id="FzK-hZ-XCa"/>
+                            <constraint firstItem="st9-32-LYf" firstAttribute="bottom" secondItem="d3u-In-ZKR" secondAttribute="bottom" constant="353" id="ID7-DW-9F3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGb-jb-hhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1261.5384615384614" y="1590.995260663507"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="Y0o-Se-RzB">
             <objects>
                 <viewController id="A80-28-8BF" sceneMemberID="viewController">
@@ -2019,7 +2067,7 @@
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم المدرب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbP-ul-Z4J">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم المدرب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbP-ul-Z4J">
                                         <rect key="frame" x="182" y="92.666666666666515" width="81" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -3725,7 +3773,7 @@
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم المدرب" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-TS-lYM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="اسم المدرب" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON8-TS-lYM">
                                         <rect key="frame" x="182" y="92.666666666666515" width="81" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3757,6 +3805,9 @@
                                         <connections>
                                             <action selector="startChallenge:" destination="pm7-in-V3g" eventType="touchUpInside" id="AUG-UB-mYI"/>
                                             <action selector="startChallenge:" destination="n5g-2X-NMA" eventType="touchUpInside" id="wuf-mI-UzE"/>
+                                            <segue destination="mHa-Ff-wme" kind="popoverPresentation" popoverAnchorView="oLY-lU-v7L" id="MeD-6c-Dyw">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="التحدي الأسبوعي" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nN-cu-7dh">
@@ -3788,6 +3839,15 @@
                                         <color key="textColor" systemColor="systemGrayColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmO-dk-ElJ">
+                                        <rect key="frame" x="108" y="366" width="65" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.85580513480585707" blue="0.81637988605546863" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <state key="normal" title="انهاء">
+                                            <color key="titleColor" red="1" green="0.32438657321252362" blue="0.012718560813362756" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.62156354773296507" green="0.8955700108111998" blue="1" alpha="0.14755458047945205" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.6215635477" green="0.89557001079999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3796,6 +3856,7 @@
                                     <outlet property="cTimeline" destination="joL-xf-WiY" id="Xh2-vU-Pnm"/>
                                     <outlet property="challengeLabel" destination="0CX-SM-LY0" id="i0c-9Y-gmW"/>
                                     <outlet property="deadlineLabel" destination="X7b-MR-dGZ" id="HoD-Cb-vgi"/>
+                                    <outlet property="endButton" destination="RmO-dk-ElJ" id="knC-5M-w30"/>
                                     <outlet property="startButton" destination="oLY-lU-v7L" id="tAq-d3-Ty1"/>
                                     <outlet property="trainerLabel" destination="ON8-TS-lYM" id="guc-Ym-A1E"/>
                                 </connections>
@@ -3837,7 +3898,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="Vff-fS-EVw">
-                            <rect key="frame" x="0.0" y="0.0" width="294" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -3890,7 +3951,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="PMu-hk-dE0">
-                            <rect key="frame" x="0.0" y="0.0" width="294" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>

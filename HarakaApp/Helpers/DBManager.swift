@@ -71,14 +71,14 @@ class DBManager {
     
     static func getChallenge(completion: @escaping (Challenge) -> Void) {
         let challref = Database.database().reference()
-        let ch = Challenge()
+        var ch = Challenge()
         
         challref.child("Challenges").queryOrdered(byChild: "Deadline").queryLimited(toLast: 1).observeSingleEvent(of: .childAdded){
             (snapshot) in
             
             if snapshot.exists(){
-                let challenge = Challenge(snapshot: snapshot)
-                completion(challenge!)
+                ch = Challenge(snapshot: snapshot)!
+                completion(ch)
             }
             else{
                 return completion(ch)
@@ -86,6 +86,7 @@ class DBManager {
             
             
         }
+       // completion(ch)
     }
     
     static func getPosts(for user: User, completion: @escaping ([Post]) -> Void) {
