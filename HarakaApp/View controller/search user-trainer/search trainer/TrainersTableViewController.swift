@@ -107,7 +107,7 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
                  trainer = self.trainersArray[indexPath.row]
              }
              
-             cell.textLabel?.text = trainer?["name"] as? String
+             cell.textLabel?.text = trainer?["Name"] as? String
              cell.detailTextLabel?.text = trainer?["Username"] as? String
              
 
@@ -119,7 +119,17 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
         searchBar.resignFirstResponder()
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = self.trainersArray[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ShowTrainer") as? OtherTrainersViewController
+         vc?.otherTrainers = user
+        self.navigationController?.pushViewController(vc! , animated: true)
+    }
+
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "ShowTrainer" {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let Trainer = trainersArray[indexPath.row]
@@ -128,7 +138,7 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
             
                 }
             }
-        }
+        }*/
         
 
        

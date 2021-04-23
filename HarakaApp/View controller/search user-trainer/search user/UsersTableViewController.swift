@@ -117,7 +117,16 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
         searchBar.resignFirstResponder()
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = self.usersArray[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ShowUsers") as? OtherUsersViewController
+         vc?.otherUser = user
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
+    
+    
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "ShowUser" {
                 if let indexPath = tableView.indexPathForSelectedRow {
                     let user = usersArray[indexPath.row]
@@ -126,7 +135,7 @@ class UsersTableViewController: UITableViewController, UISearchBarDelegate, UISe
             
                 }
             }
-        }
+        } */
         
 
        
