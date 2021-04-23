@@ -11,7 +11,6 @@
 		23104218261B34A7006B2EE4 /* GameRoomsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23104217261B34A7006B2EE4 /* GameRoomsViewController.swift */; };
 		2310421E261B39E4006B2EE4 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421D261B39E4006B2EE4 /* Game.swift */; };
 		23104221261B56E8006B2EE4 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23104220261B56E8006B2EE4 /* GameCell.swift */; };
-		232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E738A25F56B560029D39C /* ChallengeCell.swift */; };
 		232E738E25F56BAC0029D39C /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E738D25F56BAC0029D39C /* Challenge.swift */; };
 		232E739125F588290029D39C /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E739025F588290029D39C /* ChallengeViewController.swift */; };
 		2357979D2607E3280017C166 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2357979C2607E3280017C166 /* CommentViewController.swift */; };
@@ -109,7 +108,6 @@
 		2310421A261B3750006B2EE4 /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
 		2310421D261B39E4006B2EE4 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		23104220261B56E8006B2EE4 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
-		232E738A25F56B560029D39C /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
 		232E738D25F56BAC0029D39C /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		232E739025F588290029D39C /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		2357979C2607E3280017C166 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
@@ -282,7 +280,6 @@
 			isa = PBXGroup;
 			children = (
 				2399CF3C261735F300FD9B1C /* Challenges - Trainer */,
-				232E738A25F56B560029D39C /* ChallengeCell.swift */,
 				232E738D25F56BAC0029D39C /* Challenge.swift */,
 				232E739025F588290029D39C /* ChallengeViewController.swift */,
 				23B0C754262E186100E91238 /* ChallengeCard.swift */,
@@ -641,7 +638,6 @@
 				94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */,
 				23B0C736262A695B00E91238 /* CreateGameViewController.swift in Sources */,
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
-				232E738B25F56B560029D39C /* ChallengeCell.swift in Sources */,
 				3F2A3799262BA7C7009EDE21 /* UserActivitysTableView.swift in Sources */,
 				3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */,
 				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
@@ -674,7 +670,6 @@
 				23B0C755262E186200E91238 /* ChallengeCard.swift in Sources */,
 				3FF0142D2621EDBA00948FDB /* ActivityDescription.swift in Sources */,
 				3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */,
-				3FF017A8262717A400948FDB /* LaunchScreen.swift in Sources */,
 				9449C07925D13531002E0AAB /* TabBarViewController.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,

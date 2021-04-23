@@ -79,7 +79,6 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                     }
  
                     self.fetchBoard(dict: keysDict)
-                    self.playersBoard.reloadData()
                     
                 }
                 
@@ -105,8 +104,9 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
                     user in
                     let username = user.username
                     let player = Player(username: username!, uid: pid, score: score!)
-                    self.participants?.append(player)
-                 //   self.playersBoard.reloadData()
+                    //self.participants?.append(player)
+                    //self.sortArray(array: participants, element: player)
+                    self.playersBoard.reloadData()
                 }
             }
             
@@ -114,6 +114,18 @@ class GameViewController: UIViewController, UITableViewDelegate, UITableViewData
          //   self.playersBoard.reloadData()
             
         
+    }
+    
+    func sortArray(array: [Player], element: Player){
+        
+        var max = element
+        var temp = element
+        for p in array{
+            if p.score! >= max.score!{
+                temp = p
+                
+            }
+        }
     }
     
     @IBAction func joinGame(_ sender: Any) {
