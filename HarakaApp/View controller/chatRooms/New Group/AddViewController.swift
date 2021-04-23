@@ -13,7 +13,7 @@ import FirebaseDatabase
 class AddViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var titleField: UITextField!
-    @IBOutlet var bodyField: UITextField!
+   // @IBOutlet var bodyField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet weak var popUpView: UIView!
     var objRoom  : Room!
@@ -24,7 +24,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleField.delegate = self
-        bodyField.delegate = self
+       // bodyField.delegate = self
         
         popUpView.layer.cornerRadius = 10
         popUpView.layer.masksToBounds = true
@@ -38,24 +38,26 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didTabSaveButton(_ sender: UIButton) {
     
     // @objc func didTapSaveButton() {
-        if let titleText = self.titleField.text, !titleText.isEmpty,
-            let bodyText = bodyField.text, !bodyText.isEmpty {
+        if let titleText = self.titleField.text, !titleText.isEmpty {
+        /*,
+            let bodyText = bodyField.text, !bodyText.isEmpty */
+        
 
-            let targetDate = datePicker.date
+            datePicker.datePickerMode = .dateAndTime
            // added
-           
-            let date = Date()
+            //let date = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "MMM, dd, YYYY"
-            let d = formatter.string(from: date)
-           // completion?(titleText, bodyText, d )
+            formatter.dateFormat = "yyyy-MM-dd at HH:mm"
+            let d = formatter.string(from: datePicker.date)
+            // completion?(titleText, bodyText, d )
             let dataRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
             let CalenRef = dataRef.child("Calender").child(objRoom.roomId!).childByAutoId()
-            let calenderData:[String:Any] = [ "EventTitle":titleText , "EventDate": d  ]
+            let calenderData:[String:Any] = [ "EventTitle":titleText , "EventDate": d  /*"EventBody":bodyText*/ ]
         
         CalenRef.setValue(calenderData) { (err, ref) in
             if(err == nil){
                 self.titleField.text = ""
+               // self.bodyField.text = ""
               
             }
             

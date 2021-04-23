@@ -151,8 +151,7 @@ class CreateActivity: UIViewController {
 
             }
             } ) }
-      
-
+        self.dismiss(animated: true, completion: nil)
         }
       
     func AddcreatedByid(_ zg:String) {
