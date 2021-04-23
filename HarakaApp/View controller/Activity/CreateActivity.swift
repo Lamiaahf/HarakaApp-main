@@ -81,6 +81,7 @@ class CreateActivity: UIViewController {
             let formatter = DateFormatter()
             formatter.dateStyle = .medium
             formatter.timeStyle = .medium
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
             DateTime.text = formatter.string(from: dateTP.date )
             self.view.endEditing(true)
         }

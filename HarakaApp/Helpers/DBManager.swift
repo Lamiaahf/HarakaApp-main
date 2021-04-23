@@ -14,8 +14,8 @@ class DBManager {
     let storage = Storage.storage()
     
     
-    static func getFollowing(for user: User, completion: @escaping ([User]) -> Void) {
-        let userref = Database.database().reference().child("following/\(user.userID!)")
+    static func getFollowing(for user: String , completion: @escaping ([User]) -> Void) {
+        let userref = Database.database().reference().child("following/\(user)")
 
         userref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {

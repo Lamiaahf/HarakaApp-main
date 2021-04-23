@@ -11,8 +11,8 @@ import Firebase
 class OtherTActivitysTableV: UITableViewController {
 
    
-    var otherTrainerID: String?
-    var ActivitysList:[Activity]?
+     var otherTrainerID: String?
+     var ActivitysList:[Activity]?
 
 
     override func viewDidLoad() {

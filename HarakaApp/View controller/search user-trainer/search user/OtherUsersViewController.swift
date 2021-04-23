@@ -15,7 +15,7 @@ class OtherUsersViewController:UIViewController ,UIImagePickerControllerDelegate
     @IBOutlet weak var Username: UILabel!
     @IBOutlet weak var followButton: UIButton!
 
- @IBOutlet weak var Followers: UIView!
+    @IBOutlet weak var Followers: UIView!
 
    
    let loggedInUsers = Auth.auth().currentUser
@@ -24,8 +24,8 @@ class OtherUsersViewController:UIViewController ,UIImagePickerControllerDelegate
    var UserProfileData:NSDictionary?
    var databaseRef = Database.database().reference()
    var storageRef = Storage.storage().reference()
-   
-   var imagePicker = UIImagePickerController()
+   var uid : String?
+  // var imagePicker = UIImagePickerController()
    //hi
    
    
@@ -50,10 +50,10 @@ class OtherUsersViewController:UIViewController ,UIImagePickerControllerDelegate
     //need to add the uid to the user's data
     databaseRef.child("users").child(self.otherUser?["uid"] as! String).observe(.value, with: { (snapshot) in
         
-        let uid = self.otherUser?["uid"] as! String
+        self.uid = self.otherUser?["uid"] as! String
         self.otherUser = snapshot.value as? NSDictionary
         //add the uid to the profile
-        self.otherUser?.setValue(uid, forKey: "uid")
+        self.otherUser?.setValue(self.uid, forKey: "uid")
     
     
     }) { (error) in
@@ -155,7 +155,7 @@ databaseRef.child("following").child(self.loggedInUsers!.uid).child(self.otherUs
         
         let followingData = ["Name":self.otherUser?["Name"] as! String,
                              "Username":self.otherUser?["Username"] as! String,
-                             "profilePic":otherTrainersProfilePic]
+                             "profilePic": otherTrainersProfilePic]
         
         //"profile_pic":self.otherUser?["profile_pic"] != nil ? self.loggedInUserData?["profile_pic"] as! String : ""
         let childUpdates = [followersRef:followersData,
@@ -218,6 +218,36 @@ databaseRef.child("following").child(self.loggedInUsers!.uid).child(self.otherUs
     }
     
     }
+    @IBAction func ShowFollowers(_ sender: Any) {
+        
+        let Trainer = self.uid
+        let TF = self.storyboard?.instantiateViewController(withIdentifier: "TFollowers") as? OtherTrainerFollowersTable
+            TF?.otherTrainerID = Trainer
+            self.navigationController?.pushViewController(TF!, animated: true)
+        
+
+       }
+    @IBAction func ShowPosts(_ sender: Any) {
+        
+        let user = self.uid
+        let UP = self.storyboard?.instantiateViewController(withIdentifier: "OtherPosts") as? OtherUserPostViewController
+              UP?.otherUserID = user
+            self.navigationController?.pushViewController(UP!, animated: true)
+        
+
+       }
+    
+    
+    
+    @IBAction func ShowFollowing(_ sender: Any) {
+        
+        let ID = self.uid
+        let UF = self.storyboard?.instantiateViewController(withIdentifier: "UFollowing") as? OtherUserFollowingTable
+            UF?.userID = ID
+            self.navigationController?.pushViewController(UF!, animated: true)
+        
+
+       }
 
 
 }
