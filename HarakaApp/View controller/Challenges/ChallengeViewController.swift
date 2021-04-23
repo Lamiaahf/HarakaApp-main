@@ -51,7 +51,7 @@ class ChallengeViewController: UIViewController {
                 self.notFoundLabel.alpha = 0
                 self.notFoundImage.alpha = 0
                 self.challengeCard.alpha = 1
-                
+                //
                 //PROGRESS BAR: 1 - (Days remaining/7)
             }
             else{
