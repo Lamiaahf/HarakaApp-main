@@ -43,12 +43,12 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             let bodyText = bodyField.text, !bodyText.isEmpty */
         
 
-            let targetDate = datePicker.date
+            datePicker.datePickerMode = .dateAndTime
            // added
             //let date = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "MMM, dd, YYYY"
-            let d = formatter.string(from: targetDate)
+            formatter.dateFormat = "yyyy-MM-dd at HH:mm"
+            let d = formatter.string(from: datePicker.date)
             // completion?(titleText, bodyText, d )
             let dataRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()
             let CalenRef = dataRef.child("Calender").child(objRoom.roomId!).childByAutoId()
