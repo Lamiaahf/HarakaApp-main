@@ -12,8 +12,8 @@ import FirebaseDatabase
 class searchBViewController: UIViewController , UINavigationControllerDelegate {
     
 
-   // @IBOutlet var usersSearch: UIButton!
-  // @IBOutlet var trainersSearch: UIButton!
+    @IBOutlet var usersSearch: UIButton!
+    @IBOutlet var trainersSearch: UIButton!
     @IBOutlet var users: UIView!
     @IBOutlet var Trainers: UIView!
 
@@ -25,7 +25,7 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // Utilities.styleFilledButton(usersSearch)
+    // Utilities.styleFilledButton(usersSearch)
     // Utilities.styleFilledButton(trainersSearch)
         self.loggedInUser = Auth.auth().currentUser
 
@@ -44,6 +44,9 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
        UIView.animate(withDuration: 0.5, animations:{
         self.Trainers.alpha = 0
         self.users.alpha = 1
+        self.usersSearch.backgroundColor = UIColor.systemGray
+        self.trainersSearch.backgroundColor = UIColor.systemBlue
+
 
        }
        )}
@@ -53,7 +56,11 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
     
        UIView.animate(withDuration: 0.5, animations:{
             self.users.alpha = 0
-            self.Trainers.alpha = 1 }
+            self.Trainers.alpha = 1
+        self.trainersSearch.backgroundColor = UIColor.systemGray
+        self.usersSearch.backgroundColor = self.usersSearch.backgroundColor
+
+       }
        )}
 
     

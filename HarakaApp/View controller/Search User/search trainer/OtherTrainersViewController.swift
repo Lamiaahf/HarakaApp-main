@@ -11,7 +11,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 // master
-class OtherTrainersViewController: UIViewController ,UINavigationControllerDelegate, UITextFieldDelegate, CWRateKitViewControllerDelegate {
+class OtherTrainersViewController: UIViewController ,UINavigationControllerDelegate, UITextFieldDelegate {
      @IBOutlet weak var Profilepic: UIImageView!
      @IBOutlet weak var name: UILabel!
      @IBOutlet weak var Username: UILabel!

@@ -54,17 +54,7 @@ class TActivityList: UITableViewController {
 
                       
                     let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, p: price)
-                 //       postArray.insert(newPost, at: indx)
-                
-                
-                    //    let currentDate = Date()
-                 ///       print(DT!)
-                        // Create Date Formatter
-                //        let dateFormatter = DateFormatter()
-                 //       dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-                  //      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-                  //      let date = dateFormatter.date(from: DT!)
-                     //   if currentDate.compare(date!) == .orderedDescending {
+                    
                     ref.child("Trainers").child("Approved").child(createdByid).observe(.childAdded){
                     (snapshot) in
                         if(snapshot.exists()){
@@ -79,11 +69,11 @@ class TActivityList: UITableViewController {
         
     
                 
-            }}
+            }
         
         }
 
-}
+    }   }
 extension TActivityList {
     
     

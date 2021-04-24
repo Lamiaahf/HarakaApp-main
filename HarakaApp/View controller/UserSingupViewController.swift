@@ -11,11 +11,10 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
+// The class will take info forom user and save it in the Firebase
+class UserSingupViewController: UIViewController  {
 
-class UserSingupViewController: UIViewController  { //Start of class
-// US = User Singup
-    
- 
+    // US = User Singup
     var ref : DatabaseReference!
 
     
@@ -33,7 +32,7 @@ class UserSingupViewController: UIViewController  { //Start of class
     @IBOutlet weak var PasswordUS: UITextField!
     
     @IBOutlet weak var ConfPasswordUS: UITextField!
-    // BOD = DOB
+    //US = User Singup
     @IBOutlet weak var DOBUS: UITextField!
     let DatePicker = UIDatePicker()
 
@@ -53,7 +52,6 @@ class UserSingupViewController: UIViewController  { //Start of class
   
     
     // ImagePicker
-     
     @IBAction func TapToChange(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
@@ -61,7 +59,7 @@ class UserSingupViewController: UIViewController  { //Start of class
         picker.allowsEditing = true
         present(picker, animated: true)
     }
-    
+      // to set profile image
     func setupAvatar (){
         AvatarUS.clipsToBounds = true
         AvatarUS.isUserInteractionEnabled = true
@@ -71,7 +69,6 @@ class UserSingupViewController: UIViewController  { //Start of class
     
     
     func setUpElements() {
-    
         ErrorM.alpha = 0
         // Style the elements
         Utilities.styleTextField(NameUS)
@@ -85,7 +82,7 @@ class UserSingupViewController: UIViewController  { //Start of class
 
     }
  
-    
+    // Creat the DatePicker
     func creatDatePicker()  {
         DOBUS.textAlignment = .right
         //toolbare
@@ -110,11 +107,7 @@ class UserSingupViewController: UIViewController  { //Start of class
         DOBUS.text = formatter.string(from:DatePicker.date)
         self.view.endEditing(true)
     }
-    
-  
-    
  
-  
     // check thev fields and validat data if everything is correct the methode will return nil otherwise its will return error massge
     func validatefields() -> String?{
     // all fields filled in
@@ -139,24 +132,15 @@ class UserSingupViewController: UIViewController  { //Start of class
 
         else if PasswordUS.text != ConfPasswordUS.text {
 
-                    //Passwords dont match
+            //Passwords dont match
             return "كلمة المرور غير متطابقة ."}
-       /* let  date = Date()
-        else if( DOBUS.text - date < 18 )"" ||(DOBUS.text - date > 60 )   {
-
-                    //Passwords dont match
-            return " عذرا السن غير مناسب "
-
-            }*/
-        
+      
             return nil}
-        
-    
-    
+ 
     @IBAction func SignUpTapped(_ sender: Any){
+        // to save the image to 
         guard let imageSelected = self.image else {return}
-             guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
-     //   let uid = Auth.auth().currentUser?.uid
+        guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
 
         // Validate the fields
         let error = validatefields()
@@ -176,23 +160,17 @@ class UserSingupViewController: UIViewController  { //Start of class
             let ConfPassword = ConfPasswordUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let DOB = DOBUS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
  
-                Auth.auth().createUser(withEmail: Email, password: Password) { [self] (result, err) in
+            Auth.auth().createUser(withEmail: Email, password: Password) { [self] (result, err) in
                 let uid = Auth.auth().currentUser?.uid
-
-
-                
                 // Check for errors
                 if err != nil {
-                    
                     // There was an error creating the user
                     self.showError("حدث خطأ !")
                 }
                 else {
                
-                    // User was created successfully, now store the first name and last name
+                   // User was created successfully, now store the first name and last name
                     guard let user = result?.user else {return}
-                    
-                    
                     // save the image to firbase Storage and user
                     let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
                      let StorageProfilrRef  = storageRef.child("Profile").child(user.uid)
@@ -218,6 +196,8 @@ class UserSingupViewController: UIViewController  { //Start of class
         ErrorM.alpha = 1
     }
     
+    
+    // after user singup this method will take him to the home page
     func transitionToHome() {
         
         let homeViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.homeViewController) as? MyTabBarCtrl

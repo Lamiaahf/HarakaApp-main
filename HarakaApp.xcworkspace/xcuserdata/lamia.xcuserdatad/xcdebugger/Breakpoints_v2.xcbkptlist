@@ -484,13 +484,13 @@
             filePath = "HarakaApp/View controller/Activity/CreateActivity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "CreateBTap(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "78C3ED55-53C2-4E81-AA6A-1D1197D06B20 - 1666aaaa7b1b5168"
+                  uuid = "78C3ED55-53C2-4E81-AA6A-1D1197D06B20 - 1666aaaa7b1b57b1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -500,12 +500,12 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Activity/CreateActivity.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "5780">
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "6167">
                </Location>
                <Location
-                  uuid = "78C3ED55-53C2-4E81-AA6A-1D1197D06B20 - 51a35659f8cfef30"
+                  uuid = "78C3ED55-53C2-4E81-AA6A-1D1197D06B20 - 51a35659f8cfe9e7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -515,8 +515,8 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Activity/CreateActivity.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
                   offsetFromSymbolStart = "136">
                </Location>
             </Locations>
@@ -532,13 +532,13 @@
             filePath = "HarakaApp/View controller/Activity/CreateActivity.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "CreateBTap(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1FDEE35F-6C35-4546-A8F1-BA21873F19E3 - 1666aaaa7b1b57b1"
+                  uuid = "1FDEE35F-6C35-4546-A8F1-BA21873F19E3 - 1666aaaa7b1b5686"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -548,12 +548,12 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Activity/CreateActivity.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121"
-                  offsetFromSymbolStart = "6666">
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "7053">
                </Location>
                <Location
-                  uuid = "1FDEE35F-6C35-4546-A8F1-BA21873F19E3 - 182682fab792bfe4"
+                  uuid = "1FDEE35F-6C35-4546-A8F1-BA21873F19E3 - 182682fab792be9d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -563,8 +563,8 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Activity/CreateActivity.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
                   offsetFromSymbolStart = "139">
                </Location>
             </Locations>
@@ -1312,54 +1312,6 @@
             endingLineNumber = "243"
             landmarkName = "getRate()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6034635A-9B7B-4DC0-B1AF-21B32D7D5D69"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/Trainer/TActivityList.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "fetchActivity()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6034635A-9B7B-4DC0-B1AF-21B32D7D5D69 - ccb0e279a4673c62"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in HarakaApp.TActivityList.fetchActivity() -&gt; ()"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Trainer/TActivityList.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "7213">
-               </Location>
-               <Location
-                  uuid = "6034635A-9B7B-4DC0-B1AF-21B32D7D5D69 - 1fcbe262856deb30"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in closure #1 (__C.FIRDataSnapshot) -&gt; () in HarakaApp.TActivityList.fetchActivity() -&gt; ()"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Trainer/TActivityList.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "118">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

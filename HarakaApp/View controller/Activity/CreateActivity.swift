@@ -23,7 +23,8 @@ class CreateActivity: UIViewController {
     @IBOutlet weak var Alocation: UITextField!
     @IBOutlet weak var price: UITextField!
 
-        
+    @IBOutlet weak var ErrorM: UILabel!
+
     @IBOutlet weak var DateTime: UITextField!
         let dateTP = UIDatePicker()
         
@@ -42,10 +43,10 @@ class CreateActivity: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        /// to save the user ID and Name in the activity
         // Activate the  ActivityTypePicker
         ActivityTypePicker.delegate = self
         ActivityTypePicker.dataSource = self
+        
         // Style
         Utilities.styleFilledButton(createB)
         Utilities.styleTextField(Name)
@@ -53,6 +54,8 @@ class CreateActivity: UIViewController {
         Utilities.styleTextField(ADescription)
         Utilities.styleTextField(DateTime)
         Utilities.styleTextField(price)
+        // hide ErrorM Lable
+        ErrorM.alpha = 0
 
         creatDatePicker()
 
@@ -95,10 +98,16 @@ class CreateActivity: UIViewController {
     guard let imageSelected = self.image else {return}
     guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
 
-
+        // Validate the fields
+        let error = validatefields()
+        
+        if error != nil {
+            
+        // There's something wrong with the fields, show error message
+            showError(error!)
+        }
  
-       validatefields()
- 
+        else{
         let type = typeL.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let Aname = Name.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let disc = ADescription.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -157,7 +166,7 @@ class CreateActivity: UIViewController {
             }
             } ) }
       
-
+        }
         }
       
     func AddcreatedByid(_ ID:String) {
@@ -174,7 +183,7 @@ class CreateActivity: UIViewController {
             self.view.window?.makeKeyAndVisible()
         }
         
-        func validatefields() {
+    func validatefields() -> String? {
         // all fields filled in
             if Name.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
                 typeL.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
@@ -183,12 +192,18 @@ class CreateActivity: UIViewController {
                 participantLable.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  ||
                 Alocation.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
                
-                
+                return "الرجاء التأكد من أن جميع الحقول ممتلئة ."
+
                 
             }
             
-            
+        return nil
         }
+    
+    func showError(_ message : String )  {
+        ErrorM.text = message
+        ErrorM.alpha = 1
+    }
     }// END OF CLASS
         
         
