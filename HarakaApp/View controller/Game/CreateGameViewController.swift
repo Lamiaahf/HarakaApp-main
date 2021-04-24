@@ -34,28 +34,33 @@ class CreateGameViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Method used to create a game (called after create button is clicked)
     @IBAction func createGame(_ sender: Any) {
         
-       guard let uid = Auth.auth().currentUser?.uid,
-             let pCount = Int(self.playerCount.text!),
-             let gameName = self.gameLabel.text,
-             gameName.isEmpty == false else{
-        return
-       }
+       // Retrieve information:
+       guard let uid = Auth.auth().currentUser?.uid, // User's id
+             let pCount = Int(self.playerCount.text!), // Max player count
+             let gameName = self.gameLabel.text, // Game Name
+             
+             gameName.isEmpty == false else{return} // Check whether game name is empty
         
+        // Resign focus from textfield
         self.gameLabel.resignFirstResponder()
         
+        // Add game to database under "GameRooms" child with a generated id
        Database.database().reference().child("GameRooms").childByAutoId().setValue([
-                                                                                        "CreatorID": uid,
-                                                                                        "GameName":gameName,
-                                                                                    "PlayerCount":pCount])
-        
+                                                                "CreatorID": uid,
+                                                                "GameName":gameName,
+                                                                "PlayerCount":pCount])
        {
-            (err,key) in
+            (err,key) in // Adding to DB returns either an error or key of the added reference
+        
+            // if the returned value was a key, send it to the addParticipant method
             if(err == nil){
                 self.gameLabel.text = ""
                 self.addParticipant(key: key.key!, id: uid)
             }
+        // Dismiss page
         self.dismiss(animated: true, completion: nil)
             
         }
@@ -63,45 +68,11 @@ class CreateGameViewController: UIViewController {
         
     }
     
+    // Method used to add game creator's id to the "GameParticipants" child in the DB
     func addParticipant(key: String, id: String){
-    
+                // Result automatically set to 0 because user just created game
                 Database.database().reference().child("GameParticipants").child(key).child(id).setValue(["Result":0.0])
-            
         }
     
-    /*
-     Database.database().reference().child("GameParticipants").queryOrderedByKey().queryEqual(toValue: key).observe(.value, with: {
-         snapshot in
-         if snapshot.exists(){
-             // Global method to find game
-             
-             var currentCount = Int(snapshot.childrenCount)
-             
-             Database.database().reference().child("GameRooms").queryOrderedByKey().queryEqual(toValue: key).observe(.value, with: {
-                 snapshot in
-                 guard let dict = snapshot.value as? [String: Any] else {return}
-                 
-                 var playerCount = dict["PlayerCount"] as! Int
-                 
-                 if(currentCount == playerCount){
-                     // Send popup message to user
-                     let alert = UIAlertController(title: "حدث خطأ", message: "اللعبة ممتلئة", preferredStyle: .alert)
-                     alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler:nil))
-                     self.present(alert, animated: true)
-                     return
-                 }
-                 else{
-                     Database.database().reference().child("GameParticipants").child(key).childByAutoId().setValue([
-                         "UID":id,
-                         "Result":0.0
-                     ])
-                 }
-                 
-             })
-             
-         }else{*/
-        
-       
-        
 
 }

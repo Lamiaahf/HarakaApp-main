@@ -38,25 +38,26 @@ class AddChallengeViewController: UIViewController {
         
     }
     
-    
+    // Method used to create challenge and add it to database
     @IBAction func createChallenge(_ sender: Any) {
         
+        // Define a DateFormatter and set it's format
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM HH:mm"
-     //   formatter.timeZone = TimeZone(abbreviation: "GMT")
-        formatter.locale = Locale.current
-        
-        guard let imageSelected = typeImage.image else {return}
-        guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
         
         
+        // Get trainer id
         let creatorID = tid
+        // Deadline is current date advanced by 518400s, which is number of seconds in a week
         let deadline = Date().advanced(by:  518400)
+        // Convert deadline to string
         let dateString = formatter.string(from: deadline)
+        // Get challenge name and description
         let name = cName.text
         let desc = cDesc.text
         
      
+        // Store challenge information in DB under "Challenges" child
         ref.childByAutoId().setValue([
                                         "CreatorID":creatorID,
                                         "Deadline":dateString,
@@ -64,7 +65,8 @@ class AddChallengeViewController: UIViewController {
                                         "Description":desc,
                                         "Type":self.type])
         
-        self.navigationController?.popViewController(animated: true)
+        // Dismiss page
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
