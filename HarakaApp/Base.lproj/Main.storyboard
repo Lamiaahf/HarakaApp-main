@@ -4004,7 +4004,7 @@
         <!--Users Table View Controller-->
         <scene sceneID="NE4-GB-z4s">
             <objects>
-                <tableViewController storyboardIdentifier="ShowUsers" id="dSO-I0-da0" customClass="UsersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dSO-I0-da0" customClass="UsersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="a2G-Bc-cKS">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="582"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4057,7 +4057,7 @@
         <!--Trainers Table View Controller-->
         <scene sceneID="Adg-E2-1oW">
             <objects>
-                <tableViewController storyboardIdentifier="ShowTrainer" id="0bQ-Ts-gep" customClass="TrainersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="0bQ-Ts-gep" customClass="TrainersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hfz-7J-xpW">
                         <rect key="frame" x="0.0" y="0.0" width="358" height="582"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5761,7 +5761,7 @@
         <image name="social-media" width="512" height="512"/>
         <image name="sport-png-photos-png-mart-7" width="620" height="330"/>
         <image name="star" width="512" height="512"/>
-        <image name="swipe-right (1)" width="128" height="128"/>
+        <image name="swipe-right (1)" width="512" height="512"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
         <image name="win" width="512" height="512"/>
         <image name="xmark" catalog="system" width="128" height="113"/>

@@ -272,8 +272,7 @@
 				23598F46262F23780090C29C /* EmptyCard.swift */,
 				23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */,
 			);
-			name = "Challenges - Trainer";
-			path = "../Challenges - Trainer";
+			path = "Challenges - Trainer";
 			sourceTree = "<group>";
 		};
 		23A7170D2621DD1100C43FD4 /* Assets */ = {
