@@ -17,17 +17,17 @@ class ChallengeBoardViewController: UIViewController, UITableViewDelegate, UITab
     var currentChallenge: Challenge?
     var participants: [Player]?
     
-
-    @IBOutlet weak var participantsBoard: UITableView!
+    @IBOutlet weak var scoreBoard: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        participantsBoard.delegate = self
-        participantsBoard.dataSource = self
-        participantsBoard.separatorStyle = .singleLine
-        participantsBoard.estimatedRowHeight = participantsBoard.rowHeight
-        participantsBoard.rowHeight = UITableView.automaticDimension
+        scoreBoard.dataSource = self
+        scoreBoard.delegate = self
+        scoreBoard.separatorStyle = .singleLine
+        scoreBoard.estimatedRowHeight = scoreBoard.rowHeight
+        scoreBoard.rowHeight = UITableView.automaticDimension
         
         participants = []
         updateBoard()
@@ -35,12 +35,13 @@ class ChallengeBoardViewController: UIViewController, UITableViewDelegate, UITab
     
     func updateBoard(){
         
+        participants = []
         ref.child("ChallengeParticipants").child((currentChallenge?.chalID)!).queryOrdered(byChild: "Score").observe(.childAdded){
                 snapshot in
             
             guard let dict = snapshot.value as? [String:Any] else {return}
             let score = dict["Score"] as? Double
-            if(score!>=0){
+            if(score!>0){
                 
                 let uid = snapshot.key
                 
@@ -51,7 +52,7 @@ class ChallengeBoardViewController: UIViewController, UITableViewDelegate, UITab
                     self.participants!.sort {
                         $0.score! < $1.score!
                     }
-                    self.participantsBoard.reloadData()
+                    self.scoreBoard.reloadData()
                 }
 
             }

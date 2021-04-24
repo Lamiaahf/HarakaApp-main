@@ -114,9 +114,10 @@ class ChallengeViewController: UIViewController, ScoreboardDelegate {
 
     // Delegate "ScoreboardDelegate" methods
     func showScoreboard(ch: Challenge){
-        let vc = ChallengeBoardViewController()
-        vc.currentChallenge = ch
-        self.navigationController?.pushViewController(vc, animated: true)
+        let scoreboard = self.storyboard?.instantiateViewController(identifier: "ChallengeBoardViewController") as! ChallengeBoardViewController
+        scoreboard.currentChallenge = ch
+        
+        self.navigationController?.pushViewController(scoreboard, animated: true)
         
     }
 

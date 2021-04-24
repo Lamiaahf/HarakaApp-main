@@ -1201,7 +1201,7 @@
         <!--Challenge Board View Controller-->
         <scene sceneID="Y0o-Se-RzB">
             <objects>
-                <viewController id="A80-28-8BF" customClass="ChallengeBoardViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChallengeBoardViewController" id="A80-28-8BF" customClass="ChallengeBoardViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ydD-Iu-g5H">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1294,7 +1294,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Taj-P8-SFH"/>
                     <connections>
-                        <outlet property="participantsBoard" destination="wYY-II-duX" id="wIK-7H-auV"/>
+                        <outlet property="scoreBoard" destination="wYY-II-duX" id="v8z-iS-Myt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYR-xg-b7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2167,6 +2167,7 @@
                                     <outlet property="cTimeline" destination="6vi-XU-dyy" id="pvl-5W-yzn"/>
                                     <outlet property="challengeLabel" destination="fX5-TR-aqX" id="auc-Z6-b3j"/>
                                     <outlet property="deadlineLabel" destination="vgp-Rp-fIh" id="Yd9-so-1sh"/>
+                                    <outlet property="endButton" destination="JiG-s4-ABd" id="vid-ld-BRT"/>
                                     <outlet property="startButton" destination="dlo-tb-qAC" id="PfJ-eU-5Xm"/>
                                     <outlet property="trainerLabel" destination="fbP-ul-Z4J" id="qip-oe-HvM"/>
                                 </connections>

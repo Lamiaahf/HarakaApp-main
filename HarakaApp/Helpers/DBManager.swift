@@ -69,6 +69,23 @@ class DBManager {
         })
     }
     
+    static func isUserStarted(for ch: Challenge, completion: @escaping (Bool) -> Void){
+        
+        let uid = Auth.auth().currentUser?.uid
+        Database.database().reference().child("ChallengeParticipants").child(ch.chalID!).queryOrderedByKey().queryEqual(toValue: uid).observe(.value, with: {
+            snapshot in
+            guard let currentTries = snapshot.value as? [String:Any] else {completion(false); return}
+            
+            for key in currentTries.keys {
+                guard let dict = currentTries[key] as? [String:Any] else {completion(false); return}
+                if dict["Score"] as! Int == 0 {completion(true); return}
+                
+            }
+            completion(false)
+        })
+        
+        
+    }
     static func getChallenge(completion: @escaping (Challenge) -> Void) {
         let challref = Database.database().reference()
         var ch = Challenge()

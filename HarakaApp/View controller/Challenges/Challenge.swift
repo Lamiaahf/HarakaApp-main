@@ -42,13 +42,6 @@ import Firebase
         
         
     }
-    
-    func isUserStarted() -> Bool {
-        // DBManager(for: self) { boolean in self.isStarted = boolean}
-        
-        
-        return false
-    }
 
 
 }
