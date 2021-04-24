@@ -12,17 +12,15 @@ import Firebase
 import FirebaseStorage
 // master
 class OtherTrainersViewController: UIViewController ,UINavigationControllerDelegate, UITextFieldDelegate {
-    @IBOutlet weak var Profilepic: UIImageView!
+     @IBOutlet weak var Profilepic: UIImageView!
      @IBOutlet weak var name: UILabel!
      @IBOutlet weak var Username: UILabel!
      @IBOutlet weak var followButton: UIButton!
+  
+    
+    @IBOutlet weak var RateLable: UILabel!
+    var Rating : [Int]?
  
-  @IBOutlet weak var Followers: UIView!
- 
-  @IBOutlet weak var Challenges: UIView!
- 
-  @IBOutlet weak var Activity: UIView!
-   // var ActivityContainer: Container?
 
  
     
@@ -43,6 +41,9 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
      //style
      Utilities.styleFilledButton(followButton)
      Utilities.CircularImageView(Profilepic)
+     Rating = []
+     
+
 
      databaseRef.child("users").child(self.loggedInTrainer!.uid).observeSingleEvent(of: .value, with: { (snapshot) in
          
@@ -61,6 +62,8 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
          
          self.uid = self.otherTrainers?["uid"] as! String
          print(self.uid)
+         self.getRate()
+
          self.otherTrainers = snapshot.value as? NSDictionary
          //add the uid to the profile
          self.otherTrainers?.setValue(self.uid, forKey: "uid")
@@ -147,7 +150,6 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
         rateViewController.submitTextColor = .gray
         rateViewController.submitText = "ارسال "
 
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -204,44 +206,6 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
      }
          
      else{
-         //update following count under the logged in user
-         //update followers count in the user that is being followed
-       /*  let followersCount:Int?
-         let followingCount:Int?
-         if(self.otherTrainers?["followersCount"] == nil)
-         {
-             //set the follower count to 1
-             followersCount=1
-         }
-         else
-         {
-             followersCount = self.otherTrainers?["followersCount"] as! Int + 1
-         }
-         
-         //check if logged in user  is following anyone
-         //if not following anyone then set the value of followingCount to 1
-         if(self.loggedInTrainerData?["followingCount"] == nil)
-         {
-             followingCount = 1
-         }
-             //else just add one to the current following count
-         else
-         {
-         
-             followingCount = self.loggedInTrainerData?["followingCount"] as! Int + 1
-         }
-     
-         databaseRef.child("Approved").child(self.loggedInTrainer!.uid).child("followingCount").setValue(followingCount!)
-         databaseRef.child("Approved").child(self.otherTrainers?["uid"] as! String).child("followersCount").setValue(followersCount!)
-         
-         
-     }
-     else
-     {
-         databaseRef.child("Trainers").child("Approved").child(self.loggedInTrainerData?["uid"] as! String).child("followingCount").setValue(self.loggedInTrainerData!["followingCount"] as! Int - 1)
-         
-         databaseRef.child("Trainers").child("Approved").child(self.otherTrainers?["uid"] as! String).child("followersCount").setValue(self.otherTrainers!["followersCount"] as! Int - 1)
-         */
        let followersRef = "followers/\(self.otherTrainers?["uid"] as! String)/\(self.loggedInTrainerData?["uid"] as! String)"
        let followingRef = "following/" + (self.loggedInTrainerData?["uid"] as! String) + "/" + (self.otherTrainers?["uid"] as! String)
          
@@ -253,37 +217,59 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
      }
      
      }
+    
+    
+    
+    
+    
 
   
  @IBAction func ShowActivity(_ sender: Any) {
- 
-    UIView.animate(withDuration: 0.5, animations:{
-                     self.Activity.alpha = 1
-     
-     
      let act = self.uid
      let vc = self.storyboard?.instantiateViewController(withIdentifier: "TActivity") as? OtherTActivitysTableV
           vc?.otherTrainerID = act
          self.navigationController?.pushViewController(vc!, animated: true)
-     
-
-    }
-    )}
+  }
     
     
     @IBAction func ShowFollowers(_ sender: Any) {
-    
-    
-        
+   
         let Trainer = self.uid
         let TF = self.storyboard?.instantiateViewController(withIdentifier: "TFollowers") as? OtherTrainerFollowersTable
             TF?.otherTrainerID = Trainer
             self.navigationController?.pushViewController(TF!, animated: true)
-        
-
        }
      
+    func getRate(){
+       
+        databaseRef.child("Rating").child(uid).observe(.childAdded , with: { (snapshot) in
+            if let Dict = snapshot.value as? [String: Any]{
+                let R = Dict ["Rate"] as? Int ?? 0
+                self.Rating?.append(R)
+                
+                print(self.Rating?.count)
+                print(self.Rating!)
 
+            }
+            //self.otherTrainers = snapshot.value as? NSDictionary
+        
+
+        })
+        let count = (self.Rating?.count)!
+        var sum = 0
+
+        if let Rating = Rating {
+
+        for R in Rating {
+            
+            sum = sum + R
+        }
+        }
+        let total = sum/count
+      let  RateL = String(total)
+        RateLable.text = RateL
+        
+    }
 
 
 }
@@ -296,7 +282,7 @@ extension OtherTrainersViewController: CWRateKitViewControllerDelegate {
     func didSubmit(rate: Int) {
         print("Submit with rate \(rate)")
 
-        databaseRef.child("Rating").child(uid).child((loggedInTrainer?.uid)!).setValue(rate)
+        databaseRef.child("Rating").child(uid).child(loggedInTrainer!.uid).setValue(["Rate": rate])
         
     }
     

@@ -34,7 +34,7 @@ var  activi: Activity!{
 func updateActivityTable(){
     self.AName.text = self.activi.Aname
     ALocation.text = self.activi.ALoca
-    ADate.text = self.activi.ADateTime
+    ADate.text = self.activi.ADateTime!
     ACreatedByName.text = activi.createdByName
 }
     

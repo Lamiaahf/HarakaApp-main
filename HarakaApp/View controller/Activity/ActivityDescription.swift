@@ -20,6 +20,10 @@ class ActivityDescription: UIViewController {
     @IBOutlet weak var Count: UILabel!
     @IBOutlet weak var ALoca: UILabel!
     
+    @IBOutlet weak var priceLable: UILabel!
+    @IBOutlet weak var priceValue: UILabel!
+
+    
     @IBOutlet weak var JoinB: UIButton!
     
     var databaseRef = Database.database().reference()
@@ -32,15 +36,25 @@ class ActivityDescription: UIViewController {
     var Act : Activity!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.priceLable.alpha = 0
+        self.priceValue.alpha = 0
       
         Utilities.styleFilledButton(JoinB)
         id = Auth.auth().currentUser?.uid
       //  AddcreatedByid()
+        
         fetchActivity()
         
-      print(ActivityID)
-      print(count)
+        databaseRef.child("Trainers").child("Approved").child(id!).observe(.childAdded){
+        (snapshot) in
+            if(snapshot.exists()){
+                self.JoinB.alpha = 0
+                self.priceLable.alpha = 1
+                self.priceValue.alpha = 1
+
+            }
+            
+        }
 
         databaseRef.child("JoinedActivity").child(id!).child(ActivityID).observe(.value, with: {(snapshot) in
         
@@ -66,10 +80,9 @@ class ActivityDescription: UIViewController {
         let Name = Act.Aname
         let Loc = Act.ALoca
         let dis = Act.Adisc
-        let DT = Act.ADateTime
+        let DT = Act.ADateTime!
         let AType = Act.Atype
         count = Act.Apartic!
-      // let createdByid = Act.createdByID
         let createdByN = Act.createdByName
         let Image  = Act.AImage!
         ActivityID = Act.ActivityID!
@@ -86,6 +99,8 @@ class ActivityDescription: UIViewController {
             self.ActivitName.text = Name
             self.ADesc.text = dis
             self.ActivitType.text = AType
+            
+            // Convert Date to String
             self.ADataTime.text = DT
             self.CName.text = createdByN
             self.ALoca.text = Loc

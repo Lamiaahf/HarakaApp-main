@@ -56,16 +56,16 @@ class UserActivitysTableView: UITableViewController {
                     let Name = ADict["ActivityName"] as? String ?? ""
                     let Loc = ADict["location"] as? String ?? ""
                     let dis = ADict["Description"] as? String ?? ""
-                    let DT = ADict["DateTime"] as? String
+                    let DT = ADict["DateTime"] as? String ?? ""
                     let AType = ADict["ActivityType"] as? String ?? ""
                     let count = ADict["NumOfParticipant"] as? String ?? ""
                     let createdByid = ADict["createdByID"] as? String ?? ""
                     let createdByN = ADict["createdByName"] as? String ?? ""
                     let Aimage = ADict["Image"] as? String ?? ""
                     let ID = ADict ["ActivityID"] as? String ?? ""
-                    let T = ADict ["Type"] as? String ?? ""
+                    let price = ADict ["price"] as? String ?? ""
 
-                        let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, t: T)
+                        let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, p: price)
                         self.UserActivitys?.append(NewActivity)
                         self.tableView.reloadData()
 

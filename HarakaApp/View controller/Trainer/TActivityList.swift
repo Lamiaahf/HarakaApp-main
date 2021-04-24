@@ -1,19 +1,19 @@
 //
-//  ActivitysListTable.swift
+//  TActivityList.swift
 //  HarakaApp
 //
-//  Created by lamia on 08/04/2021.
+//  Created by lamia on 23/04/2021.
 //
 
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-class ActivitysListTable: UITableViewController {
+
+class TActivityList: UITableViewController {
     
     var ActivitysList:[Activity]?
 
 
-    @IBOutlet weak var UserActivitysB: UIButton!
      
     var  UserID : String?
     var followingIDS: [String]?
@@ -21,7 +21,6 @@ class ActivitysListTable: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
           UserID = Auth.auth().currentUser?.uid
-        Utilities.styleFilledButton(UserActivitysB)
 
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = tableView.rowHeight
@@ -29,39 +28,23 @@ class ActivitysListTable: UITableViewController {
         tableView.delegate = self
         
         ActivitysList = []
-        followingIDS = []
 
         fetchActivity()
 
     }
     func fetchActivity(){
+// retrieve Activity from database, may return error or snapshot (snapshot contains data)
         
-        followingIDS!.append(self.UserID!)
-        
-        DBManager.getFollowing(for: self.UserID!){
-            users in
-            for u in users{
-                self.followingIDS!.append(u.userID!)
-                
-            }
-            
-            //...
-            
-            
-            // retrieve posts from database, may return error or snapshot (snapshot contains data)
             let ref = Database.database().reference()
             ref.child("Activity").observe(.childAdded){
             (snapshot) in
              let id = String(snapshot.key)
                 if let ADict = snapshot.value as? [String: Any]{
-                let createdByid = ADict["createdByID"] as? String ?? ""
-                    
-                    if((self.followingIDS?.contains(createdByid)) != nil){
-         
+              let createdByid = ADict["createdByID"] as? String ?? ""
               let Name = ADict["ActivityName"] as? String ?? ""
               let Loc = ADict["location"] as? String ?? ""
               let dis = ADict["Description"] as? String ?? ""
-              let DT = ADict["DateTime"] as? String ?? ""
+                    let DT = ADict["DateTime"] as? String ?? ""
               let AType = ADict["ActivityType"] as? String ?? ""
               let count = ADict["NumOfParticipant"] as? String ?? ""
               let createdByN = ADict["createdByName"] as? String ?? ""
@@ -69,43 +52,39 @@ class ActivitysListTable: UITableViewController {
               let ID = ADict ["ActivityID"] as? String ?? ""
               let price = ADict ["price"] as? String ?? ""
 
-                /// add createdByid
-             //   ref.child("Activity").child(AKey).set(createdByid)
                       
-                        let NewActivity = Activity(createdBy: createdByN,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic: count, Loca : Loc, uid : ID , image : Aimage , id : ID , p : price )
+                    let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, p: price)
                  //       postArray.insert(newPost, at: indx)
-                 
                 
-                         self.ActivitysList?.append(NewActivity)
-                        self.tableView.reloadData()
-                         
-                    } 
+                
+                    //    let currentDate = Date()
+                 ///       print(DT!)
+                        // Create Date Formatter
+                //        let dateFormatter = DateFormatter()
+                 //       dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                  //      dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+                  //      let date = dateFormatter.date(from: DT!)
+                     //   if currentDate.compare(date!) == .orderedDescending {
+                    ref.child("Trainers").child("Approved").child(createdByid).observe(.childAdded){
+                    (snapshot) in
+                        if(snapshot.exists()){
+                        self.ActivitysList?.append(NewActivity)
+                        }
+                        
+                    }
+                    self.tableView.reloadData()
+
             
-            
-        }
+        
         
     
                 
             }}
         
         }
-    
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "ShowActivity" {
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    let Activity = ActivitysList![indexPath.row]
-                    let controller = segue.destination as? ActivityDescription
-                    controller?.Act = Activity
-            
-                }
-            }
-        }*/
 
 }
-extension ActivitysListTable {
-    
+extension TActivityList {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,8 +96,8 @@ extension ActivitysListTable {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"ACell", for: indexPath) as! ActivityCell
-        cell.activi = ActivitysList![indexPath.row]
-        return cell
+           cell.activi = ActivitysList![indexPath.row]
+           return cell
         
     }
     
