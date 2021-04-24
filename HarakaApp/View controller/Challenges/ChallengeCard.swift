@@ -10,7 +10,7 @@ import Firebase
 import FirebaseAuth
 
 
-class ChallengeCard: UIView {
+class ChallengeCard: UIView{
 
     
     //Variables
@@ -19,6 +19,8 @@ class ChallengeCard: UIView {
             updateChallenge()
         }
     }
+    
+    weak var delegate: ScoreboardDelegate?
     
     let secsInAWeek:Float = 604800.0
     let dateFormatter = DateFormatter()
@@ -61,14 +63,20 @@ class ChallengeCard: UIView {
             self.endButton.alpha = 0
         }
         
-        if(challenge.isUserStarted()){
-            self.startButton.alpha = 1
-            self.endButton.alpha = 0
-        }
         else{
-            self.startButton.alpha = 0
-            self.endButton.alpha = 1
+            DBManager.isUserStarted(for: challenge){
+                flag in
+                if(flag){
+                    self.startButton.alpha = 0
+                    self.endButton.alpha = 1
+                }
+                else{
+                    self.startButton.alpha = 1
+                    self.endButton.alpha = 0
+                }
+            }
         }
+        
         
     }
     
@@ -105,21 +113,90 @@ class ChallengeCard: UIView {
         
         return interval
     }
+    func calculatScore(currentDate: String, startDate: String) -> Float {
+            
+        var days = 0
+        var hours:Float = 0.0
+        var mins:Float = 0.0
+        var score:Float = 0.0
+        
+        let currentMonth = currentDate[3..<5]
+        let startMonth = startDate[3..<5]
+
+        let currentDay = Int(currentDate[0..<2])!
+        let startDay = Int(startDate[0..<2])!
+        
+        let currentHour = Int(currentDate[6..<8])!
+        let startHour = Int(startDate[6..<8])!
+        let currentMin = Int(currentDate[currentDate.firstIndex(of:":")!...])!
+        let startMin = Int(startDate[startDate.firstIndex(of:":")!...])!
+        
+        if(currentMonth == startMonth){
+            days = currentDay - startDay
+        }
+        else{
+            days = 30-startDay
+            days = days+currentDay
+        }
+        if(currentHour>=startHour){
+            hours = Float(days*24+(currentHour-startHour))
+        }
+        else{
+            hours = Float(days*24-(startHour-currentHour))
+        }
+        if(currentMin>=startMin){
+            mins = Float(currentMin-startMin)
+        }
+        else{
+            mins = Float(startMin-currentMin)
+        }
+        score = hours + (mins/60)
+        return score
+    
+    }
+
     
     @IBAction func startChallenge(_ sender: Any) {
-        var userStartTime = Date()
-        var uid = Auth.auth().currentUser?.uid
-        
+        let userStartTime = dateFormatter.string(from: Date())
+        let uid = Auth.auth().currentUser?.uid
         
         Database.database().reference().child("ChallengeParticipants").child(challenge.chalID!).child(uid!).setValue([
             "StartTime": userStartTime,
             "Score":0
         ])
         
+        self.startButton.alpha = 0
+        self.endButton.alpha = 1
+        
+    }
+    
+    @IBAction func endChallenge(_ sender: Any) {
+        
+        let userEndTime = dateFormatter.string(from:Date())
+        let uid = Auth.auth().currentUser!.uid
+        
+        Database.database().reference().child("ChallengeParticipants").queryOrderedByKey().queryEqual(toValue: uid).observe(.childAdded, with:{
+            snapshot in
+            guard let dict = snapshot.value as? [String:Any] else {return}
+            let userStartTime = dict["StartTime"] as? String
+            
+            let score = self.calculatScore(currentDate: userEndTime, startDate: userStartTime!)
+            
+            Database.database().reference().child("ChallengeParticipants").queryOrderedByKey().queryEqual(toValue: uid).setValuesForKeys(["Score":score])
+        })
+        
+        self.endButton.alpha = 0
+        self.startButton.alpha = 1
+        
+        
         
     }
     
     @IBAction func viewScoreboard(_ sender: Any) {
+        
+        // Call delegate to perform segue
+        self.delegate?.showScoreboard(ch: challenge)
+       
     }
     
 }
@@ -136,4 +213,9 @@ extension String {
         return self[startIndex..<stopIndex]
     }
 
+}
+
+protocol ScoreboardDelegate: class {
+    
+    func showScoreboard(ch: Challenge)
 }
