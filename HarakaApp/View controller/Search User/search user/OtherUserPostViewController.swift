@@ -53,9 +53,16 @@ class OtherUserPostViewController: UITableViewController {
                 
                          self.tableView.reloadData()
                 }
+                
+                ref.child("users").child(ID).observe(.childAdded){
+                (snapshot) in
+                    if let UserDict = snapshot.value as? [String: Any]{
+                        
+                        
+                    }}
                  }}
         //     self.posts = postArray
-             
+              
              }
          }
          

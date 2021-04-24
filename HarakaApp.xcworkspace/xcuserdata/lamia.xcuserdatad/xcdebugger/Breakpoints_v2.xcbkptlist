@@ -490,7 +490,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "78C3ED55-53C2-4E81-AA6A-1D1197D06B20 - 1666aaaa7b1b51ae"
+                  uuid = "78C3ED55-53C2-4E81-AA6A-1D1197D06B20 - 1666aaaa7b1b5168"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -500,12 +500,12 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Activity/CreateActivity.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "5077">
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
+                  offsetFromSymbolStart = "5780">
                </Location>
                <Location
-                  uuid = "78C3ED55-53C2-4E81-AA6A-1D1197D06B20 - 51a35659f8cfeff6"
+                  uuid = "78C3ED55-53C2-4E81-AA6A-1D1197D06B20 - 51a35659f8cfef30"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -515,8 +515,8 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Activity/CreateActivity.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
                   offsetFromSymbolStart = "136">
                </Location>
             </Locations>
@@ -538,7 +538,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1FDEE35F-6C35-4546-A8F1-BA21873F19E3 - 1666aaaa7b1b50f7"
+                  uuid = "1FDEE35F-6C35-4546-A8F1-BA21873F19E3 - 1666aaaa7b1b57b1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -548,12 +548,12 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Activity/CreateActivity.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "5963">
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "6666">
                </Location>
                <Location
-                  uuid = "1FDEE35F-6C35-4546-A8F1-BA21873F19E3 - 182682fab792b8ae"
+                  uuid = "1FDEE35F-6C35-4546-A8F1-BA21873F19E3 - 182682fab792bfe4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -563,8 +563,8 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Activity/CreateActivity.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
                   offsetFromSymbolStart = "139">
                </Location>
             </Locations>
@@ -691,38 +691,6 @@
                   offsetFromSymbolStart = "102">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5B2C4CC1-79AA-44F6-9752-3E2B624DB7CE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/Userprofile/UserPostsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "fetchPosts()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "545EABB7-E0CB-4035-8210-93FAF2345AF4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/Userprofile/UserPostsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "fetchPosts()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1362,7 +1330,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6034635A-9B7B-4DC0-B1AF-21B32D7D5D69 - ccb0e279a4673c43"
+                  uuid = "6034635A-9B7B-4DC0-B1AF-21B32D7D5D69 - ccb0e279a4673c62"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1372,12 +1340,12 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Trainer/TActivityList.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "7006">
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "7213">
                </Location>
                <Location
-                  uuid = "6034635A-9B7B-4DC0-B1AF-21B32D7D5D69 - 1fcbe262856deb11"
+                  uuid = "6034635A-9B7B-4DC0-B1AF-21B32D7D5D69 - 1fcbe262856deb30"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1387,9 +1355,9 @@
                   urlString = "file:///Users/abdulaziz/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Trainer/TActivityList.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "184">
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "118">
                </Location>
             </Locations>
          </BreakpointContent>

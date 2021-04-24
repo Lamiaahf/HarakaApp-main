@@ -67,21 +67,9 @@ class OtherUserFollowingTable: UITableViewController {
         
         cell.textLabel?.text = self.listFollowing[indexPath.row]?["Name"] as? String
         cell.detailTextLabel?.text = (self.listFollowing[indexPath.row]?["Username"] as? String)!
-        
-        Storage.storage().reference(forURL: (self.listFollowing[indexPath.row]?["ProfilePic"] as? String)!).getData(maxSize: 1048576, completion: { [self] (data, error) in
-
-            guard let imageData = data, error == nil else {
-                return
-            }
-        cell.imageView?.image = UIImage(data: imageData)
-
-        })
-        cell.imageView?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/2
-        cell.imageView?.clipsToBounds = true
-        
-        
         return cell
     }
 
     
 }
+

@@ -12,6 +12,7 @@ class UserPostsViewController: UITableViewController {
     
     var posts:[Post]?
     var uid = Auth.auth().currentUser?.uid
+    var ref = Database.database().reference()
 
          override func viewDidLoad() {
              super.viewDidLoad()
@@ -45,13 +46,13 @@ class UserPostsViewController: UITableViewController {
                     let newPost = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked:false, uid: ID)
                      self.checkLike(post: newPost)
                 if (ID == self.uid){
-                       self.posts?.append(newPost)
-                       //  postArray.append(newPost)
-                     //    indx = indx+1
-                    
-                
-                         self.tableView.reloadData()
-                }
+                    self.posts?.append(newPost)
+                    //  postArray.append(newPost)
+                  //    indx = indx+1
+                 
+             
+                      self.tableView.reloadData()
+             }
                  }}
         //     self.posts = postArray
              
@@ -95,7 +96,7 @@ class UserPostsViewController: UITableViewController {
          }
          
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-             let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell", for: indexPath) as! UserPostCell
+             let cell = tableView.dequeueReusableCell(withIdentifier:"PostCell", for: indexPath) as! PostCell
              cell.post = posts![indexPath.row]
              return cell
              
