@@ -78,7 +78,7 @@ class TrainerChallengeViewController: UIViewController, ScoreboardDelegate{
             let challMin = Int(String(challDate[challIndex...]))!
 
         // if deadline is next month
-        if (Int(currentMonth)! - Int(challMonth)!) == 1 {return true}
+        if (Int(challMonth)! - Int(currentMonth)!) == 1 {return true}
         // if deadline is this month -> check days
         else if currentMonth == challMonth{
             // if deadline is not today

@@ -17,6 +17,7 @@ class ForgotPasswordViewController: UIViewController {
         setUpElements()
 
 
+        hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     func setUpElements() {

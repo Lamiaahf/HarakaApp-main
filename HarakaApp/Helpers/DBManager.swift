@@ -91,7 +91,7 @@ class DBManager {
         let challref = Database.database().reference()
         var ch = Challenge()
         
-        challref.child("Challenges").queryOrdered(byChild: "Deadline").queryLimited(toLast: 1).observeSingleEvent(of: .childAdded){
+        challref.child("Challenges").queryOrdered(byChild: "Deadline").queryLimited(toFirst: 1).observeSingleEvent(of: .childAdded){
             (snapshot) in
             
             if snapshot.exists(){
