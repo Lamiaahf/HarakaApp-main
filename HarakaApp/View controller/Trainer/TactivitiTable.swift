@@ -38,42 +38,31 @@ class TactivitiesTable: UITableViewController {
         (snapshot) in
          let id = String(snapshot.key)
           if let ADict = snapshot.value as? [String: Any]{
+            let createdByid = ADict["createdByID"] as? String ?? ""
           let Name = ADict["ActivityName"] as? String ?? ""
           let Loc = ADict["location"] as? String ?? ""
           let dis = ADict["Description"] as? String ?? ""
           let DT = ADict["DateTime"] as? String ?? ""
           let AType = ADict["ActivityType"] as? String ?? ""
           let count = ADict["NumOfParticipant"] as? String ?? ""
-          let createdByid = ADict["createdByID"] as? String ?? ""
           let createdByN = ADict["createdByName"] as? String ?? ""
           let Aimage = ADict["Image"] as? String ?? ""
           let ID = ADict ["ActivityID"] as? String ?? ""
           let price = ADict ["price"] as? String ?? ""
 
-           
             let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, p: price)
-            
             if (createdByid == self.uid ){
                     self.ActivitysList?.append(NewActivity)
-            }
+                    print(self.ActivitysList)
                     self.tableView.reloadData()
+            }
                 
             }}
         
         }
     
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "ShowActivity" {
-                if let indexPath = tableView.indexPathForSelectedRow {
-                    let Activity = ActivitysList![indexPath.row]
-                    let controller = segue.destination as? ActivityDescription
-                    controller?.Act = Activity
-            
-                }
-            }
-        }*/
+    
 
 }
 extension TactivitiesTable {

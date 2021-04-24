@@ -2254,7 +2254,7 @@
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="koh-KD-8dB" kind="show" id="SsM-Vu-eb0"/>
+                                    <segue destination="aJR-80-cxU" kind="show" id="El0-ig-1Ft"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-Zw-UYl">
@@ -2266,7 +2266,7 @@
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aJR-80-cxU" kind="show" id="tKa-pZ-KTD"/>
+                                    <segue destination="PHz-sp-kJJ" kind="show" id="BNQ-zT-G4a"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.3" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dDk-5R-kpU">
@@ -2303,7 +2303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHc-09-PcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="921.53846153846155" y="4665.63981042654"/>
+            <point key="canvasLocation" x="922" y="4686"/>
         </scene>
         <!--SearchB View Controller-->
         <scene sceneID="woG-hv-5g4">
@@ -2356,8 +2356,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="THv-tT-b7b"/>
                     <connections>
-                        <outlet property="Trainers" destination="2bk-Gn-Jbw" id="Xr2-nW-b2F"/>
+                        <outlet property="Trainers" destination="2bk-Gn-Jbw" id="8Jd-5b-Nib"/>
+                        <outlet property="trainersSearch" destination="ZV2-lB-FiE" id="IwK-8X-ePr"/>
                         <outlet property="users" destination="DLq-hd-UX2" id="4WC-fd-p4V"/>
+                        <outlet property="usersSearch" destination="gvt-4l-CL1" id="km9-c7-rEz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjr-gO-dJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4047,8 +4049,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="RateLable" destination="TA3-MI-D3q" id="SMT-eV-yAu"/>
-                        <outlet property="Username" destination="otg-8a-LaR" id="VcT-GP-KQ6"/>
+                        <outlet property="challengeCard" destination="pm7-in-V3g" id="Ogd-dj-1Y8"/>
+                        <outlet property="notFoundImage" destination="zkt-bC-oOW" id="W5E-AB-rBM"/>
+                        <outlet property="notFoundLabel" destination="lzi-fF-RRJ" id="0aA-Gm-QhK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJk-al-bFU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5397,23 +5400,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="moj-l8-z3V">
                         <nil key="title"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="p6D-ld-7FW">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nIJ-QU-Ub5">
-                                <rect key="frame" x="354" y="11" width="20" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.96865063910000004" green="0.57828378680000003" blue="0.2029522061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="plus.circle.fill" catalog="system"/>
-                                <connections>
-                                    <segue destination="Eog-Oi-Fd2" kind="show" id="PoT-gq-pEv"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LPN-S8-S6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="4646"/>
+            <point key="canvasLocation" x="2082" y="4686"/>
         </scene>
         <!--Users Search Table-->
         <scene sceneID="pIO-qG-Gx4">
@@ -5883,8 +5875,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="0Gh-8D-NQl"/>
         <segue reference="gJH-zc-xPe"/>
-        <segue reference="SsM-Vu-eb0"/>
-        <segue reference="hYJ-Sx-y9x"/>
         <segue reference="1fU-el-i1a"/>
         <segue reference="LXF-N2-MVd"/>
     </inferredMetricsTieBreakers>
