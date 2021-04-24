@@ -102,8 +102,8 @@ class LOGINViewController: UIViewController {
         
         switch M {
         
-        case "The password is invalid or the user does not have a password.":
-            Error.text = "كلمة المرور او البريد الالكتروني غير صحيح"
+        case "An email address must be provided.":
+            Error.text = " فضلا يحب ملئ الخانة"
             self.Error.alpha = 1
 
         case "The email address is badly formatted." :

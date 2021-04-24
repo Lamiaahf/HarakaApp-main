@@ -18,12 +18,11 @@ class Activity {
     var ALoca : String?
     var AImage : String?
     var ActivityID : String?
-    var T : String?
-
+    var price : String?
  
    
 init(createdBy: String?,createdByi :String?, name: String?, disc: String?, DateTime: String?, type: String?, partic: String?, Loca : String?, uid : String?
-     , image : String , id : String , t : String?){
+     , image : String , id : String , p : String ){
        createdByName = createdBy
        createdByID = createdByi
        Aname = name
@@ -34,6 +33,6 @@ init(createdBy: String?,createdByi :String?, name: String?, disc: String?, DateT
        ALoca = Loca
        AImage = image
        ActivityID = id
-       T = t
+       price = p
    }
 }

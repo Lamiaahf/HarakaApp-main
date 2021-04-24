@@ -31,18 +31,11 @@ class TrainerSingupViewController: UIViewController {
     @IBOutlet weak var ErrorM: UILabel!
     
     @IBOutlet weak var Singup: UIButton!
-    /* @IBOutlet  var multiRadioButton:[ UIButton]!{
-        didSet{
-            multiRadioButton.forEach { (button) in
-                button.setImage(UIImage(named:"circle_radio_unselected"), for: .normal)
-                button.setImage(UIImage(named:"circle_radio_selected"), for: .selected)
-            }
-        }
-    }*/
-    
-    
+  
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Style the elements
         setUpElements()
         ref = Database.database().reference()
         creatDatePicker()
@@ -51,10 +44,7 @@ class TrainerSingupViewController: UIViewController {
     }
     
     func setUpElements() {
-    
         ErrorM.alpha = 0
-
-    
         // Style the elements
         Utilities.styleFilledButton(Singup)
         Utilities.styleTextField(NameTS)
@@ -65,27 +55,15 @@ class TrainerSingupViewController: UIViewController {
         Utilities.styleTextField(Age)
         Utilities.styleTextField(LinkedinTS)
         Utilities.styleFilledButton(Singup)
-        Utilities.CircularImageView(AvatarUS)
-
-
-    }
-    
-   /* func setupAvatar (){
-       // AvatarUS.clipsToBounds = true
-        AvatarUS.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer ( target: self, action: #selector(TapToChange))
-        AvatarUS.addGestureRecognizer(tapGesture)
-    }*/
+        Utilities.CircularImageView(AvatarUS)}
     
     // ImagePicker
-     
     @IBAction func TapToChange(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
         picker.delegate = self
         picker.allowsEditing = true
-        present(picker, animated: true)
-    }
+        present(picker, animated: true) }
     
     // creatDatePicker inside TextFilde
     func creatDatePicker()  {
@@ -96,7 +74,6 @@ class TrainerSingupViewController: UIViewController {
         //bar button
         let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
         toolbar.setItems([doneBtn], animated: true)
-        
         // assining toolbare
         Age.inputAccessoryView = toolbar
         //assinge date pickre to text filde
@@ -123,28 +100,17 @@ class TrainerSingupViewController: UIViewController {
             
             return "الرجاء التأكد من أن جميع الحقول ممتلئة ."
         }
-        
         // Check if the password is secure
         let cleanedPassword = PasswordTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        
         if Utilities.isPasswordValid(cleanedPassword) == false {
             // Password isn't secure enough
-            return " الرجاء التأكد من ان كلمة المرور تتكون من ٨ خانات تحتوي على حروف وارقام ."
-        }
-
-            
-        else if PasswordTS.text != ConfpasswordTS.text {
-
+            return " الرجاء التأكد من ان كلمة المرور تتكون من ٨ خانات تحتوي على حروف وارقام ."}
+           
+           else if PasswordTS.text != ConfpasswordTS.text {
                     //Passwords dont match
             return "كلمة المرور غير متطابقة ."}
-        
-
-            
-        
             return nil}
-    
-  
-    //
+
     @IBAction func SingUpTapped(_ sender: Any) {
         guard let imageSelected = self.image else {return}
         guard let  imageData = imageSelected.jpegData(compressionQuality: 0.4) else {return}
@@ -167,11 +133,7 @@ class TrainerSingupViewController: UIViewController {
             let age = Age.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let Linkdein = LinkedinTS.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
-                    // User was created successfully, now store the user info
-                   
-                  // guard let user = result?.user else {return}
-
-
+                // Trainer was created successfully, now store the user info
                     // save the image to firbase Storage and user
                     let storageRef = Storage.storage().reference(forURL: "gs://haraka-73619.appspot.com")
                   let StorageProfilrRef  = storageRef.child("Profile")
@@ -189,18 +151,10 @@ class TrainerSingupViewController: UIViewController {
 
                             self.ref?.child("Trainers").child("Unapproved").childByAutoId().setValue(db)
                             let alert = UIAlertController(title: " رفع طلبك بنجاح  ", message: nil, preferredStyle: UIAlertController.Style.alert)
-                            
-                                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: self.transitionLogIn))
-                            self.present(alert, animated: true, completion: nil)
-
-                        } })
-
-                    }
-                    
-                   // self.transitionToHome()
-
-                        
-                        if error != nil {
+                            // Show alert to Trainer
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: self.transitionLogIn))
+                            self.present(alert, animated: true, completion: nil)} })}
+                    if error != nil {
                             // Show error message
                             self.showError("حدث خطأ ما !!")}
                         

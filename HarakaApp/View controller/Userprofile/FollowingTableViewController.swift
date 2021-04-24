@@ -70,7 +70,7 @@ class FollowingTableViewController: UITableViewController {
         print(self.listFollowing[indexPath.row]!)
         
         cell.textLabel?.text = self.listFollowing[indexPath.row]?["Name"] as? String
-        cell.detailTextLabel?.text = "@"+(self.listFollowing[indexPath.row]?["Username"] as? String)!
+        cell.detailTextLabel?.text = (self.listFollowing[indexPath.row]?["Username"] as? String)!
         
         return cell
     }
