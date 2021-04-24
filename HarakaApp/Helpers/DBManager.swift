@@ -31,6 +31,18 @@ class DBManager {
         })
     }
     
+    static func getPic(for trainer: Trainer, completion: @escaping (UIImage) -> Void){
+        Storage.storage().reference(forURL: trainer.profileImageURL!).getData(maxSize:1048576, completion:{
+            data,error in
+            guard let imageData = data, error == nil else{
+                return completion(UIImage())
+            }
+            let pic = UIImage(data: imageData)
+            completion(pic!)
+            
+        })
+    }
+    
     static func getPic(for user: User, completion: @escaping (UIImage) -> Void) {
 
         Storage.storage().reference(forURL: user.profileImageURL!).getData(maxSize:1048576, completion:{
@@ -55,6 +67,26 @@ class DBManager {
             let comments = snapshot.reversed().compactMap(Comment.init)
             completion(comments)
         })
+    }
+    
+    static func getChallenge(completion: @escaping (Challenge) -> Void) {
+        let challref = Database.database().reference()
+        var ch = Challenge()
+        
+        challref.child("Challenges").queryOrdered(byChild: "Deadline").queryLimited(toLast: 1).observeSingleEvent(of: .childAdded){
+            (snapshot) in
+            
+            if snapshot.exists(){
+                ch = Challenge(snapshot: snapshot)!
+                completion(ch)
+            }
+            else{
+                return completion(ch)
+            }
+            
+            
+        }
+       // completion(ch)
     }
     
     static func getPosts(for user: User, completion: @escaping ([Post]) -> Void) {
@@ -114,25 +146,14 @@ class DBManager {
     static func getTrainer(for id: String, completion: @escaping (Trainer) -> Void) {
         
         var trainer = Trainer()
-        
-
-        Database.database().reference().child("Trainers/Approved/\(id)").getData(completion: {
-            error, snapshot in
-            if let error = error { completion(trainer) }
-            if snapshot.exists(){
-                if let trainerDict = snapshot.value as? [String: Any] {
-                    let username = trainerDict["Username"] as? String
-                    let name = trainerDict["name"] as? String
-                    let email = trainerDict["Email"] as? String
-         //           let followerCount = trainerDict["followerCount"] as? Int
-         //           let profilepic = trainerDict["ProfilePic"] as? String
-                    let age = trainerDict["age"] as? Int
-                    
-                    trainer = Trainer(username: username, name: name, email: email, age: age)
-                    completion(trainer)
-                }
+        let tref =  Database.database().reference().child("Trainers/Approved/\(id)")
+        tref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let dict = snapshot.value as? [String:Any] else {
+                return completion(Trainer())
             }
-        })
+            let t = Trainer(snapshot: snapshot)
+            completion(t!)
+        })     
     
     }
     

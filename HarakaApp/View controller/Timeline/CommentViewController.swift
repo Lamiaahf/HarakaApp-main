@@ -26,6 +26,8 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         commentsTable.estimatedRowHeight = commentsTable.rowHeight
         commentsTable.rowHeight = UITableView.automaticDimension
         
+        hideKeyboardWhenTappedAround()
+        
         comments = []
         fetchComments()
         commentsTable.reloadData()
@@ -83,11 +85,12 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         comments = []
 
-        ref.child("Comments").child(post.postID!).observe(.childAdded){
+        ref.child("Comments").child(post.postID!).observe(.value){
         (snapshot) in
-
-            if snapshot.exists(){
-                if let commentDict = snapshot.value as? [String: Any]{
+            var temp = [Comment]()
+            
+            for child in snapshot.children.allObjects as! [DataSnapshot]{
+                if let commentDict = child.value as? [String: Any]{
                     if let uid = commentDict["uid"] as? String {
                         let comment = commentDict["comment"] as? String ?? ""
                         
@@ -104,9 +107,15 @@ class CommentViewController: UIViewController, UITableViewDelegate, UITableViewD
                             }
                         }
                        
-                        self.comments?.append(newComment)}
+                        temp.append(newComment)
+                        
+                    }
                 }
             }
+            self.comments = temp
+            self.commentsTable.reloadData()
+
+            
 
         }
         

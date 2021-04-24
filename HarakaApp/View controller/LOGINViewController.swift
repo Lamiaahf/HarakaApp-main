@@ -35,6 +35,9 @@ class LOGINViewController: UIViewController {
                 logoLogin.layer.shadowOffset = CGSize(width: 0, height: 0)
                 logoLogin.layer.shadowOpacity = 0.5*/
 
+        hideKeyboardWhenTappedAround()
+
+
     }
     func setUpElements() {
     

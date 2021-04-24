@@ -8,13 +8,20 @@
 import UIKit
 import Firebase
     
-class CreateGameViewController: UIViewController{
+class CreateGameViewController: UIViewController {
     
 
     @IBOutlet weak var gameLabel: UITextField!
     @IBOutlet weak var dismissButton: UIButton!
-    
     @IBOutlet weak var playerCount: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        hideKeyboardWhenTappedAround()
+       dismissButton.layer.cornerRadius = dismissButton.frame.size.width / 2
+    }
     
     @IBAction func Stepper(_ sender: UIStepper) {
         
@@ -22,11 +29,7 @@ class CreateGameViewController: UIViewController{
     
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-       dismissButton.layer.cornerRadius = dismissButton.frame.size.width / 2
-    }
     @IBAction func dismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

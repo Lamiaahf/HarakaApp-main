@@ -39,19 +39,19 @@ struct Animation {
 
 enum Workout: String, CaseIterable {
     
-    case airSquat = "Air Squat"
-    case bicycleCrunch = "Bicycle Crunch"
-    case burpee = "Burpee"
-    case circleCrunch = "Circle Crunch"
-    case jumpingJacks = "Jumping Jacks"
-    case pushUp = "Push Up"
-    case crossJumps = "Cross Jumps"
-    case crossJumpsRotation = "Cross Jumps Rotation"
-    case situps = "Situps"
-    case pikeWalk = "Pike Walk"
-    case pistol = "Pistol"
-    case plank = "Plank"
-    case quickSteps = "Quick Steps"
+    case airSquat = "سكوات"
+    case bicycleCrunch = "بايسكل كرنتش"
+    case burpee = "برپي"
+    case circleCrunch = "سيركل كرنتش"
+    case jumpingJacks = "جمبنق جاكس"
+    case pushUp = "بوش اب"
+    case crossJumps = "كروس جمبس"
+    case crossJumpsRotation = "كروس جمبس روتيشن"
+    case situps = "سيت اب"
+    case pikeWalk = "بايك ووك"
+    case pistol = "بستل"
+    case plank = "بلانك"
+    case quickSteps = "كويك ستبس"
     
     var modelName: String {
         switch self {
@@ -81,6 +81,37 @@ enum Workout: String, CaseIterable {
             return "Plank"
         case .quickSteps:
             return "QuickSteps"
+        }
+    }
+    
+    var modelDescription: String{
+        switch self {
+        case .airSquat:
+            return "كررها ١٠ مرات"
+        case .bicycleCrunch:
+            return "كررها ٥ مرات"
+        case .burpee:
+            return "كررها ٥ مرات"
+        case .circleCrunch:
+            return "كررها ١٠ مرات"
+        case .jumpingJacks:
+            return "كررها ١٥ مرة"
+        case .pushUp:
+            return "كررها ٥ مرات"
+        case .crossJumps:
+            return "كررها ١٠ مرات"
+        case .crossJumpsRotation:
+            return "كررها ١٠ مرات"
+        case .situps:
+            return "كررها ٥ مرات"
+        case .pikeWalk:
+            return "كررها ٥ مرات"
+        case .pistol:
+            return "اثبت ١٠ ثواني"
+        case .plank:
+            return "اثبت ٣٠ ثانية"
+        case .quickSteps:
+            return "كررها ٥ مرات"
         }
     }
     

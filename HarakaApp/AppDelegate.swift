@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Chnage the animation duration
         AMTabView.settings.animationDuration = 1
-
+        // Firebase initialization
         FirebaseApp.configure()
         
         return true

@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
-
 import AMTabView
 
 
@@ -26,7 +25,6 @@ class HomePageViewController: UIViewController , TabItem{
     @IBOutlet var postsHSButton: UIButton!
     
     var databaseRef = Database.database().reference()
-
 
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -51,7 +49,6 @@ class HomePageViewController: UIViewController , TabItem{
 
                 })
         }
-
 }
 
 extension UIButton {

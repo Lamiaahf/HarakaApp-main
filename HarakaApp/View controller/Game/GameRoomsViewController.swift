@@ -43,8 +43,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
                 let name = gameDict["GameName"] as! String
                 let count = gameDict["PlayerCount"] as! Int
                 let gameKey = snapshot.key
-            
-                var g = Game(gName: name, uid: uid, gid: gameKey, count: count)
+                let g = Game(gName: name, uid: uid, gid: gameKey, count: count)
 
                 self.games?.append(g)
                 self.gamesTable.reloadData()
@@ -83,6 +82,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         let gameView = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
         gameView.initializeGame(g: game)
         self.navigationController?.pushViewController(gameView, animated: true)
+ //       self.show(gameView, sender: self)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -99,7 +99,6 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
             destinationVC.transitioningDelegate = self
             destinationVC.modalPresentationStyle = .custom
         }
-        
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

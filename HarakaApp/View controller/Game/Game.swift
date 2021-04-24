@@ -19,6 +19,8 @@ class Game{
         creatorID = uid
         gID = gid
         playerCount = count
+        
+        
     }
     
 }

@@ -22,4 +22,11 @@ struct WorkoutModel {
         return workouts
     }
     
+    func getDescription() -> String{
+       
+        guard let desc = Workout(rawValue: self.name)?.modelDescription
+        else { return ""}
+        return ""
+    }
+    
 }

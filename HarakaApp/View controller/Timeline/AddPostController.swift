@@ -16,6 +16,7 @@ class AddPostController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
     }
     
     // method used to add the post to the database
