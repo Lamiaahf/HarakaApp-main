@@ -162,10 +162,10 @@ class CreateActivity: UIViewController {
             
             self.ref.child("Activity").child(ID!).setValue(AData)
             self.ref.child("Activity").child(ID!).updateChildValues(["ActivityID" : ID as Any])
-
+             
             }
             } ) }
-      
+           
         }
         }
       
@@ -174,14 +174,7 @@ class CreateActivity: UIViewController {
         self.ref.child("JoinedActivity").child(ID).child(self.uid!).setValue("")
             }
     
-    func transitionLogIn(action:UIAlertAction) {
-                    
-            /// present the next VC
-            let vc = self.storyboard?.instantiateViewController(withIdentifier:"CreaActi") as? ActivitysListTable
-            
-            self.view.window?.rootViewController = vc
-            self.view.window?.makeKeyAndVisible()
-        }
+    
         
     func validatefields() -> String? {
         // all fields filled in
@@ -204,6 +197,17 @@ class CreateActivity: UIViewController {
         ErrorM.text = message
         ErrorM.alpha = 1
     }
+    
+    
+    func transition(action:UIAlertAction) {
+                 
+         /// present the next VC
+         let vc = self.storyboard?.instantiateViewController(withIdentifier:"CreaActi") as? ActivitysListTable
+
+         self.view.window?.rootViewController = vc
+         self.view.window?.makeKeyAndVisible()
+     }
+
     }// END OF CLASS
         
         

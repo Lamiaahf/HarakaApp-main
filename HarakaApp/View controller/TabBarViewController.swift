@@ -62,6 +62,8 @@ class TabBarTViewController: AMTabsViewController {
     let HPVC = storyboard.instantiateViewController(withIdentifier: "homeN2")
  
     let MVC = storyboard.instantiateViewController(withIdentifier: "MapN2")
+    let SBVC = storyboard.instantiateViewController(withIdentifier: "SearchN2")
+
   
     let TPVC = storyboard.instantiateViewController(withIdentifier: "TrainerN")
     
@@ -70,6 +72,7 @@ class TabBarTViewController: AMTabsViewController {
     viewControllers = [
       HPVC,
       MVC,
+      SBVC ,
       TPVC
     ]
   }

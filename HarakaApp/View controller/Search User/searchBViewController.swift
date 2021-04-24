@@ -8,9 +8,16 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import AMTabView
 
-class searchBViewController: UIViewController , UINavigationControllerDelegate {
+class searchBViewController: UIViewController , UINavigationControllerDelegate , TabItem {
     
+    
+    var tabImage: UIImage? {
+
+         return UIImage(systemName: "magnifyingglass")
+
+       }
 
     @IBOutlet var usersSearch: UIButton!
     @IBOutlet var trainersSearch: UIButton!
@@ -45,7 +52,7 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
         self.Trainers.alpha = 0
         self.users.alpha = 1
         self.usersSearch.backgroundColor = UIColor.systemGray
-        self.trainersSearch.backgroundColor = UIColor.systemBlue
+        self.trainersSearch.backgroundColor = #colorLiteral(red: 0.4173190594, green: 0.5955227613, blue: 0.6585710645, alpha: 1) 
 
 
        }
@@ -58,8 +65,7 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
             self.users.alpha = 0
             self.Trainers.alpha = 1
         self.trainersSearch.backgroundColor = UIColor.systemGray
-        self.usersSearch.backgroundColor = self.usersSearch.backgroundColor
-
+        self.usersSearch.backgroundColor = #colorLiteral(red: 0.4173190594, green: 0.5955227613, blue: 0.6585710645, alpha: 1)
        }
        )}
 

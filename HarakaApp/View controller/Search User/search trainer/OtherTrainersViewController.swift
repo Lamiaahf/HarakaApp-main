@@ -41,7 +41,7 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
      //style
      Utilities.styleFilledButton(followButton)
      Utilities.CircularImageView(Profilepic)
-     Rating = []
+     Rating = [5,3,1,4]
      
 
 
@@ -239,6 +239,14 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
                    TF?.otherTrainerID = Trainer
                    self.navigationController?.pushViewController(TF!, animated: true)
               }
+    
+    @IBAction func ShowChallenges(_ sender: Any) {
+   
+        let Trainer = self.uid
+        let TF = self.storyboard?.instantiateViewController(withIdentifier: "TChallenges") as? OtherTrainerChallengesTable
+            TF?.otherTrainerID = Trainer
+            self.navigationController?.pushViewController(TF!, animated: true)
+       }
             
            func getRate(){
               
@@ -265,7 +273,7 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
                    sum = sum + R
                }
                }
-               let total = sum/count
+               let total = sum / 5
              let  RateL = String(total)
                RateLable.text = RateL
                
