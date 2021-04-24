@@ -1,16 +1,16 @@
 //
-//  TchallengesTable.swift
+//  OtherTrainerChallengesTable.swift
 //  HarakaApp
 //
-//  Created by lamia on 07/04/2021.
+//  Created by lamia on 24/04/2021.
 //
 
 import UIKit
-import FirebaseAuth
 import FirebaseDatabase
 
-class TchallengesTable: UITableViewController {
+class OtherTrainerChallengesTable: UITableViewController {
 
+    var otherTrainerID : String?
     var ChallengeList:[Challenge]?
 
 
@@ -20,7 +20,6 @@ class TchallengesTable: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-          UserID = Auth.auth().currentUser?.uid
 
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = tableView.rowHeight
@@ -35,7 +34,7 @@ class TchallengesTable: UITableViewController {
     func fetchChallenge(){
   // retrieve Activity from database, may return error or snapshot (snapshot contains data)
         
-            let ref = Database.database().reference()
+            let ref =  Database.database().reference()
             ref.child("Challenges").observe(.childAdded){
             (snapshot) in
                 if let cDict = snapshot.value as? [String:Any]{
@@ -44,7 +43,7 @@ class TchallengesTable: UITableViewController {
 
 
                 let  NewChallenge = Challenge(snapshot: snapshot)
-                            if(self.UserID ==  createdBy){
+                            if(self.otherTrainerID ==  createdBy){
                                 self.ChallengeList?.append(NewChallenge!)
                         }
 
@@ -57,7 +56,7 @@ class TchallengesTable: UITableViewController {
     
                 
      
-extension TchallengesTable {
+extension OtherTrainerChallengesTable {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

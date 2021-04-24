@@ -76,6 +76,8 @@
 		3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */; };
 		3FBB155725CE96780098C299 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB155525CE96780098C299 /* Utilities.swift */; };
 		3FBB155E25D12CC60098C299 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */; };
+		3FCEBDB326346C7F0013F976 /* ChallengCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCEBDB226346C7F0013F976 /* ChallengCell.swift */; };
+		3FCEBDB6263487620013F976 /* OtherTrainerChallengesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCEBDB5263487620013F976 /* OtherTrainerChallengesTable.swift */; };
 		3FD4742825D3264700260C1A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4742725D3264600260C1A /* Service.swift */; };
 		3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */; };
 		3FEF2CE126283C0700D9EC33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FEF2CE026283C0600D9EC33 /* LaunchScreen.storyboard */; };
@@ -190,6 +192,8 @@
 		3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingupViewController.swift; sourceTree = "<group>"; };
 		3FBB155525CE96780098C299 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3FBB155D25D12CC60098C299 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3FCEBDB226346C7F0013F976 /* ChallengCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengCell.swift; sourceTree = "<group>"; };
+		3FCEBDB5263487620013F976 /* OtherTrainerChallengesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTrainerChallengesTable.swift; sourceTree = "<group>"; };
 		3FD4742725D3264600260C1A /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSingupViewController.swift; sourceTree = "<group>"; };
 		3FEF2CE026283C0600D9EC33 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -272,8 +276,7 @@
 				23598F46262F23780090C29C /* EmptyCard.swift */,
 				23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */,
 			);
-			name = "Challenges - Trainer";
-			path = "../Challenges - Trainer";
+			path = "Challenges - Trainer";
 			sourceTree = "<group>";
 		};
 		23A7170D2621DD1100C43FD4 /* Assets */ = {
@@ -465,6 +468,7 @@
 				3F2954CF26332F1D00FE6F44 /* TActivityList.swift */,
 				3FF335C02614DD6A00A905EF /* TrainerSettings.swift */,
 				3F2D100E261DF2500029D96C /* TactivitiTable.swift */,
+				3FCEBDB226346C7F0013F976 /* ChallengCell.swift */,
 				3F2D1011261DF28B0029D96C /* TchallengesTable.swift */,
 			);
 			path = Trainer;
@@ -547,6 +551,7 @@
 			children = (
 				CEC34794260C1BA3004B3754 /* TrainersTableViewController.swift */,
 				3FB489EA2630FCE700A8702B /* OtherTrainerFollowersTable.swift */,
+				3FCEBDB5263487620013F976 /* OtherTrainerChallengesTable.swift */,
 				CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */,
 				3FB489952630920300A8702B /* OtherTActivitysTableV.swift */,
 			);
@@ -695,6 +700,7 @@
 				3F92ADF4261E16BE00EC3085 /* OtherUsersViewController.swift in Sources */,
 				94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */,
 				23B0C736262A695B00E91238 /* CreateGameViewController.swift in Sources */,
+				3FCEBDB326346C7F0013F976 /* ChallengCell.swift in Sources */,
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
 				3F2A3799262BA7C7009EDE21 /* UserActivitysTableView.swift in Sources */,
 				3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */,
@@ -758,6 +764,7 @@
 				CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */,
 				CED6034525F43C5E00C4ACE4 /* Messages.swift in Sources */,
 				3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */,
+				3FCEBDB6263487620013F976 /* OtherTrainerChallengesTable.swift in Sources */,
 				23A717192621E2D100C43FD4 /* WorkoutViewController.swift in Sources */,
 				23104221261B56E8006B2EE4 /* GameCell.swift in Sources */,
 				CEBE9381260387A800A0E363 /* AddViewController.swift in Sources */,
