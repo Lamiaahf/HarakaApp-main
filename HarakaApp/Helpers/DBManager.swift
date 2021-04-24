@@ -78,7 +78,8 @@ class DBManager {
             
             for key in currentTries.keys {
                 guard let dict = currentTries[key] as? [String:Any] else {completion(false); return}
-                if dict["Score"] as! Int == 0 {completion(true); return}
+                let s = dict["Score"] as? Double
+                if dict["Score"] as? Double == 0 {completion(true); return}
                 
             }
             completion(false)

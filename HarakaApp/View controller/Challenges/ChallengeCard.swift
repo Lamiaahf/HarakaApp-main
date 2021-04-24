@@ -128,8 +128,13 @@ class ChallengeCard: UIView{
         
         let currentHour = Int(currentDate[6..<8])!
         let startHour = Int(startDate[6..<8])!
-        let currentMin = Int(currentDate[currentDate.firstIndex(of:":")!...])!
-        let startMin = Int(startDate[startDate.firstIndex(of:":")!...])!
+        
+        let currentMin = Int(String(currentDate[9])+""+String(currentDate[10]))
+        
+            //Int(currentDate[currentDate.firstIndex(of:":")!...])!
+        let startMin = Int(String(startDate[9])+""+String(startDate[10]))
+            
+            //Int(startDate[startDate.firstIndex(of:":")!...])!
         
         if(currentMonth == startMonth){
             days = currentDay - startDay
@@ -138,17 +143,24 @@ class ChallengeCard: UIView{
             days = 30-startDay
             days = days+currentDay
         }
+        // current: 8:18
+        // start: 4:00
         if(currentHour>=startHour){
             hours = Float(days*24+(currentHour-startHour))
+            if(currentMin!<startMin!){
+                hours = hours - 1
+            }
         }
         else{
-            hours = Float(days*24-(startHour-currentHour))
+            if days>0{
+                hours = Float(days*24-(startHour-currentHour))
+            }
         }
-        if(currentMin>=startMin){
-            mins = Float(currentMin-startMin)
+        if(currentMin!>=startMin!){
+            mins = Float(currentMin!-startMin!)
         }
         else{
-            mins = Float(startMin-currentMin)
+            mins = Float(startMin!-currentMin!)
         }
         score = hours + (mins/60)
         return score
@@ -162,7 +174,7 @@ class ChallengeCard: UIView{
         
         Database.database().reference().child("ChallengeParticipants").child(challenge.chalID!).child(uid!).setValue([
             "StartTime": userStartTime,
-            "Score":0
+            "Score":0.0
         ])
         
         self.startButton.alpha = 0
@@ -175,14 +187,14 @@ class ChallengeCard: UIView{
         let userEndTime = dateFormatter.string(from:Date())
         let uid = Auth.auth().currentUser!.uid
         
-        Database.database().reference().child("ChallengeParticipants").queryOrderedByKey().queryEqual(toValue: uid).observe(.childAdded, with:{
+        Database.database().reference().child("ChallengeParticipants").child(challenge.chalID!).queryOrderedByKey().queryEqual(toValue: uid).observe(.childAdded, with:{
             snapshot in
             guard let dict = snapshot.value as? [String:Any] else {return}
             let userStartTime = dict["StartTime"] as? String
             
             let score = self.calculatScore(currentDate: userEndTime, startDate: userStartTime!)
             
-            Database.database().reference().child("ChallengeParticipants").queryOrderedByKey().queryEqual(toValue: uid).setValuesForKeys(["Score":score])
+            Database.database().reference().child("ChallengeParticipants").child(self.challenge.chalID!).child(uid).updateChildValues(["Score":score])
         })
         
         self.endButton.alpha = 0
