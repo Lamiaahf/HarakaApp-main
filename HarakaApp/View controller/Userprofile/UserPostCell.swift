@@ -22,8 +22,9 @@ class UserPostCell: UITableViewCell {
     @IBOutlet weak var commentButton: UIButton!
     
     let ref = Database.database().reference()
+    let id = Auth.auth().currentUser?.uid
     
-    
+ 
     var post: Post!{
         didSet{
             updateTimeline()
@@ -38,6 +39,7 @@ class UserPostCell: UITableViewCell {
     }
     
     func updateTimeline(){
+      
 
         timeAgoLabel.text = post.timeAgo
         captionLabel.text = post.caption
@@ -58,6 +60,7 @@ class UserPostCell: UITableViewCell {
         }
         
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
        super.setSelected(selected, animated: animated)
@@ -82,7 +85,6 @@ class UserPostCell: UITableViewCell {
         updatePost()
         updateTimeline()
         }
-    
     
     func updatePost(){
         ref.child("posts").child(post.postID!).updateChildValues([

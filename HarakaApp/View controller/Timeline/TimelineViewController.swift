@@ -42,7 +42,7 @@ class TimelineViewController: UITableViewController {
             self.followingsIDs?.append(current.userID!)
             self.followings?.append(current)
             
-            DBManager.getFollowing(for: current){
+            DBManager.getFollowing(for: current.userID!){
                 users in
                 for u in users{
                     self.followingsIDs!.append(u.userID!)
@@ -86,7 +86,7 @@ class TimelineViewController: UITableViewController {
             }
         }
         
-        DBManager.getFollowing(for: user){
+        DBManager.getFollowing(for: user.userID!){
             (users) in
             for u in users{
                 DBManager.getPosts(for: u){ (posts) in

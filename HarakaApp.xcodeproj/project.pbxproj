@@ -21,7 +21,6 @@
 		23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23985FBE26021BB100FB2764 /* GameViewController.swift */; };
 		2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF40261736FD00FD9B1C /* DBManager.swift */; };
 		23A042D92633B87D000E25B7 /* ChallengeBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A042D82633B87D000E25B7 /* ChallengeBoardViewController.swift */; };
-		23A717102621DD8500C43FD4 /* model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A7170F2621DD8500C43FD4 /* model.scnassets */; };
 		23A717132621E2B100C43FD4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717122621E2B100C43FD4 /* Extension.swift */; };
 		23A717182621E2D100C43FD4 /* WorkoutNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717152621E2D000C43FD4 /* WorkoutNode.swift */; };
 		23A717192621E2D100C43FD4 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A717162621E2D100C43FD4 /* WorkoutViewController.swift */; };
@@ -33,12 +32,18 @@
 		23F4CD55262F86D00097DA4B /* TrainerChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */; };
 		3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3D6A261216A900246872 /* UsersTableViewController.swift */; };
 		3F1C3DA2261221B600246872 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C3DA1261221B600246872 /* UserProfileViewController.swift */; };
-		3F2A3796262BA6E0009EDE21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A3795262BA6E0009EDE21 /* ViewController.swift */; };
+		3F2954D026332F1D00FE6F44 /* TActivityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2954CF26332F1D00FE6F44 /* TActivityList.swift */; };
+		3F29552A26334C7A00FE6F44 /* alertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F29552926334C7A00FE6F44 /* alertView.swift */; };
+		3F2955662633718E00FE6F44 /* TrainerSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2955652633718E00FE6F44 /* TrainerSearchTable.swift */; };
+		3F29556A2633730900FE6F44 /* UsersSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2955692633730900FE6F44 /* UsersSearchTable.swift */; };
+		3F295588263380DE00FE6F44 /* OtherTrainerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F295587263380DE00FE6F44 /* OtherTrainerTable.swift */; };
+		3F29558B2633817200FE6F44 /* OtherUserTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F29558A2633817200FE6F44 /* OtherUserTable.swift */; };
+		3F295604263436C400FE6F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F295602263436C400FE6F44 /* Assets.xcassets */; };
 		3F2A3799262BA7C7009EDE21 /* UserActivitysTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A3798262BA7C7009EDE21 /* UserActivitysTableView.swift */; };
-		3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */; };
 		3F2D0E65261C94CA0029D96C /* OtherUserPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D0E64261C94CA0029D96C /* OtherUserPostViewController.swift */; };
 		3F2D100F261DF2510029D96C /* TactivitiTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D100E261DF2500029D96C /* TactivitiTable.swift */; };
 		3F2D1012261DF28B0029D96C /* TchallengesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2D1011261DF28B0029D96C /* TchallengesTable.swift */; };
+		3F3C372A26345E2D00966EE4 /* model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3C372926345E2D00966EE4 /* model.scnassets */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885D9F261A56DB003BF3F3 /* FollowersTableViewController.swift */; };
@@ -53,11 +58,18 @@
 		3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA49329260B613C0052A1BD /* Trainner.swift */; };
 		3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4932A260B613C0052A1BD /* ShowTrainner.swift */; };
 		3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA4932B260B613C0052A1BD /* AdminLogin.swift */; };
+		3FB489962630920300A8702B /* OtherTActivitysTableV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB489952630920300A8702B /* OtherTActivitysTableV.swift */; };
+		3FB489EB2630FCE800A8702B /* OtherTrainerFollowersTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB489EA2630FCE700A8702B /* OtherTrainerFollowersTable.swift */; };
+		3FB489EF26318EAD00A8702B /* OtherUserFollowingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB489EE26318EAD00A8702B /* OtherUserFollowingTable.swift */; };
+		3FB489F42631DCB800A8702B /* CWRateKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB489F32631DCB800A8702B /* CWRateKitViewController.swift */; };
+		3FB489F72631DCC400A8702B /* CWRateKitViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB489F62631DCC400A8702B /* CWRateKitViewControllerDelegate.swift */; };
+		3FB489FA2631DCD200A8702B /* CWRateKitHapticMoments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB489F92631DCD200A8702B /* CWRateKitHapticMoments.swift */; };
+		3FB489FD2631DCDA00A8702B /* CWRateKitAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB489FC2631DCDA00A8702B /* CWRateKitAnimationType.swift */; };
+		3FB48A132631F1AB00A8702B /* alertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FB48A122631F1AB00A8702B /* alertView.xib */; };
 		3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */; };
 		3FBB14F725C81CFB0098C299 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F625C81CFB0098C299 /* AppDelegate.swift */; };
 		3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */; };
 		3FBB14FE25C81CFB0098C299 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB14FC25C81CFB0098C299 /* Main.storyboard */; };
-		3FBB150025C81CFD0098C299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FBB14FF25C81CFD0098C299 /* Assets.xcassets */; };
 		3FBB150D25C968560098C299 /* LOGINViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB150C25C968560098C299 /* LOGINViewController.swift */; };
 		3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB152F25C9C3660098C299 /* ForgotPasswordViewController.swift */; };
 		3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB153225C9CF4B0098C299 /* SingupAsViewController.swift */; };
@@ -74,18 +86,16 @@
 		3FF3369C2616547200A905EF /* UserPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3369B2616547200A905EF /* UserPostCell.swift */; };
 		940F4BD625E56E7C00508368 /* activityLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940F4BD525E56E7C00508368 /* activityLocations.swift */; };
 		9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07125D1350C002E0AAB /* HomePageViewController.swift */; };
-		9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07425D13531002E0AAB /* SearchTableViewController.swift */; };
+		9449C07725D13531002E0AAB /* (null) in Sources */ = {isa = PBXBuildFile; };
 		9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07525D13531002E0AAB /* MyTabBar.swift */; };
 		9449C07925D13531002E0AAB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9449C07625D13531002E0AAB /* TabBarViewController.swift */; };
 		9475D8ED2608CE4A00116877 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8EC2608CE4A00116877 /* MapViewController.swift */; };
 		9475D8F02608CE5100116877 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8EF2608CE5100116877 /* Place.swift */; };
 		9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9475D8F22608CE6000116877 /* PlaceViews.swift */; };
 		94CBF5DF2631FFA200741E76 /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310421A261B3750006B2EE4 /* CreateGameViewController.swift */; };
-		94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D4604925E3E528009F31A6 /* NotificationViewController.swift */; };
 		94DDE11925DD34F80029FA09 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11825DD34F80029FA09 /* Post.swift */; };
 		94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11B25DD350B0029FA09 /* PostCell.swift */; };
 		94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE11E25DD35140029FA09 /* TimelineViewController.swift */; };
-		94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */; };
 		CE49441B2610DB4F008DC32B /* OtherTrainersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */; };
 		CE49454D26123346008DC32B /* CircularTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49454C26123346008DC32B /* CircularTransition.swift */; };
 		CE494551261233FC008DC32B /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE494550261233FC008DC32B /* CreateRoomViewController.swift */; };
@@ -121,7 +131,6 @@
 		2399CF3D2617363800FD9B1C /* TrainerChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerChallengeViewController.swift; sourceTree = "<group>"; };
 		2399CF40261736FD00FD9B1C /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		23A042D82633B87D000E25B7 /* ChallengeBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeBoardViewController.swift; sourceTree = "<group>"; };
-		23A7170F2621DD8500C43FD4 /* model.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = model.scnassets; sourceTree = "<group>"; };
 		23A717122621E2B100C43FD4 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		23A717152621E2D000C43FD4 /* WorkoutNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutNode.swift; sourceTree = "<group>"; };
 		23A717162621E2D100C43FD4 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
@@ -131,12 +140,18 @@
 		23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallengeViewController.swift; sourceTree = "<group>"; };
 		3F1C3D6A261216A900246872 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
 		3F1C3DA1261221B600246872 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		3F2A3795262BA6E0009EDE21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3F2954CF26332F1D00FE6F44 /* TActivityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TActivityList.swift; sourceTree = "<group>"; };
+		3F29552926334C7A00FE6F44 /* alertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertView.swift; sourceTree = "<group>"; };
+		3F2955652633718E00FE6F44 /* TrainerSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSearchTable.swift; sourceTree = "<group>"; };
+		3F2955692633730900FE6F44 /* UsersSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersSearchTable.swift; sourceTree = "<group>"; };
+		3F295587263380DE00FE6F44 /* OtherTrainerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTrainerTable.swift; sourceTree = "<group>"; };
+		3F29558A2633817200FE6F44 /* OtherUserTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserTable.swift; sourceTree = "<group>"; };
+		3F295602263436C400FE6F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2A3798262BA7C7009EDE21 /* UserActivitysTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivitysTableView.swift; sourceTree = "<group>"; };
-		3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPosts.swift; sourceTree = "<group>"; };
 		3F2D0E64261C94CA0029D96C /* OtherUserPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserPostViewController.swift; sourceTree = "<group>"; };
 		3F2D100E261DF2500029D96C /* TactivitiTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TactivitiTable.swift; sourceTree = "<group>"; };
 		3F2D1011261DF28B0029D96C /* TchallengesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TchallengesTable.swift; sourceTree = "<group>"; };
+		3F3C372926345E2D00966EE4 /* model.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; name = model.scnassets; path = HarakaApp/Assets/model.scnassets; sourceTree = SOURCE_ROOT; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -154,12 +169,20 @@
 		3FA49329260B613C0052A1BD /* Trainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainner.swift; sourceTree = "<group>"; };
 		3FA4932A260B613C0052A1BD /* ShowTrainner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTrainner.swift; sourceTree = "<group>"; };
 		3FA4932B260B613C0052A1BD /* AdminLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminLogin.swift; sourceTree = "<group>"; };
+		3FB489952630920300A8702B /* OtherTActivitysTableV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTActivitysTableV.swift; sourceTree = "<group>"; };
+		3FB489EA2630FCE700A8702B /* OtherTrainerFollowersTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTrainerFollowersTable.swift; sourceTree = "<group>"; };
+		3FB489EE26318EAD00A8702B /* OtherUserFollowingTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserFollowingTable.swift; sourceTree = "<group>"; };
+		3FB489F32631DCB800A8702B /* CWRateKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWRateKitViewController.swift; sourceTree = "<group>"; };
+		3FB489F62631DCC400A8702B /* CWRateKitViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWRateKitViewControllerDelegate.swift; sourceTree = "<group>"; };
+		3FB489F92631DCD200A8702B /* CWRateKitHapticMoments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWRateKitHapticMoments.swift; sourceTree = "<group>"; };
+		3FB489FC2631DCDA00A8702B /* CWRateKitAnimationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWRateKitAnimationType.swift; sourceTree = "<group>"; };
+		3FB489FF2631DCF900A8702B /* CWRateKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWRateKit.h; sourceTree = "<group>"; };
+		3FB48A122631F1AB00A8702B /* alertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = alertView.xib; sourceTree = "<group>"; };
 		3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		3FBB14F325C81CFB0098C299 /* HarakaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HarakaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBB14F625C81CFB0098C299 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3FBB14FD25C81CFB0098C299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3FBB14FF25C81CFD0098C299 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FBB150425C81CFD0098C299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FBB150C25C968560098C299 /* LOGINViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOGINViewController.swift; sourceTree = "<group>"; };
 		3FBB152F25C9C3660098C299 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -176,20 +199,16 @@
 		3FF3367D26164B3700A905EF /* UserPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsViewController.swift; sourceTree = "<group>"; };
 		3FF3369B2616547200A905EF /* UserPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostCell.swift; sourceTree = "<group>"; };
 		8FDCB37063508050981CA58F /* Pods-HarakaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.debug.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.debug.xcconfig"; sourceTree = "<group>"; };
-		940F4B9425E55A6800508368 /* locations.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = locations.geojson; sourceTree = "<group>"; };
 		940F4BD525E56E7C00508368 /* activityLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityLocations.swift; sourceTree = "<group>"; };
 		9449C07125D1350C002E0AAB /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
-		9449C07425D13531002E0AAB /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		9449C07525D13531002E0AAB /* MyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBar.swift; sourceTree = "<group>"; };
 		9449C07625D13531002E0AAB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9475D8EC2608CE4A00116877 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9475D8EF2608CE5100116877 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		9475D8F22608CE6000116877 /* PlaceViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViews.swift; sourceTree = "<group>"; };
-		94D4604925E3E528009F31A6 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		94DDE11825DD34F80029FA09 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		94DDE11B25DD350B0029FA09 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		94DDE11E25DD35140029FA09 /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		CDF00533D1AE272D2736ACA2 /* Pods-HarakaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HarakaApp.release.xcconfig"; path = "Target Support Files/Pods-HarakaApp/Pods-HarakaApp.release.xcconfig"; sourceTree = "<group>"; };
 		CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherTrainersViewController.swift; sourceTree = "<group>"; };
 		CE49454C26123346008DC32B /* CircularTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularTransition.swift; sourceTree = "<group>"; };
@@ -253,14 +272,14 @@
 				23598F46262F23780090C29C /* EmptyCard.swift */,
 				23F4CD29262F343F0097DA4B /* AddChallengeViewController.swift */,
 			);
-			path = "Challenges - Trainer";
+			name = "Challenges - Trainer";
+			path = "../Challenges - Trainer";
 			sourceTree = "<group>";
 		};
 		23A7170D2621DD1100C43FD4 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				23A7170F2621DD8500C43FD4 /* model.scnassets */,
-				3FBB14FF25C81CFD0098C299 /* Assets.xcassets */,
+				3F295601263436C400FE6F44 /* Assets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -289,6 +308,26 @@
 				23A042D82633B87D000E25B7 /* ChallengeBoardViewController.swift */,
 			);
 			path = Challenges;
+			sourceTree = "<group>";
+		};
+		3F29556426336F7800FE6F44 /* search  trainer */ = {
+			isa = PBXGroup;
+			children = (
+				3F2955652633718E00FE6F44 /* TrainerSearchTable.swift */,
+				3F29558A2633817200FE6F44 /* OtherUserTable.swift */,
+				3F295587263380DE00FE6F44 /* OtherTrainerTable.swift */,
+				3F2955692633730900FE6F44 /* UsersSearchTable.swift */,
+			);
+			path = "search  trainer";
+			sourceTree = "<group>";
+		};
+		3F295601263436C400FE6F44 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3F295602263436C400FE6F44 /* Assets.xcassets */,
+				3F3C372926345E2D00966EE4 /* model.scnassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		3F6A0D8925DD21B900AAB91A /* Recovered References */ = {
@@ -326,6 +365,18 @@
 			path = Admin;
 			sourceTree = "<group>";
 		};
+		3FB489F22631DCA300A8702B /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				3FB489F62631DCC400A8702B /* CWRateKitViewControllerDelegate.swift */,
+				3FB489FC2631DCDA00A8702B /* CWRateKitAnimationType.swift */,
+				3FB489FF2631DCF900A8702B /* CWRateKit.h */,
+				3FB489F92631DCD200A8702B /* CWRateKitHapticMoments.swift */,
+				3FB489F32631DCB800A8702B /* CWRateKitViewController.swift */,
+			);
+			path = Rating;
+			sourceTree = "<group>";
+		};
 		3FBB14EA25C81CFB0098C299 = {
 			isa = PBXGroup;
 			children = (
@@ -355,7 +406,6 @@
 				3FBB14F825C81CFB0098C299 /* SceneDelegate.swift */,
 				3FBB151925C96AF50098C299 /* View controller */,
 				3FBB14FC25C81CFB0098C299 /* Main.storyboard */,
-				3F2A3795262BA6E0009EDE21 /* ViewController.swift */,
 				3FEF2CE026283C0600D9EC33 /* LaunchScreen.storyboard */,
 				3FBB150425C81CFD0098C299 /* Info.plist */,
 			);
@@ -369,21 +419,20 @@
 				3FBB152F25C9C3660098C299 /* ForgotPasswordViewController.swift */,
 				3FBB153225C9CF4B0098C299 /* SingupAsViewController.swift */,
 				3FBB153F25CAE8900098C299 /* UserSingupViewController.swift */,
+				3FB48A122631F1AB00A8702B /* alertView.xib */,
+				3F29552926334C7A00FE6F44 /* alertView.swift */,
 				9449C07125D1350C002E0AAB /* HomePageViewController.swift */,
 				9449C07525D13531002E0AAB /* MyTabBar.swift */,
 				9449C07625D13531002E0AAB /* TabBarViewController.swift */,
-				9449C07425D13531002E0AAB /* SearchTableViewController.swift */,
-				94DDE13825DD3B810029FA09 /* SegmentedControlViewController.swift */,
-				94D4604925E3E528009F31A6 /* NotificationViewController.swift */,
 				3FB6B9AE25EE91F800483AA9 /* CurrentUser.swift */,
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8EF2608CE5100116877 /* Place.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
 				940F4BD525E56E7C00508368 /* activityLocations.swift */,
-				940F4B9425E55A6800508368 /* locations.geojson */,
+				3FB489F22631DCA300A8702B /* Rating */,
 				23104215261B323B006B2EE4 /* Game */,
 				3FF3369E2616E10E00A905EF /* Userprofile */,
-				CEC34787260BF25C004B3754 /* search user-trainer */,
+				CEC34787260BF25C004B3754 /* Search User */,
 				3F92AE95261F51B800EC3085 /* Activity */,
 				23DAC3AC260BB2DB000DB8AB /* Challenges */,
 				23DAC3A6260BB22F000DB8AB /* Timeline */,
@@ -410,8 +459,10 @@
 		3FF335BE2614DD1400A905EF /* Trainer */ = {
 			isa = PBXGroup;
 			children = (
+				3F29556426336F7800FE6F44 /* search  trainer */,
 				3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */,
 				3FF335A12614D82400A905EF /* TrainerProfile.swift */,
+				3F2954CF26332F1D00FE6F44 /* TActivityList.swift */,
 				3FF335C02614DD6A00A905EF /* TrainerSettings.swift */,
 				3F2D100E261DF2500029D96C /* TactivitiTable.swift */,
 				3F2D1011261DF28B0029D96C /* TchallengesTable.swift */,
@@ -470,21 +521,21 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		CEC34787260BF25C004B3754 /* search user-trainer */ = {
+		CEC34787260BF25C004B3754 /* Search User */ = {
 			isa = PBXGroup;
 			children = (
 				CEC3478B260BFC7C004B3754 /* searchBViewController.swift */,
 				CEC34789260BF2E8004B3754 /* search trainer */,
 				CEC34788260BF28B004B3754 /* search user */,
 			);
-			path = "search user-trainer";
+			path = "Search User";
 			sourceTree = "<group>";
 		};
 		CEC34788260BF28B004B3754 /* search user */ = {
 			isa = PBXGroup;
 			children = (
 				3F1C3D6A261216A900246872 /* UsersTableViewController.swift */,
-				3F2D0E61261C93EB0029D96C /* OtherUserPosts.swift */,
+				3FB489EE26318EAD00A8702B /* OtherUserFollowingTable.swift */,
 				3F2D0E64261C94CA0029D96C /* OtherUserPostViewController.swift */,
 				3F92ADF3261E16BE00EC3085 /* OtherUsersViewController.swift */,
 			);
@@ -495,7 +546,9 @@
 			isa = PBXGroup;
 			children = (
 				CEC34794260C1BA3004B3754 /* TrainersTableViewController.swift */,
+				3FB489EA2630FCE700A8702B /* OtherTrainerFollowersTable.swift */,
 				CE49441A2610DB4F008DC32B /* OtherTrainersViewController.swift */,
+				3FB489952630920300A8702B /* OtherTActivitysTableV.swift */,
 			);
 			path = "search trainer";
 			sourceTree = "<group>";
@@ -582,10 +635,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FBB155E25D12CC60098C299 /* GoogleService-Info.plist in Resources */,
-				3FBB150025C81CFD0098C299 /* Assets.xcassets in Resources */,
+				3FB48A132631F1AB00A8702B /* alertView.xib in Resources */,
 				3FEF2CE126283C0700D9EC33 /* LaunchScreen.storyboard in Resources */,
 				3FBB14FE25C81CFB0098C299 /* Main.storyboard in Resources */,
-				23A717102621DD8500C43FD4 /* model.scnassets in Resources */,
+				3F3C372A26345E2D00966EE4 /* model.scnassets in Resources */,
+				3F295604263436C400FE6F44 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +698,7 @@
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
 				3F2A3799262BA7C7009EDE21 /* UserActivitysTableView.swift in Sources */,
 				3FA4932F260B613C0052A1BD /* ShowTrainner.swift in Sources */,
+				3FB489962630920300A8702B /* OtherTActivitysTableV.swift in Sources */,
 				3FBB154025CAE8900098C299 /* UserSingupViewController.swift in Sources */,
 				3F885DA3261A58CF003BF3F3 /* FollowingTableViewController.swift in Sources */,
 				3F2D0E65261C94CA0029D96C /* OtherUserPostViewController.swift in Sources */,
@@ -653,37 +708,40 @@
 				2310421E261B39E4006B2EE4 /* Game.swift in Sources */,
 				3FD4745A25D336CA00260C1A /* TrainerSingupViewController.swift in Sources */,
 				CE494551261233FC008DC32B /* CreateRoomViewController.swift in Sources */,
+				3FB489F72631DCC400A8702B /* CWRateKitViewControllerDelegate.swift in Sources */,
 				3FD4742825D3264700260C1A /* Service.swift in Sources */,
 				2399CF41261736FD00FD9B1C /* DBManager.swift in Sources */,
 				3FA49330260B613C0052A1BD /* AdminLogin.swift in Sources */,
 				3F92AE11261F2CB400EC3085 /* CreateActivity.swift in Sources */,
 				94DDE11F25DD35140029FA09 /* TimelineViewController.swift in Sources */,
 				9449C07825D13531002E0AAB /* MyTabBar.swift in Sources */,
-				94DDE13925DD3B810029FA09 /* SegmentedControlViewController.swift in Sources */,
 				3FBB155725CE96780098C299 /* Utilities.swift in Sources */,
 				CE49441B2610DB4F008DC32B /* OtherTrainersViewController.swift in Sources */,
 				CEC3478C260BFC7C004B3754 /* searchBViewController.swift in Sources */,
+				3F295588263380DE00FE6F44 /* OtherTrainerTable.swift in Sources */,
 				940F4BD625E56E7C00508368 /* activityLocations.swift in Sources */,
 				9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */,
 				3FF3369C2616547200A905EF /* UserPostCell.swift in Sources */,
-				94D4604A25E3E528009F31A6 /* NotificationViewController.swift in Sources */,
+				3F29558B2633817200FE6F44 /* OtherUserTable.swift in Sources */,
 				3FF335A22614D82400A905EF /* TrainerProfile.swift in Sources */,
+				3F29556A2633730900FE6F44 /* UsersSearchTable.swift in Sources */,
 				23104218261B34A7006B2EE4 /* GameRoomsViewController.swift in Sources */,
 				232E738E25F56BAC0029D39C /* Challenge.swift in Sources */,
 				3FA4932D260B613C0052A1BD /* ApproveTrainer.swift in Sources */,
 				23B0C755262E186200E91238 /* ChallengeCard.swift in Sources */,
 				3FF0142D2621EDBA00948FDB /* ActivityDescription.swift in Sources */,
-				3F2D0E62261C93EB0029D96C /* OtherUserPosts.swift in Sources */,
 				9449C07925D13531002E0AAB /* TabBarViewController.swift in Sources */,
+				3FB489EB2630FCE800A8702B /* OtherTrainerFollowersTable.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
 				94CBF5DF2631FFA200741E76 /* CreateGameViewController.swift in Sources */,
 				CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
 				3F92AED2261F623600EC3085 /* ActivitysListTable.swift in Sources */,
+				3FB489FA2631DCD200A8702B /* CWRateKitHapticMoments.swift in Sources */,
+				3FB489F42631DCB800A8702B /* CWRateKitViewController.swift in Sources */,
 				3F1C3D6B261216A900246872 /* UsersTableViewController.swift in Sources */,
 				3F92AEB2261F532300EC3085 /* Activity.swift in Sources */,
-				3F2A3796262BA6E0009EDE21 /* ViewController.swift in Sources */,
 				CED6034225F4353E00C4ACE4 /* ChatCell.swift in Sources */,
 				3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */,
 				3FBB153325C9CF4B0098C299 /* SingupAsViewController.swift in Sources */,
@@ -695,6 +753,7 @@
 				3F2D1012261DF28B0029D96C /* TchallengesTable.swift in Sources */,
 				3FA4932E260B613C0052A1BD /* Trainner.swift in Sources */,
 				23A7171A2621E2D100C43FD4 /* WorkoutModel.swift in Sources */,
+				3FB489FD2631DCDA00A8702B /* CWRateKitAnimationType.swift in Sources */,
 				94DDE11925DD34F80029FA09 /* Post.swift in Sources */,
 				CED6033925F41DB400C4ACE4 /* RoomViewController.swift in Sources */,
 				CED6034525F43C5E00C4ACE4 /* Messages.swift in Sources */,
@@ -709,11 +768,13 @@
 				CE71EE322629372900121E1C /* TRoomViewController.swift in Sources */,
 				3FF3367E26164B3700A905EF /* UserPostsViewController.swift in Sources */,
 				23F4CD2A262F343F0097DA4B /* AddChallengeViewController.swift in Sources */,
-				9449C07725D13531002E0AAB /* SearchTableViewController.swift in Sources */,
+				9449C07725D13531002E0AAB /* (null) in Sources */,
 				9475D8ED2608CE4A00116877 /* MapViewController.swift in Sources */,
 				9475D8F02608CE5100116877 /* Place.swift in Sources */,
 				3FBB14F925C81CFB0098C299 /* SceneDelegate.swift in Sources */,
 				CED6030B25F3D5BB00C4ACE4 /* RoomsViewController.swift in Sources */,
+				3FB489EF26318EAD00A8702B /* OtherUserFollowingTable.swift in Sources */,
+				3F2955662633718E00FE6F44 /* TrainerSearchTable.swift in Sources */,
 				9449C07225D1350C002E0AAB /* HomePageViewController.swift in Sources */,
 				23598F47262F23780090C29C /* EmptyCard.swift in Sources */,
 				3FF335C12614DD6A00A905EF /* TrainerSettings.swift in Sources */,
@@ -722,6 +783,8 @@
 				3FB6B9AF25EE91F800483AA9 /* CurrentUser.swift in Sources */,
 				CEBE937D2602758F00A0E363 /* CalenderViewController.swift in Sources */,
 				CE58002926261C6E002C3F1C /* RoomsCell.swift in Sources */,
+				3F2954D026332F1D00FE6F44 /* TActivityList.swift in Sources */,
+				3F29552A26334C7A00FE6F44 /* alertView.swift in Sources */,
 				CEC34795260C1BA9004B3754 /* TrainersTableViewController.swift in Sources */,
 				232E739125F588290029D39C /* ChallengeViewController.swift in Sources */,
 				23A717132621E2B100C43FD4 /* Extension.swift in Sources */,
