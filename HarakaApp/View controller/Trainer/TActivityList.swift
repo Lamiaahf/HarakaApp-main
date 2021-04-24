@@ -55,18 +55,16 @@ class TActivityList: UITableViewController {
                       
                     let NewActivity = Activity(createdBy: createdByN ,createdByi :createdByid, name: Name, disc: dis, DateTime: DT, type: AType, partic:count, Loca : Loc, uid: id, image: Aimage, id: ID, p: price)
                     
-                    ref.child("Trainers").child("Approved").child(createdByid).observe(.childAdded){
+                    ref.child("Trainers").child("Approved").child(createdByid).observe(.value){
                     (snapshot) in
                         if(snapshot.exists()){
                         self.ActivitysList?.append(NewActivity)
+                            self.tableView.reloadData()
                         }
                         
                     }
-                    self.tableView.reloadData()
+                   // self.tableView.reloadData()
 
-            
-        
-        
     
                 
             }
