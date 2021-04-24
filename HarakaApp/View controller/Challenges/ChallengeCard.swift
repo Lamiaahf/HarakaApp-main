@@ -67,10 +67,12 @@ class ChallengeCard: UIView{
             DBManager.isUserStarted(for: challenge){
                 flag in
                 if(flag){
+                    self.endButton.applyDesign()
                     self.startButton.alpha = 0
                     self.endButton.alpha = 1
                 }
                 else{
+                    self.startButton.applyDesign()
                     self.startButton.alpha = 1
                     self.endButton.alpha = 0
                 }

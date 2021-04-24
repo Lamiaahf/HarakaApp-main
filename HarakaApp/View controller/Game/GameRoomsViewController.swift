@@ -29,6 +29,7 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
         gamesTable.dataSource = self
         gamesTable.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
+
         
          games = []
         fetchGames()
@@ -104,14 +105,14 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = createGame.center
-        //transition.circleColor = createGame.backgroundColor!
+        transition.circleColor = createGame.backgroundColor!
         return transition
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
         transition.startingPoint = createGame.center
-    //transition.circleColor = createGame.backgroundColor!
+        transition.circleColor = createGame.backgroundColor!
         
         return transition
     }
