@@ -117,7 +117,7 @@
             <objects>
                 <viewController id="xlV-H2-aCd" userLabel="SingupAsView Controller" customClass="SingupAsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mL6-mc-Sgg">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انشاء حساب كـ " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rc-jo-QaX">
@@ -271,7 +271,7 @@
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" id="xhC-NZ-VlX" userLabel="UserSingupViewController" customClass="UserSingupViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vnv-gq-jrN">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRQ-wD-X0a">
@@ -2355,12 +2355,14 @@
                     <navigationItem key="navigationItem" id="THv-tT-b7b"/>
                     <connections>
                         <outlet property="Trainers" destination="2bk-Gn-Jbw" id="Xr2-nW-b2F"/>
+                        <outlet property="trainersSearch" destination="ZV2-lB-FiE" id="FIV-Hm-9sr"/>
                         <outlet property="users" destination="DLq-hd-UX2" id="4WC-fd-p4V"/>
+                        <outlet property="usersSearch" destination="gvt-4l-CL1" id="v6o-L2-Q8W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tjr-gO-dJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4904.6153846153848" y="4665.63981042654"/>
+            <point key="canvasLocation" x="5833.8461538461534" y="4665.63981042654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="diU-LL-0qM">
@@ -2491,7 +2493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hY-eW-UI9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5820" y="4665.63981042654"/>
+            <point key="canvasLocation" x="6749.2307692307686" y="4665.63981042654"/>
         </scene>
         <!--Tchallenges Table-->
         <scene sceneID="1N0-su-Gmz">
@@ -2528,7 +2530,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MnR-p7-bRZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7488" y="5117"/>
+            <point key="canvasLocation" x="8416.9230769230762" y="5116.350710900474"/>
         </scene>
         <!--Tfollowers Table-->
         <scene sceneID="ZMe-g6-5Ev">
@@ -2565,7 +2567,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7g-hb-wft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8416.9230769230762" y="4126.7772511848343"/>
+            <point key="canvasLocation" x="9346.1538461538457" y="4126.7772511848343"/>
         </scene>
         <!--Trainer Settings-->
         <scene sceneID="7uH-6v-19l">
@@ -2993,15 +2995,15 @@
             <objects>
                 <tableViewController id="Osg-kA-dEC" customClass="FollowersTableViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r1v-XO-UAI">
-                        <rect key="frame" x="0.0" y="0.0" width="358" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="323" height="380"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="followersUserCell" textLabel="QgC-d0-AQ4" detailTextLabel="47I-90-fUD" rowHeight="72" style="IBUITableViewCellStyleSubtitle" id="wbc-cP-8II">
-                                <rect key="frame" x="0.0" y="28" width="358" height="72"/>
+                                <rect key="frame" x="0.0" y="28" width="323" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wbc-cP-8II" id="xon-7a-s8x">
-                                    <rect key="frame" x="0.0" y="0.0" width="358" height="72"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="323" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QgC-d0-AQ4">
@@ -5080,7 +5082,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BmX-nq-ghI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6791" y="4565"/>
+            <point key="canvasLocation" x="7720" y="4564.6919431279621"/>
         </scene>
         <!--انشاء فعالية-->
         <scene sceneID="ler-Xx-oRu">
@@ -5726,10 +5728,27 @@
             </objects>
             <point key="canvasLocation" x="1841.5384615384614" y="3922.7488151658767"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6bk-gN-sK4">
+            <objects>
+                <navigationController storyboardIdentifier="SearchN2" automaticallyAdjustsScrollViewInsets="NO" id="frl-ej-Mfk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="up7-W4-a6Z">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cYb-eI-z92" kind="relationship" relationship="rootViewController" id="xMv-Tx-sMF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1D-dG-rt2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4904.6153846153848" y="4665.63981042654"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J9l-gp-aVg"/>
-        <segue reference="Q3a-5p-vEn"/>
+        <segue reference="0Gh-8D-NQl"/>
         <segue reference="gJH-zc-xPe"/>
         <segue reference="n49-y8-cSu"/>
         <segue reference="PoT-gq-pEv"/>

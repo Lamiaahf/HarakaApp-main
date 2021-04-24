@@ -8,9 +8,14 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import AMTabView
 
-class searchBViewController: UIViewController , UINavigationControllerDelegate {
+class searchBViewController: UIViewController , UINavigationControllerDelegate, TabItem {
     
+    
+    var tabImage: UIImage? {
+      return UIImage(systemName: "magnifyingglass")
+    }
 
     @IBOutlet var usersSearch: UIButton!
     @IBOutlet var trainersSearch: UIButton!
@@ -30,14 +35,6 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate {
         self.loggedInUser = Auth.auth().currentUser
 
     }
-    
-    
-
-    
-    
-    
-    
-    
 
     @IBAction func ShowUsers(_ sender: Any) {
     
