@@ -1168,6 +1168,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.75263606423940566" green="0.80095014346095261" blue="0.83307571367157363" alpha="0.7266695205479452" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="1" green="0.85580513480585707" blue="0.81637988605546863" alpha="0.97022153253424659" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="9fy-om-6cp" firstAttribute="top" secondItem="d3u-In-ZKR" secondAttribute="top" id="CgT-sM-KSV"/>
                                     <constraint firstItem="9fy-om-6cp" firstAttribute="leading" secondItem="d3u-In-ZKR" secondAttribute="leading" id="IJd-tR-DSE"/>
@@ -1197,98 +1198,91 @@
             </objects>
             <point key="canvasLocation" x="1261.5384615384614" y="1590.995260663507"/>
         </scene>
-        <!--View Controller-->
+        <!--Challenge Board View Controller-->
         <scene sceneID="Y0o-Se-RzB">
             <objects>
-                <viewController id="A80-28-8BF" sceneMemberID="viewController">
+                <viewController id="A80-28-8BF" customClass="ChallengeBoardViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ydD-Iu-g5H">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eWq-Sw-p31">
-                                <rect key="frame" x="39" y="149" width="312" height="494"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="wYY-II-duX">
+                                <rect key="frame" x="39" y="180" width="312" height="484"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="wYY-II-duX">
-                                        <rect key="frame" x="0.0" y="0.0" width="312" height="484"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="separatorColor" red="0.79204062249999996" green="0.69412205910000002" blue="0.99828380350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
-                                        <view key="tableHeaderView" contentMode="scaleToFill" id="OHY-Kj-nm1">
-                                            <rect key="frame" x="0.0" y="0.0" width="312" height="51"/>
+                                <color key="separatorColor" red="0.79204062249999996" green="0.69412205910000002" blue="0.99828380350000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="OHY-Kj-nm1">
+                                    <rect key="frame" x="0.0" y="0.0" width="312" height="51"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الاسم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekd-XP-28f">
+                                            <rect key="frame" x="208" y="21" width="49" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="النتيجة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zy-pa-2Ur">
+                                            <rect key="frame" x="72" y="21" width="56" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-ct-fYT">
+                                            <rect key="frame" x="17" y="50" width="278" height="1"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerCell" rowHeight="70" id="cB8-C8-mUs" customClass="PlayerCell" customModule="HarakaApp" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="106.33333206176758" width="280" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cB8-C8-mUs" id="FUo-RS-z8f">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الاسم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekd-XP-28f">
-                                                    <rect key="frame" x="208" y="21" width="49" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الاسم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjm-O7-7nH">
+                                                    <rect key="frame" x="158" y="25" width="72" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="النتيجة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zy-pa-2Ur">
-                                                    <rect key="frame" x="72" y="21" width="56" height="21"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crown.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8x4-M7-ZSE">
+                                                    <rect key="frame" x="16" y="18" width="33" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="tintColor" red="0.91755234770000005" green="0.91520491810000004" blue="0.2558491926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7k-yj-BuC">
+                                                    <rect key="frame" x="63" y="25" width="81" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ue9-ct-fYT">
-                                                    <rect key="frame" x="17" y="50" width="278" height="1"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AqS-x8-e8X">
+                                                    <rect key="frame" x="238" y="19.999999999999091" width="37" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" red="0.42902898789999999" green="0.52765965459999997" blue="0.6313864589" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        </view>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerCell" rowHeight="70" id="cB8-C8-mUs" customClass="PlayerCell" customModule="HarakaApp" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="106.33333206176758" width="280" height="70"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cB8-C8-mUs" id="FUo-RS-z8f">
-                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الاسم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hjm-O7-7nH">
-                                                            <rect key="frame" x="158" y="25" width="72" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="crown.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8x4-M7-ZSE">
-                                                            <rect key="frame" x="16" y="18" width="33" height="34"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="tintColor" red="0.91755234770000005" green="0.91520491810000004" blue="0.2558491926" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7k-yj-BuC">
-                                                            <rect key="frame" x="63" y="25" width="81" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AqS-x8-e8X">
-                                                            <rect key="frame" x="238" y="19.999999999999091" width="37" height="32"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="tintColor" red="0.42902898789999999" green="0.52765965459999997" blue="0.6313864589" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="firstPlace" destination="8x4-M7-ZSE" id="eQH-FG-Qn6"/>
-                                                    <outlet property="playerLabel" destination="Hjm-O7-7nH" id="YwH-rb-2E4"/>
-                                                    <outlet property="rankImage" destination="AqS-x8-e8X" id="Wcl-5t-kTg"/>
-                                                    <outlet property="scoreLabel" destination="l7k-yj-BuC" id="Te9-a8-DYI"/>
-                                                </connections>
-                                            </tableViewCell>
-                                        </prototypes>
-                                        <sections/>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstPlace" destination="8x4-M7-ZSE" id="eQH-FG-Qn6"/>
+                                            <outlet property="playerLabel" destination="Hjm-O7-7nH" id="YwH-rb-2E4"/>
+                                            <outlet property="rankImage" destination="AqS-x8-e8X" id="Wcl-5t-kTg"/>
+                                            <outlet property="scoreLabel" destination="l7k-yj-BuC" id="Te9-a8-DYI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="لائحة المتصدرين " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTm-12-6EB">
-                                <rect key="frame" x="126" y="96" width="139" height="26"/>
+                                <rect key="frame" x="126" y="115" width="139" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
@@ -1299,6 +1293,9 @@
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <navigationItem key="navigationItem" id="Taj-P8-SFH"/>
+                    <connections>
+                        <outlet property="participantsBoard" destination="wYY-II-duX" id="wIK-7H-auV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYR-xg-b7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2149,6 +2146,19 @@
                                             <action selector="viewScoreboard:" destination="n5g-2X-NMA" eventType="touchUpInside" id="6nq-K4-wdP"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiG-s4-ABd">
+                                        <rect key="frame" x="108" y="366" width="65" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.85580513479999998" blue="0.81637988610000001" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <state key="normal" title="انهاء">
+                                            <color key="titleColor" red="1" green="0.32438657319999997" blue="0.01271856081" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="endChallenge:" destination="n5g-2X-NMA" eventType="touchUpInside" id="GWt-2a-hUe"/>
+                                            <action selector="endChallenge:" destination="pm7-in-V3g" eventType="touchUpInside" id="jy0-V6-as6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.6215635477" green="0.89557001079999998" blue="1" alpha="0.1475545805" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.6215635477" green="0.89557001079999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -2945,8 +2955,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="358" height="57"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="النتيجة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9b-Iv-94f">
-                                            <rect key="frame" x="78" y="16" width="56" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الزمن" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9b-Iv-94f">
+                                            <rect key="frame" x="78" y="16" width="56" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <nil key="textColor"/>
@@ -3860,7 +3870,7 @@
                                         <connections>
                                             <action selector="startChallenge:" destination="pm7-in-V3g" eventType="touchUpInside" id="AUG-UB-mYI"/>
                                             <action selector="startChallenge:" destination="n5g-2X-NMA" eventType="touchUpInside" id="wuf-mI-UzE"/>
-                                            <segue destination="mHa-Ff-wme" kind="popoverPresentation" popoverAnchorView="oLY-lU-v7L" id="MeD-6c-Dyw">
+                                            <segue destination="mHa-Ff-wme" kind="popoverPresentation" popoverAnchorView="oLY-lU-v7L" id="EP5-fE-mvV">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -3884,7 +3894,6 @@
                                         <connections>
                                             <action selector="viewScoreboard:" destination="pm7-in-V3g" eventType="touchUpInside" id="0nt-Qh-f7M"/>
                                             <action selector="viewScoreboard:" destination="n5g-2X-NMA" eventType="touchUpInside" id="xfF-qD-Nht"/>
-                                            <segue destination="A80-28-8BF" kind="showDetail" id="7aB-0r-XLO"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="النهاية:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ems-05-Tax">
@@ -3902,6 +3911,10 @@
                                         <state key="normal" title="انهاء">
                                             <color key="titleColor" red="1" green="0.32438657321252362" blue="0.012718560813362756" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="endChallenge:" destination="pm7-in-V3g" eventType="touchUpInside" id="BFz-Ut-Oj3"/>
+                                            <action selector="endChallenge:" destination="n5g-2X-NMA" eventType="touchUpInside" id="nrH-q6-NKM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.62156354773296507" green="0.8955700108111998" blue="1" alpha="0.14755458047945205" colorSpace="custom" customColorSpace="displayP3"/>

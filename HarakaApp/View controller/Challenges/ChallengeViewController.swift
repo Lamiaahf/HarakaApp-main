@@ -8,7 +8,8 @@
 import UIKit
 import Firebase
 
-class ChallengeViewController: UIViewController {
+class ChallengeViewController: UIViewController, ScoreboardDelegate {
+    
     
     var challenge:Challenge?
     var ref: DatabaseReference!
@@ -16,6 +17,7 @@ class ChallengeViewController: UIViewController {
     @IBOutlet weak var notFoundImage: UIImageView!
     @IBOutlet weak var notFoundLabel: UILabel!
     @IBOutlet weak var challengeCard: ChallengeCard!
+    // var cardView: ChallengeCard!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,8 @@ class ChallengeViewController: UIViewController {
         challengeCard.alpha = 0
         notFoundImage.alpha = 0
         notFoundLabel.alpha = 0
+        
+        challengeCard.delegate = self
         
         fetchChallenge()
 
@@ -34,8 +38,6 @@ class ChallengeViewController: UIViewController {
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM HH:mm"
-     //   formatter.timeZone = TimeZone(abbreviation: "GMT")
-        formatter.locale = Locale.current
         let currentDate = formatter.string(from:Date())
         
         DBManager.getChallenge(){
@@ -110,6 +112,13 @@ class ChallengeViewController: UIViewController {
     }
 
 
+    // Delegate "ScoreboardDelegate" methods
+    func showScoreboard(ch: Challenge){
+        let vc = ChallengeBoardViewController()
+        vc.currentChallenge = ch
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 
 }
 
