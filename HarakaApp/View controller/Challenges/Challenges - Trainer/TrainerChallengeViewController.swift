@@ -25,6 +25,8 @@ class TrainerChallengeViewController: UIViewController, ScoreboardDelegate{
         self.emptyCard.alpha = 0
         
         challengeCard.delegate = self
+        challengeCard.reDesign()
+        emptyCard.reDesign()
         
         fetchChallenge()
     }
