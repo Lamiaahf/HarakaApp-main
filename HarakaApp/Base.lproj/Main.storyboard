@@ -16,7 +16,7 @@
             <objects>
                 <viewController storyboardIdentifier="login" id="1hz-MV-dWp" customClass="LOGINViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sQD-BD-U8a">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="large" translatesAutoresizingMaskIntoConstraints="NO" id="5Tq-39-aMz">
@@ -2810,8 +2810,9 @@
                             <constraint firstItem="jPJ-Zp-NPA" firstAttribute="leading" secondItem="9LP-pX-Mlc" secondAttribute="leading" id="uUC-Hs-q6H"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="المـذكرة" id="r5k-NU-YVI">
-                        <barButtonItem key="leftBarButtonItem" title="رجوع" id="GGl-fN-zhG"/>
+                    <navigationItem key="navigationItem" title="المـذكرة" leftItemsSupplementBackButton="YES" id="r5k-NU-YVI">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="Vbd-r0-OLJ"/>
+                        <barButtonItem key="leftBarButtonItem" id="GGl-fN-zhG"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="koY-cm-DrY">
                             <color key="tintColor" name="Color"/>
                             <connections>
@@ -4067,7 +4068,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="Vff-fS-EVw">
-                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
