@@ -89,6 +89,11 @@ class TrainerSingupViewController: UIViewController {
         formatter.timeStyle = .none
         Age.text = formatter.string(from:DatePicker.date)
         self.view.endEditing(true)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     func validatefields() -> String?{
     // all fields filled in

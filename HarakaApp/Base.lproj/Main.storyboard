@@ -16,7 +16,7 @@
             <objects>
                 <viewController storyboardIdentifier="login" id="1hz-MV-dWp" customClass="LOGINViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sQD-BD-U8a">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="large" translatesAutoresizingMaskIntoConstraints="NO" id="5Tq-39-aMz">
@@ -117,7 +117,7 @@
             <objects>
                 <viewController id="xlV-H2-aCd" userLabel="SingupAsView Controller" customClass="SingupAsViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mL6-mc-Sgg">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="انشاء حساب كـ " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rc-jo-QaX">
@@ -130,31 +130,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbJ-nv-3Wk">
-                                <rect key="frame" x="142" y="528" width="115" height="96"/>
+                                <rect key="frame" x="129" y="470" width="132" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="coach"/>
+                                <state key="normal" image="icons8-coach-96"/>
                                 <connections>
                                     <segue destination="byR-W7-0fc" kind="show" id="Qje-eL-3Yz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مستخدم " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v5-9P-z6M">
-                                <rect key="frame" x="175" y="394" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مدرب  " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJV-oq-Dxg">
-                                <rect key="frame" x="183" y="646" width="49" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مستخدم " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v5-9P-z6M">
+                                <rect key="frame" x="164" y="389" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xm2-IK-g3N">
-                                <rect key="frame" x="117" y="242" width="167" height="160"/>
+                                <rect key="frame" x="153" y="289" width="85" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icons8-male-user-96 (1)"/>
+                                <state key="normal" image="icons8-user-male-481"/>
                                 <connections>
                                     <segue destination="xhC-NZ-VlX" kind="show" id="J9l-gp-aVg"/>
                                 </connections>
@@ -165,9 +158,17 @@
                                 <color key="tintColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="xmark" catalog="system"/>
                                 <connections>
+                                    <action selector="dismiss:" destination="xlV-H2-aCd" eventType="touchUpInside" id="zAi-TR-tEv"/>
                                     <segue destination="1hz-MV-dWp" kind="show" id="e8W-y0-uAt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مدرب  " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJV-oq-Dxg">
+                                <rect key="frame" x="171" y="607" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ReE-Yp-sZY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -279,6 +280,7 @@
                                 <color key="tintColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="xmark" catalog="system"/>
                                 <connections>
+                                    <action selector="dismiss:" destination="xhC-NZ-VlX" eventType="touchUpInside" id="y22-Q3-lcK"/>
                                     <segue destination="xlV-H2-aCd" kind="show" id="tEi-oZ-rgX"/>
                                 </connections>
                             </button>
@@ -412,6 +414,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="byR-W7-0fc" eventType="touchUpInside" id="Hq2-6H-9et"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHl-Ty-Lah">
                                 <rect key="frame" x="16" y="216" width="358" height="34"/>
@@ -5723,12 +5728,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="J9l-gp-aVg"/>
         <segue reference="Q3a-5p-vEn"/>
         <segue reference="gJH-zc-xPe"/>
-        <segue reference="SsM-Vu-eb0"/>
+        <segue reference="n49-y8-cSu"/>
         <segue reference="PoT-gq-pEv"/>
-        <segue reference="1fU-el-i1a"/>
-        <segue reference="LXF-N2-MVd"/>
+        <segue reference="tEi-oZ-rgX"/>
+        <segue reference="e8W-y0-uAt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="Color"/>
     <resources>
@@ -5738,18 +5744,19 @@
         <image name="as" width="128" height="128"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
-        <image name="coach" width="512" height="512"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="fire-filled-large" width="96" height="96"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="icons8-barbell-100" width="100" height="100"/>
+        <image name="icons8-coach-96" width="96" height="96"/>
         <image name="icons8-leaderboard-50" width="50" height="50"/>
         <image name="icons8-male-user-96 (1)" width="96" height="96"/>
         <image name="icons8-settings-500" width="500" height="500"/>
         <image name="icons8-settings-512" width="512" height="512"/>
         <image name="icons8-user-male-480" width="480" height="480"/>
+        <image name="icons8-user-male-481" width="480" height="480"/>
         <image name="large" width="5000" height="5000"/>
         <image name="location.north" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

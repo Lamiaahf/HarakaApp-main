@@ -106,8 +106,13 @@ class UserSingupViewController: UIViewController  {
         formatter.timeStyle = .none
         DOBUS.text = formatter.string(from:DatePicker.date)
         self.view.endEditing(true)
+        self.dismiss(animated: true, completion: nil)
     }
- 
+    
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     // check thev fields and validat data if everything is correct the methode will return nil otherwise its will return error massge
     func validatefields() -> String?{
     // all fields filled in
