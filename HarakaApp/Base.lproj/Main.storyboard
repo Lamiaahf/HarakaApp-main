@@ -16,7 +16,7 @@
             <objects>
                 <viewController storyboardIdentifier="login" id="1hz-MV-dWp" customClass="LOGINViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sQD-BD-U8a">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="large" translatesAutoresizingMaskIntoConstraints="NO" id="5Tq-39-aMz">
@@ -3337,8 +3337,8 @@
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Admin Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb3-gk-sZq">
-                                <rect key="frame" x="87" y="74" width="216" height="91"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="تسجيل دخول المشرف " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb3-gk-sZq">
+                                <rect key="frame" x="64" y="74" width="262" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3442,7 +3442,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <state key="normal" title="قبول ">
-                                    <color key="titleColor" name="Color"/>
+                                    <color key="titleColor" red="0.88453263039999996" green="0.94077503679999996" blue="0.97836285830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="accept:" destination="Usp-ko-1a7" eventType="touchUpInside" id="b56-XB-2eL"/>
@@ -3460,7 +3460,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="رفض">
-                                    <color key="titleColor" name="Color"/>
+                                    <color key="titleColor" red="0.88453263039999996" green="0.94077503679999996" blue="0.97836285830000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="regect:" destination="Usp-ko-1a7" eventType="touchUpInside" id="QuS-JA-hvR"/>
@@ -3536,6 +3536,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.14999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="withBackground" translatesAutoresizingMaskIntoConstraints="NO" id="g1O-Cb-eJQ">
+                                <rect key="frame" x="-22" y="0.0" width="412" height="754"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vaL-Fq-Gt0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4068,7 +4072,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="Vff-fS-EVw">
-                            <rect key="frame" x="0.0" y="0.0" width="326" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="358" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -5913,6 +5917,7 @@
         <image name="swipe-right (1)" width="512" height="512"/>
         <image name="text.bubble" catalog="system" width="128" height="110"/>
         <image name="win" width="512" height="512"/>
+        <image name="withBackground" width="5000" height="5000"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="Color">
             <color red="0.41699999570846558" green="0.59200000762939453" blue="0.65499997138977051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
