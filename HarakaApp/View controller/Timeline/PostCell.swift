@@ -89,11 +89,13 @@ class PostCell: UITableViewCell{
             post.numOfLikes = post.numOfLikes!-1
         }
         updatePost()
-        updateTimeline()
+      //  updateTimeline()
         }
     
     
     func updatePost(){
+        self.likesLabel.text = "\(post.numOfLikes!)"
+        self.commentsLabel.text = "\(post.numOfComments!)"
         ref.child("posts").child(post.postID!).updateChildValues([
                     "numOfLikes":post.numOfLikes!,
                     "numOfComments":post.numOfComments!])

@@ -1,7 +1,31 @@
+//
+//  AMTabsViewController.swift
+//  AMTabView (https://github.com/Abedalkareem/AMTabView)
+//
+//  Created by abedalkareem omreyh on 16/10/2019.
+//  Copyright © 2019 abedalkareem. All rights reserved.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
-open class AMTabsViewController: UIViewController, AMTabViewDelegate {
+open class AMTabsViewController: UIViewController {
 
   // MARK: - Properties
 
@@ -140,18 +164,8 @@ open class AMTabsViewController: UIViewController, AMTabViewDelegate {
     lastSelectedViewIndex = index
   }
 
-
-  // MARK: - AMTabViewDelegate
-  ///
-  /// Override the method to get the tab selected actions.
-  ///
-  open func tabDidSelectAt(index: Int) {
-    selectedTabIndex = index
-  }
-  
 }
 
-// MARK: - TabItem
 ///
 /// To use any view controller as a tab you need to implement protocol.
 ///
@@ -160,4 +174,15 @@ public protocol TabItem {
   /// Image or title to show on the tab.
   ///
   var tabImage: UIImage? { get }
+}
+
+extension AMTabsViewController: AMTabViewDelegate {
+
+  ///
+  /// Override the method to get the tab selected actions.
+  ///
+  public func tabDidSelectAt(index: Int) {
+    selectedTabIndex = index
+  }
+
 }

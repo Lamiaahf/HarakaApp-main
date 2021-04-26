@@ -106,7 +106,7 @@ class TimelineViewController: UITableViewController {
     func fetchPosts(){
 
         // retrieve posts from database, may return error or snapshot (snapshot contains data)
-
+        self.posts = []
         followingsDict = Dictionary.init(keys: followingsIDs!, values: followings!)
         ref.child("posts").observe(.value){
         (snapshot) in
@@ -129,8 +129,8 @@ class TimelineViewController: UITableViewController {
                                 postUser = user
                                 var post = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
                                 self.checkLike(post: post)
-                                self.posts?.append(post)
-                                self.posts?.sort {
+                                temp.append(post)
+                                temp.sort {
                                     $0.timeAgo! < $1.timeAgo!
                                 }
                                 self.tableView.reloadData()
@@ -148,8 +148,8 @@ class TimelineViewController: UITableViewController {
                         
                     }}
             }
-          //  self.posts = temp
-         //   self.tableView.reloadData()
+            self.posts = temp
+            self.tableView.reloadData()
 
         }
     }

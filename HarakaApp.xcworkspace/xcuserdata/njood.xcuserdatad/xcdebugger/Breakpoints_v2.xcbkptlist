@@ -1,86 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "23100931-08FF-40E9-872B-4FDC76C01454"
+   uuid = "AD1BBD55-7373-4E2C-B74C-A3385CCE52BC"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3129CCED-EA03-4982-B665-023E7A2FF217"
+            uuid = "55F3A97F-5CD9-4468-8A8F-95D1E1B76509"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HarakaApp/View controller/Timeline/PostCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "getUserPic()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3129CCED-EA03-4982-B665-023E7A2FF217 - eb3084761ea9caaa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HarakaApp.PostCell.getUserPic() -&gt; ()"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/njood/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Timeline/PostCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "3129CCED-EA03-4982-B665-023E7A2FF217 - bb4c0cef8a62942f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.UIImage) -&gt; () in HarakaApp.PostCell.getUserPic() -&gt; ()"
-                  moduleName = "HarakaApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/njood/Documents/GitHub/HarakaApp-main/HarakaApp/View%20controller/Timeline/PostCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "95">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DA780C27-5A3B-4356-B063-3590227F2B41"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HarakaApp/View controller/Timeline/PostCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "getUserPic()"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "updatePost()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "781A8CC3-A54E-49A6-BC21-94A480F1A3A9"
+            uuid = "A8E9C3A3-3156-4674-91D4-9DC973E3A533"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HarakaApp/View controller/Timeline/PostCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "getUserPic()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "like(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2329D9C6-E7E6-4794-B894-6AD15C435AED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HarakaApp/View controller/Timeline/TimelineViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "fetchPosts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
