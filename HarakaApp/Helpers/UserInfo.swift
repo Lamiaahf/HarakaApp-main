@@ -71,10 +71,10 @@ import FirebaseStorage
         self.profileImageURL = ppURL
         self.DOB = "\(dob)"
         
-        DBManager.getPic(for: self){
-            image in
-            self.profileImage = image
-        }
+   //     DBManager.getPic(for: self){
+     //       image in
+       //     self.profileImage = image}
+        
         // = Date(timeIntervalSince1970: times)
     }
     

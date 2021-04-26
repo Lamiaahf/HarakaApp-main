@@ -45,10 +45,6 @@ class TimelineViewController: UITableViewController {
             DBManager.getFollowing(for: current.userID!){
                 users in
                 for u in users{
-                    DBManager.getUser(for: u.userID!){
-                        user in
-                        u.profileImageURL = user.profileImageURL
-                    }
                     self.followings!.append(u)
                     self.followingsIDs!.append(u.userID!)
                     // DBManager.getPic(for: u){ pic in}
@@ -127,24 +123,33 @@ class TimelineViewController: UITableViewController {
                             let noc = postDict["numOfComments"] as? Int ?? 0
                             let id = String(child.key)
                             
-                            let postUser = self.followingsDict![uid]
-                        
-                            DBManager.getPic(for: postUser!){
-                                pic in
-                                postUser?.profileImage = pic
+                            var postUser = User()
+                            DBManager.getUser(for: uid){
+                                user in
+                                postUser = user
+                                var post = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
+                                self.checkLike(post: post)
+                                self.posts?.append(post)
+                                self.posts?.sort {
+                                    $0.timeAgo! < $1.timeAgo!
+                                }
                                 self.tableView.reloadData()
                             }
-                            var post = Post(createdBy: postUser!, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
-                            self.checkLike(post: post)
-                            temp.append(post)
+                            
+                         //   let postUser = self.followingsDict![uid]
+                        
+                            
+                       //     var post = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
+                      //      self.checkLike(post: post)
+                     //       temp.append(post)
    
                         
                         }
                         
                     }}
             }
-            self.posts = temp
-            self.tableView.reloadData()
+          //  self.posts = temp
+         //   self.tableView.reloadData()
 
         }
     }

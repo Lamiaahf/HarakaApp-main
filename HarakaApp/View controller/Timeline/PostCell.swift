@@ -41,12 +41,9 @@ class PostCell: UITableViewCell{
         captionLabel.text = post.caption
         likesLabel.text = "\(post.numOfLikes!)"
         commentsLabel.text = "\(post.numOfComments!)"
-        likesLabel.text = String(post.numOfLikes ?? 0)
+       // likesLabel.text = String(post.numOfLikes ?? 0)
         
         profileImageView.image = post.createdBy.profileImage
-        //profileImageView.layer.cornerRadius = 40/2
-        profileImageView.clipsToBounds = true
-        Utilities.CircularImageView(profileImageView)
         usernameLabel.text = post.createdBy.username
         
         if (!post.liked!){
@@ -56,6 +53,19 @@ class PostCell: UITableViewCell{
             likeButton.setBackgroundImage(UIImage(systemName:"heart.fill"), for: .normal)
         }
         
+        getUserPic()
+    }
+    func getUserPic(){
+        
+        DBManager.getPic(for: post.createdBy){
+            pic in
+            self.post.createdBy.profileImage = pic
+            self.profileImageView.image = self.post.createdBy.profileImage
+            self.profileImageView.layer.cornerRadius = 40/2
+            self.profileImageView.clipsToBounds = true
+            Utilities.CircularImageView(self.profileImageView)
+            
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
