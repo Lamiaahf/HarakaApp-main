@@ -38,7 +38,7 @@ class TRoomViewController: UIViewController, UITableViewDelegate, UITableViewDat
          self.messagesTable.dataSource = self
          self.messagesTable.separatorStyle = .none
          self.messagesTable.allowsSelection = false
-         observerMessages()
+          observerMessages()
          // Do any additional setup after loading the view.
     }
     func observerMessages(){

@@ -54,6 +54,7 @@ class CreateActivity: UIViewController {
         Utilities.styleTextField(ADescription)
         Utilities.styleTextField(DateTime)
         Utilities.styleTextField(price)
+        
         // hide ErrorM Lable
         ErrorM.alpha = 0
 
@@ -162,11 +163,15 @@ class CreateActivity: UIViewController {
             
             self.ref.child("Activity").child(ID!).setValue(AData)
             self.ref.child("Activity").child(ID!).updateChildValues(["ActivityID" : ID as Any])
-             
-            }
-            } ) }
-           
+            
+     
         }
+           let alert = Service.createAlertController(title: "شكرا", message: "تم انشاء الفعالية بنجاح")
+                self.present(alert, animated: true, completion: nil)
+            } ) }
+        }
+        // Dismiss page
+          self.dismiss(animated: true, completion: nil)
         }
       
     func AddcreatedByid(_ ID:String) {
@@ -197,17 +202,6 @@ class CreateActivity: UIViewController {
         ErrorM.text = message
         ErrorM.alpha = 1
     }
-    
-    
-    func transition(action:UIAlertAction) {
-                 
-         /// present the next VC
-         let vc = self.storyboard?.instantiateViewController(withIdentifier:"CreaActi") as? ActivitysListTable
-
-         self.view.window?.rootViewController = vc
-         self.view.window?.makeKeyAndVisible()
-     }
-
     }// END OF CLASS
         
         

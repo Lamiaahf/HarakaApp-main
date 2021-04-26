@@ -17,6 +17,7 @@ class UserSingupViewController: UIViewController  {
     // US = User Singup
     var ref : DatabaseReference!
 
+    @IBOutlet weak var dismis: UIButton!
     
     @IBOutlet weak var AvatarUS: UIImageView!
     var image :UIImage? = nil
@@ -44,6 +45,8 @@ class UserSingupViewController: UIViewController  {
     override func viewDidLoad() {
         ref = Database.database().reference()
         super.viewDidLoad()
+        dismis.layer.cornerRadius = dismis.frame.size.width / 2
+
         setUpElements()
         creatDatePicker()
         setupAvatar()
@@ -207,7 +210,11 @@ class UserSingupViewController: UIViewController  {
         
     }
 
+    @IBAction func dismis(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
 
+    }
+    
 }//End of class
 
 extension UserSingupViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {

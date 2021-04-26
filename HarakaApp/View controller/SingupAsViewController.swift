@@ -7,17 +7,24 @@
 
 import UIKit
 
-class SingupAsViewController: UIViewController {
+class SingupAsViewController: UIViewController, UIViewControllerTransitioningDelegate {
 //But = Button
     @IBOutlet weak var UserBut: UIButton!
     @IBOutlet weak var TrainerBut: UIButton!
+    let transition = CircularTransition()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-       // Utilities.CircularImageView(TrainerBut)
-        // Do any additional setup after loading the view.
+        
+
+
     }
-    
 
+   @IBAction func User(_ sender: Any) {
+ 
+   }
     
-
+    
+  //  @IBAction func Trainer(_ sender: Any) {}
+    
 }

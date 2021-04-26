@@ -16,7 +16,7 @@
             <objects>
                 <viewController storyboardIdentifier="login" id="1hz-MV-dWp" customClass="LOGINViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sQD-BD-U8a">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="large" translatesAutoresizingMaskIntoConstraints="NO" id="5Tq-39-aMz">
@@ -132,9 +132,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbJ-nv-3Wk">
                                 <rect key="frame" x="142" y="528" width="115" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="coach"/>
+                                <state key="normal" image="icons8-coach-96-3"/>
                                 <connections>
-                                    <segue destination="byR-W7-0fc" kind="show" id="Qje-eL-3Yz"/>
+                                    <action selector="Trainer:" destination="xlV-H2-aCd" eventType="touchUpInside" id="zfT-4f-Lwb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="مستخدم " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v5-9P-z6M">
@@ -154,9 +154,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xm2-IK-g3N">
                                 <rect key="frame" x="117" y="242" width="167" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="icons8-male-user-96 (1)"/>
+                                <state key="normal" image="icons8-user-male-96"/>
                                 <connections>
-                                    <segue destination="xhC-NZ-VlX" kind="show" id="J9l-gp-aVg"/>
+                                    <action selector="User:" destination="xlV-H2-aCd" eventType="touchUpInside" id="Br2-pu-ZBF"/>
+                                    <segue destination="xhC-NZ-VlX" kind="showDetail" id="kUW-J4-0ER"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkc-GH-BcY">
@@ -279,7 +280,7 @@
                                 <color key="tintColor" red="0.4090926647" green="0.59546035529999997" blue="0.66267508269999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="xmark" catalog="system"/>
                                 <connections>
-                                    <segue destination="xlV-H2-aCd" kind="show" id="tEi-oZ-rgX"/>
+                                    <action selector="dismis:" destination="xhC-NZ-VlX" eventType="touchUpInside" id="PQh-bU-PCP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="انشاء حساب " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVQ-qO-xnj" userLabel="انشاء حساب">
@@ -374,6 +375,7 @@
                         <outlet property="PasswordUS" destination="iPG-nb-pDi" id="8sB-e5-bim"/>
                         <outlet property="Singup" destination="GDH-qY-rNJ" id="dKU-6A-A2U"/>
                         <outlet property="UsernameUS" destination="d2I-8Y-MN6" id="WOV-yF-Zbe"/>
+                        <outlet property="dismis" destination="WRQ-wD-X0a" id="5gq-lR-3SV"/>
                         <outlet property="tapToChangeProfileButton" destination="ium-OP-Ufd" id="0El-rD-Lc4"/>
                     </connections>
                 </viewController>
@@ -386,7 +388,7 @@
             <objects>
                 <viewController id="byR-W7-0fc" customClass="TrainerSingupViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LkB-i9-UMS">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSc-7C-6HU">
@@ -4109,7 +4111,7 @@
                     </tableView>
                     <connections>
                         <outlet property="UsersTableView" destination="a2G-Bc-cKS" id="Qje-Tu-qEk"/>
-                        <outlet property="searchBar" destination="Vff-fS-EVw" id="Eai-SZ-98F"/>
+                        <outlet property="searchBar" destination="Vff-fS-EVw" id="bQc-4S-aVf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ck1-0O-Cec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4162,7 +4164,7 @@
                     </tableView>
                     <connections>
                         <outlet property="TrainersTableView" destination="Hfz-7J-xpW" id="8vY-9y-hKT"/>
-                        <outlet property="searchBar" destination="PMu-hk-dE0" id="uaZ-SG-BWd"/>
+                        <outlet property="searchBar" destination="PMu-hk-dE0" id="nDc-KG-RJ9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Er-sK-cK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5458,7 +5460,7 @@
                     </tableView>
                     <connections>
                         <outlet property="UsersTableView" destination="MNH-jI-vaf" id="g5T-Mg-Ztl"/>
-                        <outlet property="searchBar" destination="ezh-eO-WoV" id="V6I-dz-xXr"/>
+                        <outlet property="searchBar" destination="ezh-eO-WoV" id="SsF-v9-NIk"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrr-YW-ibE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5511,7 +5513,7 @@
                     </tableView>
                     <connections>
                         <outlet property="TrainersTableView" destination="D6L-sY-o02" id="frX-rD-WKx"/>
-                        <outlet property="searchBar" destination="dWn-hF-IH3" id="eVq-v2-6yS"/>
+                        <outlet property="searchBar" destination="dWn-hF-IH3" id="ZeS-b4-cuq"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ph5-80-twN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5880,8 +5882,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="0Gh-8D-NQl"/>
         <segue reference="gJH-zc-xPe"/>
-        <segue reference="1fU-el-i1a"/>
-        <segue reference="LXF-N2-MVd"/>
+        <segue reference="e8W-y0-uAt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="Color"/>
     <resources>
@@ -5891,18 +5892,19 @@
         <image name="as" width="128" height="128"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar.badge.plus" catalog="system" width="128" height="108"/>
-        <image name="coach" width="512" height="512"/>
         <image name="crown.fill" catalog="system" width="128" height="92"/>
         <image name="fire-filled-large" width="96" height="96"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="icons8-barbell-100" width="100" height="100"/>
+        <image name="icons8-coach-96-3" width="96" height="96"/>
         <image name="icons8-leaderboard-50" width="50" height="50"/>
         <image name="icons8-male-user-96 (1)" width="96" height="96"/>
         <image name="icons8-settings-500" width="500" height="500"/>
         <image name="icons8-settings-512" width="512" height="512"/>
         <image name="icons8-user-male-480" width="480" height="480"/>
+        <image name="icons8-user-male-96" width="96" height="96"/>
         <image name="large" width="5000" height="5000"/>
         <image name="location.north" catalog="system" width="108" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

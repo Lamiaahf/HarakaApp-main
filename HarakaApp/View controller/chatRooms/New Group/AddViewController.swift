@@ -47,7 +47,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
            // added
             //let date = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd at HH:mm"
+            formatter.dateFormat = "yyyy-MM-dd"
             let d = formatter.string(from: datePicker.date)
             // completion?(titleText, bodyText, d )
             let dataRef = Database.database(url: "https://haraka-73619-default-rtdb.firebaseio.com/").reference()

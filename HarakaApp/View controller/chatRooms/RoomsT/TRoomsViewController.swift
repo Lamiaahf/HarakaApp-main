@@ -53,7 +53,7 @@ class TRoomsViewController: UIViewController,  UIViewControllerTransitioningDele
         
        self.observeRoom()
 
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     }
     let DefImage : UIImageView = {
     let DEIMAGE = UIImageView()

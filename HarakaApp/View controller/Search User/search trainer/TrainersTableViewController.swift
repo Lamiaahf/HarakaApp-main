@@ -154,7 +154,7 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
             let username = user!["name"] as? String
             
             if( username != nil){
-            return(username?.lowercased().contains(searchText.lowercased()))!
+                return((username?.contains(searchText)) != nil)
            
         }
             else {return false}
