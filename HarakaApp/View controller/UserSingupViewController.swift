@@ -137,6 +137,10 @@ class UserSingupViewController: UIViewController  {
 
             //Passwords dont match
             return "كلمة المرور غير متطابقة ."}
+        
+        else if AvatarUS.image == nil {
+
+            return "فضلا يجب اختيار صورة ."}
       
             return nil}
  

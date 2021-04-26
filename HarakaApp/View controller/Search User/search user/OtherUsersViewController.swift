@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-import FirebaseStorage
+//import FirebaseStorage
 class OtherUsersViewController:UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var Profilepic: UIImageView!
