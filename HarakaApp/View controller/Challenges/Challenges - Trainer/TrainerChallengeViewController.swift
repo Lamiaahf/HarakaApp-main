@@ -62,46 +62,46 @@ class TrainerChallengeViewController: UIViewController, ScoreboardDelegate{
     }
     
     func compareDate(currentDate: String, challDate: String) -> Bool{
-
-            let currentMonth = currentDate[3..<5]
-            let challMonth = challDate[3..<5]
+        
+        let currentMonth = currentDate[3..<5]
+        let challMonth = challDate[3..<5]
+        
+        let currentDay = Int(currentDate[0..<2])!
+        let challDay = Int(challDate[0..<2])!
             
-            let currentDay = Int(currentDate[0..<2])!
-            let challDay = Int(challDate[0..<2])!
-                
-            let currentHour = Int(currentDate[6..<8])!
-            let challHour = Int(challDate[6..<8])!
+        let currentHour = Int(currentDate[6..<8])!
+        let challHour = Int(challDate[6..<8])!
 
-            var currentIndex = currentDate.index(currentDate.firstIndex(of: ":")!, offsetBy:1)
-            var challIndex = challDate.index(challDate.firstIndex(of: ":")!, offsetBy: 1)
-            let currentMin = Int(String(currentDate[currentIndex...]))!
-            let challMin = Int(String(challDate[challIndex...]))!
+        var currentIndex = currentDate.index(currentDate.firstIndex(of: ":")!, offsetBy:1)
+        var challIndex = challDate.index(challDate.firstIndex(of: ":")!, offsetBy: 1)
+        let currentMin = Int(String(currentDate[currentIndex...]))!
+        let challMin = Int(String(challDate[challIndex...]))!
 
-        // if deadline is next month
-        if (Int(currentMonth)! - Int(challMonth)!) == 1 {return true}
-        // if deadline is this month -> check days
-        else if currentMonth == challMonth{
-            // if deadline is not today
-            if currentDay < challDay {return true}
-            // if deadline is today -> check hour
-            else if currentDay == challDay {
-                // if deadline is not this hour
-                if currentHour < challHour {return true}
-                // if deadline is this hour -> check minute
-                if currentHour == challHour {
-                    // if deadline minute hasnt passed
-                    if currentMin < challMin {return true}
-                    // if deadline passed
-                    else {return false}
-                }
+    // if deadline is next month
+    if (Int(challMonth)! - Int(currentMonth)!) == 1 {return true}
+    // if deadline is this month -> check days
+    else if currentMonth == challMonth{
+        // if deadline is not today
+        if currentDay < challDay {return true}
+        // if deadline is today -> check hour
+        else if currentDay == challDay {
+            // if deadline is not this hour
+            if currentHour < challHour {return true}
+            // if deadline is this hour -> check minute
+            if currentHour == challHour {
+                // if deadline minute hasnt passed
+                if currentMin < challMin {return true}
                 // if deadline passed
                 else {return false}
             }
-            // if deadline is passed
+            // if deadline passed
             else {return false}
-            
         }
+        // if deadline is passed
         else {return false}
+        
+    }
+    else {return false}
     }
     
     // Delegate to "ScoreboardDelegate" methods
