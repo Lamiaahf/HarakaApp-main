@@ -83,8 +83,7 @@ import FirebaseStorage
         super.init()
         guard let userDict = snapshot.value as? [String : Any],
             let username = userDict["Username"] as? String,
-            let name = userDict["Name"] as? String,
-            let ppURL = userDict["ProfilePic"] as? String
+            let name = userDict["Name"] as? String
             else { return nil }
 
         self.userID = snapshot.key
@@ -92,7 +91,8 @@ import FirebaseStorage
         self.name = name
         self.email = ""
         self.followingCount = 0
-        self.profileImageURL = ppURL
+        self.profileImageURL = ""
+        self.profileImage = UIImage()
         self.DOB = ""
         
         /*

@@ -36,17 +36,16 @@ class ActivitysListTable: UITableViewController {
     }
     func fetchActivity(){
         
+        followingIDS = []
+        
         followingIDS!.append(self.UserID!)
         
         DBManager.getFollowing(for: self.UserID!){
             users in
             for u in users{
                 self.followingIDS!.append(u.userID!)
-                
             }
-            
-            //...
-            
+             
             
             // retrieve posts from database, may return error or snapshot (snapshot contains data)
             let ref = Database.database().reference()
@@ -55,19 +54,19 @@ class ActivitysListTable: UITableViewController {
              let id = String(snapshot.key)
                 if let ADict = snapshot.value as? [String: Any]{
                 let createdByid = ADict["createdByID"] as? String ?? ""
-                    
-                    if((self.followingIDS?.contains(createdByid)) != nil){
+                  
+                    if self.followingIDS!.contains(createdByid){
          
-              let Name = ADict["ActivityName"] as? String ?? ""
-              let Loc = ADict["location"] as? String ?? ""
-              let dis = ADict["Description"] as? String ?? ""
-              let DT = ADict["DateTime"] as? String ?? ""
-              let AType = ADict["ActivityType"] as? String ?? ""
-              let count = ADict["NumOfParticipant"] as? String ?? ""
-              let createdByN = ADict["createdByName"] as? String ?? ""
-              let Aimage = ADict["Image"] as? String ?? ""
-              let ID = ADict ["ActivityID"] as? String ?? ""
-              let price = ADict ["price"] as? String ?? ""
+                    let Name = ADict["ActivityName"] as? String ?? ""
+                    let Loc = ADict["location"] as? String ?? ""
+                    let dis = ADict["Description"] as? String ?? ""
+                    let DT = ADict["DateTime"] as? String ?? ""
+                    let AType = ADict["ActivityType"] as? String ?? ""
+                    let count = ADict["NumOfParticipant"] as? String ?? ""
+                    let createdByN = ADict["createdByName"] as? String ?? ""
+                    let Aimage = ADict["Image"] as? String ?? ""
+                    let ID = ADict ["ActivityID"] as? String ?? ""
+                    let price = ADict ["price"] as? String ?? ""
 
                 /// add createdByid
              //   ref.child("Activity").child(AKey).set(createdByid)
@@ -86,9 +85,11 @@ class ActivitysListTable: UITableViewController {
         
     
                 
-            }}
-        
+            }
+            
         }
+        
+        } 
     
     
     /*

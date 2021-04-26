@@ -45,8 +45,12 @@ class TimelineViewController: UITableViewController {
             DBManager.getFollowing(for: current.userID!){
                 users in
                 for u in users{
-                    self.followingsIDs!.append(u.userID!)
+                    DBManager.getUser(for: u.userID!){
+                        user in
+                        u.profileImageURL = user.profileImageURL
+                    }
                     self.followings!.append(u)
+                    self.followingsIDs!.append(u.userID!)
                     // DBManager.getPic(for: u){ pic in}
                 }
                 self.fetchPosts()

@@ -14,14 +14,16 @@ class DBManager {
     let storage = Storage.storage()
     
     
-    static func getFollowing(for user: String , completion: @escaping ([User]) -> Void) {
-        let userref = Database.database().reference().child("following/\(user)")
+    static func getFollowing(for user: String, completion: @escaping ([User]) -> Void) {
+        let userref = Database.database().reference().child("following").child(user)
 
         userref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
 
+
+            
             let users = snapshot.reversed().compactMap(){
                 snapsh in
                 User.init(snapshot: snapsh, flag: true)
@@ -108,7 +110,7 @@ class DBManager {
     }
     
     static func getPosts(for user: User, completion: @escaping ([Post]) -> Void) {
-        let postref = Database.database().reference().child("posts").queryOrdered(byChild: "timestamp").queryEqual(toValue: user.userID!, childKey: "uid")
+        let postref = Database.database().reference().child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: user.userID!)
 
         postref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
