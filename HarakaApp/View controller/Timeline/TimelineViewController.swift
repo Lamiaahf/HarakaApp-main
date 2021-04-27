@@ -25,60 +25,71 @@ class TimelineViewController: UITableViewController {
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
-  //      self.refreshControl = UIRefreshControl()
-  //      self.refreshControl!.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-   //     tableView.addSubview(self.refreshControl!)
         
         posts = []
         followings = []
         followingsIDs = []
         followingsDict = [:]
         
+       // var current = User(id: Auth.auth().currentUser!.uid)
+        //self.getFollowings(user: current)
         
-      
-      /*  DBManager.getPosts(for: current) { (posts) in
-            for p in posts{
-                self.checkLike(post: p)
-                self.posts?.append(p)
-                DBManager.getUser(for: p.UID!){
-                    user in
-                    p.createdBy = user
-                }
-            //    self.tableView.reloadData()
-            }
-        }*/
-        
-    //    self.tableView.reloadData()
-     //   getPosts()
-        var current = User(id: Auth.auth().currentUser!.uid)
-        DBManager.getUser(for: current.userID!){
-            user in
-            current = user
-            //self.followings?.append(current)
-            //self.followingsIDs?.append(current.userID)
-            self.getPosts(user: current)
-        }
         //fetchPosts()
         
         }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var current = User(id: Auth.auth().currentUser!.uid)
+        self.getFollowings(user: current)
+    }
+    
+    func getFollowings(user: User){
+        
+            //self.getPosts(user: user)
+        DBManager.getFollowing(for: user.userID!){
+                users in
+                var usersList = users
+                usersList.append(user)
+                for u in usersList{
+                    DBManager.getUser(for: u.userID!){
+                        usr in
+                        self.getPosts(user: usr)
+                    }
+                    
+                }
+            }
+        
+    }
     
     
     func getPosts(user: User){
 
         
         DBManager.getPosts(for: user) { (posts) in
+            var temp = [Post]()
             for p in posts{
                 self.checkLike(post: p)
-                self.posts?.append(p)
-                self.posts!.sort{
+                temp.append(p)
+                temp.sort{
                     $0.timeAgo! < $1.timeAgo!
                 }
-                self.tableView.reloadData()
-
             }
+            self.posts?.append(contentsOf: temp)
+            self.posts?.sort{ $0.timeAgo! < $1.timeAgo!}
+            self.tableView.reloadData()
+            /*
+            DBManager.getPic(for: user){
+                pic in
+                user.profileImage = pic
+                //posts.filter({$0.createdBy = user})
+                self.posts!.filter({$0.createdBy.userID == user.userID}).forEach { $0.createdBy.profileImage = pic }
+                self.tableView.reloadData()
+            }*/
         }
         
-        DBManager.getFollowing(for: user.userID!){
+       /* DBManager.getFollowing(for: user.userID!){
             (users) in
             for u in users{
                 DBManager.getUser(for: u.userID!){
@@ -98,7 +109,7 @@ class TimelineViewController: UITableViewController {
                     }
                 }
             }
-        }
+        }*/
         
 }
 

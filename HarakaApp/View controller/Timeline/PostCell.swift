@@ -41,9 +41,9 @@ class PostCell: UITableViewCell{
         captionLabel.text = post.caption
         likesLabel.text = "\(post.numOfLikes!)"
         commentsLabel.text = "\(post.numOfComments!)"
-       // likesLabel.text = String(post.numOfLikes ?? 0)
         
         profileImageView.image = post.createdBy.profileImage
+        Utilities.CircularImageView(self.profileImageView)
         usernameLabel.text = post.createdBy.username
         
         if (!post.liked!){
@@ -53,7 +53,7 @@ class PostCell: UITableViewCell{
             likeButton.setBackgroundImage(UIImage(systemName:"heart.fill"), for: .normal)
         }
         
-        getUserPic()
+        //getUserPic()
     }
     func getUserPic(){
         

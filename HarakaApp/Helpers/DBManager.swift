@@ -47,7 +47,7 @@ class DBManager {
     
     static func getPic(for user: User, completion: @escaping (UIImage) -> Void) {
 
-        Storage.storage().reference(forURL: user.profileImageURL!).getData(maxSize:1048576, completion:{
+        Storage.storage().reference(forURL: user.profileImageURL!).getData(maxSize:.max, completion:{
             data,error in
             guard let imageData = data, error == nil else{
                 return completion(UIImage())
@@ -66,7 +66,7 @@ class DBManager {
             guard let dict = snapshot.value as? [String:Any] else {return completion(UIImage())}
             let url = dict["ProfilePic"] as? String
             
-            Storage.storage().reference(forURL: url!).getData(maxSize:1048576, completion:{
+            Storage.storage().reference(forURL: url!).getData(maxSize:.max, completion:{
                 data,error in
                 guard let imageData = data, error == nil else{
                     return completion(UIImage())
@@ -115,7 +115,7 @@ class DBManager {
         let challref = Database.database().reference()
         var ch = Challenge()
         
-        challref.child("Challenges").queryOrdered(byChild: "Deadline").queryLimited(toLast: 1).observeSingleEvent(of: .childAdded){
+        challref.child("Challenges").queryLimited(toLast: 1).observeSingleEvent(of: .childAdded){
             (snapshot) in
             
             if snapshot.exists(){
@@ -177,11 +177,12 @@ class DBManager {
                     
                     user = User(username: username, profileimageurl: profilepic, name: name, email: email, followingCount: followingCount, DOB: dob, id: id)
                     
-                   /* getPic(for: user){
+                   getPic(for: user){
                         pic in
                         user.profileImage = pic
-                    }*/
                     completion(user)
+                    }
+                    //completion(user)
                 }
                 else {completion(user)}
             }
