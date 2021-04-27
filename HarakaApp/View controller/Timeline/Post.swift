@@ -43,7 +43,7 @@ class Post
         liked = false
     }
     
-    init?(snapshot: DataSnapshot) {
+    init?(snapshot: DataSnapshot, user: User) {
         guard let postDict = snapshot.value as? [String : Any],
             let uid = postDict["uid"] as? String,
             let cap = postDict["caption"] as? String,
@@ -54,14 +54,9 @@ class Post
 
         self.postID = snapshot.key
         self.UID = uid
-        self.createdBy = User()
-        
-        DBManager.getUser(for: uid){
-            user in
-            self.createdBy = user
-        }
+        self.createdBy = user
         self.caption = cap
-        self.timeAgo = String(times[...times.firstIndex(of: "+")!])
+        self.timeAgo = String(times[..<times.firstIndex(of: "+")!])
         self.numOfLikes = nol
         self.numOfComments = noc
         self.liked = false

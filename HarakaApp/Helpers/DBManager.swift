@@ -58,6 +58,28 @@ class DBManager {
         })
     }
     
+    static func getPic(for id: String, completion: @escaping (UIImage) -> Void){
+        
+        Database.database().reference().child("users").queryOrderedByKey().queryEqual(toValue: id).observe(.childAdded, with:{
+            snapshot in
+            
+            guard let dict = snapshot.value as? [String:Any] else {return completion(UIImage())}
+            let url = dict["ProfilePic"] as? String
+            
+            Storage.storage().reference(forURL: url!).getData(maxSize:1048576, completion:{
+                data,error in
+                guard let imageData = data, error == nil else{
+                    return completion(UIImage())
+                }
+                let pic = UIImage(data: imageData)
+                completion(pic!)
+                
+            })
+            
+        })
+        
+    }
+    
     static func getComments(for post: Post, completion: @escaping ([Comment]) -> Void) {
         let commentref = Database.database().reference().child("Comments").queryOrderedByKey().queryEqual(toValue: post.postID)
 
@@ -110,14 +132,17 @@ class DBManager {
     }
     
     static func getPosts(for user: User, completion: @escaping ([Post]) -> Void) {
-        let postref = Database.database().reference().child("posts").queryOrdered(byChild: "timestamp").queryEqual(toValue: user.userID!, childKey:"uid")
+        let postref = Database.database().reference().child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: user.userID!)
 
         postref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
 
-            let posts = snapshot.reversed().compactMap(Post.init)
+            let posts = snapshot.reversed().compactMap(){
+                snapsh in
+                Post.init(snapshot: snapsh, user:user)
+            }
             
             completion(posts)
         })

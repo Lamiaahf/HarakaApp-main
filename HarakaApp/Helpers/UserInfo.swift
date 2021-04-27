@@ -38,7 +38,6 @@ import FirebaseStorage
     init(id: String){
         super.init()
         self.userID = id
-        self.getInfo(id: id)
     }
     
     override init(){
@@ -102,9 +101,9 @@ import FirebaseStorage
         }*/
     }
     
-     func getInfo(id: String){
+     func getInfo(){
   
-        self.ref.child("users/\(id)").observeSingleEvent(of: .value, with: {
+        self.ref.child("users").child(self.userID!).observeSingleEvent(of: .value, with: {
             snapshot in
             if snapshot.exists(){
                 guard let userDict = snapshot.value as? [String: Any] else {return}
@@ -114,7 +113,6 @@ import FirebaseStorage
                 self.followingCount = userDict["followingCount"] as? Int
                 self.profileImageURL = userDict["ProfilePic"] as? String
                 self.DOB = userDict["DOB"] as? String
-                    
                 self.loadPic(link: self.profileImageURL!)
             }
         })

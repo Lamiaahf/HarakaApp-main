@@ -34,26 +34,6 @@ class TimelineViewController: UITableViewController {
         followingsIDs = []
         followingsDict = [:]
         
-        var current = User()
-        DBManager.getUser(for: Auth.auth().currentUser!.uid){
-            user in
-            current = user
-
-            self.followingsIDs?.append(current.userID!)
-            self.followings?.append(current)
-            
-            DBManager.getFollowing(for: current.userID!){
-                users in
-                for u in users{
-                    self.followings!.append(u)
-                    self.followingsIDs!.append(u.userID!)
-                    // DBManager.getPic(for: u){ pic in}
-                }
-                self.fetchPosts()
-          //      self.tableView.reloadData()
-            }
-        }
-        
         
       
       /*  DBManager.getPosts(for: current) { (posts) in
@@ -70,7 +50,16 @@ class TimelineViewController: UITableViewController {
         
     //    self.tableView.reloadData()
      //   getPosts()
-      //  fetchPosts()
+        var current = User(id: Auth.auth().currentUser!.uid)
+        DBManager.getUser(for: current.userID!){
+            user in
+            current = user
+            //self.followings?.append(current)
+            //self.followingsIDs?.append(current.userID)
+            self.getPosts(user: current)
+        }
+        //fetchPosts()
+        
         }
     
     
@@ -81,6 +70,9 @@ class TimelineViewController: UITableViewController {
             for p in posts{
                 self.checkLike(post: p)
                 self.posts?.append(p)
+                self.posts!.sort{
+                    $0.timeAgo! < $1.timeAgo!
+                }
                 self.tableView.reloadData()
 
             }
@@ -89,69 +81,33 @@ class TimelineViewController: UITableViewController {
         DBManager.getFollowing(for: user.userID!){
             (users) in
             for u in users{
-                DBManager.getPosts(for: u){ (posts) in
-                    for p in posts{
-                        self.checkLike(post: p)
-                        self.posts?.append(p)
-                        self.tableView.reloadData()
-
+                DBManager.getUser(for: u.userID!){
+                    user in
+                    self.followings?.append(user)
+                    self.followingsIDs?.append(user.userID!)
+                    
+                    DBManager.getPosts(for: user){ (posts) in
+                        for p in posts{
+                            self.checkLike(post: p)
+                            self.posts?.append(p)
+                            self.posts!.sort{
+                                $0.timeAgo! < $1.timeAgo!
+                            }
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }
         }
         
-            }
+}
 
-
+    
     func fetchPosts(){
+        
 
-        // retrieve posts from database, may return error or snapshot (snapshot contains data)
-        self.posts = []
-        followingsDict = Dictionary.init(keys: followingsIDs!, values: followings!)
-        ref.child("posts").observe(.value){
-        (snapshot) in
-            var temp = [Post]()
-            for child in snapshot.children.allObjects as! [DataSnapshot]{
-                if let postDict = child.value as? [String: Any]{
-                    if let uid = postDict["uid"] as? String{
-                        
-                        if self.followingsIDs!.contains(uid){
-                            
-                            let cap = postDict["caption"] as? String ?? ""
-                            let times = postDict["timestamp"] as? String ?? ""
-                            let nol = postDict["numOfLikes"] as? Int ?? 0
-                            let noc = postDict["numOfComments"] as? Int ?? 0
-                            let id = String(child.key)
-                            
-                            var postUser = User()
-                            DBManager.getUser(for: uid){
-                                user in
-                                postUser = user
-                                var post = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
-                                self.checkLike(post: post)
-                                temp.append(post)
-                                temp.sort {
-                                    $0.timeAgo! < $1.timeAgo!
-                                }
-                                self.tableView.reloadData()
-                            }
-                            
-                         //   let postUser = self.followingsDict![uid]
-                        
-                            
-                       //     var post = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked: false, uid: uid)
-                      //      self.checkLike(post: post)
-                     //       temp.append(post)
-   
-                        
-                        }
-                        
-                    }}
-            }
-            self.posts = temp
-            self.tableView.reloadData()
-
-        }
+    
+        
     }
     
     
