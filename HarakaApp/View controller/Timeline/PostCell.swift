@@ -53,19 +53,6 @@ class PostCell: UITableViewCell{
             likeButton.setBackgroundImage(UIImage(systemName:"heart.fill"), for: .normal)
         }
         
-        //getUserPic()
-    }
-    func getUserPic(){
-        
-        DBManager.getPic(for: post.createdBy){
-            pic in
-            self.post.createdBy.profileImage = pic
-            self.profileImageView.image = self.post.createdBy.profileImage
-            self.profileImageView.layer.cornerRadius = 40/2
-            self.profileImageView.clipsToBounds = true
-            Utilities.CircularImageView(self.profileImageView)
-            
-        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -94,31 +81,11 @@ class PostCell: UITableViewCell{
     
     
     func updatePost(){
-      //  self.likesLabel.text = "\(post.numOfLikes!)"
-      //  self.commentsLabel.text = "\(post.numOfComments!)"
         ref.child("posts").child(post.postID!).updateChildValues([
                     "numOfLikes":post.numOfLikes!,
                     "numOfComments":post.numOfComments!])
-        
     }
         
     
     
 }
-
-/*
- 
- if (likeButton.imageView?.image == UIImage(named: "heart.fill")) {
-        //set default
-        likeButton.setImage(UIImage(named: "heart"), for: .normal)
-    } else{
-        // set like
-        likeButton.setImage(UIImage(named: "like"), for: .normal)
-    }
- 
- 
- // toggle the likes state
- self.likes = !self.likeButton.isSelected
- // set the likes button accordingly
- self.likeButton.isSelected = self.likes
- */

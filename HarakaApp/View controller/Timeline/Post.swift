@@ -60,7 +60,6 @@ class Post
         self.numOfLikes = nol
         self.numOfComments = noc
         self.liked = false
-        // = Date(timeIntervalSince1970: times)
     }
     
     func isLiked() -> Bool {
@@ -68,7 +67,7 @@ class Post
     }
     
     func setLiked(flag: Bool){
-        self.liked = true
+        liked = flag
     }
 
 }

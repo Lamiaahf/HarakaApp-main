@@ -10,6 +10,7 @@ import Firebase
 import FirebaseStorage
 
 class OtherTrainerTable:  UIViewController ,UINavigationControllerDelegate, UITextFieldDelegate {
+    
     @IBOutlet weak var Profilepic: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var Username: UILabel!

@@ -27,14 +27,6 @@ class TimelineViewController: UITableViewController {
         tableView.delegate = self
         
         posts = []
-        followings = []
-        followingsIDs = []
-        followingsDict = [:]
-        
-       // var current = User(id: Auth.auth().currentUser!.uid)
-        //self.getFollowings(user: current)
-        
-        //fetchPosts()
         
         }
     
@@ -47,7 +39,6 @@ class TimelineViewController: UITableViewController {
     
     func getFollowings(user: User){
         
-            //self.getPosts(user: user)
         DBManager.getFollowing(for: user.userID!){
                 users in
                 var usersList = users
@@ -66,7 +57,6 @@ class TimelineViewController: UITableViewController {
     
     func getPosts(user: User){
 
-        
         DBManager.getPosts(for: user) { (posts) in
             var temp = [Post]()
             for p in posts{
@@ -79,47 +69,9 @@ class TimelineViewController: UITableViewController {
             self.posts?.append(contentsOf: temp)
             self.posts?.sort{ $0.timeAgo! < $1.timeAgo!}
             self.tableView.reloadData()
-            /*
-            DBManager.getPic(for: user){
-                pic in
-                user.profileImage = pic
-                //posts.filter({$0.createdBy = user})
-                self.posts!.filter({$0.createdBy.userID == user.userID}).forEach { $0.createdBy.profileImage = pic }
-                self.tableView.reloadData()
-            }*/
         }
         
-       /* DBManager.getFollowing(for: user.userID!){
-            (users) in
-            for u in users{
-                DBManager.getUser(for: u.userID!){
-                    user in
-                    self.followings?.append(user)
-                    self.followingsIDs?.append(user.userID!)
-                    
-                    DBManager.getPosts(for: user){ (posts) in
-                        for p in posts{
-                            self.checkLike(post: p)
-                            self.posts?.append(p)
-                            self.posts!.sort{
-                                $0.timeAgo! < $1.timeAgo!
-                            }
-                            self.tableView.reloadData()
-                        }
-                    }
-                }
-            }
-        }*/
-        
 }
-
-    
-    func fetchPosts(){
-        
-
-    
-        
-    }
     
     
      func checkLike(post: Post){
@@ -194,28 +146,6 @@ extension TimelineViewController{
     }
     
     
-    /*
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedPost = posts![indexPath.row]
-        let destinationVC = CommentViewController()
-        destinationVC.post = selectedPost
-        destinationVC.fetchComments()
-    //    destinationVC.performSegue(withIdentifier: "commentSegue", sender: self)
-        TimelineViewController().performSegue(withIdentifier: "commentSegue", sender: self)
-        
-    }*/
-    
 }
 
-extension Dictionary {
-    public init(keys: [Key], values: [Value]) {
-        precondition(keys.count == values.count)
-
-        self.init()
-
-        for (index, key) in keys.enumerated() {
-            self[key] = values[index]
-        }
-    }
-}
 
