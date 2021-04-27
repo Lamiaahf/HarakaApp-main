@@ -151,11 +151,11 @@ class TrainersTableViewController: UITableViewController, UISearchBarDelegate, U
     {
         self.filteredTrainers = self.trainersArray.filter{ user in
  
-            let username = user!["name"] as? String
+            let username = user!["Name"] as? String
             
             if( username != nil){
-                return((username?.contains(searchText)) != nil)
-           
+                return(username?.lowercased().contains(searchText.lowercased()))!
+
         }
             else {return false}
         }

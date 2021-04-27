@@ -12,32 +12,21 @@ import FirebaseDatabase
 import FirebaseStorage
 
 // The class will take info forom user and save it in the Firebase
-class UserSingupViewController: UIViewController  {
+class UserSingupViewController: UIViewController, UITextFieldDelegate  {
 
     // US = User Singup
     var ref : DatabaseReference!
-
     @IBOutlet weak var dismis: UIButton!
-    
     @IBOutlet weak var AvatarUS: UIImageView!
     var image :UIImage? = nil
-
     @IBOutlet weak var tapToChangeProfileButton: UIButton!
-    
     @IBOutlet weak var NameUS: UITextField!
-    
     @IBOutlet weak var UsernameUS: UITextField!
-    
     @IBOutlet weak var EmailUS: UITextField!
-    
     @IBOutlet weak var PasswordUS: UITextField!
-    
     @IBOutlet weak var ConfPasswordUS: UITextField!
-    //US = User Singup
     @IBOutlet weak var DOBUS: UITextField!
-    let DatePicker = UIDatePicker()
-
-    
+    let dtePicker = UIDatePicker()
     @IBOutlet weak var Singup: UIButton!
     @IBOutlet weak var ErrorM: UILabel!
 
@@ -46,10 +35,10 @@ class UserSingupViewController: UIViewController  {
         ref = Database.database().reference()
         super.viewDidLoad()
         dismis.layer.cornerRadius = dismis.frame.size.width / 2
-
+       // DOBUS.delegate = self
         setUpElements()
-        creatDatePicker()
         setupAvatar()
+        creatDatePicker()
     }
     
   
@@ -94,23 +83,23 @@ class UserSingupViewController: UIViewController  {
         //bar button
         let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
         toolbar.setItems([doneBtn], animated: true)
-        
         // assining toolbare
         DOBUS.inputAccessoryView = toolbar
         //assinge date pickre to text filde
-        DOBUS.inputView = DatePicker
+        DOBUS.inputView = dtePicker
         // date picker mode to remove the time
-        DatePicker.datePickerMode = .date
-    }
+        dtePicker.datePickerMode = .date
+            }
+
     @objc func donePressed(){
         //formatter
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
-        DOBUS.text = formatter.string(from:DatePicker.date)
+        DOBUS.text = formatter.string(from:dtePicker.date)
         self.view.endEditing(true)
     }
- 
+
     // check thev fields and validat data if everything is correct the methode will return nil otherwise its will return error massge
     func validatefields() -> String?{
     // all fields filled in
@@ -234,4 +223,37 @@ extension UserSingupViewController : UIImagePickerControllerDelegate, UINavigati
         picker.dismiss(animated: true , completion: nil)
     }}
     
+/*
+extension UserSingupViewController: UITextFieldDelegate {
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == self.DOBUS {
+            datePickerTapped()
+            return false
+        }
+        
+        return true
+    }
+}
+
+
+func datePickerTapped() {
+    let currentDate = Date()
+    var dateComponents = DateComponents()
+    dateComponents.month = -3
+    let threeMonthAgo = Calendar.current.date(byAdding: dateComponents, to: currentDate)
+
+    dtePicker.show("DatePickerDialog",
+                    doneButtonTitle: "Done",
+                    cancelButtonTitle: "Cancel",
+                    minimumDate: threeMonthAgo,
+                    maximumDate: currentDate,
+                    datePickerMode: .date) { (date) in
+        if let dt = date {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/dd/yyyy"
+            self.DOBUS.text = formatter.string(from: dt)
+        }
+    }
+}
+*/

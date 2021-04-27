@@ -67,7 +67,7 @@ class TrainerSingupViewController: UIViewController {
     
     // creatDatePicker inside TextFilde
     func creatDatePicker()  {
-        Age.textAlignment = .right
+        Age.textAlignment = .center
         //toolbare
         let toolbar = UIToolbar()
         toolbar.sizeToFit()

@@ -13,6 +13,8 @@ class SingupAsViewController: UIViewController, UIViewControllerTransitioningDel
     @IBOutlet weak var TrainerBut: UIButton!
     
     let transition = CircularTransition()
+    let transitionT = CircularTransition()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +25,15 @@ class SingupAsViewController: UIViewController, UIViewControllerTransitioningDel
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (UserBut.isSelected){
         let secondVC = segue.destination as! UserSingupViewController
         secondVC.transitioningDelegate = self
-        secondVC.modalPresentationStyle = .custom
+            secondVC.modalPresentationStyle = .custom}
+         else if (TrainerBut.isSelected){
+
+        let secondVC = segue.destination as! TrainerSingupViewController
+            secondVC.transitioningDelegate = self
+        }
     }
     
     
@@ -33,6 +41,7 @@ class SingupAsViewController: UIViewController, UIViewControllerTransitioningDel
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = UserBut.center
+        transition.startingPoint = TrainerBut.center
         transition.circleColor = #colorLiteral(red: 0.4173190594, green: 0.5955227613, blue: 0.6585710645, alpha: 1)
         
         return transition
@@ -41,6 +50,8 @@ class SingupAsViewController: UIViewController, UIViewControllerTransitioningDel
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
         transition.startingPoint = UserBut.center
+        transition.startingPoint = TrainerBut.center
+
         transition.circleColor = #colorLiteral(red: 0.4173190594, green: 0.5955227613, blue: 0.6585710645, alpha: 1)
         
         return transition

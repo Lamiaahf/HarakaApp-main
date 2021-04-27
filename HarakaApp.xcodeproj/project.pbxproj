@@ -46,6 +46,7 @@
 		3F3C372A26345E2D00966EE4 /* model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3C372926345E2D00966EE4 /* model.scnassets */; };
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
 		3F4753EB2635FD1F00C22F7F /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4753EA2635FD1F00C22F7F /* Pulsing.swift */; };
+		3F6414D72638847700A4086D /* TCreateActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6414D62638847700A4086D /* TCreateActivityViewController.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885D9F261A56DB003BF3F3 /* FollowersTableViewController.swift */; };
 		3F885DA3261A58CF003BF3F3 /* FollowingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885DA2261A58CF003BF3F3 /* FollowingTableViewController.swift */; };
@@ -157,6 +158,7 @@
 		3F3C372926345E2D00966EE4 /* model.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; name = model.scnassets; path = HarakaApp/Assets/model.scnassets; sourceTree = SOURCE_ROOT; };
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F4753EA2635FD1F00C22F7F /* Pulsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
+		3F6414D62638847700A4086D /* TCreateActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCreateActivityViewController.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				3FD4745925D336CA00260C1A /* TrainerSingupViewController.swift */,
 				3FF335A12614D82400A905EF /* TrainerProfile.swift */,
 				3F2954CF26332F1D00FE6F44 /* TActivityList.swift */,
+				3F6414D62638847700A4086D /* TCreateActivityViewController.swift */,
 				3FF335C02614DD6A00A905EF /* TrainerSettings.swift */,
 				3F2D100E261DF2500029D96C /* TactivitiTable.swift */,
 				3FCEBDB226346C7F0013F976 /* ChallengCell.swift */,
@@ -743,6 +746,7 @@
 				3FB489EB2630FCE800A8702B /* OtherTrainerFollowersTable.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
+				3F6414D72638847700A4086D /* TCreateActivityViewController.swift in Sources */,
 				94CBF5DF2631FFA200741E76 /* CreateGameViewController.swift in Sources */,
 				CE71EE302629372000121E1C /* TRoomsViewController.swift in Sources */,
 				230273AF25E93C4A00DC6C31 /* UserInfo.swift in Sources */,
@@ -942,13 +946,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UBW627Y8LM;
+				DEVELOPMENT_TEAM = RNNL4K4B78;
 				INFOPLIST_FILE = HarakaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KSU.HarakaApp9;
+				PRODUCT_BUNDLE_IDENTIFIER = KSU.HarakaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -962,13 +966,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UBW627Y8LM;
+				DEVELOPMENT_TEAM = RNNL4K4B78;
 				INFOPLIST_FILE = HarakaApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KSU.HarakaApp9;
+				PRODUCT_BUNDLE_IDENTIFIER = KSU.HarakaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

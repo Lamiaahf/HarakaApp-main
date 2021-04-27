@@ -41,12 +41,9 @@ class PostCell: UITableViewCell{
         captionLabel.text = post.caption
         likesLabel.text = "\(post.numOfLikes!)"
         commentsLabel.text = "\(post.numOfComments!)"
-        likesLabel.text = String(post.numOfLikes ?? 0)
         
         profileImageView.image = post.createdBy.profileImage
-        //profileImageView.layer.cornerRadius = 40/2
-        profileImageView.clipsToBounds = true
-        Utilities.CircularImageView(profileImageView)
+        Utilities.CircularImageView(self.profileImageView)
         usernameLabel.text = post.createdBy.username
         
         if (!post.liked!){
@@ -81,32 +78,15 @@ class PostCell: UITableViewCell{
         updatePost()
         updateTimeline()
         }
+ 
     
     
     func updatePost(){
         ref.child("posts").child(post.postID!).updateChildValues([
                     "numOfLikes":post.numOfLikes!,
                     "numOfComments":post.numOfComments!])
-        
     }
         
-    
+ 
     
 }
-
-/*
- 
- if (likeButton.imageView?.image == UIImage(named: "heart.fill")) {
-        //set default
-        likeButton.setImage(UIImage(named: "heart"), for: .normal)
-    } else{
-        // set like
-        likeButton.setImage(UIImage(named: "like"), for: .normal)
-    }
- 
- 
- // toggle the likes state
- self.likes = !self.likeButton.isSelected
- // set the likes button accordingly
- self.likeButton.isSelected = self.likes
- */

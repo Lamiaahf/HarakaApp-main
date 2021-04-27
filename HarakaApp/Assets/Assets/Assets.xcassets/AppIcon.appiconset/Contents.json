@@ -6,7 +6,6 @@
       "size" : "20x20"
     },
     {
-      "filename" : "notification-icon@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
@@ -32,12 +31,12 @@
       "size" : "40x40"
     },
     {
+      "filename" : "icon-40@3x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "icon-60@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -78,6 +77,7 @@
       "size" : "76x76"
     },
     {
+      "filename" : "icon-76@2x.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"

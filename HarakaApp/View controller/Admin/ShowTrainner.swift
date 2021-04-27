@@ -36,7 +36,7 @@ override func viewDidLoad() {
         let dict = snapshot.value as! NSDictionary
         let key = snapshot.key
         let name = dict["Name"] as! String
-        let age = dict["Age"] as! String
+        let age = dict["DOB"] as! String
         let Username = dict["Username"] as! String
         let likedin = dict["Linkedin"] as! String
         let email = dict["Email"] as! String

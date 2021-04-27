@@ -14,14 +14,16 @@ class DBManager {
     let storage = Storage.storage()
     
     
-    static func getFollowing(for user: String , completion: @escaping ([User]) -> Void) {
-        let userref = Database.database().reference().child("following/\(user)")
+    static func getFollowing(for user: String, completion: @escaping ([User]) -> Void) {
+        let userref = Database.database().reference().child("following").child(user)
 
         userref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
 
+
+            
             let users = snapshot.reversed().compactMap(){
                 snapsh in
                 User.init(snapshot: snapsh, flag: true)
@@ -45,7 +47,7 @@ class DBManager {
     
     static func getPic(for user: User, completion: @escaping (UIImage) -> Void) {
 
-        Storage.storage().reference(forURL: user.profileImageURL!).getData(maxSize:1048576, completion:{
+        Storage.storage().reference(forURL: user.profileImageURL!).getData(maxSize:.max, completion:{
             data,error in
             guard let imageData = data, error == nil else{
                 return completion(UIImage())
@@ -54,6 +56,28 @@ class DBManager {
             completion(pic!)
             
         })
+    }
+    
+    static func getPic(for id: String, completion: @escaping (UIImage) -> Void){
+        
+        Database.database().reference().child("users").queryOrderedByKey().queryEqual(toValue: id).observe(.childAdded, with:{
+            snapshot in
+            
+            guard let dict = snapshot.value as? [String:Any] else {return completion(UIImage())}
+            let url = dict["ProfilePic"] as? String
+            
+            Storage.storage().reference(forURL: url!).getData(maxSize:.max, completion:{
+                data,error in
+                guard let imageData = data, error == nil else{
+                    return completion(UIImage())
+                }
+                let pic = UIImage(data: imageData)
+                completion(pic!)
+                
+            })
+            
+        })
+        
     }
     
     static func getComments(for post: Post, completion: @escaping ([Comment]) -> Void) {
@@ -91,7 +115,7 @@ class DBManager {
         let challref = Database.database().reference()
         var ch = Challenge()
         
-        challref.child("Challenges").queryOrdered(byChild: "Deadline").queryLimited(toLast: 1).observeSingleEvent(of: .childAdded){
+        challref.child("Challenges").queryLimited(toLast: 1).observeSingleEvent(of: .childAdded){
             (snapshot) in
             
             if snapshot.exists(){
@@ -108,14 +132,17 @@ class DBManager {
     }
     
     static func getPosts(for user: User, completion: @escaping ([Post]) -> Void) {
-        let postref = Database.database().reference().child("posts").queryOrdered(byChild: "timestamp").queryEqual(toValue: user.userID!, childKey: "uid")
+        let postref = Database.database().reference().child("posts").queryOrdered(byChild: "uid").queryEqual(toValue: user.userID!)
 
         postref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
 
-            let posts = snapshot.reversed().compactMap(Post.init)
+            let posts = snapshot.reversed().compactMap(){
+                snapsh in
+                Post.init(snapshot: snapsh, user:user)
+            }
             
             completion(posts)
         })
@@ -136,7 +163,7 @@ class DBManager {
     static func getUser(for id: String, completion: @escaping (User) -> Void) {
         
         var user = User()
-        Database.database().reference().child("users/\(id)").observeSingleEvent(of: .value, with: {
+        Database.database().reference().child("users").child(id).observeSingleEvent(of: .value, with: {
             snapshot in
             if snapshot.exists(){
                 if let userDict = snapshot.value as? [String: Any] {
@@ -150,11 +177,12 @@ class DBManager {
                     
                     user = User(username: username, profileimageurl: profilepic, name: name, email: email, followingCount: followingCount, DOB: dob, id: id)
                     
-                   /* getPic(for: user){
+                   getPic(for: user){
                         pic in
                         user.profileImage = pic
-                    }*/
                     completion(user)
+                    }
+                    //completion(user)
                 }
                 else {completion(user)}
             }
@@ -171,7 +199,7 @@ class DBManager {
             }
             let t = Trainer(snapshot: snapshot)
             completion(t!)
-        })     
+        })
     
     }
     
