@@ -63,7 +63,6 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
                 
                 self.uid = self.otherTrainers?["uid"] as! String
                 print(self.uid)
-                self.getRate()
 
                 self.otherTrainers = snapshot.value as? NSDictionary
                 //add the uid to the profile
@@ -176,8 +175,8 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
             
             //use ternary operator to check if the profile_picture exists
             //if not set it as nil - firebase will not create a entry for the profile_pic
-            let followersRef = "followers/\(self.otherTrainers?["uid"] as! String)/\(self.loggedInTrainerData?["uid"] as! String)"
-            let followingRef = "following/" + (self.loggedInTrainerData?["uid"] as! String) + "/" + (self.otherTrainers?["uid"] as! String)
+            let followersRef = "followers/\(self.uid)/\(self.loggedInTrainerData?["uid"] as! String)"
+            let followingRef = "following/" + (self.loggedInTrainerData?["uid"] as! String) + "/" + (self.uid)
             
             
             if(self.followButton.titleLabel?.text == "متابعة")
@@ -207,8 +206,8 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
             }
                 
             else{
-              let followersRef = "followers/\(self.otherTrainers?["uid"] as! String)/\(self.loggedInTrainerData?["uid"] as! String)"
-              let followingRef = "following/" + (self.loggedInTrainerData?["uid"] as! String) + "/" + (self.otherTrainers?["uid"] as! String)
+              let followersRef = "followers/\(self.uid)/\(self.loggedInTrainerData?["uid"] as! String)"
+              let followingRef = "following/" + (self.loggedInTrainerData?["uid"] as! String) + "/" + (self.uid)
                 
                 
                 let childUpdates = [followingRef:NSNull(),followersRef:NSNull()]

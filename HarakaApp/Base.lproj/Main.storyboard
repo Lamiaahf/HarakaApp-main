@@ -16,7 +16,7 @@
             <objects>
                 <viewController storyboardIdentifier="login" id="1hz-MV-dWp" customClass="LOGINViewController" customModule="HarakaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sQD-BD-U8a">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="large" translatesAutoresizingMaskIntoConstraints="NO" id="5Tq-39-aMz">
@@ -322,6 +322,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtDateEditingBegin:" destination="xhC-NZ-VlX" eventType="editingDidBegin" id="NFA-hg-ljg"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSH-o8-WXz">
                                 <rect key="frame" x="40" y="691" width="310" height="33"/>
@@ -441,6 +444,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtDateEditingBegin:" destination="byR-W7-0fc" eventType="editingDidBegin" id="KzG-Y7-7ZY"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة المرور " textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-33-LP0">
                                 <rect key="frame" x="16" y="449" width="358" height="34"/>
@@ -476,7 +482,6 @@
                                 </state>
                                 <connections>
                                     <action selector="TapToChange:" destination="byR-W7-0fc" eventType="touchUpInside" id="bje-Qd-6AA"/>
-                                    <action selector="TapToChange:" destination="xhC-NZ-VlX" eventType="touchUpInside" id="cMx-hi-xbq"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-user-male-480" translatesAutoresizingMaskIntoConstraints="NO" id="QwW-uN-WNg">
@@ -1511,6 +1516,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtDateEditingBegin:" destination="Eog-Oi-Fd2" eventType="editingDidBegin" id="zbU-Ms-HFj"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XbF-u4-OZG"/>
@@ -3869,7 +3877,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIN-3d-1nM">
-                                <rect key="frame" x="302" y="249" width="18" height="15"/>
+                                <rect key="frame" x="302" y="249" width="35" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5241,7 +5249,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akB-nL-qFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10531" y="1377"/>
+            <point key="canvasLocation" x="9049" y="2037"/>
         </scene>
         <!--Other User Following Table-->
         <scene sceneID="BRX-rv-5P7">
@@ -5288,7 +5296,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pE-s0-g6T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7413.8461538461534" y="1963.5071090047393"/>
+            <point key="canvasLocation" x="7488" y="1971"/>
         </scene>
         <!--انشاء فعالية-->
         <scene sceneID="YKq-Th-6LM">
@@ -5846,6 +5854,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
+                                    <outlet property="AName" destination="oNh-4p-hx4" id="Bp3-9g-t8a"/>
                                     <outlet property="Des" destination="pVY-9E-7aK" id="dC1-Iz-dt8"/>
                                     <outlet property="EndDate" destination="cIn-tz-xkk" id="fqB-mj-3XV"/>
                                     <outlet property="type" destination="cG8-lN-Op1" id="7Wb-0w-wQR"/>
@@ -5926,6 +5935,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtDateEditingBegin:" destination="pal-qc-wn0" eventType="editingDidBegin" id="ENx-qG-9cF"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3f-iG-84l">
                                 <rect key="frame" x="240" y="202" width="150" height="21"/>
@@ -5987,7 +5999,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Q3a-5p-vEn"/>
-        <segue reference="gJH-zc-xPe"/>
+        <segue reference="VaV-9A-eyP"/>
         <segue reference="e8W-y0-uAt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="Color"/>
@@ -6066,7 +6078,7 @@
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

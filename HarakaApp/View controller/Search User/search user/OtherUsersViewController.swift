@@ -138,24 +138,24 @@ databaseRef.child("following").child(self.loggedInUsers!.uid).child(self.otherUs
     
     //use ternary operator to check if the profile_picture exists
     //if not set it as nil - firebase will not create a entry for the profile_pic
-    let followersRef = "followers/\(uid)/\(self.loggedInUserData?["uid"] as! String)"
-    let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (uid!)
+    let followersRef = "followers/\(self.otherUser?["uid"] as! String)/\(self.loggedInUserData?["uid"] as! String)"
+    let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (self.otherUser?["uid"] as! String)
     
     
     if(self.followButton.titleLabel?.text == "متابعة")
     {
-        print("follow Trainer")
+        print("follow user")
         
-        let loggedInTrainersProfilePic = self.loggedInUserData?["profilePic"] != nil ? self.loggedInUserData?["profilePic"]! : nil
-        let otherTrainersProfilePic = self.otherUser?["profilePic"] != nil ? self.otherUser?["profilePic"]! : nil
+        let loggedInUserProfilePic = self.loggedInUserData?["ProfilePic"] != nil ? self.loggedInUserData?["ProfilePic"]! : nil
+        let otherUserProfilePic = self.otherUser?["profile_pic"] != nil ? self.otherUser?["ProfilePic"]! : nil
         
         let followersData = ["Name":self.loggedInUserData?["Name"] as! String,
                     "Username":self.loggedInUserData?["Username"] as! String,
-            "profilePic": loggedInTrainersProfilePic]
+            "ProfilePic": loggedInUserProfilePic]
         
         let followingData = ["Name":self.otherUser?["Name"] as! String,
                              "Username":self.otherUser?["Username"] as! String,
-                             "profilePic": otherTrainersProfilePic]
+                             "ProfilePic":otherUserProfilePic]
         
         //"profile_pic":self.otherUser?["profile_pic"] != nil ? self.loggedInUserData?["profile_pic"] as! String : ""
         let childUpdates = [followersRef:followersData,
@@ -166,26 +166,26 @@ databaseRef.child("following").child(self.loggedInUsers!.uid).child(self.otherUs
         
         print("data updated")
         
-    }
+                    
         
-    else{
+        /*
         //update following count under the logged in user
         //update followers count in the user that is being followed
-      /*  let followersCount:Int?
+        let followersCount:Int?
         let followingCount:Int?
-        if(self.otherTrainers?["followersCount"] == nil)
+        if(self.otherUser?["followersCount"] == nil)
         {
             //set the follower count to 1
             followersCount=1
         }
         else
         {
-            followersCount = self.otherTrainers?["followersCount"] as! Int + 1
+            followersCount = self.otherUser?["followersCount"] as! Int + 1
         }
         
         //check if logged in user  is following anyone
         //if not following anyone then set the value of followingCount to 1
-        if(self.loggedInTrainerData?["followingCount"] == nil)
+        if(self.loggedInUserData?["followingCount"] == nil)
         {
             followingCount = 1
         }
@@ -193,31 +193,31 @@ databaseRef.child("following").child(self.loggedInUsers!.uid).child(self.otherUs
         else
         {
         
-            followingCount = self.loggedInTrainerData?["followingCount"] as! Int + 1
+            followingCount = self.loggedInUserData?["followingCount"] as! Int + 1
         }
     
-        databaseRef.child("Approved").child(self.loggedInTrainer!.uid).child("followingCount").setValue(followingCount!)
-        databaseRef.child("Approved").child(self.otherTrainers?["uid"] as! String).child("followersCount").setValue(followersCount!)
+        databaseRef.child("user_profiles").child(self.loggedInUser!.uid).child("followingCount").setValue(followingCount!)
+        databaseRef.child("user_profiles").child(self.otherUser?["uid"] as! String).child("followersCount").setValue(followersCount!)
         
         
     }
     else
     {
-        databaseRef.child("Trainers").child("Approved").child(self.loggedInTrainerData?["uid"] as! String).child("followingCount").setValue(self.loggedInTrainerData!["followingCount"] as! Int - 1)
-        
-        databaseRef.child("Trainers").child("Approved").child(self.otherTrainers?["uid"] as! String).child("followersCount").setValue(self.otherTrainers!["followersCount"] as! Int - 1)
-        */
+        databaseRef.child("user_profiles").child(self.loggedInUserData?["uid"] as! String).child("followingCount").setValue(self.loggedInUserData!["followingCount"] as! Int - 1)
+        databaseRef.child("user_profiles").child(self.otherUser?["uid"] as! String).child("followersCount").setValue(self.otherUser!["followersCount"] as! Int - 1)
+         */
+
       let followersRef = "followers/\(self.otherUser?["uid"] as! String)/\(self.loggedInUserData?["uid"] as! String)"
       let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (self.otherUser?["uid"] as! String)
         
         
-        let childUpdates = [followingRef:NSNull(),followersRef:NSNull()]
+        _ = [followingRef:NSNull(),followersRef:NSNull()]
         databaseRef.updateChildValues(childUpdates)
         
         
     }
     
-    }
+}
     @IBAction func ShowFollowers(_ sender: Any) {
         
         let Trainer = self.uid

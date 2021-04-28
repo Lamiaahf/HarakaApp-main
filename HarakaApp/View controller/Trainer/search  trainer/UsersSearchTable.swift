@@ -151,7 +151,7 @@ class UsersSearchTable:UITableViewController, UISearchBarDelegate, UISearchResul
     {
         self.filteredUsers = self.UsersArray.filter{ user in
  
-            let username = user!["name"] as? String
+            let username = user!["Name"] as? String
             
             if( username != nil){
             return(username?.lowercased().contains(searchText.lowercased()))!

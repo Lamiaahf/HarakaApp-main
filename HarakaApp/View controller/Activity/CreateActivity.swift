@@ -56,7 +56,6 @@ class CreateActivity: UIViewController {
         // hide ErrorM Lable
         ErrorM.alpha = 0
 
-        creatDatePicker()
 
 
         }
@@ -66,31 +65,26 @@ class CreateActivity: UIViewController {
         participantLable.text = String( sender.value)
     }
     
-        func creatDatePicker()  {
-            DateTime.textAlignment = .right
-            //toolbare
-            let toolbar = UIToolbar()
-            toolbar.sizeToFit()
-            //bar button
-            let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
-            toolbar.setItems([doneBtn], animated: true)
-            
-            // assining toolbare
-            DateTime.inputAccessoryView = toolbar
-            //assinge date pickre to text filde
-            DateTime.inputView = dateTP
-            // date picker mode to remove the time
-            dateTP.datePickerMode = .dateAndTime
+    @IBAction func txtDateEditingBegin(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        showPicker()
+    }
+    
+    private func showPicker() {
+        var style = DefaultStyle()
+        style.pickerColor = StyleColor.colors([style.textColor, #colorLiteral(red: 0.4173190594, green: 0.5955227613, blue: 0.6585710645, alpha: 1)])
+        style.pickerMode = .dateAndTime
+        style.titleString  = "التاريخ والزمن  "
+        style.returnDateFormat = .yyyy_To_ss
+        style.titleFont = UIFont.systemFont(ofSize: 25, weight: .bold)
+        
+        let pick:PresentedViewController = PresentedViewController()
+        pick.style = style
+        pick.block = { [weak self] (date) in
+            self?.DateTime.text = date
         }
-        @objc func donePressed(){
-            //formatter
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .medium
-            formatter.dateFormat = "yyyy-MM-dd at HH:mm"
-            DateTime.text = formatter.string(from: dateTP.date )
-            self.view.endEditing(true)
-        }
+        self.present(pick, animated: true, completion: nil)
+    }
         
     @IBAction func CreateBTap(_ sender: Any) {
         image = typeimage.image

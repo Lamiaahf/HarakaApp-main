@@ -33,7 +33,6 @@ class OtherUserPostViewController: UITableViewController {
              ref.child("posts").observe(.childAdded){
              (snapshot) in
              if let postDict = snapshot.value as? [String: Any]{
-             if let usern = postDict["username"] as? String {
                          let times = postDict["timestamp"] as? String ?? ""
                          let cap = postDict["caption"] as? String ?? ""
                          let nol = postDict["numOfLikes"] as? Int ?? 0
@@ -60,7 +59,7 @@ class OtherUserPostViewController: UITableViewController {
                         
                         
                     }}
-                 }}
+                 }
         //     self.posts = postArray
               
              }

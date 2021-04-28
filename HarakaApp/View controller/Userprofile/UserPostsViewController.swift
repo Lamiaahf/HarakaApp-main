@@ -35,7 +35,6 @@ class UserPostsViewController: UITableViewController {
         databaseRef.child("posts").observe(.childAdded){
         (snapshot) in
         if let postDict = snapshot.value as? [String: Any]{
-            if let usern = postDict["username"] as? String {
                     let times = postDict["timestamp"] as? String ?? ""
                     let cap = postDict["caption"] as? String ?? ""
                     let nol = postDict["numOfLikes"] as? Int ?? 0
@@ -48,13 +47,13 @@ class UserPostsViewController: UITableViewController {
                 let newPost = Post(createdBy: postUser, timeAgo: times, caption: cap, numOfLikes: nol, numOfComments: noc, postID: id, liked:false, uid: UID)
                 self.checkLike(post: newPost)
              //       postArray.insert(newPost, at: indx)
-                if self.Userid == newPost.UID{
+                if (self.Userid == newPost.UID){
                     self.posts?.append(newPost)
                   //  postArray.append(newPost)
                 //    indx = indx+1
                     self.tableView.reloadData()}
                 
-            }}
+            }
    //     self.posts = postArray
         
         }
@@ -107,3 +106,4 @@ extension UserPostsViewController{
     }
     
 }
+

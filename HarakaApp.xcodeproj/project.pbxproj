@@ -47,6 +47,11 @@
 		3F4683AD25D448CC007F9D66 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4683AC25D448CC007F9D66 /* Constants.swift */; };
 		3F4753EB2635FD1F00C22F7F /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4753EA2635FD1F00C22F7F /* Pulsing.swift */; };
 		3F6414D72638847700A4086D /* TCreateActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6414D62638847700A4086D /* TCreateActivityViewController.swift */; };
+		3F6415052638D25A00A4086D /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6415002638D25900A4086D /* PresentedViewController.swift */; };
+		3F6415062638D25A00A4086D /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6415012638D25900A4086D /* CustomPresentationController.swift */; };
+		3F6415072638D25A00A4086D /* SJDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6415022638D25900A4086D /* SJDatePicker.swift */; };
+		3F6415082638D25A00A4086D /* PickerStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6415032638D25900A4086D /* PickerStyle.swift */; };
+		3F6415092638D25A00A4086D /* CustomPresentationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6415042638D25900A4086D /* CustomPresentationAnimationController.swift */; };
 		3F775B6825ED5426001FDD9D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F775B6725ED5426001FDD9D /* SettingsViewController.swift */; };
 		3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885D9F261A56DB003BF3F3 /* FollowersTableViewController.swift */; };
 		3F885DA3261A58CF003BF3F3 /* FollowingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F885DA2261A58CF003BF3F3 /* FollowingTableViewController.swift */; };
@@ -159,6 +164,11 @@
 		3F4683AC25D448CC007F9D66 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3F4753EA2635FD1F00C22F7F /* Pulsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 		3F6414D62638847700A4086D /* TCreateActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCreateActivityViewController.swift; sourceTree = "<group>"; };
+		3F6415002638D25900A4086D /* PresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
+		3F6415012638D25900A4086D /* CustomPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
+		3F6415022638D25900A4086D /* SJDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJDatePicker.swift; sourceTree = "<group>"; };
+		3F6415032638D25900A4086D /* PickerStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerStyle.swift; sourceTree = "<group>"; };
+		3F6415042638D25900A4086D /* CustomPresentationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentationAnimationController.swift; sourceTree = "<group>"; };
 		3F6A0DEC25DD2AA500AAB91A /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
 		3F6A0DED25DD2AA600AAB91A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3F6A0DEE25DD2AA600AAB91A /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -337,6 +347,18 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		3F6414FF2638D25900A4086D /* SJDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3F6415002638D25900A4086D /* PresentedViewController.swift */,
+				3F6415012638D25900A4086D /* CustomPresentationController.swift */,
+				3F6415022638D25900A4086D /* SJDatePicker.swift */,
+				3F6415032638D25900A4086D /* PickerStyle.swift */,
+				3F6415042638D25900A4086D /* CustomPresentationAnimationController.swift */,
+			);
+			path = SJDatePicker;
+			sourceTree = "<group>";
+		};
 		3F6A0D8925DD21B900AAB91A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,10 +458,11 @@
 				9475D8EC2608CE4A00116877 /* MapViewController.swift */,
 				9475D8F22608CE6000116877 /* PlaceViews.swift */,
 				940F4BD525E56E7C00508368 /* activityLocations.swift */,
+				3F6414FF2638D25900A4086D /* SJDatePicker */,
 				3FB489F22631DCA300A8702B /* Rating */,
 				23104215261B323B006B2EE4 /* Game */,
-				3FF3369E2616E10E00A905EF /* Userprofile */,
 				CEC34787260BF25C004B3754 /* Search User */,
+				3FF3369E2616E10E00A905EF /* Userprofile */,
 				3F92AE95261F51B800EC3085 /* Activity */,
 				23DAC3AC260BB2DB000DB8AB /* Challenges */,
 				23DAC3A6260BB22F000DB8AB /* Timeline */,
@@ -705,6 +728,7 @@
 			files = (
 				3F92ADF4261E16BE00EC3085 /* OtherUsersViewController.swift in Sources */,
 				94DDE11C25DD350B0029FA09 /* PostCell.swift in Sources */,
+				3F6415072638D25A00A4086D /* SJDatePicker.swift in Sources */,
 				23B0C736262A695B00E91238 /* CreateGameViewController.swift in Sources */,
 				3FCEBDB326346C7F0013F976 /* ChallengCell.swift in Sources */,
 				3FBB153025C9C3660098C299 /* ForgotPasswordViewController.swift in Sources */,
@@ -735,6 +759,7 @@
 				9475D8F32608CE6000116877 /* PlaceViews.swift in Sources */,
 				3FF3369C2616547200A905EF /* UserPostCell.swift in Sources */,
 				3F29558B2633817200FE6F44 /* OtherUserTable.swift in Sources */,
+				3F6415092638D25A00A4086D /* CustomPresentationAnimationController.swift in Sources */,
 				3FF335A22614D82400A905EF /* TrainerProfile.swift in Sources */,
 				3F29556A2633730900FE6F44 /* UsersSearchTable.swift in Sources */,
 				23104218261B34A7006B2EE4 /* GameRoomsViewController.swift in Sources */,
@@ -745,6 +770,7 @@
 				9449C07925D13531002E0AAB /* TabBarViewController.swift in Sources */,
 				3FB489EB2630FCE800A8702B /* OtherTrainerFollowersTable.swift in Sources */,
 				3F885DA0261A56DB003BF3F3 /* FollowersTableViewController.swift in Sources */,
+				3F6415082638D25A00A4086D /* PickerStyle.swift in Sources */,
 				23985FBF26021BB100FB2764 /* GameViewController.swift in Sources */,
 				3F6414D72638847700A4086D /* TCreateActivityViewController.swift in Sources */,
 				94CBF5DF2631FFA200741E76 /* CreateGameViewController.swift in Sources */,
@@ -800,6 +826,8 @@
 				CE58002926261C6E002C3F1C /* RoomsCell.swift in Sources */,
 				3F2954D026332F1D00FE6F44 /* TActivityList.swift in Sources */,
 				3F29552A26334C7A00FE6F44 /* alertView.swift in Sources */,
+				3F6415052638D25A00A4086D /* PresentedViewController.swift in Sources */,
+				3F6415062638D25A00A4086D /* CustomPresentationController.swift in Sources */,
 				CEC34795260C1BA9004B3754 /* TrainersTableViewController.swift in Sources */,
 				232E739125F588290029D39C /* ChallengeViewController.swift in Sources */,
 				23A717132621E2B100C43FD4 /* Extension.swift in Sources */,

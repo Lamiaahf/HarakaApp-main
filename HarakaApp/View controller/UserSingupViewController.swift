@@ -38,10 +38,29 @@ class UserSingupViewController: UIViewController, UITextFieldDelegate  {
        // DOBUS.delegate = self
         setUpElements()
         setupAvatar()
-        creatDatePicker()
+       // creatDatePicker()
     }
     
-  
+    @IBAction func txtDateEditingBegin(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        showPicker()
+    }
+    
+    private func showPicker() {
+        var style = DefaultStyle()
+        style.pickerColor = StyleColor.colors([style.textColor, #colorLiteral(red: 0.4173190594, green: 0.5955227613, blue: 0.6585710645, alpha: 1)])
+        style.pickerMode = .date
+        style.titleString = "سنة الميلاد "
+        style.returnDateFormat = .d_m_yyyy
+        style.titleFont = UIFont.systemFont(ofSize: 25, weight: .bold)
+        
+        let pick:PresentedViewController = PresentedViewController()
+        pick.style = style
+        pick.block = { [weak self] (date) in
+            self?.DOBUS.text = date
+        }
+        self.present(pick, animated: true, completion: nil)
+    }
     
     // ImagePicker
     @IBAction func TapToChange(_ sender: Any) {
@@ -74,31 +93,6 @@ class UserSingupViewController: UIViewController, UITextFieldDelegate  {
 
     }
  
-    // Creat the DatePicker
-    func creatDatePicker()  {
-        DOBUS.textAlignment = .right
-        //toolbare
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        //bar button
-        let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
-        toolbar.setItems([doneBtn], animated: true)
-        // assining toolbare
-        DOBUS.inputAccessoryView = toolbar
-        //assinge date pickre to text filde
-        DOBUS.inputView = dtePicker
-        // date picker mode to remove the time
-        dtePicker.datePickerMode = .date
-            }
-
-    @objc func donePressed(){
-        //formatter
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        DOBUS.text = formatter.string(from:dtePicker.date)
-        self.view.endEditing(true)
-    }
 
     // check thev fields and validat data if everything is correct the methode will return nil otherwise its will return error massge
     func validatefields() -> String?{
@@ -224,36 +218,30 @@ extension UserSingupViewController : UIImagePickerControllerDelegate, UINavigati
     }}
     
 /*
-extension UserSingupViewController: UITextFieldDelegate {
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == self.DOBUS {
-            datePickerTapped()
-            return false
-        }
-        
-        return true
-    }
-}
+ // Creat the DatePicker
+ func creatDatePicker()  {
+     DOBUS.textAlignment = .right
+     //toolbare
+     let toolbar = UIToolbar()
+     toolbar.sizeToFit()
+     //bar button
+     let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
+     toolbar.setItems([doneBtn], animated: true)
+     // assining toolbare
+     DOBUS.inputAccessoryView = toolbar
+     //assinge date pickre to text filde
+     DOBUS.inputView = dtePicker
+     // date picker mode to remove the time
+     dtePicker.datePickerMode = .date
+         }
 
+ @objc func donePressed(){
+     //formatter
+     let formatter = DateFormatter()
+     formatter.dateStyle = .medium
+     formatter.timeStyle = .none
+     DOBUS.text = formatter.string(from:dtePicker.date)
+     self.view.endEditing(true)
+ }
 
-func datePickerTapped() {
-    let currentDate = Date()
-    var dateComponents = DateComponents()
-    dateComponents.month = -3
-    let threeMonthAgo = Calendar.current.date(byAdding: dateComponents, to: currentDate)
-
-    dtePicker.show("DatePickerDialog",
-                    doneButtonTitle: "Done",
-                    cancelButtonTitle: "Cancel",
-                    minimumDate: threeMonthAgo,
-                    maximumDate: currentDate,
-                    datePickerMode: .date) { (date) in
-        if let dt = date {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "MM/dd/yyyy"
-            self.DOBUS.text = formatter.string(from: dt)
-        }
-    }
-}
 */

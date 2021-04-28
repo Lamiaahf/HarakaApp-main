@@ -38,7 +38,6 @@ class TrainerSingupViewController: UIViewController {
         // Style the elements
         setUpElements()
         ref = Database.database().reference()
-        creatDatePicker()
 
 
     }
@@ -66,29 +65,25 @@ class TrainerSingupViewController: UIViewController {
         present(picker, animated: true) }
     
     // creatDatePicker inside TextFilde
-    func creatDatePicker()  {
-        Age.textAlignment = .center
-        //toolbare
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        //bar button
-        let doneBtn = UIBarButtonItem (barButtonSystemItem:.done , target: nil, action: #selector(donePressed))
-        toolbar.setItems([doneBtn], animated: true)
-        // assining toolbare
-        Age.inputAccessoryView = toolbar
-        //assinge date pickre to text filde
-        Age.inputView = DatePicker
-        // date picker mode to remove the time
-        DatePicker.datePickerMode = .date
+    @IBAction func txtDateEditingBegin(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        showPicker()
     }
     
-    @objc func donePressed(){
-        //formatter
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        Age.text = formatter.string(from:DatePicker.date)
-        self.view.endEditing(true)
+    private func showPicker() {
+        var style = DefaultStyle()
+        style.pickerColor = StyleColor.colors([style.textColor, #colorLiteral(red: 0.4173190594, green: 0.5955227613, blue: 0.6585710645, alpha: 1)])
+        style.pickerMode = .date
+        style.titleString = "سنة الميلاد "
+        style.returnDateFormat = .d_m_yyyy
+        style.titleFont = UIFont.systemFont(ofSize: 25, weight: .bold)
+        
+        let pick:PresentedViewController = PresentedViewController()
+        pick.style = style
+        pick.block = { [weak self] (date) in
+            self?.Age.text = date
+        }
+        self.present(pick, animated: true, completion: nil)
     }
     func validatefields() -> String?{
     // all fields filled in

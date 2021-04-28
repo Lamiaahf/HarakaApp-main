@@ -25,7 +25,7 @@ var  cha: Challenge!{
 
 
 func updateChallengeTable(){
-    self.AName.text = self.cha.cName
+    AName.text = self.cha.cName
     Des.text = self.cha.cDesc
     EndDate.text = self.cha.enddate!
     type.text = cha.challengeType
