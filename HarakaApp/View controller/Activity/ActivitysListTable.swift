@@ -1,4 +1,4 @@
-
+//
 //  ActivitysListTable.swift
 //  HarakaApp
 //

@@ -37,24 +37,28 @@ class PostCell: UITableViewCell{
     
     func updateTimeline(){
 
-        timeAgoLabel.text = post.timeAgo
-        captionLabel.text = post.caption
-        likesLabel.text = "\(post.numOfLikes!)"
-        commentsLabel.text = "\(post.numOfComments!)"
-        
-        profileImageView.image = post.createdBy.profileImage
-        Utilities.CircularImageView(self.profileImageView)
-        usernameLabel.text = post.createdBy.username
-        
-        if (!post.liked!){
-            likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
-        }
-        else{
-            likeButton.setBackgroundImage(UIImage(systemName:"heart.fill"), for: .normal)
-        }
-        
-    }
+            timeAgoLabel.text = post.timeAgo
+            captionLabel.text = post.caption
+            likesLabel.text = "\(post.numOfLikes!)"
+            commentsLabel.text = "\(post.numOfComments!)"
+            
+            profileImageView.image = post.createdBy.profileImage
+            profileImageView.frame.size.width = 25
+            profileImageView.layer.cornerRadius = 25/2
+            profileImageView.clipsToBounds = true
 
+            usernameLabel.text = post.createdBy.username
+            
+            if (!post.liked!){
+                likeButton.setBackgroundImage(UIImage(systemName: "heart"), for: .normal)
+            }
+            else{
+                likeButton.setBackgroundImage(UIImage(systemName:"heart.fill"), for: .normal)
+            }
+            
+        }
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
        super.setSelected(selected, animated: animated)
     }

@@ -116,59 +116,54 @@ class ChallengeCard: UIView{
         return interval
     }
     func calculatScore(currentDate: String, startDate: String) -> Float {
+                
+            var days = 0
+            var hours:Float = 0.0
+            var mins:Float = 0.0
+            var score:Float = 0.0
             
-        var days = 0
-        var hours:Float = 0.0
-        var mins:Float = 0.0
-        var score:Float = 0.0
-        
-        let currentMonth = currentDate[3..<5]
-        let startMonth = startDate[3..<5]
+            let currentMonth = currentDate[3..<5]
+            let startMonth = startDate[3..<5]
 
-        let currentDay = Int(currentDate[0..<2])!
-        let startDay = Int(startDate[0..<2])!
-        
-        let currentHour = Int(currentDate[6..<8])!
-        let startHour = Int(startDate[6..<8])!
-        
-        let currentMin = Int(String(currentDate[9])+""+String(currentDate[10]))
-        
-            //Int(currentDate[currentDate.firstIndex(of:":")!...])!
-        let startMin = Int(String(startDate[9])+""+String(startDate[10]))
+            let currentDay = Int(currentDate[0..<2])!
+            let startDay = Int(startDate[0..<2])!
             
-            //Int(startDate[startDate.firstIndex(of:":")!...])!
-        
-        if(currentMonth == startMonth){
-            days = currentDay - startDay
-        }
-        else{
-            days = 30-startDay
-            days = days+currentDay
-        }
-        // current: 8:18
-        // start: 4:00
-        if(currentHour>=startHour){
-            hours = Float(days*24+(currentHour-startHour))
-            if(currentMin!<startMin!){
-                hours = hours - 1
+            let currentHour = Int(currentDate[6..<8])!
+            let startHour = Int(startDate[6..<8])!
+            
+            let currentMin = Int(String(currentDate[9])+""+String(currentDate[10]))
+            
+                //Int(currentDate[currentDate.firstIndex(of:":")!...])!
+            let startMin = Int(String(startDate[9])+""+String(startDate[10]))
+                
+                //Int(startDate[startDate.firstIndex(of:":")!...])!
+            
+            if(currentMonth == startMonth){
+                days = currentDay - startDay
             }
-        }
-        else{
-            if days>0{
+            else{
+                days = 30-startDay
+                days = days+currentDay
+            }
+            // current: 8:18
+            // start: 4:00
+            if(currentHour>=startHour){
+                hours = Float(days*24+(currentHour-startHour))
+            }
+            else{
                 hours = Float(days*24-(startHour-currentHour))
             }
+            if(currentMin!>=startMin!){
+                mins = Float(currentMin!-startMin!)
+            }
+            else{
+                hours = hours - 1
+                mins = Float((60-startMin!)+currentMin!)
+            }
+            score = hours + (mins/60)
+            return score
+        
         }
-        if(currentMin!>=startMin!){
-            mins = Float(currentMin!-startMin!)
-        }
-        else{
-            mins = Float(startMin!-currentMin!)
-        }
-        score = hours + (mins/60)
-        return score
-    
-    }
-
     
     @IBAction func startChallenge(_ sender: Any) {
         let userStartTime = dateFormatter.string(from: Date())
