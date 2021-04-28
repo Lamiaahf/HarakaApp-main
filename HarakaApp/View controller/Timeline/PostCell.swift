@@ -43,7 +43,11 @@ class PostCell: UITableViewCell{
         commentsLabel.text = "\(post.numOfComments!)"
         
         profileImageView.image = post.createdBy.profileImage
-        Utilities.CircularImageView(self.profileImageView)
+        print(profileImageView.frame.size.width)
+        profileImageView.frame.size.width = 25
+        profileImageView.layer.cornerRadius = 25/2
+        profileImageView.clipsToBounds = true
+
         usernameLabel.text = post.createdBy.username
         
         if (!post.liked!){
