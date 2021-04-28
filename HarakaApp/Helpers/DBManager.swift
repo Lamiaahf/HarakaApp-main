@@ -199,7 +199,7 @@ class DBManager {
             }
             let t = Trainer(snapshot: snapshot)
             completion(t!)
-        })     
+        })
     
     }
     

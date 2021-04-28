@@ -1,4 +1,4 @@
-//
+
 //  ActivitysListTable.swift
 //  HarakaApp
 //
@@ -78,7 +78,7 @@ class ActivitysListTable: UITableViewController {
                          self.ActivitysList?.append(NewActivity)
                         self.tableView.reloadData()
                          
-                    } 
+                    }
             
             
         }
@@ -139,4 +139,3 @@ extension ActivitysListTable {
     
     
 }
-

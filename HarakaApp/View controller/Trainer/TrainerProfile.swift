@@ -45,6 +45,9 @@ class TrainerProfile: UIViewController ,TabItem{
         Utilities.styleFilledButton(challengeB)
         Utilities.styleFilledButton(followerB)
         Utilities.CircularImageView(Userimg)
+        activitieB.showsTouchWhenHighlighted = true
+        challengeB.showsTouchWhenHighlighted = true
+        followerB.showsTouchWhenHighlighted = true
         getUserInfo()
         self.loggedInUser = Auth.auth().currentUser
 

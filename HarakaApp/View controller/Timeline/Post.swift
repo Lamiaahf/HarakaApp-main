@@ -65,11 +65,10 @@ class Post
     func isLiked() -> Bool {
         return liked!
     }
-    
+
     func setLiked(flag: Bool){
         liked = flag
     }
 
+
 }
-
-

@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-import FirebaseStorage
+//import FirebaseStorage
 class OtherUsersViewController:UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var Profilepic: UIImageView!
@@ -50,7 +50,7 @@ class OtherUsersViewController:UIViewController ,UIImagePickerControllerDelegate
     //need to add the uid to the user's data
     databaseRef.child("users").child(self.otherUser?["uid"] as! String).observe(.value, with: { (snapshot) in
         
-        self.uid = self.otherUser?["uid"] as! String
+        self.uid = self.otherUser?["uid"] as? String
         self.otherUser = snapshot.value as? NSDictionary
         //add the uid to the profile
         self.otherUser?.setValue(self.uid, forKey: "uid")
@@ -138,8 +138,8 @@ databaseRef.child("following").child(self.loggedInUsers!.uid).child(self.otherUs
     
     //use ternary operator to check if the profile_picture exists
     //if not set it as nil - firebase will not create a entry for the profile_pic
-    let followersRef = "followers/\(self.otherUser?["uid"] as! String)/\(self.loggedInUserData?["uid"] as! String)"
-    let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (self.otherUser?["uid"] as! String)
+    let followersRef = "followers/\(uid)/\(self.loggedInUserData?["uid"] as! String)"
+    let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (uid!)
     
     
     if(self.followButton.titleLabel?.text == "متابعة")

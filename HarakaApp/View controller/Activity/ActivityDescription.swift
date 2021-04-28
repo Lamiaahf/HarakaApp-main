@@ -45,9 +45,6 @@ class ActivityDescription: UIViewController {
             if(snapshot.exists()){
                 // to hide th join button because trainer can't join acticitys and Show the Price lable
                 self.JoinB.alpha = 0
-                self.priceLable.alpha = 1
-                self.priceValue.alpha = 1
-
             }
             
         }
@@ -63,6 +60,7 @@ class ActivityDescription: UIViewController {
                 { self.JoinB.setTitle("الانضمام", for: .normal)
                     print("يمكنك الانضمام ")}
               })}
+    
     // Fetch The Activity
     func fetchActivity(){
         let Name = Act.Aname
@@ -89,6 +87,12 @@ class ActivityDescription: UIViewController {
             self.ALoca.text = Loc
             self.Count.text = self.count
             self.Activiimg.image = UIImage(data: imageData)
+            if (self.Act.price != nil ) {let p =  self.Act.price
+                self.priceValue.text = p
+                self.priceLable.alpha = 1
+                self.priceValue.alpha = 1
+            }
+            
         })}
     @IBAction func JoinTap(_ sender: Any) {
         
@@ -99,6 +103,10 @@ class ActivityDescription: UIViewController {
         let countInt = Int(self.count)
         if (JoinedN == countInt ){
             print("عذرا لا يمكنك الانضمام ")
+            
+            let alert = Service.createAlertController(title: "عذرا ", message: " لا يمكنك الانضمام لقد اكتمل العدد")
+                 self.present(alert, animated: true, completion: nil)
+
         }
         else
         {

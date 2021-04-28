@@ -67,7 +67,7 @@ class TrainerSingupViewController: UIViewController {
     
     // creatDatePicker inside TextFilde
     func creatDatePicker()  {
-        Age.textAlignment = .right
+        Age.textAlignment = .center
         //toolbare
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -109,6 +109,10 @@ class TrainerSingupViewController: UIViewController {
            else if PasswordTS.text != ConfpasswordTS.text {
                     //Passwords dont match
             return "كلمة المرور غير متطابقة ."}
+        
+           else if AvatarUS.image == nil {
+
+               return "فضلا يجب اختيار صورة ."}
             return nil}
 
     @IBAction func SingUpTapped(_ sender: Any) {
@@ -147,7 +151,7 @@ class TrainerSingupViewController: UIViewController {
                         StorageProfilrRef.downloadURL(completion: {(url , error ) in
                         if let metaImageUrl = url?.absoluteString {
                             
-                            let db = ["Name":Name, "Username":"@"+Username, "Email":Email,"Linkedin":Linkdein,"ProfilePic": metaImageUrl,"Age":age,"Password":Password ]
+                            let db = ["Name":Name, "Username":"@"+Username, "Email":Email,"Linkedin":Linkdein,"ProfilePic": metaImageUrl,"DOB":age,"Password":Password ]
 
                             self.ref?.child("Trainers").child("Unapproved").childByAutoId().setValue(db)
                             let alert = UIAlertController(title: " رفع طلبك بنجاح  ", message: nil, preferredStyle: UIAlertController.Style.alert)

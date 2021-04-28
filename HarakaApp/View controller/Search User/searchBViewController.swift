@@ -32,8 +32,8 @@ class searchBViewController: UIViewController , UINavigationControllerDelegate ,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    // Utilities.styleFilledButton(usersSearch)
-    // Utilities.styleFilledButton(trainersSearch)
+    Utilities.styleFilledButton(usersSearch)
+    Utilities.styleFilledButton(trainersSearch)
         self.loggedInUser = Auth.auth().currentUser
 
     }

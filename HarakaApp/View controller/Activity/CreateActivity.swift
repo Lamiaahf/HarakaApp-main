@@ -21,7 +21,6 @@ class CreateActivity: UIViewController {
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var ADescription: UITextField!
     @IBOutlet weak var Alocation: UITextField!
-    @IBOutlet weak var price: UITextField!
 
     @IBOutlet weak var ErrorM: UILabel!
 
@@ -53,7 +52,6 @@ class CreateActivity: UIViewController {
         Utilities.styleTextField(Alocation)
         Utilities.styleTextField(ADescription)
         Utilities.styleTextField(DateTime)
-        Utilities.styleTextField(price)
         
         // hide ErrorM Lable
         ErrorM.alpha = 0
@@ -115,19 +113,7 @@ class CreateActivity: UIViewController {
         let DT = DateTime.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let part = participantLable.text!.trimmingCharacters(in:.whitespacesAndNewlines)
         let Locat = Alocation.text!.trimmingCharacters(in:.whitespacesAndNewlines)
-        let Aprice = price.text!.trimmingCharacters(in:.whitespacesAndNewlines)
 
-
-        
-        self.ref.child("Trainers").child("Approved").child(self.uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-        if snapshot.exists(){
-
-            guard let dict = snapshot.value as? [String:Any] else {return}
-            self.CByName = dict["Name"] as? String ?? ""
-        }
-        else{return}
-            
-        })
         self.ref.child("users").child(self.uid!).observe(.value , with : { snapshot in
             if snapshot.exists(){
 
@@ -136,7 +122,6 @@ class CreateActivity: UIViewController {
               
             let user = CurrentUser( uid : self.uid! , dictionary : dict )
                 self.CByName = user.name
-                self.price.alpha = 0
             }
             else{return}
 
@@ -157,7 +142,7 @@ class CreateActivity: UIViewController {
             StorageActivityRef.downloadURL(completion: {(url , error ) in
         if let metaImageUrl = url?.absoluteString {
             
-            let AData = ["ActivityName": Aname , "createdByID" : self.uid,"createdByName" : self.CByName , "Description" : disc,"DateTime" : DT , "ActivityType": type, "NumOfParticipant":part,"location" :Locat , "Image": metaImageUrl , "price" : Aprice ] as [String : Any]
+            let AData = ["ActivityName": Aname , "createdByID" : self.uid,"createdByName" : self.CByName , "Description" : disc,"DateTime" : DT , "ActivityType": type, "NumOfParticipant":part,"location" :Locat , "Image": metaImageUrl  ] as [String : Any]
             
          let ID = self.ref.child("Activity").childByAutoId().key
             

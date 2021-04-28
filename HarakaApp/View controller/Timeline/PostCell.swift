@@ -43,7 +43,6 @@ class PostCell: UITableViewCell{
         commentsLabel.text = "\(post.numOfComments!)"
         
         profileImageView.image = post.createdBy.profileImage
-        print(profileImageView.frame.size.width)
         profileImageView.frame.size.width = 25
         profileImageView.layer.cornerRadius = 25/2
         profileImageView.clipsToBounds = true
@@ -82,6 +81,7 @@ class PostCell: UITableViewCell{
         updatePost()
         updateTimeline()
         }
+ 
     
     
     func updatePost(){
@@ -90,6 +90,6 @@ class PostCell: UITableViewCell{
                     "numOfComments":post.numOfComments!])
     }
         
-    
+ 
     
 }
