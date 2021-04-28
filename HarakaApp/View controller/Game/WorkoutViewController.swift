@@ -187,9 +187,10 @@ class WorkoutViewController: UIViewController, ARSCNViewDelegate, ARCoachingOver
         
         if(currentNode != nil){
             let time = startTime!.timeIntervalSinceNow
+            print(time)
             let score = abs(time.nextUp)
-            
             print(score)
+            
             // Update player result on database
             let id = (Auth.auth().currentUser?.uid)!
             let gid = currentGame?.gID

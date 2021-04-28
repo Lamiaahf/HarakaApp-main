@@ -34,11 +34,6 @@ class ChallengeCard: UIView{
     @IBOutlet weak var cTimeline: UIProgressView!
     
     
-    // Methods
-    func updateTrainerChallenge(){
-        // make join button alpha = 0
-        
-    }
     func updateChallenge(){
 
         challengeLabel.text = challenge.cName
@@ -115,6 +110,7 @@ class ChallengeCard: UIView{
         
         return interval
     }
+    
     func calculatScore(currentDate: String, startDate: String) -> Float {
             
         var days = 0
@@ -149,20 +145,16 @@ class ChallengeCard: UIView{
         // start: 4:00
         if(currentHour>=startHour){
             hours = Float(days*24+(currentHour-startHour))
-            if(currentMin!<startMin!){
-                hours = hours - 1
-            }
         }
         else{
-            if days>0{
-                hours = Float(days*24-(startHour-currentHour))
-            }
+            hours = Float(days*24-(startHour-currentHour))
         }
         if(currentMin!>=startMin!){
             mins = Float(currentMin!-startMin!)
         }
         else{
-            mins = Float(startMin!-currentMin!)
+            hours = hours - 1
+            mins = Float((60-startMin!)+currentMin!)
         }
         score = hours + (mins/60)
         return score
