@@ -40,6 +40,9 @@ class ChallengeCard: UIView{
         deadlineLabel.text =  challenge.enddate!
         cDescriptionLabel.text = challenge.cDesc
 
+        endButton.alpha = 0
+        startButton.alpha = 0
+        
         DBManager.getTrainer(for: (challenge.createdBy?.trainerID)!){
             trainer in
             self.challenge.createdBy = trainer
@@ -53,12 +56,7 @@ class ChallengeCard: UIView{
         let interval = calculateInterval(currentDate: currentDate, challDate: challDate)
         cTimeline.progress = Float(interval)
         
-        if(challenge.type == 1){
-            self.startButton.alpha = 0
-            self.endButton.alpha = 0
-        }
-        
-        else{
+        if(challenge.type == 0){
             DBManager.isUserStarted(for: challenge){
                 flag in
                 if(flag){

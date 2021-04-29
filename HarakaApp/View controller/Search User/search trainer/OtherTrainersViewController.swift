@@ -154,34 +154,6 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
         getRatings()
            }
     
-    func getRatings(){
-        
-        let tid = self.otherTrainers?["uid"] as! String
-        self.RateLable.text = "-"
-        
-        Database.database().reference().child("Rating").queryOrderedByKey().queryEqual(toValue: tid).observe(.childAdded, with:{
-            snapshot in
-            
-            if(snapshot.exists()){
-                var sum = 0
-                var count = Int(snapshot.childrenCount)
-                
-                for snapsh in snapshot.children.allObjects as! [DataSnapshot]{
-                    let dict = snapsh.value as? [String:Any]
-                  //  var k = dict?.keys.first as! String
-                   // var val = dict![k] as? [String:Any]
-                  //  var val = dict?.values.first as? [String:Any]
-                    let rt = dict!["Rate"] as? Int
-                    sum = sum+rt!
-                }
-                
-                var rating = Double(sum)/Double(count)
-                self.RateLable.text = (String(format: "%.2f", rating))
-            }
-          
-        } )
-        
-    }
 
            override func didReceiveMemoryWarning() {
                super.didReceiveMemoryWarning()
@@ -306,7 +278,9 @@ class OtherTrainersViewController: UIViewController ,UINavigationControllerDeleg
               
             } )
         
-        }}
+        }
+    
+}
 
     extension OtherTrainersViewController: CWRateKitViewControllerDelegate {
 

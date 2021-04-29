@@ -65,8 +65,8 @@ class ActivitysListTable: UITableViewController {
                     let count = ADict["NumOfParticipant"] as? String ?? ""
                     let createdByN = ADict["createdByName"] as? String ?? ""
                     let Aimage = ADict["Image"] as? String ?? ""
-                    let ID = ADict ["ActivityID"] as? String ?? ""
                     let price = ADict ["price"] as? String ?? ""
+                    let ID = snapshot.key
 
                 /// add createdByid
              //   ref.child("Activity").child(AKey).set(createdByid)

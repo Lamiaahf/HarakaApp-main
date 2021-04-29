@@ -138,7 +138,7 @@ databaseRef.child("following").child(self.loggedInUsers!.uid).child(self.otherUs
     
     //use ternary operator to check if the profile_picture exists
     //if not set it as nil - firebase will not create a entry for the profile_pic
-    let followersRef = "followers/\(uid)/\(self.loggedInUserData?["uid"] as! String)"
+    let followersRef = "followers/\(uid!)/\(self.loggedInUserData?["uid"] as! String)"
     let followingRef = "following/" + (self.loggedInUserData?["uid"] as! String) + "/" + (uid!)
     
     

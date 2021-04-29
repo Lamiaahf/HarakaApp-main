@@ -23,12 +23,34 @@ class UserPostsViewController: UITableViewController {
         posts = []
         let loggedInUser = Auth.auth().currentUser
         Userid = loggedInUser!.uid
-        fetchUserPosts()
-
+        //fetchUserPosts()
+        getUserPosts()
         // Do any additional setup after loading the view.
     }
     
 
+    func getUserPosts(){
+        
+        var user = User(id: Userid!)
+        
+        DBManager.getPosts(for: user){
+            postsArray in
+            
+            var temp = [Post]()
+            
+            temp.append(contentsOf: postsArray)
+            temp.sort{
+                $0.timeAgo! < $1.timeAgo!
+            }
+            for p in temp{
+                self.checkLike(post: p)
+            }
+            self.posts?.append(contentsOf: temp)
+            self.tableView.reloadData()
+            
+        }
+        
+    }
     func fetchUserPosts(){
 
         // retrieve posts from database, may return error or snapshot (snapshot contains data)        let ref = Database.database().reference()

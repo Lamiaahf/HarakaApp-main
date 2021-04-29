@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate{
     
@@ -32,23 +33,37 @@ class GameRoomsViewController: UIViewController, UITableViewDelegate, UITableVie
 
         
          games = []
-        fetchGames()
+        getFollowing()
 
     }
-    
-    func fetchGames(){
+    func getFollowing(){
+        
+        let uid = Auth.auth().currentUser!.uid
+        DBManager.getFollowing(for:uid){
+            users in
+            var usersArray = users.compactMap(){$0.userID}
+            usersArray.append(uid)
+            
+            self.fetchGames(ids: usersArray)
+        }
+    }
+    func fetchGames(ids: [String]){
         
         ref.child("GameRooms").observe(.childAdded, with: { snapshot in
+            var temp = [Game]()
             if let gameDict = snapshot.value as? [String:Any] {
                 guard let uid = gameDict["CreatorID"] as? String else {return}
-                let name = gameDict["GameName"] as! String
-                let count = gameDict["PlayerCount"] as! Int
-                let gameKey = snapshot.key
-                let g = Game(gName: name, uid: uid, gid: gameKey, count: count)
-
-                self.games?.append(g)
-                self.gamesTable.reloadData()
+                if (ids.contains(uid)){
+                    let name = gameDict["GameName"] as! String
+                    let count = gameDict["PlayerCount"] as! Int
+                    let gameKey = snapshot.key
+                    let g = Game(gName: name, uid: uid, gid: gameKey, count: count)
+                    temp.append(g)
+                }
             }
+            self.games?.append(contentsOf: temp)
+            self.games?.reverse()
+            self.gamesTable.reloadData()
         })
         
     }

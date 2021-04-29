@@ -32,11 +32,11 @@ class UserActivitysTableView: UITableViewController {
             }
 
         func fetchActivity () {
+            
                 //get all the JoinedActivitys id
                 databaseRef.child("JoinedActivity").child(uid!).observeSingleEvent(of :.value, with : { [self] (snapshot) in
                     
                     for item in snapshot.children{
-
                         self.ActivitysID!.append((item as AnyObject).key)
                             }
                   //  print (ActivitysID!)
