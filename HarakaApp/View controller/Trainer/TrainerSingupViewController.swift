@@ -104,8 +104,9 @@ class TrainerSingupViewController: UIViewController {
            else if PasswordTS.text != ConfpasswordTS.text {
                     //Passwords dont match
             return "كلمة المرور غير متطابقة ."}
-        
-           else if AvatarUS.image == nil {
+    
+
+           else if (AvatarUS.image ==     #imageLiteral(resourceName: "icons0.png") ){
 
                return "فضلا يجب اختيار صورة ."}
             return nil}

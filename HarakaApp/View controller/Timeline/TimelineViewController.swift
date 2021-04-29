@@ -27,7 +27,7 @@ class TimelineViewController: UITableViewController {
         tableView.delegate = self
         
         posts = []
-        
+      
         }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +51,9 @@ class TimelineViewController: UITableViewController {
                     
                 }
             }
-        
+        print (followingsIDs)
+        print (posts)
+
     }
     
     
@@ -144,6 +146,5 @@ extension TimelineViewController{
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
     
 }

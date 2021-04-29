@@ -19,7 +19,7 @@ class EmptyCard: UIView {
     @IBAction func createChallenge(_ sender: Any) {
         
         createButton.setImage(UIImage(named: "fire-filled-large"), for: .highlighted)
-    //    createButton.setImage(UIImage(named: "fire-filled-large"), for: .selected)
+      //  createButton.setImage(UIImage(named: "fire-filled-large"), for: .selected)
         
     }
     

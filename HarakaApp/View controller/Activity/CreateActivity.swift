@@ -145,8 +145,7 @@ class CreateActivity: UIViewController {
             
      
         }
-           let alert = Service.createAlertController(title: "شكرا", message: "تم انشاء الفعالية بنجاح")
-                self.present(alert, animated: true, completion: nil)
+         
             } ) }
             self.dismiss(animated: true, completion: nil)
 

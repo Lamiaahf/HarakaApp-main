@@ -84,7 +84,11 @@ class SettingsViewController: UIViewController, UINavigationControllerDelegate {
                                 })//updateChildValues
                                 
                             
-            } }
+            }
+            let alert = Service.createAlertController(title: "تم بنجاح", message: " حفظ التعديلات ")
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
       
             

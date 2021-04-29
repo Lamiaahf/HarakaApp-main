@@ -51,7 +51,7 @@ class ApproveTrainer: UIViewController {
             let dict = snapshot.value as! NSDictionary
            // let key = snapshot.key
             self.name = dict["Name"] as? String
-            self.age = dict["Age"] as? String
+            self.age = dict["DOB"] as? String
             self.username = dict["Username"] as? String
             self.Linkedin = dict["Linkedin"] as? String
             self.Email = dict["Email"] as? String
