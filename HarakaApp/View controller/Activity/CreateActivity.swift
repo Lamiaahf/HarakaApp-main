@@ -142,12 +142,12 @@ class CreateActivity: UIViewController {
             
             self.ref.child("Activity").child(ID!).setValue(AData)
             self.ref.child("Activity").child(ID!).updateChildValues(["ActivityID" : ID as Any])
-            
+            self.dismiss(animated: true, completion: nil)
+
      
         }
          
             } ) }
-            self.dismiss(animated: true, completion: nil)
 
         }
         }
